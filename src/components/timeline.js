@@ -1,36 +1,51 @@
 import React from 'react'
-import TimelineItem from './timeline_item'
-
+import { graphql, useStaticQuery } from 'gatsby'
+import TimelinePost from './timeline_post'
 const Timeline = () => {
-  const timelineItems = [
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-    { time: 2018, imageUrl: '', imageAlt: '', description: 'Test description' },
-  ]
-
-  return (
-    <>
-      <section className="intro">
-        <div className="container">
-          <h1>Vertical Timeline &darr;</h1>
-        </div>
-      </section>
-      <section className="timeline">
-        <ul>
-          {timelineItems.map((timelineItem, index) => <TimelineItem description={timelineItem.description} key={index} />)}
-        </ul>
-      </section>
-    </>
-      )
+  const timelinePosts = useStaticQuery(graphql`
+    query {
+      api {
+        timelines(id: 1) {
+          name
+          timelinePosts {
+            id
+            title
+            description
+            body
+            date
+            carousel {
+              id
+              images {
+                id
+                name
+                description
+                altText
+                imageUrl
+              }
+            }
+          }
+        }
+      }
     }
+  `).api.timelines[0].timelinePosts
 
-    export default Timeline
+  return timelinePosts.map((timelinePost, index) => {
+    const evenRow = index % 2 === 1
+    const timelineRow = [
+      <div className={`col-sm-1 ${evenRow && 'offset-5'}`}>
+        <div className="card">
+          <div className="card-body bg-primary" style={{ minHeight: '150px' }}>
+          </div>
+        </div>
+      </div>,
+      <div className="col-sm-5">
+        <TimelinePost {...timelinePost} />
+      </div>
+    ]
+    if(!evenRow) { timelineRow.reverse() }
+    return <div className="row" key={timelinePost.id}>{timelineRow}</div>
+  }
+  )
+}
+
+export default Timeline
