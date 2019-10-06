@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../sass/custom.scss'
-import 'bootstrap/dist/js/bootstrap.js'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 
 import Layout from '../components/layout'
 import Timeline from '../components/timeline'
-AOS.init({ easing: 'ease-out-back', duration: 1000 })
 
-const IndexPage = () => <Layout><Timeline /></Layout>
+const IndexPage = () => {
+  useEffect(() => AOS.init({ easing: 'ease-out-back', duration: 1000 }), [])
+  return <Layout><Timeline /></Layout>
+}
 
 export default IndexPage
