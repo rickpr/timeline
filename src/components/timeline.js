@@ -38,9 +38,7 @@ const Timeline = () => {
           </div>
         </div>
       </div>,
-      <div className="col-sm-5">
         <TimelinePost {...timelinePost} />
-      </div>
     ]
     if(!evenRow) { timelineRow.reverse() }
     return <div className="row" key={timelinePost.id}>{timelineRow}</div>
