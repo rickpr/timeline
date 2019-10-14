@@ -1,0 +1,32 @@
+.centerline-circle {
+  border-width: 0.1em;
+  border-color: #000000;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+}
+
+.centerline-crossbar {
+  background-color: map-get($theme-colors, 'primary');
+  height: 20px;
+  width: 100px;
+  position: absolute;
+  z-index: -1;
+  margin-left: 1.5em;
+  border-radius: 25% 0 0 25%;
+  &.offset-left {
+    margin-left: -3.75em;
+    border-radius: 0 25% 25% 0;
+  }
+}
+
+.centerline-line {
+  height: 150px;
+  border-width: 0 1.5em;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-radius: 30%;
+}
