@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import TimelinePost from './timeline_post'
+import Centerline from './centerline'
 const Timeline = () => {
   const timelinePosts = useStaticQuery(graphql`
     query {
@@ -32,18 +33,12 @@ const Timeline = () => {
   return timelinePosts.map((timelinePost, index) => {
     const evenRow = index % 2 === 1
     const timelineRow = [
-      <div className={`col-sm-1 ${evenRow && 'offset-5'}`}>
-        <div className="card">
-          <div className="card-body bg-primary" style={{ minHeight: '150px' }}>
-          </div>
-        </div>
-      </div>,
-        <TimelinePost {...timelinePost} />
+      <TimelinePost {...timelinePost} />,
+      <Centerline offsetToCenter={evenRow} />
     ]
-    if(!evenRow) { timelineRow.reverse() }
+    if(evenRow) { timelineRow.reverse() }
     return <div className="row" key={timelinePost.id}>{timelineRow}</div>
-  }
-  )
+  })
 }
 
 export default Timeline

@@ -33,7 +33,7 @@ module.exports = {
       options: {
         typeName: 'Rails',
         fieldName: 'api',
-        url: 'http://adalida-ricardo-api.herokuapp.com/graphql',
+        url: process.env.API_URL || 'http://adalida-ricardo-api.herokuapp.com/graphql',
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
