@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import TimelinePost from './timeline_post'
+import AlternatingTimeline from './alternating_timeline'
+import VerticalTimeline from './vertical_timeline'
 import Centerline from './centerline'
+
 const Timeline = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const breakpoint = 576
+  const handleResize = () => setWindowWidth(window.innerWidth)
+  useEffect(() => window.addEventListener('resize', handleResize))
   const timelinePosts = useStaticQuery(graphql`
     query {
       api {
@@ -30,15 +37,9 @@ const Timeline = () => {
     }
   `).api.timelines[0].timelinePosts
 
-  return timelinePosts.map((timelinePost, index) => {
-    const evenRow = index % 2 === 1
-    const timelineRow = [
-      <TimelinePost {...timelinePost} />,
-      <Centerline offsetToCenter={evenRow} />
-    ]
-    if(evenRow) { timelineRow.reverse() }
-    return <div className="row" key={timelinePost.id}>{timelineRow}</div>
-  })
+  if(windowWidth < breakpoint) return <VerticalTimeline timelinePosts={timelinePosts} />
+
+  return <AlternatingTimeline timelinePosts={timelinePosts} />
 }
 
 export default Timeline
