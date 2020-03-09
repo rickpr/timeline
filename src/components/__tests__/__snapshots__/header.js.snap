@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header>
+  <nav
+    className="navbar navbar-expand-lg navbar-light bg-danger"
+  >
+    <span
+      className="navbar-brand"
+    >
+      Adalida & Ricardo
+    </span>
+  </nav>
+</header>
+`;
