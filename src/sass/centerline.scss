@@ -10,7 +10,7 @@
 }
 
 .centerline-crossbar {
-  background: linear-gradient(map-get($theme-colors, 'primary'), map-get($theme-colors, 'primary')) no-repeat center/100% 5px;
+  background: linear-gradient(map-get($theme-colors, 'success'), map-get($theme-colors, 'success')) no-repeat center/100% 5px;
   height: 20px;
   width: 100px;
   position: absolute;
@@ -24,5 +24,5 @@
 
 .centerline-line {
   height: 200px;
-  background: linear-gradient(map-get($theme-colors, 'primary'), map-get($theme-colors, 'primary')) no-repeat center/5px 100%;
+  background: linear-gradient(map-get($theme-colors, 'success'), map-get($theme-colors, 'success')) no-repeat center/5px 100%;
 }

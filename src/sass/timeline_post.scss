@@ -5,6 +5,5 @@
 }
 
 .outlined-text {
-  color: #FFF;
-  -webkit-text-stroke: #000 thin;
+  color: map-get($theme-colors, 'warning');
 }
