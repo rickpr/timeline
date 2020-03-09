@@ -5,5 +5,5 @@
  */
 import './src/sass/custom.scss'
 import 'jquery/dist/jquery.min.js'
-import 'popper.js/dist/popper.min'
+import 'popper.js/dist/es/index.min'
 import 'bootstrap/dist/js/bootstrap.min.js'
