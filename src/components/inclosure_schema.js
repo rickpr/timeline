@@ -6,7 +6,7 @@ const InclosureSchema = () => {
 
   const [Ω, setΩ] = useState(new Set())
   useEffect(() => setΩ(oldΩ => new Set([...oldΩ, ...x])), [x])
-  const φ = Ω.has
+  const φ = element => Ω.has(element)
 
   const [Universe, setUniverse] = useState(new Set())
   useEffect(() => setUniverse(new Set([Ω, x, ...Ω, ...x])), [Ω, x])
@@ -16,7 +16,7 @@ const InclosureSchema = () => {
   const addToΩ = element => setΩ(new Set([element, ...Ω]))
 
   const [δ, setδ] = useState(new Set())
-  const diagonalize = x => setδ([...Ω].filter(element => !x.has(element)))
+  const diagonalize = x => setδ([...Universe].filter(element => φ(element) && !x.has(element)))
 
   const [elementToAddToΩ, setElementToAddToΩ] = useState()
   const [elementToAddToX, setElementToAddToX] = useState()
