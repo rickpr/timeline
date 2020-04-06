@@ -7,17 +7,18 @@
   width: 20px;
   height: 20px;
   margin: 0 auto;
+  position: relative;
 }
 
 .centerline-crossbar {
   background: linear-gradient(map-get($theme-colors, 'success'), map-get($theme-colors, 'success')) no-repeat center/100% 5px;
   height: 20px;
-  width: 100px;
+  width: 100%;
   position: absolute;
   z-index: -1;
-  margin-left: 1.5em;
+  margin-left: 45%;
   &.offset-left {
-    margin-left: -3.75em;
+    margin-left: -55%;
     border-radius: 0 25% 25% 0;
   }
 }

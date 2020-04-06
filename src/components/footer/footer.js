@@ -4,15 +4,18 @@ import Icon from './icon';
 
 const Footer = () =>
   <footer>
-    <nav className="navbar navbar-expand-lg navbar-light navbar-custom">
-      <div className="navbar-nav row">
+    <nav className="navbar-custom">
+      <div className="row footer-nav">
         <div className="col-md-4 col-12">
           Adalida Baca<br />
           <Icon href="https://github.com/adalidabaca" icon={faGithub} />
           <Icon href="https://linkedin.com/in/adalidabaca" icon={faLinkedinIn} />
           <Icon href="https://www.hackerrank.com/profile/adalida_baca" icon={faHackerrank} />
         </div>
-        <div className="col-md-4 col-12"></div>
+        <div className="col-md-4 col-12">
+          <br />
+          <span className="footer-icon">&hearts;</span>
+        </div>
         <div className="col-md-4 col-12">
           Ricardo Piro-Rael<br />
           <Icon href="https://github.com/rickpr" icon={faGithub} />
