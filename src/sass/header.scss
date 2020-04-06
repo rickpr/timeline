@@ -4,7 +4,7 @@
   min-height: 5em;
 }
 
-.navbar-nav > .nav-item > a.nav-link {
+.navbar-nav > .nav-item > h3 > a.nav-link {
   color: map-get($theme-colors, 'warning');
 }
 
@@ -15,4 +15,5 @@
 
 .navbar-custom {
   background-color: map-get($theme-colors, 'danger');
+  font-family: "Inconsolata";
 }
