@@ -1,0 +1,7 @@
+.timeline-description-header {
+    background-color: map-get($theme-colors, 'danger');
+    color: map-get($theme-colors, 'success');
+}
+.timeline-description-body {
+    color: map-get($theme-colors, 'warning');
+}

@@ -1,13 +1,12 @@
 import React from 'react'
-import Carousel from './carousel'
 
-const TimelineDescription = ({ title, description, carousel }) =>
+const TimelineDescription = ({ title, description }) =>
   <div className="col-sm-5" data-aos="fade-up" style={{ zIndex: 1 }}>
-    <div className="card ">
-      <div className="card-header">
+    <div className="card timeline-post">
+      <div className="card-header timeline-description-header">
         {title}
       </div>
-      <div className="card-body">
+      <div className="card-body timeline-description-body">
         {description}
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Header from './header'
+import Footer from './footer'
 
 const Layout = ({ children }) =>
   <div className='custom-body-background'>
@@ -9,8 +10,8 @@ const Layout = ({ children }) =>
     <Header />
     <div className="container">
       {children}
-      <footer>© {new Date().getFullYear()}</footer>
     </div>
+    <Header />
   </div>
 
 Layout.propTypes = {
