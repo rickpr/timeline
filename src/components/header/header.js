@@ -6,7 +6,7 @@ const Header = () => {
   const collapsibleId = 'navbarSupportedContent'
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-danger">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <MobileHamburger collapsibleId={collapsibleId} />
         <div className="collapse navbar-collapse" id={collapsibleId} >
           <ul className="navbar-nav mr-auto">

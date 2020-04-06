@@ -23,6 +23,6 @@
 }
 
 .centerline-line {
-  height: 200px;
+  height: 100%;
   background: linear-gradient(map-get($theme-colors, 'success'), map-get($theme-colors, 'success')) no-repeat center/5px 100%;
 }
