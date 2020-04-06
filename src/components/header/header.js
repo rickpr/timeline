@@ -9,12 +9,11 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-light">
         <MobileHamburger collapsibleId={collapsibleId} />
         <div className="collapse navbar-collapse" id={collapsibleId} >
-          <ul className="navbar-nav mr-auto">
-            <NavLink href="/" text="Home" />
-            <NavLink href="/adalida" text="Adalida's Page" />
-            <NavLink href="/ricardo" text="Ricardo's Page" />
-            <NavLink href="/us" text="Us Page" />
-          </ul>
+          <div className="navbar-nav row">
+            <NavLink href="/adalida" text="Adalida" className="col-xs-4" />
+            <NavLink href="/" text="Us Page" className="col-xs-4" />
+            <NavLink href="/ricardo" text="Ricardo" className="col-xs-4" />
+          </div>
         </div>
       </nav>
     </header>
