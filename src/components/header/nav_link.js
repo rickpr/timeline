@@ -1,8 +1,8 @@
 import React from 'react'
 
-const NavLink = ({ href, text }) =>
-  <li className="nav-item">
+const NavLink = ({ href, text, width }) =>
+  <div className={`nav-item col-${width}`}>
     <a href={href} className="nav-link">{text}</a>
-  </li>
+  </div>
 
 export default NavLink

@@ -1,8 +1,18 @@
 .navbar {
   margin-bottom: 2em;
   box-shadow: 2px 2px 2px 2px #888;
+  min-height: 5em;
 }
 
 .navbar-nav > .nav-item > a.nav-link {
-  color: map-get($theme-colors, 'success');
+  color: map-get($theme-colors, 'warning');
+}
+
+.navbar-nav.row {
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-custom {
+  background-color: map-get($theme-colors, 'danger');
 }
