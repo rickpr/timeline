@@ -11,7 +11,7 @@ const Layout = ({ children }) =>
     <div className="container">
       {children}
     </div>
-    <Header />
+    <Footer />
   </div>
 
 Layout.propTypes = {
