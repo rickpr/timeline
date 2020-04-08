@@ -1,8 +1,8 @@
 .timeline-description-header {
-    background-color: map-get($theme-colors, 'danger');
-    color: map-get($theme-colors, 'success');
+    background-color: theme-color('danger');
+    color: theme-color('success');
     font-family: "Inconsolata";
 }
 .timeline-description-body {
-    color: map-get($theme-colors, 'warning');
+    color: theme-color('warning');
 }

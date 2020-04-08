@@ -11,7 +11,7 @@
 }
 
 .centerline-crossbar {
-  background: linear-gradient(map-get($theme-colors, 'success'), map-get($theme-colors, 'success')) no-repeat center/100% 5px;
+  background: linear-gradient(theme-color('success'), theme-color('success')) no-repeat center/100% 5px;
   height: 20px;
   width: 100%;
   position: absolute;
@@ -25,5 +25,16 @@
 
 .centerline-line {
   height: 100%;
-  background: linear-gradient(map-get($theme-colors, 'success'), map-get($theme-colors, 'success')) no-repeat center/5px 100%;
+  background: linear-gradient(theme-color('success'), theme-color('success')) no-repeat center/5px 100%;
+}
+
+.centerline-heart {
+  margin: -0.5em auto;
+  display: flex;
+  justify-content: center;
+  color: theme-color('success');
+  font-size: 5em;
+  -webkit-text-stroke: theme-color('warning') thin;
+  position: relative;
+  z-index: 1;
 }

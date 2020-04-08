@@ -13,7 +13,7 @@ const AlternatingTimeline = ({ timelinePosts }) => {
     if(evenRow) { timelineRow.reverse() }
     return <div className="row" key={timelinePost.id}>{timelineRow}</div>
   });
-  const finalCircle = <div className="centerline-circle"></div>;
+  const finalCircle = <div className="centerline-heart">&hearts;</div>;
 
   return [posts, finalCircle]
 }

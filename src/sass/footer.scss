@@ -1,6 +1,5 @@
 footer {
-  margin-top: 2em;
-  color: map-get($theme-colors, 'warning');
+  color: theme-color('warning');
 }
 
 .row.footer-nav {
@@ -13,5 +12,5 @@ footer {
 
 .footer-icon {
   margin: 0 0.2em;
-  color: map-get($theme-colors, 'primary');
+  color: theme-color('success');
 }
