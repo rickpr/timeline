@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import Timeline from '../components/timeline'
 
 const IndexPage = () => {
-  useEffect(() => AOS.init({ easing: 'ease-out-back', duration: 1000 }), [])
+  useEffect(() => { AOS.init({ easing: 'ease-out-back', duration: 1000 }) }, [])
   return <Layout><Timeline /></Layout>
 }
 

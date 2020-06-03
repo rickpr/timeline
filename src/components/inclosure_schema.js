@@ -5,11 +5,11 @@ const InclosureSchema = () => {
   const [x, setX] = useState(new Set())
 
   const [Ω, setΩ] = useState(new Set())
-  useEffect(() => setΩ(oldΩ => new Set([...oldΩ, ...x])), [x])
+  useEffect(() => { setΩ(oldΩ => new Set([...oldΩ, ...x])) }, [x])
   const φ = element => Ω.has(element)
 
   const [Universe, setUniverse] = useState(new Set())
-  useEffect(() => setUniverse(new Set([Ω, x, ...Ω, ...x])), [Ω, x])
+  useEffect(() => { setUniverse(new Set([Ω, x, ...Ω, ...x])) }, [Ω, x])
   const ψ = element => Universe.has(element) || element.every(member => Universe.has(member))
 
   const addToX = element => setX(new Set([element, ...x]))
