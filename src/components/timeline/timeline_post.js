@@ -1,5 +1,5 @@
 import React from 'react'
-import Carousel from './carousel'
+import Carousel from '../carousel'
 
 const TimelinePost = ({ carousel }) =>
   <div className="col-sm-5" data-aos="fade-up" style={{ zIndex: 1 }}>

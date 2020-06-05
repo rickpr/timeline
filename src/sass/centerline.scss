@@ -38,3 +38,17 @@
   position: relative;
   z-index: 1;
 }
+
+.vertical-centerline {
+  display: flex;
+  height: 5em;
+  align-items: center;
+  justify-content: center;
+  .centerline-line {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(theme-color('success'), theme-color('success')) no-repeat center/5px 100%;
+  }
+}

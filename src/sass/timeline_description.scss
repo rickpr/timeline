@@ -1,8 +1,15 @@
+.timeline-description {
+  overflow: hidden;
+  border-top: 0px;
+  box-shadow: 0 -9px 9px -5px theme-color('success');
+}
+
 .timeline-description-header {
     background-color: theme-color('danger');
     color: theme-color('success');
     font-family: 'Montserrat';
 }
+
 .timeline-description-body {
     color: theme-color('warning');
 }
