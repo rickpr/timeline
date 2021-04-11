@@ -5,6 +5,7 @@ module.exports = {
     authors: ['@adalidabaca', '@rickpr'],
   },
   plugins: [
+    'gatsby-plugin-preload-fonts',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
@@ -35,16 +36,6 @@ module.exports = {
         fieldName: 'api',
         url: process.env.API_URL || 'http://adalida-ricardo-api.herokuapp.com/graphql',
       }
-    },
-    {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: 'Montserrat',
-          },
-        ],
-      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

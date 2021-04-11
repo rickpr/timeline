@@ -9,14 +9,14 @@ const AlternatingTimeline = ({ timelinePosts }) => {
   const posts = timelinePosts.map((timelinePost, index) => {
     const evenRow = index % 2 === 1
     const topRow = [
-      <TimelinePost {...timelinePost} />,
-      <Crossbar offsetToCenter={evenRow} />,
-      <TimelineBlank />,
+      <TimelinePost {...timelinePost} key="timeline-post" />,
+      <Crossbar offsetToCenter={evenRow} key="crossbar" />,
+      <TimelineBlank key="top-timeline-blank" />,
     ]
     const bottomRow = [
-      <TimelineDescription {...timelinePost} />,
-      <Centerline />,
-      <TimelineBlank />,
+      <TimelineDescription {...timelinePost} key="timeline-description" />,
+      <Centerline key="centerline" />,
+      <TimelineBlank key="timeline-blank" />,
     ]
     if(evenRow) {
       topRow.reverse()
