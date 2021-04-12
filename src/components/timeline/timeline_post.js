@@ -3,7 +3,7 @@ import Carousel from '../carousel'
 
 const TimelinePost = ({ carousel }) =>
   <div className="col-sm-5" data-aos="fade-up" style={{ zIndex: 1 }}>
-    <div className="card bg-dark timeline-post">
+    <div className="bg-dark timeline-post">
       <Carousel className="card-img" carousel={carousel} />
     </div>
   </div>

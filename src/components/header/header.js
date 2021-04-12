@@ -6,6 +6,8 @@ const Header = () => {
   const collapsibleId = 'navbarSupportedContent'
   return (
     <header>
+      <div style={{border: '5px solid black', position: 'absolute', top: '15px', right: '15px', left: '15px', zIndex: -1, height: '2em'}}>
+      </div>
       <nav className="navbar navbar-expand-lg navbar-light navbar-custom">
         <MobileHamburger collapsibleId={collapsibleId} />
         <div className="navbar-nav row collapse navbar-collapse" id={collapsibleId}>

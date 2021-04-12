@@ -3,16 +3,18 @@ import PropTypes from 'prop-types'
 
 import Header from './header'
 import Footer from './footer'
+import MemphisPattern from './memphis_pattern'
 
 const Layout = ({ children }) =>
-  <div className='custom-body-background'>
+  <>
+    <MemphisPattern />
     <div style={{minHeight: '2em'}}></div>
     <Header />
-    <div className="container">
+    <div>
       {children}
     </div>
     <Footer />
-  </div>
+  </>
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

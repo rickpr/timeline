@@ -1,5 +1,5 @@
 $theme-colors: (
-  danger: #04005E,
+  danger: #ffffff,
   info: #440BD4,
   primary: #e92efb,
   success: #39ff14,
@@ -7,9 +7,11 @@ $theme-colors: (
 );
 
 @import '~bootstrap/scss/bootstrap';
+@import './alternating_timeline';
 @import './centerline';
 @import './header';
 @import './footer';
+@import './memphis_pattern';
 @import './timeline_post';
 @import './timeline_description';
 @import '@fortawesome/fontawesome-svg-core/styles';
