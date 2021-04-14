@@ -1,14 +1,20 @@
 import React, { useEffect } from 'react'
-import '../sass/custom.scss'
-import 'aos/dist/aos.css'
 import AOS from 'aos'
+import 'aos/dist/aos.css'
+import '../sass/custom.scss'
 
 import Layout from '../components/layout'
+import MemphisPattern from '../components/memphis_pattern'
 import Timeline from '../components/timeline'
 
 const IndexPage = () => {
   useEffect(() => { AOS.init({ easing: 'ease-out-back', duration: 1000, offset: 600 }) }, [])
-  return <Layout><Timeline /></Layout>
+  return (
+    <Layout>
+      <MemphisPattern />
+      <Timeline />
+    </Layout>
+  )
 }
 
 export default IndexPage

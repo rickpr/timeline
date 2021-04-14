@@ -5,15 +5,17 @@
   min-height: 5em;
 }
 
-.navbar-nav > .nav-item > h3 {
+.navbar-nav > .nav-item > h2, .navbar-nav > .nav-item > h3 {
   > a.nav-link {
-    color: theme-color('warning');
+    color: theme-color('success');
   }
   > a.nav-link:hover {
     color: theme-color('primary');
   }
   > a.nav-link.active {
-    color: theme-color('success');
+    color: theme-color('warning');
+    text-decoration: underline;
+    text-decoration-color: #000000;
   }
 }
 

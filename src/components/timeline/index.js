@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import TimelineQuery from '../../queries/timeline'
 import AlternatingTimeline from './alternating_timeline'
 import VerticalTimeline from './vertical_timeline'
 
@@ -11,32 +11,7 @@ const Timeline = () => {
     handleResize()
     window.addEventListener('resize', handleResize)
   })
-  const timelinePosts = useStaticQuery(graphql`
-    query {
-      api {
-        timelines(id: 1) {
-          name
-          timelinePosts {
-            id
-            title
-            description
-            body
-            date
-            carousel {
-              id
-              images {
-                id
-                name
-                description
-                altText
-                imageUrl
-              }
-            }
-          }
-        }
-      }
-    }
-  `).api.timelines[0].timelinePosts
+  const timelinePosts = TimelineQuery()
 
   if(windowWidth < breakpoint) return <VerticalTimeline timelinePosts={timelinePosts} />
 
