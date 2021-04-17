@@ -12,7 +12,7 @@ const Us = () => {
   return (
     <Layout>
       <MemphisPattern />
-      <Timeline />
+      <Timeline timelineId="1" />
     </Layout>
   )
 }

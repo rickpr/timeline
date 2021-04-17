@@ -3,7 +3,7 @@ import TimelineQuery from '../../queries/timeline'
 import AlternatingTimeline from './alternating_timeline'
 import VerticalTimeline from './vertical_timeline'
 
-const Timeline = () => {
+const Timeline = ({ timelineId }) => {
   const breakpoint = 576
   const [windowWidth, setWindowWidth] = useState(breakpoint)
   useEffect(() => {
@@ -11,8 +11,7 @@ const Timeline = () => {
     handleResize()
     window.addEventListener('resize', handleResize)
   })
-  const timelinePosts = TimelineQuery()
-
+  const { timelinePosts } = TimelineQuery(timelineId)
   if(windowWidth < breakpoint) return <VerticalTimeline timelinePosts={timelinePosts} />
 
   return <AlternatingTimeline timelinePosts={timelinePosts} />

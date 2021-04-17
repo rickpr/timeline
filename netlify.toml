@@ -1,11 +1,11 @@
 [[redirects]]
-  from = “https://aheaven.co”
-  to = “https://aheaven.co/adalida”
+  from = "https://aheaven.co"
+  to = "https://aheaven.co/adalida"
   status = 200
   force = true
 
 [[redirects]]
-  from = “https://fdisk.co”
-  to = “https://fdisk.co/ricardo”
+  from = "https://fdisk.co"
+  to = "https://fdisk.co/ricardo"
   status = 200
   force = true

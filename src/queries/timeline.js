@@ -1,10 +1,11 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
-export const TimelineQuery = () => {
-  return useStaticQuery(graphql`
+export const TimelineQuery = timelineId => {
+  const timelines = useStaticQuery(graphql`
     query {
       api {
-        timelines(id: 1) {
+        timelines {
+          id
           name
           timelinePosts {
             id
@@ -18,7 +19,7 @@ export const TimelineQuery = () => {
                 id
                 name
                 description
-                altText
+                altText 
                 imageUrl
               }
             }
@@ -26,7 +27,8 @@ export const TimelineQuery = () => {
         }
       }
     }
-  `).api.timelines[0].timelinePosts
+  `).api.timelines
+  return timelines.find(timeline => timeline.id == timelineId)
 }
 
 export default TimelineQuery

@@ -30,7 +30,7 @@ const AdalidaPage = () => {
       </div>
     </div>
     <div style={{ minHeight: '20em' }}></div>
-    <Timeline />
+    <Timeline timelineId="4" />
   </>
   )
 }
