@@ -19,7 +19,7 @@ const AdalidaPage = () => {
       <div className="row" data-aos="fade-up">
         <div className="col-sm-5 offset-sm-2">
           Welcome, I am Adalida and I am passionate about <Typewriter
-            options={{ strings: ['interaction design', 'information architecture', 'web design'], autoStart: true, loop: true }}
+            options={{ strings: ['interaction design', 'information architecture', 'product design'], autoStart: true, loop: true }}
           />.
         </div>
       </div>

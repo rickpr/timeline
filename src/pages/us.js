@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import MemphisPattern from '../components/memphis_pattern'
 import Timeline from '../components/timeline'
 
-const IndexPage = () => {
+const Us = () => {
   useEffect(() => { AOS.init({ easing: 'ease-out-back', duration: 1000, offset: 600 }) }, [])
   return (
     <Layout>
@@ -17,4 +17,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default Us
