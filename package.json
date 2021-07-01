@@ -26,12 +26,12 @@
     "gatsby-source-graphql": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "jquery": "^3.4.1",
-    "node-sass": "^5.0.0",
     "popper.js": "^2.0.0-next.4",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.0.0-beta.2",
+    "sass": "^1.35.1",
     "typewriter-effect": "^2.17.0"
   },
   "devDependencies": {
