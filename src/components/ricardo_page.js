@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react'
-import AOS from 'aos'
-import Typewriter from 'typewriter-effect';
+import React from 'react'
+import Typewriter from 'typewriter-effect'
 
+import useAOS from '../hooks/useAOS'
 import Crossbar from './timeline/alternating_timeline/crossbar'
 import Timeline from './timeline'
 
 const RicardoPage = () => {
-  useEffect(() => { AOS.init({ easing: 'ease-out-back', duration: 1000, offset: 440 }) }, [])
+  useAOS()
   return (<>
     <div style={{ minHeight: '20em' }}></div>
     <div className="alternating-timeline">
       <div className="row">
-        <Crossbar isFirstRow={true} long={true} />
         <div className="col-sm-5" data-aos="fade-down">
           <div className="adalida-header"><span className="hello">Hello</span>, I am <span className="name">Ricardo</span></div>
         </div>

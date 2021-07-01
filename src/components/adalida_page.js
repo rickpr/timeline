@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
-import AOS from 'aos'
+import React from 'react'
 import Typewriter from 'typewriter-effect';
 
+import useAOS from '../hooks/useAOS'
 import Crossbar from './timeline/alternating_timeline/crossbar'
 import Timeline from './timeline'
 
 const AdalidaPage = () => {
-  useEffect(() => { AOS.init({ easing: 'ease-out-back', duration: 1000, offset: 440 }) }, [])
+  useAOS()
   return (<>
     <div style={{ minHeight: '20em' }}></div>
     <div className="alternating-timeline">
