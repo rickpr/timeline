@@ -16,13 +16,10 @@ const Adalida = () =>
         <MobileHamburger collapsibleId={`navbarSupportedContent`} />
         <div className="navbar-nav row collapse navbar-collapse" id={`navbarSupportedContent`}>
           <div className={`nav-item col-md-4 col-12`}>
-            <h2><Link to="/adalida" className="nav-link">Adalida</Link></h2>
+            <h2><Link to="/adalida" className="nav-link">ADALIDA BACA</Link></h2>
           </div>
-          <div className={`nav-item col-md-3 col-12`}></div>
-          <NavLink href="/adalida" text="Work" width={1} />
-          <NavLink text="About" width={1} />
-          <NavLink text="Resume" width={1} />
-          <NavLink text="Contact" width={1} />
+          <div className={`nav-item col-md-6 col-12`}></div>
+          <NavLink text="ABOUT" width={1} />
         </div>
       </nav>
     </header>

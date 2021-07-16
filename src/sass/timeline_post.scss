@@ -11,13 +11,13 @@
 }
 
 .timeline-description-header {
-    background-color: theme-color('danger');
-    color: theme-color('success');
-    font-family: 'Montserrat';
-    font-size: 2em;
+  background-color: theme-color('danger');
+  color: theme-color('warning');
+  font-family: 'Montserrat';
+  font-size: 2em;
 }
 
 .timeline-description-body {
-    color: theme-color('warning');
-    font-size: 0.75em;
+  color: #000000;
+  font-size: 0.75em;
 }
