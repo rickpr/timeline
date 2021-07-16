@@ -2,14 +2,14 @@ import React from 'react'
 import Typewriter from 'typewriter-effect'
 
 import useAOS from '../hooks/useAOS'
-import Crossbar from './timeline/alternating_timeline/crossbar'
+import Crossbar from './timeline/wide_timeline/crossbar'
 import Timeline from './timeline'
 
 const RicardoPage = () => {
   useAOS()
   return (<>
     <div style={{ minHeight: '20em' }}></div>
-    <div className="alternating-timeline">
+    <div className="wide-timeline">
       <div className="row">
         <div className="col-sm-5" data-aos="fade-down">
           <div className="adalida-header"><span className="hello">Hello</span>, I am <span className="name">Ricardo</span></div>

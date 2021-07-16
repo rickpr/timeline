@@ -2,14 +2,14 @@ import React from 'react'
 import Typewriter from 'typewriter-effect';
 
 import useAOS from '../hooks/useAOS'
-import Crossbar from './timeline/alternating_timeline/crossbar'
+import Crossbar from './timeline/wide_timeline/crossbar'
 import Timeline from './timeline'
 
 const AdalidaPage = () => {
   useAOS()
   return (<>
     <div style={{ minHeight: '20em' }}></div>
-    <div className="alternating-timeline">
+    <div className="wide-timeline">
       <div className="row">
         <Crossbar isFirstRow={true} long={true} />
         <div className="col-sm-5" data-aos="fade-down">

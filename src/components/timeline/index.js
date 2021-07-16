@@ -2,15 +2,17 @@ import React from 'react'
 
 import useIsMobile from '../../hooks/useIsMobile'
 
+import TimelinePost from './timeline_post'
 import TimelineQuery from '../../queries/timeline'
-import AlternatingTimeline from './alternating_timeline'
-import VerticalTimeline from './vertical_timeline'
+import WideTimeline from './wide_timeline'
+import NarrowTimeline from './narrow_timeline'
 
 const Timeline = ({ timelineId }) => {
   const { timelinePosts } = TimelineQuery(timelineId)
-  if(useIsMobile()) return <VerticalTimeline timelinePosts={timelinePosts} />
+  const timelineCards = timelinePosts.map(timelinePost => <TimelinePost {...timelinePost}/>)
+  if(useIsMobile()) return <NarrowTimeline timelinePosts={timelineCards} />
 
-  return <AlternatingTimeline timelinePosts={timelinePosts} />
+  return <WideTimeline timelinePosts={timelineCards} />
 }
 
 export default Timeline

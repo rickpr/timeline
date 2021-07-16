@@ -1,20 +1,17 @@
 import React from 'react'
-import TimelinePost from '../timeline_post'
-import TimelineDescription from '../timeline_description'
 import Crossbar from './crossbar'
 
-const AlternatingTimeline = ({ timelinePosts }) => {
+const WideTimeline = ({ timelinePosts }) => {
   let isFirstRow = true
   const posts = timelinePosts.map(timelinePost => {
     const padRow = row => row
     const topRow = [
       <Crossbar key="crossbar" isFirstRow={isFirstRow} />,
-      <TimelinePost {...timelinePost} key="timeline-post" />,
-      <TimelineDescription {...timelinePost} key="timeline-description" />,
+      timelinePost,
     ]
     isFirstRow = false
     return (
-      <div className="alternating-timeline">
+      <div className="wide-timeline">
         <div className="row" key={`${timelinePost.id}-top`}>
           {padRow(topRow)}
         </div>
@@ -26,4 +23,4 @@ const AlternatingTimeline = ({ timelinePosts }) => {
   return [posts, bottomBar]
 }
 
-export default AlternatingTimeline
+export default WideTimeline

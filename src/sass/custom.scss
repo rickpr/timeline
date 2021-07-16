@@ -8,11 +8,10 @@ $theme-colors: (
 
 @import '~bootstrap/scss/bootstrap';
 @import './adalida_page';
-@import './alternating_timeline';
+@import './wide_timeline';
 @import './centerline';
 @import './header';
 @import './footer';
 @import './memphis_pattern';
 @import './timeline_post';
-@import './timeline_description';
 @import '@fortawesome/fontawesome-svg-core/styles';
