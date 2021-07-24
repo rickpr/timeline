@@ -1,12 +1,10 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import Typewriter from 'typewriter-effect';
 
 import useAOS from '../../hooks/useAOS'
-import useIsMobile from '../../hooks/useIsMobile'
 
-import Footer from './footer'
-import WideTimeline from '../timeline/wide_timeline'
-import NarrowTimeline from '../timeline/narrow_timeline'
+import Timeline from '../timeline/'
 import TimelineDescription from '../timeline/timeline_description'
 
 import meow_wolf_home from './meow_wolf_home.png'
@@ -36,33 +34,35 @@ const AdalidaPage = () => {
       </div>
     </div>
   const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" />
-  const meowWolfImage = <div className="col-sm-5" data-aos="fade-up">{meowWolfHome}</div>
+  const meowWolfImage = <div className="col-sm-6" data-aos="fade-up">{meowWolfHome}</div>
+  const caseStudyDescription = <Link to="projects">View case study</Link>
   const caseStudy =
-    <>
-      <div className="col-sm-5" data-aos="fade-up">
+    <div class="row">
+      <div className="col-sm-6" data-aos="fade-up">
         {meowWolfHome}
       </div>
-      <TimelineDescription title="Meow Wolf" description="View case study" />
-    </>
+      <div className="col-sm-6" data-aos="fade-up">
+        <TimelineDescription title="Meow Wolf" description={caseStudyDescription}/>
+      </div>
+    </div>
 
   const donorPage =
-    <>
-      <div className="col-sm-5" data-aos="fade-up">
+    <div class="row">
+      <div className="col-sm-6" data-aos="fade-up">
         <img src={donor_page} alt="Donor App"/>
       </div>
-      <TimelineDescription title="Donor App" description="This is a time capsule of my design journey" />
-    </>
+      <div className="col-sm-6" data-aos="fade-up">
+        <TimelineDescription title="Donor App" description="This is a time capsule of my design journey" />
+      </div>
+    </div>
 
   const timelinePosts = [aboutMe, meowWolfImage, caseStudy, donorPage]
-
-  const timeline = useIsMobile() ? <NarrowTimeline timelinePosts={timelinePosts} /> : <WideTimeline timelinePosts={timelinePosts} />
 
   return (
     <>
       {spacer}
-      {timeline}
+      <Timeline timelinePosts={timelinePosts} />
       {spacer}
-      <Footer />
     </>
   )
 }

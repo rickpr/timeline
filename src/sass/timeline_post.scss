@@ -3,7 +3,7 @@
   box-shadow: 15px 15px 0px 0 #000;
   margin-bottom: 12em;
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata');
 .timeline-description {
   border-top: 0px;
   margin: 9em -0.5em;
@@ -13,7 +13,7 @@
 .timeline-description-header {
   background-color: theme-color('danger');
   color: theme-color('warning');
-  font-family: 'Montserrat';
+  font-family: 'Inconsolata';
   font-size: 2em;
 }
 

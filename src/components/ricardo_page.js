@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect'
 
 import useAOS from '../hooks/useAOS'
 import Crossbar from './timeline/wide_timeline/crossbar'
-import Timeline from './timeline'
+import RemoteTimeline from './timeline/remote_timeline'
 
 const RicardoPage = () => {
   useAOS()
@@ -29,7 +29,7 @@ const RicardoPage = () => {
       </div>
     </div>
     <div style={{ minHeight: '20em' }}></div>
-    <Timeline timelineId="1" />
+    <RemoteTimeline timelineId="1" />
   </>
   )
 }
