@@ -12,8 +12,7 @@ const TimelineDescription = ({ description, title }) => {
 
   return (
     <div className="card timeline-description">
-      <div style={{border: '5px solid black', position: 'absolute', top: '15px', left: '15px', zIndex: -1, width: '100%', height: '100%'}}>
-      </div>
+      <div className="timeline-description-border"></div>
       {title && cardHeader}
       {description && cardBody}
     </div>

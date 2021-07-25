@@ -9,6 +9,7 @@ import TimelineDescription from '../../timeline/timeline_description'
 import meow_wolf_home from '../meow_wolf_home.png'
 import donor_page from '../donor_page.png'
 import down_arrow from './down_arrow.svg'
+import wireframe from './wireframe.png'
 
 const ProjectsPage = () => {
   useAOS()
@@ -72,30 +73,126 @@ const ProjectsPage = () => {
     <>
       <h1 id="about-the-project">ABOUT THE PROJECT</h1>
       <h1 className="text-primary">Interactive Non-Linear Art Exhibit</h1>
-      <div>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        Where does it come from?
-        Contrary to popular belief, Lorem Ipsum is not simply random
+      <div class="row">
+        <div class="col-sm-8">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          Where does it come from?
+          Contrary to popular belief, Lorem Ipsum is not simply random
+        </div>
+        <div class="col-sm-4" style={{marginTop: '-9em'}}>
+          <TimelineDescription description={projectInfo} style={{marginTop: 0}}/>
+        </div>
       </div>
-      <TimelineDescription description={projectInfo}/>
     </>
 
-  const donorPage =
-    <>
-      <div className="col-sm-5" data-aos="fade-up">
-        <img src={donor_page} alt="Donor App"/>
+  const phonePictures =
+    <div className="row">
+      <div className="col-sm-4" data-aos="fade-up" key="firstMeowWolfImage">
+        {meowWolfHome}
       </div>
-      <TimelineDescription title="Donor App" description="This is a time capsule of my design journey" />
+      <div className="col-sm-4" data-aos="fade-up" key="secondMeowWolfImage">
+        {meowWolfHome}
+      </div>
+      <div className="col-sm-4" data-aos="fade-up" key="thirdMeowWolfImage">
+        {meowWolfHome}
+      </div>
+    </div>
+
+  const galleryRow = key =>
+  <div className="row" key={key}>
+    {Array.from({length: 4}, (_, index) =>
+      <div className="col-sm-3" key={index}>
+        <div className="container" style={{backgroundColor: '#CCCCCC', minHeight: '9em'}} key={index}></div>
+      </div>
+    )}
+  </div>
+
+  const research =
+    <>
+      <h1>01. RESEARCH</h1>
+      <h1 className="text-primary">Conducting Interviews</h1>
+      <div className="row" key="description">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.
+      </div>
+      {galleryRow('top')}
+      <div style={{minHeight: '1em'}}></div>
+      {galleryRow('bottom')}
+    </>
+
+  const insightsAndSolutions =
+    <>
+      <h1>02. INSIGHTS &amp; SOLUTIONS</h1>
+      <h1 className="text-primary">Information Architecture</h1>
+      <div className="row" key="description">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.
+      </div>
+      <div style={{backgroundColor: '#CCCCCC', minHeight: '9em'}} key="grayBox"></div>
+      <div className="row" key="top">
+        <div className="col-sm-5">
+          <TimelineDescription description={<h3 className="text-primary">Before:</h3>} style={{marginTop: 0}}/>
+        </div>
+        <div className="col-sm-5 offset-sm-2">
+          <TimelineDescription description={<h3 className="text-primary">After:</h3>} style={{marginTop: 0}}/>
+        </div>
+      </div>
+      <div className="row" key="bottom">
+        <div className="col-sm-5">
+          <TimelineDescription description={<h3 className="text-primary">Before:</h3>} style={{marginTop: 0}}/>
+        </div>
+        <div className="col-sm-5 offset-sm-2">
+          <TimelineDescription description={<h3 className="text-primary">After:</h3>} style={{marginTop: 0}}/>
+        </div>
+      </div>
+      <img src={wireframe} alt="Meow Wolf Wireframe" />
+      <div style={{minHeight: '5em'}} key="spacer"></div>
+      <div className="row" key="wireframe-description">
+        Developing my information architecture also helped solve another user problem, which was navigating between
+        locations. This allowed for a content driven navigation instead of a flat navigation.
+      </div>
+    </>
+
+  const visualIdentity =
+    <>
+      <h1>03. VISUAL IDENTITY</h1>
+      <h1 className="text-primary">Conducting Interviews</h1>
+      <div className="row" key="description">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.
+      </div>
+      <div className="row" key="before">
+        <div className="col-sm-4">
+          <h3 className="text-primary">Before:</h3>
+        </div>
+      </div>
+      {galleryRow('gallery')}
+      <div className="row" key="typography">
+        <div className="col-sm-4">
+          <h3 key="typography"><strong>Typography</strong></h3>
+          <h3 key="abcde">AaBbCcDdEe</h3>
+        </div>
+        <div className="col-sm-4 offset-sm-4">
+          <h3 key="nothing"><br /></h3>
+          <h3 key="abcde">AaBbCcDdEe</h3>
+        </div>
+      </div>
     </>
 
   return (
     <>
       {spacer}
-      <div style={{backgroundColor: '#000000'}}>
+      <div style={{backgroundColor: '#000000'}} key="top">
         <Timeline timelinePosts={[meowWolf]} />
       </div>
-      <Timeline timelinePosts={[aboutProject, donorPage]} />
-      {spacer}
+      <Timeline
+        timelinePosts={[aboutProject, phonePictures, research, insightsAndSolutions, visualIdentity]}
+        connected
+      />
+      <div style={{minHeight: '5em'}} key="spacer"></div>
     </>
   )
 }

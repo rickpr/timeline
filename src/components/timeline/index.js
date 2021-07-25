@@ -5,7 +5,11 @@ import useIsMobile from '../../hooks/useIsMobile'
 import WideTimeline from './wide_timeline'
 import NarrowTimeline from './narrow_timeline'
 
-const Timeline = ({ timelinePosts }) =>
-  useIsMobile() ? <NarrowTimeline timelinePosts={timelinePosts} /> : <WideTimeline timelinePosts={timelinePosts} />
+const Timeline = ({ timelinePosts, connected }) => {
+  if(useIsMobile())
+    return <NarrowTimeline timelinePosts={timelinePosts} connected={connected} />
+
+  return <WideTimeline timelinePosts={timelinePosts} connected={connected} />
+}
 
 export default Timeline
