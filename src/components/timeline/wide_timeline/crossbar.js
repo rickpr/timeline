@@ -1,10 +1,8 @@
 import React from 'react'
 
-const Crossbar = ({connectTop, long}) =>
-  <>
-    <div className={`centerline-crossbar ${connectTop && `connect-top`}`}></div>
+const Crossbar = () =>
+  <div className="centerline-line">
     <div className="centerline-circle"></div>
-    <div className={`centerline-line ${long && `long`}`}></div>
-  </>
+  </div>
 
 export default Crossbar

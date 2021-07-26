@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 import Typewriter from 'typewriter-effect';
 
-import useAOS from '../../hooks/useAOS'
+import useAnimateOnScroll from '../../hooks/use_animate_on_scroll'
 
 import Timeline from '../timeline/'
 import TimelineDescription from '../timeline/timeline_description'
@@ -11,7 +11,7 @@ import meow_wolf_home from './meow_wolf_home.png'
 import donor_page from './donor_page.png'
 
 const AdalidaPage = () => {
-  useAOS()
+  useAnimateOnScroll()
   const spacer = <div style={{minHeight: '5em'}}></div>
   const aboutMe =
     <div>

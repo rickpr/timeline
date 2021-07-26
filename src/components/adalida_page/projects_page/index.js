@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
-import useAOS from '../../../hooks/useAOS'
+import useAnimateOnScroll from '../../../hooks/use_animate_on_scroll'
 
 import Timeline from '../../timeline'
 import TimelineDescription from '../../timeline/timeline_description'
@@ -12,13 +12,14 @@ import down_arrow from './down_arrow.svg'
 import wireframe from './wireframe.png'
 
 const ProjectsPage = () => {
-  useAOS()
-  const scrollToAbout = () => document.getElementById('about-the-project').scrollIntoView({behavior: 'smooth'})
+  useAnimateOnScroll()
+  const aboutRef = useRef(null)
+  const scrollToAbout = () => aboutRef.current.scrollIntoView({behavior: 'smooth'})
 
   useEffect(() => {
     let lastScrollWindowTop = 0
     const scrollFullPage = event => {
-      const topOfAboutSection = document.getElementById('about-the-project').getBoundingClientRect().top
+      const topOfAboutSection = aboutRef.current.getBoundingClientRect().top
       const topOfWindow = window.pageYOffset || document.documentElement.scrollTop
       const scrollingDown = topOfWindow > lastScrollWindowTop
       lastScrollWindowTop = Math.max(0, topOfWindow)
@@ -27,11 +28,10 @@ const ProjectsPage = () => {
     window.addEventListener('scroll', scrollFullPage)
     return () => window.removeEventListener('scroll', scrollFullPage)
   }, [])
-  const spacer = <div style={{minHeight: '5em', backgroundColor: '#000000'}}></div>
-  const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" />
+  const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" style={{maxHeight: window.innerHeight * 0.8}} />
 
   const meowWolf =
-    <div className="row" style={{display: 'flex', alignItems: 'center'}} >
+    <div className="row" style={{display: 'flex', alignItems: 'center', minHeight: window.innerHeight}}>
       <div
         className="col-sm-4"
         data-aos="fade-down"
@@ -39,7 +39,6 @@ const ProjectsPage = () => {
         style={{display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', gridTemplateRows: 'auto'}}
       >
         <div className="header meow-wolf">Meow Wolf</div>
-        <div style={{height: '10em', backgroundColor: '#000000'}} key="spacer"></div>
         <img src={down_arrow} alt="Down arrow" onClick={scrollToAbout}/>
       </div>
       <div className="col-sm-4" data-aos="fade-up" key="firstMeowWolfImage">
@@ -50,43 +49,42 @@ const ProjectsPage = () => {
       </div>
     </div>
 
-  const projectInfo =
-    <>
-      <h3 className="text-primary">ROLE</h3>
-      <ul>
+  const projectInfo = <>
+      <h3 className="text-primary" key="client-header">ROLE</h3>
+      <ul className="large-text" key="client">
         <li>User Experience</li>
         <li>Visual Design</li>
         <li>Prototyping</li>
         <li>User Testing</li>
         <li>Interaction Design</li>
       </ul>
-      <h3 className="text-primary">Client</h3>
-      <ul>
+      <h3 className="text-primary" key="role-header">Client</h3>
+      <ul className="large-text" key="role">
         <li>Meow Wolf</li>
       </ul>
-      <h3 className="text-primary">Date:</h3>
-      <ul>
+      <h3 className="text-primary" key="date-header">Date:</h3>
+      <ul className="large-text" key="date">
         <li>May 2020 - June 2020</li>
       </ul>
     </>
   const aboutProject =
-    <>
-      <h1 id="about-the-project">ABOUT THE PROJECT</h1>
+    <div style={{minHeight: window.innerHeight}}>
+      <h1 ref={aboutRef}>ABOUT THE PROJECT</h1>
       <h1 className="text-primary">Interactive Non-Linear Art Exhibit</h1>
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-8 large-text">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           Where does it come from?
           Contrary to popular belief, Lorem Ipsum is not simply random
         </div>
         <div class="col-sm-4" style={{marginTop: '-9em'}}>
-          <TimelineDescription description={projectInfo} style={{marginTop: 0}}/>
+          <TimelineDescription description={projectInfo} />
         </div>
       </div>
-    </>
+    </div>
 
   const phonePictures =
-    <div className="row">
+    <div className="row" style={{minHeight: window.innerHeight}}>
       <div className="col-sm-4" data-aos="fade-up" key="firstMeowWolfImage">
         {meowWolfHome}
       </div>
@@ -108,7 +106,7 @@ const ProjectsPage = () => {
   </div>
 
   const research =
-    <>
+    <div style={{minHeight: window.innerHeight}}>
       <h1>01. RESEARCH</h1>
       <h1 className="text-primary">Conducting Interviews</h1>
       <div className="row" key="description">
@@ -119,10 +117,10 @@ const ProjectsPage = () => {
       {galleryRow('top')}
       <div style={{minHeight: '1em'}}></div>
       {galleryRow('bottom')}
-    </>
+    </div>
 
   const insightsAndSolutions =
-    <>
+    <div style={{minHeight: window.innerHeight}}>
       <h1>02. INSIGHTS &amp; SOLUTIONS</h1>
       <h1 className="text-primary">Information Architecture</h1>
       <div className="row" key="description">
@@ -148,15 +146,14 @@ const ProjectsPage = () => {
         </div>
       </div>
       <img src={wireframe} alt="Meow Wolf Wireframe" />
-      <div style={{minHeight: '5em'}} key="spacer"></div>
       <div className="row" key="wireframe-description">
         Developing my information architecture also helped solve another user problem, which was navigating between
         locations. This allowed for a content driven navigation instead of a flat navigation.
       </div>
-    </>
+    </div>
 
   const visualIdentity =
-    <>
+    <div style={{minHeight: window.innerHeight}}>
       <h1>03. VISUAL IDENTITY</h1>
       <h1 className="text-primary">Conducting Interviews</h1>
       <div className="row" key="description">
@@ -180,14 +177,14 @@ const ProjectsPage = () => {
           <h3 key="abcde">AaBbCcDdEe</h3>
         </div>
       </div>
-    </>
+    </div>
 
   return (
     <>
-      {spacer}
       <div style={{backgroundColor: '#000000'}} key="top">
         <Timeline timelinePosts={[meowWolf]} />
       </div>
+      <div style={{borderLeft: '5px solid', minHeight: '5em', marginLeft: '6em', borderColor: '#39ff14'}} key="line"></div>
       <Timeline
         timelinePosts={[aboutProject, phonePictures, research, insightsAndSolutions, visualIdentity]}
         connected

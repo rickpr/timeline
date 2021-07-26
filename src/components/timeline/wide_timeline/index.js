@@ -1,18 +1,17 @@
 import React from 'react'
 import Crossbar from './crossbar'
 
-const WideTimeline = ({ timelinePosts, connected }) =>
-  timelinePosts.map((timelinePost, index) =>
-    <div className="wide-timeline" key={`${timelinePost.id}-${index}-top`}>
-      <div className="row">
-        <div className="col-sm-2" data-aos="fade-up">
-          <Crossbar key="crossbar" connectTop={index > 0 || connected} />
-        </div>
-        <div className="col-sm-10">
-          {timelinePost}
-        </div>
+const WideTimeline = ({ timelinePosts, dark }) => {
+  return timelinePosts.map((timelinePost, index) =>
+    <div className="wide-timeline-row" key={`${timelinePost.id}-${index}-top`}>
+      <div key="crossbar" data-aos="fade-up">
+        <Crossbar />
+      </div>
+      <div key="timeline-post" style={{marginTop: '-10px', marginBottom: '5em'}}>
+        {timelinePost}
       </div>
     </div>
   )
+}
 
 export default WideTimeline

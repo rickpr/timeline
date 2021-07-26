@@ -6,39 +6,16 @@
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  margin-left: 50%;
-  margin-top: -0.75em;
-  position: absolute;
-}
-
-.centerline-crossbar {
-  height: 50%;
-  width: 60%;
-  z-index: -1;
-  border-bottom: 5px solid;
-  &.connect-top {
-    border-left: 5px solid;
-  }
+  position: relative;
+  left: 100%;
+  top: -12.5px;
 }
 
 .centerline-line {
-  height: 30em;
-  &.long {
-    height: 50em;
-  }
+  border-color: theme-color('success') !important;
+  height: 100%;
   border-left: 5px solid;
-  position: absolute;
-}
-
-.centerline-heart {
-  margin: -0.5em auto;
-  display: flex;
-  justify-content: center;
-  color: theme-color('success');
-  font-size: 5em;
-  -webkit-text-stroke: theme-color('warning') thin;
-  position: relative;
-  z-index: 1;
+  border-top: 5px solid;
 }
 
 .vertical-centerline {
