@@ -1,8 +1,8 @@
 import { Link } from 'gatsby'
 import React from 'react';
 
-const Footer = () =>
-  <footer>
+const Footer = ({backgroundColor}) =>
+  <footer style={{backgroundColor: backgroundColor || '#FFFFFF', minHeight: '4vh'}}>
     <nav className="navbar-custom">
       <div className="row footer-nav">
         <div className="col-sm-4 col-12">

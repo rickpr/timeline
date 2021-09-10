@@ -1,6 +1,6 @@
 .centerline-circle {
   border-width: 0.1em;
-  border-color: #000000;
+  border-color: theme-color('success');
   background-color: #FFFFFF;
   border-style: solid;
   border-radius: 50%;
@@ -10,6 +10,10 @@
   left: 100%;
   top: -12.5px;
 }
+// TODO: make this within centerline-circle not !important
+.green {
+    background-color: theme-color('success') !important;
+  }
 
 .centerline-line {
   border-color: theme-color('success') !important;

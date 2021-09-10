@@ -32,7 +32,7 @@ const ProjectsPage = () => {
   const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" style={{maxHeight: innerHeight() * 0.8}} />
 
   const meowWolf =
-    <div className="row" style={{display: 'flex', alignItems: 'center', minHeight: innerHeight()}}>
+    <div className="row" style={{display: 'flex', alignItems: 'center', justifyContent: 'top', minHeight: innerHeight(), marginTop: '-5em'}}>
       <div
         className="col-sm-4"
         data-aos="fade-down"
@@ -69,14 +69,15 @@ const ProjectsPage = () => {
       </ul>
     </>
   const aboutProject =
-    <div style={{minHeight: innerHeight()}}>
+    <div style={{marginTop: '13em'}}>
       <h1 ref={aboutRef}>ABOUT THE PROJECT</h1>
       <h1 className="text-primary">Interactive Non-Linear Art Exhibit</h1>
       <div class="row">
         <div class="col-sm-8 large-text">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          Where does it come from?
-          Contrary to popular belief, Lorem Ipsum is not simply random
+          Meow Wolf is an interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado where
+          they host day and event vists. My goal for this project was to create an enjoyable user experience when
+          purchasing tickets, checking in for an event, and siging up for an account. This project was my first user
+          experience project and any content from this app is fictional.
         </div>
         <div class="col-sm-4" style={{marginTop: '-9em'}}>
           <TimelineDescription description={projectInfo} />
@@ -85,7 +86,8 @@ const ProjectsPage = () => {
     </div>
 
   const phonePictures =
-    <div className="row" style={{minHeight: innerHeight()}}>
+    <div className="row" style={{
+      marginTop: '13em'}}>
       <div className="col-sm-4" data-aos="fade-up" key="firstMeowWolfImage">
         {meowWolfHome}
       </div>
@@ -107,75 +109,172 @@ const ProjectsPage = () => {
   </div>
 
   const research =
-    <div style={{minHeight: innerHeight()}}>
-      <h1>01. RESEARCH</h1>
+    <div style={{marginTop: '13em'}}>
+      <h1>1. RESEARCH</h1>
       <h1 className="text-primary">Conducting Interviews</h1>
       <div className="row" key="description">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
+        <div className="col-12">
+          This was my first time conducting interviews for a UX design project so I started learning more about
+          interviewing. I read material on how to preapre, conduct, and report on interviews and usability studies.
+        </div>
       </div>
+      <div style={{minHeight: '2em'}} key="spacer-before-gallery"></div>
       {galleryRow('top')}
-      <div style={{minHeight: '1em'}}></div>
+      <div style={{minHeight: '2em'}} key="spacer-within-gallery"></div>
       {galleryRow('bottom')}
+      <div className="row" key="finding-creatives">
+        <div className="col-6" key="heading">
+          <h1>01 - Finding Creatives</h1>
+        </div>
+        <div className="col-6" key="description">
+          Meow Wolf is an interactive non-linear art museum with locations in New Mexico, Nevada, and Colorado where
+          they host day and event vists. My goal for this project was to create an enjoyable user experience when
+          purchasing tickets, checking in for an event, and siging up for an account. This project was my first user
+          experience project and any content from this app is fictional.
+        </div>
+      </div>
+      <div className="row" key="interviewing">
+        <div className="col-6" key="heading">
+          <h1>02 - Interviewing</h1>
+        </div>
+        <div className="col-6" key="description">
+          Meow Wolf is an interactive non-linear art museum with locations in New Mexico, Nevada, and Colorado where
+          they host day and event vists. My goal for this project was to create an enjoyable user experience when
+          purchasing tickets, checking in for an event, and siging up for an account. This project was my first user
+          experience project and any content from this app is fictional.
+        </div>
+      </div>
+      <div style={{minHeight: '2em'}} key="spacer-before-box"></div>
+      <div className="row" key="gray-box" style={{backgroundColor: '#CCCCCC', minHeight: '18em'}} />
+      <div style={{minHeight: '2em'}} key="spacer-after-box"></div>
+      <div className="row" key="transcripting">
+        <div className="col-6" key="heading">
+          <h1>03 - Transcripting</h1>
+        </div>
+        <div className="col-6" key="description">
+          Meow Wolf is an interactive non-linear art museum with locations in New Mexico, Nevada, and Colorado where
+          they host day and event vists. My goal for this project was to create an enjoyable user experience when
+          purchasing tickets, checking in for an event, and siging up for an account. This project was my first user
+          experience project and any content from this app is fictional.
+        </div>
+      </div>
+      <div className="row" key="rewriting">
+        <div className="col-6" key="heading">
+          <h1>04 - Rewriting and Gathering Insights</h1>
+        </div>
+        <div className="col-6" key="description">
+          Meow Wolf is an interactive non-linear art museum with locations in New Mexico, Nevada, and Colorado where
+          they host day and event vists. My goal for this project was to create an enjoyable user experience when
+          purchasing tickets, checking in for an event, and siging up for an account. This project was my first user
+          experience project and any content from this app is fictional.
+        </div>
+      </div>
     </div>
 
   const insightsAndSolutions =
-    <div style={{minHeight: innerHeight()}}>
-      <h1>02. INSIGHTS &amp; SOLUTIONS</h1>
+    <div style={{marginTop: '13em'}}>
+      <h1>2. INSIGHTS</h1>
       <h1 className="text-primary">Information Architecture</h1>
       <div className="row" key="description">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
-      </div>
-      <div style={{backgroundColor: '#CCCCCC', minHeight: '9em'}} key="grayBox"></div>
-      <div className="row" key="top">
-        <div className="col-sm-5">
-          <TimelineDescription description={<h3 className="text-primary">Before:</h3>} style={{marginTop: 0}}/>
-        </div>
-        <div className="col-sm-5 offset-sm-2">
-          <TimelineDescription description={<h3 className="text-primary">After:</h3>} style={{marginTop: 0}}/>
+        <div className="col-12">
+          After conducting usability studies for my wireframes, it was clear my information architecutre was not well
+          defined. I was able to use this feedback, iterate, and design a more suitable architecture.
         </div>
       </div>
-      <div className="row" key="bottom">
-        <div className="col-sm-5">
-          <TimelineDescription description={<h3 className="text-primary">Before:</h3>} style={{marginTop: 0}}/>
+      <div style={{minHeight: '2em'}} key="spacer-before-gallery"></div>
+      {galleryRow('insights')}
+      <div style={{minHeight: '2em'}} key="spacer-after-gallery"></div>
+      <div className="row" key="before">
+        <div className="col-6" key="heading">
+          <h1>Before Architecture</h1>
         </div>
-        <div className="col-sm-5 offset-sm-2">
-          <TimelineDescription description={<h3 className="text-primary">After:</h3>} style={{marginTop: 0}}/>
+        <div className="col-6" key="description">
+          Before focusing on the information architecture, it was clear that the app was focusing on the wrong needs.
+          It was focusing on the path to purchase a ticket, not the user’s path, nor the business need.
         </div>
       </div>
-      <img src={wireframe} alt="Meow Wolf Wireframe" />
-      <div className="row" key="wireframe-description">
-        Developing my information architecture also helped solve another user problem, which was navigating between
-        locations. This allowed for a content driven navigation instead of a flat navigation.
+      <div style={{minHeight: '2em'}} key="spacer-between-architecture"></div>
+      <div className="row" key="after">
+        <div className="col-6" key="heading">
+          <h1>After Architecture</h1>
+        </div>
+        <div className="col-6" key="description">
+          After improving my designs based off my research, it was clear that a week information architucture was the
+          source of many of my user’s pain points.
+        </div>
       </div>
     </div>
 
   const visualIdentity =
-    <div style={{minHeight: innerHeight()}}>
-      <h1>03. VISUAL IDENTITY</h1>
-      <h1 className="text-primary">Conducting Interviews</h1>
+    <div style={{marginTop: '13em'}}>
+      <h1>3. Design</h1>
+      <h1 className="text-primary">Visual Identity</h1>
       <div className="row" key="description">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
+        Meow Wolf already has a great design system. This shifted my focus to brand consistency and implementation.
       </div>
-      <div className="row" key="before">
-        <div className="col-sm-4">
-          <h3 className="text-primary">Before:</h3>
+      <div className="row" key="color-palette">
+        <div className="col-12" key="heading">
+          <h1>01 - Color Palette</h1>
         </div>
       </div>
-      {galleryRow('gallery')}
+      <div className="row" key="palette">
+        <div className="col-sm-3" key="pink">
+          <div className="container" style={{backgroundColor: '#EF5DA8', minHeight: '9em'}}></div>
+        </div>
+        <div className="col-sm-3" key="gray-1">
+          <div className="container" style={{backgroundColor: '#CCCCCC', minHeight: '9em'}}></div>
+        </div>
+        <div className="col-sm-3" key="gray-2">
+          <div className="container" style={{backgroundColor: '#CCCCCC', minHeight: '9em'}}></div>
+        </div>
+        <div className="col-sm-3" key="gray-3">
+          <div className="container" style={{backgroundColor: '#CCCCCC', minHeight: '9em'}}></div>
+        </div>
+      </div>
       <div className="row" key="typography">
-        <div className="col-sm-4">
-          <h3 key="typography"><strong>Typography</strong></h3>
-          <h3 key="abcde">AaBbCcDdEe</h3>
+        <div className="col-6" key="heading">
+          <h1>02 - Typography</h1>
         </div>
-        <div className="col-sm-4 offset-sm-4">
-          <h3 key="nothing"><br /></h3>
-          <h3 key="abcde">AaBbCcDdEe</h3>
+        <div className="col-6" key="description">
+          Meow Wolf is an interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado where
+          they host day and event vists. My goal for this project was to create an enjoyable user experience when
+          purchasing tickets, checking in for an event, and siging up for an account. This project was my first user
+          experience project and any content from this app is fictional.
+        </div>
+      </div>
+    </div>
+
+  const conclusion =
+    <div style={{marginTop: '13em'}}>
+      <h1>4. Conclusion</h1>
+      <h1 className="text-primary">What I learned</h1>
+      <div className="row" key="research">
+        <div className="col-6" key="heading">
+          <h1>01 - Research</h1>
+        </div>
+        <div className="col-6" key="description">
+          Becuase this was my first full UX project, I had very little knowledge and experience conducting
+          interviews and building empathy before desiging a product. After, I learned how vital this step is in
+          determining the success or failure of your design.
+        </div>
+      </div>
+      <div className="row" key="information-architecture">
+        <div className="col-6" key="heading">
+          <h1>02 - Research</h1>
+        </div>
+        <div className="col-6" key="description">
+          Having a good information architecture will save you and your user’s time and stress. When I first started
+          desiging, I designed from my head to my paper, which resulted in a lot of unused and unncessary desiging and
+          some very frustrated users. After developing my architecture, it was easier and more flexable to design.
+        </div>
+      </div>
+      <div className="row" key="figma">
+        <div className="col-6" key="heading">
+          <h1>03 - Figma</h1>
+        </div>
+        <div className="col-6" key="description">
+          This was my first project using Figma and I really enjoyed learning the software. The abundant supply of
+          tutorials, articles, and forums made it easy and fun to learn.
         </div>
       </div>
     </div>
@@ -183,14 +282,14 @@ const ProjectsPage = () => {
   return (
     <>
       <div style={{backgroundColor: '#000000'}} key="top">
-        <Timeline timelinePosts={[meowWolf]} />
+        {meowWolf}
       </div>
-      <div style={{borderLeft: '5px solid', minHeight: '5em', marginLeft: '6em', borderColor: '#39ff14'}} key="line"></div>
+      <div style={{borderLeft: '5px solid', minHeight: '18.5em', marginLeft: '5%', borderColor: '#39ff14', position: 'absolute'}} key="line"></div>
       <Timeline
         timelinePosts={[aboutProject, phonePictures, research, insightsAndSolutions, visualIdentity]}
         connected
       />
-      <div style={{minHeight: '5em'}} key="spacer"></div>
+      <div style={{minHeight: '13.5em'}} key="spacer" />
     </>
   )
 }

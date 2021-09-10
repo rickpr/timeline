@@ -9,8 +9,7 @@ const Header = () =>
   <>
     <div style={{minHeight: '2em'}}></div>
     <header>
-      <div style={{ border: '5px solid black', position: 'absolute', top: '15px', right: '15px', left: '15px', zIndex: -1, height: '2em' }}>
-      </div>
+      <div className="adalida-navbar" />
       <nav className="navbar navbar-expand-lg navbar-light navbar-custom">
         <MobileHamburger collapsibleId={`navbarSupportedContent`} />
         <div className="navbar-nav row collapse navbar-collapse" id={`navbarSupportedContent`}>

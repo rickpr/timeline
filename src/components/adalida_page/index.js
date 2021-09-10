@@ -1,5 +1,5 @@
-import { Link } from 'gatsby'
-import React from 'react'
+import { Link, navigate } from 'gatsby'
+import React, { useEffect } from 'react'
 import Typewriter from 'typewriter-effect';
 
 import useAnimateOnScroll from '../../hooks/use_animate_on_scroll'
@@ -8,61 +8,47 @@ import Timeline from '../timeline/'
 import TimelineDescription from '../timeline/timeline_description'
 
 import meow_wolf_home from './meow_wolf_home.png'
+import meow_wolf from './meow_wolf.png'
+import face from './face.png'
 import donor_page from './donor_page.png'
 
 const AdalidaPage = () => {
-  useAnimateOnScroll()
-  const spacer = <div style={{minHeight: '5em'}}></div>
-  const aboutMe =
-    <div>
-      <div className="row">
-        <div data-aos="fade-down">
-          <div className="adalida-header"><span className="hello">Hello</span>, I am <span className="name">Adalida</span></div>
-        </div>
-      </div>
-      <div className="row" data-aos="fade-up">
-        <div>
-          Welcome, I am Adalida and I am passionate about <Typewriter
-            options={{ strings: ['interaction design', 'information architecture', 'product design'], autoStart: true, loop: true }}
-          />.
-        </div>
-      </div>
-      <div className="row" data-aos="fade-up">
-        <div>
-          Currently, I am working as a UX Designer in training.
-        </div>
-      </div>
-    </div>
-  const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" />
-  const meowWolfImage = <div className="col-sm-6" data-aos="fade-up">{meowWolfHome}</div>
-  const caseStudyDescription = <Link to="projects">View case study</Link>
-  const caseStudy =
-    <div class="row">
-      <div className="col-sm-6" data-aos="fade-up">
-        {meowWolfHome}
-      </div>
-      <div className="col-sm-6" data-aos="fade-up">
-        <TimelineDescription title="Meow Wolf" description={caseStudyDescription}/>
-      </div>
-    </div>
+  useEffect(() => {
+    setTimeout(() => navigate('/adalida/apps/'), 5000)
+  }, [])
 
-  const donorPage =
-    <div class="row">
-      <div className="col-sm-6" data-aos="fade-up">
-        <img src={donor_page} alt="Donor App"/>
-      </div>
-      <div className="col-sm-6" data-aos="fade-up">
-        <TimelineDescription title="Donor App" description="This is a time capsule of my design journey" />
-      </div>
+  const phones =
+    <div className="phones">
+      <img src={meow_wolf} alt="Meow Wolf Homepage" key="meow_wolf" />
+      <img src={face} alt="Face Recognition" key="face" />
+      <img src={face} alt="Face Recognition" key="face2" />
     </div>
-
-  const timelinePosts = [aboutMe, meowWolfImage, caseStudy, donorPage]
 
   return (
     <>
-      {spacer}
-      <Timeline timelinePosts={timelinePosts} />
-      {spacer}
+      <div className="dark spacer" />
+      <div className="dark">
+        <div className="dark top-border" />
+        <div className="dark spacer" />
+        <div className="dark spacer" />
+        <div className="dark spacer" />
+        <div className="adalida-header">
+          <div className="huge primary">
+            ADALIDA
+          </div>
+          <div className="huge white">
+            BACA
+          </div>
+          <div className="dark spacer" />
+          <div className="big white">
+            UX Designer
+          </div>
+        </div>
+        {phones}
+        <div className="dark spacer" />
+        <div className="dark bottom-border" />
+        <div className="dark right-border" />
+      </div>
     </>
   )
 }
