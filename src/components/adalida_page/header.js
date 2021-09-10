@@ -1,12 +1,11 @@
+
 import React from 'react'
 import { Link } from 'gatsby'
-import '../sass/custom.scss'
 
-import NavLink from '../components/header/nav_link'
-import MobileHamburger from '../components/header/mobile_hamburger'
-import AdalidaPage from '../components/adalida_page'
+import NavLink from '../../components/header/nav_link'
+import MobileHamburger from '../../components/header/mobile_hamburger'
 
-const Adalida = () =>
+const Header = () =>
   <>
     <div style={{minHeight: '2em'}}></div>
     <header>
@@ -19,11 +18,10 @@ const Adalida = () =>
             <h2><Link to="/adalida" className="nav-link">ADALIDA BACA</Link></h2>
           </div>
           <div className={`nav-item col-md-6 col-12`}></div>
-          <NavLink text="ABOUT" width={1} />
+          <NavLink href="/adalida" text="ABOUT" width={1} />
         </div>
       </nav>
     </header>
-    <AdalidaPage />
   </>
 
-export default Adalida
+export default Header

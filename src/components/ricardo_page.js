@@ -1,12 +1,12 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect'
 
-import useAOS from '../hooks/useAOS'
+import useAnimateOnScroll from '../hooks/use_animate_on_scroll'
 import Crossbar from './timeline/wide_timeline/crossbar'
-import Timeline from './timeline'
+import RemoteTimeline from './timeline/remote_timeline'
 
 const RicardoPage = () => {
-  useAOS()
+  useAnimateOnScroll()
   return (<>
     <div style={{ minHeight: '20em' }}></div>
     <div className="wide-timeline">
@@ -29,7 +29,7 @@ const RicardoPage = () => {
       </div>
     </div>
     <div style={{ minHeight: '20em' }}></div>
-    <Timeline timelineId="1" />
+    <RemoteTimeline timelineId="1" />
   </>
   )
 }

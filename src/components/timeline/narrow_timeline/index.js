@@ -1,12 +1,14 @@
 import React from 'react'
 import Centerline from './centerline'
+
 const NarrowTimeline = ({ timelinePosts }) =>
-  timelinePosts.map(timelinePost => {
-    const timelineRow = [
-      timelinePost,
+  timelinePosts.map((timelinePost, index) =>
+    <div className="row" key={`${timelinePost.id}-${index}-post`}>
+      <div className="col-sm-10">
+        {timelinePost}
+      </div>
       <Centerline />
-    ]
-    return <div className="row" key={timelinePost.id}>{timelineRow}</div>
-  })
+    </div>
+  )
 
 export default NarrowTimeline

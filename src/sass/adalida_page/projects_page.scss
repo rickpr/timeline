@@ -1,0 +1,19 @@
+.header {
+  font-size: 5em;
+  padding: 1em 0;
+}
+
+.meow-wolf {
+  color: theme-color('primary');
+}
+
+.name {
+  color: theme-color('warning');
+}
+
+.large-text {
+  font-size: 1.6em;
+  > li {
+    font-size: 1.6em;
+  }
+}

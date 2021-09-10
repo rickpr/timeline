@@ -5,14 +5,14 @@ import '../sass/custom.scss'
 
 import Layout from '../components/layout'
 import MemphisPattern from '../components/memphis_pattern'
-import Timeline from '../components/timeline'
+import RemoteTimeline from '../components/timeline/remote_timeline'
 
 const Us = () => {
   useEffect(() => { AOS.init({ easing: 'ease-out-back', duration: 1000, offset: 600 }) }, [])
   return (
     <Layout>
       <MemphisPattern />
-      <Timeline timelineId="1" />
+      <RemoteTimeline timelineId="1" />
     </Layout>
   )
 }
