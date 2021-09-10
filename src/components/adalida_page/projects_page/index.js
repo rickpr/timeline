@@ -28,10 +28,11 @@ const ProjectsPage = () => {
     window.addEventListener('scroll', scrollFullPage)
     return () => window.removeEventListener('scroll', scrollFullPage)
   }, [])
-  const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" style={{maxHeight: window.innerHeight * 0.8}} />
+  const innerHeight = () => typeof window === 'undefined' ? 1920 : window.innerHeight;
+  const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" style={{maxHeight: innerHeight() * 0.8}} />
 
   const meowWolf =
-    <div className="row" style={{display: 'flex', alignItems: 'center', minHeight: window.innerHeight}}>
+    <div className="row" style={{display: 'flex', alignItems: 'center', minHeight: innerHeight()}}>
       <div
         className="col-sm-4"
         data-aos="fade-down"
@@ -68,7 +69,7 @@ const ProjectsPage = () => {
       </ul>
     </>
   const aboutProject =
-    <div style={{minHeight: window.innerHeight}}>
+    <div style={{minHeight: innerHeight()}}>
       <h1 ref={aboutRef}>ABOUT THE PROJECT</h1>
       <h1 className="text-primary">Interactive Non-Linear Art Exhibit</h1>
       <div class="row">
@@ -84,7 +85,7 @@ const ProjectsPage = () => {
     </div>
 
   const phonePictures =
-    <div className="row" style={{minHeight: window.innerHeight}}>
+    <div className="row" style={{minHeight: innerHeight()}}>
       <div className="col-sm-4" data-aos="fade-up" key="firstMeowWolfImage">
         {meowWolfHome}
       </div>
@@ -106,7 +107,7 @@ const ProjectsPage = () => {
   </div>
 
   const research =
-    <div style={{minHeight: window.innerHeight}}>
+    <div style={{minHeight: innerHeight()}}>
       <h1>01. RESEARCH</h1>
       <h1 className="text-primary">Conducting Interviews</h1>
       <div className="row" key="description">
@@ -120,7 +121,7 @@ const ProjectsPage = () => {
     </div>
 
   const insightsAndSolutions =
-    <div style={{minHeight: window.innerHeight}}>
+    <div style={{minHeight: innerHeight()}}>
       <h1>02. INSIGHTS &amp; SOLUTIONS</h1>
       <h1 className="text-primary">Information Architecture</h1>
       <div className="row" key="description">
@@ -153,7 +154,7 @@ const ProjectsPage = () => {
     </div>
 
   const visualIdentity =
-    <div style={{minHeight: window.innerHeight}}>
+    <div style={{minHeight: innerHeight()}}>
       <h1>03. VISUAL IDENTITY</h1>
       <h1 className="text-primary">Conducting Interviews</h1>
       <div className="row" key="description">
