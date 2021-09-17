@@ -1,10 +1,12 @@
 import React from 'react'
 
+import Blowout from './blowout'
+
 const SideNavigation = ({ links }) => {
   const styles = {
     position: 'fixed',
     top: '50%',
-    right: '5em',
+    right: '0',
     transform: 'translate(-50%, -50%)',
     display: 'grid',
     gridTemplateColumns: '1fr',
@@ -13,7 +15,7 @@ const SideNavigation = ({ links }) => {
   return (
     <div style={styles}>
       {Object.entries(links).map(([name, ref]) =>
-        <button onClick={() => ref.current.scrollIntoView({behavior: 'smooth'})}>{name}</button>
+        <Blowout onClick={() => ref.current.scrollIntoView({behavior: 'smooth'})} name={name} />
       )}
     </div>
   )
