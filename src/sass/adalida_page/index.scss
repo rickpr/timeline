@@ -112,3 +112,9 @@
   margin-top: -1.125em;
   background-color: transparent;
 }
+
+.hero-photo {
+  transform: rotateX(-10deg) rotateY(40deg) rotateZ(6deg);
+  box-shadow: 3px 3px 3px 3px;
+  background-image: linear-gradient(#8E2DE2, #4A00E0);
+}

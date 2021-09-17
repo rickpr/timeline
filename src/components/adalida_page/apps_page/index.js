@@ -5,6 +5,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import useAnimateOnScroll from '../../../hooks/use_animate_on_scroll'
 
+import SideNavigation from './side_navigation'
 import Timeline from '../../timeline'
 import TimelineDescription from '../../timeline/timeline_description'
 
@@ -37,8 +38,9 @@ const AppsPage = () => {
   // TODO: Use CSS to do this instead
   const innerHeight = () => typeof window === 'undefined' ? 1080 : window.innerHeight;
   const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" style={{maxHeight: innerHeight() * 0.8}} />
-  const face = <img src={face_img} alt="Civic App Homepage" style={{maxHeight: innerHeight() * 0.8}} />
-  const rowStyle = {display: 'flex', alignItems: 'center', justifyContent: 'top', minHeight: innerHeight(), marginTop: '-12em'}
+  // const face = <img src={face_img} alt="Civic App Homepage" style={{maxHeight: innerHeight() * 0.8}} className="hero-photo" />
+  const face = <div style={{minHeight: '30em', minWidth: '100%'}} className="hero-photo" />
+  const rowStyle = {display: 'flex', alignItems: 'center', justifyContent: 'top', minHeight: '100vh', marginTop: '1em'}
 
   const civicApp =
     <div className="row" style={rowStyle} ref={civicRef}>
@@ -105,6 +107,12 @@ const AppsPage = () => {
       </div>
     </div>
 
+  const navigationLinks = {
+    'Civic App': civicRef,
+    'Meow Wolf': meowWolfRef,
+    Helios: heliosRef,
+  }
+
   return (
     <>
       <div style={{minHeight: '12em'}} />
@@ -114,6 +122,7 @@ const AppsPage = () => {
       </div>
       <div key="helios"><Timeline timelinePosts={[helios]} green connected /></div>
       <div style={{minHeight: '13.5em'}} />
+      <SideNavigation links={navigationLinks} />
     </>
   )
 }
