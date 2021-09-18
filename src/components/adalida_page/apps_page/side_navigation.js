@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Blowout from './blowout'
 
@@ -12,10 +12,32 @@ const SideNavigation = ({ links }) => {
     gridTemplateColumns: '1fr',
   }
 
+  const [showText, setShowText] = useState(Object.keys(links).map(() => false))
+  const waveDelay = 100
+
+  const handleMouse = makeTextVisible => {
+    showText.forEach(
+      (_, index) => setTimeout(
+        () => {
+          setShowText(newShowText => {
+            newShowText[index] = makeTextVisible
+            // Have to make a new array or we won't re-render
+            return [...newShowText]
+          })
+        }, waveDelay * index)
+    )
+  }
+
   return (
-    <div style={styles}>
-      {Object.entries(links).map(([name, ref]) =>
-        <Blowout onClick={() => ref.current.scrollIntoView({behavior: 'smooth'})} name={name} />
+    <div style={styles} onMouseEnter={() => handleMouse(true)} onMouseLeave={() => handleMouse(false)}>
+      {Object.entries(links).map(([name, { color, ref }], index) =>
+        <Blowout
+          key={index}
+          click={() => ref.current.scrollIntoView({behavior: 'smooth'})}
+          name={name}
+          color={color}
+          showText={showText[index]}
+        />
       )}
     </div>
   )

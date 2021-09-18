@@ -1,0 +1,23 @@
+.blow-out-container {
+  cursor: pointer;
+  padding: 0.5em 0;
+  display: flex;
+  justify-content: right;
+}
+
+.blow-out-container.skewed {
+  transform: skewX(25deg);
+}
+
+.blow-out {
+  width: 0;
+  border-radius: 15%;
+  border-style: solid;
+  position: absolute;
+  min-height: 1.5em;
+  right: 0;
+}
+
+.blow-out.blown-out {
+  width: 100px;
+}

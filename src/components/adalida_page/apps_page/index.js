@@ -108,9 +108,9 @@ const AppsPage = () => {
     </div>
 
   const navigationLinks = {
-    'Civic App': civicRef,
-    'Meow Wolf': meowWolfRef,
-    Helios: heliosRef,
+    'Civic App': { color: '#0000FF', ref: civicRef },
+    'Meow Wolf': { color: '#00FF00', ref: meowWolfRef },
+    Helios: { color: '#FF0000', ref: heliosRef },
   }
 
   return (

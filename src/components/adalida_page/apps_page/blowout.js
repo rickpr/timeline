@@ -1,80 +1,54 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-const Blowout = ({ name }) => {
+const Blowout = ({ name, color, click, showText }) => {
   // https://en.wikipedia.org/wiki/Party_horn
-  const [blowoutWidth, setBlowoutWidth] = useState(0)
-  const [skew, setSkew] = useState(0)
+  const [blownOut, setBlownOut] = useState(false)
   const [textVisible, setTextVisible] = useState(false)
-  const animationDelay = 1
-  const widthFrames = 100
-  const skewFrames = 25
-  let animationInterval = null
-  let width = 0
-  let previousSkew = 0
-  let textShown = false
+  const [animation, setAnimation] = useState()
+  const animationDuration = 200
 
-  const styles = {
-    cursor: 'pointer',
-    padding: '0.5em 0',
-    display: 'flex',
-    justifyContent: 'right',
-  }
-
-  const textStyles = {
-    marginRight: '1em',
-    visibility: textVisible ? 'visible' : 'hidden',
-  }
-
-  const pillStyles = {
-    borderRadius: '25%',
-    borderStyle: 'solid',
-    position: 'absolute',
-    minHeight: '1.5em',
-    minWidth: blowoutWidth,
-    background: '#000000',
-    right: 0,
-    transform: `skewX(${skew}deg)`
-  }
-
-  const animatePill = ({ backward }) => {
-    if(backward) console.log(backward === textShown)
-    if(backward === textShown) {
-      if(backward) {
-        console.log('backwirdd')
-        console.log(width)
-        console.log(previousSkew)
-      }
-      if(width < widthFrames) return setBlowoutWidth(++width)
-      if(previousSkew < skewFrames) return setSkew(++previousSkew)
-      console.log(backward ? 'backward' : 'forward')
-      textShown = !textShown
-      return setTextVisible(textShown)
+  useEffect(() => {
+    if(textVisible === showText) {
+      clearTimeout(animation)
+      setBlownOut(false)
+      return
     }
 
-    // Second half of animation, text has been shown or hidden
-    if(previousSkew) return setSkew(--previousSkew)
-    if(width) return setBlowoutWidth(--width)
-    return clearInterval(animationInterval)
+    setBlownOut(true)
+    setAnimation(
+      setTimeout(() => {
+        setTextVisible(showText)
+        setBlownOut(false)
+      }, animationDuration)
+    )
+  }, [showText])
+
+  const textStyle = {
+    marginRight: '1em',
+    visibility: textVisible ? 'visible' : 'hidden',
+    color,
   }
 
-  const animateForward = () => {
-    clearInterval(animationInterval)
-    animationInterval = setInterval(() => animatePill({ backward: false }), animationDelay)
+  const transitionStyle = {
+    transitionProperty: 'width, skewX',
+    transitionDuration: `${animationDuration}ms`,
+    transitionTimingFunction: 'ease-in-out',
   }
 
-  const animateBackward = () => {
-    clearInterval(animationInterval)
-    animationInterval = setInterval(() => animatePill({ backward: true }), animationDelay)
-  }
-
-  const pill = () => <div style={pillStyles} onMouseOver={animateForward} onMouseOut={animateBackward} />
+  const blowOut = () =>
+    <div
+      className={`blow-out ${blownOut && 'blown-out'}`}
+      style={{
+        backgroundColor: color,
+        borderColor: color,
+        ...transitionStyle
+      }}
+    />
 
   return (
-    <div style={styles}>
-      <div style={textStyles}>
-        {name}
-      </div>
-      {pill()}
+    <div style={transitionStyle} className={`blow-out-container ${blownOut && 'skewed'}`} onClick={click}>
+      <div style={textStyle}>{name}</div>
+      {blowOut()}
     </div>
   )
 }
