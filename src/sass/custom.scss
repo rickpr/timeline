@@ -9,6 +9,7 @@ $theme-colors: (
 
 @import '~bootstrap/scss/bootstrap';
 @import './adalida_page';
+@import './adalida_page/apps_page';
 @import './adalida_page/projects_page';
 @import './adalida_page/blowout';
 @import './adalida_page/header';

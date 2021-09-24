@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Blowout from './blowout'
 
-const SideNavigation = ({ links }) => {
+const SideNavigation = ({ links, click }) => {
   const styles = {
     position: 'fixed',
     top: '50%',
@@ -30,10 +30,10 @@ const SideNavigation = ({ links }) => {
 
   return (
     <div style={styles} onMouseEnter={() => handleMouse(true)} onMouseLeave={() => handleMouse(false)}>
-      {Object.entries(links).map(([name, { color, ref }], index) =>
+      {Object.entries(links).map(([name, { color, ref, component }], index) =>
         <Blowout
           key={index}
-          click={() => ref.current.scrollIntoView({behavior: 'smooth'})}
+          click={() => click(index)}
           name={name}
           color={color}
           showText={showText[index]}
