@@ -5,11 +5,11 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const Content = ({ accentColor, primaryColor, title, description }) => {
   const gridTemplateAreas = `
-    'entry-post title       hero-photo'
-    'lower-post description hero-photo'
-    'lower-post link        hero-photo'
+    'entry-post title'
+    'lower-post description'
+    'lower-post link'
   `
-  const gridTemplateColumns = '2fr 6fr 6fr'
+  const gridTemplateColumns = '1fr 2fr'
   const gridTemplateRows = '2fr 4fr 1fr'
   const gridStyle = {
     display: 'grid',
@@ -34,34 +34,34 @@ const Content = ({ accentColor, primaryColor, title, description }) => {
     position: 'absolute'
   }
   const entryPost =
-    <div style={{ gridArea: 'entry-post', padding: '0 20%', width: '100%', }}>
+    <div style={{ gridArea: 'entry-post', padding: '0 10%', width: '100%' }}>
         <div style={{ minHeight: '100%', width: '100%', borderLeft: borderStyle, borderTop: borderStyle, position: 'relative', top: '50%' }}>
       <div style={circleStyle}></div>
       </div>
     </div>
   const lowerPost =
-    <div style={{ gridArea: 'lower-post', padding: '0 20%', width: '90%' }}>
-      <div style={{ minHeight: '100%', width: '100%', borderLeft: borderStyle }} />
+    <div style={{ gridArea: 'lower-post', padding: '0 10%', width: '90%' }}>
+      <div style={{ minHeight: '200%', width: '100%', borderLeft: borderStyle }} />
     </div>
   const bigTitle =
-        <div
-          style={{ gridArea: 'title', width: '100%', display: 'flex', alignItems: 'center', color: accentColor }}
-         className="header huge name"
-        >
-          {title}
-        </div>
-  const inlineDescription = <div style={{ gridArea: 'description', color: primaryColor, fontSize: '2em' }}>{description}</div>
-  const heroPhoto = <div style={{ gridArea: 'hero-photo', width: '100%' }} className="hero-photo" />
+    <div
+      style={{ gridArea: 'title', width: '100%', display: 'flex', alignItems: 'center', color: accentColor }}
+      className="header huge name"
+    >
+      {title}
+    </div>
+  const inlineDescription =
+    <div style={{ gridArea: 'description', color: primaryColor, fontSize: '2em' }}>{description}</div>
   const link =
     <div style={{ gridArea: 'link', fontSize: '2em' }}>
-      <Link to="/adalida/projects"><span style={{ color: primaryColor }}>OPEN CASE STUDY</span></Link>&nbsp;
-      <span style={{color: '#ff2079'}}><FontAwesomeIcon icon={faArrowRight} /></span>
+      <Link to="/adalida/projects"><span style={{ color: '#CCCCCC' }}>OPEN CASE STUDY</span></Link>&nbsp;
+      <span style={{ color: '#ff2079' }}><FontAwesomeIcon icon={faArrowRight} /></span>
     </div>
 
   return (
     <div style={gridStyle}>
       {entryPost} {bigTitle}
-      {lowerPost} {inlineDescription} {heroPhoto}
+      {lowerPost} {inlineDescription}
                   {link}
     </div>
   )

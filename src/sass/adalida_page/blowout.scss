@@ -1,23 +1,36 @@
 .blow-out-container {
   cursor: pointer;
   padding: 0.5em 0;
-  display: flex;
-  justify-content: right;
-}
-
-.blow-out-container.skewed {
-  transform: skewX(25deg);
+  display: grid;
+  align-items: center;
+  min-height: 20vh;
+  grid-template-columns: 2fr 1fr;
+  min-width: 25%
 }
 
 .blow-out {
   width: 0;
   border-radius: 15%;
-  border-style: solid;
   position: absolute;
-  min-height: 1.5em;
   right: 0;
+  min-height: 20vh;
+  min-width: 1vw;
+  pointer-events: none;
+}
+
+.blow-out-trigger-area {
+  width: 0;
+  border-radius: 15%;
+  position: absolute;
+  right: 0;
+  min-height: 20vh;
+  min-width: 1vw;
 }
 
 .blow-out.blown-out {
-  width: 100px;
+  width: 20vw;
+}
+
+.blown-out {
+  transform: skewX(25deg);
 }
