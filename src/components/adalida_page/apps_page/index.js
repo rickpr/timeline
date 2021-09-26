@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import useAnimateOnScroll from '../../../hooks/use_animate_on_scroll'
+import useDebounce from '../../../hooks/use_debounce'
 
 import Header from '../header'
 import SideNavigation from './side_navigation'
@@ -45,36 +46,45 @@ const AppsPage = () => {
 
   const components = [civica, meowWolf, helios]
   const [displayedComponentIndex, setDisplayedComponentIndex] = useState(() => 0)
+  const debounce = useDebounce()
 
-  const updateComponent = indexToDisplay => {
+  const scrollUp = debounce(() =>
+    setDisplayedComponentIndex(componentIndex => Math.max(0, componentIndex - 1))
+  )
+
+  const scrollDown = debounce(() =>
+    setDisplayedComponentIndex(componentIndex => Math.min(components.length - 1, componentIndex + 1))
+  )
+
+  const handleScroll = event => {
+    event.preventDefault()
+    event.deltaY > 0 ? scrollDown() : scrollUp()
+  }
+
+  const handleKeyPress = event => {
+    event.preventDefault()
+    if ([33, 38].includes(event.keyCode)) return scrollUp()
+    if ([34, 40].includes(event.keyCode)) return scrollDown()
+  }
+
+  const scrollComponentIntoView = indexOfComponent => {
     const newMarginTop = [...marginTop]
-    for (let i = 0; i < indexToDisplay; i++)
-      newMarginTop[i] = '-100vh'
-    for (let i = indexToDisplay + 1; i < components.length; i++)
-      newMarginTop[i] = '100vh'
-    newMarginTop[indexToDisplay] = 0
+    for (let i = 0; i < indexOfComponent; i++) newMarginTop[i] = '-100vh'
+    for (let i = indexOfComponent + 1; i < components.length; i++) newMarginTop[i] = '100vh'
+    newMarginTop[indexOfComponent] = 0
     setMarginTop(newMarginTop)
   }
 
   useEffect(() => {
-    const updateScroll = event => {
-      console.log(displayedComponentIndex)
-      event.preventDefault()
-      const direction = event.deltaY > 0 ? 1 : -1
-      setDisplayedComponentIndex(componentIndex => {
-        const newComponentIndex = componentIndex + direction
-        if (newComponentIndex < 0 || newComponentIndex >= components.length) return componentIndex
-
-        return newComponentIndex
-      })
+    window.addEventListener('wheel', handleScroll)
+    window.addEventListener('keydown', handleKeyPress)
+    return () => {
+      window.removeEventListener('wheel', handleScroll)
+      window.removeEventListener('keydown', handleKeyPress)
     }
-    window.addEventListener('wheel', updateScroll)
-    return () => window.removeEventListener('wheel', updateScroll)
   }, [])
 
-  useEffect(() => {
-    updateComponent(displayedComponentIndex)
-  }, [displayedComponentIndex])
+  useEffect(() => { scrollComponentIntoView(displayedComponentIndex) }, [displayedComponentIndex])
 
   return (
     <>
@@ -82,7 +92,7 @@ const AppsPage = () => {
       {civica()}
       {meowWolf()}
       {helios()}
-      <SideNavigation links={navigationLinks} click={setDisplayedComponentIndex}/>
+      <SideNavigation links={navigationLinks} click={debounce(setDisplayedComponentIndex)}/>
     </>
   )
 }
