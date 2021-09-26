@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import useAnimateOnScroll from '../../../hooks/use_animate_on_scroll'
 import useDebounce from '../../../hooks/use_debounce'
@@ -13,8 +13,8 @@ import heliosPhone from './helios.png'
 
 const AppsPage = () => {
   useAnimateOnScroll()
-  console.log(face)
   const [marginTop, setMarginTop] = useState(['0', '100vh', '100vh'])
+  const touchStart = useRef(null)
 
   const civica =
     <Project
@@ -90,6 +90,18 @@ const AppsPage = () => {
     }
   }
 
+  const handleTouchStart = event => { touchStart.current = event.touches[0].clientY }
+  const handleTouchEnd = event => {
+    // Not sure this could happen, but in case the touch was started before this component is rendered.
+    if (!touchStart.current) return
+
+    const releasedY = event.changedTouches[0].clientY
+    if (releasedY < touchStart.current) scrollDown()
+    if (releasedY > touchStart.current) scrollUp()
+    touchStart.current = null
+    // Otherwise do nothing, the touch didn't move
+  }
+
   const scrollProjectIntoView = indexOfProject => {
     const newMarginTop = [...marginTop]
     for (let i = 0; i < indexOfProject; i++) newMarginTop[i] = '-100vh'
@@ -101,6 +113,8 @@ const AppsPage = () => {
   useEffect(() => {
     window.addEventListener('wheel', handleScroll)
     window.addEventListener('keydown', handleKeyPress)
+    window.addEventListener('touchstart', handleTouchStart)
+    window.addEventListener('touchend', handleTouchEnd)
     return () => {
       window.removeEventListener('wheel', handleScroll)
       window.removeEventListener('keydown', handleKeyPress)
