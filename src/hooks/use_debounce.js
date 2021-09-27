@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-export default (delay = 500) => {
+export default (delay = 1000) => {
   const isDebouncing = useRef(false)
 
   return debouncedFunction => argument => {

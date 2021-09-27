@@ -16,15 +16,15 @@ const AppsPage = () => {
   const [marginTop, setMarginTop] = useState(['0', '100vh', '100vh'])
   const touchStart = useRef(null)
 
-  const civica =
+  const helios =
     <Project
-      title="Civica"
-      description="A mobile social experience where users scan politicians and learn about their donors."
-      heroPhoto={face}
+      title="Helios"
+      description="A digital banking user experience for an account sign up."
+      heroPhoto={heliosPhone}
       primaryColor="#FFFFFF"
-      accentColor="#39FF14"
+      accentColor="#FFFFFF"
       marginTop={marginTop[0]}
-      customStyle={{ backgroundImage: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)' }}
+      customStyle={{ backgroundImage: 'linear-gradient(to right, #00B8FD, #2AF598)' }}
       top
     />
 
@@ -39,24 +39,24 @@ const AppsPage = () => {
       marginTop={marginTop[1]}
     />
 
-  const helios =
+  const civica =
     <Project
-      title="Helios"
-      description="A digital banking user experience for an account sign up."
-      heroPhoto={heliosPhone}
+      title="Civica"
+      description="A mobile social experience where users scan politicians and learn about their donors."
+      heroPhoto={face}
       primaryColor="#FFFFFF"
-      accentColor="#FFFFFF"
+      accentColor="#39FF14"
       marginTop={marginTop[2]}
-      customStyle={{ backgroundImage: 'linear-gradient(to right, #00B8FD, #2AF598)' }}
+      customStyle={{ backgroundImage: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)' }}
     />
 
   const navigationLinks = {
-    'Civic App': { color: civica.props.accentColor },
+    Helios: { color: helios.props.accentColor },
     'Meow Wolf': { color: meowWolf.props.accentColor },
-    Helios: { color: helios.props.accentColor }
+    'Civic App': { color: civica.props.accentColor }
   }
 
-  const projects = [civica, meowWolf, helios]
+  const projects = [helios, meowWolf, civica]
   const [displayedProjectIndex, setDisplayedProjectIndex] = useState(() => 0)
   const debounce = useDebounce()
 
