@@ -28,8 +28,9 @@ const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
   }, [showText])
 
   const textStyle = {
-    color,
+    color: active ? color : '#FFFFFF',
     textAlign: 'right',
+    fontSize: '1.5rem',
     visibility: textVisible ? 'visible' : 'hidden'
   }
 
@@ -42,14 +43,18 @@ const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
   const blowOut = () =>
     <div
       key="blow-out"
-      className={`blow-out ${blownOut && 'blown-out'}`}
-      style={{ backgroundColor, ...transitionStyle }}
-    />
+      onMouseEnter={mouseEnter}
+      style={{ position: 'relative', height: '100%', ...transitionStyle }}
+    >
+      <div
+        style={{ position: 'absolute', height: '100%', backgroundColor, ...transitionStyle }}
+        className={`blow-out ${blownOut && 'blown-out'}`}
+      />
+    </div>
 
   return (
-    <div style={transitionStyle} className="blow-out-container" onClick={click}>
-      <div key="name" style={textStyle} className={blownOut && 'blown-out'}><h1>{name}</h1></div>
-      <div key="trigger-area" className="blow-out-trigger-area" onMouseEnter={mouseEnter} />
+    <div className="blow-out-container" style={transitionStyle} onClick={click}>
+      <div key="name" style={{ ...textStyle, ...transitionStyle }} className={blownOut && 'blown-out'}>{name}</div>
       {blowOut()}
     </div>
   )

@@ -7,10 +7,9 @@ const Content = ({ accentColor, primaryColor, title, description }) => {
   const gridTemplateAreas = `
     'entry-post title'
     'lower-post description'
-    'lower-post link'
   `
   const gridTemplateColumns = '1fr 2fr'
-  const gridTemplateRows = '2fr 4fr 1fr'
+  const gridTemplateRows = '2fr 5fr'
   const gridStyle = {
     display: 'grid',
     justifyItems: 'left',
@@ -51,18 +50,18 @@ const Content = ({ accentColor, primaryColor, title, description }) => {
       {title}
     </div>
   const inlineDescription =
-    <div style={{ gridArea: 'description', color: primaryColor, fontSize: '2em' }}>{description}</div>
-  const link =
-    <div style={{ gridArea: 'link', fontSize: '2em' }}>
-      <Link to="/adalida/projects"><span style={{ color: '#CCCCCC' }}>OPEN CASE STUDY</span></Link>&nbsp;
-      <span style={{ color: '#ff2079' }}><FontAwesomeIcon icon={faArrowRight} /></span>
+    <div style={{ gridArea: 'description', color: primaryColor, fontSize: '2em' }}>
+      {description}
+      <div style={{ marginTop: '1em' }}>
+        <Link to="/adalida/projects"><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>&nbsp;
+        <span style={{ color: accentColor }}><FontAwesomeIcon icon={faArrowRight} /></span>
+      </div>
     </div>
 
   return (
     <div style={gridStyle}>
       {entryPost} {bigTitle}
       {lowerPost} {inlineDescription}
-                  {link}
     </div>
   )
 }

@@ -44,7 +44,7 @@ const AppsPage = () => {
       title="Helios"
       description="A digital banking user experience for an account sign up."
       heroPhoto={heliosPhone}
-      primaryColor="#000000"
+      primaryColor="#FFFFFF"
       accentColor="#FFFFFF"
       marginTop={marginTop[2]}
       customStyle={{ backgroundImage: 'linear-gradient(to right, #00B8FD, #2AF598)' }}
@@ -118,6 +118,8 @@ const AppsPage = () => {
     return () => {
       window.removeEventListener('wheel', handleScroll)
       window.removeEventListener('keydown', handleKeyPress)
+      window.addEventListener('touchstart', handleTouchStart)
+      window.addEventListener('touchend', handleTouchEnd)
     }
   }, [])
 

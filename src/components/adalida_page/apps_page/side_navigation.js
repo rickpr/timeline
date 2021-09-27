@@ -3,17 +3,22 @@ import React, { useState } from 'react'
 import Blowout from './blowout'
 
 const SideNavigation = ({ links, click, activeIndex }) => {
+  const [showText, setShowText] = useState(Object.keys(links).map(() => false))
+  const waveDelay = 100
+
   const styles = {
+    backgroundColor: showText[0] ? '#00000033' : undefined,
+    borderRadius: '15%',
+    padding: '1%',
     position: 'fixed',
     display: 'grid',
     gridTemplateColumns: '1fr',
-    alignContent: 'space-around',
-    height: '100%',
-    right: '5%'
+    alignContent: 'center',
+    rowGap: '0',
+    right: '5%',
+    top: '50%',
+    transform: 'translate(0, -50%)'
   }
-
-  const [showText, setShowText] = useState(Object.keys(links).map(() => false))
-  const waveDelay = 100
 
   const toggleTextVisibility = makeTextVisible => {
     showText.forEach(
@@ -30,11 +35,6 @@ const SideNavigation = ({ links, click, activeIndex }) => {
     )
   }
 
-  const handleClick = index => {
-    click(index)
-    toggleTextVisibility(false)
-  }
-
   return (
     <div style={styles} onMouseLeave={() => toggleTextVisibility(false)}>
       {Object.entries(links).map(
@@ -44,7 +44,7 @@ const SideNavigation = ({ links, click, activeIndex }) => {
             <Blowout
               key={index}
               active={active}
-              click={() => !active && handleClick(index)}
+              click={() => !active && click(index)}
               mouseEnter={() => toggleTextVisibility(true)}
               name={name}
               color={color}
