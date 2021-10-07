@@ -71,13 +71,18 @@ const ProjectsPage = () => {
   const aboutProject =
     <div style={{marginTop: '13em'}}>
       <h1 ref={aboutRef}>ABOUT THE PROJECT</h1>
-      <h1 className="text-primary">Interactive Non-Linear Art Exhibit</h1>
+      <h1 className="text-primary">Origin</h1>
       <div class="row">
         <div class="col-sm-8 large-text">
-          Meow Wolf is an interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado where
-          they host day and event vists. My goal for this project was to create an enjoyable user experience when
-          purchasing tickets, checking in for an event, and siging up for an account. This project was my first user
-          experience project and any content from this app is fictional.
+        I like the company Meow Wolf (we are both New Mexico Native). 
+        They opened, and then quickly closed, a new location in Las Vegas, Nevada during COVID-19. 
+        I wanted to learn user experience design and I wanted to visit the new exhibit, Omega Mart. 
+        This project was my way of marrying the two while I waited for the re-opening. 
+
+        Meow Wolf is an American arts and entertainment company. They host interactive non-linear art 
+        museum with locations in New Mexico, Nevada, and Colorado with day and event tickets. They also 
+        host music festivals, create large scale art installations, and create and produce streaming 
+        content.
         </div>
         <div class="col-sm-4" style={{marginTop: '-9em'}}>
           <TimelineDescription description={projectInfo} />
@@ -110,12 +115,13 @@ const ProjectsPage = () => {
 
   const research =
     <div style={{marginTop: '13em'}}>
-      <h1>1. RESEARCH</h1>
+      <h1>1. Understand, Empathize, Define</h1>
       <h1 className="text-primary">Conducting Interviews</h1>
       <div className="row" key="description">
         <div className="col-12">
-          This was my first time conducting interviews for a UX design project so I started learning more about
-          interviewing. I read material on how to preapre, conduct, and report on interviews and usability studies.
+        I began researching Meow Wolf’s business structure, history, locations, and future projects. 
+        I also conducted interviews with my friends and family. The combination of my investigative research
+        and user research, lead to the design of a mobile in-app ticketing experience. 
         </div>
       </div>
       <div style={{minHeight: '2em'}} key="spacer-before-gallery"></div>
@@ -135,7 +141,7 @@ const ProjectsPage = () => {
       </div>
       <div className="row" key="interviewing">
         <div className="col-6" key="heading">
-          <h1>02 - Interviewing</h1>
+          <h1>02 - Ideate, Prototyping, Testing</h1>
         </div>
         <div className="col-6" key="description">
           Meow Wolf is an interactive non-linear art museum with locations in New Mexico, Nevada, and Colorado where
