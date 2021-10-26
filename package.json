@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "contributors": [
     "Ricardo Piro-Rael <fdisk@fdisk.co>",
-    "Adalida Baca <aheaven@aheaven.co>"
+    "Adalida Baca <adalida@adalida.design>"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
