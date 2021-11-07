@@ -9,7 +9,6 @@ const Projects = () =>
   <>
     <Header />
     <ProjectsPage />
-    <Footer />
   </>
 
 export default Projects

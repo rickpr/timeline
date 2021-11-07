@@ -1,8 +1,10 @@
 import { Link } from 'gatsby'
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-import useAnimateOnScroll from '../../../hooks/use_animate_on_scroll'
 
+import Album from '../album'
 import Timeline from '../../timeline'
 import TimelineDescription from '../../timeline/timeline_description'
 
@@ -12,91 +14,86 @@ import down_arrow from './down_arrow.svg'
 import wireframe from './wireframe.png'
 
 const ProjectsPage = () => {
-  useAnimateOnScroll()
-  const aboutRef = useRef(null)
-  const scrollToAbout = () => aboutRef.current.scrollIntoView({behavior: 'smooth'})
-
-  useEffect(() => {
-    let lastScrollWindowTop = 0
-    const scrollFullPage = event => {
-      const topOfAboutSection = aboutRef.current.getBoundingClientRect().top
-      const topOfWindow = window.pageYOffset || document.documentElement.scrollTop
-      const scrollingDown = topOfWindow > lastScrollWindowTop
-      lastScrollWindowTop = Math.max(0, topOfWindow)
-      if (scrollingDown && topOfWindow < topOfAboutSection) scrollToAbout()
-    }
-    window.addEventListener('scroll', scrollFullPage)
-    return () => window.removeEventListener('scroll', scrollFullPage)
-  }, [])
-  const innerHeight = () => typeof window === 'undefined' ? 1920 : window.innerHeight;
-  const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" style={{maxHeight: innerHeight() * 0.8}} />
+  const meowWolfHome = <img src={meow_wolf_home} alt="Meow Wolf Homepage" />
 
   const meowWolf =
-    <div className="row" style={{display: 'flex', alignItems: 'center', justifyContent: 'top', minHeight: innerHeight(), marginTop: '-5em'}}>
+    <div style={{display: 'grid', alignItems: 'center', justifyItems: 'space-between', gridTemplateColumns: '1fr 1fr 1fr', backgroundColor: '#000000' }}>
       <div
-        className="col-sm-4"
-        data-aos="fade-down"
         key="meow-wolf"
         style={{display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', gridTemplateRows: 'auto'}}
       >
         <div className="header meow-wolf">Meow Wolf</div>
-        <img src={down_arrow} alt="Down arrow" onClick={scrollToAbout}/>
+        <img src={down_arrow} alt="Down arrow" onClick={() => null /* TODO: SCROLL */}/>
       </div>
-      <div className="col-sm-4" data-aos="fade-up" key="firstMeowWolfImage">
-        {meowWolfHome}
-      </div>
-      <div className="col-sm-4" data-aos="fade-up" key="secondMeowWolfImage">
+      <div key="space" />
+      <div key="meow-wolf-image">
         {meowWolfHome}
       </div>
     </div>
 
   const projectInfo = <>
-      <h3 className="text-primary" key="client-header">ROLE</h3>
-      <ul className="large-text" key="client">
-        <li>User Experience</li>
-        <li>Visual Design</li>
-        <li>Prototyping</li>
-        <li>User Testing</li>
-        <li>Interaction Design</li>
-      </ul>
-      <h3 className="text-primary" key="role-header">Client</h3>
-      <ul className="large-text" key="role">
-        <li>Meow Wolf</li>
-      </ul>
-      <h3 className="text-primary" key="date-header">Date:</h3>
-      <ul className="large-text" key="date">
-        <li>May 2020 - June 2020</li>
-      </ul>
-    </>
+    <h2 style={{color: '#3DA834'}} key="client-header">ROLES</h2>
+    <ul className="large-text" key="client">
+      <li>UX/UI Designer</li>
+      <li>UX Researcher</li>
+      <li>Prototyping</li>
+      <li>User Testing</li>
+    </ul>
+    <h2 style={{color: '#3DA834'}} key="role-header">DURATION</h2>
+    <ul className="large-text" key="role">
+      <li>May 2020 - June 2020</li>
+    </ul>
+    <h2 style={{ color: '#3DA834' }} key="date-header">MEDIUM</h2>
+    <ul className="large-text" key="date">
+      <li>Mobile App</li>
+    </ul>
+  </>
   const aboutProject =
-    <div style={{marginTop: '13em'}}>
-      <h1 ref={aboutRef}>ABOUT THE PROJECT</h1>
-      <h1 className="text-primary">Interactive Non-Linear Art Exhibit</h1>
-      <div class="row">
-        <div class="col-sm-8 large-text">
-          Meow Wolf is an interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado where
-          they host day and event vists. My goal for this project was to create an enjoyable user experience when
-          purchasing tickets, checking in for an event, and siging up for an account. This project was my first user
-          experience project and any content from this app is fictional.
+    <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr' }}>
+      <div key="text" className="large-text">
+        <h1>ABOUT THE PROJECT</h1>
+        <div className="text-warning large" key="origin">Origin</div>
+        <p key="first-paragraph">
+          I like the company Meow Wolf (we are both New Mexico Native).
+          They opened, and then quickly closed, a new location in Las Vegas, Nevada during COVID.
+          I wanted to learn user experience design and I wanted to visit the new exhibit, Omega Mart.
+          This project was my way of marrying the two while I waited for the re-opening.
+        </p>
+        <p key="second-paragraph">
+          Meow Wolf is an American arts and entertainment company.
+          They host interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado with day and event tickets.
+          They also host music festivals, create large scale art isntallations, and create and produce streaming content.
+        </p>
+        <div style={{ marginTop: '1em' }} key="link">
+          <Link to="/adalida/projects"><span className="text-warning">VISIT THE SITE</span></Link>&nbsp;
+          <span style={{ color: '#3DA834' }}><FontAwesomeIcon icon={faArrowRight} /></span>
         </div>
-        <div class="col-sm-4" style={{marginTop: '-9em'}}>
-          <TimelineDescription description={projectInfo} />
-        </div>
+      </div>
+      <div key="description">
+        <TimelineDescription description={projectInfo} />
       </div>
     </div>
 
   const phonePictures =
-    <div className="row" style={{
-      marginTop: '13em'}}>
-      <div className="col-sm-4" data-aos="fade-up" key="firstMeowWolfImage">
-        {meowWolfHome}
+    <div style={{backgroundColor: '#000000'}}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+        <div key="firstMeowWolfImage">
+          {meowWolfHome}
+        </div>
+        <div key="secondMeowWolfImage">
+          {meowWolfHome}
+        </div>
+        <div key="thirdMeowWolfImage">
+          {meowWolfHome}
+        </div>
+        <div key="fourthMeowWolfImage">
+          {meowWolfHome}
+        </div>
       </div>
-      <div className="col-sm-4" data-aos="fade-up" key="secondMeowWolfImage">
-        {meowWolfHome}
-      </div>
-      <div className="col-sm-4" data-aos="fade-up" key="thirdMeowWolfImage">
-        {meowWolfHome}
-      </div>
+        <div className="text-warning">
+          Meow Wolf is officially open again, visit them today!
+          <span style={{color: '#3DA834' }}><FontAwesomeIcon icon={faArrowRight} /></span>
+        </div>
     </div>
 
   const galleryRow = key =>
@@ -107,6 +104,31 @@ const ProjectsPage = () => {
       </div>
     )}
   </div>
+
+  const researchAndInterviews =
+    <div>
+      <div key="text" className="large-text">
+        <h1>1. Understand, Empathize, and Define</h1>
+        <div className="text-warning large" key="origin">Research and Interviews</div>
+        <p key="first-paragraph">
+          I began researching Meow Wolf’s business structure, history, locations, and future projects.
+          I also conducted interviews with my friends and family.
+          The combination of my investigative research and user research, lead to the design of a mobile in-app ticketing experience.
+        </p>
+        <p key="second-paragraph">
+          Meow Wolf is an American arts and entertainment company.
+          They host interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado with day and event tickets.
+          They also host music festivals, create large scale art isntallations, and create and produce streaming content.
+        </p>
+        <div style={{ marginTop: '1em' }} key="link">
+          <Link to="/adalida/projects"><span className="text-warning">VISIT THE SITE</span></Link>&nbsp;
+          <span style={{ color: '#3DA834' }}><FontAwesomeIcon icon={faArrowRight} /></span>
+        </div>
+      </div>
+      <div key="description">
+        <TimelineDescription description={projectInfo} />
+      </div>
+    </div>
 
   const research =
     <div style={{marginTop: '13em'}}>
@@ -280,17 +302,9 @@ const ProjectsPage = () => {
     </div>
 
   return (
-    <>
-      <div style={{backgroundColor: '#000000'}} key="top">
-        {meowWolf}
-      </div>
-      <div style={{borderLeft: '5px solid', minHeight: '18.5em', marginLeft: '5%', borderColor: '#39ff14', position: 'absolute'}} key="line"></div>
-      <Timeline
-        timelinePosts={[aboutProject, phonePictures, research, insightsAndSolutions, visualIdentity]}
-        connected
-      />
-      <div style={{minHeight: '13.5em'}} key="spacer" />
-    </>
+    <Album>
+      {[meowWolf, aboutProject, phonePictures, research, insightsAndSolutions, visualIdentity]}
+    </Album>
   )
 }
 

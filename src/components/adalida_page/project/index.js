@@ -1,22 +1,16 @@
 import React from 'react'
 
-import useAnimateOnScroll from '../../../../hooks/use_animate_on_scroll'
-
 import Content from './content'
 
 const Project = ({
   accentColor,
-  backgroundColor,
   heroPhoto,
   primaryColor,
-  textColor,
   title,
   description,
-  marginTop,
   top,
   customStyle
 }) => {
-  useAnimateOnScroll()
   const gridTemplateAreas = `
     'timeline-placement    top-space    hero-photo menu-space'
     'content               content      hero-photo menu-space'
@@ -26,16 +20,10 @@ const Project = ({
   const gridTemplateRows = '2fr 4fr 1fr'
   const gridStyle = {
     display: 'grid',
-    minHeight: '100vh',
-    justifyItems: 'left',
-    width: '100%',
-    transition: 'margin-top 500ms ease-in',
-    position: 'fixed',
-    zIndex: '-1',
+    transition: 'margin-top 1s cubic-bezier(.31,1.05,.67,.92)',
     gridTemplateAreas,
     gridTemplateColumns,
     gridTemplateRows,
-    marginTop,
     ...customStyle
   }
   const borderSize = 0.5 // em
@@ -49,7 +37,7 @@ const Project = ({
   const bottomSpace = <div style={{ gridArea: 'bottom-space' }}/>
   const heroPicture =
     <div style={{ gridArea: 'hero-photo', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-      <img style={{ maxHeight: '80%' }}src={heroPhoto} />
+      <img style={{ maxHeight: '80%' }} src={heroPhoto} />
     </div>
   return (
     <div style={gridStyle}>
