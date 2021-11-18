@@ -5,6 +5,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 
 import Album from '../album'
+import ColorBlock from './color_block'
 import Project from './project'
 import TimelineDescription from '../../timeline/timeline_description'
 
@@ -12,6 +13,8 @@ import meowWolfHome from '../meow_wolf_home.png'
 import downArrow from './down_arrow.svg'
 import competitiveAudit from './competitive_audit.svg'
 import personas from './personas.svg'
+import loFi1 from './lo_fi_1.svg'
+import loFi2 from './lo_fi_2.svg'
 
 const ProjectsPage = () => {
   const meowWolf =
@@ -128,9 +131,108 @@ const ProjectsPage = () => {
     </div>
   const interview = <Project title="2. Empathize" content={interviewContent} />
 
+  const problemStatementContent =
+    <div className="large-text">
+      <div className="text-warning large">Problem Statement</div>
+      <p>
+        Brian is a young working adult who needs to purchase tickets to Meow Wolf because they are planning a day
+        visit with friends.
+      </p>
+    </div>
+  const problemStatement = <Project title="3. Define" content={problemStatementContent} />
+
+  const loFiContainerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '5em',
+    backgroundColor: '#C4C4C4'
+  }
+  const ideateContent =
+    <div className="large-text">
+      <div className="text-warning large">Design, Prototype, Test</div>
+      <p>
+        I prototyped my lo-fidelity designs and conducted user research on the flow and navigation.
+        From the usability studies, it was clear many of the users' pain points could be solved with
+        a stronger information architecture
+      </p>
+      <p>Check are the before and after lo-fi mockups</p>
+      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr'}}>
+        <div style={loFiContainerStyle}><img src={loFi1} height="150%" /></div>
+        <div style={loFiContainerStyle}><img src={loFi2} height="150%" /></div>
+      </div>
+      <div style={{textAlign: 'center'}}><h1>Description of what changed</h1></div>
+    </div>
+  const ideate = <Project title="4. Ideate" content={ideateContent} />
+
+  const visualIdentityContent =
+    <div className="large-text">
+      <div className="text-warning large">Visual Identity</div>
+      <p>
+        Meow Wolf already had an awesome design system and identity.
+        Therefore, my job was to ensure consistent branding from the website to the mobile app.
+      </p>
+      <h2 style={{fontWeight: '900'}}>Colors</h2>
+      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1em'}}>
+        <ColorBlock color="#EC0089" /> <ColorBlock color="#412784" />
+        <ColorBlock color="#3DA834" /> <ColorBlock color="#EC0089" />
+        <ColorBlock color="#00A00C" /> <ColorBlock color="#000000" />
+        <ColorBlock color="#FFF21F" /> <ColorBlock color="#000000" />
+      </div>
+      <h2 style={{fontWeight: '900'}}>Typography</h2>
+      <h2 style={{fontFamily: 'Montserrat'}}>Montserrat, Sans-Serif</h2>
+      <h2 style={{fontWeight: 'bold', fontFamily: 'Montserrat'}}>Montserrat, Sans-Serif</h2>
+      <h2 style={{fontWeight: '900', fontFamily: 'Montserrat'}}>Montserrat, Sans-Serif</h2>
+      <h2 style={{fontStyle: 'italic', fontFamily: 'Montserrat'}}>Montserrat, Sans-Serif</h2>
+    </div>
+  const visualIdentity = <Project title="3. Design System" content={visualIdentityContent} />
+
+  const finalDesignContent =
+    <div className="large-text">
+      <div className="text-warning large">Final Design</div>
+      <p>Check out my final design!</p>
+      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
+        <img src={meowWolfHome} width="100%" />
+        <img src={meowWolfHome} width="100%" />
+        <img src={meowWolfHome} width="100%" />
+        <img src={meowWolfHome} width="100%" />
+      </div>
+    </div>
+  const finalDesign = <Project title="4. Solution" content={finalDesignContent} />
+
+  const conclusionContent =
+    <div className="large-text">
+      <div className="text-warning large">What I leanred</div>
+      <p>
+        I'm so thankful for the opportunity to work and learn so much from this project.
+        In summary, I learned about the general user experience process and how research, especially good research,
+        can positively impact user design solutions.
+      </p>
+      <div style={{display: 'grid', gridTemplateColumns: '1fr 3fr'}}>
+        <h1>Usability Studies</h1>
+        <p>
+          Data-driven user experience design casn save you time and resources while increasing your chance at creating
+          effective designs.
+        </p>
+        <h1>Adapting Quickly</h1>
+        <p>Keeping an updated information architecture handy is helpful in creating impactful designs.</p>
+        <h1>New Software</h1>
+        <p>
+          I started using Figma with this project and it was awesome to learn about the abundance of online resources
+          and UX communities. Also, YouTube and Google are your friends!
+        </p>
+        <h1>Be Mindful</h1>
+        <p>
+          Always remember your designs are intended to solve the user's problem while also probomting business growth
+          and needs. Set aside extreme usability idealism.
+        </p>
+      </div>
+    </div>
+  const conclusion = <Project title="5. Conclusion" content={conclusionContent} />
+
   return (
     <Album>
-      {[meowWolf, aboutProject, research, interview]}
+      {[meowWolf, aboutProject, research, interview, problemStatement, ideate, visualIdentity, finalDesign, conclusion]}
     </Album>
   )
 }
