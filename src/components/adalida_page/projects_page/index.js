@@ -34,7 +34,7 @@ const ProjectsPage = () => {
 
   const projectInfo = <>
     <h2 style={{color: '#3DA834'}} key="client-header">ROLES</h2>
-    <ul className="large-text" key="client">
+      <ul className="large-text" key="client" style={{marginLeft: '1%'}}>
       <li>UX/UI Designer</li>
       <li>UX Researcher</li>
       <li>Prototyping</li>
@@ -50,76 +50,86 @@ const ProjectsPage = () => {
     </ul>
   </>
   const aboutProjectContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '1em' }}>
-      <div key="text" className="large-text">
-        <div className="text-warning large" key="origin">Origin</div>
-        <p key="first-paragraph">
-          I like the company Meow Wolf (we are both New Mexico Native).
-          They opened, and then quickly closed, a new location in Las Vegas, Nevada during COVID.
-          I wanted to learn user experience design and I wanted to visit the new exhibit, Omega Mart.
-          This project was my way of marrying the two while I waited for the re-opening.
-        </p>
-        <p key="second-paragraph">
-          Meow Wolf is an American arts and entertainment company.
-          They host interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado with day and event tickets.
-          They also host music festivals, create large scale art isntallations, and create and produce streaming content.
-        </p>
-        <div style={{ marginTop: '1em' }} key="link">
-          <Link to="/adalida/projects"><span className="text-warning">VISIT THE SITE</span></Link>&nbsp;
-          <span style={{ color: '#3DA834' }}><FontAwesomeIcon icon={faArrowRight} /></span>
+    <div style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <h1 style={{ margin: 'auto 0' }}>ABOUT THE PROJECT</h1>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }}>
+        <div className="large-text">
+          <div className="text-warning large" key="origin">Origin</div>
+          <p key="first-paragraph">
+            I like the company Meow Wolf (we are both New Mexico Native).
+            They opened, and then quickly closed, a new location in Las Vegas, Nevada during COVID.
+            I wanted to learn user experience design and I wanted to visit the new exhibit, Omega Mart.
+            This project was my way of marrying the two while I waited for the re-opening.
+          </p>
+          <p key="second-paragraph">
+            Meow Wolf is an American arts and entertainment company.
+            They host interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado with day and event tickets.
+            They also host music festivals, create large scale art isntallations, and create and produce streaming content.
+          </p>
+          <div style={{ marginTop: '1em' }} key="link">
+            <Link to="/adalida/projects"><span className="text-warning">VISIT THE SITE</span></Link>&nbsp;
+            <span style={{ color: '#3DA834' }}><FontAwesomeIcon icon={faArrowRight} /></span>
+          </div>
+        </div>
+        <div>
+          <TimelineDescription description={projectInfo} />
         </div>
       </div>
-      <div key="description">
-        <TimelineDescription description={projectInfo} />
+    </div>
+  const aboutProject = <Project content={aboutProjectContent} />
+
+
+  const bubbles =
+    <div style={{ display: 'grid', gridTemplateColumns: '10% 10% 10%', justifyContent: 'center', width: '100%' }}>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div style={{ border: '0.5em solid #3DA834', borderRadius: '50%', backgroundColor: '#3DA834', maxWidth: '1em', maxHeight: '1em' }} />
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div style={{ border: '0.5em solid gray', borderRadius: '50%' , backgroundColor: 'gray', maxWidth: '1em', maxHeight: '1em'  }} />
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div style={{ border: '0.5em solid gray', borderRadius: '50%' , backgroundColor: 'gray', maxWidth: '1em', maxHeight: '1em'  }} />
       </div>
     </div>
-  const aboutProject = <Project title="ABOUT THE PROJECT" content={aboutProjectContent} />
 
   const researchContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '1em' }}>
-      <div key="text" className="large-text">
-        <div className="text-warning large" key="research">Research</div>
-        <p>
-          My research focused on Meow Wolf's business structure, history, locations, and future projects. I wanted to
-          collect and learn as much information as possible. I paired this research with a competitive audit.
-        </p>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }}>
+      <div className="large-text" style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <h1 style={{ margin: 'auto 0' }}>1. Understand</h1>
+        </div>
+        <div>
+          <div className="text-warning large" key="research">Research</div>
+          <p>
+            My research focused on Meow Wolf's business structure, history, locations, and future projects. I wanted to
+            collect and learn as much information as possible. I paired this research with a competitive audit.
+          </p>
+        </div>
       </div>
-      <div key="audit" style={{ display: 'grid' }}>
+      <div style={{ display: 'grid', alignItems: 'top' }}>
         <div style={{ position: 'relative' }}>
-          <img src={competitiveAudit} width="100%" alt="Competitive Audit" />
-          <div style={{ position: 'absolute', minHeight: '80%', minWidth: '100%', backdropFilter: 'blue(10px)', top: '10%', backgroundColor: '#CCCCCCCC', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <img src={competitiveAudit} width="100%" alt="Competitive Audit" style={{ marginTop: '-10%' }} />
+          <div style={{ position: 'absolute', minHeight: '80%', minWidth: '100%', backdropFilter: 'blue(10px)', top: 0, backgroundColor: '#CCCCCCCC', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ color: 'white', fontSize: '8em', textAlign: 'center' }}>Competitive Audit</div>
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '10% 10% 10%', justifyContent: 'center', gap: '2em' }}>
-          <div style={{ border: '1em solid #3DA834', borderRadius: '50%', paddingBottom: '4em', backgroundColor: '#3DA834' }}>
-          </div>
-          <div style={{ border: '1em solid gray', borderRadius: '50%' , paddingBottom: '4em', backgroundColor: 'gray' }}>
-          </div>
-          <div style={{ border: '1em solid gray', borderRadius: '50%' , paddingBottom: '4em', backgroundColor: 'gray' }}>
-          </div>
-        </div>
+        {bubbles}
       </div>
     </div>
-  const research = <Project title="1. Understand" content={researchContent} />
+  const research = <Project content={researchContent} />
 
   const interviewContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '1em' }}>
-      <div key="audit" style={{ display: 'grid' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }}>
+      <div style={{ display: 'grid' }}>
         <div style={{ position: 'relative' }}>
           <img src={personas} width="100%" alt="Personas" />
           <div style={{ position: 'absolute', minHeight: '85%', minWidth: '100%', backdropFilter: 'blue(10px)', top: '7.5%', backgroundColor: '#CCCCCCCC', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ color: 'white', fontSize: '8em', textAlign: 'center' }}>User Personas</div>
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '10% 10% 10%', justifyContent: 'center', gap: '2em' }}>
-          <div style={{ border: '1em solid #3DA834', borderRadius: '50%', paddingBottom: '4em', backgroundColor: '#3DA834' }}>
-          </div>
-          <div style={{ border: '1em solid gray', borderRadius: '50%' , paddingBottom: '4em', backgroundColor: 'gray' }}>
-          </div>
-          <div style={{ border: '1em solid gray', borderRadius: '50%' , paddingBottom: '4em', backgroundColor: 'gray' }}>
-          </div>
-        </div>
+        {bubbles}
       </div>
       <div key="text" className="large-text">
         <div className="text-warning large" key="interviews">Interviews</div>
@@ -231,9 +241,7 @@ const ProjectsPage = () => {
   const conclusion = <Project title="5. Conclusion" content={conclusionContent} />
 
   return (
-    <Album>
-      {[meowWolf, aboutProject, research, interview, problemStatement, ideate, visualIdentity, finalDesign, conclusion]}
-    </Album>
+      [meowWolf, aboutProject, research, interview, problemStatement, ideate, visualIdentity, finalDesign, conclusion]
   )
 }
 
