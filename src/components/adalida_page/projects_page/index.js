@@ -9,7 +9,7 @@ import ColorBlock from './color_block'
 import Project from './project'
 import TimelineDescription from '../../timeline/timeline_description'
 
-import meowWolfHome from '../meow_wolf_home.png'
+import meowWolfHome from './meow_wolf.png'
 import downArrow from './down_arrow.svg'
 import competitiveAudit from './competitive_audit.svg'
 import personas from './personas.svg'
@@ -18,7 +18,14 @@ import loFi2 from './lo_fi_2.svg'
 
 const ProjectsPage = () => {
   const meowWolf =
-    <div style={{display: 'grid', alignItems: 'center', justifyItems: 'space-between', gridTemplateColumns: '1fr 1fr 1fr', backgroundColor: '#000000' }}>
+    <div style={{
+      display: 'grid',
+      alignItems: 'center',
+      justifyItems: 'space-between',
+      gridTemplateColumns: '1fr 1fr',
+      backgroundColor: '#000000',
+      minHeight: '100vh'
+    }}>
       <div
         key="meow-wolf"
         style={{display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', gridTemplateRows: 'auto'}}
@@ -26,10 +33,7 @@ const ProjectsPage = () => {
         <div className="header meow-wolf">Meow Wolf</div>
         <img src={downArrow} alt="Down arrow" onClick={() => null /* TODO: SCROLL */}/>
       </div>
-      <div key="space" />
-      <div key="meow-wolf-image">
-        <img src={meowWolfHome} alt="Meow Wolf Homepage" />
-      </div>
+      <img src={meowWolfHome} alt="Meow Wolf Homepage" />
     </div>
 
   const projectInfo = <>
