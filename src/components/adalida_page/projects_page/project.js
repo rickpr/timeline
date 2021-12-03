@@ -7,15 +7,13 @@ const Project = ({ title, content }) => {
   'timeline     content  right-space' 12fr / 2fr 22fr 1fr
 `
 
-  const innerGridTemplate = `
-`
-
   const marginLeftPercent = 40 // %
   const marginLeft = `${marginLeftPercent}%`
   const minWidth = `calc(${100 - marginLeftPercent}% - 2em)`
-  const border = '0.15em solid #3DA834'
-  const verticalLine = <div style={{ minHeight: '100%', border, marginLeft }}/>
-  const horizontalLine = <div style={{ position: 'absolute', marginLeft, minWidth, border }}/>
+  const backgroundColor = '#3DA834'
+  const border = `0.15em solid ${backgroundColor}`
+  const verticalLine = <div style={{ minHeight: '100%', border, marginLeft, backgroundColor }}/>
+  const horizontalLine = <div style={{ position: 'absolute', marginLeft, minWidth, border, backgroundColor }}/>
   const circle = <div style={{ minHeight: '1em', minWidth: '1em', borderRadius: '50%', position: 'absolute', right: '1em', border }}/>
 
   const timelineTop = (

@@ -30,10 +30,10 @@ const ProjectsPage = () => {
         key="meow-wolf"
         style={{display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', gridTemplateRows: 'auto'}}
       >
-        <div className="header meow-wolf">Meow Wolf</div>
+        <div className="header meow-wolf text-warning">Meow Wolf</div>
         <img src={downArrow} alt="Down arrow" onClick={() => null /* TODO: SCROLL */}/>
       </div>
-      <img src={meowWolfHome} alt="Meow Wolf Homepage" />
+      <img src={meowWolfHome} alt="Meow Wolf Homepage" style={{margin: '0 auto'}} />
     </div>
 
   const projectInfo = <>
