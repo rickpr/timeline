@@ -54,11 +54,11 @@ const ProjectsPage = () => {
     </ul>
   </>
   const aboutProjectContent =
-    <div style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+    <div style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }} className="full-height">
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <h1 style={{ margin: 'auto 0' }}>ABOUT THE PROJECT</h1>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'min-content 1fr', columnGap: '10%' }}>
         <div className="large-text">
           <div className="text-warning large" key="origin">Origin</div>
           <p key="first-paragraph">
@@ -70,7 +70,7 @@ const ProjectsPage = () => {
           <p key="second-paragraph">
             Meow Wolf is an American arts and entertainment company.
             They host interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado with day and event tickets.
-            They also host music festivals, create large scale art isntallations, and create and produce streaming content.
+            They also host music festivals, create large scale art installations, and create and produce streaming content.
           </p>
           <div style={{ marginTop: '1em' }} key="link">
             <Link to="/adalida/projects"><span className="text-warning">VISIT THE SITE</span></Link>&nbsp;
@@ -80,13 +80,17 @@ const ProjectsPage = () => {
         <div>
           <TimelineDescription description={projectInfo} />
         </div>
+        <div />
       </div>
     </div>
   const aboutProject = <Project content={aboutProjectContent} />
 
 
   const bubbles =
-    <div style={{ display: 'grid', gridTemplateColumns: '10% 10% 10%', justifyContent: 'center', width: '100%' }}>
+    <div
+      style={{ display: 'grid', gridTemplateColumns: '10% 10% 10%', justifyContent: 'center', width: '100%' }}
+      className="fullheight"
+    >
       <div style={{display: 'flex', justifyContent: 'center'}}>
         <div style={{ border: '0.5em solid #3DA834', borderRadius: '50%', backgroundColor: '#3DA834', maxWidth: '1em', maxHeight: '1em' }} />
       </div>
@@ -99,7 +103,7 @@ const ProjectsPage = () => {
     </div>
 
   const researchContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }} className="full-height">
       <div className="large-text" style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <h1 style={{ margin: 'auto 0' }}>1. Understand</h1>
@@ -125,7 +129,7 @@ const ProjectsPage = () => {
   const research = <Project content={researchContent} />
 
   const interviewContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }} className="full-height">
       <div style={{ display: 'grid' }}>
         <div style={{ position: 'relative' }}>
           <img src={personas} width="100%" alt="Personas" />
@@ -146,7 +150,7 @@ const ProjectsPage = () => {
   const interview = <Project title="2. Empathize" content={interviewContent} />
 
   const problemStatementContent =
-    <div className="large-text">
+    <div className="large-text full-height">
       <div className="text-warning large">Problem Statement</div>
       <p>
         Brian is a young working adult who needs to purchase tickets to Meow Wolf because they are planning a day
@@ -163,7 +167,7 @@ const ProjectsPage = () => {
     backgroundColor: '#C4C4C4'
   }
   const ideateContent =
-    <div className="large-text">
+    <div className="large-text full-height">
       <div className="text-warning large">Design, Prototype, Test</div>
       <p>
         I prototyped my lo-fidelity designs and conducted user research on the flow and navigation.
@@ -180,7 +184,7 @@ const ProjectsPage = () => {
   const ideate = <Project title="4. Ideate" content={ideateContent} />
 
   const visualIdentityContent =
-    <div className="large-text">
+    <div className="large-text full-height">
       <div className="text-warning large">Visual Identity</div>
       <p>
         Meow Wolf already had an awesome design system and identity.
