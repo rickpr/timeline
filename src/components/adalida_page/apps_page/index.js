@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import useDebounce from '../../../hooks/use_debounce'
+import useAlternateScroll from '../../../hooks/use_alternate_scroll'
 
 import Album from '../album'
 import Header from './header'
@@ -13,6 +14,7 @@ import heliosPhone from './helios.png'
 
 const AppsPage = () => {
   const [displayedProjectIndex, setDisplayedProjectIndex] = useState(0)
+  const debounce = useDebounce()
 
   const helios =
     <Project
@@ -52,11 +54,14 @@ const AppsPage = () => {
   }
 
   const projects = [helios, meowWolf, civica]
+  const scrollDown = debounce(() => setDisplayedProjectIndex(projectIndex => Math.min(projects.length - 1, projectIndex + 1)))
+  const scrollUp = debounce(() => setDisplayedProjectIndex(projectIndex => Math.max(0, projectIndex - 1)))
+  useAlternateScroll({ scrollDown, scrollUp })
 
   return (
     <>
       <Header color={projects[displayedProjectIndex].props.accentColor} />
-      <Album callback={setDisplayedProjectIndex}>{projects}</Album>
+      <Album displayedPageIndex={displayedProjectIndex}>{projects}</Album>
       <SideNavigation links={navigationLinks} click={useDebounce()(setDisplayedProjectIndex)} activeIndex={displayedProjectIndex} />
     </>
   )
