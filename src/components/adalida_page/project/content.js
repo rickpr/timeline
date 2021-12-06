@@ -23,7 +23,7 @@ const Content = ({ accentColor, primaryColor, title, description }) => {
 
   const bigTitle =
     <div
-      style={{ gridArea: 'title', width: '100%', display: 'flex', alignItems: 'center', color: accentColor }}
+      style={{ gridArea: 'title', width: '100%', display: 'flex', alignItems: 'center', color: accentColor, whiteSpace: 'nowrap' }}
       className="header huge name"
     >
       {title}

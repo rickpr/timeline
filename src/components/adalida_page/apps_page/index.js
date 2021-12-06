@@ -13,9 +13,6 @@ import meowWolfHome from '../meow_wolf_home.png'
 import heliosPhone from './helios.png'
 
 const AppsPage = () => {
-  const [displayedProjectIndex, setDisplayedProjectIndex] = useState(0)
-  const debounce = useDebounce()
-
   const helios =
     <Project
       title="Helios"
@@ -54,6 +51,8 @@ const AppsPage = () => {
   }
 
   const projects = [helios, meowWolf, civica]
+  const debounce = useDebounce()
+  const [displayedProjectIndex, setDisplayedProjectIndex] = useState(0)
   const scrollDown = debounce(() => setDisplayedProjectIndex(projectIndex => Math.min(projects.length - 1, projectIndex + 1)))
   const scrollUp = debounce(() => setDisplayedProjectIndex(projectIndex => Math.max(0, projectIndex - 1)))
   useAlternateScroll({ scrollDown, scrollUp })
