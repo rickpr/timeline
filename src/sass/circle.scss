@@ -1,0 +1,20 @@
+.circle {
+  border-radius: 50%;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  width: 5em;
+}
+.circle:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.circle-content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

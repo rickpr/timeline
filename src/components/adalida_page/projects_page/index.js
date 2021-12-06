@@ -3,20 +3,22 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-
-import Album from '../album'
-import ColorBlock from './color_block'
+import ColorCircle from './color_circle'
 import Project from './project'
 import TimelineDescription from '../../timeline/timeline_description'
+import CaptionGallery from '../../caption_gallery'
+import useCounter from '../../../hooks/use_counter'
 
+import architecture from './architecture.png'
 import meowWolfHome from './meow_wolf.png'
 import downArrow from './down_arrow.svg'
-import competitiveAudit from './competitive_audit.svg'
 import personas from './personas.svg'
+import personasOne from './personas_one.svg'
 import loFi1 from './lo_fi_1.svg'
 import loFi2 from './lo_fi_2.svg'
 
 const ProjectsPage = () => {
+  const counter = useCounter()
   const meowWolf =
     <div style={{
       display: 'grid',
@@ -37,25 +39,25 @@ const ProjectsPage = () => {
     </div>
 
   const projectInfo = <>
-    <h2 style={{color: '#3DA834'}} key="client-header">ROLES</h2>
-      <ul className="large-text" key="client" style={{marginLeft: '1%'}}>
+    <h2 style={{ color: '#3DA834' }} key="client-header">ROLES</h2>
+    <ul className="roles-list" key="client">
       <li>UX/UI Designer</li>
       <li>UX Researcher</li>
       <li>Prototyping</li>
       <li>User Testing</li>
     </ul>
-    <h2 style={{color: '#3DA834'}} key="role-header">DURATION</h2>
-    <ul className="large-text" key="role">
+    <h2 style={{ color: '#3DA834' }} key="role-header">DURATION</h2>
+    <ul className="roles-list">
       <li>May 2020 - June 2020</li>
     </ul>
     <h2 style={{ color: '#3DA834' }} key="date-header">MEDIUM</h2>
-    <ul className="large-text" key="date">
+    <ul className="roles-list" key="date">
       <li>Mobile App</li>
     </ul>
   </>
   const aboutProjectContent =
-    <div style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }} className="full-height">
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+      <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
         <h1 style={{ margin: 'auto 0' }}>ABOUT THE PROJECT</h1>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'min-content 1fr', columnGap: '10%' }}>
@@ -85,29 +87,10 @@ const ProjectsPage = () => {
     </div>
   const aboutProject = <Project content={aboutProjectContent} />
 
-
-  const bubbles =
-    <div
-      style={{ display: 'grid', gridTemplateColumns: '10% 10% 10%', justifyContent: 'center', width: '100%' }}
-      className="fullheight"
-    >
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-        <div style={{ border: '0.5em solid #3DA834', borderRadius: '50%', backgroundColor: '#3DA834', maxWidth: '1em', maxHeight: '1em' }} />
-      </div>
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-        <div style={{ border: '0.5em solid gray', borderRadius: '50%' , backgroundColor: 'gray', maxWidth: '1em', maxHeight: '1em'  }} />
-      </div>
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-        <div style={{ border: '0.5em solid gray', borderRadius: '50%' , backgroundColor: 'gray', maxWidth: '1em', maxHeight: '1em'  }} />
-      </div>
-    </div>
-
   const researchContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }} className="full-height">
-      <div className="large-text" style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <h1 style={{ margin: 'auto 0' }}>1. Understand</h1>
-        </div>
+    <div className="large-text" style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+      <h1 style={{ margin: 'auto 0' }}>1. Understand</h1>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }}>
         <div>
           <div className="text-warning large" key="research">Research</div>
           <p>
@@ -115,142 +98,148 @@ const ProjectsPage = () => {
             collect and learn as much information as possible. I paired this research with a competitive audit.
           </p>
         </div>
-      </div>
-      <div style={{ display: 'grid', alignItems: 'top' }}>
-        <div style={{ position: 'relative' }}>
-          <img src={competitiveAudit} width="100%" alt="Competitive Audit" style={{ marginTop: '-10%' }} />
-          <div style={{ position: 'absolute', minHeight: '80%', minWidth: '100%', backdropFilter: 'blue(10px)', top: 0, backgroundColor: '#CCCCCCCC', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <div style={{ color: 'white', fontSize: '8em', textAlign: 'center' }}>Competitive Audit</div>
-          </div>
-        </div>
-        {bubbles}
+        <CaptionGallery photos={[architecture]} caption="User Persona 1" id={counter()} />
       </div>
     </div>
   const research = <Project content={researchContent} />
 
   const interviewContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }} className="full-height">
-      <div style={{ display: 'grid' }}>
-        <div style={{ position: 'relative' }}>
-          <img src={personas} width="100%" alt="Personas" />
-          <div style={{ position: 'absolute', minHeight: '85%', minWidth: '100%', backdropFilter: 'blue(10px)', top: '7.5%', backgroundColor: '#CCCCCCCC', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <div style={{ color: 'white', fontSize: '8em', textAlign: 'center' }}>User Personas</div>
-          </div>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '10%' }}>
+      <CaptionGallery photos={[personas, personasOne]} caption="User Personas" id={counter()} />
+      <div style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+        <h1 style={{ margin: 'auto 0' }}>1. Understand</h1>
+        <div key="text" className="large-text">
+          <div className="text-warning large" key="interviews">Interviews</div>
+          <p>
+            I utilized my network for user research. The combination of my investigative research and user research led to
+            the design of a mobile in-app ticketing experience.
+          </p>
         </div>
-        {bubbles}
-      </div>
-      <div key="text" className="large-text">
-        <div className="text-warning large" key="interviews">Interviews</div>
-        <p>
-          I utilized my network for user research. The combination of my investigative research and user research led to
-          the design of a mobile in-app ticketing experience.
-        </p>
       </div>
     </div>
-  const interview = <Project title="2. Empathize" content={interviewContent} />
+  const interview = <Project content={interviewContent} />
 
   const problemStatementContent =
-    <div className="large-text full-height">
-      <div className="text-warning large">Problem Statement</div>
-      <p>
-        Brian is a young working adult who needs to purchase tickets to Meow Wolf because they are planning a day
-        visit with friends.
-      </p>
+    <div style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+      <h1 style={{ margin: 'auto 0' }}>3. Define</h1>
+      <div className="large-text">
+        <div className="text-warning large">Problem</div>
+        <p>
+          Brian is a young working adult who needs to purchase tickets to Meow Wolf because they are planning a day
+          visit with friends.
+        </p>
+      </div>
     </div>
-  const problemStatement = <Project title="3. Define" content={problemStatementContent} />
+  const problemStatement = <Project content={problemStatementContent} />
 
   const loFiContainerStyle = {
-    display: 'flex',
+    display: 'grid',
+    justifyItems: 'center',
     alignItems: 'center',
-    justifyContent: 'center',
     padding: '5em',
-    backgroundColor: '#C4C4C4'
+    backgroundColor: '#C4C4C4',
+    gridTemplateRows: '8fr 1fr',
+    gridTemplateColumns: '1fr'
   }
   const ideateContent =
-    <div className="large-text full-height">
-      <div className="text-warning large">Design, Prototype, Test</div>
-      <p>
-        I prototyped my lo-fidelity designs and conducted user research on the flow and navigation.
-        From the usability studies, it was clear many of the users' pain points could be solved with
-        a stronger information architecture
-      </p>
-      <p>Check are the before and after lo-fi mockups</p>
-      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr'}}>
-        <div style={loFiContainerStyle}><img src={loFi1} height="150%" /></div>
-        <div style={loFiContainerStyle}><img src={loFi2} height="150%" /></div>
+    <div style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+      <h1 style={{ margin: 'auto 0' }}>4. Ideate</h1>
+      <div className="large-text">
+        <div className="text-warning large">Design, Prototype, Test</div>
+        <p>
+          I prototyped my lo-fidelity designs and conducted user research on the flow and navigation.
+          From the usability studies, it was clear many of the users' pain points could be solved with
+          a stronger information architecture
+        </p>
+        <p>Check are the before and after lo-fi mockups</p>
+        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr'}}>
+          <div style={loFiContainerStyle}><img src={loFi1} /><div style={{ textAlign: 'center' }}>Before Video</div></div>
+          <div style={loFiContainerStyle}><img src={loFi2} /><div style={{ textAlign: 'center' }}>After Video</div></div>
+        </div>
       </div>
-      <div style={{textAlign: 'center'}}><h1>Description of what changed</h1></div>
     </div>
-  const ideate = <Project title="4. Ideate" content={ideateContent} />
+  const ideate = <Project content={ideateContent} />
 
+  const visualIdentityRowStyle = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr',
+    gap: '1em',
+    marginBottom: '2em'
+  }
   const visualIdentityContent =
-    <div className="large-text full-height">
-      <div className="text-warning large">Visual Identity</div>
-      <p>
-        Meow Wolf already had an awesome design system and identity.
-        Therefore, my job was to ensure consistent branding from the website to the mobile app.
-      </p>
-      <h2 style={{fontWeight: '900'}}>Colors</h2>
-      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1em'}}>
-        <ColorBlock color="#EC0089" /> <ColorBlock color="#412784" />
-        <ColorBlock color="#3DA834" /> <ColorBlock color="#EC0089" />
-        <ColorBlock color="#00A00C" /> <ColorBlock color="#000000" />
-        <ColorBlock color="#FFF21F" /> <ColorBlock color="#000000" />
+    <div style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+      <h1 style={{ margin: 'auto 0' }}>4. Visual Identity</h1>
+      <div className="large-text">
+        <div className="text-warning large">Primary Colors</div>
+        <div style={visualIdentityRowStyle}>
+          <ColorCircle color="#000000" /> <ColorCircle color="#EC0089" /> <ColorCircle color="#3DA834" />
+        </div>
+        <div className="text-warning large">Secondary Colors</div>
+        <div style={visualIdentityRowStyle}>
+          <ColorCircle color="#C4C4C4" /> <ColorCircle color="#00A0CC" /> <ColorCircle color="#FFF21F" />
+        </div>
+        <div className="text-warning large">Typography</div>
+        <h1 style={{ fontWeight: '400', fontFamily: 'Montserrat' }}>Montserrat, Sans-Serif AaBbCcDdEe 0123546789</h1>
       </div>
-      <h2 style={{fontWeight: '900'}}>Typography</h2>
-      <h2 style={{fontFamily: 'Montserrat'}}>Montserrat, Sans-Serif</h2>
-      <h2 style={{fontWeight: 'bold', fontFamily: 'Montserrat'}}>Montserrat, Sans-Serif</h2>
-      <h2 style={{fontWeight: '900', fontFamily: 'Montserrat'}}>Montserrat, Sans-Serif</h2>
-      <h2 style={{fontStyle: 'italic', fontFamily: 'Montserrat'}}>Montserrat, Sans-Serif</h2>
     </div>
-  const visualIdentity = <Project title="3. Design System" content={visualIdentityContent} />
+  const visualIdentity = <Project content={visualIdentityContent} />
 
   const finalDesignContent =
-    <div className="large-text">
-      <div className="text-warning large">Final Design</div>
-      <p>Check out my final design!</p>
-      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
-        <img src={meowWolfHome} width="100%" />
-        <img src={meowWolfHome} width="100%" />
-        <img src={meowWolfHome} width="100%" />
-        <img src={meowWolfHome} width="100%" />
+    <div className="large-text" style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+      <h1 style={{ margin: 'auto 0' }}>4. Solution</h1>
+      <div className="large-text">
+        <p>Check out my final design!</p>
+        <div style={{position: 'relative', width: '100%', paddingBottom: '56.25%', float: 'left', height: 0}}>
+          <iframe
+            style={{border: '1px solid rgba(0, 0, 0, 0.1)', width: '100%', height: '100%', position: 'absolute', left: 0}}
+            width="800"
+            height="450"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FTgLCuNQeV3mYEvH2kp8gxz%2FMeow-Wolf-Hi-fi%3Fpage-id%3D349%253A1375%26node-id%3D714%253A214%26starting-point-node-id%3D714%253A214%26scaling%3Dscale-down"
+            allowFullScreen
+          />
+        </div>
       </div>
     </div>
-  const finalDesign = <Project title="4. Solution" content={finalDesignContent} />
+  const finalDesign = <Project content={finalDesignContent} />
 
   const conclusionContent =
-    <div className="large-text">
-      <div className="text-warning large">What I leanred</div>
-      <p>
-        I'm so thankful for the opportunity to work and learn so much from this project.
-        In summary, I learned about the general user experience process and how research, especially good research,
-        can positively impact user design solutions.
-      </p>
-      <div style={{display: 'grid', gridTemplateColumns: '1fr 3fr'}}>
-        <h1>Usability Studies</h1>
+    <div className="large-text" style={{ display: 'grid', gridTemplateRows: '1fr 6fr' }}>
+      <h1 style={{ margin: 'auto 0' }}>5. Conclusion</h1>
+      <div className="large-text">
+        <div className="text-warning large">What I learned</div>
+        <div style={{minHeight: '2em '}} />
         <p>
-          Data-driven user experience design casn save you time and resources while increasing your chance at creating
-          effective designs.
+          I'm so thankful for the opportunity to work and learn so much from this project.
+          In summary, I learned about the general user experience process and how research, especially good research,
+          can positively impact user design solutions.
         </p>
-        <h1>Adapting Quickly</h1>
-        <p>Keeping an updated information architecture handy is helpful in creating impactful designs.</p>
-        <h1>New Software</h1>
-        <p>
-          I started using Figma with this project and it was awesome to learn about the abundance of online resources
-          and UX communities. Also, YouTube and Google are your friends!
-        </p>
-        <h1>Be Mindful</h1>
-        <p>
-          Always remember your designs are intended to solve the user's problem while also probomting business growth
-          and needs. Set aside extreme usability idealism.
-        </p>
+        <div style={{minHeight: '2em '}} />
+        <div style={{display: 'grid', gridTemplateColumns: '1fr 3fr'}}>
+          <h1>Usability Studies</h1>
+          <p>
+            Data-driven user experience design casn save you time and resources while increasing your chance at creating
+            effective designs.
+          </p>
+          <h1>Adapting Quickly</h1>
+          <p>Keeping an updated information architecture handy is helpful in creating impactful designs.</p>
+          <h1>New Software</h1>
+          <p>
+            I started using Figma with this project and it was awesome to learn about the abundance of online resources
+            and UX communities. Also, YouTube and Google are your friends!
+          </p>
+          <h1>Be Mindful</h1>
+          <p>
+            Always remember your designs are intended to solve the user's problem while also probomting business growth
+            and needs. Set aside extreme usability idealism.
+          </p>
+        </div>
       </div>
     </div>
-  const conclusion = <Project title="5. Conclusion" content={conclusionContent} />
+  const conclusion = <Project content={conclusionContent} />
 
-  return (
-      [meowWolf, aboutProject, research, interview, problemStatement, ideate, visualIdentity, finalDesign, conclusion]
-  )
+  return [
+    meowWolf, aboutProject, research, interview, problemStatement, ideate, visualIdentity, finalDesign, conclusion
+  ]
 }
 
 

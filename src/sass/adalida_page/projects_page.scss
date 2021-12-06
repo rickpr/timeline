@@ -21,3 +21,9 @@
     font-size: 1.6em;
   }
 }
+
+.roles-list {
+  @extend .large-text;
+  margin-left: 1%;
+  color: #180040;
+}

@@ -1,6 +1,14 @@
 import React from 'react'
 
-const Project = ({ title, content }) => {
+const Project = ({ content }) => {
+  /* Project Component
+   * crossbar grid area is intentionally 1/6 of the height of the rest of content.
+   * When passing in content, use a grid width gridTemplateRows of 1fr 6fr.
+   * Center a title within the top row (something like margin: auto 0) and it will align
+   * with the crossbar, creating a nice effect.
+   *
+   * This can be used without doing that as well.
+   */
   const outerGridTemplate = `
   'timeline-top    top-space    top-space'    5fr
   'menu-timeline   menu-bar     right-space'  4fr
@@ -50,7 +58,7 @@ const Project = ({ title, content }) => {
     </div>
 
   return (
-    <div style={{ display: 'grid', gridTemplate: outerGridTemplate, minHeight: '120vh' }}>
+    <div style={{ display: 'grid', gridTemplate: outerGridTemplate }}>
       {timelineTop} <div style={{ gridArea: 'top-space' }}/>
       {menuTimeline} {menuBar}  {rightSpace}
       {crossbar}    {contentArea}
