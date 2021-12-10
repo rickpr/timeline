@@ -60,14 +60,14 @@ const ProjectsPage = () => {
       <div className="large-text">
         <div className="text-warning large" key="origin">Origin</div>
         <p key="first-paragraph">
-          I like the company Meow Wolf (we are both New Mexico Native).
-          They opened, and then quickly closed, a new location in Las Vegas, Nevada during COVID.
+          I like the company Meow Wolf (we are both native to New Mexico).
+          They opened, and then quickly closed, a new location in Las Vegas, Nevada during the pandemic.
           I wanted to learn user experience design and I wanted to visit the new exhibit, Omega Mart.
           This project was my way of marrying the two while I waited for the re-opening.
         </p>
         <p key="second-paragraph">
           Meow Wolf is an American arts and entertainment company.
-          They host interactive non-linear art muesuem with locations in New Mexico, Nevada, and Colorado with day and event tickets.
+          They host interactive non-linear art museum with locations in New Mexico, Nevada, and Colorado with day and event tickets.
           They also host music festivals, create large scale art installations, and create and produce streaming content.
         </p>
         <div style={{ marginTop: '1em' }} key="link">
@@ -139,7 +139,7 @@ const ProjectsPage = () => {
       <p>
         I prototyped my lo-fidelity designs and conducted user research on the flow and navigation.
         From the usability studies, it was clear many of the users' pain points could be solved with
-        a stronger information architecture
+        a stronger information architecture.
       </p>
       <p>Check are the before and after lo-fi mockups</p>
       <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr'}}>
@@ -168,7 +168,7 @@ const ProjectsPage = () => {
       <div className="text-warning large">Typography</div>
       <h1 style={{ fontWeight: '400', fontFamily: 'Montserrat' }}>Montserrat, Sans-Serif AaBbCcDdEe 0123546789</h1>
     </div>
-  const visualIdentity = <Project title="4. Visual Identity" content={visualIdentityContent} />
+  const visualIdentity = <Project title="Defining the Visual Identity" content={visualIdentityContent} />
 
   const finalDesignContent =
     <div className="large-text">
@@ -183,7 +183,7 @@ const ProjectsPage = () => {
         />
       </div>
     </div>
-  const finalDesign = <Project title="4. Solution" content={finalDesignContent} />
+  const finalDesign = <Project title="5. Solution" content={finalDesignContent} />
 
   const conclusionContent =
     <div className="large-text">
@@ -198,24 +198,24 @@ const ProjectsPage = () => {
       <div style={{display: 'grid', gridTemplateColumns: '1fr 3fr'}}>
         <h1>Usability Studies</h1>
         <p>
-          Data-driven user experience design casn save you time and resources while increasing your chance at creating
+          Data-driven user experience design can save you time and resources while increasing your chance at creating
           effective designs.
         </p>
         <h1>Adapting Quickly</h1>
         <p>Keeping an updated information architecture handy is helpful in creating impactful designs.</p>
-        <h1>New Software</h1>
+        <h1>Learning New Resources</h1>
         <p>
-          I started using Figma with this project and it was awesome to learn about the abundance of online resources
+          I designed using the tool Figma for this project and it was awesome to learn about the abundance of online resources
           and UX communities. Also, YouTube and Google are your friends!
         </p>
         <h1>Be Mindful</h1>
         <p>
-          Always remember your designs are intended to solve the user's problem while also probomting business growth
+          Always remember your designs are intended to solve the user's problem while also promoting business growth
           and needs. Set aside extreme usability idealism.
         </p>
       </div>
     </div>
-  const conclusion = <Project title="5. Conclusion" content={conclusionContent} />
+  const conclusion = <Project title="5. Final Thoughts" content={conclusionContent} />
 
   return [
     meowWolf, aboutProject, researchAndInterview, problemStatement, ideate, visualIdentity, finalDesign, conclusion
