@@ -6,9 +6,8 @@ const CaptionGallery = ({ photos, caption, id }) => {
   const images = photos.map((photo, index) => ({ id: index, imageUrl: photo, altText: caption }))
   const carousel = { id, images }
   return (
-    <div style={{ marginTop: '-1em' }}>
+    <div style={{ border: '1px solid black' }}>
       <Carousel carousel={carousel} />
-      <div style={{ textAlign: 'center' }}>{caption}</div>
     </div>
   )
 }

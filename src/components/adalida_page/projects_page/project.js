@@ -1,20 +1,12 @@
 import React from 'react'
 
-const Project = ({ content }) => {
-  /* Project Component
-   * crossbar grid area is intentionally 1/6 of the height of the rest of content.
-   * When passing in content, use a grid width gridTemplateRows of 1fr 6fr.
-   * Center a title within the top row (something like margin: auto 0) and it will align
-   * with the crossbar, creating a nice effect.
-   *
-   * This can be used without doing that as well.
-   */
+const Project = ({ content, title }) => {
   const outerGridTemplate = `
-  'timeline-top    top-space    top-space'    5fr
-  'menu-timeline   menu-bar     right-space'  4fr
-  'crossbar        content      right-space'  8fr
-  'timeline        content      right-space'  48fr
-  'timeline-bottom bottom-space bottom-space' 5fr / 2fr 22fr 1fr
+  'timeline-top    top-space    top-space'    1fr
+  'menu-timeline   menu-bar     right-space'  2fr
+  'crossbar        title        right-space'  2fr
+  'timeline        content      right-space'  auto
+  'timeline-bottom bottom-space bottom-space' 1fr / 2fr 22fr 1fr
 `
 
   const marginLeftPercent = 40 // %
@@ -47,6 +39,11 @@ const Project = ({ content }) => {
       {verticalLine} {horizontalLine} {circle}
     </div>
 
+  const titleArea =
+    <div style={{ gridArea: 'title', display: 'flex', alignItems: 'center' }}>
+      <h1>{title}</h1>
+    </div>
+
   const timeline =
     <div style={{ gridArea: 'timeline', display: 'flex' }}>
       {verticalLine}
@@ -58,11 +55,11 @@ const Project = ({ content }) => {
     </div>
 
   return (
-    <div style={{ display: 'grid', gridTemplate: outerGridTemplate }}>
+    <div style={{ display: 'grid', gridTemplate: outerGridTemplate, minHeight: '100vh' }}>
       {timelineTop} <div style={{ gridArea: 'top-space' }}/>
-      {menuTimeline} {menuBar}  {rightSpace}
-      {crossbar}    {contentArea}
-      {timeline}
+      {menuTimeline} {menuBar}     {rightSpace}
+      {crossbar}     {titleArea}
+      {timeline}     {contentArea}
       {bottomSpace} <div style={{ gridArea: 'bottom-space' }}/>
     </div>
   )
