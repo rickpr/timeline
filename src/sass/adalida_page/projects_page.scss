@@ -8,11 +8,14 @@
 }
 
 .meow-wolf {
-  color: theme-color('warning');
+  color: map-get($theme-colors, 'warning');
+  font-weight: 900;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .name {
-  color: theme-color('warning');
+  color: map-get($theme-colors, 'warning');
 }
 
 .large-text {
@@ -26,4 +29,9 @@
   @extend .large-text;
   margin-left: 1%;
   color: #180040;
+}
+
+.what-i-learned * {
+  margin: auto 0;
+  padding: 0.5em 0;
 }

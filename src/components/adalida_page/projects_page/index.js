@@ -9,6 +9,7 @@ import TimelineDescription from '../../timeline/timeline_description'
 import CaptionGallery from '../../caption_gallery'
 import useCounter from '../../../hooks/use_counter'
 
+// Image
 import architecture from './architecture.png'
 import meowWolfHome from './meow_wolf.png'
 import downArrow from './down_arrow.svg'
@@ -16,6 +17,8 @@ import personas from './personas.svg'
 import personasOne from './personas_one.svg'
 import loFi1 from './lo_fi_1.svg'
 import loFi2 from './lo_fi_2.svg'
+import userJourneyMap1 from './user_journey_map_1.svg'
+import userJourneyMap2 from './user_journey_map_2.svg'
 
 const ProjectsPage = () => {
   const counter = useCounter()
@@ -23,19 +26,20 @@ const ProjectsPage = () => {
     <div style={{
       display: 'grid',
       alignItems: 'center',
-      justifyItems: 'space-between',
-      gridTemplateColumns: '1fr 1fr',
+      justifyItems: 'center',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
       backgroundColor: '#000000',
       minHeight: '100vh'
     }}>
-      <div
-        key="meow-wolf"
-        style={{display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', gridTemplateRows: 'auto'}}
-      >
-        <div className="header meow-wolf text-warning">Meow Wolf</div>
-        <img src={downArrow} alt="Down arrow" onClick={() => null /* TODO: SCROLL */}/>
+      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr' }}>
+        <div className="meow-wolf">
+          <svg viewBox="0 0 75 16" style={{ width: '100%', fill: '#ff2079' }}>
+            <text x="0" y="15">Meow Wolf</text>
+          </svg>
+        </div>
+        <img src={downArrow} style={{ minWidth: '5vw' }} alt="Down arrow" onClick={() => null /* TODO: SCROLL */} />
       </div>
-      <img src={meowWolfHome} alt="Meow Wolf Homepage" style={{margin: '0 auto'}} />
+      <img src={meowWolfHome} alt="Meow Wolf Homepage" style={{ margin: '0 auto', maxWidth: '100%' }} />
     </div>
 
   const projectInfo = <>
@@ -90,7 +94,11 @@ const ProjectsPage = () => {
           collect and learn as much information as possible. I paired this research with a competitive audit.
         </p>
       </div>
-      <CaptionGallery photos={[architecture]} caption="User Persona 1" id={counter()} />
+      <CaptionGallery
+        photos={[architecture, userJourneyMap1, userJourneyMap2]}
+        caption="User Persona 1"
+        id={counter()}
+      />
     </>
 
   const interviewContent =
@@ -142,7 +150,7 @@ const ProjectsPage = () => {
         a stronger information architecture.
       </p>
       <p>Check are the before and after lo-fi mockups</p>
-      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr'}}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={loFiContainerStyle}><img src={loFi1} /><div style={{ textAlign: 'center' }}>Before Video</div></div>
         <div style={loFiContainerStyle}><img src={loFi2} /><div style={{ textAlign: 'center' }}>After Video</div></div>
       </div>
@@ -173,9 +181,9 @@ const ProjectsPage = () => {
   const finalDesignContent =
     <div className="large-text">
       <p>Check out my final design!</p>
-      <div style={{position: 'relative', width: '100%', paddingBottom: '56.25%', float: 'left', height: 0}}>
+      <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', float: 'left', height: 0 }}>
         <iframe
-          style={{border: '1px solid rgba(0, 0, 0, 0.1)', width: '100%', height: '100%', position: 'absolute', left: 0}}
+          style={{ border: '1px solid rgba(0, 0, 0, 0.1)', width: '100%', height: '100%', position: 'absolute', left: 0 }}
           width="800"
           height="450"
           src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FTgLCuNQeV3mYEvH2kp8gxz%2FMeow-Wolf-Hi-fi%3Fpage-id%3D349%253A1375%26node-id%3D714%253A214%26starting-point-node-id%3D714%253A214%26scaling%3Dscale-down"
@@ -188,14 +196,14 @@ const ProjectsPage = () => {
   const conclusionContent =
     <div className="large-text">
       <div className="text-warning large">What I learned</div>
-      <div style={{minHeight: '2em '}} />
+      <div style={{ minHeight: '2em ' }} />
       <p>
         I'm so thankful for the opportunity to work and learn so much from this project.
         In summary, I learned about the general user experience process and how research, especially good research,
         can positively impact user design solutions.
       </p>
-      <div style={{minHeight: '2em '}} />
-      <div style={{display: 'grid', gridTemplateColumns: '1fr 3fr'}}>
+      <div style={{ minHeight: '2em ' }} />
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr' }} className="what-i-learned">
         <h1>Usability Studies</h1>
         <p>
           Data-driven user experience design can save you time and resources while increasing your chance at creating
