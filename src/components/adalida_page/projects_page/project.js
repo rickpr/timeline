@@ -2,7 +2,6 @@ import React from 'react'
 
 const Project = ({ content, title }) => {
   const outerGridTemplate = `
-  'timeline-top    top-space    top-space'    1fr
   'menu-timeline   menu-bar     right-space'  2fr
   'crossbar        title        right-space'  2fr
   'timeline        content      right-space'  auto
@@ -56,7 +55,6 @@ const Project = ({ content, title }) => {
 
   return (
     <div style={{ display: 'grid', gridTemplate: outerGridTemplate, minHeight: '100vh' }}>
-      {timelineTop} <div style={{ gridArea: 'top-space' }}/>
       {menuTimeline} {menuBar}     {rightSpace}
       {crossbar}     {titleArea}
       {timeline}     {contentArea}

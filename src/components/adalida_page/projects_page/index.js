@@ -12,7 +12,7 @@ import useCounter from '../../../hooks/use_counter'
 // Image
 import architecture from './architecture.png'
 import meowWolfHome from './meow_wolf.png'
-import downArrow from './down_arrow.svg'
+import downArrow from '../../../images/down_arrow.svg'
 import personas from './personas.svg'
 import personasOne from './personas_one.svg'
 import loFi1 from './lo_fi_1.svg'
@@ -32,9 +32,9 @@ const ProjectsPage = () => {
       backgroundColor: '#000000',
       minHeight: '100vh',
     }}>
-      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', maxWidth: '40%' }}>
-        <div className="meow-wolf">
-          <svg viewBox="0 0 75 16" style={{ fill: '#ff2079', maxWidth: '90%' }}>
+      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', width: '40vw' }}>
+        <div className="meow-wolf" style={{ marginBottom: '10%', width: '100%' }}>
+          <svg viewBox="0 0 75 16" style={{ fill: '#ff2079', width: '90%' }}>
             <text x="0" y="15">Meow Wolf</text>
           </svg>
         </div>
@@ -108,6 +108,7 @@ const ProjectsPage = () => {
     <>
       <CaptionGallery photos={[personas, personasOne]} caption="User Personas" id={counter()} />
       <div key="text" className="large-text">
+        <h1>2. Empathize</h1>
         <div className="text-warning large" key="interviews">Interviews</div>
         <p>
           I utilized my network for user research. The combination of my investigative research and user research led to
@@ -116,7 +117,7 @@ const ProjectsPage = () => {
       </div>
     </>
   const researchAndInterviewContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '100vh', gridTemplateRows: '1fr 5em 1fr', columnGap: '2em' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 5em 1fr', columnGap: '10%' }}>
       {researchContent}
       <div style={{ gridColumn: '1 / span 2' }} />
       {interviewContent}
