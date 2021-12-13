@@ -24,22 +24,25 @@ const ProjectsPage = () => {
   const counter = useCounter()
   const meowWolf =
     <div style={{
-      display: 'grid',
+      display: 'flex',
+      flexWrap: 'wrap',
       alignItems: 'center',
-      justifyItems: 'center',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+      alignContent: 'space-evenly',
+      justifyContent: 'space-evenly',
       backgroundColor: '#000000',
-      minHeight: '100vh'
+      minHeight: '100vh',
     }}>
-      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr' }}>
+      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', maxWidth: '40%' }}>
         <div className="meow-wolf">
-          <svg viewBox="0 0 75 16" style={{ width: '100%', fill: '#ff2079' }}>
+          <svg viewBox="0 0 75 16" style={{ fill: '#ff2079', maxWidth: '90%' }}>
             <text x="0" y="15">Meow Wolf</text>
           </svg>
         </div>
         <img src={downArrow} style={{ minWidth: '5vw' }} alt="Down arrow" onClick={() => null /* TODO: SCROLL */} />
       </div>
-      <img src={meowWolfHome} alt="Meow Wolf Homepage" style={{ margin: '0 auto', maxWidth: '100%' }} />
+        <div style={{margin: 'auto 0' }}>
+        <img src={meowWolfHome} alt="Meow Wolf Homepage" style={{ maxWidth: '100%' }} />
+      </div>
     </div>
 
   const projectInfo = <>
