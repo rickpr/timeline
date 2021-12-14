@@ -2,10 +2,9 @@ import React from 'react'
 
 const Project = ({ content, title }) => {
   const outerGridTemplate = `
-  'menu-timeline   menu-bar     right-space'  2fr
-  'crossbar        title        right-space'  2fr
-  'timeline        content      right-space'  auto
-  'timeline-bottom bottom-space bottom-space' 1fr / 2fr 22fr 1fr
+  'menu-timeline   menu-bar     right-space'  5rem
+  'crossbar        title        right-space'  5rem
+  'timeline        content      right-space'  1fr / 2fr 22fr 1fr
 `
 
   const marginLeftPercent = 40 // %
@@ -54,11 +53,10 @@ const Project = ({ content, title }) => {
     </div>
 
   return (
-    <div style={{ display: 'grid', gridTemplate: outerGridTemplate, minHeight: '100vh' }}>
+    <div style={{ display: 'grid', gridTemplate: outerGridTemplate }}>
       {menuTimeline} {menuBar}     {rightSpace}
       {crossbar}     {titleArea}
       {timeline}     {contentArea}
-      {bottomSpace} <div style={{ gridArea: 'bottom-space' }}/>
     </div>
   )
 }

@@ -20,27 +20,41 @@ import loFi2 from './lo_fi_2.svg'
 import userJourneyMap1 from './user_journey_map_1.svg'
 import userJourneyMap2 from './user_journey_map_2.svg'
 
+// Video
+import beforeLoFi from '../../../videos/before_lo_fi.mp4'
+import afterHiFi from '../../../videos/after_hi_fi.mp4'
+
 const ProjectsPage = () => {
   const counter = useCounter()
   const meowWolf =
     <div style={{
-      display: 'flex',
-      flexWrap: 'wrap',
+      display: 'grid',
       alignItems: 'center',
-      alignContent: 'space-evenly',
-      justifyContent: 'space-evenly',
+      alignContent: 'center',
+      justifyContent: 'center',
+      justifyItems: 'center',
       backgroundColor: '#000000',
-      minHeight: '100vh',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(30em, 1fr))',
+      minHeight: '100vh'
     }}>
-      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', width: '40vw' }}>
-        <div className="meow-wolf" style={{ marginBottom: '10%', width: '100%' }}>
-          <svg viewBox="0 0 75 16" style={{ fill: '#ff2079', width: '90%' }}>
-            <text x="0" y="15">Meow Wolf</text>
+      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', overflow: 'hidden' }}>
+        <div className="meow-wolf" style={{
+          marginBottom: '10%',
+          width: '100%',
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignContent: 'center',
+        }}>
+          <svg viewBox="0 0 35 16" style={{ fill: '#ff2079', width: '40%', margin: '2%' }}>
+            <text x="0" y="15">Meow</text>
+          </svg>
+          <svg viewBox="0 0 35 16" style={{ fill: '#ff2079', width: '40%', margin: '2%' }}>
+            <text x="0" y="15">Wolf</text>
           </svg>
         </div>
-        <img src={downArrow} style={{ minWidth: '5vw' }} alt="Down arrow" onClick={() => null /* TODO: SCROLL */} />
+        <img src={downArrow} style={{ width: 'min(20%, calc(100vw - 175%))' }} alt="Down arrow" onClick={() => null /* TODO: SCROLL */} />
       </div>
-        <div style={{margin: 'auto 0' }}>
+      <div style={{ margin: 'auto 0' }}>
         <img src={meowWolfHome} alt="Meow Wolf Homepage" style={{ maxWidth: '100%' }} />
       </div>
     </div>
@@ -117,15 +131,22 @@ const ProjectsPage = () => {
       </div>
     </>
   const researchAndInterviewContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 5em 1fr', columnGap: '10%' }}>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gridTemplateRows: 'min-content min-content 1fr',
+      columnGap: '10%',
+      rowGap: '1em',
+      minHeight: '100vh'
+    }}>
       {researchContent}
-      <div style={{ gridColumn: '1 / span 2' }} />
       {interviewContent}
+      <div />
     </div>
   const researchAndInterview = <Project title="1. Understand" content={researchAndInterviewContent} />
 
   const problemStatementContent =
-    <div style={{ display: 'grid' }}>
+    <div style={{ display: 'grid', minHeight: '100vh' }}>
       <div className="large-text">
         <div className="text-warning large">Problem</div>
         <p>
@@ -136,11 +157,11 @@ const ProjectsPage = () => {
     </div>
   const problemStatement = <Project title="3. Define" content={problemStatementContent} />
 
-  const loFiContainerStyle = {
+  const videoContainerStyle = {
     display: 'grid',
     justifyItems: 'center',
     alignItems: 'center',
-    padding: '5em',
+    padding: '5em 0',
     backgroundColor: '#C4C4C4',
     gridTemplateRows: '8fr 1fr',
     gridTemplateColumns: '1fr'
@@ -153,10 +174,16 @@ const ProjectsPage = () => {
         From the usability studies, it was clear many of the users' pain points could be solved with
         a stronger information architecture.
       </p>
-      <p>Check are the before and after lo-fi mockups</p>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-        <div style={loFiContainerStyle}><img src={loFi1} /><div style={{ textAlign: 'center' }}>Before Video</div></div>
-        <div style={loFiContainerStyle}><img src={loFi2} /><div style={{ textAlign: 'center' }}>After Video</div></div>
+      <p>Check out the before and after lo-fi mockups</p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(calc(280px + 5em), 1fr))' }}>
+        <div style={videoContainerStyle}>
+          <video src={beforeLoFi} type="video/mp4" controls style={{ margin: '0 auto' }} />
+          <div style={{ textAlign: 'center' }}>Before Video</div>
+        </div>
+        <div style={videoContainerStyle}>
+          <video src={afterHiFi} type="video/mp4" controls style={{ margin: '0 auto' }} />
+          <div style={{ textAlign: 'center' }}>After Video</div>
+        </div>
       </div>
     </div>
   const ideate = <Project title="4. Ideate" content={ideateContent} />
