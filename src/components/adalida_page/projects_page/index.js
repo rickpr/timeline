@@ -11,12 +11,10 @@ import useCounter from '../../../hooks/use_counter'
 
 // Image
 import architecture from './architecture.png'
-import meowWolfHome from './meow_wolf.png'
+import meowWolfHome from '../../../images/meow_wolf.png'
 import downArrow from '../../../images/down_arrow.svg'
 import personas from './personas.svg'
 import personasOne from './personas_one.svg'
-import loFi1 from './lo_fi_1.svg'
-import loFi2 from './lo_fi_2.svg'
 import userJourneyMap1 from './user_journey_map_1.svg'
 import userJourneyMap2 from './user_journey_map_2.svg'
 

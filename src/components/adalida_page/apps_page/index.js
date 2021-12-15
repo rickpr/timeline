@@ -9,7 +9,7 @@ import SideNavigation from './side_navigation'
 import Project from '../project'
 
 import face from '../face.png'
-import meowWolfHome from '../projects_page/meow_wolf.png'
+import meowWolfHome from '../../../images/meow_wolf.png'
 import heliosPhone from './helios.png'
 
 const AppsPage = () => {
