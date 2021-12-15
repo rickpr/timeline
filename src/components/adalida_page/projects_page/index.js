@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { forwardRef, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -26,6 +26,7 @@ import afterHiFi from '../../../videos/after_hi_fi.mp4'
 
 const ProjectsPage = () => {
   const counter = useCounter()
+  const downArrowScrollsTo = useRef()
   const meowWolf =
     <div style={{
       display: 'grid',
@@ -52,7 +53,12 @@ const ProjectsPage = () => {
             <text x="0" y="15">Wolf</text>
           </svg>
         </div>
-        <img src={downArrow} style={{ width: 'min(20%, calc(100vw - 175%))' }} alt="Down arrow" onClick={() => null /* TODO: SCROLL */} />
+        <img
+          src={downArrow}
+          style={{ width: 'min(20%, calc(100vw - 175%))', cursor: 'pointer' }}
+          alt="Down arrow"
+          onClick={() => downArrowScrollsTo.current?.scrollIntoView({ behavior: 'smooth' })}
+        />
       </div>
       <div style={{ margin: 'auto 0' }}>
         <img src={meowWolfHome} alt="Meow Wolf Homepage" style={{ maxWidth: '100%' }} />
@@ -60,7 +66,7 @@ const ProjectsPage = () => {
     </div>
 
   const projectInfo = <>
-    <h2 style={{ color: '#3DA834' }} key="client-header">ROLES</h2>
+    <h2 style={{ color: '#3DA834' }}>ROLES</h2>
     <ul className="roles-list" key="client">
       <li>UX/UI Designer</li>
       <li>UX Researcher</li>
@@ -77,7 +83,9 @@ const ProjectsPage = () => {
     </ul>
   </>
   const aboutProjectContent =
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'min-content 1fr', columnGap: '10%' }}>
+    <div
+      style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'min-content 1fr', columnGap: '10%' }}
+    >
       <div className="large-text">
         <div className="text-warning large" key="origin">Origin</div>
         <p key="first-paragraph">
@@ -100,7 +108,8 @@ const ProjectsPage = () => {
         <TimelineDescription description={projectInfo} />
       </div>
     </div>
-  const aboutProject = <Project title="ABOUT THE PROJECT" content={aboutProjectContent} />
+  const ProjectForwardRef = forwardRef((props, ref) => <Project ref={ref} title={props.title} content={props.content} />)
+  const aboutProject = <Project forwardRef={downArrowScrollsTo} title="ABOUT THE PROJECT" content={aboutProjectContent} />
 
   const researchContent =
     <>

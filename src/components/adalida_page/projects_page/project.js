@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Project = ({ content, title }) => {
+const Project = ({ forwardRef, content, title }) => {
   const outerGridTemplate = `
   'menu-timeline   menu-bar     right-space'  5rem
   'crossbar        title        right-space'  5rem
@@ -53,7 +53,7 @@ const Project = ({ content, title }) => {
     </div>
 
   return (
-    <div style={{ display: 'grid', gridTemplate: outerGridTemplate }}>
+    <div ref={forwardRef} style={{ display: 'grid', gridTemplate: outerGridTemplate }}>
       {menuTimeline} {menuBar}     {rightSpace}
       {crossbar}     {titleArea}
       {timeline}     {contentArea}
