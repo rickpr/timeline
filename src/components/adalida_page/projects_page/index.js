@@ -162,7 +162,7 @@ const ProjectsPage = () => {
     justifyItems: 'center',
     alignItems: 'center',
     padding: '5em 0',
-    backgroundColor: '#C4C4C4',
+    backgroundColor: '#000000',
     gridTemplateRows: '8fr 1fr',
     gridTemplateColumns: '1fr'
   }
@@ -205,7 +205,15 @@ const ProjectsPage = () => {
         <ColorCircle color="#C4C4C4" /> <ColorCircle color="#00A0CC" /> <ColorCircle color="#FFF21F" />
       </div>
       <div className="text-warning large">Typography</div>
-      <h1 style={{ fontWeight: '400', fontFamily: 'Montserrat' }}>Montserrat, Sans-Serif AaBbCcDdEe 0123546789</h1>
+      <h1 style={{
+        fontWeight: '400',
+        fontFamily: 'Montserrat',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(12em, 1fr))',
+        justifyContent: 'space-between'
+      }}>
+        <div style={{ whiteSpace: 'nowrap' }}>Montserrat, Sans-Serif</div> <div>AaBbCcDdEe</div> <div>0123546789</div>
+      </h1>
     </div>
   const visualIdentity = <Project title="Defining the Visual Identity" content={visualIdentityContent} />
 
