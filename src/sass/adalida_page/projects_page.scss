@@ -3,15 +3,6 @@
   font-weight: 900;
 }
 
-.meow-wolf {
-  color: map-get($theme-colors, 'warning');
-  font-weight: 900;
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  justify-content: center;
-}
-
 .name {
   color: map-get($theme-colors, 'warning');
 }

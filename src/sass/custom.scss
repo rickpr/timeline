@@ -19,10 +19,11 @@ $theme-colors: (
 @import './footer';
 @import './circle';
 @import './memphis_pattern';
+@import './scalable_text';
 @import './timeline_post';
 @import './timeline_description';
 @import '@fortawesome/fontawesome-svg-core/styles';
 
 body {
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", "Inconsolata Nerd Font", "Courier New", Courier, monospace;
 }

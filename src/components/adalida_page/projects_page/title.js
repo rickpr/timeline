@@ -1,11 +1,11 @@
-import React, { useRef } from 'react'
+import React from 'react'
+
+import ScalableText from '../../scalable_text'
 
 // Image
-import meowWolfHome from '../../../images/meow_wolf.png'
 import downArrow from '../../../images/down_arrow.svg'
 
-const Title = ({ text, image }) => {
-  const downArrowScrollsTo = useRef()
+const Title = ({ title, image, scrollTarget }) => {
   return (
     <div style={{
       display: 'grid',
@@ -17,30 +17,18 @@ const Title = ({ text, image }) => {
       gridTemplateColumns: 'repeat(auto-fit, minmax(30em, 1fr))',
       minHeight: '100vh'
     }}>
-      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', overflow: 'hidden' }}>
-        <div className="meow-wolf" style={{
-          marginBottom: '10%',
-          width: '100%',
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignContent: 'center'
-        }}>
-          <svg viewBox="0 0 35 16" style={{ fill: '#ff2079', width: '40%', margin: '2%' }}>
-            <text x="0" y="15">Meow</text>
-          </svg>
-          <svg viewBox="0 0 35 16" style={{ fill: '#ff2079', width: '40%', margin: '2%' }}>
-            <text x="0" y="15">Wolf</text>
-          </svg>
-        </div>
+      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', rowGap: '1em', width: '80%', margin: '3em 0' }}>
+        <div />
+        <ScalableText text="Meow Wolf" color="#FF2079" />
         <img
           src={downArrow}
-          style={{ width: 'min(20%, calc(100vw - 175%))', cursor: 'pointer' }}
+          style={{ width: 'min(15%, calc(100vw - 175%))', cursor: 'pointer' }}
           alt="Down arrow"
-          onClick={() => downArrowScrollsTo.current?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => scrollTarget.current?.scrollIntoView({ behavior: 'smooth' })}
         />
       </div>
       <div style={{ margin: 'auto 0' }}>
-        <img src={meowWolfHome} alt="Meow Wolf Homepage" style={{ maxWidth: '100%' }} />
+        <img src={image} alt="Meow Wolf Homepage" style={{ maxWidth: '100%' }} />
       </div>
     </div>
   )

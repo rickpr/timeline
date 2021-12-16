@@ -7,6 +7,8 @@ import ColorCircle from './color_circle'
 import Project from './project'
 import TimelineDescription from '../../timeline/timeline_description'
 import CaptionGallery from '../../caption_gallery'
+import Title from './title'
+
 import useCounter from '../../../hooks/use_counter'
 
 // Image
@@ -24,44 +26,8 @@ import afterHiFi from '../../../videos/after_hi_fi.mp4'
 
 const ProjectsPage = () => {
   const counter = useCounter()
-  const downArrowScrollsTo = useRef()
-  const meowWolf =
-    <div style={{
-      display: 'grid',
-      alignItems: 'center',
-      alignContent: 'center',
-      justifyContent: 'center',
-      justifyItems: 'center',
-      backgroundColor: '#000000',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(30em, 1fr))',
-      minHeight: '100vh'
-    }}>
-      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', overflow: 'hidden' }}>
-        <div className="meow-wolf" style={{
-          marginBottom: '10%',
-          width: '100%',
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignContent: 'center',
-        }}>
-          <svg viewBox="0 0 35 16" style={{ fill: '#ff2079', width: '40%', margin: '2%' }}>
-            <text x="0" y="15">Meow</text>
-          </svg>
-          <svg viewBox="0 0 35 16" style={{ fill: '#ff2079', width: '40%', margin: '2%' }}>
-            <text x="0" y="15">Wolf</text>
-          </svg>
-        </div>
-        <img
-          src={downArrow}
-          style={{ width: 'min(20%, calc(100vw - 175%))', cursor: 'pointer' }}
-          alt="Down arrow"
-          onClick={() => downArrowScrollsTo.current?.scrollIntoView({ behavior: 'smooth' })}
-        />
-      </div>
-      <div style={{ margin: 'auto 0' }}>
-        <img src={meowWolfHome} alt="Meow Wolf Homepage" style={{ maxWidth: '100%' }} />
-      </div>
-    </div>
+  const contentStart = useRef()
+  const meowWolf = <Title title="Meow Wolf" image={meowWolfHome} scrollTarget={contentStart} />
 
   const projectInfo = <>
     <h2 style={{ color: '#3DA834' }}>ROLES</h2>
@@ -107,7 +73,7 @@ const ProjectsPage = () => {
       </div>
     </div>
   const ProjectForwardRef = forwardRef((props, ref) => <Project ref={ref} title={props.title} content={props.content} />)
-  const aboutProject = <Project forwardRef={downArrowScrollsTo} title="ABOUT THE PROJECT" content={aboutProjectContent} />
+  const aboutProject = <Project forwardRef={contentStart} title="ABOUT THE PROJECT" content={aboutProjectContent} />
 
   const researchContent =
     <>
