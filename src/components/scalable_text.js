@@ -14,7 +14,7 @@ const ScalableText = ({ text, color }) => {
   // Offset y by 1 as some of the letters go below the line
   return (
     <svg viewBox={viewBox} style={{ fill: color, width: '100%' }}>
-      <text x="0" y={yOffset}>{text}</text>
+      <text x='0' y={yOffset}>{text}</text>
     </svg>
   )
 }

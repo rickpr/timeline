@@ -8,7 +8,6 @@ const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
   const animationDuration = 200
   const backgroundColor = active ? color : '#CCCCCC88'
 
-
   useEffect(() => {
     // Changing direction, but don't need to hide/show the text, mouse left too early
     if (textVisible === showText) {
@@ -42,7 +41,7 @@ const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
 
   const blowOut = () =>
     <div
-      key="blow-out"
+      key='blow-out'
       onMouseEnter={mouseEnter}
       style={{ position: 'relative', height: '100%', ...transitionStyle }}
     >
@@ -53,8 +52,8 @@ const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
     </div>
 
   return (
-    <div className="blow-out-container" style={transitionStyle} onClick={click}>
-      <div key="name" style={{ ...textStyle, ...transitionStyle }} className={blownOut && 'blown-out'}>{name}</div>
+    <div className='blow-out-container' style={transitionStyle} onClick={click}>
+      <div key='name' style={{ ...textStyle, ...transitionStyle }} className={blownOut && 'blown-out'}>{name}</div>
       {blowOut()}
     </div>
   )

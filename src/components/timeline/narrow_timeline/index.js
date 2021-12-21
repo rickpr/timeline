@@ -3,8 +3,8 @@ import Centerline from './centerline'
 
 const NarrowTimeline = ({ timelinePosts }) =>
   timelinePosts.map((timelinePost, index) =>
-    <div className="row" key={`${timelinePost.id}-${index}-post`}>
-      <div className="col-sm-10">
+    <div className='row' key={`${timelinePost.id}-${index}-post`}>
+      <div className='col-sm-10'>
         {timelinePost}
       </div>
       <Centerline />

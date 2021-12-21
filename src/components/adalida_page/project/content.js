@@ -21,21 +21,23 @@ const Content = ({ accentColor, primaryColor, title, description }) => {
     gridTemplateRows
   }
 
-  const bigTitle =
+  const bigTitle = (
     <div
       style={{ gridArea: 'title', width: '100%', display: 'flex', alignItems: 'center', color: accentColor, whiteSpace: 'nowrap' }}
-      className="header huge name"
+      className='header huge name'
     >
       {title}
     </div>
-  const inlineDescription =
+  )
+  const inlineDescription = (
     <div style={{ gridArea: 'description', color: primaryColor, fontSize: '2em' }}>
       {description}
       <div style={{ marginTop: '1em' }}>
-        <Link to="/adalida/projects"><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>&nbsp;
+        <Link to='/adalida/projects'><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>&nbsp;
         <span style={{ color: accentColor }}><FontAwesomeIcon icon={faArrowRight} /></span>
       </div>
     </div>
+  )
 
   return (
     <div style={gridStyle}>

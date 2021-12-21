@@ -6,11 +6,11 @@ const CarouselArrow = ({ direction, carouselId }) => {
     <button
       className={'carousel-control-' + direction}
       data-bs-target={`#carousel_${carouselId}`}
-      type="button"
+      type='button'
       data-bs-slide={direction}
     >
-      <span className={`carousel-control-${direction}-icon`} aria-hidden="true"></span>
-      <span className="sr-only">{humanize[direction]}</span>
+      <span className={`carousel-control-${direction}-icon`} aria-hidden='true' />
+      <span className='sr-only'>{humanize[direction]}</span>
     </button>
   )
 }

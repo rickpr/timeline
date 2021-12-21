@@ -12,45 +12,52 @@ const Project = ({ forwardRef, content, title }) => {
   const minWidth = `calc(${100 - marginLeftPercent}% - 2em)`
   const backgroundColor = '#3DA834'
   const border = `0.15em solid ${backgroundColor}`
-  const verticalLine = <div style={{ minHeight: '100%', border, marginLeft, backgroundColor }}/>
-  const horizontalLine = <div style={{ position: 'absolute', marginLeft, minWidth, border, backgroundColor }}/>
-  const circle =
+  const verticalLine = <div style={{ minHeight: '100%', border, marginLeft, backgroundColor }} />
+  const horizontalLine = <div style={{ position: 'absolute', marginLeft, minWidth, border, backgroundColor }} />
+  const circle = (
     <div
       style={{ minHeight: '1em', minWidth: '1em', borderRadius: '50%', position: 'absolute', right: '1em', border }}
     />
+  )
 
-  const timelineTop =
+  const timelineTop = (
     <div style={{ gridArea: 'timeline-top', display: 'flex' }}>
       {verticalLine}
     </div>
+  )
 
-  const menuTimeline =
+  const menuTimeline = (
     <div style={{ gridArea: 'menu-timeline', display: 'flex' }}>
       {verticalLine}
     </div>
+  )
 
-  const menuBar = <div style={{ gridArea: 'menu-bar' }}/>
-  const rightSpace = <div style={{ gridArea: 'right-space' }}/>
+  const menuBar = <div style={{ gridArea: 'menu-bar' }} />
+  const rightSpace = <div style={{ gridArea: 'right-space' }} />
 
-  const crossbar =
+  const crossbar = (
     <div style={{ gridArea: 'crossbar', display: 'flex', alignItems: 'center', position: 'relative' }}>
       {verticalLine} {horizontalLine} {circle}
     </div>
+  )
 
-  const titleArea =
+  const titleArea = (
     <div style={{ gridArea: 'title', display: 'flex', alignItems: 'center' }}>
       <h1>{title}</h1>
     </div>
+  )
 
-  const timeline =
+  const timeline = (
     <div style={{ gridArea: 'timeline', display: 'flex' }}>
       {verticalLine}
     </div>
+  )
   const contentArea = <div style={{ gridArea: 'content' }}>{content}</div>
-  const bottomSpace =
+  const bottomSpace = (
     <div style={{ gridArea: 'timeline-bottom', display: 'flex' }}>
       {verticalLine}
     </div>
+  )
 
   return (
     <div ref={forwardRef} style={{ display: 'grid', gridTemplate: outerGridTemplate }}>

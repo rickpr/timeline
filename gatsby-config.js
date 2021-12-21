@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Adalida and Ricardo',
     description: 'Our blog front-end',
-    authors: ['@adalidabaca', '@rickpr'],
+    authors: ['@adalidabaca', '@rickpr']
   },
   plugins: [
     'gatsby-plugin-preload-fonts',
@@ -12,8 +12,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
-      },
+        path: path.join(__dirname, 'src', 'images')
+      }
     },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
@@ -27,15 +27,17 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
-      },
+        icon: 'src/images/favicon.png' // This path is relative to the root of the site.
+      }
     },
     {
       resolve: 'gatsby-source-graphql',
       options: {
         typeName: 'Rails',
         fieldName: 'api',
-        url: process.env.API_URL || 'http://adalida-ricardo-api.herokuapp.com/graphql',
+        url:
+          process.env.API_URL ||
+          'http://adalida-ricardo-api.herokuapp.com/graphql'
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -57,12 +59,12 @@ module.exports = {
           '**/.git/**/*',
           '**/dist/**/*',
           '.cache/**/*',
-          'public/**/*',
+          'public/**/*'
         ], // string or array of paths/files/globs to ignore
         prettier: {
           patterns: [], // string or array of paths/files/globs to include related only to Prettier
           ignorePatterns: [], // string or array of paths/files/globs to exclude related only to Prettier
-          customOptions: {}, // see: https://prettier.io/docs/en/options.html
+          customOptions: {} // see: https://prettier.io/docs/en/options.html
         },
         eslint: {
           patterns: [], // string or array of paths/files/globs to include related only to ESLint
@@ -73,9 +75,9 @@ module.exports = {
           failOnError: false, // if true, any lint error will fail the build, you may set true only in your prod config
           failOnWarning: false, // same as failOnError but for warnings
           plugins: [], // an array of plugins to load for ESLint
-          customOptions: {}, // see: https://eslint.org/docs/developer-guide/nodejs-api#cliengine
-        },
-      },
-    },
-  ],
+          customOptions: {} // see: https://eslint.org/docs/developer-guide/nodejs-api#cliengine
+        }
+      }
+    }
+  ]
 }

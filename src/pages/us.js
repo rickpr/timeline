@@ -12,7 +12,7 @@ const Us = () => {
   return (
     <Layout>
       <MemphisPattern />
-      <RemoteTimeline timelineId="1" />
+      <RemoteTimeline timelineId='1' />
     </Layout>
   )
 }

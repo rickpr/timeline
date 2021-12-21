@@ -6,19 +6,17 @@ const Header = () => {
   const collapsibleId = 'navbarSupportedContent'
   return (
     <header>
-      <div style={{border: '5px solid black', position: 'absolute', top: '15px', right: '15px', left: '15px', zIndex: -1, height: '2em'}}>
-      </div>
-      <nav className="navbar navbar-expand-lg navbar-light navbar-custom">
+      <div style={{ border: '5px solid black', position: 'absolute', top: '15px', right: '15px', left: '15px', zIndex: -1, height: '2em' }} />
+      <nav className='navbar navbar-expand-lg navbar-light navbar-custom'>
         <MobileHamburger collapsibleId={collapsibleId} />
-        <div className="navbar-nav row collapse navbar-collapse" id={collapsibleId}>
-          <NavLink href="/adalida" text="Adalida" width={4} />
-          <NavLink href="/us" text="Helios" width={4} />
-          <NavLink href="/ricardo" text="Ricardo" width={4} />
+        <div className='navbar-nav row collapse navbar-collapse' id={collapsibleId}>
+          <NavLink href='/adalida' text='Adalida' width={4} />
+          <NavLink href='/us' text='Helios' width={4} />
+          <NavLink href='/ricardo' text='Ricardo' width={4} />
         </div>
       </nav>
     </header>
   )
 }
-
 
 export default Header

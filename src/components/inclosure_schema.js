@@ -22,36 +22,36 @@ const InclosureSchema = () => {
   const [elementToAddToX, setElementToAddToX] = useState()
 
   return (
-    <div className="container">
-      <div className="card">
-        <div className="card-header"><h1>Ω</h1></div>
-        <div className="card-body">
+    <div className='container'>
+      <div className='card'>
+        <div className='card-header'><h1>Ω</h1></div>
+        <div className='card-body'>
           {[...Ω].map(element => <ColoredBadge key={element} text={element} />)}
-          <div className="card">
-            <div className="card-header"><h1>x</h1></div>
-            <div className="card-body">
+          <div className='card'>
+            <div className='card-header'><h1>x</h1></div>
+            <div className='card-body'>
               {[...x].map(element => <ColoredBadge key={element} text={element} />)}
             </div>
           </div>
         </div>
       </div>
-      <div className="input-group mb-3">
-        <input type="text" onChange={ event => setElementToAddToΩ(event.target.value) } className="form-control" />
-        <div className="input-group-append">
-          <button onClick={ () => addToΩ(elementToAddToΩ) } className="btn btn-primary">Add to Ω</button>
+      <div className='input-group mb-3'>
+        <input type='text' onChange={event => setElementToAddToΩ(event.target.value)} className='form-control' />
+        <div className='input-group-append'>
+          <button onClick={() => addToΩ(elementToAddToΩ)} className='btn btn-primary'>Add to Ω</button>
         </div>
       </div>
-      <div className="input-group mb-3">
-        <input type="text" onChange={ event => setElementToAddToX(event.target.value) } className="form-control" />
-        <div className="input-group-append">
-          <button onClick={ () => addToX(elementToAddToX) } className="btn btn-primary">Add to x</button>
+      <div className='input-group mb-3'>
+        <input type='text' onChange={event => setElementToAddToX(event.target.value)} className='form-control' />
+        <div className='input-group-append'>
+          <button onClick={() => addToX(elementToAddToX)} className='btn btn-primary'>Add to x</button>
         </div>
       </div>
-      <div className="btn-group mb-3" role="group">
-        <button onClick={ () => diagonalize(x) } className="btn btn-primary">Run δ on x</button>
-        <button onClick={ () => diagonalize(Ω) } className="btn btn-danger">Run δ on Ω</button>
+      <div className='btn-group mb-3' role='group'>
+        <button onClick={() => diagonalize(x)} className='btn btn-primary'>Run δ on x</button>
+        <button onClick={() => diagonalize(Ω)} className='btn btn-danger'>Run δ on Ω</button>
       </div>
-      <div className="card text-center">
+      <div className='card text-center'>
         <h1>δ = &#123;{[...δ].map(element => <ColoredBadge text={element} />)}&#125;</h1>
       </div>
     </div>

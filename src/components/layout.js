@@ -6,7 +6,7 @@ import Footer from './footer'
 
 const Layout = ({ children }) =>
   <>
-    <div style={{minHeight: '2em'}}></div>
+    <div style={{ minHeight: '2em' }} />
     <Header />
     <div>
       {children}
@@ -15,7 +15,7 @@ const Layout = ({ children }) =>
   </>
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

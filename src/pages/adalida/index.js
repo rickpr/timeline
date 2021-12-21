@@ -7,7 +7,7 @@ import AdalidaPage from '../../components/adalida_page'
 const Adalida = () =>
   <>
     <AdalidaPage />
-    <Footer backgroundColor="#000000" />
+    <Footer backgroundColor='#000000' />
   </>
 
 export default Adalida

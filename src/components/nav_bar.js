@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
 const NavBar = ({ children }) => {
 }
 
-export default Navbar;
+export default Navbar

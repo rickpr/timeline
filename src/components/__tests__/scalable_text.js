@@ -6,22 +6,22 @@ import ScalableText from '../scalable_text'
 describe('ScalableText', () => {
   it('creates an svg', () => {
     const svg = renderer
-      .create(<ScalableText text="Meow Wolf" color="#FFFFFF" />)
+      .create(<ScalableText text='Meow Wolf' color='#FFFFFF' />)
       .toJSON()
-      expect(svg.type).toEqual('svg')
+    expect(svg.type).toEqual('svg')
   })
 
   it('uses the fill attribute to set the color', () => {
     const svg = renderer
-      .create(<ScalableText text="Adalida and Ricardo" color="#FFFFFF" />)
+      .create(<ScalableText text='Adalida and Ricardo' color='#FFFFFF' />)
       .toJSON()
-      expect(svg.props.style.fill).toEqual('#FFFFFF')
+    expect(svg.props.style.fill).toEqual('#FFFFFF')
   })
 
   it('makes the viewbox width 8 times the string length', () => {
     const string = 'Adalida and Ricardo'
     const svg = renderer
-      .create(<ScalableText text={string} color="#FFFFFF" />)
+      .create(<ScalableText text={string} color='#FFFFFF' />)
       .toJSON()
     const letterCount = string.length
     const expectedWidth = 8 * letterCount

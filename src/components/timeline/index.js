@@ -6,8 +6,7 @@ import WideTimeline from './wide_timeline'
 import NarrowTimeline from './narrow_timeline'
 
 const Timeline = ({ timelinePosts, connected, green }) => {
-  if(useIsMobile())
-    return <NarrowTimeline timelinePosts={timelinePosts} />
+  if (useIsMobile()) { return <NarrowTimeline timelinePosts={timelinePosts} /> }
 
   return <WideTimeline timelinePosts={timelinePosts} connected={connected} green={green} />
 }

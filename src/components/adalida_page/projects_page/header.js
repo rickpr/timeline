@@ -15,14 +15,14 @@ const Header = () => {
     <div style={{ position: 'fixed', width: '100%' }}>
       <div style={{ minHeight: '1em' }} />
       <header>
-        <div className="adalida-navbar" style={navbarStyles} />
+        <div className='adalida-navbar' style={navbarStyles} />
         <nav>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', margin: '0 auto' }}>
-            <div key="back-home">
-              <h2><Link to="/adalida" style={{ color: '#39FF14' }}>HOME</Link></h2>
+            <div key='back-home'>
+              <h2><Link to='/adalida' style={{ color: '#39FF14' }}>HOME</Link></h2>
             </div>
-            <div key="about">
-              <h2><Link to="/adalida" style={{ color: '#39FF14' }}>ABOUT</Link></h2>
+            <div key='about'>
+              <h2><Link to='/adalida' style={{ color: '#39FF14' }}>ABOUT</Link></h2>
             </div>
           </div>
         </nav>

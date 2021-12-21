@@ -13,36 +13,39 @@ import meowWolfHome from '../../../images/meow_wolf.png'
 import heliosPhone from './helios.png'
 
 const AppsPage = () => {
-  const helios =
+  const helios = (
     <Project
-      title="Helios"
-      description="A digital banking user experience for an account sign up."
+      title='Helios'
+      description='A digital banking user experience for an account sign up.'
       heroPhoto={heliosPhone}
-      primaryColor="#FFFFFF"
-      accentColor="#FFFFFF"
+      primaryColor='#FFFFFF'
+      accentColor='#FFFFFF'
       customStyle={{ backgroundImage: 'linear-gradient(to right, #00B8FD, #2AF598)' }}
       top
     />
+  )
 
-  const meowWolf =
+  const meowWolf = (
     <Project
-      title="Meow Wolf"
-      description="A mobile ticketing experience for a non-linear interactive art museum."
+      title='Meow Wolf'
+      description='A mobile ticketing experience for a non-linear interactive art museum.'
       heroPhoto={meowWolfHome}
-      primaryColor="#FFFFFF"
-      accentColor="#FF2079"
+      primaryColor='#FFFFFF'
+      accentColor='#FF2079'
       customStyle={{ background: '#000000' }}
     />
+  )
 
-  const civica =
+  const civica = (
     <Project
-      title="Civica"
-      description="A mobile social experience where users scan politicians and learn about their donors."
+      title='Civica'
+      description='A mobile social experience where users scan politicians and learn about their donors.'
       heroPhoto={face}
-      primaryColor="#FFFFFF"
-      accentColor="#39FF14"
+      primaryColor='#FFFFFF'
+      accentColor='#39FF14'
       customStyle={{ backgroundImage: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)' }}
     />
+  )
 
   const navigationLinks = {
     Helios: { color: helios.props.accentColor },

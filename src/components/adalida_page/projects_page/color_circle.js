@@ -7,8 +7,8 @@ const ColorCircle = ({ color }) => {
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div className="circle" style={{ color: textColor, backgroundColor: color }}>
-        <span className="circle-content">{color}</span>
+      <div className='circle' style={{ color: textColor, backgroundColor: color }}>
+        <span className='circle-content'>{color}</span>
       </div>
     </div>
   )
