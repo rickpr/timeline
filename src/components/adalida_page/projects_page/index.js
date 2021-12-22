@@ -1,28 +1,27 @@
 import { Link } from 'gatsby'
-import React, { forwardRef, useRef } from 'react'
+import React, { useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import ColorCircle from './color_circle'
 import Project from './project'
-import TimelineDescription from '../../timeline/timeline_description'
-import CaptionGallery from '../../caption_gallery'
+import TimelineDescription from 'components/timeline/timeline_description'
+import CaptionGallery from 'components/caption_gallery'
 import Title from './title'
 
-import useCounter from '../../../hooks/use_counter'
+import useCounter from 'hooks/use_counter'
 
 // Image
 import architecture from './architecture.png'
-import meowWolfHome from '../../../images/meow_wolf.png'
-import downArrow from '../../../images/down_arrow.svg'
+import meowWolfHome from 'images/meow_wolf.png'
 import personas from './personas.svg'
 import personasOne from './personas_one.svg'
 import userJourneyMap1 from './user_journey_map_1.svg'
 import userJourneyMap2 from './user_journey_map_2.svg'
 
 // Video
-import beforeLoFi from '../../../videos/before_lo_fi.mp4'
-import afterHiFi from '../../../videos/after_hi_fi.mp4'
+import beforeLoFi from 'videos/before_lo_fi.mp4'
+import afterHiFi from 'videos/after_hi_fi.mp4'
 
 const ProjectsPage = () => {
   const counter = useCounter()
@@ -75,7 +74,6 @@ const ProjectsPage = () => {
       </div>
     </div>
   )
-  const ProjectForwardRef = forwardRef((props, ref) => <Project ref={ref} title={props.title} content={props.content} />)
   const aboutProject = <Project forwardRef={contentStart} title='ABOUT THE PROJECT' content={aboutProjectContent} />
 
   const researchContent = (
@@ -159,11 +157,11 @@ const ProjectsPage = () => {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(calc(280px + 5em), 1fr))' }}>
         <div style={videoContainerStyle}>
           <video src={beforeLoFi} type='video/mp4' controls style={{ margin: '0 auto' }} />
-          <div style={{ textAlign: 'center' }}>Before Video</div>
+          <div style={{ textAlign: 'center', color: '#FFFFFF' }}>Before Video</div>
         </div>
         <div style={videoContainerStyle}>
           <video src={afterHiFi} type='video/mp4' controls style={{ margin: '0 auto' }} />
-          <div style={{ textAlign: 'center' }}>After Video</div>
+          <div style={{ textAlign: 'center', color: '#FFFFFF' }}>After Video</div>
         </div>
       </div>
     </div>

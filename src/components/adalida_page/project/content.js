@@ -1,7 +1,10 @@
-import { Link } from 'gatsby'
 import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+
+import ScalableText from 'components/scalable_text'
 
 const Content = ({ accentColor, primaryColor, title, description }) => {
   const gridTemplateAreas = `
@@ -23,17 +26,17 @@ const Content = ({ accentColor, primaryColor, title, description }) => {
 
   const bigTitle = (
     <div
-      style={{ gridArea: 'title', width: '100%', display: 'flex', alignItems: 'center', color: accentColor, whiteSpace: 'nowrap' }}
-      className='header huge name'
+      style={{ gridArea: 'title', display: 'flex', alignItems: 'center', fontWeight: 900 }}
     >
-      {title}
+      <ScalableText text={title} color={accentColor} />
     </div>
   )
   const inlineDescription = (
     <div style={{ gridArea: 'description', color: primaryColor, fontSize: '2em' }}>
       {description}
       <div style={{ marginTop: '1em' }}>
-        <Link to='/adalida/projects'><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>&nbsp;
+        <Link to='/adalida/projects'><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>
+        &nbsp;
         <span style={{ color: accentColor }}><FontAwesomeIcon icon={faArrowRight} /></span>
       </div>
     </div>
@@ -45,6 +48,13 @@ const Content = ({ accentColor, primaryColor, title, description }) => {
       {inlineDescription}
     </div>
   )
+}
+
+Content.propTypes = {
+  accentColor: PropTypes.string.isRequired,
+  primaryColor: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
 }
 
 export default Content

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
   // https://en.wikipedia.org/wiki/Party_horn
-  const [blownOut, setBlownOut] = useState(false)
+  const [blownOut, setBlownOut] = useState()
   const [textVisible, setTextVisible] = useState(false)
   const [animation, setAnimation] = useState()
   const animationDuration = 200
@@ -12,7 +12,7 @@ const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
     // Changing direction, but don't need to hide/show the text, mouse left too early
     if (textVisible === showText) {
       clearTimeout(animation)
-      setBlownOut(false)
+      setBlownOut(undefined)
       return
     }
 
@@ -21,7 +21,7 @@ const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
     setAnimation(
       setTimeout(() => {
         setTextVisible(showText)
-        setBlownOut(false)
+        setBlownOut(undefined)
       }, animationDuration)
     )
   }, [showText])

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Project = ({ forwardRef, content, title }) => {
   const outerGridTemplate = `
@@ -18,12 +19,6 @@ const Project = ({ forwardRef, content, title }) => {
     <div
       style={{ minHeight: '1em', minWidth: '1em', borderRadius: '50%', position: 'absolute', right: '1em', border }}
     />
-  )
-
-  const timelineTop = (
-    <div style={{ gridArea: 'timeline-top', display: 'flex' }}>
-      {verticalLine}
-    </div>
   )
 
   const menuTimeline = (
@@ -66,6 +61,12 @@ const Project = ({ forwardRef, content, title }) => {
       {timeline}     {contentArea}
     </div>
   )
+}
+
+Project.propTypes = {
+  forwardRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
+  content: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 }
 
 export default Project

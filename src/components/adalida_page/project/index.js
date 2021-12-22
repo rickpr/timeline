@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Content from './content'
 
 const Project = ({
+  forwardRef,
   accentColor,
   heroPhoto,
   primaryColor,
@@ -21,11 +23,12 @@ const Project = ({
   const gridTemplateRows = '14fr 20fr 8fr 7fr'
   const gridStyle = {
     display: 'grid',
-    transition: 'margin-top 1s cubic-bezier(.31,1.05,.67,.92)',
+    minHeight: '100vh',
+    width: '100%',
+    scrollSnapAlign: 'start',
     gridTemplateAreas,
     gridTemplateColumns,
-    gridTemplateRows,
-    ...customStyle
+    gridTemplateRows
   }
   const borderSize = 0.5 // em
   const borderStyle = `${borderSize}em solid ${accentColor || '#FF0000'}`
@@ -62,16 +65,28 @@ const Project = ({
   )
   const heroPicture = (
     <div style={{ gridArea: 'hero-photo', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-      <img style={{ maxHeight: '80%' }} src={heroPhoto} />
+      <img style={{ objectFit: 'cover' }} src={heroPhoto} />
     </div>
   )
   return (
-    <div style={gridStyle}>
+    <div style={gridStyle} ref={forwardRef}>
       {timelinePlacement} {topSpace} {heroPicture} {menuSpace}
       {entryPost} <Content {...{ accentColor, primaryColor, title, description }} />
       {lowerPost} {bottomSpace}
     </div>
   )
+}
+
+Project.proptypes = {
+  forwardRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
+  accentColor: PropTypes.string.isRequired,
+  heroPhoto: PropTypes.string.isRequired,
+  primaryColor: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  top: PropTypes.bool,
+  customStyle: PropTypes.object
+
 }
 
 export default Project

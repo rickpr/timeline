@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Blowout from './blowout'
 
-const SideNavigation = ({ links, click, activeIndex }) => {
+const SideNavigation = ({ links, activeIndex }) => {
   const [showText, setShowText] = useState(Object.keys(links).map(() => false))
   const waveDelay = 100
 
@@ -10,14 +10,13 @@ const SideNavigation = ({ links, click, activeIndex }) => {
     backgroundColor: showText[0] ? '#00000033' : undefined,
     borderRadius: '15%',
     padding: '1%',
-    position: 'fixed',
+    position: 'absolute',
     display: 'grid',
     gridTemplateColumns: '1fr',
     alignContent: 'center',
     rowGap: '0',
     right: '5%',
-    top: '50%',
-    transform: 'translate(0, -50%)'
+    top: 'calc(50% - 3rem)',
   }
 
   const toggleTextVisibility = makeTextVisible => {
@@ -38,18 +37,36 @@ const SideNavigation = ({ links, click, activeIndex }) => {
   return (
     <div style={styles} onMouseLeave={() => toggleTextVisibility(false)}>
       {Object.entries(links).map(
-        ([name, { color }], index) => {
+        ([name, { background, color, ref }], index) => {
           const active = activeIndex === index
+          console.log(background)
           return (
-            <Blowout
-              key={index}
-              active={active}
-              click={() => !active && click(index)}
-              mouseEnter={() => toggleTextVisibility(true)}
-              name={name}
-              color={color}
-              showText={showText[index]}
-            />
+            <>
+              <Blowout
+                key={`blowout-${index}`}
+                active={active}
+                click={() => ref.current?.scrollIntoView({ behavior: 'smooth' })}
+                mouseEnter={() => toggleTextVisibility(true)}
+                name={name}
+                color={color}
+                showText={showText[index]}
+              />
+              <div
+                key={`div-${index}`}
+                style={{
+                  opacity: active ? 1 : 0,
+                  position: 'fixed',
+                  height: '100vh',
+                  left: 0,
+                  top: 0,
+                  width: '100vw',
+                  zIndex: -99,
+                  pointerEvents: 'none',
+                  transition: 'opacity 0.5s ease',
+                  background: background
+                }}
+              />
+            </>
           )
         }
       )}
