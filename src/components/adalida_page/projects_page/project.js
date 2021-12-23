@@ -64,7 +64,7 @@ const Project = ({ forwardRef, content, title }) => {
 }
 
 Project.propTypes = {
-  forwardRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
+  forwardRef: PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.node) }).isRequired,
   content: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 }

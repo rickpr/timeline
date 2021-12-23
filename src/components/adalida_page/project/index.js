@@ -78,7 +78,7 @@ const Project = ({
 }
 
 Project.proptypes = {
-  forwardRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
+  forwardRef: PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.node) }).isRequired,
   accentColor: PropTypes.string.isRequired,
   heroPhoto: PropTypes.string.isRequired,
   primaryColor: PropTypes.string.isRequired,
