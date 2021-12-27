@@ -15,10 +15,10 @@ const Header = ({ color }) => {
         <div className='adalida-navbar' style={navbarStyles} />
         <nav>
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', margin: '0 auto' }}>
-            <div key='adalida'>
+            <div>
               <h2><Link to='/adalida' style={{ color: '#FFFFFF' }}>ADALIDA BACA</Link></h2>
             </div>
-            <div key='about'>
+            <div>
               <h2><Link to='/adalida' style={{ color: '#FFFFFF' }}>ABOUT</Link></h2>
             </div>
           </div>
