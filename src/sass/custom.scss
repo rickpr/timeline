@@ -27,3 +27,11 @@ $theme-colors: (
 body {
   font-family: "Inconsolata", "Inconsolata Nerd Font", "Courier New", Courier, monospace;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

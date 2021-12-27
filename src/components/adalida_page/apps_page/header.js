@@ -10,7 +10,7 @@ const Header = ({ color }) => {
 
   return (
     <div style={{ position: 'fixed', width: '100%' }}>
-      <div style={{ minHeight: '2em' }} />
+      <div style={{ minHeight: '1em' }} />
       <header>
         <div className='adalida-navbar' style={navbarStyles} />
         <nav>

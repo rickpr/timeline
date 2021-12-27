@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
-const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
+const Blowout = ({ name, active, click, color, showText }) => {
   // https://en.wikipedia.org/wiki/Party_horn
   const [blownOut, setBlownOut] = useState()
   const [textVisible, setTextVisible] = useState(false)
@@ -42,7 +43,6 @@ const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
   const blowOut = () =>
     <div
       key='blow-out'
-      onMouseEnter={mouseEnter}
       style={{ position: 'relative', height: '100%', ...transitionStyle }}
     >
       <div
@@ -57,6 +57,15 @@ const Blowout = ({ name, active, click, color, mouseEnter, showText }) => {
       {blowOut()}
     </div>
   )
+}
+
+Blowout.propTypes = {
+  name: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
+  click: PropTypes.func.isRequired,
+  color: PropTypes.string.isRequired,
+  showText: PropTypes.bool.isRequired
+
 }
 
 export default Blowout

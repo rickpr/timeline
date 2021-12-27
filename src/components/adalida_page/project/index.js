@@ -11,7 +11,6 @@ const Project = ({
   title,
   description,
   top,
-  customStyle
 }) => {
   const gridTemplateAreas = `
     'timeline-placement top-space    hero-photo menu-space'
@@ -19,8 +18,8 @@ const Project = ({
     'lower-post         content      hero-photo menu-space'
     'bottom-space       bottom-space hero-photo menu-space'
   `
-  const gridTemplateColumns = '3fr 6fr 7fr 1fr'
-  const gridTemplateRows = '14fr 20fr 8fr 7fr'
+  const gridTemplateColumns = '10% 6fr 7fr 1fr'
+  const gridTemplateRows = '20% 20fr 8fr 7fr'
   const gridStyle = {
     display: 'grid',
     minHeight: '100vh',
@@ -32,6 +31,7 @@ const Project = ({
   }
   const borderSize = 0.5 // em
   const borderStyle = `${borderSize}em solid ${accentColor || '#FF0000'}`
+  const transition = 'border-color 0.5s ease'
 
   const circleSize = borderSize / 2 // em
   const circleStyle = {
@@ -41,11 +41,12 @@ const Project = ({
     width: `${borderSize}em`,
     right: `-${circleSize}em`,
     top: `-${circleSize * 3}em`,
-    position: 'absolute'
+    position: 'absolute',
+    transition
   }
   const timelinePlacement = (
     <div style={{ gridArea: 'timeline-placement', paddingLeft: '10%', width: '100%' }}>
-      <div style={{ minHeight: '150%', borderLeft: !top && borderStyle }} />
+      <div style={{ minHeight: '150%', borderLeft: !top && borderStyle, transition }} />
     </div>
   )
   const topSpace = <div style={{ gridArea: 'top-space', width: '100%' }} />
@@ -53,14 +54,22 @@ const Project = ({
   const bottomSpace = <div style={{ gridArea: 'bottom-space' }} />
   const entryPost = (
     <div style={{ gridArea: 'entry-post', padding: '0 10%', width: '100%' }}>
-      <div style={{ minHeight: '100%', width: '100%', borderLeft: borderStyle, borderTop: borderStyle, position: 'relative', top: '20%' }}>
+      <div style={{
+        minHeight: '100%',
+        width: '100%',
+        borderLeft: borderStyle,
+        borderTop: borderStyle,
+        position: 'relative',
+        top: '20%',
+        transition
+      }}>
         <div style={circleStyle} />
       </div>
     </div>
   )
   const lowerPost = (
     <div style={{ gridArea: 'lower-post', padding: '0 10%', width: '90%' }}>
-      <div style={{ minHeight: '200%', width: '100%', borderLeft: borderStyle }} />
+      <div style={{ minHeight: '200%', width: '100%', borderLeft: borderStyle, transition }} />
     </div>
   )
   const heroPicture = (
@@ -85,7 +94,6 @@ Project.proptypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   top: PropTypes.bool,
-  customStyle: PropTypes.object
 
 }
 

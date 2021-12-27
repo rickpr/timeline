@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import Blowout from './blowout'
 
-const SideNavigation = ({ links, activeIndex }) => {
+const SideNavigation = ({ links, activeProject }) => {
   const [showText, setShowText] = useState(Object.keys(links).map(() => false))
   const waveDelay = 100
 
   const styles = {
     backgroundColor: showText[0] ? '#00000033' : undefined,
+    pointerEvents: 'visible',
     borderRadius: '15%',
     padding: '1%',
     position: 'absolute',
@@ -34,19 +36,20 @@ const SideNavigation = ({ links, activeIndex }) => {
     )
   }
 
+  const displayText = () => toggleTextVisibility(true)
+  const hideText = () => toggleTextVisibility(false)
+
   return (
-    <div style={styles} onMouseLeave={() => toggleTextVisibility(false)}>
+    <div style={styles} onMouseEnter={showText} onMouseLeave={hideText}>
       {Object.entries(links).map(
         ([name, { background, color, ref }], index) => {
-          const active = activeIndex === index
-          console.log(background)
+          const active = activeProject === name
           return (
             <>
               <Blowout
                 key={`blowout-${index}`}
                 active={active}
                 click={() => ref.current?.scrollIntoView({ behavior: 'smooth' })}
-                mouseEnter={() => toggleTextVisibility(true)}
                 name={name}
                 color={color}
                 showText={showText[index]}
@@ -63,7 +66,7 @@ const SideNavigation = ({ links, activeIndex }) => {
                   zIndex: -99,
                   pointerEvents: 'none',
                   transition: 'opacity 0.5s ease',
-                  background: background
+                  background
                 }}
               />
             </>
@@ -72,6 +75,15 @@ const SideNavigation = ({ links, activeIndex }) => {
       )}
     </div>
   )
+}
+
+SideNavigation.propTypes = {
+  links: PropTypes.shape({
+    color: PropTypes.string.isRequired,
+    ref: PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.node) }).isRequired,
+    background: PropTypes.string.isRequired
+  }),
+  activeProject: PropTypes.string.isRequired
 }
 
 export default SideNavigation
