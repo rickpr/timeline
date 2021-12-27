@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import Content from './content'
+import ScalableText from 'components/scalable_text'
 
 const Project = ({
   forwardRef,
@@ -14,12 +18,12 @@ const Project = ({
 }) => {
   const gridTemplateAreas = `
     'timeline-placement top-space    hero-photo menu-space'
-    'entry-post         content      hero-photo menu-space'
-    'lower-post         content      hero-photo menu-space'
+    'entry-post         title        hero-photo menu-space'
+    'lower-post         description  hero-photo menu-space'
     'bottom-space       bottom-space hero-photo menu-space'
   `
   const gridTemplateColumns = '10% 6fr 7fr 1fr'
-  const gridTemplateRows = '20% 20fr 8fr 7fr'
+  const gridTemplateRows = 'max(10vh, 3fr) max(max-content, 3fr) 8fr 7fr'
   const gridStyle = {
     display: 'grid',
     minHeight: '100vh',
@@ -27,7 +31,8 @@ const Project = ({
     scrollSnapAlign: 'start',
     gridTemplateAreas,
     gridTemplateColumns,
-    gridTemplateRows
+    gridTemplateRows,
+    columnGap: '2em'
   }
   const borderSize = 0.5 // em
   const borderStyle = `${borderSize}em solid ${accentColor || '#FF0000'}`
@@ -45,22 +50,28 @@ const Project = ({
     transition
   }
   const timelinePlacement = (
-    <div style={{ gridArea: 'timeline-placement', paddingLeft: '10%', width: '100%' }}>
-      <div style={{ minHeight: '150%', borderLeft: !top && borderStyle, transition }} />
+    <div style={{ gridArea: 'timeline-placement', marginLeft: '10%', width: '100%' }}>
+      <div style={{ height: '100%', borderLeft: !top && borderStyle, transition }} />
     </div>
   )
   const topSpace = <div style={{ gridArea: 'top-space', width: '100%' }} />
   const menuSpace = <div style={{ gridArea: 'menu-space' }} />
   const bottomSpace = <div style={{ gridArea: 'bottom-space' }} />
   const entryPost = (
-    <div style={{ gridArea: 'entry-post', padding: '0 10%', width: '100%' }}>
+    <div style={{
+      gridArea: 'entry-post',
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      gridTemplateRows: '1fr 1fr',
+      margin: '0 10%',
+      width: '100%',
+    }}>
+      <div style={{ borderLeft: !top && borderStyle, height: '100%', transition }} />
       <div style={{
-        minHeight: '100%',
-        width: '100%',
-        borderLeft: borderStyle,
         borderTop: borderStyle,
+        borderLeft: borderStyle,
         position: 'relative',
-        top: '20%',
+        height: '100%',
         transition
       }}>
         <div style={circleStyle} />
@@ -72,16 +83,34 @@ const Project = ({
       <div style={{ minHeight: '200%', width: '100%', borderLeft: borderStyle, transition }} />
     </div>
   )
+  const bigTitle = (
+    <div
+      style={{ gridArea: 'title', display: 'flex', alignItems: 'center', fontWeight: 900 }}
+    >
+      <ScalableText text={title} color={accentColor} />
+    </div>
+  )
+  const inlineDescription = (
+    <div style={{ gridArea: 'description', color: primaryColor, fontSize: '2em' }}>
+      {description}
+      <div style={{ marginTop: '1em' }}>
+        <Link to='/adalida/projects'><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>
+        &nbsp;
+        <span style={{ color: accentColor }}><FontAwesomeIcon icon={faArrowRight} /></span>
+      </div>
+    </div>
+  )
   const heroPicture = (
     <div style={{ gridArea: 'hero-photo', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-      <img style={{ objectFit: 'cover' }} src={heroPhoto} />
+      <img style={{ objectFit: 'cover', maxHeight: '100vh' }} src={heroPhoto} />
     </div>
   )
   return (
     <div style={gridStyle} ref={forwardRef}>
       {timelinePlacement} {topSpace} {heroPicture} {menuSpace}
-      {entryPost} <Content {...{ accentColor, primaryColor, title, description }} />
-      {lowerPost} {bottomSpace}
+      {entryPost} {bigTitle}
+      {lowerPost} {inlineDescription}
+      {bottomSpace}
     </div>
   )
 }

@@ -40,7 +40,7 @@ const SideNavigation = ({ links, activeProject }) => {
   const hideText = () => toggleTextVisibility(false)
 
   return (
-    <div style={styles} onMouseEnter={showText} onMouseLeave={hideText}>
+    <div style={styles} onMouseEnter={displayText} onMouseLeave={hideText}>
       {Object.entries(links).map(
         ([name, { background, color, ref }], index) => {
           const active = activeProject === name
