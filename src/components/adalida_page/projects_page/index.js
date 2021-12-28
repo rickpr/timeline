@@ -9,7 +9,7 @@ import TimelineDescription from 'components/timeline/timeline_description'
 import CaptionGallery from 'components/caption_gallery'
 import Title from './title'
 
-import useCounter from 'hooks/use_counter'
+import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
 // Image
 import architecture from './architecture.png'
@@ -24,7 +24,6 @@ import beforeLoFi from 'videos/before_lo_fi.mp4'
 import afterHiFi from 'videos/after_hi_fi.mp4'
 
 const ProjectsPage = () => {
-  const counter = useCounter()
   const contentStart = useRef()
   const meowWolf = <Title title='Meow Wolf' image={meowWolfHome} scrollTarget={contentStart} />
 
@@ -88,14 +87,14 @@ const ProjectsPage = () => {
       <CaptionGallery
         photos={[architecture, userJourneyMap1, userJourneyMap2]}
         caption='User Persona 1'
-        id={counter()}
+        id="researchContent"
       />
     </>
   )
 
   const interviewContent = (
     <>
-      <CaptionGallery photos={[personas, personasOne]} caption='User Personas' id={counter()} />
+      <CaptionGallery photos={[personas, personasOne]} caption='User Personas' id="interviewContent" />
       <div key='text' className='large-text'>
         <h1>2. Empathize</h1>
         <div className='text-warning large' key='interviews'>Interviews</div>
@@ -174,6 +173,22 @@ const ProjectsPage = () => {
     gap: '1em',
     marginBottom: '2em'
   }
+
+  const SynchronizedTypewriter = useSynchronizedTypewriter()
+  const typography = (
+    <h1 style={{
+      fontWeight: '400',
+      fontFamily: 'Montserrat',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(12em, 1fr))',
+      justifyContent: 'space-between'
+    }}
+    >
+      <SynchronizedTypewriter string="Montserrat Sans Serif" />
+      <SynchronizedTypewriter string="AaBbCcDdEe" />
+      <SynchronizedTypewriter string="0123456789" />
+    </h1>
+  )
   const visualIdentityContent = (
     <div className='large-text'>
       <div className='text-warning large'>Primary Colors</div>
@@ -185,16 +200,7 @@ const ProjectsPage = () => {
         <ColorCircle color='#C4C4C4' /> <ColorCircle color='#00A0CC' /> <ColorCircle color='#FFF21F' />
       </div>
       <div className='text-warning large'>Typography</div>
-      <h1 style={{
-        fontWeight: '400',
-        fontFamily: 'Montserrat',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(12em, 1fr))',
-        justifyContent: 'space-between'
-      }}
-      >
-        <div style={{ whiteSpace: 'nowrap' }}>Montserrat, Sans-Serif</div> <div>AaBbCcDdEe</div> <div>0123546789</div>
-      </h1>
+      {typography}
     </div>
   )
   const visualIdentity = <Project title='Defining the Visual Identity' content={visualIdentityContent} />

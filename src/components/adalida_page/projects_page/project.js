@@ -48,11 +48,6 @@ const Project = ({ forwardRef, content, title }) => {
     </div>
   )
   const contentArea = <div style={{ gridArea: 'content' }}>{content}</div>
-  const bottomSpace = (
-    <div style={{ gridArea: 'timeline-bottom', display: 'flex' }}>
-      {verticalLine}
-    </div>
-  )
 
   return (
     <div ref={forwardRef} style={{ display: 'grid', gridTemplate: outerGridTemplate }}>
@@ -64,8 +59,8 @@ const Project = ({ forwardRef, content, title }) => {
 }
 
 Project.propTypes = {
-  forwardRef: PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.node) }).isRequired,
-  content: PropTypes.string.isRequired,
+  forwardRef: PropTypes.shape({ current: PropTypes.node }),
+  content: PropTypes.element,
   title: PropTypes.string.isRequired
 }
 

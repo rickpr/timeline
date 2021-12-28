@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-import Content from './content'
 import ScalableText from 'components/scalable_text'
 
 const Project = ({
@@ -23,7 +22,7 @@ const Project = ({
     'bottom-space       bottom-space hero-photo menu-space'
   `
   const gridTemplateColumns = '10% 6fr 7fr 1fr'
-  const gridTemplateRows = 'max(10vh, 3fr) max(max-content, 3fr) 8fr 7fr'
+  const gridTemplateRows = '30vh max(max-content, 3fr) 8fr 7fr'
   const gridStyle = {
     display: 'grid',
     minHeight: '100vh',
@@ -116,7 +115,7 @@ const Project = ({
 }
 
 Project.proptypes = {
-  forwardRef: PropTypes.shape({ current: PropTypes.instanceOf(PropTypes.node) }).isRequired,
+  forwardRef: PropTypes.shape({ current: PropTypes.node }).isRequired,
   accentColor: PropTypes.string.isRequired,
   heroPhoto: PropTypes.string.isRequired,
   primaryColor: PropTypes.string.isRequired,

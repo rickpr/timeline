@@ -2,7 +2,6 @@ import React from 'react'
 import Typewriter from 'typewriter-effect'
 
 import useAnimateOnScroll from '../hooks/use_animate_on_scroll'
-import Crossbar from './timeline/wide_timeline/crossbar'
 import RemoteTimeline from './timeline/remote_timeline'
 
 const RicardoPage = () => {
@@ -18,9 +17,14 @@ const RicardoPage = () => {
         </div>
         <div className='row' data-aos='fade-up'>
           <div className='col-sm-5 offset-sm-2'>
-            Welcome, I am Ricardo and I am passionate about <Typewriter
-              options={{ strings: ['software engineering', 'clean code', 'scalable systems', 'test-driven development'], autoStart: true, loop: true }}
-                                                            />.
+            Welcome, I am Ricardo and I am passionate about
+            <Typewriter
+              options={{
+                strings: ['software engineering', 'clean code', 'scalable systems', 'test-driven development'],
+                autoStart: true,
+                loop: true
+              }}
+            />.
           </div>
         </div>
         <div className='row' data-aos='fade-up'>

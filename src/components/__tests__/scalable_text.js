@@ -18,13 +18,13 @@ describe('ScalableText', () => {
     expect(svg.props.style.fill).toEqual('#FFFFFF')
   })
 
-  it('makes the viewbox width 8 times the string length', () => {
+  it('makes the viewbox width 9 times the string length', () => {
     const string = 'Adalida and Ricardo'
     const svg = renderer
       .create(<ScalableText text={string} color='#FFFFFF' />)
       .toJSON()
     const letterCount = string.length
-    const expectedWidth = 8 * letterCount
-    expect(svg.props.viewBox).toEqual(`0 0 ${expectedWidth} 14`)
+    const expectedWidth = 9 * letterCount
+    expect(svg.props.viewBox).toEqual(`0 0 ${expectedWidth} 17`)
   })
 })
