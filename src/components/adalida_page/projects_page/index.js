@@ -12,12 +12,12 @@ import Title from './title'
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
 // Image
-import architecture from './architecture.png'
+import architecture from 'images/architecture.png'
 import meowWolfHome from 'images/meow_wolf.png'
-import personas from './personas.svg'
-import personasOne from './personas_one.svg'
-import userJourneyMap1 from './user_journey_map_1.svg'
-import userJourneyMap2 from './user_journey_map_2.svg'
+import personas from 'images/personas.svg'
+import personasOne from 'images/personas_one.svg'
+import userJourneyMap1 from 'images/user_journey_map_1.svg'
+import userJourneyMap2 from 'images/user_journey_map_2.svg'
 
 // Video
 import beforeLoFi from 'videos/before_lo_fi.mp4'

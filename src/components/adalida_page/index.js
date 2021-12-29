@@ -1,8 +1,9 @@
 import { navigate } from 'gatsby'
 import React, { useEffect } from 'react'
 
-import meowWolf from '../../images/meow_wolf.png'
-import face from './face.png'
+import civicaPhone from 'images/civica.png'
+import meowWolf from 'images/meow_wolf.png'
+import heliosPhone from 'images/helios.png'
 
 const AdalidaPage = () => {
   useEffect(() => {
@@ -11,9 +12,9 @@ const AdalidaPage = () => {
 
   const phones = (
     <div className='phones'>
-      <img src={meowWolf} alt='Meow Wolf Homepage' />
-      <img src={face} alt='Face Recognition' />
-      <img src={face} alt='Face Recognition' />
+      <img src={civicaPhone} alt='Civica' />
+      <img src={meowWolf} alt='Meow Wolf' />
+      <img src={heliosPhone} alt='Helios' />
     </div>
   )
 

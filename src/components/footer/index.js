@@ -15,7 +15,7 @@ const Footer = () =>
         </div>
         <div className='col-sm-4 col-12'>
           <br />
-          <span className='footer-icon'><StaticImage src='./sun-moon.png' /></span>
+          <span className='footer-icon'><StaticImage src='../../images/sun-moon.png' /></span>
         </div>
         <div className='col-sm-4 col-12'>
           Ricardo Piro-Rael<br />
