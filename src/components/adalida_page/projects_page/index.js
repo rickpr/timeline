@@ -110,7 +110,7 @@ const ProjectsPage = () => {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
       gridTemplateRows: 'min-content min-content 1fr',
-      columnGap: '10%',
+      columnGap: '15vw',
       rowGap: '1em',
       minHeight: '100vh'
     }}
@@ -155,11 +155,11 @@ const ProjectsPage = () => {
       <p>Check out the before and after lo-fi mockups</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(calc(280px + 5em), 1fr))' }}>
         <div style={videoContainerStyle}>
-          <video src={beforeLoFi} type='video/mp4' controls style={{ margin: '0 auto' }} />
+          <video src={beforeLoFi} type='video/mp4' autoPlay style={{ margin: '0 auto' }} />
           <div style={{ textAlign: 'center', color: '#FFFFFF' }}>Before Video</div>
         </div>
         <div style={videoContainerStyle}>
-          <video src={afterHiFi} type='video/mp4' controls style={{ margin: '0 auto' }} />
+          <video src={afterHiFi} type='video/mp4' autoPlay style={{ margin: '0 auto' }} />
           <div style={{ textAlign: 'center', color: '#FFFFFF' }}>After Video</div>
         </div>
       </div>

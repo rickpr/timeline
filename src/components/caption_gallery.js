@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Carousel from './carousel'
 
@@ -10,6 +11,12 @@ const CaptionGallery = ({ photos, caption, id }) => {
       <Carousel carousel={carousel} />
     </div>
   )
+}
+
+CaptionGallery.propTypes = {
+  photos: PropTypes.arrayOf(PropTypes.string).isRequired,
+  caption: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
 }
 
 export default CaptionGallery
