@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 
-import ScalableText from '../../scalable_text'
+import DownArrow from 'components/down_arrow'
+import ScalableText from 'components/scalable_text'
 
-// Image
-import downArrow from '../../../images/down_arrow.svg'
+import { ThemeContext } from 'theme_context'
 
 const Title = ({ title, image, scrollTarget }) => {
+  const { background, primary } = useContext(ThemeContext)
   return (
     <div style={{
       display: 'grid',
@@ -13,26 +15,34 @@ const Title = ({ title, image, scrollTarget }) => {
       alignContent: 'center',
       justifyContent: 'center',
       justifyItems: 'center',
-      backgroundColor: '#000000',
       gridTemplateColumns: 'repeat(auto-fit, minmax(30em, 1fr))',
-      minHeight: '100vh'
+      minHeight: '100vh',
+      background
     }}
     >
-      <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '1fr', rowGap: '1em', width: '80%', margin: '3em 0' }}>
+      <div style={{
+        display: 'grid',
+        justifyItems: 'center',
+        gridTemplateColumns: '1fr',
+        rowGap: '1em',
+        width: '80%',
+        margin: '3em 0'
+      }}>
         <div />
-        <ScalableText text='Meow Wolf' color='#FF2079' />
-        <img
-          src={downArrow}
-          style={{ width: 'min(15%, calc(100vw - 175%))', cursor: 'pointer' }}
-          alt='Down arrow'
-          onClick={() => scrollTarget.current?.scrollIntoView({ behavior: 'smooth' })}
-        />
+        <ScalableText text={title} color={primary} />
+        <DownArrow scrollTarget={scrollTarget} />
       </div>
       <div style={{ margin: 'auto 0' }}>
-        <img src={image} alt='Meow Wolf Homepage' style={{ maxWidth: '100%' }} />
+        <img src={image} alt={`${title} Homepage`} style={{ maxWidth: '100%' }} />
       </div>
     </div>
   )
+}
+
+Title.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  scrollTarget: PropTypes.shape({ current: PropTypes.node })
 }
 
 export default Title

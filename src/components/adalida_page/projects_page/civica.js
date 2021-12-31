@@ -23,9 +23,17 @@ import userJourneyMap2 from 'images/user_journey_map_2.svg'
 import beforeLoFi from 'videos/before_lo_fi.mp4'
 import afterHiFi from 'videos/after_hi_fi.mp4'
 
-const ProjectsPage = () => {
+const Civica = () => {
   const contentStart = useRef()
-  const meowWolf = <Title title='Meow Wolf' image={meowWolfHome} scrollTarget={contentStart} />
+  const title = (
+    <Title
+      title='Civica'
+      color='#39FF14'
+      background='linear-gradient(to bottom left, #4A00E0, #8D2CE2)'
+      image={meowWolfHome}
+      scrollTarget={contentStart}
+    />
+  )
 
   const projectInfo = (
     <>
@@ -255,8 +263,8 @@ const ProjectsPage = () => {
   const conclusion = <Project title='5. Final Thoughts' content={conclusionContent} />
 
   return [
-    meowWolf, aboutProject, researchAndInterview, problemStatement, ideate, visualIdentity, finalDesign, conclusion
+    title, aboutProject, researchAndInterview, problemStatement, ideate, visualIdentity, finalDesign, conclusion
   ]
 }
 
-export default ProjectsPage
+export default Civica

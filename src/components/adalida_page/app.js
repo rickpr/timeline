@@ -6,14 +6,15 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import ScalableText from 'components/scalable_text'
 
-const Project = ({
+const App = ({
   forwardRef,
   accentColor,
   heroPhoto,
   primaryColor,
   title,
   description,
-  top,
+  projectPage,
+  top
 }) => {
   const gridTemplateAreas = `
     'timeline-placement top-space    hero-photo menu-space'
@@ -83,9 +84,7 @@ const Project = ({
     </div>
   )
   const bigTitle = (
-    <div
-      style={{ gridArea: 'title', display: 'flex', alignItems: 'center', fontWeight: 900 }}
-    >
+    <div style={{ gridArea: 'title', display: 'flex', alignItems: 'center' }}>
       <ScalableText text={title} color={accentColor} />
     </div>
   )
@@ -93,7 +92,7 @@ const Project = ({
     <div style={{ gridArea: 'description', color: primaryColor, fontSize: '2em' }}>
       {description}
       <div style={{ marginTop: '1em' }}>
-        <Link to='/adalida/projects'><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>
+        <Link to={projectPage}><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>
         &nbsp;
         <span style={{ color: accentColor }}><FontAwesomeIcon icon={faArrowRight} /></span>
       </div>
@@ -114,15 +113,15 @@ const Project = ({
   )
 }
 
-Project.proptypes = {
+App.propTypes = {
   forwardRef: PropTypes.shape({ current: PropTypes.node }).isRequired,
   accentColor: PropTypes.string.isRequired,
   heroPhoto: PropTypes.string.isRequired,
   primaryColor: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  top: PropTypes.bool,
-
+  projectPage: PropTypes.string.isRequired,
+  top: PropTypes.bool
 }
 
-export default Project
+export default App

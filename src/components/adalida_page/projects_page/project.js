@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 
+import { ThemeContext } from 'theme_context'
+
 const Project = ({ forwardRef, content, title }) => {
+  const { projectCircleFill, projectCircleStroke, stroke } = useContext(ThemeContext)
   const outerGridTemplate = `
   'menu-timeline   menu-bar     right-space'  5rem
   'crossbar        title        right-space'  5rem
@@ -11,13 +14,23 @@ const Project = ({ forwardRef, content, title }) => {
   const marginLeftPercent = 40 // %
   const marginLeft = `${marginLeftPercent}%`
   const minWidth = `calc(${100 - marginLeftPercent}% - 2em)`
-  const backgroundColor = '#3DA834'
-  const border = `0.15em solid ${backgroundColor}`
-  const verticalLine = <div style={{ minHeight: '100%', border, marginLeft, backgroundColor }} />
-  const horizontalLine = <div style={{ position: 'absolute', marginLeft, minWidth, border, backgroundColor }} />
+  const background = projectCircleFill
+  const border = `0.15em solid ${stroke}`
+  const circleBorder = projectCircleStroke ? { border: `0.15em solid ${projectCircleStroke}` } : {}
+  console.log(circleBorder)
+  const verticalLine = <div style={{ minHeight: '100%', border, marginLeft, background }} />
+  const horizontalLine = <div style={{ position: 'absolute', marginLeft, minWidth, border, background }} />
   const circle = (
     <div
-      style={{ minHeight: '1em', minWidth: '1em', borderRadius: '50%', position: 'absolute', right: '1em', border }}
+      style={{
+        minHeight: '1em',
+        minWidth: '1em',
+        borderRadius: '50%',
+        position: 'absolute',
+        right: '1em',
+        background,
+        ...circleBorder
+      }}
     />
   )
 

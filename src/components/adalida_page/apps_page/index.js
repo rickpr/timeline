@@ -3,7 +3,7 @@ import { minBy } from 'lodash'
 
 import Header from './header'
 import SideNavigation from './side_navigation'
-import Project from '../project'
+import App from '../app'
 
 import civicaPhone from 'images/civica.png'
 import meowWolfHome from 'images/meow_wolf.png'
@@ -30,7 +30,7 @@ const AppsPage = () => {
   const [currentProject, setCurrentProject] = useState('Helios')
 
   const helios = (
-    <Project
+    <App
       key='helios'
       forwardRef={navigationLinks.Helios.ref}
       title='Helios'
@@ -38,12 +38,13 @@ const AppsPage = () => {
       heroPhoto={heliosPhone}
       primaryColor='#FFFFFF'
       accentColor={navigationLinks[currentProject].color}
+      projectPage='/adalida/projects/helios'
       top
     />
   )
 
   const meowWolf = (
-    <Project
+    <App
       key='meow-wolf'
       forwardRef={navigationLinks['Meow Wolf'].ref}
       title='Meow Wolf'
@@ -51,11 +52,12 @@ const AppsPage = () => {
       heroPhoto={meowWolfHome}
       primaryColor='#FFFFFF'
       accentColor={navigationLinks[currentProject].color}
+      projectPage='/adalida/projects/meow_wolf'
     />
   )
 
   const civica = (
-    <Project
+    <App
       key='civica'
       forwardRef={navigationLinks['Civic App'].ref}
       title='Civica'
@@ -63,6 +65,7 @@ const AppsPage = () => {
       heroPhoto={civicaPhone}
       primaryColor='#FFFFFF'
       accentColor={navigationLinks[currentProject].color}
+      projectPage='/adalida/projects/civica'
     />
   )
 
