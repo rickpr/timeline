@@ -1,7 +1,7 @@
 import { navigate } from 'gatsby'
 import React, { useEffect } from 'react'
 
-import civicaPhone from 'images/civica.png'
+import cyphPhone from 'images/cyph.png'
 import meowWolf from 'images/meow_wolf.png'
 import heliosPhone from 'images/helios.png'
 
@@ -12,7 +12,7 @@ const AdalidaPage = () => {
 
   const phones = (
     <div className='phones'>
-      <img src={civicaPhone} alt='Civica' />
+      <img src={cyphPhone} alt='Cyph' />
       <img src={meowWolf} alt='Meow Wolf' />
       <img src={heliosPhone} alt='Helios' />
     </div>

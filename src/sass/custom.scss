@@ -8,6 +8,7 @@ $theme-colors: (
 );
 
 @import '~bootstrap/scss/bootstrap';
+
 @import './adalida_page';
 @import './adalida_page/apps_page';
 @import './adalida_page/projects_page';
@@ -23,6 +24,14 @@ $theme-colors: (
 @import './timeline_post';
 @import './timeline_description';
 @import '@fortawesome/fontawesome-svg-core/styles';
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: local('Avenir Next'), url(../fonts/AvenirNextLTPro-Regular.otf);
+}
 
 body {
   font-family: "Inconsolata", "Inconsolata Nerd Font", "Courier New", Courier, monospace;

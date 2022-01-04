@@ -5,7 +5,7 @@ import Header from './header'
 import SideNavigation from './side_navigation'
 import App from '../app'
 
-import civicaPhone from 'images/civica.png'
+import cyphPhone from 'images/cyph.png'
 import meowWolfHome from 'images/meow_wolf.png'
 import heliosPhone from 'images/helios.png'
 
@@ -56,20 +56,20 @@ const AppsPage = () => {
     />
   )
 
-  const civica = (
+  const cyph = (
     <App
-      key='civica'
+      key='cyph'
       forwardRef={navigationLinks['Civic App'].ref}
-      title='Civica'
+      title='Cyph'
       description='A mobile social experience where users scan politicians and learn about their donors.'
-      heroPhoto={civicaPhone}
+      heroPhoto={cyphPhone}
       primaryColor='#FFFFFF'
       accentColor={navigationLinks[currentProject].color}
-      projectPage='/adalida/projects/civica'
+      projectPage='/adalida/projects/cyph'
     />
   )
 
-  const projects = [helios, meowWolf, civica]
+  const projects = [helios, meowWolf, cyph]
   const scrollRef = useRef()
   useEffect(() => {
     const updateCurrentProject = () => {

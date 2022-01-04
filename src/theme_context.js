@@ -24,6 +24,7 @@ const Themes = {
     stroke: '#3DA834',
     background: '#000000',
     fill: '#FFFFFF',
+
     // Circles on timeline for projects
     projectCircleFill: '#FFFFFF',
     projectCircleStroke: '#3DA834',
@@ -35,8 +36,17 @@ const Themes = {
   },
   'Civic App': {
     primary: '#39FF14',
+    stroke: '#39FF14',
     background: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)',
-    border: 'linear-gradient(to right, #00B8FD, #2AF598)',
+    fill: '#FFFFFF',
+
+    // Circles on timeline for projects
+    projectCircleFill: '#39FF14',
+
+    // Down Arrow
+    arrowTop: '#39FF14',
+    arrowBottom: '#39FF14',
+    circleColor: '#39FF14',
   }
 }
 

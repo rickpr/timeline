@@ -91,7 +91,7 @@ const Helios = () => {
       <CaptionGallery photos={[personas, personasOne]} caption='User Personas' id="interviewContent" />
       <div key='text' className='large-text'>
         <h1>2. Empathize</h1>
-        <div className='text-warning large' key='interviews'>Interviews</div>
+        <div className='text-warning large' key='interviews'><GradientText text='Interviews' /></div>
         <p>
           I utilized my network for user research. The combination of my investigative research and user research led to
           the design of a mobile in-app ticketing experience.
@@ -172,7 +172,7 @@ const Helios = () => {
   const typography = (
     <h1 style={{
       fontWeight: '400',
-      fontFamily: 'Avenir LT Std', // TODO: Use Avenir Next
+      fontFamily: 'Avenir Next',
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(12em, 1fr))',
       justifyContent: 'space-between'
@@ -191,7 +191,7 @@ const Helios = () => {
       </div>
       <div className='large'><GradientText text='Secondary Colors' /></div>
       <div style={visualIdentityRowStyle}>
-        <ColorCircle color='#C4C4C4' /> <ColorCircle color='#00A0CC' /> <ColorCircle color='#FFF21F' />
+        <ColorCircle color='#C4C4C4' /> <ColorCircle color='#00A0CC' /> <ColorCircle color='#FFFFFF' />
       </div>
       <div className='large'><GradientText text='Typography' /></div>
       {typography}

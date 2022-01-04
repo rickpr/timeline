@@ -4,10 +4,11 @@ const ColorCircle = ({ color }) => {
   // Determine if the color is closer to white or black and use the opposite for the text
   const colorSum = [1, 3, 5].reduce((sum, colorIndex) => sum + parseInt(color.substring(colorIndex, colorIndex + 2)))
   const textColor = colorSum <= 382 ? '#FFFFFF' : '#000000'
+  const border = color === '#FFFFFF' ? '1px solid black' : ''
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div className='circle' style={{ color: textColor, backgroundColor: color }}>
+      <div className='circle' style={{ color: textColor, backgroundColor: color, border }}>
         <span className='circle-content'>{color}</span>
       </div>
     </div>

@@ -13,7 +13,7 @@ import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
 // Image
 import architecture from 'images/architecture.png'
-import meowWolfHome from 'images/meow_wolf.png'
+import cyph from 'images/cyph.png'
 import personas from 'images/personas.svg'
 import personasOne from 'images/personas_one.svg'
 import userJourneyMap1 from 'images/user_journey_map_1.svg'
@@ -23,33 +23,28 @@ import userJourneyMap2 from 'images/user_journey_map_2.svg'
 import beforeLoFi from 'videos/before_lo_fi.mp4'
 import afterHiFi from 'videos/after_hi_fi.mp4'
 
-const Civica = () => {
+const Cyph = () => {
   const contentStart = useRef()
   const title = (
-    <Title
-      title='Civica'
-      color='#39FF14'
-      background='linear-gradient(to bottom left, #4A00E0, #8D2CE2)'
-      image={meowWolfHome}
-      scrollTarget={contentStart}
-    />
+    <Title title='Cyph' image={cyph} scrollTarget={contentStart} />
   )
 
   const projectInfo = (
     <>
-      <h2 style={{ color: '#3DA834' }}>ROLES</h2>
-      <ul className='roles-list' key='client'>
+      <h2 style={{ color: '#7D21E1' }}>ROLES</h2>
+      <ul className='roles-list'>
+        <li>Product Designer</li>
         <li>UX/UI Designer</li>
         <li>UX Researcher</li>
         <li>Prototyping</li>
         <li>User Testing</li>
       </ul>
-      <h2 style={{ color: '#3DA834' }} key='role-header'>DURATION</h2>
+      <h2 style={{ color: '#7D21E1' }}>DURATION</h2>
       <ul className='roles-list'>
-        <li>May 2020 - June 2020</li>
+        <li>Oct 2021 - Nov 2020</li>
       </ul>
-      <h2 style={{ color: '#3DA834' }} key='date-header'>MEDIUM</h2>
-      <ul className='roles-list' key='date'>
+      <h2 style={{ color: '#7D21E1' }}>MEDIUM</h2>
+      <ul className='roles-list'>
         <li>Mobile App</li>
       </ul>
     </>
@@ -59,22 +54,18 @@ const Civica = () => {
       style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'min-content 1fr', columnGap: '10%' }}
     >
       <div className='large-text'>
-        <div className='text-warning large' key='origin'>Origin</div>
-        <p key='first-paragraph'>
+        <div className='large' style={{ color: '#7D21E1' }}>Origin</div>
+        <p>
           I like the company Meow Wolf (we are both native to New Mexico).
           They opened, and then quickly closed, a new location in Las Vegas, Nevada during the pandemic.
           I wanted to learn user experience design and I wanted to visit the new exhibit, Omega Mart.
           This project was my way of marrying the two while I waited for the re-opening.
         </p>
-        <p key='second-paragraph'>
+        <p>
           Meow Wolf is an American arts and entertainment company.
           They host interactive non-linear art museum with locations in New Mexico, Nevada, and Colorado with day and event tickets.
           They also host music festivals, create large scale art installations, and create and produce streaming content.
         </p>
-        <div style={{ marginTop: '1em' }} key='link'>
-          <Link to='/adalida/projects'><span className='text-warning'>VISIT THE SITE</span></Link>&nbsp;
-          <span style={{ color: '#3DA834' }}><FontAwesomeIcon icon={faArrowRight} /></span>
-        </div>
       </div>
       <div>
         <TimelineDescription description={projectInfo} />
@@ -86,10 +77,12 @@ const Civica = () => {
   const researchContent = (
     <>
       <div className='large-text'>
-        <div className='text-warning large' key='research'>Research</div>
+        <div className='large' style={{ color: '#7D21E1' }}>Research</div>
         <p>
-          My research focused on Meow Wolf's business structure, history, locations, and future projects. I wanted to
-          collect and learn as much information as possible. I paired this research with a competitive audit.
+          My research focused on how voting works in the United States, why people don’t vote,
+          what infomration is useful to voters, why voting is important.
+          After, I conducted a competitive audit and learned about useful data sources publicaly available for use.
+          This is also where I begin creating my information architecture.
         </p>
       </div>
       <CaptionGallery
@@ -105,10 +98,11 @@ const Civica = () => {
       <CaptionGallery photos={[personas, personasOne]} caption='User Personas' id="interviewContent" />
       <div key='text' className='large-text'>
         <h1>2. Empathize</h1>
-        <div className='text-warning large' key='interviews'>Interviews</div>
+        <div className='large' style={{ color: '#39FF14' }}>Interviews</div>
         <p>
-          I utilized my network for user research. The combination of my investigative research and user research led to
-          the design of a mobile in-app ticketing experience.
+          The target audience was a young voter demographic who are bewteen the ages of 20-35.
+          I utilized my network and interviewed people who fit the target audience.
+          In doing so, I was able to to build empathy and begin finding pain points.
         </p>
       </div>
     </>
@@ -133,10 +127,10 @@ const Civica = () => {
   const problemStatementContent = (
     <div style={{ display: 'grid', minHeight: '100vh' }}>
       <div className='large-text'>
-        <div className='text-warning large'>Problem</div>
+        <div className='large' style={{ color: '#7D21E1' }}>Problem</div>
         <p>
-          Brian is a young working adult who needs to purchase tickets to Meow Wolf because they are planning a day
-          visit with friends.
+          Mark is a young eligible voter who needs to learn about their representatives because they are interested
+          in voting in the next election.
         </p>
       </div>
     </div>
@@ -154,13 +148,14 @@ const Civica = () => {
   }
   const ideateContent = (
     <div className='large-text'>
-      <div className='text-warning large'>Design, Prototype, Test</div>
+      <div className='large' style={{ color: '#7D21E1' }}>Design, Prototype, Test</div>
       <p>
-        I prototyped my lo-fidelity designs and conducted user research on the flow and navigation.
-        From the usability studies, it was clear many of the users' pain points could be solved with
-        a stronger information architecture.
+        I began my process desiging in high fidelity and conducted usability and a/b testing to enhance and stregthen
+        the designs.
+        Here is my design and iteration process for the pop up portfolio page for an example politican.
+        The end goal was to visualize the data from the table in example 1 in a meaningful way and remove any
+        unneccessary information. Here is the process and result.
       </p>
-      <p>Check out the before and after lo-fi mockups</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(calc(280px + 5em), 1fr))' }}>
         <div style={videoContainerStyle}>
           <video src={beforeLoFi} type='video/mp4' autoPlay style={{ margin: '0 auto' }} />
@@ -186,28 +181,28 @@ const Civica = () => {
   const typography = (
     <h1 style={{
       fontWeight: '400',
-      fontFamily: 'Montserrat',
+      fontFamily: 'Avenir Next',
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(12em, 1fr))',
       justifyContent: 'space-between'
     }}
     >
-      <SynchronizedTypewriter string="Montserrat Sans Serif" />
-      <SynchronizedTypewriter string="AaBbCcDdEe" />
-      <SynchronizedTypewriter string="0123456789" />
+      <SynchronizedTypewriter string='Avenir Next' />
+      <SynchronizedTypewriter string='Aa Bb Cc Dd' />
+      <SynchronizedTypewriter string='0123456789' />
     </h1>
   )
   const visualIdentityContent = (
     <div className='large-text'>
-      <div className='text-warning large'>Primary Colors</div>
+      <div className='large' style={{ color: '#7D21E1' }}>Primary Colors</div>
       <div style={visualIdentityRowStyle}>
-        <ColorCircle color='#000000' /> <ColorCircle color='#EC0089' /> <ColorCircle color='#3DA834' />
+        <ColorCircle color='#000000' /> <ColorCircle color='#EC0089' /> <ColorCircle color='#000000' />
       </div>
-      <div className='text-warning large'>Secondary Colors</div>
+      <div className='large' style={{ color: '#7D21E1' }}>Secondary Colors</div>
       <div style={visualIdentityRowStyle}>
-        <ColorCircle color='#C4C4C4' /> <ColorCircle color='#00A0CC' /> <ColorCircle color='#FFF21F' />
+        <ColorCircle color='#C4C4C4' /> <ColorCircle color='#00A0CC' /> <ColorCircle color='#FFFFFF' />
       </div>
-      <div className='text-warning large'>Typography</div>
+      <div className='large' style={{ color: '#7D21E1' }}>Typography</div>
       {typography}
     </div>
   )
@@ -221,7 +216,7 @@ const Civica = () => {
           style={{ border: '1px solid rgba(0, 0, 0, 0.1)', width: '100%', height: '100%', position: 'absolute', left: 0 }}
           width='800'
           height='450'
-          src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FTgLCuNQeV3mYEvH2kp8gxz%2FMeow-Wolf-Hi-fi%3Fpage-id%3D349%253A1375%26node-id%3D714%253A214%26starting-point-node-id%3D714%253A214%26scaling%3Dscale-down'
+          src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXpElv0YPDIcTaVNFt6UTMh%2FCivic%3Fpage-id%3D2%253A2%26node-id%3D722%253A6109%26viewport%3D407%252C48%252C0.86%26scaling%3Dscale-down%26starting-point-node-id%3D722%253A6109'
           allowFullScreen
         />
       </div>
@@ -231,31 +226,36 @@ const Civica = () => {
 
   const conclusionContent = (
     <div className='large-text'>
-      <div className='text-warning large'>What I learned</div>
+      <div className='large' style={{ color: '#7D21E1' }}>What I learned</div>
       <div style={{ minHeight: '2em ' }} />
       <p>
-        I'm so thankful for the opportunity to work and learn so much from this project.
-        In summary, I learned about the general user experience process and how research, especially good research,
-        can positively impact user design solutions.
+        The goal for this project was to give voters a tool to vote for a representative best alligned with their
+        goals and interests.
+        It was a unique oppurutinty to design and idea from scratch and turn it into a  product.
+        I am thankful I had the oppurtunity to work on a project aimed at helping my community and is
+        intended to promote social goodness.
       </p>
       <div style={{ minHeight: '2em ' }} />
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr' }} className='what-i-learned'>
-        <h1>Usability Studies</h1>
+        <h1>Visualizing Data Sets</h1>
         <p>
-          Data-driven user experience design can save you time and resources while increasing your chance at creating
-          effective designs.
+          Data sets are ripe with knowledge and information and they are best accompanied with filters and pictures.
         </p>
-        <h1>Adapting Quickly</h1>
-        <p>Keeping an updated information architecture handy is helpful in creating impactful designs.</p>
-        <h1>Learning New Resources</h1>
+        <h1>New Domains</h1>
         <p>
-          I designed using the tool Figma for this project and it was awesome to learn about the abundance of online resources
-          and UX communities. Also, YouTube and Google are your friends!
+          I learned a lot about how donor information is reported and how it is utilized by the
+          Federal Elections Commission (FEC) who collects and checks this information for the public.
         </p>
-        <h1>Be Mindful</h1>
+        <h1>Political Language</h1>
         <p>
-          Always remember your designs are intended to solve the user's problem while also promoting business growth
-          and needs. Set aside extreme usability idealism.
+          During my research, I learned how language shapes how we think about problems.
+          During my user research, many of my users were initimated or disliked the langauge surronding poltics today.
+        </p>
+        <h1>Starting From Scratch</h1>
+        <p>
+          Taking a new idea where there is not an existing model can be hard to design.
+          Research, open source technology and information, iteration, and testing each are vital
+          to the success for desiging nothing into something.
         </p>
       </div>
     </div>
@@ -267,4 +267,4 @@ const Civica = () => {
   ]
 }
 
-export default Civica
+export default Cyph
