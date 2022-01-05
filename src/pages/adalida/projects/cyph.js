@@ -7,10 +7,10 @@ import { ThemeContext, Themes } from 'theme_context'
 
 const CyphPage = () =>
   <>
-  <ThemeContext.Provider value={Themes['Civic App']}>
-    <Header />
-    <Cyph />
-  </ThemeContext.Provider>
+    <ThemeContext.Provider value={Themes['Civic App']}>
+      <Header />
+      <Cyph />
+    </ThemeContext.Provider>
   </>
 
 export default CyphPage

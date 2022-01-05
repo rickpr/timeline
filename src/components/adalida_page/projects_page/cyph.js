@@ -56,15 +56,13 @@ const Cyph = () => {
       <div className='large-text'>
         <div className='large' style={{ color: '#7D21E1' }}>Origin</div>
         <p>
-          I like the company Meow Wolf (we are both native to New Mexico).
-          They opened, and then quickly closed, a new location in Las Vegas, Nevada during the pandemic.
-          I wanted to learn user experience design and I wanted to visit the new exhibit, Omega Mart.
-          This project was my way of marrying the two while I waited for the re-opening.
+          Cyph is a mobile app designed for users who are intersted in contributions and
+          spending between elected representatives and businesses.
+          Users can scan a person and an AI will recoginize who the representative is and who their donors are.
         </p>
         <p>
-          Meow Wolf is an American arts and entertainment company.
-          They host interactive non-linear art museum with locations in New Mexico, Nevada, and Colorado with day and event tickets.
-          They also host music festivals, create large scale art installations, and create and produce streaming content.
+          This project is a design challenge based from a meme containing a quote by Robin Williams:
+          “Politicans should wear sponser jackets like nascar drivers, then we know who owns them”.
         </p>
       </div>
       <div>
@@ -80,7 +78,7 @@ const Cyph = () => {
         <div className='large' style={{ color: '#7D21E1' }}>Research</div>
         <p>
           My research focused on how voting works in the United States, why people don’t vote,
-          what infomration is useful to voters, why voting is important.
+          what information is useful to voters, why voting is important.
           After, I conducted a competitive audit and learned about useful data sources publicaly available for use.
           This is also where I begin creating my information architecture.
         </p>
