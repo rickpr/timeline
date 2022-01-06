@@ -29,7 +29,7 @@ const RicardoPage = () => {
         </div>
         <div className='row' data-aos='fade-up'>
           <div className='col-sm-5 offset-sm-2'>
-            I am a Software Engineer at Unit21.
+            I am a Software Engineer.
           </div>
         </div>
       </div>

@@ -6,33 +6,32 @@ import { ThemeContext } from 'theme_context'
 const Project = ({ forwardRef, content, title }) => {
   const { projectCircleFill, projectCircleStroke, stroke } = useContext(ThemeContext)
   const outerGridTemplate = `
-  'menu-timeline   menu-bar     right-space'  5rem
-  'crossbar        title        right-space'  5rem
-  'timeline        content      right-space'  1fr / 2fr 22fr 1fr
+  'left-space menu-timeline menu-bar right-space'  5rem
+  'left-space crossbar      title    right-space'  5rem
+  'left-space timeline      content  right-space'  1fr / 1fr 2fr 21fr 1fr
 `
 
-  const marginLeftPercent = 40 // %
-  const marginLeft = `${marginLeftPercent}%`
-  const minWidth = `calc(${100 - marginLeftPercent}% - 2em)`
+  const minWidth = 'calc(100% - 2rem)'
   const background = projectCircleFill
-  const border = `0.15em solid ${stroke}`
-  const circleBorder = projectCircleStroke ? { border: `0.15em solid ${projectCircleStroke}` } : {}
-  console.log(circleBorder)
-  const verticalLine = <div style={{ minHeight: '100%', border, marginLeft, background }} />
-  const horizontalLine = <div style={{ position: 'absolute', marginLeft, minWidth, border, background }} />
+  const border = `0.15rem solid ${stroke}`
+  const circleBorder = projectCircleStroke ? { border: `0.15rem solid ${projectCircleStroke}` } : {}
+  const verticalLine = <div style={{ minHeight: '100%', border, background }} />
+  const horizontalLine = <div style={{ position: 'absolute', minWidth, border, background }} />
   const circle = (
     <div
       style={{
-        minHeight: '1em',
-        minWidth: '1em',
+        minHeight: '1rem',
+        minWidth: '1rem',
         borderRadius: '50%',
         position: 'absolute',
-        right: '1em',
+        right: '1rem',
         background,
         ...circleBorder
       }}
     />
   )
+
+  const leftSpace = <div style={{ gridArea: 'left-space' }} />
 
   const menuTimeline = (
     <div style={{ gridArea: 'menu-timeline', display: 'flex' }}>
@@ -64,9 +63,9 @@ const Project = ({ forwardRef, content, title }) => {
 
   return (
     <div ref={forwardRef} style={{ display: 'grid', gridTemplate: outerGridTemplate }}>
-      {menuTimeline} {menuBar}     {rightSpace}
-      {crossbar}     {titleArea}
-      {timeline}     {contentArea}
+      {leftSpace} {menuTimeline} {menuBar}     {rightSpace}
+                  {crossbar}     {titleArea}
+                  {timeline}     {contentArea}
     </div>
   )
 }

@@ -17,7 +17,9 @@ const Themes = {
 
     // Text gradients
     textGradientTop: '#EC6EAD',
-    textGradientBottom: '#3494E6'
+    textGradientBottom: '#3494E6',
+
+    footer: '#00B9FD',
   },
   'Meow Wolf': {
     primary: '#FF2079',
@@ -32,7 +34,9 @@ const Themes = {
     // Down Arrow
     arrowTop: '#DA1C5C',
     arrowBottom: '#DA1C5C',
-    circleColor: '#39FF14'
+    circleColor: '#39FF14',
+
+    footer: '#FF2079',
   },
   'Civic App': {
     primary: '#39FF14',
@@ -47,6 +51,8 @@ const Themes = {
     arrowTop: '#39FF14',
     arrowBottom: '#39FF14',
     circleColor: '#39FF14',
+
+    footer: '#39FF14'
   }
 }
 
