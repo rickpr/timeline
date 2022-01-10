@@ -79,7 +79,7 @@ const Cyph = () => {
         <p>
           My research focused on how voting works in the United States, why people don’t vote,
           what information is useful to voters, why voting is important.
-          After, I conducted a competitive audit and learned about useful data sources publicaly available for use.
+          After, I conducted a competitive audit and learned about useful data sources publicly available for use.
           This is also where I begin creating my information architecture.
         </p>
       </div>
@@ -96,7 +96,7 @@ const Cyph = () => {
       <CaptionGallery photos={[personas, personasOne]} caption='User Personas' id="interviewContent" />
       <div key='text' className='large-text'>
         <h1>2. Empathize</h1>
-        <div className='large' style={{ color: '#39FF14' }}>Interviews</div>
+        <div className='large' style={{ color: '#7D21E1' }}>Interviews</div>
         <p>
           The target audience was a young voter demographic who are bewteen the ages of 20-35.
           I utilized my network and interviewed people who fit the target audience.

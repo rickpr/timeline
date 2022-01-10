@@ -66,7 +66,7 @@ const MeowWolf = () => {
           They also host music festivals, create large scale art installations, and create and produce streaming content.
         </p>
         <div style={{ marginTop: '1em' }} key='link'>
-          <Link to='/adalida/projects'><span className='text-warning'>VISIT THE SITE</span></Link>&nbsp;
+          <Link to='/adalida/projects/meow_wolf'><span className='text-warning'>VISIT THE SITE</span></Link>&nbsp;
           <span style={{ color: '#3DA834' }}><FontAwesomeIcon icon={faArrowRight} /></span>
         </div>
       </div>

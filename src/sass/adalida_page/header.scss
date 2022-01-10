@@ -1,8 +1,12 @@
 .adalida-navbar {
-  position: absolute;
-  right: 5%;
-  left: 5%;
-  height: 2em;
+  minHeight: 2em;
   transition: border-color 0.5s ease;
   pointer-events: none;
+  position: fixed;
+  margin: 1em auto 0 auto;
+  width: 95%;
+  left: 0;
+  right: 0;
+  padding-top: 1em;
+  z-index: 1;
 }
