@@ -7,6 +7,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import ScalableText from 'components/scalable_text'
 
 const App = ({
+  active,
   forwardRef,
   accentColor,
   heroPhoto,
@@ -32,8 +33,10 @@ const App = ({
     gridTemplateAreas,
     gridTemplateColumns,
     gridTemplateRows,
-    columnGap: '2em'
+    columnGap: '2em',
+    transition: 'opacity 1s ease'
   }
+  if (!active) gridStyle.opacity = '0'
   const borderSize = 0.5 // em
   const borderStyle = `${borderSize}em solid ${accentColor || '#FF0000'}`
   const transition = 'border-color 0.5s ease'
@@ -114,6 +117,7 @@ const App = ({
 }
 
 App.propTypes = {
+  active: PropTypes.bool.isRequired,
   forwardRef: PropTypes.shape({ current: PropTypes.node }).isRequired,
   accentColor: PropTypes.string.isRequired,
   heroPhoto: PropTypes.string.isRequired,

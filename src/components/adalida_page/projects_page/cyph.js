@@ -1,7 +1,4 @@
-import { Link } from 'gatsby'
 import React, { useRef } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import ColorCircle from './color_circle'
 import Project from './project'

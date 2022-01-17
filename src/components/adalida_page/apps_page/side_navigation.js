@@ -79,9 +79,9 @@ const SideNavigation = ({ links, activeProject }) => {
 
 SideNavigation.propTypes = {
   links: PropTypes.shape({
+    background: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
-    ref: PropTypes.shape({ current: PropTypes.node }).isRequired,
-    background: PropTypes.string.isRequired
+    ref: PropTypes.shape({ current: PropTypes.node }).isRequired
   }),
   activeProject: PropTypes.string.isRequired
 }
