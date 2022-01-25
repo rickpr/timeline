@@ -1,27 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
+import { ThemeContext } from 'theme_context'
+
 import ScalableText from 'components/scalable_text'
 
 const App = ({
-  active,
   forwardRef,
-  accentColor,
   heroPhoto,
-  primaryColor,
   title,
   description,
   projectPage,
   top
 }) => {
+  const { name, primary, stroke, background, fill, projectCircleFill, arrowTop, arrowBottom, circleColor, textGradientTop, textGradientBottom, footer } = useContext(ThemeContext)
+  const active = name === title
+
   const gridTemplateAreas = `
-    'timeline-placement top-space    hero-photo menu-space'
-    'entry-post         title        hero-photo menu-space'
-    'lower-post         description  hero-photo menu-space'
-    'bottom-space       bottom-space hero-photo menu-space'
+    'timeline-top top-space    hero-photo menu-space'
+    'entry-post   title        hero-photo menu-space'
+    'lower-post   description  hero-photo menu-space'
+    'bottom-space bottom-space hero-photo menu-space'
   `
   const gridTemplateColumns = '10% 6fr 7fr 1fr'
   const gridTemplateRows = '30vh max(max-content, 3fr) 8fr 7fr'
@@ -38,7 +40,7 @@ const App = ({
   }
   if (!active) gridStyle.opacity = '0'
   const borderSize = 0.5 // em
-  const borderStyle = `${borderSize}em solid ${accentColor || '#FF0000'}`
+  const borderStyle = `${borderSize}em solid ${primary || '#FF0000'}`
   const transition = 'border-color 0.5s ease'
 
   const circleSize = borderSize / 2 // em
@@ -52,8 +54,8 @@ const App = ({
     position: 'absolute',
     transition
   }
-  const timelinePlacement = (
-    <div style={{ gridArea: 'timeline-placement', marginLeft: '10%', width: '100%' }}>
+  const timelineTop = (
+    <div style={{ gridArea: 'timeline-top', marginLeft: '10%', width: '100%' }}>
       <div style={{ height: '100%', borderLeft: !top && borderStyle, transition }} />
     </div>
   )
@@ -88,16 +90,16 @@ const App = ({
   )
   const bigTitle = (
     <div style={{ gridArea: 'title', display: 'flex', alignItems: 'center' }}>
-      <ScalableText text={title} color={accentColor} />
+      <ScalableText text={title} color={primary} />
     </div>
   )
   const inlineDescription = (
-    <div style={{ gridArea: 'description', color: primaryColor, fontSize: '2em' }}>
+    <div style={{ gridArea: 'description', color: '#FFFFFF', fontSize: '2em' }}>
       {description}
       <div style={{ marginTop: '1em' }}>
         <Link to={projectPage}><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>
         &nbsp;
-        <span style={{ color: accentColor }}><FontAwesomeIcon icon={faArrowRight} /></span>
+        <span style={{ color: primary }}><FontAwesomeIcon icon={faArrowRight} /></span>
       </div>
     </div>
   )
@@ -108,7 +110,7 @@ const App = ({
   )
   return (
     <div style={gridStyle} ref={forwardRef}>
-      {timelinePlacement} {topSpace} {heroPicture} {menuSpace}
+      {timelineTop} {topSpace} {heroPicture} {menuSpace}
       {entryPost} {bigTitle}
       {lowerPost} {inlineDescription}
       {bottomSpace}
@@ -117,11 +119,8 @@ const App = ({
 }
 
 App.propTypes = {
-  active: PropTypes.bool.isRequired,
   forwardRef: PropTypes.shape({ current: PropTypes.node }).isRequired,
-  accentColor: PropTypes.string.isRequired,
   heroPhoto: PropTypes.string.isRequired,
-  primaryColor: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   projectPage: PropTypes.string.isRequired,

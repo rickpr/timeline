@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types'
+
+import { Themes, ThemeContext } from 'theme_context'
 
 import Blowout from './blowout'
 
 const SideNavigation = ({ links, activeProject }) => {
+  const { name } = useContext(ThemeContext)
   const [showText, setShowText] = useState(Object.keys(links).map(() => false))
   const waveDelay = 100
 
@@ -18,7 +21,7 @@ const SideNavigation = ({ links, activeProject }) => {
     alignContent: 'center',
     rowGap: '0',
     right: '5%',
-    top: 'calc(50% - 3rem)',
+    top: 'calc(50% - 3rem)'
   }
 
   const toggleTextVisibility = makeTextVisible => {
@@ -42,16 +45,16 @@ const SideNavigation = ({ links, activeProject }) => {
   return (
     <div style={styles} onMouseEnter={displayText} onMouseLeave={hideText}>
       {Object.entries(links).map(
-        ([name, { background, color, ref }], index) => {
-          const active = activeProject === name
+        ([title, ref], index) => {
+          const { background, primary } = Themes[title]
+          const active = name === title
           return (
             <>
               <Blowout
                 key={`blowout-${index}`}
-                active={active}
                 click={() => ref.current?.scrollIntoView({ behavior: 'smooth' })}
-                name={name}
-                color={color}
+                title={title}
+                color={primary}
                 showText={showText[index]}
               />
               <div

@@ -2,6 +2,9 @@ import React from 'react'
 
 const Themes = {
   Helios: {
+    name: 'Helios',
+    description: 'A digital banking user experience for an account sign up.',
+
     primary: '#FFFFFF',
     stroke: '#00B9FD',
     background: 'linear-gradient(to right, #00B8FD, #2AF598)',
@@ -22,6 +25,8 @@ const Themes = {
     footer: '#00B9FD',
   },
   'Meow Wolf': {
+    name: 'Meow Wolf',
+
     primary: '#FF2079',
     stroke: '#3DA834',
     background: '#000000',
@@ -36,9 +41,11 @@ const Themes = {
     arrowBottom: '#DA1C5C',
     circleColor: '#39FF14',
 
-    footer: '#FF2079',
+    footer: '#FF2079'
   },
-  'Civic App': {
+  Cyph: {
+    name: 'Cyph',
+
     primary: '#39FF14',
     stroke: '#39FF14',
     background: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)',

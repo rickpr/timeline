@@ -1,12 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 
-const Header = ({ color }) => {
+import { ThemeContext } from 'theme_context'
+
+const Header = () => {
+  const { primary } = useContext(ThemeContext)
   const navbarStyles = {
-    borderLeft: `0.25em solid ${color}`,
-    borderRight: `0.25em solid ${color}`,
-    borderTop: `0.25em solid ${color}`,
+    borderLeft: `0.25em solid ${primary}`,
+    borderRight: `0.25em solid ${primary}`,
+    borderTop: `0.25em solid ${primary}`,
   }
 
   return (
@@ -22,7 +24,5 @@ const Header = ({ color }) => {
     </nav>
   )
 }
-
-Header.propTypes = { color: PropTypes.string.isRequired }
 
 export default Header

@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-const Blowout = ({ name, active, click, color, showText }) => {
+import { ThemeContext } from 'theme_context'
+
+const Blowout = ({ title, click, showText }) => {
   // https://en.wikipedia.org/wiki/Party_horn
+  const { name, primary } = useContext(ThemeContext)
+  const active = name === title
   const [blownOut, setBlownOut] = useState()
   const [textVisible, setTextVisible] = useState(false)
   const [animation, setAnimation] = useState()
   const animationDuration = 200
-  const backgroundColor = active ? color : '#CCCCCC88'
+  const backgroundColor = active ? primary : '#CCCCCC88'
 
   useEffect(() => {
     // Changing direction, but don't need to hide/show the text, mouse left too early
@@ -28,7 +32,7 @@ const Blowout = ({ name, active, click, color, showText }) => {
   }, [showText])
 
   const textStyle = {
-    color: active ? color : '#FFFFFF',
+    color: active ? primary : '#FFFFFF',
     textAlign: 'right',
     fontSize: '1.5rem',
     visibility: textVisible ? 'visible' : 'hidden'
@@ -53,17 +57,15 @@ const Blowout = ({ name, active, click, color, showText }) => {
 
   return (
     <div className='blow-out-container' style={transitionStyle} onClick={click}>
-      <div key='name' style={{ ...textStyle, ...transitionStyle }} className={blownOut && 'blown-out'}>{name}</div>
+      <div key='name' style={{ ...textStyle, ...transitionStyle }} className={blownOut && 'blown-out'}>{title}</div>
       {blowOut()}
     </div>
   )
 }
 
 Blowout.propTypes = {
-  name: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
   click: PropTypes.func.isRequired,
-  color: PropTypes.string.isRequired,
   showText: PropTypes.bool.isRequired
 
 }

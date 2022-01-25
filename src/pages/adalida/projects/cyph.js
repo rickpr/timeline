@@ -7,7 +7,7 @@ import { ThemeContext, Themes } from 'theme_context'
 
 const CyphPage = () =>
   <>
-    <ThemeContext.Provider value={Themes['Civic App']}>
+    <ThemeContext.Provider value={Themes.Cyph}>
       <Header />
       <Cyph />
     </ThemeContext.Provider>
