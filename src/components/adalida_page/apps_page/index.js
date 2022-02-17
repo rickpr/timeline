@@ -3,29 +3,25 @@ import { minBy } from 'lodash'
 
 import { ThemeContext, Themes } from 'theme_context'
 
-import Header from './header'
+import Header from '../header'
 import SideNavigation from './side_navigation'
 import App from '../app'
-
-import cyphPhone from 'images/cyph.png'
-import meowWolfHome from 'images/meow_wolf.png'
-import heliosPhone from 'images/helios.png'
 
 const AppsPage = () => {
   const navigationLinks = {
     Helios: useRef(),
     'Meow Wolf': useRef(),
-    Cyph: useRef(),
+    Cyph: useRef()
   }
   const [closestProject, setClosestProject] = useState('Helios')
+  const linkDescription = 'OPEN CASE STUDY'
 
   const helios = (
     <App
       key='helios'
+      linkDescription={linkDescription}
       forwardRef={navigationLinks.Helios}
       title='Helios'
-      heroPhoto={heliosPhone}
-      projectPage='/adalida/projects/helios'
       top
     />
   )
@@ -33,22 +29,18 @@ const AppsPage = () => {
   const meowWolf = (
     <App
       key='meow-wolf'
+      linkDescription={linkDescription}
       forwardRef={navigationLinks['Meow Wolf']}
       title='Meow Wolf'
-      description='A mobile ticketing experience for a non-linear interactive art museum.'
-      heroPhoto={meowWolfHome}
-      projectPage='/adalida/projects/meow_wolf'
     />
   )
 
   const cyph = (
     <App
       key='cyph'
+      linkDescription={linkDescription}
       forwardRef={navigationLinks.Cyph}
       title='Cyph'
-      description='A mobile social experience where users scan politicians and learn about their donors.'
-      heroPhoto={cyphPhone}
-      projectPage='/adalida/projects/cyph'
     />
   )
 
@@ -67,11 +59,11 @@ const AppsPage = () => {
 
   return (
     <ThemeContext.Provider value={Themes[closestProject]}>
-      <Header />
       <div style={{ scrollSnapType: 'y mandatory', overflow: 'auto', height: '100vh' }} ref={scrollRef}>
+        <Header />
         {projects}
       </div>
-      <SideNavigation links={navigationLinks} activeProject={closestProject} />
+      <SideNavigation links={navigationLinks} />
     </ThemeContext.Provider>
   )
 }

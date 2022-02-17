@@ -1,12 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import { Themes, ThemeContext } from 'theme_context'
+import { Themes } from 'theme_context'
 
 import Blowout from './blowout'
 
-const SideNavigation = ({ links, activeProject }) => {
-  const { name } = useContext(ThemeContext)
+const SideNavigation = ({ links }) => {
   const [showText, setShowText] = useState(Object.keys(links).map(() => false))
   const waveDelay = 100
 
@@ -46,33 +45,15 @@ const SideNavigation = ({ links, activeProject }) => {
     <div style={styles} onMouseEnter={displayText} onMouseLeave={hideText}>
       {Object.entries(links).map(
         ([title, ref], index) => {
-          const { background, primary } = Themes[title]
-          const active = name === title
+          const { primary } = Themes[title]
           return (
-            <>
-              <Blowout
-                key={`blowout-${index}`}
-                click={() => ref.current?.scrollIntoView({ behavior: 'smooth' })}
-                title={title}
-                color={primary}
-                showText={showText[index]}
-              />
-              <div
-                key={`div-${index}`}
-                style={{
-                  opacity: active ? 1 : 0,
-                  position: 'fixed',
-                  height: '100vh',
-                  left: 0,
-                  top: 0,
-                  width: '100vw',
-                  zIndex: -99,
-                  pointerEvents: 'none',
-                  transition: 'opacity 0.5s ease',
-                  background
-                }}
-              />
-            </>
+            <Blowout
+              key={`blowout-${index}`}
+              click={() => ref.current?.scrollIntoView({ behavior: 'smooth' })}
+              title={title}
+              color={primary}
+              showText={showText[index]}
+            />
           )
         }
       )}
@@ -86,7 +67,6 @@ SideNavigation.propTypes = {
     color: PropTypes.string.isRequired,
     ref: PropTypes.shape({ current: PropTypes.node }).isRequired
   }),
-  activeProject: PropTypes.string.isRequired
 }
 
 export default SideNavigation

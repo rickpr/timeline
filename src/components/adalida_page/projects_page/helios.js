@@ -1,18 +1,16 @@
 import React, { useRef } from 'react'
 
+import App from '../app'
 import CaptionGallery from 'components/caption_gallery'
 import GradientText from 'components/gradient_text'
 import TimelineDescription from 'components/timeline/timeline_description'
 import ColorCircle from './color_circle'
 import Project from './project'
-import Title from './title'
-import App from '../app'
 
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
 // Image
 import architecture from 'images/architecture.png'
-import helios from 'images/helios.png'
 import personas from 'images/personas.svg'
 import personasOne from 'images/personas_one.svg'
 import userJourneyMap1 from 'images/user_journey_map_1.svg'
@@ -24,20 +22,7 @@ import afterHiFi from 'videos/after_hi_fi.mp4'
 
 const Helios = () => {
   const contentStart = useRef()
-  const title = (
-    <App
-      key='helios'
-      active={true}
-      forwardRef={{ current: null }}
-      title='Helios'
-      description='A digital banking user experience for an account sign up.'
-      heroPhoto={helios}
-      primaryColor='#FFFFFF'
-      accentColor='#FFFFFF'
-      projectPage='/adalida/projects/helios'
-      top
-    />
-  )
+  const title = <App title='Helios' top />
 
   const projectInfo = (
     <>

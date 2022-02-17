@@ -11,20 +11,21 @@ const Project = ({ forwardRef, content, title }) => {
   'left-space timeline      content  right-space'  1fr / 1fr 2fr 21fr 1fr
 `
 
-  const minWidth = 'calc(100% - 2rem)'
+  const borderSize = 0.25 // em
+  const minWidth = `calc(100% - ${borderSize * 5}em)` // TODO: magic number
   const background = projectCircleFill
-  const border = `0.15rem solid ${stroke}`
-  const circleBorder = projectCircleStroke ? { border: `0.15rem solid ${projectCircleStroke}` } : {}
+  const border = `${borderSize}em solid ${stroke}`
+  const circleBorder = projectCircleStroke ? { border: `${borderSize}em solid ${projectCircleStroke}` } : {}
   const verticalLine = <div style={{ minHeight: '100%', border, background }} />
   const horizontalLine = <div style={{ position: 'absolute', minWidth, border, background }} />
   const circle = (
     <div
       style={{
-        minHeight: '1rem',
-        minWidth: '1rem',
+        minHeight: `${borderSize * 5}em`,
+        minWidth: `${borderSize * 5}em`,
         borderRadius: '50%',
         position: 'absolute',
-        right: '1rem',
+        right: `${borderSize * 5}em`,
         background,
         ...circleBorder
       }}

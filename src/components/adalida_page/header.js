@@ -4,11 +4,12 @@ import { Link } from 'gatsby'
 import { ThemeContext } from 'theme_context'
 
 const Header = () => {
-  const { primary } = useContext(ThemeContext)
+  const borderColor = useContext(ThemeContext).primary || '#FFFFFF'
+  const borderStyle = `0.25em solid ${borderColor}`
   const navbarStyles = {
-    borderLeft: `0.25em solid ${primary}`,
-    borderRight: `0.25em solid ${primary}`,
-    borderTop: `0.25em solid ${primary}`,
+    borderLeft: borderStyle,
+    borderRight: borderStyle,
+    borderTop: borderStyle
   }
 
   return (

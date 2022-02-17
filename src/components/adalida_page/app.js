@@ -10,24 +10,39 @@ import ScalableText from 'components/scalable_text'
 
 const App = ({
   forwardRef,
-  heroPhoto,
+  linkDescription,
   title,
-  description,
-  projectPage,
   top
 }) => {
-  const { name, primary, stroke, background, fill, projectCircleFill, arrowTop, arrowBottom, circleColor, textGradientTop, textGradientBottom, footer } = useContext(ThemeContext)
+  const { name, description, primary, heroPhoto, projectPage, background } = useContext(ThemeContext)
   const active = name === title
 
+  const handleClick = () => {
+    setTimeout(() => {
+      window.scrollTo(0, window.innerHeight + window.pageYOffset)
+    }, 1000)
+  }
+
+  const gridTemplateArea = `
+    'left-space timeline-top top-space    hero-photo menu-space' 30vh
+    'left-space entry-post   title        hero-photo menu-space' max-content
+    'left-space lower-post   description  hero-photo menu-space' 8fr
+    'left-space bottom-space bottom-space hero-photo menu-space' 7fr / 1fr 2fr 1fr 20fr 1fr
+`
+
   const gridTemplateAreas = `
-    'timeline-top top-space    hero-photo menu-space'
-    'entry-post   title        hero-photo menu-space'
-    'lower-post   description  hero-photo menu-space'
-    'bottom-space bottom-space hero-photo menu-space'
-  `
-  const gridTemplateColumns = '10% 6fr 7fr 1fr'
+    'left-space timeline-top top-space    hero-photo menu-space'
+    'left-space entry-post   title        hero-photo menu-space'
+    'left-space lower-post   description  hero-photo menu-space'
+    'left-space bottom-space bottom-space hero-photo menu-space'
+`
+
+  // const gridTemplateColumns = '10% 6fr 7fr 1fr'
+  const gridTemplateColumns = '1fr 2fr 10fr 11fr 1fr'
+
   const gridTemplateRows = '30vh max(max-content, 3fr) 8fr 7fr'
   const gridStyle = {
+    background,
     display: 'grid',
     minHeight: '100vh',
     width: '100%',
@@ -35,7 +50,6 @@ const App = ({
     gridTemplateAreas,
     gridTemplateColumns,
     gridTemplateRows,
-    columnGap: '2em',
     transition: 'opacity 1s ease'
   }
   if (!active) gridStyle.opacity = '0'
@@ -55,7 +69,7 @@ const App = ({
     transition
   }
   const timelineTop = (
-    <div style={{ gridArea: 'timeline-top', marginLeft: '10%', width: '100%' }}>
+    <div style={{ gridArea: 'timeline-top', width: '100%' }}>
       <div style={{ height: '100%', borderLeft: !top && borderStyle, transition }} />
     </div>
   )
@@ -68,7 +82,6 @@ const App = ({
       display: 'grid',
       gridTemplateColumns: '1fr',
       gridTemplateRows: '1fr 1fr',
-      margin: '0 10%',
       width: '100%',
     }}>
       <div style={{ borderLeft: !top && borderStyle, height: '100%', transition }} />
@@ -84,7 +97,7 @@ const App = ({
     </div>
   )
   const lowerPost = (
-    <div style={{ gridArea: 'lower-post', padding: '0 10%', width: '90%' }}>
+    <div style={{ gridArea: 'lower-post', width: '90%' }}>
       <div style={{ minHeight: '200%', width: '100%', borderLeft: borderStyle, transition }} />
     </div>
   )
@@ -93,14 +106,17 @@ const App = ({
       <ScalableText text={title} color={primary} />
     </div>
   )
+  const projectLink = (
+    <div style={{ marginTop: '1em', visibility: !linkDescription && 'hidden' }}>
+      <Link to={projectPage}><span style={{ color: '#FFFFFF' }} onClick={handleClick}>{linkDescription}</span></Link>
+      &nbsp;
+      <span style={{ color: primary }}><FontAwesomeIcon icon={faArrowRight} /></span>
+    </div>
+  )
   const inlineDescription = (
     <div style={{ gridArea: 'description', color: '#FFFFFF', fontSize: '2em' }}>
       {description}
-      <div style={{ marginTop: '1em' }}>
-        <Link to={projectPage}><span style={{ color: '#FFFFFF' }}>OPEN CASE STUDY</span></Link>
-        &nbsp;
-        <span style={{ color: primary }}><FontAwesomeIcon icon={faArrowRight} /></span>
-      </div>
+      {projectLink}
     </div>
   )
   const heroPicture = (
@@ -108,22 +124,21 @@ const App = ({
       <img style={{ objectFit: 'cover', maxHeight: '100vh' }} src={heroPhoto} />
     </div>
   )
+  const leftSpace = <div style={{ gridArea: 'left-space' }} />
   return (
     <div style={gridStyle} ref={forwardRef}>
-      {timelineTop} {topSpace} {heroPicture} {menuSpace}
-      {entryPost} {bigTitle}
-      {lowerPost} {inlineDescription}
-      {bottomSpace}
+      {leftSpace} {timelineTop} {topSpace} {heroPicture} {menuSpace}
+                  {entryPost}   {bigTitle}
+                  {lowerPost}   {inlineDescription}
+                  {bottomSpace}
     </div>
   )
 }
 
 App.propTypes = {
   forwardRef: PropTypes.shape({ current: PropTypes.node }).isRequired,
-  heroPhoto: PropTypes.string.isRequired,
+  linkDescription: PropTypes.string,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  projectPage: PropTypes.string.isRequired,
   top: PropTypes.bool
 }
 

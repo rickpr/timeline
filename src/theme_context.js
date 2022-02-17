@@ -1,9 +1,15 @@
 import React from 'react'
 
+import heliosHome from 'images/helios.png'
+import meowWolfHome from 'images/meow_wolf.png'
+import cyphHome from 'images/cyph.png'
+
 const Themes = {
   Helios: {
     name: 'Helios',
     description: 'A digital banking user experience for an account sign up.',
+    projectPage: '/adalida/projects/helios',
+    heroPhoto: heliosHome,
 
     primary: '#FFFFFF',
     stroke: '#00B9FD',
@@ -26,6 +32,9 @@ const Themes = {
   },
   'Meow Wolf': {
     name: 'Meow Wolf',
+    description: 'A mobile ticketing experience for a non-linear interactive art museum.',
+    projectPage: '/adalida/projects/meow_wolf',
+    heroPhoto: meowWolfHome,
 
     primary: '#FF2079',
     stroke: '#3DA834',
@@ -45,7 +54,11 @@ const Themes = {
   },
   Cyph: {
     name: 'Cyph',
+    description: 'A mobile social experience where users scan politicians and learn about their donors.',
+    projectPage: '/adalida/projects/cyph',
+    heroPhoto: cyphHome,
 
+    // Colors
     primary: '#39FF14',
     stroke: '#39FF14',
     background: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)',
