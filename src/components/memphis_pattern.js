@@ -1,47 +1,50 @@
 import React, { useRef, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
-const MemphisPattern = () => {
+const MemphisPattern = ({ containerRef, backgroundColor }) => {
+  const background = backgroundColor || '#FFFFFF'
   const canvasRef = useRef(null)
   const canvas = <canvas ref={canvasRef} />
 
   const drawMemphisPattern = () => {
-    const html = document.documentElement
-    const body = document.body
-    const full_width = window.innerWidth || html.clientWidth
-    const full_height = Math.max(body.scrollHeight, body.offsetHeight,
-      html.clientHeight, html.scrollHeight, html.offsetHeight)
-    const colors = ['rgba(255, 148, 173, 0.5)', 'rgba(0, 234, 230, 0.5)', 'rgba(255, 206, 20, 0.5)', 'rgba(0, 0, 0, 0.5)']
-    const background_colors = ['#FFFFFF']
+    const fullWidth = containerRef.current.clientWidth
+    const fullHeight = containerRef.current.clientHeight
+    console.log(fullHeight)
+    // Determine if the color is closer to white or black and use the opposite for the text
+    const colorSum = [1, 3, 5].reduce((sum, colorIndex) => sum + parseInt(background.substring(colorIndex, colorIndex + 2)))
+    const colors = ['rgba(255, 148, 173, 0.3)', 'rgba(0, 234, 230, 0.3)', 'rgba(255, 206, 20, 0.3)']
+    const finalColor = colorSum <= 382 ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)'
+    colors.push(finalColor)
 
-    const random_element = (array, element_to_avoid) => {
-      const array_without_element_to_avoid = array.filter(element => element !== element_to_avoid)
-      return array_without_element_to_avoid[Math.floor(Math.random() * array_without_element_to_avoid.length)]
+    const randomElement = (array, elementToAvoid) => {
+      const arrayWithoutElementToAvoid = array.filter(element => element !== elementToAvoid)
+      return arrayWithoutElementToAvoid[Math.floor(Math.random() * arrayWithoutElementToAvoid.length)]
     }
 
-    const setup_canvas = () => {
+    const setupCanvas = () => {
       const canvas = canvasRef.current
-      canvas.width = full_width
-      canvas.height = full_height
-      canvas.style['background-color'] = random_element(background_colors)
+      canvas.width = fullWidth
+      canvas.height = fullHeight
+      canvas.style['background-color'] = background
     }
 
-    const canvas_context = () => {
+    const canvasContext = () => {
       const canvas = canvasRef.current
       if (!canvas.getContext) return
       return canvas.getContext('2d')
     }
 
     const squiggle = (context, size) => {
-      const number_of_squiggles = 6
-      const diameter = size / number_of_squiggles
+      const numberOfSquiggles = 6
+      const diameter = size / numberOfSquiggles
       const radius = diameter / 2
 
-      for (let squiggle_number = 0; squiggle_number < number_of_squiggles; squiggle_number++) {
+      for (let squiggleNumber = 0; squiggleNumber < numberOfSquiggles; squiggleNumber++) {
         context.beginPath()
-        const x = radius + squiggle_number * diameter
-        const counter_clockwise = Boolean(squiggle_number % 2)
+        const x = radius + squiggleNumber * diameter
+        const counterClockwise = Boolean(squiggleNumber % 2)
 
-        context.arc(x, size / 2, radius, 0, Math.PI, counter_clockwise)
+        context.arc(x, size / 2, radius, 0, Math.PI, counterClockwise)
         context.stroke()
       }
     }
@@ -75,47 +78,48 @@ const MemphisPattern = () => {
       context.strokeRect(0, 0, size, size)
     }
 
-    const rotate_shape = (shape, context, shape_size) => {
-      const rotation_amount = Math.random() * Math.PI
+    const rotateShape = (shape, context, shapeSize) => {
+      const rotationAmount = Math.random() * Math.PI
       context.save()
-      context.rotate(rotation_amount)
-      context.translate(-shape_size / 2, -shape_size / 2)
-      shape(context, shape_size)
-      context.translate(-shape_size / 4, -shape_size / 4)
-      shape(context, shape_size)
+      context.rotate(rotationAmount)
+      context.translate(-shapeSize / 2, -shapeSize / 2)
+      shape(context, shapeSize)
+      context.translate(-shapeSize / 4, -shapeSize / 4)
+      shape(context, shapeSize)
       context.restore()
     }
 
-    const draw_shapes = () => {
+    const drawShapes = () => {
       const shapes = [squiggle, triangle, line, circle, square]
-      const context = canvas_context()
+      const context = canvasContext()
       context.clearRect(0, 0, canvas.width, canvas.height)
       context.lineWidth = 4
       context.lineCap = 'round'
-      const shape_size = 50
-      const rows = Math.floor(full_height / (shape_size * 2))
-      const columns = Math.floor(full_width / (shape_size * 2))
+      context.filter = 'blur(3px)'
+      const shapeSize = 50
+      const rows = Math.floor(fullHeight / (shapeSize * 2))
+      const columns = Math.floor(fullWidth / (shapeSize * 2))
 
       // Don't draw the same shape next to each other
-      let current_shape = null
-      let current_color = null
+      let currentShape = null
+      let currentColor = null
 
-      context.translate(shape_size, shape_size)
+      context.translate(shapeSize, shapeSize)
 
       for (let row = 0; row < rows; row++) {
         for (let column = 0; column < columns; column++) {
-          current_shape = random_element(shapes, current_shape)
-          current_color = random_element(colors, current_color)
-          context.strokeStyle = current_color
-          rotate_shape(current_shape, context, shape_size)
-          context.translate(shape_size * 2, 0)
+          currentShape = randomElement(shapes, currentShape)
+          currentColor = randomElement(colors, currentColor)
+          context.strokeStyle = currentColor
+          rotateShape(currentShape, context, shapeSize)
+          context.translate(shapeSize * 2, 0)
         }
-        context.translate(-shape_size * 2 * columns, shape_size * 2)
+        context.translate(-shapeSize * 2 * columns, shapeSize * 2)
       }
     }
 
-    setup_canvas()
-    draw_shapes()
+    setupCanvas()
+    drawShapes()
   }
   useEffect(drawMemphisPattern, [])
   return (
@@ -124,6 +128,10 @@ const MemphisPattern = () => {
     </div>
 
   )
+}
+MemphisPattern.propTypes = {
+  containerRef: PropTypes.shape({ current: PropTypes.node }),
+  backgroundColor: PropTypes.string
 }
 
 export default MemphisPattern

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import '../sass/custom.scss'
@@ -8,12 +8,15 @@ import MemphisPattern from '../components/memphis_pattern'
 import RemoteTimeline from '../components/timeline/remote_timeline'
 
 const Us = () => {
+  const layoutRef = useRef(null)
   useEffect(() => { AOS.init({ easing: 'ease-out-back', duration: 1000, offset: 600 }) }, [])
   return (
-    <Layout>
-      <MemphisPattern />
-      <RemoteTimeline timelineId='1' />
-    </Layout>
+    <div ref={layoutRef}>
+      <MemphisPattern containerRef={layoutRef} />
+      <Layout>
+        <RemoteTimeline timelineId='1' />
+      </Layout>
+    </div>
   )
 }
 

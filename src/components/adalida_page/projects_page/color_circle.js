@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ColorCircle = ({ color }) => {
   // Determine if the color is closer to white or black and use the opposite for the text
@@ -14,5 +15,7 @@ const ColorCircle = ({ color }) => {
     </div>
   )
 }
+
+ColorCircle.propTypes = { color: PropTypes.string.isRequired }
 
 export default ColorCircle

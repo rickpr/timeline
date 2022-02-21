@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Crossbar = ({ green }) =>
+const Crossbar = () =>
   <div className='centerline-line'>
-    <div className={`centerline-circle ${green && 'green'}`} />
+    <div className='centerline-circle' />
   </div>
 
 export default Crossbar
