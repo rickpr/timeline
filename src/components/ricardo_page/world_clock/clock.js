@@ -11,37 +11,27 @@ const Clock = ({ timeZone }) => {
     const [date, hour, minute, second, amOrPm] = dateString.split(/:|\s/)
     return { date, hour, minute, second, amOrPm }
   }
+  const [now, setNow] = useState(getDate())
 
-  const now = getDate()
+  const secondHandAngle = () => now.second * 6
 
-  const getSecondHandAngle = () => now.second * 6
-
-  const getMinuteHandAngle = () => {
+  const minuteHandAngle = () => {
     const minuteAngle = now.minute * 6
     const secondAngle = now.second / 10
     return minuteAngle + secondAngle
   }
 
-  const getHourHandAngle = () => {
+  const hourHandAngle = () => {
     const hourAngle = now.hour * 30
     const minuteAngle = now.minute / 10
     const secondAngle = now.second / 600
     return hourAngle + minuteAngle + secondAngle
   }
-  const [secondHandAngle, setSecondHandAngle] = useState(getSecondHandAngle())
-  const [minuteHandAngle, setMinuteHandAngle] = useState(getMinuteHandAngle())
-  const [hourHandAngle, setHourHandAngle] = useState(getHourHandAngle())
-
-  const updateClockHands = () => {
-    setSecondHandAngle(getSecondHandAngle())
-    setMinuteHandAngle(getMinuteHandAngle())
-    setHourHandAngle(getHourHandAngle())
-  }
 
   useEffect(() => {
-    const interval = setInterval(updateClockHands, 1000)
+    const interval = setInterval(() => { setNow(getDate()) }, 1000)
     return () => clearInterval(interval)
-  })
+  }, [])
 
   const clockNumber = number => {
     // X and Y translation for each clock number
@@ -93,7 +83,7 @@ const Clock = ({ timeZone }) => {
     transformOrigin: 'bottom',
     borderRadius: '10%'
   }
-  const getTransform = rotation => `rotate(${rotation}deg)`
+  const getTransform = rotation => `rotate(${rotation()}deg)`
   const secondHand = <div style={{ border: `0.1em solid ${stroke}`, height: '4em', transform: getTransform(secondHandAngle), ...handStyles }} />
   const minuteHand = <div style={{ border: `0.1em solid ${gold}`, height: '3em', transform: getTransform(minuteHandAngle), ...handStyles }} />
   const hourHand = <div style={{ border: '0.1em solid #FFFFFF', height: '2em', transform: getTransform(hourHandAngle), ...handStyles }} />
