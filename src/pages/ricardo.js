@@ -2,7 +2,7 @@ import React, { useRef, useContext } from 'react'
 import '../sass/custom.scss'
 
 import RicardoPage from '../components/ricardo_page'
-import MemphisPattern from '../components/memphis_pattern'
+import Houndstooth from '../components/houndstooth'
 import { ThemeContext, Themes } from 'theme_context'
 
 const Ricardo = () => {
@@ -17,7 +17,7 @@ const Ricardo = () => {
             <h1>Ricardo Piro-Rael</h1>
           </div>
         </header>
-        <MemphisPattern containerRef={layoutRef} backgroundColor={'#111111'} />
+        <Houndstooth containerRef={layoutRef} backgroundColor={'#111111'} />
         <RicardoPage />
       </div>
     </ThemeContext.Provider>
