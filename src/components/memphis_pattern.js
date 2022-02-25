@@ -9,7 +9,6 @@ const MemphisPattern = ({ containerRef, backgroundColor }) => {
   const drawMemphisPattern = () => {
     const fullWidth = containerRef.current.clientWidth
     const fullHeight = containerRef.current.clientHeight
-    console.log(fullHeight)
     // Determine if the color is closer to white or black and use the opposite for the text
     const colorSum = [1, 3, 5].reduce((sum, colorIndex) => sum + parseInt(background.substring(colorIndex, colorIndex + 2)))
     const colors = ['rgba(255, 148, 173, 0.3)', 'rgba(0, 234, 230, 0.3)', 'rgba(255, 206, 20, 0.3)']
@@ -95,7 +94,6 @@ const MemphisPattern = ({ containerRef, backgroundColor }) => {
       context.clearRect(0, 0, canvas.width, canvas.height)
       context.lineWidth = 4
       context.lineCap = 'round'
-      context.filter = 'blur(3px)'
       const shapeSize = 50
       const rows = Math.floor(fullHeight / (shapeSize * 2))
       const columns = Math.floor(fullWidth / (shapeSize * 2))
@@ -121,7 +119,14 @@ const MemphisPattern = ({ containerRef, backgroundColor }) => {
     setupCanvas()
     drawShapes()
   }
-  useEffect(drawMemphisPattern, [])
+
+  useEffect(() => {
+    drawMemphisPattern()
+    const resizeListener = new ResizeObserver(drawMemphisPattern)
+    resizeListener.observe(containerRef.current)
+    return () => resizeListener.unobserve(containerRef.current)
+  }, [drawMemphisPattern])
+
   return (
     <div className='memphis-pattern'>
       {canvas}
