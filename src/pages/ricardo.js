@@ -13,7 +13,7 @@ const Ricardo = () => {
       <div ref={layoutRef}>
         <div style={{ minHeight: '2em' }} />
         <header>
-          <div style={{ border: `5px solid ${circleColor}`, width: '95%', margin: 'auto', textAlign: 'center', color: 'white' }}>
+          <div style={{ width: '95%', margin: 'auto', textAlign: 'center', color: circleColor }}>
             <h1>Ricardo Piro-Rael</h1>
           </div>
         </header>

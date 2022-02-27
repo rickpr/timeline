@@ -19,8 +19,7 @@ const WorldClock = () => {
       justifyItems: 'center',
       alignContent: 'center',
       rowGap: '4em',
-      background: 'rgba(0, 0, 0, 0.5)',
-      margin: '1em',
+      backdropFilter: 'blur(8px)',
       padding: '1em 0'
     }}>
       {clocks}

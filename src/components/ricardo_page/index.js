@@ -15,7 +15,7 @@ const RicardoPage = () => {
       <div style={{ minHeight: '20vh' }} />
       <WorldClock />
       <div style={{ minHeight: '20vh' }} />
-      <div className='wide-timeline'>
+      <div className='wide-timeline' style={{ backdropFilter: 'blur(8px)' }}>
         <div data-aos='fade-up'>
           <div style={{ width: '90%', margin: 'auto' }}>
             <h1 style={{ color: 'white' }}>
