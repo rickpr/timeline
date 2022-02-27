@@ -7,7 +7,7 @@ import Footer from './footer'
 const Layout = ({ children }) =>
   <>
     <Header />
-    <div>
+    <div style={{ width: '95%', margin: '0 auto' }}>
       {children}
     </div>
     <Footer />

@@ -1,86 +1,9 @@
-.adalida-header {
-  margin-left: 3em;
-  position: absolute;
-}
-
-// TODO: move these somewhere more general / generally reorganize CSS
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-  @-ms-keyframes #{$animation-name} {
-    @content;
-  }
-  @-o-keyframes #{$animation-name} {
-    @content;
-  }
-  @keyframes #{$animation-name} {
-    @content;
-  }
-}
-
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};
-}
-
-@include keyframes(slide-in-from-right) {
-  0% { transform: translateX(120%); }
-  50% { transform: translateX(120%); }
-  100% { transform: translateX(0); }
-}
-
-.phones {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 5em;
-  align-items: center;
-  justify-items: center;
-  opacity: 0.25;
-  overflow: hidden;
-  @include animation('slide-in-from-right 2s ease-out 0s 1');
-}
-
-.huge {
-  font-size: 5em;
-  font-weight: bolder;
-  line-height: 1em;
-}
-
-.large {
-  font-size: 2em;
-}
-
-.big {
-  font-size: 2em;
-  position: absolute;
-  line-height: 1em;
-}
-
-.hello {
-  color: theme-color('success');
-}
-
-.name {
-  color: theme-color('warning');
+body {
+  background-color: #000000;
 }
 
 .primary {
   color: #FF2079;
-}
-
-.white {
-  color: #FFF;
 }
 
 .Typewriter {
@@ -90,37 +13,4 @@
 
 .dark {
   background-color: #000;
-}
-
-.spacer {
-  min-height: 5vh;
-}
-
-.top-border {
-  border-top: 0.25em solid #39ff14;
-  border-right: 0.25em solid #39ff14;
-  border-left: 0.25em solid #39ff14;
-  margin: 0 1em;
-  min-height: 10vh;
-}
-
-.bottom-border {
-  border-bottom: 0.25em solid #39ff14;
-  border-left: 0.25em solid #39ff14;
-  margin: 0 1em;
-  min-height: 60vh;
-}
-
-.right-border {
-  border-right: 0.25em solid #39ff14;
-  margin: 0 1em;
-  min-height: 2em;
-  margin-top: -1.125em;
-  background-color: transparent;
-}
-
-.hero-photo {
-  transform: rotateX(-10deg) rotateY(40deg) rotateZ(6deg);
-  box-shadow: 3px 3px 3px 3px;
-  background-image: linear-gradient(#8E2DE2, #4A00E0);
 }

@@ -60,7 +60,6 @@ const AppsPage = () => {
   return (
     <ThemeContext.Provider value={Themes[closestProject]}>
       <div style={{ scrollSnapType: 'y mandatory', overflow: 'auto', height: '100vh' }} ref={scrollRef}>
-        <Header />
         {projects}
       </div>
       <SideNavigation links={navigationLinks} />

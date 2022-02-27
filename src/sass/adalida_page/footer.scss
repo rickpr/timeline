@@ -1,12 +1,13 @@
-.adalida-header {
+.adalida-footer {
   height: 5vh;
-  border-radius: 2.5vh 2.5vh 0 0; // half the height
+  border-radius: 0 0 2.5vh 2.5vh; // half the height
   transition: border-color 0.5s ease;
   pointer-events: none;
-  position: sticky;
-  margin: 1vh auto 0 auto;
+  position: fixed;
+  margin: 0 auto 1vh auto;
   width: 95%;
   left: 0;
   right: 0;
+  bottom: 0;
   z-index: 1;
 }

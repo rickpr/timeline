@@ -1,49 +1,35 @@
-import { navigate } from 'gatsby'
 import React, { useEffect } from 'react'
+import { navigate } from 'gatsby'
 
-import cyphPhone from 'images/cyph.png'
-import meowWolf from 'images/meow_wolf.png'
-import heliosPhone from 'images/helios.png'
+import AdalidaFace from 'images/adalida_face.jpg'
+
+import 'sass/adalida_page/index.scss'
 
 const AdalidaPage = () => {
   useEffect(() => {
     setTimeout(() => navigate('/adalida/apps/'), 5000)
   }, [])
 
-  const phones = (
-    <div className='phones'>
-      <img src={cyphPhone} alt='Cyph' />
-      <img src={meowWolf} alt='Meow Wolf' />
-      <img src={heliosPhone} alt='Helios' />
-    </div>
-  )
-
+  const styles = {
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    justifyItems: 'center',
+    alignContent: 'space-around',
+    height: '88vh'
+  }
   return (
-    <>
-      <div className='dark spacer' />
-      <div className='dark'>
-        <div className='dark top-border' />
-        <div className='dark spacer' />
-        <div className='dark spacer' />
-        <div className='dark spacer' />
-        <div className='adalida-header'>
-          <div className='huge primary'>
-            ADALIDA
-          </div>
-          <div className='huge white'>
-            BACA
-          </div>
-          <div className='dark spacer' />
-          <div className='big white'>
-            UX Designer
-          </div>
-        </div>
-        {phones}
-        <div className='dark spacer' />
-        <div className='dark bottom-border' />
-        <div className='dark right-border' />
+    <div className='dark' style={styles}>
+      <div style={{ textAlign: 'center', fontSize: '10vmin' }}>
+        <span style={{ color: '#60F11C' }}>Hello</span>
+        <span style={{ color: '#FFFFFF' }}>, I&apos;m</span>
+        <span style={{ color: '#FF2079' }} > Adalida Baca</span>
       </div>
-    </>
+      <img src={AdalidaFace} style={{ height: '30vmin' }} />
+      <div style={{ color: 'white', fontSize: '5vmin' }}>// UX Designer</div>
+      <button style={{ backgroundColor: '#FF2079', color: 'white', borderRadius: '3px', border: 'none', fontSize: '3vmin' }}>
+        Contact Adalida
+      </button>
+    </div>
   )
 }
 

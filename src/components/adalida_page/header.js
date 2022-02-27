@@ -1,7 +1,11 @@
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 
+import ScalableText from 'components/scalable_text'
+
 import { ThemeContext } from 'theme_context'
+
+import 'sass/adalida_page/header.scss'
 
 const Header = () => {
   const borderColor = useContext(ThemeContext).primary || '#FFFFFF'
@@ -13,13 +17,17 @@ const Header = () => {
   }
 
   return (
-    <nav className='adalida-navbar' style={navbarStyles}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', margin: '0 auto' }}>
+    <nav className='adalida-header' style={navbarStyles}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '95%', margin: '0 auto', fontSize: '2vmax' }}>
         <div>
-          <h1><Link to='/adalida' style={{ color: '#FFFFFF' }}>ADALIDA BACA</Link></h1>
+          <Link to='/adalida' style={{ color: '#FFFFFF' }}>
+            ADALIDA
+          </Link>
         </div>
         <div>
-          <h1><Link to='/adalida' style={{ color: '#FFFFFF' }}>ABOUT</Link></h1>
+          <Link to='/adalida' style={{ color: '#FFFFFF' }}>
+            ABOUT
+          </Link>
         </div>
       </div>
     </nav>

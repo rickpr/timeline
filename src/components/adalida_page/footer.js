@@ -1,28 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle, faBasketballBall, faLink, faEnvelope  } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'gatsby'
 
+import { ThemeContext } from 'theme_context'
+
+import 'sass/adalida_page/footer.scss'
+
 const Footer = () => {
-  const divStyle = { display: 'inline-block', whiteSpace: 'nowrap' }
+  const borderColor = useContext(ThemeContext).primary || '#FFFFFF'
+  const borderStyle = `0.25em solid ${borderColor}`
+  const borderStyles = {
+    borderLeft: borderStyle,
+    borderRight: borderStyle,
+    borderBottom: borderStyle
+  }
+  const linkStyle = { color: '#FFFFFF' }
   return (
-    <footer style={{ backgroundColor: '#000000', minHeight: '4vh', color: '#FF2079' }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(15em, 1fr))',
-        width: '100%',
-        justifyItems: 'center',
-        alignContent: 'center'
-      }}>
-        <div style={divStyle}>
-          Social: <Link style={{ color: '#39FF14' }} to='/us'>Helios</Link>
-        </div>
-        <div style={divStyle}>
-          Email: <Link style={{ color: '#39FF14' }} to='mailto:adalida.baca@gmail.com'>adalida.baca@gmail.com</Link>
-        </div>
-        <div style={divStyle}>
-          Mobile: <Link style={{ color: '#39FF14' }} to='tel:505-480-3550'>(505) 480-3550</Link>
-        </div>
+    <nav className='adalida-footer' style={borderStyles}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', margin: '0 auto' }}>
+        <a href='/' style={linkStyle}><FontAwesomeIcon icon={faInfoCircle} /></a>
+        <a href='/' style={linkStyle}><FontAwesomeIcon icon={faBasketballBall} /></a>
+        <a href='/' style={linkStyle}><FontAwesomeIcon icon={faLink} /></a>
+        <a href='/' style={linkStyle}><FontAwesomeIcon icon={faEnvelope} /></a>
       </div>
-    </footer>
+    </nav>
   )
 }
 
