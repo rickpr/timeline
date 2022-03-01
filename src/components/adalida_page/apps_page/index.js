@@ -3,9 +3,9 @@ import { minBy } from 'lodash'
 
 import { ThemeContext, Themes } from 'theme_context'
 
-import Header from '../header'
-import SideNavigation from './side_navigation'
 import App from '../app'
+import Layout from '../layout'
+import SideNavigation from './side_navigation'
 
 const AppsPage = () => {
   const navigationLinks = {
@@ -14,22 +14,18 @@ const AppsPage = () => {
     Cyph: useRef()
   }
   const [closestProject, setClosestProject] = useState('Helios')
-  const linkDescription = 'OPEN CASE STUDY'
 
   const helios = (
     <App
       key='helios'
-      linkDescription={linkDescription}
       forwardRef={navigationLinks.Helios}
       title='Helios'
-      top
     />
   )
 
   const meowWolf = (
     <App
       key='meow-wolf'
-      linkDescription={linkDescription}
       forwardRef={navigationLinks['Meow Wolf']}
       title='Meow Wolf'
     />
@@ -38,7 +34,6 @@ const AppsPage = () => {
   const cyph = (
     <App
       key='cyph'
-      linkDescription={linkDescription}
       forwardRef={navigationLinks.Cyph}
       title='Cyph'
     />
@@ -59,10 +54,12 @@ const AppsPage = () => {
 
   return (
     <ThemeContext.Provider value={Themes[closestProject]}>
-      <div style={{ scrollSnapType: 'y mandatory', overflow: 'auto', height: '100vh' }} ref={scrollRef}>
-        {projects}
-      </div>
-      <SideNavigation links={navigationLinks} />
+      <Layout>
+        <div style={{ scrollSnapType: 'y mandatory', overflow: 'auto', height: '100vh' }} ref={scrollRef}>
+          {projects}
+        </div>
+        <SideNavigation links={navigationLinks} />
+      </Layout>
     </ThemeContext.Provider>
   )
 }

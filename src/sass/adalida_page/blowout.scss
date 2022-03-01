@@ -1,26 +1,14 @@
 .blow-out-container {
   cursor: pointer;
-  padding: 0.5em 0;
   display: grid;
   align-items: center;
+  column-gap: 1vmin;
   min-height: 1.5rem;
-  grid-template-columns: 4fr 1fr;
-  min-width: 25%
+  grid-template-columns: 1vw 1fr;
+  pointer-events: none;
 }
 
 .blow-out {
-  width: 0;
-  border-radius: 15%;
-  right: 0;
-  min-height: 1.5rem;
-  pointer-events: none;
-  min-width: 1vw;
-}
-
-.blow-out.blown-out {
-  width: 500%;
-}
-
-.blown-out {
-  transform: skewX(25deg);
+  pointer-events: visible;
+  min-width: 0.25em;
 }

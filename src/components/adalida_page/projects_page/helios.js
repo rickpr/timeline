@@ -22,7 +22,7 @@ import afterHiFi from 'videos/after_hi_fi.mp4'
 
 const Helios = () => {
   const contentStart = useRef()
-  const title = <App title='Helios' top />
+  const title = <App title='Helios' />
 
   const projectInfo = (
     <>

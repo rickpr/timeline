@@ -6,53 +6,32 @@ import { Themes } from 'theme_context'
 import Blowout from './blowout'
 
 const SideNavigation = ({ links }) => {
-  const [showText, setShowText] = useState(Object.keys(links).map(() => false))
-  const waveDelay = 100
-
   const styles = {
-    backgroundColor: showText[0] ? '#00000033' : undefined,
-    pointerEvents: 'visible',
-    borderRadius: '15%',
-    padding: '1%',
-    position: 'absolute',
+    pointerEvents: 'none',
+    position: 'fixed',
     display: 'grid',
     gridTemplateColumns: '1fr',
     alignContent: 'center',
-    rowGap: '0',
-    right: '5%',
-    top: 'calc(50% - 3rem)'
+    gap: '1vmin',
+    top: '50%',
+    transform: 'translate(0, -50%)',
+    width: '20vw',
+    left: '2.5vw'
   }
-
-  const toggleTextVisibility = makeTextVisible => {
-    showText.forEach(
-      (_, index) => setTimeout(
-        () => {
-          setShowText(newShowText => {
-            newShowText[index] = makeTextVisible
-            // Have to make a new array or we won't re-render
-            return [...newShowText]
-          })
-        },
-        waveDelay * index
-      )
-    )
-  }
-
-  const displayText = () => toggleTextVisibility(true)
-  const hideText = () => toggleTextVisibility(false)
 
   return (
-    <div style={styles} onMouseEnter={displayText} onMouseLeave={hideText}>
+    <div style={styles}>
       {Object.entries(links).map(
         ([title, ref], index) => {
           const { primary } = Themes[title]
+          const number = String(index + 1).padStart(2, 0)
           return (
             <Blowout
-              key={`blowout-${index}`}
+              key={`blowout-${number}`}
+              number={number}
               click={() => ref.current?.scrollIntoView({ behavior: 'smooth' })}
               title={title}
               color={primary}
-              showText={showText[index]}
             />
           )
         }
@@ -66,7 +45,7 @@ SideNavigation.propTypes = {
     background: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     ref: PropTypes.shape({ current: PropTypes.node }).isRequired
-  }),
+  })
 }
 
 export default SideNavigation

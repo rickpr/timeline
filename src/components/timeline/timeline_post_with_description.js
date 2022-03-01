@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import TimelineDescription from './timeline_description'
 import TimelinePost from './timeline_post'
@@ -12,5 +13,11 @@ const TimelinePostWithDescription = ({ carousel, description, title }) =>
       <TimelineDescription description={description} title={title} />
     </div>
   </div>
+
+TimelinePostWithDescription.propTypes = {
+  carousel: PropTypes.node.isRequired,
+  description: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
+}
 
 export default TimelinePostWithDescription

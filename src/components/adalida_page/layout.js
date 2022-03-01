@@ -4,14 +4,15 @@ import PropTypes from 'prop-types'
 import Header from './header'
 import Footer from './footer'
 
-const Layout = ({ children }) =>
-  <>
-    <Header />
-    <div style={{ width: '95%', margin: '0 auto' }}>
+const Layout = ({ children }) => {
+  return (
+    <>
+      <Header />
       {children}
-    </div>
-    <Footer />
-  </>
+      <Footer />
+    </>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired

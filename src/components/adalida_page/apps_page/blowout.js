@@ -1,41 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 
 import { ThemeContext } from 'theme_context'
 
-const Blowout = ({ title, click, showText }) => {
-  // https://en.wikipedia.org/wiki/Party_horn
-  const { name, primary } = useContext(ThemeContext)
+const Blowout = ({ title, click, number }) => {
+  const { name, primary, description } = useContext(ThemeContext)
   const active = name === title
-  const [blownOut, setBlownOut] = useState()
-  const [textVisible, setTextVisible] = useState(false)
-  const [animation, setAnimation] = useState()
   const animationDuration = 200
   const backgroundColor = active ? primary : '#CCCCCC88'
-
-  useEffect(() => {
-    // Changing direction, but don't need to hide/show the text, mouse left too early
-    if (textVisible === showText) {
-      clearTimeout(animation)
-      setBlownOut(undefined)
-      return
-    }
-
-    // The normal case - blow out, switch the text visiblity, then shrink.
-    setBlownOut(true)
-    setAnimation(
-      setTimeout(() => {
-        setTextVisible(showText)
-        setBlownOut(undefined)
-      }, animationDuration)
-    )
-  }, [showText])
+  const color = active ? primary : '#FFFFFF'
 
   const textStyle = {
-    color: active ? primary : '#FFFFFF',
-    textAlign: 'right',
-    fontSize: '1.5rem',
-    visibility: textVisible ? 'visible' : 'hidden'
+    color,
+    fontSize: active ? '5vh' : '3vh',
+    pointerEvents: 'none',
+    whiteSpace: 'nowrap'
   }
 
   const transitionStyle = {
@@ -46,25 +25,30 @@ const Blowout = ({ title, click, showText }) => {
 
   const blowOut = () =>
     <div
-      key='blow-out'
       style={{ position: 'relative', height: '100%', ...transitionStyle }}
     >
       <div
         style={{ position: 'absolute', height: '100%', backgroundColor, ...transitionStyle }}
-        className={`blow-out ${blownOut && 'blown-out'}`}
+        className='blow-out'
       />
     </div>
 
   return (
     <div className='blow-out-container' style={transitionStyle} onClick={click}>
-      <div key='name' style={{ ...textStyle, ...transitionStyle }} className={blownOut && 'blown-out'}>{title}</div>
       {blowOut()}
+      <div style={{ ...textStyle, ...transitionStyle }}>
+        {number} {title}
+    {active &&
+     <div style={{ ...transitionStyle, ...textStyle, fontSize: '2vh', whiteSpace: 'normal', color: '#FFFFFF' }}>{description}</div>
+    }
+      </div>
     </div>
   )
 }
 
 Blowout.propTypes = {
   title: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
   click: PropTypes.func.isRequired,
   showText: PropTypes.bool.isRequired
 

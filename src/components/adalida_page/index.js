@@ -15,7 +15,8 @@ const AdalidaPage = () => {
     gridTemplateColumns: '1fr',
     justifyItems: 'center',
     alignContent: 'space-around',
-    height: '88vh'
+    height: '100vh',
+    padding: '10vh 0'
   }
   return (
     <div className='dark' style={styles}>
