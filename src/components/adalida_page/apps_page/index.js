@@ -63,7 +63,7 @@ const AppsPage = () => {
       <Layout>
         <div
           style={{
-            scrollSnapType: 'y mandatory',
+            scrollSnapType: 'both mandatory',
             overflow: 'auto',
             height: '100vh',
             display: 'flex',
