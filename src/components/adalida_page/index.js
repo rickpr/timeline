@@ -26,7 +26,7 @@ const AdalidaPage = () => {
         <span style={{ color: '#FF2079' }} > Adalida Baca</span>
       </div>
       <img src={AdalidaFace} style={{ height: '30vmin' }} />
-      <div style={{ color: 'white', fontSize: '5vmin' }}>// UX Designer</div>
+      <div style={{ color: 'white', fontSize: '5vmin' }}>&#47;&#47; UX Designer</div>
       <button style={{ backgroundColor: '#FF2079', color: 'white', borderRadius: '3px', border: 'none', fontSize: '3vmin' }}>
         Contact Adalida
       </button>

@@ -79,8 +79,8 @@ const MeowWolf = () => {
       <div className='large-text'>
         <div className='text-warning large' key='research'>Research</div>
         <p>
-          My research focused on Meow Wolf's business structure, history, locations, and future projects. I wanted to
-          collect and learn as much information as possible. I paired this research with a competitive audit.
+          My research focused on Meow Wolf&rsquo;s business structure, history, locations, and future projects.
+          I wanted to collect and learn as much information as possible. I paired this research with a competitive audit.
         </p>
       </div>
       <CaptionGallery
@@ -153,7 +153,7 @@ const MeowWolf = () => {
       <div className='text-warning large'>Design, Prototype, Test</div>
       <p>
         I prototyped my lo-fidelity designs and conducted user research on the flow and navigation.
-        From the usability studies, it was clear many of the users' pain points could be solved with
+        From the usability studies, it was clear many of the users&rsquo; pain points could be solved with
         a stronger information architecture.
       </p>
       <p>Check out the before and after lo-fi mockups</p>
@@ -230,7 +230,7 @@ const MeowWolf = () => {
       <div className='text-warning large'>What I learned</div>
       <div style={{ minHeight: '2em ' }} />
       <p>
-        I'm so thankful for the opportunity to work and learn so much from this project.
+        I&rsquo;m so thankful for the opportunity to work and learn so much from this project.
         In summary, I learned about the general user experience process and how research, especially good research,
         can positively impact user design solutions.
       </p>
@@ -250,8 +250,8 @@ const MeowWolf = () => {
         </p>
         <h1>Be Mindful</h1>
         <p>
-          Always remember your designs are intended to solve the user's problem while also promoting business growth
-          and needs. Set aside extreme usability idealism.
+          Always remember your designs are intended to solve the user&rsquo;s problem while also promoting business
+          growth and needs. Set aside extreme usability idealism.
         </p>
       </div>
     </div>

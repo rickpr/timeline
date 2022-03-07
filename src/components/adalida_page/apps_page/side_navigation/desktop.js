@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Themes } from 'theme_context'
 
-import Blowout from './blowout'
+import NavigationLink from './navigation_link'
 
-const SideNavigation = ({ links }) => {
+const Desktop = ({ links }) => {
   const styles = {
     pointerEvents: 'none',
     position: 'fixed',
@@ -15,7 +15,7 @@ const SideNavigation = ({ links }) => {
     gap: '1vmin',
     top: '50%',
     transform: 'translate(0, -50%)',
-    width: '20vw',
+    width: '20vmin',
     left: '2.5vw'
   }
 
@@ -26,8 +26,8 @@ const SideNavigation = ({ links }) => {
           const { primary } = Themes[title]
           const number = String(index + 1).padStart(2, 0)
           return (
-            <Blowout
-              key={`blowout-${number}`}
+            <NavigationLink
+              key={`navigation-link-${number}`}
               number={number}
               click={() => ref.current?.scrollIntoView({ behavior: 'smooth' })}
               title={title}
@@ -40,7 +40,7 @@ const SideNavigation = ({ links }) => {
   )
 }
 
-SideNavigation.propTypes = {
+Desktop.propTypes = {
   links: PropTypes.shape({
     background: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
@@ -48,4 +48,4 @@ SideNavigation.propTypes = {
   })
 }
 
-export default SideNavigation
+export default Desktop

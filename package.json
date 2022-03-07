@@ -12,6 +12,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
+    "@tabler/icons": "^1.54.0",
     "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.1.3",
     "gatsby": "^4.3.0",
