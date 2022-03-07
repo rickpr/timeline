@@ -2,22 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { navigate } from 'gatsby'
 
-import useIsMobile from 'hooks/use_is_mobile'
 import { Themes } from 'theme_context'
 
 const Mobile = ({ forwardRef, title }) => {
   const theme = Themes[title]
   const { background, heroPhoto, projectPage } = theme
-  const isMobile = useIsMobile()
 
   const handleClick = () => {
-    setTimeout(() => {
-      if (isMobile) {
-        window.scrollTo(0, window.innerHeight + window.pageYOffset)
-      } else {
-        window.scrollTo(window.innerWidth + window.pageXOffset, 0)
-      }
-    }, 1000)
+    setTimeout(() => window.scrollTo(window.innerWidth + window.pageXOffset, 0) , 1000)
     navigate(projectPage)
   }
 
