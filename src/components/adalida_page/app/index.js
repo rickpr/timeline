@@ -11,7 +11,7 @@ const App = ({ forwardRef, title }) => {
 }
 
 App.propTypes = {
-  forwardRef: PropTypes.shape({ current: PropTypes.node }).isRequired,
+  forwardRef: PropTypes.shape({ current: PropTypes.node }),
   title: PropTypes.string.isRequired
 }
 

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 import { ThemeContext } from 'theme_context'
@@ -6,13 +6,25 @@ import { ThemeContext } from 'theme_context'
 const Desktop = ({ title, click, number }) => {
   const { name, primary, description } = useContext(ThemeContext)
   const active = name === title
-  const animationDuration = 200
   const backgroundColor = active ? primary : '#CCCCCC88'
   const color = active ? primary : '#FFFFFF'
+  const animationDuration = 200
+
+  const [textShown, setTextShown] = useState(false)
+  useEffect(() => {
+    let timer
+    if (active) {
+      timer = setTimeout(() => setTextShown(true), animationDuration / 2)
+    }
+    return () => {
+      clearTimeout(timer)
+      setTextShown(false)
+    }
+  }, [active])
 
   const textStyle = {
     color,
-    fontSize: active ? '5vh' : '3vh',
+    fontSize: active ? '3vw' : '2vw',
     pointerEvents: 'none',
     whiteSpace: 'nowrap'
   }
@@ -30,7 +42,7 @@ const Desktop = ({ title, click, number }) => {
           position: 'absolute',
           height: '100%',
           pointerEvents: 'visible',
-          minWidth: '0.25vh',
+          minWidth: '0.25vmin',
           backgroundColor,
           ...transitionStyle
         }}
@@ -54,19 +66,17 @@ const Desktop = ({ title, click, number }) => {
       {navigationLink()}
       <div style={{ ...textStyle, ...transitionStyle }}>
         {number} {title}
-        {active &&
-         <div
-           style={{
-             ...transitionStyle,
-             ...textStyle,
-             fontSize: '2vh',
-             whiteSpace: 'normal',
-             color: '#FFFFFF'
-           }}
-         >
-           {description}
-         </div>
-        }
+        <div
+          style={{
+            ...transitionStyle,
+            ...textStyle,
+            fontSize: textShown ? '2vh' : '0',
+            whiteSpace: 'normal',
+            color: '#FFFFFF'
+          }}
+        >
+          {description}
+        </div>
       </div>
     </div>
   )
