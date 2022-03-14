@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 
-import App from '../app'
-import ColorCircle from './color_circle'
-import Project from './project'
+import App from '../../app'
+import ColorCircle from '../color_circle'
+import Project from '../project'
 import TimelineDescription from 'components/timeline/timeline_description'
 import CaptionGallery from 'components/caption_gallery'
 

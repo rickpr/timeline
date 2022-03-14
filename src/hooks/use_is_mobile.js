@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
-export default () => {
-  const breakpoint = 576
+export const BREAKPOINT = 576 // px
+
+export default (breakpoint = BREAKPOINT) => {
   const [windowWidth, setWindowWidth] = useState(breakpoint)
 
   useEffect(() => {

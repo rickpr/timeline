@@ -22,6 +22,7 @@ $theme-colors: (
 @import '@fortawesome/fontawesome-svg-core/styles';
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css2?family=Inter');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
 @font-face {
@@ -30,7 +31,7 @@ $theme-colors: (
 }
 
 body {
-  font-family: "Inconsolata", "Inconsolata Nerd Font", "Courier New", Courier, monospace;
+  font-family: "Inconsolata", "Courier New", Courier, monospace;
 }
 
 a {

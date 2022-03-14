@@ -2,12 +2,11 @@ import React from 'react'
 
 // import heliosHome from 'images/helios.png'
 // import meowWolfHome from 'images/meow_wolf.png'
-// import cyphHome from 'images/cyph.png'
 
+import cyphHome from 'images/cyph/title.png'
 import phones from 'images/phones.jpg'
 const heliosHome = phones
 const meowWolfHome = phones
-const cyphHome = phones
 
 const Themes = {
   Helios: {
