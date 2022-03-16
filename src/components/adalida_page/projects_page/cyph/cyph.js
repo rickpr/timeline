@@ -6,6 +6,7 @@ import Project from '../project'
 import TimelineDescription from 'components/timeline/timeline_description'
 import CaptionGallery from 'components/caption_gallery'
 import Summary from './summary'
+import Research from './research'
 
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
@@ -21,7 +22,13 @@ import beforeLoFi from 'videos/before_lo_fi.mp4'
 import afterHiFi from 'videos/after_hi_fi.mp4'
 
 const Cyph = () => {
-  return [<App key='app' title='Cyph' />, <Summary key='summary' />]
+  return <div style={{ background: '#FAFAFA' }}>
+      {[
+    <App key='app' title='Cyph' />,
+    <Summary key='summary' />,
+    <Research key='research' />
+      ]}
+    </div>
 }
 
 export default Cyph

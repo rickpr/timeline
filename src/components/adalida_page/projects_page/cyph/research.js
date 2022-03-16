@@ -9,7 +9,7 @@ import ResponsiveGrid from 'components/responsive_grid'
 
 import 'sass/adalida_page/cyph.scss'
 
-const Summary = () => {
+const Research = () => {
   const isMobile = useIsMobile()
   const centerStyles = {
     placeContent: 'space-between center',
@@ -94,4 +94,4 @@ const Summary = () => {
   )
 }
 
-export default Summary
+export default Research
