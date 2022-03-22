@@ -18,7 +18,8 @@ const Card = ({ children, title }) => {
     display: 'grid',
     gridTemplateColumns: '1fr',
     gridTemplateRows: '10vh 1fr',
-    maxWidth: '95vw'
+    maxWidth: '95vw',
+    minHeight: '82vh'
   }
   return (
     <div style={containerStyle}>

@@ -7,6 +7,8 @@ import TimelineDescription from 'components/timeline/timeline_description'
 import CaptionGallery from 'components/caption_gallery'
 import Summary from './summary'
 import Research from './research'
+import Design from './design'
+import Test from './test'
 
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
@@ -21,14 +23,13 @@ import userJourneyMap2 from 'images/user_journey_map_2.svg'
 import beforeLoFi from 'videos/before_lo_fi.mp4'
 import afterHiFi from 'videos/after_hi_fi.mp4'
 
-const Cyph = () => {
-  return <div style={{ background: '#FAFAFA' }}>
-      {[
-    <App key='app' title='Cyph' />,
-    <Summary key='summary' />,
+const Cyph = () =>
+  <div style={{ background: '#FAFAFA' }}>
+    <App key='app' title='Cyph' />
+    <Summary key='summary' />
     <Research key='research' />
-      ]}
-    </div>
-}
+    <Design key='design' />
+    <Test key='test' />
+  </div>
 
 export default Cyph

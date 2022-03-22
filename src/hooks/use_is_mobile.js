@@ -9,7 +9,9 @@ export default (breakpoint = BREAKPOINT) => {
     const handleResize = () => setWindowWidth(window.innerWidth)
     handleResize()
     window.addEventListener('resize', handleResize)
-  }, [windowWidth])
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return windowWidth < breakpoint
 }
