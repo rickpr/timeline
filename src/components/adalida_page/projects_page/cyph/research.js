@@ -13,17 +13,17 @@ const Research = () => {
     placeItems: 'center center'
   }
   const text = (
-    <div style={{ maxWidth: '95vw' }}>
+    <div>
       <ResponsiveGrid breakpoint='400px'>
         <div>
           <p>
             My research focused on how voting works in the United States,
             why people don’t vote, what information is useful to voters,
-            and why voting is important. 
+            and why voting is important.
           </p>
 
           <p>
-            I conducted phone interviews and began empathizng with voters by
+            I conducted phone interviews and began empathizing with voters by
             conducting phone interviews and creating user personas.
           </p>
         </div>
@@ -31,7 +31,7 @@ const Research = () => {
           <p>
             After, I conducted a competitive audit and learned about useful
             data sources posted publicly available for use like the Federal
-            Election Commitee (FEC) website. 
+            Election Commitee (FEC) website.
           </p>
 
           <p>

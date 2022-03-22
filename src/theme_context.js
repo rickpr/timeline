@@ -32,7 +32,7 @@ const Themes = {
     textGradientTop: '#EC6EAD',
     textGradientBottom: '#3494E6',
 
-    footer: '#00B9FD',
+    footer: '#00B9FD'
   },
   'Meow Wolf': {
     name: 'Meow Wolf',

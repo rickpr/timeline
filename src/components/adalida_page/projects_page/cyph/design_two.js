@@ -1,12 +1,12 @@
 import React from 'react'
 
-import testPhoto from 'images/cyph/test.png'
+import designTwoPhoto from 'images/cyph/design_two.png'
 
 import Card from '../card'
 
 import 'sass/adalida_page/cyph.scss'
 
-const Test = () => {
+const DesignTwo = () => {
   const centerStyles = {
     placeItems: 'center center'
   }
@@ -23,17 +23,18 @@ const Test = () => {
       flexBasis: '66%',
       ...centerStyles
     }}>
-      <img src={testPhoto} style={{ maxWidth: '100%' }} />
+      <img src={designTwoPhoto} style={{ maxWidth: '100%' }} />
     </div>
   )
   const problem = (
     <div style={{ flexBasis: '34%', flexGrow: 3, flexShrink: 1 }}>
-      <h1>The Problem</h1>
+      <h1>Problem:</h1>
       <hr />
-      People don&apos;t know who their elected officials are, how to contact them, or easily find their voting history.
+      Voters find it difficult to get involved in local politicals
       <h1>Goals</h1>
       <hr />
-      Connect voters quickly with their local representatives and their political history.
+      Cyph provides an in-person, virtual, and upcoming events and information based on the user&apos;s location and
+      saved choices.
     </div>
   )
   const style = {
@@ -46,7 +47,7 @@ const Test = () => {
   }
 
   return (
-    <Card title='Test'>
+    <Card title='Design'>
     <div style={style}>
       {ideate}
       <div style={{ display: 'flex', flexWrap: 'wrap', placeItems: 'center' }}>
@@ -58,4 +59,4 @@ const Test = () => {
   )
 }
 
-export default Test
+export default DesignTwo

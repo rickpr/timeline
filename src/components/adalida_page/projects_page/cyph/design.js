@@ -40,7 +40,7 @@ const Design = () => {
     margin: '0 auto',
     ...centerStyles
   }
-  const understand = (
+  const ideate = (
     <div style={{ maxWidth: '80vw' }}>
       <h1>{'//'} IDEATE</h1>
     </div>
@@ -48,7 +48,7 @@ const Design = () => {
   return (
     <Card title='Design'>
     <div style={style}>
-      {understand}
+      {ideate}
       <ResponsiveGrid breakpoint='300px' customStyles={{ gap: '3%' }} >
         {problem}
         {image}

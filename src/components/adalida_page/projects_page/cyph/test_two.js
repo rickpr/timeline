@@ -1,19 +1,19 @@
 import React from 'react'
 
-import testPhoto from 'images/cyph/test.png'
+import testTwoPhoto from 'images/cyph/test_two.png'
 
 import Card from '../card'
 
 import 'sass/adalida_page/cyph.scss'
 
-const Test = () => {
+const TestTwo = () => {
   const centerStyles = {
     placeItems: 'center center'
   }
 
-  const ideate = (
+  const nextSteps = (
     <div style={{ maxWidth: '80vw' }}>
-      <h1>{'//'} IDEATE</h1>
+      <h1>{'//'} Next Steps</h1>
     </div>
   )
   const image = (
@@ -23,17 +23,19 @@ const Test = () => {
       flexBasis: '66%',
       ...centerStyles
     }}>
-      <img src={testPhoto} style={{ maxWidth: '100%' }} />
+      <img src={testTwoPhoto} style={{ maxWidth: '100%' }} />
     </div>
   )
   const problem = (
     <div style={{ flexBasis: '34%', flexGrow: 3, flexShrink: 1 }}>
-      <h1>The Problem</h1>
+      <h1>Develop</h1>
+      <h1>Influence</h1>
+      <h1>Experience</h1>
       <hr />
-      People don&apos;t know who their elected officials are, how to contact them, or easily find their voting history.
-      <h1>Goals</h1>
+      Design an experience where users can scan products or company logos and learn about politicians they donate to.
+      <h1>User Testing</h1>
       <hr />
-      Connect voters quickly with their local representatives and their political history.
+      Conduct in-person usability studies.
     </div>
   )
   const style = {
@@ -48,7 +50,7 @@ const Test = () => {
   return (
     <Card title='Test'>
     <div style={style}>
-      {ideate}
+      {nextSteps}
       <div style={{ display: 'flex', flexWrap: 'wrap', placeItems: 'center' }}>
         {image}
         {problem}
@@ -58,4 +60,4 @@ const Test = () => {
   )
 }
 
-export default Test
+export default TestTwo
