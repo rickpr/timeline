@@ -43,8 +43,8 @@ const Desktop = ({ forwardRef, title }) => {
       width: '100%',
       alignItems: 'start'
     }}>
-    <div style={{ borderRadius: '3vmin', overflow: 'hidden', maxHeight: '70vh', maxWidth: '50vw' }}>
-        <img style={{ maxHeight: '70vh', maxWidth: '50vw' }} src={heroPhoto} />
+    <div style={{ borderRadius: '3vmin', overflow: 'hidden', maxHeight: '70vh' }}>
+        <img style={{ maxHeight: '70vh' }} src={heroPhoto} />
       </div>
     </div>
   )
@@ -54,9 +54,8 @@ const Desktop = ({ forwardRef, title }) => {
         onClick={handleClick}
         style={{
           backgroundColor: '#FFFFFF',
-          borderRadius: '2vmin',
+          borderRadius: '0.5em',
           border: 'none',
-          fontSize: '3vmin',
           lineHeight: 'normal',
           marginTop: '1.5vmin',
           padding: '1.5vmin'
