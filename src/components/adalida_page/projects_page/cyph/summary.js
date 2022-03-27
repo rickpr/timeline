@@ -63,13 +63,13 @@ const Summary = () => {
       ...centerStyles
     }}>
       <h1>{'//'} ROLES</h1>
-      <ResponsiveGrid breakpoint='50ch'>
-        <li>Product Designer</li>
-        <li>User Testing</li>
-        <li>UX Researcher</li>
-        <li>Interaction Designer</li>
-        <li>UI Designer</li>
-      </ResponsiveGrid>
+      <ul>
+        <li style={{ float: 'left' }}>Product Designer</li>
+        <li style={{ float: 'left' }}>User Testing</li>
+        <li style={{ float: 'left' }}>UX Researcher</li>
+        <li style={{ float: 'left' }}>Interaction Designer</li>
+        <li style={{ float: 'left' }}>UI Designer</li>
+      </ul>
     </div>
   )
   const style = {
@@ -85,11 +85,11 @@ const Summary = () => {
     </div>
   )
   return (
-    <Card title='Summary'>
-    <div style={style}>
-      {heroDiv} {text}
-      {roles}
-    </div>
+    <Card title="Summary">
+      <div style={style}>
+        {heroDiv} {text}
+        {roles}
+      </div>
     </Card>
   )
 }
