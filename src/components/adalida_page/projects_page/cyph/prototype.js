@@ -58,7 +58,7 @@ const Prototype = () => {
     <Card title='Prototype'>
     <div style={style}>
       {understand}
-      <ResponsiveGrid breakpoint='300px' >
+      <ResponsiveGrid>
         {problemOne}
         {image}
         {problemTwo}

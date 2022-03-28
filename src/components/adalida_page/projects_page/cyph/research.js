@@ -16,43 +16,31 @@ const Research = () => {
     placeItems: 'center center'
   }
   const text = (
-    <div>
-      <ResponsiveGrid breakpoint='400px'>
-        <div>
-          <p>
-            My research focused on how voting works in the United States,
-            why people don’t vote, what information is useful to voters,
-            and why voting is important.
-          </p>
+    <ResponsiveGrid>
+      <div>
+        <p>
+          My research focused on how voting works in the United States,
+          why people don’t vote, what information is useful to voters,
+          and why voting is important.
+        </p>
 
-          <p>
-            I conducted phone interviews and began empathizing with voters by
-            conducting phone interviews and creating user personas.
-          </p>
-        </div>
-        <div>
-          <p>
-            After, I conducted a competitive audit and learned about useful
-            data sources posted publicly available for use like the Federal
-            Election Commitee (FEC) website.
-          </p>
+        <p>
+          I conducted phone interviews and began empathizing with voters by
+          conducting phone interviews and creating user personas.
+        </p>
+      </div>
+      <div>
+        <p>
+          After, I conducted a competitive audit and learned about useful
+          data sources posted publicly available for use like the Federal
+          Election Commitee (FEC) website.
+        </p>
 
-          <p>
-            This is also where I began creating my information architecture and a process flow.
-          </p>
-        </div>
-      </ResponsiveGrid>
-    </div>
-  )
-  const image = (
-    <div style={{
-      width: '100%',
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      ...centerStyles
-    }}>
-      <img src={userPersonaOne} style={{ maxWidth: '100%' }} />
-    </div>
+        <p>
+          This is also where I began creating my information architecture and a process flow.
+        </p>
+      </div>
+    </ResponsiveGrid>
   )
   const carousel = <SwiperCarousel images={[userPersonaOne, userPersonaTwo, informationArchitecture]} />
   const style = {

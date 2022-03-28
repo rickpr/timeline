@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { BREAKPOINT } from 'hooks/use_is_mobile'
 
-const ResponsiveGrid = ({ breakpoint = `${BREAKPOINT}px`, children, customStyles = {} }) =>
+const BREAKPOINT = '40vw'
+
+const ResponsiveGrid = ({ breakpoint = `${BREAKPOINT}vw`, children, customStyles = {} }) =>
   <div style={{
     display: 'grid',
     width: '100%',

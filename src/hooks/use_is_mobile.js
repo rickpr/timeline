@@ -6,7 +6,7 @@ export default (breakpoint = BREAKPOINT) => {
   const [windowWidth, setWindowWidth] = useState(breakpoint)
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth)
+    const handleResize = () => setWindowWidth(document.documentElement.clientWidth)
     handleResize()
     window.addEventListener('resize', handleResize)
 

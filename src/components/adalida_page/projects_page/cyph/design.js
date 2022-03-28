@@ -49,7 +49,7 @@ const Design = () => {
     <Card title='Design'>
     <div style={style}>
       {ideate}
-      <ResponsiveGrid breakpoint='300px' customStyles={{ gap: '3%' }} >
+      <ResponsiveGrid customStyles={{ gap: '3%' }} >
         {problem}
         {image}
       </ResponsiveGrid>
