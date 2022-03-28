@@ -28,7 +28,7 @@ const SwiperCarousel = ({ images }) => {
       modules={[EffectCoverflow, Pagination, Navigation]}
       navigation
       pagination
-      slidesPerView={1.7}
+      slidesPerView={1.42}
       watchSlidesProgress
     >
       {images.map((image, index) => (
