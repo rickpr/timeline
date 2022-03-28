@@ -3,16 +3,18 @@ import React from 'react'
 import prototypePhoto from 'images/cyph/prototype.png'
 
 import Card from '../card'
-import ResponsiveGrid from 'components/responsive_grid'
+
+import useIsMobile from 'hooks/use_is_mobile'
 
 import 'sass/adalida_page/cyph.scss'
 
 const Prototype = () => {
+  const isMobile = useIsMobile(1000)
   const centerStyles = {
     placeItems: 'center center'
   }
   const problemOne = (
-    <div>
+    <div style={{ flexBasis: '25%', flexGrow: 4 }}>
       <h1>Problem:</h1>
       <hr />
       Voters can&apos;t see who is donating to their politicians and how that affects their voting easily.
@@ -25,6 +27,8 @@ const Prototype = () => {
     <div style={{
       width: '100%',
       display: 'grid',
+      flexBasis: '50%',
+      flexGrow: 2,
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
@@ -32,7 +36,7 @@ const Prototype = () => {
     </div>
   )
   const problemTwo = (
-    <div>
+    <div style={{ flexBasis: '25%', flexGrow: 4 }}>
       <h1>Problem:</h1>
       <hr />
       People aren&apos;t familiar with representative&apos;s backgrounds or what committees they sit on.
@@ -58,11 +62,15 @@ const Prototype = () => {
     <Card title='Prototype'>
     <div style={style}>
       {understand}
-      <ResponsiveGrid>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr 1fr',
+        width: '100%'
+      }}>
         {problemOne}
         {image}
         {problemTwo}
-      </ResponsiveGrid>
+      </div>
     </div>
     </Card>
   )

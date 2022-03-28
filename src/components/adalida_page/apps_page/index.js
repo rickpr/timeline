@@ -12,11 +12,19 @@ const AppsPage = () => {
   const isMobile = useIsMobile()
 
   const navigationLinks = {
+    Cyph: useRef(),
     Helios: useRef(),
-    'Meow Wolf': useRef(),
-    Cyph: useRef()
+    'Meow Wolf': useRef()
   }
   const [closestProject, setClosestProject] = useState('Helios')
+
+  const cyph = (
+    <App
+      key='cyph'
+      forwardRef={navigationLinks.Cyph}
+      title='Cyph'
+    />
+  )
 
   const helios = (
     <App
@@ -34,15 +42,7 @@ const AppsPage = () => {
     />
   )
 
-  const cyph = (
-    <App
-      key='cyph'
-      forwardRef={navigationLinks.Cyph}
-      title='Cyph'
-    />
-  )
-
-  const projects = [helios, meowWolf, cyph]
+  const projects = [cyph, helios, meowWolf]
   const scrollRef = useRef()
   useEffect(() => {
     const updateClosestProject = () => {

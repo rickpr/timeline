@@ -86,8 +86,11 @@ const Houndstooth = ({ containerRef, backgroundColor }) => {
       [2, 0]
     ]
 
+    // Decrease this to make animation faster (fewer frames)
+    const totalPoints = 200
+
     const animatePath = async points => {
-      const allPoints = interpolateWaypoints(points, 200)
+      const allPoints = interpolateWaypoints(points, totalPoints)
       await new Promise(resolve => {
         animatePathSegment(allPoints, 1, resolve)
       })

@@ -20,14 +20,14 @@ const TestTwo = () => {
     <div style={{
       display: 'grid',
       gridTemplateColumns: '1fr',
-      flexBasis: '66%',
+      flexBasis: '65%',
       ...centerStyles
     }}>
       <img src={testTwoPhoto} style={{ maxWidth: '100%' }} />
     </div>
   )
   const problem = (
-    <div style={{ flexBasis: '34%', flexGrow: 3, flexShrink: 1 }}>
+    <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
       <h1>Develop</h1>
       <h1>Influence</h1>
       <h1>Experience</h1>
@@ -51,7 +51,7 @@ const TestTwo = () => {
     <Card title='Test'>
     <div style={style}>
       {nextSteps}
-      <div style={{ display: 'flex', flexWrap: 'wrap', placeItems: 'center' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3%', placeItems: 'center' }}>
         {image}
         {problem}
       </div>

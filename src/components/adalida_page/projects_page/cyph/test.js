@@ -20,14 +20,15 @@ const Test = () => {
     <div style={{
       display: 'grid',
       gridTemplateColumns: '1fr',
-      flexBasis: '66%',
+      flexBasis: '65%',
+      flexGrow: 2,
       ...centerStyles
     }}>
       <img src={testPhoto} style={{ maxWidth: '100%' }} />
     </div>
   )
   const problem = (
-    <div style={{ flexBasis: '34%', flexGrow: 3, flexShrink: 1 }}>
+    <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
       <h1>The Problem</h1>
       <hr />
       People don&apos;t know who their elected officials are, how to contact them, or easily find their voting history.
@@ -49,7 +50,7 @@ const Test = () => {
     <Card title='Test'>
     <div style={style}>
       {ideate}
-      <div style={{ display: 'flex', flexWrap: 'wrap', placeItems: 'center' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', placeItems: 'center', gap: '3%' }}>
         {image}
         {problem}
       </div>

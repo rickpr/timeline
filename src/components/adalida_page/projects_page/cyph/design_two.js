@@ -20,14 +20,15 @@ const DesignTwo = () => {
     <div style={{
       display: 'grid',
       gridTemplateColumns: '1fr',
-      flexBasis: '66%',
+      flexBasis: '65%',
+      flexGrow: 2,
       ...centerStyles
     }}>
       <img src={designTwoPhoto} style={{ maxWidth: '100%' }} />
     </div>
   )
   const problem = (
-    <div style={{ flexBasis: '34%', flexGrow: 3, flexShrink: 1 }}>
+    <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
       <h1>Problem:</h1>
       <hr />
       Voters find it difficult to get involved in local politicals
@@ -50,7 +51,7 @@ const DesignTwo = () => {
     <Card title='Design'>
     <div style={style}>
       {ideate}
-      <div style={{ display: 'flex', flexWrap: 'wrap', placeItems: 'center' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3%', placeItems: 'center' }}>
         {image}
         {problem}
       </div>

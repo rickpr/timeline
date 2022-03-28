@@ -10,11 +10,11 @@ import ResponsiveGrid from 'components/responsive_grid'
 import 'sass/adalida_page/cyph.scss'
 
 const Summary = () => {
-  const isMobile = useIsMobile()
   const centerStyles = {
     placeContent: 'space-between center',
     placeItems: 'center center'
   }
+
   const makeEntry = ([title, content]) => (
     <div
       key={title}
@@ -23,6 +23,8 @@ const Summary = () => {
       <h2>{'//'} {title}</h2><ul><li>{content}</li></ul>
     </div>
   )
+
+
   const points = {
     PLATFORM: 'Mobile iOS',
     INDUSTRY: 'Political Technology',
@@ -33,8 +35,15 @@ const Summary = () => {
   const sizeOfLargestTitle = Math.max(...Object.keys(points).map(title => title.length)) + 3
   // 2.4 is a magic number, it should be 2 but probably also involves the font weight.
   const breakpoint = 2.4 * sizeOfLargestTitle + 'ch'
+
+  const heroDiv = (
+    <div style={{ maxWidth: '60vw', minWidth: '500px', flexBasis: '60%', flexGrow: 2 }}>
+      <img src={heroPhoto} style={{ maxWidth: '100%' }} />
+    </div>
+  )
+
   const text = (
-    <div style={{ maxWidth: '95vw' }}>
+    <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <h1>{'//'} ABOUT THE PROJECT</h1>
       <p>
         Cyph is a mobile app designed for users who are interested in contributions and spending between elected
@@ -54,6 +63,7 @@ const Summary = () => {
       </ResponsiveGrid>
     </div>
   )
+
   const roles = (
     <div style={{
       gridColumn: '1 / -1',
@@ -73,19 +83,16 @@ const Summary = () => {
     </div>
   )
   const style = {
-    display: 'grid',
-    gridTemplateColumns: isMobile ? '1fr' : '2fr 1fr',
-    width: '100%',
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '3%',
     height: '100%',
+    width: '100%',
     ...centerStyles
   }
-  const heroDiv = (
-    <div style={{ maxWidth: '80vw' }}>
-      <img src={heroPhoto} style={{ maxWidth: '100%' }} />
-    </div>
-  )
+
   return (
-    <Card title="Summary">
+    <Card title='Summary'>
       <div style={style}>
         {heroDiv} {text}
         {roles}

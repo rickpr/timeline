@@ -31,8 +31,20 @@ $theme-colors: (
 
 
 @font-face {
+  font-family: 'Futura';
+  src: local('Futura'), url(../fonts/Futura.ttf);
+}
+
+
+@font-face {
   font-family: 'Inter';
   src: local('Inter'), url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: local('EB Garamond'), url(../fonts/EBGaramond-VariableFont_wght.ttf);
 }
 
 body {
@@ -45,4 +57,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+hr {
+  border-top: 2px solid black;
+  opacity: 1;
 }
