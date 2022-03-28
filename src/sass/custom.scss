@@ -22,12 +22,17 @@ $theme-colors: (
 @import '@fortawesome/fontawesome-svg-core/styles';
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata');
-@import url('https://fonts.googleapis.com/css2?family=Inter');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
 @font-face {
   font-family: 'Avenir Next';
   src: local('Avenir Next'), url(../fonts/AvenirNextLTPro-Regular.otf);
+}
+
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
 body {

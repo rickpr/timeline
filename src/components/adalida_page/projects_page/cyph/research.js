@@ -1,9 +1,12 @@
 import React from 'react'
 
-import researchPhoto from 'images/cyph/research.png'
+import userPersonaOne from 'images/cyph/research/user_persona_one.png'
+import userPersonaTwo from 'images/cyph/research/user_persona_two.png'
+import informationArchitecture from 'images/cyph/research/information_architecture.png'
 
 import Card from '../card'
 import ResponsiveGrid from 'components/responsive_grid'
+import SwiperCarousel from 'components/swiper_carousel'
 
 import 'sass/adalida_page/cyph.scss'
 
@@ -48,9 +51,10 @@ const Research = () => {
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
-      <img src={researchPhoto} style={{ maxWidth: '100%' }} />
+      <img src={userPersonaOne} style={{ maxWidth: '100%' }} />
     </div>
   )
+  const carousel = <SwiperCarousel images={[userPersonaOne, userPersonaTwo, informationArchitecture]} />
   const style = {
     display: 'grid',
     gridTemplateColumns: '1fr',
@@ -68,7 +72,7 @@ const Research = () => {
     <div style={style}>
       {understand}
       {text}
-      {image}
+      {carousel}
     </div>
     </Card>
   )

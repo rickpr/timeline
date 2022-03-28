@@ -28,12 +28,11 @@ const DesignThree = () => {
       flexBasis: '60%',
       flexGrow: 2,
       gridTemplate,
-      height: '60vh',
       ...centerStyles
     }}>
       <div style={{ gridArea: 'black', backgroundColor: '#000000', color: '#FFFFFF', ...fullWidth }}>#000000</div>
       <div style={{ gridArea: 'blue', backgroundColor: '#4A00E0', color: '#FFFFFF', ...fullWidth }}>#4A00E0</div>
-      <div style={{ gridArea: 'black-two', backgroundColor: '#000000', color: '#FFFFFF', ...fullWidth }}>#000000</div>
+      <div style={{ gridArea: 'black-two', backgroundColor: '#000000', ...fullWidth }}>&nbsp;</div>
       <div style={{ gridArea: 'purple', backgroundColor: '#8E2DE2', color: '#FFFFFF', ...fullWidth }}>#8E2DE2</div>
       <div style={{ gridArea: 'dark-gray', backgroundColor: '#72787E', color: '#FFFFFF', ...fullWidth }}>#72787E</div>
       <div style={{ gridArea: 'white', backgroundColor: '#FFFFFF', ...fullWidth }}>#FFFFFF</div>
@@ -41,7 +40,7 @@ const DesignThree = () => {
     </div>
   )
   const typography = (
-    <div style={{ flexBasis: '34%', flexGrow: 3, flexShrink: 1 }}>
+    <div style={{ flexBasis: '10%', flexGrow: 3, flexShrink: 1 }}>
       <div style={{
         display: 'flex',
         flexDirection: 'row',
@@ -49,14 +48,15 @@ const DesignThree = () => {
         backgroundImage: `
           linear-gradient(to right, #C1C1C1 1px, transparent 1px),
           linear-gradient(to bottom, #C1C1C1 1px, transparent 1px)
-        `
+        `,
+        alignItems:'flex-end',
       }}>
         <ScalableText text='A' customStyles={{ fill: '#BB81EE' }}/>
         <ScalableText text='b' customStyles={{ fill: 'none', stroke: '#BB81EE', strokeWidth: '0.1px' }}/>
       </div>
       <h1>Inconsolata</h1>
       <hr />
-      <h1>&lt;H1&gt; 48 &lt;&#47;H1&gt;</h1>
+      <h1 style={{ whiteSpace: 'nowrap' }}>&lt;H1&gt; 48 &lt;&#47;H1&gt;</h1>
       <hr />
       <h2>&lt;H2&gt; 36 &lt;&#47;H2&gt;</h2>
       <hr />
@@ -73,6 +73,7 @@ const DesignThree = () => {
     width: '90%',
     height: '100%',
     margin: '0 auto',
+    gap: '1%',
     ...centerStyles
   }
 
@@ -80,7 +81,7 @@ const DesignThree = () => {
     <Card title='Design'>
     <div style={style}>
       {visualIdentity}
-      <div style={{ display: 'flex', flexWrap: 'wrap', placeItems: 'center', gap: '6%' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6%', alignItems: 'stretch' }}>
         {grid}
         {typography}
       </div>

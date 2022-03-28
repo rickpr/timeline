@@ -41,7 +41,7 @@ const Summary = () => {
         representatives and businesses.
         Users can scan a person politician and Cyph will recognize who the representative is and who their donors are.
       </p>
-      <p><strong>Why? Why do this?</strong></p>
+      <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
         This project is a design challenge for myself to do something for social good.
         I wanted to learn about and contribute to solving problems resulting in an increase in voter turnout for all
