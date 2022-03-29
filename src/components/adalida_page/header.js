@@ -8,6 +8,7 @@ import 'sass/adalida_page/header.scss'
 const Header = () => {
   const borderColor = useContext(ThemeContext).primary || '#FFFFFF'
   const borderStyle = `0.25vh solid ${borderColor}`
+  const linkStyle = { color: '#FFFFFF', pointerEvents: 'all' }
   const navbarStyles = {
     borderLeft: borderStyle,
     borderRight: borderStyle,
@@ -27,12 +28,12 @@ const Header = () => {
         }}
       >
         <div>
-          <Link to='/adalida' style={{ color: '#FFFFFF' }}>
+          <Link to='/adalida/apps' style={linkStyle}>
             ADALIDA
           </Link>
         </div>
         <div>
-          <Link to='/adalida' style={{ color: '#FFFFFF' }}>
+          <Link to='/adalida' style={linkStyle}>
             ABOUT
           </Link>
         </div>
