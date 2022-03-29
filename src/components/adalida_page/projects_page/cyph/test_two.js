@@ -30,11 +30,9 @@ const TestTwo = () => {
     <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
       <h1>Develop</h1>
       <h1>Influence</h1>
-      <h1>Experience</h1>
-      <hr />
+      <h1 className='caption'>Experience</h1>
       Design an experience where users can scan products or company logos and learn about politicians they donate to.
-      <h1>User Testing</h1>
-      <hr />
+      <h1 className='caption'>User Testing</h1>
       Conduct in-person usability studies.
     </div>
   )

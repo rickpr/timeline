@@ -14,7 +14,7 @@ const Content = ({ title }) => {
   console.log(isMobile)
   const Component = isMobile ? Mobile : Desktop
   const handleClick = () => {
-    setTimeout(() => window.scrollTo(0, document.documentElement.clientHeight + window.pageYOffset), 1000)
+    setTimeout(() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' }), 1000)
     navigate(projectPage)
   }
   return <Component handleClick={handleClick} heroPhoto={heroPhoto} />

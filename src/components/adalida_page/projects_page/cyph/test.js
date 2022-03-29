@@ -29,11 +29,9 @@ const Test = () => {
   )
   const problem = (
     <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
-      <h1>The Problem</h1>
-      <hr />
+      <h1 className='caption'>The Problem</h1>
       People don&apos;t know who their elected officials are, how to contact them, or easily find their voting history.
-      <h1>Goals</h1>
-      <hr />
+      <h1 className='caption'>Goals</h1>
       Connect voters quickly with their local representatives and their political history.
     </div>
   )

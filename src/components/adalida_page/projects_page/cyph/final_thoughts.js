@@ -13,7 +13,7 @@ const FinalThoughts = () => {
 
   const takeaways = (
     <div style={{ maxWidth: '80vw' }}>
-      <h1 style={{ textAlign: 'center' }}>{'//'} Takeaways</h1>
+      <h1 style={{ fontFamily: 'Futura', textAlign: 'center' }}>{'//'} Takeaways</h1>
       <br />
       <p>
         The goal for this project was to give voters a tool to vote for a representative best aligned with their
@@ -31,30 +31,30 @@ const FinalThoughts = () => {
   const thoughts = (
     <ResponsiveGrid breakpoint='30ch' customStyles={{ gap: '6%', marginTop: '2em' }}>
       <div>
-        <ScalableText text='Data in Design' color='black' customStyles={customStyles} />
+        <ScalableText text='Data in Design' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
-        <p>
+        <p className='garamond'>
           I learned how to leverage data as a resource for developing an information architecture and process flows.
         </p>
       </div>
       <div>
-        <ScalableText text='Design Systems' color='black' customStyles={customStyles} />
+        <ScalableText text='Design Systems' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
-        <p>
+        <p className='garamond'>
           I learned how to create a design system for consistent branding throughout my project.
         </p>
       </div>
       <div>
-        <ScalableText text='User Testing' color='black' customStyles={customStyles} />
+        <ScalableText text='User Testing' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
-        <p>
+        <p className='garamond'>
           I learned that I can bias the results of my own project by not enough user testing and usability studies.
         </p>
       </div>
       <div>
-        <ScalableText text='Team vs. Self' color='black' customStyles={customStyles} />
+        <ScalableText text='Team vs. Self' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
-        <p>
+        <p className='garamond'>
           Self projects are great, but working with a team of developers and stakeholders,
           can elevate designs and the user&apos;s experience.
         </p>
@@ -63,6 +63,7 @@ const FinalThoughts = () => {
   )
   const style = {
     display: 'grid',
+    fontFamily: 'Futura',
     gridTemplateColumns: '1fr',
     width: '90%',
     height: '100%',
@@ -73,7 +74,6 @@ const FinalThoughts = () => {
     <Card title='Final Thoughts'>
     <div style={style}>
       {takeaways}
-
       {thoughts}
     </div>
     </Card>

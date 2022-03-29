@@ -1,16 +1,13 @@
-h1, h2, h3 {
-  font-family: "Futura", "Courier New", Courier, monospace;
-  font-weight: 800;
-}
-p, li {
+.garamond {
   font-family: "EB Garamond";
-  font-size: 1.5em;
 }
+
 li {
   margin-left: 2ch;
 }
 
 
-div {
-  font-family: "Futura";
+.caption {
+  border-bottom: 0.1em solid black;
+  width: max-content;
 }

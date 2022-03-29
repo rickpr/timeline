@@ -9,6 +9,7 @@ export default (displayFor = 2000) => {
   // https://github.com/tameemsafi/typewriterjs/blob/867425e30b7087f9c5341a966f799589c58ca6d2/src/core/Typewriter.js#L551
   const maxDeletionDelay = 80 // ms
   const typewriters = []
+
   useEffect(() => {
     // Normalize the delays based on the longest string
     const maxCharacters = Math.max(...typewriters.map(({ string }) => string.length))

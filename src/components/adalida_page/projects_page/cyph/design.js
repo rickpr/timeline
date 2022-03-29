@@ -14,11 +14,9 @@ const Design = () => {
   }
   const problem = (
     <div>
-      <h1>The Problem</h1>
-      <hr />
+      <h1 className='caption'>The Problem</h1>
       Citizens United makes it difficult for voters to see who is financials sponsoring their local representatives.
-      <h1>My Solution</h1>
-      <hr />
+      <h1 className='caption'>My Solution</h1>
       Provide a fast and easy way for people to learn about a politician&apos;s donors.
     </div>
   )
@@ -40,15 +38,15 @@ const Design = () => {
     margin: '0 auto',
     ...centerStyles
   }
-  const ideate = (
+  const define = (
     <div style={{ maxWidth: '80vw' }}>
-      <h1>{'//'} IDEATE</h1>
+      <h1>{'//'} DEFINE</h1>
     </div>
   )
   return (
     <Card title='Design'>
     <div style={style}>
-      {ideate}
+      {define}
       <ResponsiveGrid breakpoint='30vh' customStyles={{ gap: '3%' }} >
         {problem}
         {image}

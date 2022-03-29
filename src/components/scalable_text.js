@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ScalableText = ({ text, color, customStyles = {} }) => {
+const ScalableText = ({ text, color, customStyles = {}, viewBoxWidthMultiplier = 9 }) => {
   // Makes an SVG containing the desired text,
   // which will scale with the parent container
 
-  const viewBoxHeight = 17 // Fixed height, expected for Inconsolata
+  const viewBoxHeight = 20 // Fixed height, works reasonably for most fonts
 
-  // View box width calculation works well when multiplied by 9
-  // This may be less when font-weight is lower, and may differ with other fonts.
-  const viewBox = `0 0 ${9 * text.length} ${viewBoxHeight}`
+  // Default multiplier of 9 is suitable for Inconsolata medium
+  // Different values suit different fonts. 10 works well for Futura 800 weight
+  const viewBox = `0 0 ${viewBoxWidthMultiplier * text.length} ${viewBoxHeight}`
 
   // Index is okay as a key here as a re-render would require re-creating anyway
   // Offset y by 1 as some of the letters go below the line
@@ -23,7 +23,8 @@ const ScalableText = ({ text, color, customStyles = {} }) => {
 ScalableText.propTypes = {
   text: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  customStyles: PropTypes.object
+  customStyles: PropTypes.object,
+  viewBoxWidthMultiplier: PropTypes.number
 }
 
 export default ScalableText

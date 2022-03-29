@@ -29,11 +29,9 @@ const DesignTwo = () => {
   )
   const problem = (
     <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
-      <h1>Problem:</h1>
-      <hr />
+      <h1 className='caption'>Problem:</h1>
       Voters find it difficult to get involved in local politicals
-      <h1>Goals</h1>
-      <hr />
+      <h1 className='caption'>Goals</h1>
       Cyph provides an in-person, virtual, and upcoming events and information based on the user&apos;s location and
       saved choices.
     </div>

@@ -3,6 +3,8 @@ import React from 'react'
 import Card from '../card'
 import ScalableText from 'components/scalable_text'
 
+import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
+
 import 'sass/adalida_page/cyph.scss'
 
 const DesignThree = () => {
@@ -39,6 +41,14 @@ const DesignThree = () => {
       <div style={{ gridArea: 'light-gray', backgroundColor: '#C7C6C4', ...fullWidth }}>#C7C6C4</div>
     </div>
   )
+
+  const SynchronizedTypewriter = useSynchronizedTypewriter()
+  // The library will interpret HTML tags if we don't fool the parser.
+  // So the following function has a zero-width space after <
+  // https://en.wikipedia.org/wiki/Zero-width_space
+  const generateTypewriterString = (heading, text) => `<​${heading}> ${text} </${heading}>`
+  const h1String = generateTypewriterString('H1', '48')
+
   const typography = (
     <div style={{ flexBasis: '10%', flexGrow: 3, flexShrink: 1 }}>
       <div style={{
@@ -49,22 +59,24 @@ const DesignThree = () => {
           linear-gradient(to right, #C1C1C1 1px, transparent 1px),
           linear-gradient(to bottom, #C1C1C1 1px, transparent 1px)
         `,
-        alignItems:'flex-end',
+        alignItems: 'flex-end',
       }}>
         <ScalableText text='A' customStyles={{ fill: '#BB81EE' }}/>
         <ScalableText text='b' customStyles={{ fill: 'none', stroke: '#BB81EE', strokeWidth: '0.1px' }}/>
       </div>
-      <h1>Inconsolata</h1>
+      <h1><SynchronizedTypewriter string='Inconsolata' /></h1>
       <hr />
-      <h1 style={{ whiteSpace: 'nowrap' }}>&lt;H1&gt; 48 &lt;&#47;H1&gt;</h1>
+      <h1><SynchronizedTypewriter string={h1String} /></h1>
+      {/* Fix the container width */}
+      <h1 style={{ visibility: 'hidden', whiteSpace: 'nowrap', maxHeight: 0 }}>{h1String}&nbsp;</h1>
       <hr />
-      <h2>&lt;H2&gt; 36 &lt;&#47;H2&gt;</h2>
+      <h2><SynchronizedTypewriter string={generateTypewriterString('H2', '36')} /></h2>
       <hr />
-      <h3>&lt;H3&gt; 24 &lt;&#47;H3&gt;</h3>
+      <h3><SynchronizedTypewriter string={generateTypewriterString('H3', '24')} /></h3>
       <hr />
-      <h4>&lt;H4&gt; 18 &lt;&#47;H5&gt;</h4>
+      <h4><SynchronizedTypewriter string={generateTypewriterString('H4', '18')} /></h4>
       <hr />
-      <h5>&lt;H5&gt; 16 &lt;&#47;H5&gt;</h5>
+      <h5><SynchronizedTypewriter string={generateTypewriterString('H5', '16')} /></h5>
     </div>
   )
   const style = {
@@ -81,7 +93,7 @@ const DesignThree = () => {
     <Card title='Design'>
     <div style={style}>
       {visualIdentity}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6%', alignItems: 'stretch' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6%', alignItems: 'stretch', width: '100%' }}>
         {grid}
         {typography}
       </div>
