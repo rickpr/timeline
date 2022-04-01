@@ -1,80 +1,25 @@
 import React from 'react'
 
-import prototypePhoto from 'images/cyph/prototype.png'
+import testPhoto from 'images/cyph/test.png'
 
 import Card from '../card'
-
-import useIsMobile from 'hooks/use_is_mobile'
+import ImageWithText from '../image_with_text'
 
 import 'sass/adalida_page/cyph.scss'
 
 const Prototype = () => {
-  const isMobile = useIsMobile(1500)
-  const centerStyles = {
-    placeItems: 'center center'
-  }
-  const problemOne = (
-    <div>
-      <h1 className='caption'>Problem:</h1>
-      <p>
-        Voters can&apos;t see who is donating to their politicians and how that affects their voting easily.
-      </p>
+  const problem = (
+    <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
+      <h1 className='caption'>The Problem</h1>
+      People don&apos;t know who their elected officials are, how to contact them, or easily find their voting history.
       <h1 className='caption'>Goals</h1>
-      <p>
-        Connect voters with an up-to-date database of a representative&apos;s financial and voting history.
-      </p>
+      Connect voters quickly with their local representatives and their political history.
     </div>
   )
-  const image = (
-    <div style={{
-      width: '100%',
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      ...centerStyles
-    }}>
-      <img src={prototypePhoto} width='100%' />
-    </div>
-  )
-  const problemTwo = (
-    <div>
-      <h1 className='caption'>Problem:</h1>
-      <p>
-        People aren&apos;t familiar with representative&apos;s backgrounds or what committees they sit on.
-      </p>
-      <h1 className='caption'>Goals</h1>
-      <p>
-        Provide up-to-date and background information on representative&apos;s positions during their political career.
-      </p>
-    </div>
-  )
-  const style = {
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    width: '90%',
-    height: '100%',
-    margin: '0 auto',
-    ...centerStyles
-  }
-  const understand = (
-    <div style={{ maxWidth: '80vw' }}>
-      <h1>{'//'} IDEATE</h1>
-    </div>
-  )
+
   return (
-    <Card title='Prototype'>
-    <div style={style}>
-      {understand}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : '1fr 8fr 1fr',
-        width: '100%',
-        ...centerStyles
-      }}>
-        {problemOne}
-        {image}
-        {problemTwo}
-      </div>
-    </div>
+    <Card title='// Prototype'>
+      <ImageWithText image={testPhoto} text={problem} />
     </Card>
   )
 }

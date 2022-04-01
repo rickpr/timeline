@@ -10,7 +10,7 @@ import SwiperCarousel from 'components/swiper_carousel'
 
 import 'sass/adalida_page/cyph.scss'
 
-const Research = () => {
+const Understand = () => {
   const centerStyles = {
     placeContent: 'space-between center',
     placeItems: 'center center'
@@ -50,20 +50,14 @@ const Research = () => {
     height: '100%',
     ...centerStyles
   }
-  const understand = (
-    <div style={{ maxWidth: '80vw' }}>
-      <h1>{'//'} Understand &amp; Empathize</h1>
-    </div>
-  )
   return (
-    <Card title='Research'>
-    <div style={style}>
-      {understand}
-      {text}
-      {carousel}
-    </div>
+    <Card title='// Understand & Empathize'>
+      <div style={style}>
+        {text}
+        {carousel}
+      </div>
     </Card>
   )
 }
 
-export default Research
+export default Understand

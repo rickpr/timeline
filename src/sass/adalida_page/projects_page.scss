@@ -24,3 +24,7 @@
   margin: auto 0;
   padding: 0.5em 0;
 }
+
+.project-heading::before {
+  content: "// ";
+}

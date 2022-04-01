@@ -2,28 +2,28 @@
 import React from 'react'
 
 import App from '../../app'
-import Summary from './summary'
-import Research from './research'
-import Design from './design'
+import About from './about'
+import Understand from './understand'
+import Define from './define'
+import Ideate from './ideate'
 import Prototype from './prototype'
 import Test from './test'
-import DesignTwo from './design_two'
-import TestTwo from './test_two'
-import DesignThree from './design_three'
-import FinalThoughts from './final_thoughts'
+import NextSteps from './next_steps'
+import VisualIdentity from './visual_identity'
+import Takeaways from './takeaways'
 
 const Cyph = () =>
   <div style={{ background: '#FAFAFA' }}>
     <App title='Cyph' />
-    <Summary />
-    <Research />
-    <Design />
+    <About />
+    <Understand />
+    <Define />
+    <Ideate />
     <Prototype />
     <Test />
-    <DesignTwo />
-    <TestTwo />
-    <DesignThree />
-    <FinalThoughts />
+    <NextSteps />
+    <VisualIdentity />
+    <Takeaways />
   </div>
 
 export default Cyph

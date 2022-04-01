@@ -13,8 +13,6 @@ const FinalThoughts = () => {
 
   const takeaways = (
     <div style={{ maxWidth: '80vw' }}>
-      <h1 style={{ fontFamily: 'Futura', textAlign: 'center' }}>{'//'} Takeaways</h1>
-      <br />
       <p>
         The goal for this project was to give voters a tool to vote for a representative best aligned with their
         goals and interests.  It was an exciting opportunity designing, building, and createing an idea and turn it
@@ -71,7 +69,7 @@ const FinalThoughts = () => {
     ...centerStyles
   }
   return (
-    <Card title='Final Thoughts'>
+    <Card title='// Takeaways'>
     <div style={style}>
       {takeaways}
       {thoughts}

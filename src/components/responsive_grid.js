@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const BREAKPOINT = '40vw'
 
-const ResponsiveGrid = ({ breakpoint = `${BREAKPOINT}vw`, children, customStyles = {} }) =>
+const ResponsiveGrid = ({ breakpoint = BREAKPOINT, children, customStyles = {} }) =>
   <div style={{
     display: 'grid',
     width: '100%',

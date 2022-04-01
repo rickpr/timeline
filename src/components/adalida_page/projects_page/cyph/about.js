@@ -5,16 +5,12 @@ import useIsMobile from 'hooks/use_is_mobile'
 import heroPhoto from 'images/cyph/summary.png'
 
 import Card from '../card'
+import ImageWithText from '../image_with_text'
 import ResponsiveGrid from 'components/responsive_grid'
 
 import 'sass/adalida_page/cyph.scss'
 
-const Summary = () => {
-  const centerStyles = {
-    placeContent: 'space-between center',
-    placeItems: 'center center'
-  }
-
+const About = () => {
   const makeEntry = ([title, content]) => (
     <div
       key={title}
@@ -36,15 +32,8 @@ const Summary = () => {
   // 2.4 is a magic number, it should be 2 but probably also involves the font weight.
   const breakpoint = 2.4 * sizeOfLargestTitle + 'ch'
 
-  const heroDiv = (
-    <div style={{ maxWidth: '60vw', minWidth: '500px', flexBasis: '60%', flexGrow: 2 }}>
-      <img src={heroPhoto} style={{ maxWidth: '100%' }} />
-    </div>
-  )
-
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
-      <h1>{'//'} ABOUT THE PROJECT</h1>
       <p>
         Cyph is a mobile app designed for users who are interested in contributions and spending between elected
         representatives and businesses.
@@ -64,41 +53,38 @@ const Summary = () => {
     </div>
   )
 
+  // 2.4 is a magic number, it should be 2 but probably also involves the font weight.
+  const titles = [
+    'Product Designer',
+    'User Testing',
+    'UX Researcher',
+    'Interaction Designer',
+    'UI Designer'
+  ]
+  const sizeOfLargestRole = Math.max(...titles.map(title => title.length)) + 3
+  const rolesBreakpoint = 1.5 * sizeOfLargestRole + 'ch'
   const roles = (
     <div style={{
       gridColumn: '1 / -1',
       width: '100%',
       display: 'grid',
       gridTemplateColumns: '1fr',
-      ...centerStyles
+      placeContent: 'space-between center',
+      placeItems: 'center center'
     }}>
       <h1>{'//'} ROLES</h1>
-      <ul>
-        <li style={{ float: 'left' }}>Product Designer</li>
-        <li style={{ float: 'left' }}>User Testing</li>
-        <li style={{ float: 'left' }}>UX Researcher</li>
-        <li style={{ float: 'left' }}>Interaction Designer</li>
-        <li style={{ float: 'left' }}>UI Designer</li>
-      </ul>
+      <ResponsiveGrid breakpoint={rolesBreakpoint}>
+        {titles.map(title => <li key={title}>{title}</li>)}
+      </ResponsiveGrid>
     </div>
   )
-  const style = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '3%',
-    height: '100%',
-    width: '100%',
-    ...centerStyles
-  }
 
   return (
-    <Card title='Summary'>
-      <div style={style}>
-        {heroDiv} {text}
-        {roles}
-      </div>
+    <Card title='// ABOUT THE PROJECT'>
+      <ImageWithText image={heroPhoto} text={text} />
+      {roles}
     </Card>
   )
 }
 
-export default Summary
+export default About

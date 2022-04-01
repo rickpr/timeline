@@ -7,16 +7,11 @@ import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
 import 'sass/adalida_page/cyph.scss'
 
-const DesignThree = () => {
+const VisualIdentity = () => {
   const centerStyles = {
     placeItems: 'center center'
   }
 
-  const visualIdentity = (
-    <div style={{ maxWidth: '80vw' }}>
-      <h1>{'//'} Visual Identity</h1>
-    </div>
-  )
   const gridTemplate = `
     'black     black     black black      black      black'      4fr
     'blue      blue      blue  black-two  black-two  black-two'  1fr
@@ -27,7 +22,7 @@ const DesignThree = () => {
   const grid = (
     <div style={{
       display: 'grid',
-      flexBasis: '60%',
+      flexBasis: '65%',
       flexGrow: 2,
       gridTemplate,
       ...centerStyles
@@ -50,7 +45,7 @@ const DesignThree = () => {
   const h1String = generateTypewriterString('H1', '48')
 
   const typography = (
-    <div style={{ flexBasis: '10%', flexGrow: 3, flexShrink: 1 }}>
+    <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
       <div style={{
         display: 'flex',
         flexDirection: 'row',
@@ -90,10 +85,9 @@ const DesignThree = () => {
   }
 
   return (
-    <Card title='Design'>
+    <Card title='// Visual Identity'>
     <div style={style}>
-      {visualIdentity}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6%', alignItems: 'stretch', width: '100%' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3%', alignItems: 'stretch', width: '100%' }}>
         {grid}
         {typography}
       </div>
@@ -102,4 +96,4 @@ const DesignThree = () => {
   )
 }
 
-export default DesignThree
+export default VisualIdentity

@@ -12,20 +12,21 @@ const Card = ({ children, title }) => {
     margin: '9vh 2.5vw',
     minHeight: '82vh',
     backgroundColor: '#FFFFFF',
-    padding: '2% 7%',
+    padding: '7%',
     borderRadius: '3vh'
   }
   const gridStyle = {
     display: 'grid',
     gridTemplateColumns: '1fr',
     gridTemplateRows: '10vh 1fr',
+    gap: '5%',
     maxWidth: '100%',
     minHeight: '82vh'
   }
   return (
     <div style={containerStyle}>
       <div style={gridStyle}>
-        <div><ScalableText text={title} color={borderColor} customStyles={{ width: 'unset' }} /></div>
+        <div style={{ display: 'grid', justifyItems: 'center', width: '100%' }}><ScalableText text={title} color={borderColor} customStyles={{ width: 'unset' }} /></div>
         <div>{children}</div>
       </div>
     </div>
