@@ -1,7 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { navigate } from 'gatsby'
 
-const Mobile = ({ handleClick, heroPhoto }) => {
+import { Themes } from 'theme_context'
+
+const Content = ({ title }) => {
+  const { heroPhoto, projectPage } = Themes[title]
+  const handleClick = () => {
+    setTimeout(() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' }), 1000)
+    navigate(projectPage)
+  }
+
   const rowStyle = {
     display: 'flex',
     width: '100%',
@@ -16,6 +25,7 @@ const Mobile = ({ handleClick, heroPhoto }) => {
       </div>
     </div>
   )
+
   const button = (
     <div style={{ ...rowStyle }}>
       <button
@@ -38,9 +48,8 @@ const Mobile = ({ handleClick, heroPhoto }) => {
   return [heroPicture, button]
 }
 
-Mobile.propTypes = {
-  handleClick: PropTypes.func,
-  heroPhoto: PropTypes.string.isRequired
+Content.propTypes = {
+  title: PropTypes.string.isRequired
 }
 
-export default Mobile
+export default Content
