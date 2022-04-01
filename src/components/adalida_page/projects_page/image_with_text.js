@@ -6,22 +6,22 @@ const ImageWithText = ({ image, text, reversed = false }) => {
     <div style={{
       display: 'grid',
       gridTemplateColumns: '1fr',
-      flexBasis: '65%',
+      flexBasis: '63%',
       flexGrow: 2,
       placeItems: 'center center'
     }}>
-      <img src={image} style={{ maxWidth: '100%' }} />
+      <img src={image} style={{ width: '100%' }} />
     </div>
   )
 
   const textTag = (
-    <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
+    <div style={{ flexBasis: '31%', flexGrow: 3, flexShrink: 1 }}>
       {text}
     </div>
   )
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', placeItems: 'center', gap: '3%' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', placeItems: 'center', gap: '6%' }}>
       {reversed ? [textTag, imageTag] : [imageTag, textTag]}
     </div>
   )

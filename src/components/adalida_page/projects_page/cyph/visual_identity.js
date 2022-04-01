@@ -22,7 +22,7 @@ const VisualIdentity = () => {
   const grid = (
     <div style={{
       display: 'grid',
-      flexBasis: '65%',
+      flexBasis: '63%',
       flexGrow: 2,
       gridTemplate,
       ...centerStyles
@@ -45,7 +45,7 @@ const VisualIdentity = () => {
   const h1String = generateTypewriterString('H1', '48')
 
   const typography = (
-    <div style={{ flexBasis: '32%', flexGrow: 3, flexShrink: 1 }}>
+    <div style={{ flexBasis: '31%', flexGrow: 3, flexShrink: 1 }}>
       <div style={{
         display: 'flex',
         flexDirection: 'row',
@@ -87,7 +87,7 @@ const VisualIdentity = () => {
   return (
     <Card title='// Visual Identity'>
     <div style={style}>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3%', alignItems: 'stretch', width: '100%' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6%', alignItems: 'stretch', width: '100%' }}>
         {grid}
         {typography}
       </div>

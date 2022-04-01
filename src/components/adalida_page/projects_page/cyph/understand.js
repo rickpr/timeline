@@ -3,6 +3,7 @@ import React from 'react'
 import userPersonaOne from 'images/cyph/research/user_persona_one.png'
 import userPersonaTwo from 'images/cyph/research/user_persona_two.png'
 import informationArchitecture from 'images/cyph/research/information_architecture.png'
+import affinityDiagram from 'images/cyph/research/affinity_diagram.png'
 
 import Card from '../card'
 import ResponsiveGrid from 'components/responsive_grid'
@@ -16,7 +17,7 @@ const Understand = () => {
     placeItems: 'center center'
   }
   const text = (
-    <ResponsiveGrid>
+    <ResponsiveGrid customStyles={{ gap: '6%' }} breakpoint='30vw'>
       <div>
         <p>
           My research focused on how voting works in the United States,
@@ -42,7 +43,7 @@ const Understand = () => {
       </div>
     </ResponsiveGrid>
   )
-  const carousel = <SwiperCarousel images={[userPersonaOne, userPersonaTwo, informationArchitecture]} />
+  const carousel = <SwiperCarousel images={[userPersonaOne, userPersonaTwo, informationArchitecture, affinityDiagram]} />
   const style = {
     display: 'grid',
     gridTemplateColumns: '1fr',

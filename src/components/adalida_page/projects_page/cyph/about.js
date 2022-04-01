@@ -62,7 +62,7 @@ const About = () => {
     'UI Designer'
   ]
   const sizeOfLargestRole = Math.max(...titles.map(title => title.length)) + 3
-  const rolesBreakpoint = 1.5 * sizeOfLargestRole + 'ch'
+  const rolesBreakpoint = 1.2 * sizeOfLargestRole + 'ch'
   const roles = (
     <div style={{
       gridColumn: '1 / -1',
