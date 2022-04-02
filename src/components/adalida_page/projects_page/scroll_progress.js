@@ -20,7 +20,7 @@ const ScrollProgress = () => {
       style={{
         position: 'fixed',
         height: `${scrollProgress}%`,
-        width: '0.25vh',
+        width: '1vh',
         background: primary
       }}
     />
