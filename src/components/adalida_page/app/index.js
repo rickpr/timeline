@@ -15,7 +15,7 @@ const App = ({ forwardRef, title }) => {
   const gridStyle = {
     display: 'grid',
     height: '100vh',
-    width: '100vw',
+    width: '100%',
     scrollSnapAlign: 'start',
     gridTemplateAreas,
     gridTemplateRows,
