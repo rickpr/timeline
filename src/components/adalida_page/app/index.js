@@ -1,21 +1,25 @@
-import React from 'react'
+import React  from 'react'
 import PropTypes from 'prop-types'
 
 import { Themes } from 'theme_context'
 
+import useViewportHeight from 'hooks/use_viewport_height'
+
 import Content from './content'
 
 const App = ({ forwardRef, title }) => {
+  const viewportHeight = useViewportHeight()
   const { background } = Themes[title]
 
   const gridTemplateAreas = "'top-space' 'content' 'bottom-space'"
 
-  const gridTemplateRows = '10vh 80vh 10vh'
+  const gridTemplateRows = '1fr 8fr 1fr'
 
   const gridStyle = {
     display: 'grid',
-    height: '100vh',
-    width: '100%',
+    height: `${viewportHeight}px`,
+    overflow: 'hidden',
+    width: '100vw',
     scrollSnapAlign: 'start',
     gridTemplateAreas,
     gridTemplateRows,
@@ -28,7 +32,7 @@ const App = ({ forwardRef, title }) => {
     <div style={{ background, width: '100%' }} ref={forwardRef}>
       <div style={gridStyle}>
         <div style={{ gridArea: 'top-space' }} />
-        <div style={{ gridArea: 'content' }}>
+        <div style={{ gridArea: 'content', display: 'grid' }}>
           <Content title={title} />
         </div>
         <div style={{ gridArea: 'bottom-space' }} />

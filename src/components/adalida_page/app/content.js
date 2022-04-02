@@ -20,8 +20,8 @@ const Content = ({ title }) => {
 
   const heroPicture = (
     <div style={{ ...rowStyle, alignItems: 'start' }}>
-    <div style={{ borderRadius: '3vmin', overflow: 'hidden', maxHeight: '70vh', maxWidth: '80vw' }}>
-        <img style={{ maxHeight: '70vh', maxWidth: '80vw' }} src={heroPhoto} />
+      <div style={{ borderRadius: '3vmin', overflow: 'hidden', height: '100%', maxWidth: '100%' }}>
+        <img style={{ width: '100%', maxHeight: '50vh' }} src={heroPhoto} />
       </div>
     </div>
   )
