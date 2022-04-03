@@ -8,7 +8,7 @@ import 'sass/adalida_page/header.scss'
 const Header = () => {
   const borderColor = useContext(ThemeContext).primary || '#FFFFFF'
   const borderStyle = `0.25vh solid ${borderColor}`
-  const linkStyle = { color: '#000000', pointerEvents: 'all' }
+  const linkStyle = { color: '#FFFFFF', pointerEvents: 'all' }
   const borderStyles = {
     borderLeft: borderStyle,
     borderRight: borderStyle,

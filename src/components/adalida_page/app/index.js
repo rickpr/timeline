@@ -8,7 +8,7 @@ import useViewportHeight from 'hooks/use_viewport_height'
 import Content from './content'
 
 const App = ({ forwardRef, title }) => {
-  const viewportHeight = useViewportHeight()
+  const height = `${useViewportHeight()}px`
   const { background } = Themes[title]
 
   const gridTemplateAreas = "'top-space' 'content' 'bottom-space'"
@@ -17,10 +17,10 @@ const App = ({ forwardRef, title }) => {
 
   const gridStyle = {
     display: 'grid',
-    height: `${viewportHeight}px`,
+    height,
     overflow: 'hidden',
-    width: '100vw',
     scrollSnapAlign: 'start',
+    width: '100vw',
     gridTemplateAreas,
     gridTemplateRows,
     transition: 'opacity 1s ease',
@@ -29,7 +29,7 @@ const App = ({ forwardRef, title }) => {
   }
 
   return (
-    <div style={{ background, width: '100%' }} ref={forwardRef}>
+    <div style={{ background, height, width: '100%' }} ref={forwardRef}>
       <div style={gridStyle}>
         <div style={{ gridArea: 'top-space' }} />
         <div style={{ gridArea: 'content', display: 'grid' }}>
