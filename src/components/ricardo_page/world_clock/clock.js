@@ -1,9 +1,9 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { ThemeContext } from 'theme_context'
 
 const Clock = ({ timeZone }) => {
-  const { primary, stroke } = useContext(ThemeContext)
+  const primary = '#39FF14'
+  const stroke = '#39FF14'
   const gold = '#FFD700'
   const timeZoneFriendly = timeZone.split('/')[1].split('_').join(' ').toUpperCase()
   const getDate = () => {

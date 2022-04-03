@@ -26,7 +26,7 @@ const Header = () => {
             width: '95%',
             margin: '0 auto',
             fontSize: '3vh',
-            mixBlendMode: 'difference'
+            padding: '1vh'
           }}
         >
           <div>

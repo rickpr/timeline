@@ -1,15 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Typewriter from 'typewriter-effect'
 
 import useAnimateOnScroll from '../../hooks/use_animate_on_scroll'
 import RemoteTimeline from '../timeline/remote_timeline'
 import WorldClock from './world_clock'
 
-import { ThemeContext } from 'theme_context'
-
 const RicardoPage = () => {
   useAnimateOnScroll()
-  const { primary } = useContext(ThemeContext)
+  const primary = '#39FF14'
   return (
     <>
       <div style={{ minHeight: '20vh' }} />

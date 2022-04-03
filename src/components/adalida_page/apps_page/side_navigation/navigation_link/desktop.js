@@ -7,7 +7,6 @@ const Desktop = ({ title, click, number }) => {
   const { name, primary, description } = useContext(ThemeContext)
   const active = name === title
   const backgroundColor = active ? primary : '#CCCCCC88'
-  const color = active ? primary : '#FFFFFF'
   const animationDuration = 200
 
   const [textShown, setTextShown] = useState(false)
@@ -23,7 +22,7 @@ const Desktop = ({ title, click, number }) => {
   }, [active])
 
   const textStyle = {
-    color,
+    color: '#FFFFFF',
     fontSize: active ? '3vw' : '2vw',
     pointerEvents: 'none',
     whiteSpace: 'nowrap'

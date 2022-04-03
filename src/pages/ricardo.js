@@ -1,26 +1,23 @@
-import React, { useRef, useContext } from 'react'
+import React, { useRef } from 'react'
 import '../sass/custom.scss'
 
 import RicardoPage from '../components/ricardo_page'
 import Houndstooth from '../components/houndstooth'
-import { ThemeContext, Themes } from 'theme_context'
 
 const Ricardo = () => {
   const layoutRef = useRef(null)
-  const { circleColor } = useContext(ThemeContext)
+  const circleColor = '#39FF14'
   return (
-    <ThemeContext.Provider value={Themes['Meow Wolf']}>
-      <div ref={layoutRef}>
-        <div style={{ minHeight: '2em' }} />
-        <header>
-          <div style={{ width: '95%', margin: 'auto', textAlign: 'center', color: circleColor }}>
-            <h1>Ricardo Piro-Rael</h1>
-          </div>
-        </header>
-        <Houndstooth containerRef={layoutRef} backgroundColor={'#111111'} />
-        <RicardoPage />
-      </div>
-    </ThemeContext.Provider>
+    <div ref={layoutRef}>
+      <div style={{ minHeight: '2em' }} />
+      <header>
+        <div style={{ width: '95%', margin: 'auto', textAlign: 'center', color: circleColor }}>
+          <h1>Ricardo Piro-Rael</h1>
+        </div>
+      </header>
+      <Houndstooth containerRef={layoutRef} backgroundColor={'#111111'} />
+      <RicardoPage />
+    </div>
   )
 }
 
