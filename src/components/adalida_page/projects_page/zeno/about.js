@@ -18,7 +18,6 @@ const About = () => {
     </div>
   )
 
-
   const points = {
     PLATFORM: 'Mobile iOS',
     INDUSTRY: 'Political Technology',

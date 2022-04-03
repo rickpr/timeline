@@ -21,7 +21,7 @@ const Content = ({ title }) => {
   const heroPicture = (
     <div style={{ ...rowStyle, alignItems: 'start' }}>
       <div style={{ borderRadius: '3vmin', overflow: 'hidden', height: '100%', maxWidth: '100%' }}>
-        <img style={{ width: '100%', maxHeight: '50vh' }} src={heroPhoto} />
+        <img style={{ width: '100%', maxHeight: '50vh', objectFit: 'contain' }} src={heroPhoto} />
       </div>
     </div>
   )
