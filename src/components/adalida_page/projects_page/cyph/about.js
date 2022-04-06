@@ -35,7 +35,7 @@ const About = () => {
         Cyph is a mobile app designed for voters who are interested in contributions and spending between elected
         representatives and their donors.
 
-        Voters can scan a person politician and Cyph will recognize who the representative is and provide information
+        Voters can scan a person or politician and Cyph will recognize who the representative is and provide information
         on their political career and donor history.
       </p>
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>

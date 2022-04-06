@@ -6,7 +6,7 @@ const zenoHome = cyphHome
 const Themes = {
   Cyph: {
     name: 'Cyph',
-    description: 'Cyph helps voters on mobile devices scan and recognize politicians to learn about their financial donors and political history.',
+    description: 'Cyph is a mobile app and it helps voters scan and recognize politicians to learn about their financial donors and political history.',
     projectPage: '/adalida/projects/cyph',
     heroPhoto: cyphHome,
 
