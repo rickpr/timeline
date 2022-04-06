@@ -32,9 +32,11 @@ const About = () => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <p>
-        Cyph is a mobile app designed for users who are interested in contributions and spending between elected
-        representatives and businesses.
-        Users can scan a person politician and Cyph will recognize who the representative is and who their donors are.
+        Cyph is a mobile app designed for voters who are interested in contributions and spending between elected
+        representatives and their donors.
+
+        Voters can scan a person politician and Cyph will recognize who the representative is and provide information
+        on their political career and donor history.
       </p>
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>

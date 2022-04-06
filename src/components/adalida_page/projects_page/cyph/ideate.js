@@ -15,8 +15,8 @@ const Ideate = () => {
     placeItems: 'center center'
   }
   const problemOne = {
-    'Problem:': "Voters can't see who is donating to their politicians and how that affects their voting easily.",
-    Goals: "Connect voters with an up-to-date database of a representative's financial and voting history."
+    'Problem:': "Voters feel there is a lack of transparency and tracking regarding representative's voting history.",
+    Solution: "Connect voters with an up-to-date database of a representative's voting history."
   }
   const image = (
     <div style={{

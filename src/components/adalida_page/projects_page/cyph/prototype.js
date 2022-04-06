@@ -10,8 +10,8 @@ import 'sass/adalida_page/cyph.scss'
 
 const Prototype = () => {
   const problem = {
-    'The Problem': "People don't know who their elected officials are, how to contact them, or easily find their voting history.",
-    Goals: 'Connect voters quickly with their local representatives and their political history.'
+    'Problem': "People don't know who their elected officials are or how to connect with them.",
+    Solution: 'Connect voters quickly with their local representatives and a transparent overview of their political, financial, and voting history.'
   }
 
   return (
