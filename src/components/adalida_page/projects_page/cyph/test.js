@@ -11,7 +11,7 @@ import 'sass/adalida_page/cyph.scss'
 const Test = () => {
   const problem = {
     'Problem:': 'Voters find it difficult to get involved in local politics.',
-    Goals: "Cyph provides an in-person, virtual, and upcoming events and information based on the user's location and saved choices."
+    Solution: "Cyph provides information on upcoming events and updates for legal,in-person and virtual community events. Voter's are suggested events based on real time or location (depending on preferences)."
   }
 
   return (

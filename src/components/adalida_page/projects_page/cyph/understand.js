@@ -32,13 +32,13 @@ const Understand = () => {
       </div>
       <div>
         <p>
-          After, I conducted a competitive audit and learned about useful
+          After, I created an affinity diagram and conducted a competitive audit where I learned about useful
           data sources posted publicly available for use like the Federal
-          Election Commitee (FEC) website.
+          Election Committee (FEC) website and common pain points for voters.
         </p>
 
         <p>
-          This is also where I began creating my information architecture and a process flow.
+          This is also where I began creating my information architecture and process flow.
         </p>
       </div>
     </ResponsiveGrid>

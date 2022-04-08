@@ -10,8 +10,8 @@ import 'sass/adalida_page/cyph.scss'
 
 const Define = () => {
   const headingsAndText = {
-    'The Problem': 'Citizens United makes it difficult for voters to see who is financials sponsoring their local representatives.',
-    'My Solution': "Provide a fast and easy way for people to learn about a politician's donors."
+    Problem: 'Citizens United makes it difficult for people to see who is financially sponsoring their local representatives.',
+    Solution: 'Provide a fast and transparent way for people to learn about a politician, their political and voting history, and their donors.'
   }
   return (
     <Card title='// Define'>
