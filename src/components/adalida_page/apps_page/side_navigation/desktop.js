@@ -16,7 +16,8 @@ const Desktop = ({ links }) => {
     top: '50%',
     transform: 'translate(0, -50%)',
     width: '20vmin',
-    left: '2.5vw'
+    left: '2.5vw',
+    zIndex: 3
   }
 
   return (

@@ -16,10 +16,14 @@ const App = ({ forwardRef, title }) => {
   const gridTemplateRows = '1fr 8fr 1fr'
 
   const gridStyle = {
+    background,
     display: 'grid',
     height,
     overflow: 'hidden',
     scrollSnapAlign: 'start',
+    mixBlendMode: 'lighten',
+    position: 'relative',
+    zIndex: 2,
     width: '100vw',
     gridTemplateAreas,
     gridTemplateRows,
@@ -29,7 +33,7 @@ const App = ({ forwardRef, title }) => {
   }
 
   return (
-    <div style={{ background, height, width: '100%' }} ref={forwardRef}>
+    <div style={{ background: '#000000', height, width: '100%', pointerEvents: 'none' }} ref={forwardRef}>
       <div style={gridStyle}>
         <div style={{ gridArea: 'top-space' }} />
         <div style={{ gridArea: 'content', display: 'grid' }}>

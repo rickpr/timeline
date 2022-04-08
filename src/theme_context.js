@@ -12,7 +12,8 @@ const Themes = {
 
     // Colors
     primary: '#39FF14',
-    background: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)'
+    background: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)',
+    border: '#39FF14'
   },
   Zeno: {
     name: 'Zeno',
@@ -21,8 +22,9 @@ const Themes = {
     heroPhoto: zenoHome,
 
     // Colors
-    primary: '#FFFFFF',
-    background: '#ED6112'
+    primary: '#ED6112',
+    background: '#ED6112',
+    border: '#FFFFFF'
   }
 }
 

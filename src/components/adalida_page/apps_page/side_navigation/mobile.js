@@ -25,7 +25,8 @@ const Mobile = ({ links }) => {
     bottom: '10vh',
     height: '50vh',
     width: `${widthOnScreen}vw`,
-    left: `${(100 - widthOnScreen) / 2}vw`
+    left: `${(100 - widthOnScreen) / 2}vw`,
+    zIndex: 3
   }
 
   const computeOffset = () => {

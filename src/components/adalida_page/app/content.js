@@ -37,7 +37,8 @@ const Content = ({ title }) => {
           fontSize: '3vmin',
           lineHeight: 'normal',
           marginTop: '1.5vmin',
-          padding: '1.5vmin'
+          padding: '1.5vmin',
+          pointerEvents: 'all'
         }}
       >
         View Project

@@ -6,12 +6,13 @@ import { ThemeContext } from 'theme_context'
 import 'sass/adalida_page/footer.scss'
 
 const Footer = () => {
-  const borderColor = useContext(ThemeContext).primary || '#FFFFFF'
+  const borderColor = useContext(ThemeContext).border || '#FFFFFF'
   const borderStyle = `0.25vh solid ${borderColor}`
   const borderStyles = {
     borderLeft: borderStyle,
     borderRight: borderStyle,
-    borderBottom: borderStyle
+    borderBottom: borderStyle,
+    zIndex: 3
   }
   const linkStyle = { color: '#FFFFFF', pointerEvents: 'all' }
   return (
