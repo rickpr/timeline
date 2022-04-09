@@ -11,3 +11,9 @@ li {
   border-bottom: 0.1em solid black;
   width: max-content;
 }
+
+.picture-caption {
+  display: grid;
+  gap: 6%;
+  gridTemplateColumns: 1fr;
+}

@@ -3,7 +3,7 @@ import React from 'react'
 import prototypePhoto from 'images/cyph/prototype.png'
 
 import Card from '../card'
-import HeadingsWithText from '../headings_with_text'
+import PictureCaption from '../picture_caption'
 
 import useIsMobile from 'hooks/use_is_mobile'
 
@@ -13,10 +13,6 @@ const Ideate = () => {
   const isMobile = useIsMobile(1200)
   const centerStyles = {
     placeItems: 'center center'
-  }
-  const problemOne = {
-    'Problem:': "Voters can't see who is donating to their politicians and how that affects their voting easily.",
-    Goals: "Connect voters with an up-to-date database of a representative's financial and voting history."
   }
   const image = (
     <div style={{
@@ -28,10 +24,6 @@ const Ideate = () => {
       <img src={prototypePhoto} width='100%' />
     </div>
   )
-  const problemTwo = {
-    'Problem:': "People aren't familiar with representative's backgrounds or what committees they sit on.",
-    Goals: "Provide up-to-date and background information on representative's positions during their political career."
-  }
   return (
     <Card title='// IDEATE'>
       <div style={{
@@ -41,9 +33,28 @@ const Ideate = () => {
         width: '100%',
         ...centerStyles
       }}>
-        <HeadingsWithText headingsAndText={problemOne} />
+
+        <div className='picture-caption'>
+          <PictureCaption
+            heading='Problem:'
+            text="Voters feel there is a lack of transparency and tracking regarding representative's voting history."
+          />
+          <PictureCaption
+            heading='Solution'
+            text="Connect voters with an up-to-date database of a representative's voting history."
+          />
+        </div>
         {image}
-        <HeadingsWithText headingsAndText={problemTwo} />
+        <div className='picture-caption'>
+          <PictureCaption
+            heading='Problem:'
+            text="People aren't familiar with representative's backgrounds or what committees they sit on."
+          />
+          <PictureCaption
+            heading='Goals'
+            text= "Provide up-to-date and background information on representative's positions during their political career."
+          />
+        </div>
       </div>
     </Card>
   )

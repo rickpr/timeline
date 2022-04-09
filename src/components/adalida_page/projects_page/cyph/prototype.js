@@ -3,23 +3,28 @@ import React from 'react'
 import testPhoto from 'images/cyph/test.png'
 
 import Card from '../card'
-import HeadingsWithText from '../headings_with_text'
+import PictureCaption from '../picture_caption'
 import ImageWithText from '../image_with_text'
 
 import 'sass/adalida_page/cyph.scss'
 
 const Prototype = () => {
-  const problem = {
-    'Problem': "People don't know who their elected officials are or how to connect with them.",
-    Solution: 'Connect voters quickly with their local representatives and a transparent overview of their political, financial, and voting history.'
-  }
+  const pictureCaption = (
+    <div className='picture-caption'>
+      <PictureCaption
+        heading='Problem'
+        text="People don't know who their elected officials are or how to connect with them."
+      />
+      <PictureCaption
+        heading='Solution'
+        text='Connect voters quickly with their local representatives and a transparent overview of their political, financial, and voting history.'
+      />
+    </div>
+  )
 
   return (
     <Card title='// Prototype'>
-      <ImageWithText
-        image={testPhoto}
-        text={<HeadingsWithText headingsAndText={problem} />}
-      />
+      <ImageWithText image={testPhoto} text={pictureCaption} />
     </Card>
   )
 }

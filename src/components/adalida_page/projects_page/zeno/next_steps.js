@@ -4,22 +4,22 @@ import testTwoPhoto from 'images/cyph/test_two.png'
 
 import Card from '../card'
 import ImageWithText from '../image_with_text'
-import HeadingsWithText from '../headings_with_text'
+import PictureCaption from '../picture_caption'
 
 import 'sass/adalida_page/cyph.scss'
 
 const NextSteps = () => {
   const problem = (
-    <>
-      <h1>Develop</h1>
-      <h1>Influence</h1>
-      <HeadingsWithText
-        headingsAndText={{
-          Experience: 'Design an experience where users can scan products or company logos and learn about politicians they donate to.',
-          'User Testing': 'Conduct in-person usability studies.'
-        }}
+    <div className='picture-caption'>
+      <PictureCaption
+        heading='Develop Influence Experience'
+        text='Design an experience where users can scan products or company logos and learn about politicians they donate to.'
       />
-    </>
+      <PictureCaption
+        heading='User Testing'
+        text='Conduct in-person usability studies.'
+      />
+    </div>
   )
 
   return (

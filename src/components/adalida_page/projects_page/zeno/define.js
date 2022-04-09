@@ -3,21 +3,29 @@ import React from 'react'
 import designPhoto from 'images/cyph/design.png'
 
 import Card from '../card'
-import HeadingsWithText from '../headings_with_text'
+import PictureCaption from '../picture_caption'
 import ImageWithText from '../image_with_text'
 
 import 'sass/adalida_page/cyph.scss'
 
 const Define = () => {
-  const headingsAndText = {
-    'The Problem': 'Citizens United makes it difficult for voters to see who is financials sponsoring their local representatives.',
-    'My Solution': "Provide a fast and easy way for people to learn about a politician's donors."
-  }
+  const pictureCaption = (
+    <div className='picture-caption'>
+      <PictureCaption
+        heading='Problem'
+        text='Citizens United makes it difficult for people to see who is financially sponsoring their local representatives.'
+      />
+      <PictureCaption
+        heading='Solution'
+        text='Provide a fast and transparent way for people to learn about a politician, their political and voting history, and their donors.'
+      />
+    </div>
+  )
   return (
     <Card title='// Define'>
       <ImageWithText
         image={designPhoto}
-        text={<HeadingsWithText headingsAndText={headingsAndText} />}
+        text={pictureCaption}
         reversed={true}
       />
     </Card>
