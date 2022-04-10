@@ -6,7 +6,6 @@ import informationArchitecture from 'images/cyph/research/information_architectu
 import affinityDiagram from 'images/cyph/research/affinity_diagram.png'
 
 import Card from '../card'
-import ResponsiveGrid from 'components/responsive_grid'
 import SwiperCarousel from 'components/swiper_carousel'
 
 import 'sass/adalida_page/cyph.scss'
@@ -17,31 +16,27 @@ const Understand = () => {
     placeItems: 'center center'
   }
   const text = (
-    <ResponsiveGrid customStyles={{ gap: '6%' }} breakpoint='30vw'>
-      <div>
-        <p>
-          My research focused on how voting works in the United States,
-          why people don’t vote, what information is useful to voters,
-          and why voting is important.
-        </p>
+    <div style={{ columnWidth: '80ch', width: '100%' }}>
+      <p>
+        My research focused on how voting works in the United States,
+        why people don’t vote, what information is useful to voters,
+        and why voting is important.
+      </p>
 
-        <p>
-          I conducted phone interviews and began empathizing with voters by
-          conducting phone interviews and creating user personas.
-        </p>
-      </div>
-      <div>
-        <p>
-          After, I created an affinity diagram and conducted a competitive audit where I learned about useful
-          data sources posted publicly available for use like the Federal
-          Election Committee (FEC) website and common pain points for voters.
-        </p>
+      <p>
+        I conducted phone interviews and began empathizing with voters by
+        conducting phone interviews and creating user personas.
+      </p>
+      <p>
+        After, I created an affinity diagram and conducted a competitive audit where I learned about useful
+        data sources posted publicly available for use like the Federal
+        Election Committee (FEC) website and common pain points for voters.
+      </p>
 
-        <p>
-          This is also where I began creating my information architecture and process flow.
-        </p>
-      </div>
-    </ResponsiveGrid>
+      <p>
+        This is also where I began creating my information architecture and process flow.
+      </p>
+    </div>
   )
   const carousel = <SwiperCarousel images={[userPersonaOne, userPersonaTwo, informationArchitecture, affinityDiagram]} />
   const style = {

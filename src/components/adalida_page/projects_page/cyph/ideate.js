@@ -29,7 +29,6 @@ const Ideate = () => {
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : '1fr 8fr 1fr',
-        gap: '6%',
         width: '100%',
         ...centerStyles
       }}>

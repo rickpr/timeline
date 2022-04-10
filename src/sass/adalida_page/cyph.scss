@@ -13,7 +13,7 @@ li {
 }
 
 .picture-caption {
-  display: grid;
-  gap: 6%;
-  gridTemplateColumns: 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

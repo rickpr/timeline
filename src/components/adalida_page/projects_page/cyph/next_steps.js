@@ -11,7 +11,7 @@ import 'sass/adalida_page/cyph.scss'
 
 const NextSteps = () => {
   const problem = (
-    <div className='picture-caption'>
+    <div className='picture-caption' style={{ width: 'min-content' }}>
       <PictureCaption
         heading={
           <ScalableText
@@ -19,6 +19,7 @@ const NextSteps = () => {
             customStyles={{
               fontSize: 'initial',
               maxHeight: '3em',
+              maxWidth: '70vw',
               fontWeight: 'normal'
             }}
             viewBoxWidthMultiplier={8}
