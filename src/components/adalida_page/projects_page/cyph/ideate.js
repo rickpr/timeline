@@ -1,8 +1,7 @@
 import React from 'react'
 
-import prototypePhoto from 'images/cyph/prototype.png'
-
 import Card from '../card'
+import Image from 'components/image'
 import PictureCaption from '../picture_caption'
 
 import useIsMobile from 'hooks/use_is_mobile'
@@ -21,14 +20,15 @@ const Ideate = () => {
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
-      <img src={prototypePhoto} width='100%' />
+    <Image path='cyph/prototype.png' width='100%' />
     </div>
   )
   return (
     <Card title='// IDEATE'>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : '1fr 8fr 1fr',
+        gridTemplateColumns: isMobile ? '1fr' : '1fr max-content 1fr',
+        columnGap: '6%',
         width: '100%',
         ...centerStyles
       }}>

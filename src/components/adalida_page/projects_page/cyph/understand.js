@@ -1,14 +1,14 @@
 import React from 'react'
 
-import userPersonaOne from 'images/cyph/research/user_persona_one.png'
-import userPersonaTwo from 'images/cyph/research/user_persona_two.png'
-import informationArchitecture from 'images/cyph/research/information_architecture.png'
-import affinityDiagram from 'images/cyph/research/affinity_diagram.png'
-
 import Card from '../card'
 import SwiperCarousel from 'components/swiper_carousel'
 
 import 'sass/adalida_page/cyph.scss'
+
+const userPersonaOne = 'images/cyph/research/user_persona_one.png'
+const userPersonaTwo = 'images/cyph/research/user_persona_two.png'
+const informationArchitecture = 'images/cyph/research/information_architecture.png'
+const affinityDiagram = 'images/cyph/research/affinity_diagram.png'
 
 const Understand = () => {
   const centerStyles = {

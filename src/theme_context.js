@@ -1,14 +1,11 @@
 import React from 'react'
 
-import cyphHome from 'images/cyph/title.png'
-const zenoHome = cyphHome
-
 const Themes = {
   Cyph: {
     name: 'Cyph',
     description: "Cyph is a mobile app designed for voters interested in learning about politician's financial donors and political history.",
     projectPage: '/adalida/projects/cyph',
-    heroPhoto: cyphHome,
+    heroPhoto: 'images/cyph/title.png',
 
     // Colors
     primary: '#39FF14',
@@ -19,7 +16,7 @@ const Themes = {
     name: 'Zeno',
     description: 'A fashion experience where you can shop for hours.',
     projectPage: '/adalida/projects/zeno',
-    heroPhoto: zenoHome,
+    heroPhoto: 'images/cyph/title.png',
 
     // Colors
     primary: '#ED6112',

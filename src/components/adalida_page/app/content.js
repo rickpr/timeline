@@ -4,6 +4,8 @@ import { navigate } from 'gatsby'
 
 import { Themes } from 'theme_context'
 
+import Image from 'components/image'
+
 const Content = ({ title }) => {
   const { heroPhoto, projectPage } = Themes[title]
   const handleClick = () => {
@@ -19,15 +21,13 @@ const Content = ({ title }) => {
   }
 
   const heroPicture = (
-    <div style={{ ...rowStyle, alignItems: 'start' }}>
-      <div style={{ borderRadius: '3vmin', overflow: 'hidden', height: '100%', maxWidth: '100%' }}>
-        <img style={{ width: '100%', maxHeight: '50vh', objectFit: 'contain' }} src={heroPhoto} />
-      </div>
+    <div key='hero-picture' style={{ ...rowStyle, alignItems: 'start' }}>
+      <Image style={{ maxHeight: '50vh' }} path={heroPhoto} />
     </div>
   )
 
   const button = (
-    <div style={{ ...rowStyle }}>
+    <div key='button' style={{ ...rowStyle }}>
       <button
         onClick={handleClick}
         style={{

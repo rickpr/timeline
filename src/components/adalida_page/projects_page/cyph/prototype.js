@@ -1,7 +1,5 @@
 import React from 'react'
 
-import testPhoto from 'images/cyph/test.png'
-
 import Card from '../card'
 import PictureCaption from '../picture_caption'
 import ImageWithText from '../image_with_text'
@@ -24,7 +22,7 @@ const Prototype = () => {
 
   return (
     <Card title='// Prototype'>
-      <ImageWithText image={testPhoto} text={pictureCaption} />
+      <ImageWithText image='images/cyph/test.png' text={pictureCaption} />
     </Card>
   )
 }

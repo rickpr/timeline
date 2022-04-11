@@ -1,7 +1,5 @@
 import React from 'react'
 
-import testTwoPhoto from 'images/cyph/test_two.png'
-
 import Card from '../card'
 import ImageWithText from '../image_with_text'
 import PictureCaption from '../picture_caption'
@@ -16,6 +14,7 @@ const NextSteps = () => {
         heading={
           <ScalableText
             text='Develop Influence Experience'
+            color='#000000'
             customStyles={{
               fontSize: 'initial',
               maxHeight: '3em',
@@ -37,7 +36,7 @@ const NextSteps = () => {
   return (
     <Card title='// Next Steps'>
       <ImageWithText
-        image={testTwoPhoto}
+        image='images/cyph/test_two.png'
         text={problem}
       />
     </Card>

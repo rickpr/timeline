@@ -1,20 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Image from 'components/image'
+
 const ImageWithText = ({ image, text, reversed = false }) => {
   const imageTag = (
-    <div style={{
-      display: 'flex',
-      flexBasis: '63%',
-      flexGrow: 2,
-      placeItems: 'center center'
-    }}>
-      <img src={image} style={{ width: '100%' }} />
+    <div
+      key='image'
+      style={{
+        display: 'flex',
+        flexBasis: '63%',
+        flexGrow: 2,
+        placeItems: 'center center'
+      }}
+    >
+      <Image path={image} style={{ width: '100%' }} imgStyle={{ width: '100%' }} />
     </div>
   )
 
   const textTag = (
-    <div style={{ flexBasis: '31%', flexGrow: 4, flexShrink: 1 }}>
+    <div key='text' style={{ flexBasis: '31%', flexGrow: 4, flexShrink: 1 }}>
       {text}
     </div>
   )

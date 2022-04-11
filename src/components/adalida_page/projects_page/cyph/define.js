@@ -1,7 +1,5 @@
 import React from 'react'
 
-import designPhoto from 'images/cyph/design.png'
-
 import Card from '../card'
 import PictureCaption from '../picture_caption'
 import ImageWithText from '../image_with_text'
@@ -24,7 +22,7 @@ const Define = () => {
   return (
     <Card title='// Define'>
       <ImageWithText
-        image={designPhoto}
+        image='images/cyph/design.png'
         text={pictureCaption}
         reversed={true}
       />

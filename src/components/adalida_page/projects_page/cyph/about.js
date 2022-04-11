@@ -1,7 +1,5 @@
 import React from 'react'
 
-import heroPhoto from 'images/cyph/summary.png'
-
 import Card from '../card'
 import ImageWithText from '../image_with_text'
 import ResponsiveGrid from 'components/responsive_grid'
@@ -80,7 +78,7 @@ const About = () => {
 
   return (
     <Card title='// ABOUT THE PROJECT'>
-      <ImageWithText image={heroPhoto} text={text} />
+      <ImageWithText image='images/cyph/summary.png' text={text} />
       {roles}
     </Card>
   )

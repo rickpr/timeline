@@ -56,8 +56,8 @@ const VisualIdentity = () => {
         `,
         alignItems: 'flex-end',
       }}>
-        <ScalableText text='A' customStyles={{ fill: '#BB81EE' }}/>
-        <ScalableText text='b' customStyles={{ fill: 'none', stroke: '#BB81EE', strokeWidth: '0.1px' }}/>
+        <ScalableText text='A' color='#BB81EE' />
+        <ScalableText text='b' color='none' customStyles={{ stroke: '#BB81EE', strokeWidth: '0.1px' }}/>
       </div>
       <h1><SynchronizedTypewriter string='Inconsolata' /></h1>
       <hr />

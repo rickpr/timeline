@@ -28,7 +28,7 @@ export const TimelineQuery = timelineId => {
       }
     }
   `).api.timelines
-  return timelines.find(timeline => timeline.id == timelineId)
+  return timelines.find(timeline => timeline.id === timelineId)
 }
 
 export default TimelineQuery
