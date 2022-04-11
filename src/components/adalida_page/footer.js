@@ -14,19 +14,28 @@ const Footer = () => {
     borderBottom: borderStyle,
     zIndex: 3
   }
-  const linkStyle = { color: '#FFFFFF', pointerEvents: 'all' }
+  const linkStyle = { color: '#FFFFFF', pointerEvents: 'all', display: 'flex' }
+  const iconHeight = '3vh'
+
   return (
     <>
       <nav className='adalida-footer' style={{ mixBlendMode: 'difference' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', margin: '0 auto' }}>
-          <a href='#' style={linkStyle}><IconFileInfo /></a>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            width: '80%',
+            margin: '0 auto'
+          }}
+        >
+          <a href='#' style={linkStyle}><IconFileInfo height={iconHeight}/></a>
           <a
             href='https://dribbble.com/adalida-baca'
             style={linkStyle}
             target='_blank'
             rel='noreferrer'
           >
-            <IconBrandDribbble />
+            <IconBrandDribbble height={iconHeight}/>
           </a>
           <a
             href='https://www.linkedin.com/in/adalidabaca'
@@ -34,7 +43,7 @@ const Footer = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <IconBrandLinkedin />
+            <IconBrandLinkedin height={iconHeight}/>
           </a>
           <a
             href='mailto:adalida.baca@gmail.com'
@@ -42,7 +51,7 @@ const Footer = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <IconMail />
+            <IconMail height={iconHeight}/>
           </a>
         </div>
       </nav>

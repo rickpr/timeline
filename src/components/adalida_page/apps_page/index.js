@@ -3,6 +3,7 @@ import { minBy } from 'lodash'
 
 import { ThemeContext, Themes } from 'theme_context'
 import useIsMobile from 'hooks/use_is_mobile'
+import useViewportHeight from 'hooks/use_viewport_height'
 
 import App from '../app'
 import Layout from '../layout'
@@ -56,7 +57,7 @@ const AppsPage = () => {
           style={{
             scrollSnapType: 'both mandatory',
             overflow: 'auto',
-            height: '100vh',
+            height: useViewportHeight(),
             display: 'flex',
             flexDirection: isMobile ? 'row' : 'column'
           }}

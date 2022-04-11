@@ -16,7 +16,7 @@ const Mobile = ({ title, click, number }) => {
 
   const linkStyle = {
     pointerEvents: 'visible',
-    height: '100%',
+    height: active ? '50%' : '100%',
     width: '0.25vh',
     backgroundColor: '#FFFFFF',
     ...transitionStyle
@@ -26,7 +26,6 @@ const Mobile = ({ title, click, number }) => {
     cursor: 'pointer',
     display: 'grid',
     justifyItems: 'center',
-    rowGap: '1vmin',
     gridTemplateRows: '40vh 10vh',
     height: '100%',
     width: '100%',
@@ -68,7 +67,9 @@ const Mobile = ({ title, click, number }) => {
           { active && <div style={{ fontSize: '2vh', ...transitionStyle }}><br /> {description}</div> }
         </div>
       </div>
-      {navigationLink}
+      <div style={{ height: '100%', display: 'flex', alignItems: 'flex-end' }}>
+        {navigationLink}
+      </div>
     </div>
   )
 }
