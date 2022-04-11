@@ -6,6 +6,7 @@ import useIsMobile from 'hooks/use_is_mobile'
 import useViewportHeight from 'hooks/use_viewport_height'
 
 import App from '../app'
+// import HireAdi from '../hire_adi'
 import Layout from '../layout'
 import SideNavigation from './side_navigation'
 
@@ -14,14 +15,15 @@ const AppsPage = () => {
 
   const navigationLinks = {
     Cyph: useRef(),
-    Zeno: useRef()
+    Zeno: useRef(),
+    // 'Hire Adi': useRef()
   }
   const [closestProject, setClosestProject] = useState('Cyph')
 
   const cyph = (
     <App
       key='cyph'
-      forwardRef={navigationLinks.Cyph}
+      ref={navigationLinks.Cyph}
       title='Cyph'
     />
   )
@@ -29,12 +31,11 @@ const AppsPage = () => {
   const zeno = (
     <App
       key='zeno'
-      forwardRef={navigationLinks.Zeno}
+      ref={navigationLinks.Zeno}
       title='Zeno'
     />
   )
 
-  const projects = [cyph, zeno]
   const scrollRef = useRef()
   useEffect(() => {
     const updateClosestProject = () => {
@@ -54,6 +55,7 @@ const AppsPage = () => {
     <ThemeContext.Provider value={Themes[closestProject]}>
       <Layout>
         <div
+          ref={scrollRef}
           style={{
             scrollSnapType: 'both mandatory',
             overflow: 'auto',
@@ -61,8 +63,10 @@ const AppsPage = () => {
             display: 'flex',
             flexDirection: isMobile ? 'row' : 'column'
           }}
-          ref={scrollRef}>
-          {projects}
+        >
+          {cyph}
+          {zeno}
+          {/* <HireAdi ref={navigationLinks['Hire Adi']} /> */}
         </div>
         <SideNavigation links={navigationLinks} />
       </Layout>

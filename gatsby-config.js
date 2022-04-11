@@ -23,8 +23,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Adalida and Ricardo Page',
+        short_name: 'timeline',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',

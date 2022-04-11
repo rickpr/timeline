@@ -6,7 +6,7 @@ export const ImageQuery = imagePath => {
       allFile(filter: {sourceInstanceName: {eq: "images"}}) {
         edges {
           node {
-            childImageSharp { gatsbyImageData }
+            childImageSharp { gatsbyImageData(placeholder: TRACED_SVG) }
             name
             relativePath
           }

@@ -25,7 +25,7 @@ const AdalidaPage = () => {
       <div style={{ textAlign: 'center', fontSize: '10vmin' }}>
         <span style={{ color: '#60F11C' }}>Hello</span>
         <span style={{ color: '#FFFFFF' }}>, I&apos;m</span>
-        <span style={{ color: '#FF2079' }} > Adalida Baca</span>
+        <span style={{ color: '#FF2079' }}> Adalida Baca</span>
       </div>
       <Image path='images/adalida_face.jpg' style={{ height: '30vmin' }} />
       <div style={{ color: 'white', fontSize: '5vmin' }}>&#47;&#47; UX Designer</div>
