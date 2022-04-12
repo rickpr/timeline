@@ -26,7 +26,7 @@ const FinalThoughts = () => {
     height: '30%'
   }
   const thoughts = (
-    <ResponsiveGrid breakpoint='30ch' customStyles={{ gap: '6%', marginTop: '2em' }}>
+    <ResponsiveGrid breakpoint='30ch' customStyles={{ columnGap: '6%', marginTop: '2em' }}>
       <div>
         <ScalableText text='Data in Design' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
