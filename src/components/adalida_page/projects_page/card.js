@@ -13,7 +13,7 @@ const Card = ({ children, title }) => {
   const containerStyle = {
     width: '95%',
     margin: '9vh 2.5vw',
-    minHeight: '82vh',
+    minHeight: '92vh',
     backgroundColor: '#FFFFFF',
     padding: '7%',
     borderRadius: '3vh'

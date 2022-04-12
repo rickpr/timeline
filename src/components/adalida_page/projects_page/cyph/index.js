@@ -12,7 +12,7 @@ import VisualIdentity from './visual_identity'
 import Takeaways from './takeaways'
 
 const Cyph = () =>
-  <div style={{ background: '#FAFAFA' }}>
+  <div style={{ background: '#F5F5F5' }}>
     <App title='Cyph' />
     <About />
     <Understand />
