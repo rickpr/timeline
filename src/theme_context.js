@@ -14,7 +14,7 @@ const Themes = {
   },
   Zeno: {
     name: 'Zeno',
-    description: 'A fashion experience where you can shop for hours.',
+    description: 'A luxury e-commerce experience.',
     projectPage: '/adalida/projects/zeno',
     heroPhoto: 'images/cyph/title.png',
 
@@ -26,7 +26,7 @@ const Themes = {
   Splash: { name: 'Hire Adi' },
   HBOMax: {
     name: 'HBOMax',
-    description: 'A fashion experience where you can shop for hours.',
+    description: 'Streaming fit for you.',
     projectPage: '/adalida/projects/hbo_max',
     heroPhoto: 'images/cyph/title.png',
 
