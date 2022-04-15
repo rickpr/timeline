@@ -9,7 +9,7 @@ import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 
 const Card = ({ children, title }) => {
   useAnimateOnScroll()
-  const borderColor = useContext(ThemeContext).primary || '#FFFFFF'
+  const primary = useContext(ThemeContext).primary || '#FFFFFF'
   const containerStyle = {
     width: '95%',
     margin: '9vh 2.5vw',
@@ -29,10 +29,8 @@ const Card = ({ children, title }) => {
   return (
     <div data-aos='fade-up' style={containerStyle}>
       <div style={gridStyle}>
-        <div
-          style={{ display: 'grid', justifyItems: 'center', width: '100%' }}
-        >
-          <ScalableText text={title} color={borderColor} customStyles={{ width: 'unset' }} />
+        <div style={{ display: 'grid', justifyItems: 'center', width: '100%' }}>
+          <ScalableText text={title} color={primary} customStyles={{ width: 'unset' }} />
         </div>
         <div />
         <div>{children}</div>

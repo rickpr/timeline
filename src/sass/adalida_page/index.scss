@@ -7,6 +7,13 @@
   color: theme-color('primary');
 }
 
-.dark {
+.about-container {
   background-color: #000;
+  display: grid;
+  grid-template-columne: 1fr;
+  place-items: center;
+  align-content: space-around;
+  min-width: 100vw;
+  padding: 10vh 0;
+  scroll-snap-align: start;
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { navigate } from 'gatsby'
 
 import { Themes } from 'theme_context'
 import Button from '../button'
@@ -8,10 +7,7 @@ import Image from 'components/image'
 
 const Content = ({ title }) => {
   const { heroPhoto, projectPage } = Themes[title]
-  const handleClick = () => {
-    setTimeout(() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' }), 1000)
-    navigate(projectPage)
-  }
+  const handleClick = () => setTimeout(() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' }), 1000)
 
   const rowStyle = {
     display: 'flex',
@@ -28,7 +24,7 @@ const Content = ({ title }) => {
 
   const button = (
     <div key='button' style={{ ...rowStyle }}>
-      <Button handleClick={handleClick}>View Project</Button>
+      <Button href={projectPage} handleClick={handleClick}>View Project</Button>
     </div>
   )
 

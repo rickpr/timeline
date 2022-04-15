@@ -20,12 +20,12 @@ export default (displayFor = 2000) => {
     typewriters.forEach(object => { object.typewriter = new Typewriter(object.component.ref.current) })
 
     let timeout = null
-    function typeCharacters () {
-      typewriters.forEach(({ string, typewriter }) => { typewriter.typeString(string).start() })
+    const typeCharacters = () => {
+      typewriters.forEach(({ string, typewriter }) => typewriter.typeString(string).start())
       timeout = setTimeout(deleteCharacters, delayAfterTyping)
     }
-    function deleteCharacters () {
-      typewriters.forEach(({ typewriter }) => { typewriter.deleteAll().start() })
+    const deleteCharacters = () => {
+      typewriters.forEach(({ typewriter }) => typewriter.deleteAll().start())
       timeout = setTimeout(typeCharacters, delayAfterDeletion)
     }
 

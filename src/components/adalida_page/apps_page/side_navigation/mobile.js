@@ -52,14 +52,14 @@ const Mobile = ({ links }) => {
   const navigationLinks = []
   Object.entries(links).forEach(
     ([title, ref], index) => {
-      const { primary } = Themes[title]
+      const { name, primary } = Themes[title]
       const number = String(index + 1).padStart(2, 0)
       navigationLinks.push(
         <NavigationLink
           key={`navigation-link-${number}`}
           number={number}
           click={() => ref.current?.scrollIntoView({ behavior: 'smooth' })}
-          title={title}
+          title={name}
           color={primary}
         />
       )

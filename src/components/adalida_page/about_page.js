@@ -1,13 +1,14 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect'
 
+import Button from './button'
 import Image from 'components/image'
 import useViewportHeight from 'hooks/use_viewport_height'
 
 import 'sass/adalida_page/index.scss'
 
-const SplashPage = React.forwardRef((props, ref) =>
-  <div className='about-container' style={{ minHeight: `${useViewportHeight()}px` }} ref={ref}>
+const AboutPage = () =>
+  <div className='about-container' style={{ minHeight: `${useViewportHeight()}px` }}>
     <div style={{ textAlign: 'center', fontSize: '10vmin', width: '100%' }}>
       <span style={{ color: '#60F11C' }}>Hello</span>
       <span style={{ color: '#FFFFFF' }}>, I&apos;m</span>
@@ -27,10 +28,18 @@ const SplashPage = React.forwardRef((props, ref) =>
           />}
         </span>
       </p>
+      <p>
+        I&apos;m an enthusastic and outgoing person who enjoys problem solving and coffee.
+      </p>
+      <p>
+        Please reach out if you’d like to have a cup of coffee online and chat.
+      </p>
     </div>
+    <Button style={{ backgroundColor: '#FF2079', color: 'white' }} href='mailto:adalida.baca@gmail.com'>
+      Contact Adalida
+    </Button>
   </div>
-)
 
-SplashPage.displayName = 'SplashPage'
+AboutPage.displayName = 'AboutPage'
 
-export default SplashPage
+export default AboutPage
