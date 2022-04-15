@@ -15,12 +15,14 @@ const AppsPage = () => {
   const isMobile = useIsMobile()
   const cyphRef = useRef()
   const zenoRef = useRef()
+  const HBOMaxRef = useRef()
   const splashPageRef = useRef()
 
   const navigationLinks = useMemo(() => {
     const links = {
       Cyph: cyphRef,
-      Zeno: zenoRef
+      Zeno: zenoRef,
+      HBOMax: HBOMaxRef
     }
     if (isMobile) links.Splash = splashPageRef
     return links
@@ -60,8 +62,7 @@ const AppsPage = () => {
             flexDirection: isMobile ? 'row' : 'column'
           }}
         >
-          <App key='cyph' ref={navigationLinks.Cyph} title='Cyph' />
-          <App key='zeno' ref={navigationLinks.Zeno} title='Zeno' />
+          {Object.entries(navigationLinks).map(([title, ref]) => <App key={title} ref={ref} title={title} />)}
           {isMobile && splashPage}
         </div>
         <SideNavigation links={navigationLinks} />

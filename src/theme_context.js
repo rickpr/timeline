@@ -23,7 +23,18 @@ const Themes = {
     background: '#ED6112',
     border: '#FFFFFF'
   },
-  Splash: { name: 'Hire Adi' }
+  Splash: { name: 'Hire Adi' },
+  HBOMax: {
+    name: 'HBOMax',
+    description: 'A fashion experience where you can shop for hours.',
+    projectPage: '/adalida/projects/hbo_max',
+    heroPhoto: 'images/cyph/title.png',
+
+    // Colors
+    primary: '#DB00FF',
+    background: 'linear-gradient(to bottom right, #05000F, #44156D)',
+    border: '#DB00FF'
+  }
 }
 
 const ThemeContext = React.createContext(Themes.Cyph)

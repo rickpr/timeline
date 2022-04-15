@@ -2,7 +2,6 @@ import React from 'react'
 import Typewriter from 'typewriter-effect'
 
 import useAnimateOnScroll from '../../hooks/use_animate_on_scroll'
-import RemoteTimeline from '../timeline/remote_timeline'
 import WorldClock from './world_clock'
 
 const RicardoPage = () => {
@@ -13,7 +12,7 @@ const RicardoPage = () => {
       <div style={{ minHeight: '20vh' }} />
       <WorldClock />
       <div style={{ minHeight: '20vh' }} />
-      <div className='wide-timeline' style={{ backdropFilter: 'blur(8px)' }}>
+      <div style={{ backdropFilter: 'blur(8px)', mixBlendMode: 'difference' }}>
         <div data-aos='fade-up'>
           <div style={{ width: '90%', margin: 'auto' }}>
             <h1 style={{ color: 'white' }}>
@@ -31,8 +30,6 @@ const RicardoPage = () => {
           </div>
         </div>
       </div>
-      <div style={{ minHeight: '30vh' }} />
-      <RemoteTimeline timelineId='1' />
     </>
   )
 }

@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-const Houndstooth = ({ containerRef, backgroundColor }) => {
-  const background = backgroundColor || '#FFFFFF'
-  const canvasRef = useRef(null)
+const Houndstooth = ({ backgroundColor, containerRef }) => {
+  const canvasRef = useRef()
   const canvas = <canvas ref={canvasRef} />
   const drawHoundstooth = id => {
     const fullWidth = containerRef.current.clientWidth
@@ -11,15 +10,15 @@ const Houndstooth = ({ containerRef, backgroundColor }) => {
 
     const setupCanvas = () => {
       const canvas = canvasRef.current
+      console.log(containerRef.current.clientHeight)
       canvas.width = fullWidth
       canvas.height = fullHeight
-      canvas.style['background-color'] = background
+      canvas.style['background-color'] = backgroundColor
     }
 
     const canvasContext = () => {
       const canvas = canvasRef.current
-      if (!canvas.getContext) return
-      return canvas.getContext('2d')
+      return canvas.getContext && canvas.getContext('2d')
     }
 
     const interpolateWaypoints = (vertices, totalPoints) => {
@@ -138,14 +137,14 @@ const Houndstooth = ({ containerRef, backgroundColor }) => {
 
     const styleCanvas = () => {
       const gradient = canvasContext().createLinearGradient(0, 0, fullWidth, fullHeight)
-      gradient.addColorStop(0, '#FF2079')
-      gradient.addColorStop(0.5, '#1A5AFF')
-      gradient.addColorStop(1, '#39FF14')
+      gradient.addColorStop(0, '#FFD700')
+      gradient.addColorStop(0.5, '#000000')
+      gradient.addColorStop(1, '#C0C0C0')
       canvasContext().fillStyle = gradient
       canvasContext().lineWidth = width
       canvasContext().strokeStyle = '#FFFFFF'
       canvasContext().lineCap = 'round'
-      canvasContext().filter = 'brightness(7)'
+      canvasContext().filter = 'brightness(10)'
     }
 
     const darkeningFill = async pathsWithOffsets => {
@@ -172,17 +171,12 @@ const Houndstooth = ({ containerRef, backgroundColor }) => {
     draw()
   }
 
-  useEffect(drawHoundstooth, [])
-  return (
-    <div className='memphis-pattern'>
-      {canvas}
-    </div>
-
-  )
+  useEffect(drawHoundstooth, [backgroundColor, containerRef, containerRef.current && containerRef.current.clientHeight])
+  return <div className='memphis-pattern'>{canvas}</div>
 }
 Houndstooth.propTypes = {
-  containerRef: PropTypes.shape({ current: PropTypes.node }),
-  backgroundColor: PropTypes.string
+  backgroundColor: PropTypes.string.isRequired,
+  containerRef: PropTypes.shape({ current: PropTypes.node })
 }
 
 export default Houndstooth

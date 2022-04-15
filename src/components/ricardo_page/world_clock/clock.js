@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 const Clock = ({ timeZone }) => {
-  const primary = '#39FF14'
-  const stroke = '#39FF14'
+  const primary = '#FFFFFF'
+  const stroke = '#FFFFFF'
   const gold = '#FFD700'
   const timeZoneFriendly = timeZone.split('/')[1].split('_').join(' ').toUpperCase()
   const getDate = () => {
@@ -103,7 +103,8 @@ const Clock = ({ timeZone }) => {
       width: '100%',
       textAlign: 'center',
       fontFamily: 'Montserrat',
-      background: 'linear-gradient(90deg, rgba(224,224,224,1) 0%, rgba(142,142,142,1) 100%)',
+      color: 'black',
+      background: 'white'
     }}>
       {timeZoneFriendly}
     </div>
