@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { navigate } from 'gatsby'
 
 import { Themes } from 'theme_context'
-
+import Button from '../button'
 import Image from 'components/image'
 
 const Content = ({ title }) => {
@@ -28,21 +28,7 @@ const Content = ({ title }) => {
 
   const button = (
     <div key='button' style={{ ...rowStyle }}>
-      <button
-        onClick={handleClick}
-        style={{
-          backgroundColor: '#FFFFFF',
-          borderRadius: '2vmin',
-          border: 'none',
-          fontSize: '3vmin',
-          lineHeight: 'normal',
-          marginTop: '1.5vmin',
-          padding: '1.5vmin',
-          pointerEvents: 'all'
-        }}
-      >
-        View Project
-      </button>
+      <Button handleClick={handleClick}>View Project</Button>
     </div>
   )
 

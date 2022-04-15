@@ -54,7 +54,7 @@ const VisualIdentity = () => {
           linear-gradient(to right, #C1C1C1 1px, transparent 1px),
           linear-gradient(to bottom, #C1C1C1 1px, transparent 1px)
         `,
-        alignItems: 'flex-end',
+        alignItems: 'flex-end'
       }}>
         <ScalableText text='A' color='#BB81EE' />
         <ScalableText text='b' color='none' customStyles={{ stroke: '#BB81EE', strokeWidth: '0.1px' }}/>

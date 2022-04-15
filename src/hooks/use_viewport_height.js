@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const useViewportHeight = () => {
-  const [viewportHeight, setViewportHeight] = useState(() => window.innerHeight)
+  const [viewportHeight, setViewportHeight] = useState()
 
   useEffect(() => {
     const updateDimensions = () => setViewportHeight(window.innerHeight)

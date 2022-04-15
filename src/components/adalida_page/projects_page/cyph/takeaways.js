@@ -14,9 +14,12 @@ const FinalThoughts = () => {
   const takeaways = (
     <div style={{ maxWidth: '80vw' }}>
       <p>
-        The goal for this project was to give voters a tool to vote for a representative best aligned with their
-        goals and interests.  I enjoyed designing a product from an idea with the aim of solving a person's problem or need. As a solo project I was able to create a product that was easy to use and intuitive.
-        I am thankful I had the opportunity to work on a project aimed at helping my community and I hope to work on more projects like this.
+        The goal for this project was to give voters a tool to vote for a representative best aligned with their goals
+        and interests.
+        I enjoyed designing a product from an idea with the aim of solving a person&apos;s problem or need.
+        As a solo project I was able to create a product that was easy to use and intuitive.
+        I am thankful I had the opportunity to work on a project aimed at helping my community and I hope to work on
+        more projects like this.
       </p>
     </div>
   )

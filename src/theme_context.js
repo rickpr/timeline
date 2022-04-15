@@ -19,21 +19,11 @@ const Themes = {
     heroPhoto: 'images/cyph/title.png',
 
     // Colors
-    primary: '#ED6112',
+    primary: '#FFFFFF',
     background: '#ED6112',
     border: '#FFFFFF'
   },
-  'Hire Adi': {
-    name: 'Hire Adi',
-    description: '',
-    projectPage: '/adalida/projects/cyph',
-    heroPhoto: 'images/cyph/title.png',
-
-    // Colors
-    primary: '#39FF14',
-    background: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)',
-    border: '#39FF14'
-  }
+  Splash: { name: 'Hire Adi' }
 }
 
 const ThemeContext = React.createContext(Themes.Cyph)
