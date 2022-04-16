@@ -16,19 +16,16 @@ const Content = ({ title }) => {
     justifyContent: 'center'
   }
 
-  const heroPicture = (
-    <div key='hero-picture' style={{ ...rowStyle, alignItems: 'start' }}>
-      <Image style={{ maxHeight: '50vh' }} path={heroPhoto} />
-    </div>
+  return (
+    <>
+      <div style={{ ...rowStyle, alignItems: 'start' }}>
+        <Image style={{ maxHeight: '80vh' }} path={heroPhoto} />
+      </div>
+      <div style={{ ...rowStyle }}>
+        <Button href={projectPage} handleClick={handleClick}>View Project</Button>
+      </div>
+    </>
   )
-
-  const button = (
-    <div key='button' style={{ ...rowStyle }}>
-      <Button href={projectPage} handleClick={handleClick}>View Project</Button>
-    </div>
-  )
-
-  return [heroPicture, button]
 }
 
 Content.propTypes = {

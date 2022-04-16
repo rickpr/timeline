@@ -49,6 +49,8 @@ const AppsPage = () => {
     return () => window.removeEventListener('scroll', updateClosestProject)
   }, [navigationLinks])
 
+  // No app for the splash page, but we want a nav link
+  const apps = Object.entries(navigationLinks).filter(([title, _]) => title !== 'Splash')
   return (
     <ThemeContext.Provider value={Themes[closestProject]}>
       <Layout>
@@ -62,7 +64,7 @@ const AppsPage = () => {
             flexDirection: isMobile ? 'row' : 'column'
           }}
         >
-          {Object.entries(navigationLinks).map(([title, ref]) => <App key={title} ref={ref} title={title} />)}
+          {apps.map(([title, ref]) => <App key={title} ref={ref} title={title} />)}
           {isMobile && splashPage}
         </div>
         <SideNavigation links={navigationLinks} />

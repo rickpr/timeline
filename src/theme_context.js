@@ -23,12 +23,22 @@ const Themes = {
     background: '#ED6112',
     border: '#FFFFFF'
   },
-  Splash: { name: 'Hire Adi' },
+  Splash: {
+    name: 'Hire Adi',
+    description: '',
+    heroPhoto: 'images/adalida_face.jpg',
+    projectPage: '/adalida/about',
+
+    // Colors
+    primary: '#39FF14',
+    background: '#000000',
+    border: '#39FF14'
+  },
   HBOMax: {
     name: 'HBOMax',
     description: 'Streaming fit for you.',
     projectPage: '/adalida/projects/hbo_max',
-    heroPhoto: 'images/hbo_max/1. Landing Pages.png',
+    heroPhoto: 'images/hbo_max/title.png',
 
     // Colors
     primary: '#DB00FF',
