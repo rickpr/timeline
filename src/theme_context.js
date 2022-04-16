@@ -28,7 +28,7 @@ const Themes = {
     name: 'HBOMax',
     description: 'Streaming fit for you.',
     projectPage: '/adalida/projects/hbo_max',
-    heroPhoto: 'images/cyph/title.png',
+    heroPhoto: 'images/hbo_max/1.Landing Pages.png',
 
     // Colors
     primary: '#DB00FF',
