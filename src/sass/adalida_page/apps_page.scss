@@ -1,5 +1,14 @@
-.centering {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+.apps-container {
+    // Hide Scrollbar
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+
+    scroll-snap-type: both mandatory;
+    overflow: auto;
+    display: flex;
+}
+
+// Hide scrollbar on Safari and Chrome
+.apps-container::-webkit-scrollbar {
+    display: none;
 }

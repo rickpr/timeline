@@ -17,6 +17,7 @@ const App = React.forwardRef(({ title }, ref) => {
     height,
     overflow: 'hidden',
     scrollSnapAlign: 'start',
+    scrollSnapStop: 'always',
     mixBlendMode: 'lighten',
     position: 'relative',
     zIndex: 2,

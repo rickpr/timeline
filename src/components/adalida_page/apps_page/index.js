@@ -11,6 +11,8 @@ import SplashPage from '../splash_page'
 import Layout from '../layout'
 import SideNavigation from './side_navigation'
 
+import 'sass/adalida_page/apps_page.scss'
+
 const AppsPage = () => {
   const isMobile = useIsMobile()
   const cyphRef = useRef()
@@ -55,14 +57,9 @@ const AppsPage = () => {
     <ThemeContext.Provider value={Themes[closestProject]}>
       <Layout>
         <div
+          className='apps-container'
           ref={scrollRef}
-          style={{
-            scrollSnapType: 'both mandatory',
-            overflow: 'auto',
-            height: useViewportHeight(),
-            display: 'flex',
-            flexDirection: isMobile ? 'row' : 'column'
-          }}
+          style={{ flexDirection: isMobile ? 'row' : 'column', height: useViewportHeight() }}
         >
           {apps.map(([title, ref]) => <App key={title} ref={ref} title={title} />)}
           {isMobile && splashPage}
