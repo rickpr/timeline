@@ -10,7 +10,6 @@ const Houndstooth = ({ backgroundColor, containerRef }) => {
 
     const setupCanvas = () => {
       const canvas = canvasRef.current
-      console.log(containerRef.current.clientHeight)
       canvas.width = fullWidth
       canvas.height = fullHeight
       canvas.style['background-color'] = backgroundColor
