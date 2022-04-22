@@ -27,7 +27,7 @@ const Ideate = () => {
     <Card title='// IDEATE'>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : '1fr max-content 1fr',
+        gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr 1fr',
         columnGap: '6%',
         width: '100%',
         ...centerStyles
