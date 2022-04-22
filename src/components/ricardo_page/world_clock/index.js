@@ -16,9 +16,9 @@ const WorldClock = () => {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(15em, 1fr))',
       width: '100%',
-      justifyItems: 'center', alignContent: 'center',
+      justifyItems: 'center',
+      alignContent: 'center',
       rowGap: '4em',
-      mixBlendMode: 'difference',
       backdropFilter: 'blur(8px)',
       padding: '1em 0'
     }}>

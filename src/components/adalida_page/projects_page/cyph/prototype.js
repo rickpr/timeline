@@ -22,7 +22,7 @@ const Prototype = () => {
 
   return (
     <Card title='// Prototype'>
-      <ImageWithText image='images/cyph/test.png' text={pictureCaption} />
+      <ImageWithText image='images/cyph/prototype.png' text={pictureCaption} />
     </Card>
   )
 }

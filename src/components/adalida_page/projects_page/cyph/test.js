@@ -24,7 +24,7 @@ const Test = () => {
   return (
     <Card title='// Test'>
       <ImageWithText
-        image='images/cyph/design_two.png'
+        image='images/cyph/test.png'
         text={pictureCaption}
       />
     </Card>

@@ -7,6 +7,8 @@ import WorldClock from './world_clock'
 const RicardoPage = () => {
   useAnimateOnScroll()
   const primary = '#39FF14'
+  const strings = ['software engineering', 'clean code', 'scalable systems', 'test-driven development']
+  const longestString = Math.max(...strings.map(string => string.length))
   return (
     <>
       <div style={{ minHeight: '20vh' }} />
@@ -17,15 +19,10 @@ const RicardoPage = () => {
           <div style={{ width: '90%', margin: 'auto' }}>
             <h1 style={{ color: 'white' }}>
               Welcome, I am Ricardo and I am passionate about&nbsp;
-              <span style={{ color: primary }}>
-                <Typewriter
-                  options={{
-                    strings: ['software engineering', 'clean code', 'scalable systems', 'test-driven development'],
-                    autoStart: true,
-                    loop: true
-                  }}
-                />
-              </span>.
+              <span style={{ color: primary, display: 'inline-block', minWidth: `${longestString}ch` }}>
+                <Typewriter options={{ autoStart: true, loop: true, strings }} />
+                <span style={{ color: 'white' }}>.</span>
+              </span>
             </h1>
           </div>
         </div>

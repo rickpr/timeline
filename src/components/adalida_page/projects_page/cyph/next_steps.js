@@ -36,7 +36,7 @@ const NextSteps = () => {
   return (
     <Card title='// Next Steps'>
       <ImageWithText
-        image='images/cyph/test_two.png'
+        image='images/cyph/next_steps.png'
         text={problem}
       />
     </Card>

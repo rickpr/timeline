@@ -22,7 +22,7 @@ const Define = () => {
   return (
     <Card title='// Define'>
       <ImageWithText
-        image='images/cyph/design.png'
+        image='images/cyph/define.png'
         text={pictureCaption}
         reversed={true}
       />

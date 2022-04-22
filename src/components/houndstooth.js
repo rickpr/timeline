@@ -143,20 +143,20 @@ const Houndstooth = ({ backgroundColor, containerRef }) => {
       canvasContext().lineWidth = width
       canvasContext().strokeStyle = '#FFFFFF'
       canvasContext().lineCap = 'round'
-      canvasContext().filter = 'brightness(10)'
+      canvasContext().filter = 'brightness(7)'
     }
 
     const darkeningFill = async pathsWithOffsets => {
       let brightness = 7
       while (brightness > 1) {
-        brightness -= 0.02
+        brightness -= 0.2
         canvasContext().filter = `brightness(${brightness})`
         await new Promise(resolve => window.requestAnimationFrame(resolve))
         pathsWithOffsets.forEach(fillPath)
       }
     }
 
-    const draw = async () => {
+    (async () => {
       setupCanvas()
       styleCanvas()
       const paths = [upperLeftPath, lowerLeftPath, upperRightPath]
@@ -165,12 +165,11 @@ const Houndstooth = ({ backgroundColor, containerRef }) => {
       const pathsWithOffsets = generateAllOffsets(paths, gridSize, scale)
       await Promise.all(pathsWithOffsets.map(path => animatePath(path)))
       darkeningFill(pathsWithOffsets)
-    }
-
-    draw()
+    })()
   }
 
-  useEffect(drawHoundstooth, [backgroundColor, containerRef, containerRef.current && containerRef.current.clientHeight])
+  const clientHeight = containerRef.current && containerRef.current.clientHeight
+  useEffect(drawHoundstooth, [backgroundColor, containerRef, clientHeight])
   return <div className='memphis-pattern'>{canvas}</div>
 }
 Houndstooth.propTypes = {

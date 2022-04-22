@@ -6,7 +6,7 @@ import ScalableText from 'components/scalable_text'
 
 import 'sass/adalida_page/cyph.scss'
 
-const FinalThoughts = () => {
+const Takeaways = () => {
   const centerStyles = {
     placeItems: 'center center'
   }
@@ -80,4 +80,4 @@ const FinalThoughts = () => {
   )
 }
 
-export default FinalThoughts
+export default Takeaways
