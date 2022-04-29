@@ -13,11 +13,11 @@ const SearchProcess = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text='Citizens United makes it difficult for people to see who is financially sponsoring their local representatives.'
+        text="Viewers could only search by title and were forced to type out the full title."
       />
       <PictureCaption
         heading='Solution'
-        text='Provide a fast and transparent way for people to learn about a politician, their political and voting history, and their donors.'
+        text='Provide different ways to browse titles and offer auto-complete and auto-suggestion options.'
       />
     </div>
   )

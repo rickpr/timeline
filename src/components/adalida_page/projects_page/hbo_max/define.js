@@ -11,7 +11,7 @@ const Define = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text="People found HBOMax's user interface difficult to navigate and un intuitive."
+        text="People found HBOMax's user interface difficult to navigate and non-intuitive."
       />
       <PictureCaption
         heading='Solution'
