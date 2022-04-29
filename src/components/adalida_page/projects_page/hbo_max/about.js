@@ -12,7 +12,7 @@ const About = () => {
       key={title}
       style={{ display: 'flex', flexDirection: 'column' }}
     >
-      <h2>{'//'} {title}</h2><ul><li>{content}</li></ul>
+      <h2>// {title}</h2><ul><li>{content}</li></ul>
     </div>
   )
 
@@ -44,40 +44,42 @@ const About = () => {
           {Object.entries(points).map(makeEntry)}
         </ResponsiveGrid>
       </div>
-      )
+    </div>
+  )
 
-      // 2.4 is a magic number, it should be 2 but probably also involves the font weight.
-      const titles = [
-      'Product Designer',
-      'User Testing',
-      'UX Researcher',
-      'Interaction Designer',
-      'UI Designer'
-      ]
+  // 2.4 is a magic number, it should be 2 but probably also involves the font weight.
+  const titles = [
+    'Product Designer',
+    'User Testing',
+    'UX Researcher',
+    'Interaction Designer',
+    'UI Designer'
+  ]
   const sizeOfLargestRole = Math.max(...titles.map(title => title.length)) + 3
-      const rolesBreakpoint = 1.2 * sizeOfLargestRole + 'ch'
-      const roles = (
-      <div style={{
-        gridColumn: '1 / -1',
-        width: '100%',
-        display: 'grid',
-        gridTemplateColumns: '1fr',
-        placeContent: 'space-between center',
-        placeItems: 'center center'
-      }}>
-        <h1>{'//'} ROLES</h1>
-        <ResponsiveGrid breakpoint={rolesBreakpoint}>
-          {titles.map(title => <li key={title}>{title}</li>)}
-        </ResponsiveGrid>
-      </div>
-      )
+  const rolesBreakpoint = 1.2 * sizeOfLargestRole + 'ch'
+  const roles = (
+    <div style={{
+      gridColumn: '1 / -1',
+      width: '100%',
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      placeContent: 'space-between center',
+      placeItems: 'center center'
+    }}
+    >
+      <h1>// ROLES</h1>
+      <ResponsiveGrid breakpoint={rolesBreakpoint}>
+        {titles.map(title => <li key={title}>{title}</li>)}
+      </ResponsiveGrid>
+    </div>
+  )
 
-      return (
-      <Card title='// ABOUT THE PROJECT'>
-        <ImageWithText image='images/hbo_max/about.png' text={text} />
-        {roles}
-      </Card>
-      )
+  return (
+    <Card title='// ABOUT THE PROJECT'>
+      <ImageWithText image='images/hbo_max/about.png' text={text} />
+      {roles}
+    </Card>
+  )
 }
 
-      export default About
+export default About
