@@ -18,7 +18,10 @@ export const ImageQuery = imagePath => {
   // Images will likely come in with a /images/...
   // The relativePath in the query does not start with /images or a slash.
   const desiredRelativePath = imagePath.replace(/^\/?(images)?\//, '')
-  return images.find(({ node: { relativePath } }) => relativePath === desiredRelativePath).node
+  const image = images.find(({ node: { relativePath } }) => relativePath === desiredRelativePath)
+  if (image) return image.node
+
+  throw new Error(`No image found for ${imagePath}`)
 }
 
 export default ImageQuery

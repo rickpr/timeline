@@ -2,7 +2,7 @@ import React from 'react'
 
 import Card from '../card'
 import PictureCaption from '../picture_caption'
-import ImageWithText from '../image_with_text'
+import MediaWithText from '../media_with_text'
 
 import 'sass/adalida_page/cyph.scss'
 
@@ -22,7 +22,7 @@ const Prototype = () => {
 
   return (
     <Card title='// Prototype'>
-      <ImageWithText image='images/cyph/prototype.png' text={pictureCaption} />
+      <MediaWithText media='images/cyph/prototype.png' text={pictureCaption} />
     </Card>
   )
 }

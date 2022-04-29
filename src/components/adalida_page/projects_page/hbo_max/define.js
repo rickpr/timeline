@@ -2,7 +2,7 @@ import React from 'react'
 
 import Card from '../card'
 import PictureCaption from '../picture_caption'
-import ImageWithText from '../image_with_text'
+import MediaWithText from '../media_with_text'
 
 import 'sass/adalida_page/cyph.scss'
 
@@ -21,8 +21,8 @@ const Define = () => {
   )
   return (
     <Card title='// Define'>
-      <ImageWithText
-        image='images/hbo_max/define.png'
+      <MediaWithText
+        media='images/hbo_max/define.png'
         text={pictureCaption}
         reversed={true}
       />

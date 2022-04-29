@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Card from '../card'
-import ImageWithText from '../image_with_text'
+import MediaWithText from '../media_with_text'
 import ResponsiveGrid from 'components/responsive_grid'
 
 import 'sass/adalida_page/cyph.scss'
@@ -78,7 +78,7 @@ const About = () => {
 
   return (
     <Card title='// ABOUT THE PROJECT'>
-      <ImageWithText image='images/cyph/summary.png' text={text} />
+      <MediaWithText media='images/cyph/summary.png' text={text} />
       {roles}
     </Card>
   )

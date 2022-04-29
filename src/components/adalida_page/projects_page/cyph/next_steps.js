@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Card from '../card'
-import ImageWithText from '../image_with_text'
+import MediaWithText from '../media_with_text'
 import PictureCaption from '../picture_caption'
 import ScalableText from 'components/scalable_text'
 
@@ -35,8 +35,8 @@ const NextSteps = () => {
 
   return (
     <Card title='// Next Steps'>
-      <ImageWithText
-        image='images/cyph/next_steps.png'
+      <MediaWithText
+        media='images/cyph/next_steps.png'
         text={problem}
       />
     </Card>

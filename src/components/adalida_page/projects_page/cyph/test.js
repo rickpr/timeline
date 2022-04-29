@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Card from '../card'
-import ImageWithText from '../image_with_text'
+import MediaWithText from '../media_with_text'
 import PictureCaption from '../picture_caption'
 
 import 'sass/adalida_page/cyph.scss'
@@ -23,8 +23,8 @@ const Test = () => {
 
   return (
     <Card title='// Test'>
-      <ImageWithText
-        image='images/cyph/test.png'
+      <MediaWithText
+        media='images/cyph/test.png'
         text={pictureCaption}
       />
     </Card>
