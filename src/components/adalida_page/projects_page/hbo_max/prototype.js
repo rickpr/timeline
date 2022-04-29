@@ -11,11 +11,11 @@ const Prototype = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text="People don't know who their elected officials are or how to connect with them."
+        text="People found HBOMax's collection small and had trouble viewing their entire title collection."
       />
       <PictureCaption
         heading='Solution'
-        text='Connect voters quickly with their local representatives and a transparent overview of their political, financial, and voting history.'
+        text="Provide an easy to navigate search option where viewers can see all titles in a A-Z format and allow them to filter their searches by genre, actor, or title name."
       />
     </div>
   )

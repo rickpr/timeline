@@ -11,11 +11,11 @@ const Define = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text='Citizens United makes it difficult for people to see who is financially sponsoring their local representatives.'
+        text="People found HBOMax's user interface difficult to navigate and un intuitive."
       />
       <PictureCaption
         heading='Solution'
-        text='Provide a fast and transparent way for people to learn about a politician, their political and voting history, and their donors.'
+        text="Design a navigation bar that allows users to easily navigate through the app's features."
       />
     </div>
   )
@@ -24,7 +24,7 @@ const Define = () => {
       <ImageWithText
         image='images/hbo_max/define.png'
         text={pictureCaption}
-        reversed={true}
+        reversed
       />
     </Card>
   )

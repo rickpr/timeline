@@ -20,7 +20,7 @@ const Ideate = () => {
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
-    <Image path='hbo_max/ideate.png' width='100%' />
+      <Image path='hbo_max/ideate.png' width='100%' />
     </div>
   )
   return (
@@ -36,22 +36,22 @@ const Ideate = () => {
         <div className='picture-caption'>
           <PictureCaption
             heading='Problem:'
-            text="Voters feel there is a lack of transparency and tracking regarding representative's voting history."
+            text="People had a difficult time rewinding and fastforwarding. There is a lack of options when skipping and the load time is slow."
           />
           <PictureCaption
             heading='Solution'
-            text="Connect voters with an up-to-date database of a representative's voting history."
+            text="Provide intervals for skipping options and pair with a developer to increase the load and speed time."
           />
         </div>
         {image}
         <div className='picture-caption'>
           <PictureCaption
             heading='Problem:'
-            text="People aren't familiar with representative's backgrounds or what committees they sit on."
+            text="People could not add or change captions while watching the film. Instead, viewers have to exit the viewing mode, add captions, then return to the viewing mode."
           />
           <PictureCaption
             heading='Goals'
-            text= "Provide up-to-date and background information on representative's positions during their political career."
+            text="Provide an option to add or change captions while in viewing mode."
           />
         </div>
       </div>
