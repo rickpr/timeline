@@ -18,9 +18,9 @@ const About = () => {
 
   const points = {
     PLATFORM: 'Mobile iOS',
-    INDUSTRY: 'Political Technology',
+    INDUSTRY: 'Video Streaming Service',
     LOCATION: 'San Francisco, CA',
-    DURATION: '2 months'
+    DURATION: '2 weeks'
   }
   // The length of the word plus the two slashes and space.
   const sizeOfLargestTitle = Math.max(...Object.keys(points).map(title => title.length)) + 3
@@ -37,6 +37,9 @@ const About = () => {
       <p>
         This project is a design challenge for myself to redesign the HBOMax app. I wanted to improve the overall user experience
         and solve some problems users were having.
+      </p>
+      <p>
+        <a href="https://www.figma.com/proto/aowqr8IIPac4jMYjLrOOyW/HBO-Challenge?page-id=0%3A1&node-id=138%3A193&viewport=303%2C48%2C0.13&scaling=scale-down&starting-point-node-id=138%3A193">Checkout the Prototype</a>
       </p>
 
       <div>
