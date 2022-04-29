@@ -3,7 +3,7 @@ import React from 'react'
 const Themes = {
   Cyph: {
     name: 'Cyph',
-    description: "Cyph is a mobile app designed for voters interested in learning about politician's financial donors and political history.",
+    description: "Cyph is designed for voters interested in learning about politician's financial donors and political history.",
     projectPage: '/adalida/projects/cyph',
     heroPhoto: 'images/cyph/title.png',
 

@@ -30,58 +30,54 @@ const About = () => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <p>
-        Cyph is a mobile app designed for voters who are interested in contributions and spending between elected
-        representatives and their donors.
+        HBOMax Redesign Challenge
 
-        Voters can scan a person or politician and Cyph will recognize who the representative is and provide information
-        on their political career and donor history.
       </p>
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
-        This project is a design challenge for myself to do something for social good.
-        I wanted to learn about and contribute to solving problems resulting in an increase in voter turnout for all
-        demographics and help voters vote for what is in <em>their</em> best interest.
+        This project is a design challenge for myself to redesign the HBOMax app. I wanted to improve the overall user experience
+        and solve some problems users were having.
       </p>
-      <p>“Politicians should wear sponsor jackets like NASCAR drivers, then we know who owns them”.</p>
-      <p> - Robin Williams </p>
-      <ResponsiveGrid breakpoint={breakpoint}>
-        {Object.entries(points).map(makeEntry)}
-      </ResponsiveGrid>
-    </div>
-  )
 
-  // 2.4 is a magic number, it should be 2 but probably also involves the font weight.
-  const titles = [
-    'Product Designer',
-    'User Testing',
-    'UX Researcher',
-    'Interaction Designer',
-    'UI Designer'
-  ]
+      <div>
+        <ResponsiveGrid breakpoint={breakpoint}>
+          {Object.entries(points).map(makeEntry)}
+        </ResponsiveGrid>
+      </div>
+      )
+
+      // 2.4 is a magic number, it should be 2 but probably also involves the font weight.
+      const titles = [
+      'Product Designer',
+      'User Testing',
+      'UX Researcher',
+      'Interaction Designer',
+      'UI Designer'
+      ]
   const sizeOfLargestRole = Math.max(...titles.map(title => title.length)) + 3
-  const rolesBreakpoint = 1.2 * sizeOfLargestRole + 'ch'
-  const roles = (
-    <div style={{
-      gridColumn: '1 / -1',
-      width: '100%',
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      placeContent: 'space-between center',
-      placeItems: 'center center'
-    }}>
-      <h1>{'//'} ROLES</h1>
-      <ResponsiveGrid breakpoint={rolesBreakpoint}>
-        {titles.map(title => <li key={title}>{title}</li>)}
-      </ResponsiveGrid>
-    </div>
-  )
+      const rolesBreakpoint = 1.2 * sizeOfLargestRole + 'ch'
+      const roles = (
+      <div style={{
+        gridColumn: '1 / -1',
+        width: '100%',
+        display: 'grid',
+        gridTemplateColumns: '1fr',
+        placeContent: 'space-between center',
+        placeItems: 'center center'
+      }}>
+        <h1>{'//'} ROLES</h1>
+        <ResponsiveGrid breakpoint={rolesBreakpoint}>
+          {titles.map(title => <li key={title}>{title}</li>)}
+        </ResponsiveGrid>
+      </div>
+      )
 
-  return (
-    <Card title='// ABOUT THE PROJECT'>
-      <ImageWithText image='images/hbo_max/about.png' text={text} />
-      {roles}
-    </Card>
-  )
+      return (
+      <Card title='// ABOUT THE PROJECT'>
+        <ImageWithText image='images/hbo_max/about.png' text={text} />
+        {roles}
+      </Card>
+      )
 }
 
-export default About
+      export default About
