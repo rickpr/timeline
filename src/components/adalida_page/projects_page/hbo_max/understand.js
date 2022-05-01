@@ -1,3 +1,15 @@
+import React from 'react'
+
+import Card from '../card'
+import SwiperCarousel from 'components/swiper_carousel'
+
+import 'sass/adalida_page/cyph.scss'
+
+const userPersonaOne = 'images/cyph/research/user_persona_one.png'
+const userPersonaTwo = 'images/cyph/research/user_persona_two.png'
+const informationArchitecture = 'images/cyph/research/information_architecture.png'
+const affinityDiagram = 'images/cyph/research/affinity_diagram.png'
+
 const Understand = () => {
   const centerStyles = {
     placeContent: 'space-between center',
