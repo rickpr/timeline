@@ -1,2 +1,2 @@
-import Prototype from '../cyph/prototype'
-export default Prototype
+import PrototypeOne from '../cyph/prototype_one'
+export default PrototypeOne

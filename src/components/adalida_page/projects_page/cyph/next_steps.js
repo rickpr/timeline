@@ -35,10 +35,7 @@ const NextSteps = () => {
 
   return (
     <Card title='// Next Steps'>
-      <MediaWithText
-        media='images/cyph/next_steps.png'
-        text={problem}
-      />
+      <MediaWithText media='images/cyph/next_steps.png' text={problem} />
     </Card>
   )
 }

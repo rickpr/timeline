@@ -1,2 +1,2 @@
-import Ideate from '../cyph/ideate'
-export default Ideate
+import IdeateOne from '../cyph/ideate_one'
+export default IdeateOne
