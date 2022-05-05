@@ -24,7 +24,6 @@ const Desktop = ({ title, click, number }) => {
   const textStyle = {
     color: '#FFFFFF',
     fontSize: active ? '3vw' : '2vw',
-    pointerEvents: 'none',
     whiteSpace: 'nowrap'
   }
 
@@ -58,7 +57,6 @@ const Desktop = ({ title, click, number }) => {
         columnGap: '1vmin',
         minHeight: '1.5rem',
         gridTemplateColumns: '1vw 1fr',
-        pointerEvents: 'none',
         ...transitionStyle
       }}
     >

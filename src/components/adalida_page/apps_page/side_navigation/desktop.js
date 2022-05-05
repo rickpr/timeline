@@ -7,7 +7,6 @@ import NavigationLink from './navigation_link'
 
 const Desktop = ({ links }) => {
   const styles = {
-    pointerEvents: 'none',
     position: 'fixed',
     display: 'grid',
     gridTemplateColumns: '1fr',
