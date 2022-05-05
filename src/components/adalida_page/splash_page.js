@@ -20,7 +20,7 @@ const SplashPage = React.forwardRef((props, ref) =>
         <span style={{ color: '#FF2079' }}>
           {<Typewriter
             options={{
-              strings: ['interaction design.', 'product design.', 'user experience design.'],
+              strings: ['product design.', 'interaction design.', 'user research.'],
               autoStart: true,
               loop: true
             }}
