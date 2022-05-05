@@ -17,7 +17,7 @@ const IdeateOne = () => {
       />
       <PictureCaption
         heading='Solution'
-        text='Connect voters quickly with their local representatives and a transparent overview of their political, financial, and voting history.'
+        text='Connect voters quickly with their local representatives and provide a transparent overview of their political, financial, and voting history.'
       />
     </div>
   )

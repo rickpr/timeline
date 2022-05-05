@@ -20,7 +20,7 @@ const PrototypeTwo = () => {
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
-    <Image path='cyph/prototype_two.png' width='100%' />
+      <Image path='cyph/prototype_two.png' width='100%' />
     </div>
   )
   return (
@@ -36,22 +36,22 @@ const PrototypeTwo = () => {
         <div className='picture-caption'>
           <PictureCaption
             heading='Problem:'
-            text="Voters feel there is a lack of transparency and tracking regarding representative's voting history."
+            text="People want to get involved, but are unsure where to find events that fit their interests and views."
           />
           <PictureCaption
             heading='Solution'
-            text="Connect voters with an up-to-date database of a representative's voting history."
+            text="Provide a list of upcoming events, which can be filtered by interests like political party, issue, and distance."
           />
         </div>
         {image}
         <div className='picture-caption'>
           <PictureCaption
             heading='Problem:'
-            text="People aren't familiar with representative's backgrounds or what committees they sit on."
+            text="People want to vote more in local elections, but have trouble remembering voting dates."
           />
           <PictureCaption
             heading='Goals'
-            text= "Provide up-to-date and background information on representative's positions during their political career."
+            text="Provide reminders of upcoming voting events. Users can set reminders for representatives or events they want to support."
           />
         </div>
       </div>
