@@ -32,20 +32,21 @@ const About = () => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <p>
-        Cyph is a mobile app designed for voters who are interested in contributions and spending between elected
-        representatives and their donors.
-
-        Voters can scan a person or politician and Cyph will recognize who the representative is and provide information
-        on their political career and donor history.
+        ZENO is a luxury e-commerce app designed for shoppers who enjoy luxury brands created by custom designers.
       </p>
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
-        This project is a design challenge for myself to do something for social good.
-        I wanted to learn about and contribute to solving problems resulting in an increase in voter turnout for all
-        demographics and help voters vote for what is in <em>their</em> best interest.
+        This project is a design challenge for myself to create a Hi-Fidelity prototype in Figma. I wanted to challenge myself to hyper focus on the interaction design between frames and how it feels for the user.
       </p>
-      <p>“Politicians should wear sponsor jackets like NASCAR drivers, then we know who owns them”.</p>
-      <p> - Robin Williams </p>
+      <p>
+        <a
+          href='https://www.figma.com/proto/rH1irMpGUVzh7ubhgShuOU/Animation--Zeno-Website?page-id=0%3A1&node-id=338%3A1006&viewport=303%2C48%2C0.18&scaling=scale-down&starting-point-node-id=338%3A1006'
+          rel='noreferrer'
+          target='_blank'
+        >
+          Interact with the prototype, but please come back.
+        </a>
+      </p>
       <ResponsiveGrid breakpoint={breakpoint}>
         {Object.entries(points).map(makeEntry)}
       </ResponsiveGrid>

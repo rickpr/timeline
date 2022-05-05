@@ -11,11 +11,11 @@ const Test = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text="People don't know who their elected officials are or how to connect with them."
+        text="People are interested in learning about trending or popular representatives, but don't know which area's they represent"
       />
       <PictureCaption
         heading='Solution'
-        text='Connect voters quickly with their local representatives and a transparent overview of their political, financial, and voting history.'
+        text='Provide a visual map of the district and state where an elected official represents .'
       />
     </div>
   )

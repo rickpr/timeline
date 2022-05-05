@@ -44,6 +44,16 @@ const About = () => {
       </p>
       <p>“Politicians should wear sponsor jackets like NASCAR drivers, then we know who owns them”.</p>
       <p> - Robin Williams </p>
+      <p>
+        <a
+          href='https://www.figma.com/proto/XpElv0YPDIcTaVNFt6UTMh/UI-%2B-Prototyping----Cyph-Mobile?page-id=2%3A2&node-id=722%3A6109&viewport=303%2C48%2C0.04&scaling=scale-down&starting-point-node-id=722%3A6109&show-proto-sidebar=1'
+          rel='noreferrer'
+          target='_blank'
+        >
+          Interact with the prototype, but please come back.
+        </a>
+      </p>
+
       <ResponsiveGrid breakpoint={breakpoint}>
         {Object.entries(points).map(makeEntry)}
       </ResponsiveGrid>

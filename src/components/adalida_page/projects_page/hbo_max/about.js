@@ -44,10 +44,9 @@ const About = () => {
           rel='noreferrer'
           target='_blank'
         >
-          Interact with the prototype, but please come back!
+          Interact with the prototype, but please come back.
         </a>
       </p>
-
       <div>
         <ResponsiveGrid breakpoint={breakpoint}>
           {Object.entries(points).map(makeEntry)}
