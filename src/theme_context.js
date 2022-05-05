@@ -16,7 +16,7 @@ const Themes = {
     name: 'Zeno',
     description: 'A luxury e-commerce experience.',
     projectPage: '/adalida/projects/zeno',
-    heroPhoto: 'images/cyph/title.png',
+    heroPhoto: 'images/zeno/title.png',
 
     // Colors
     primary: '#FFFFFF',

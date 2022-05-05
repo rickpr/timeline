@@ -4,38 +4,35 @@ import PropTypes from 'prop-types'
 import Image from 'components/image'
 
 const MediaWithText = ({ media, text, reversed = false }) => {
+  const style = { minWidth: '50ch', maxHeight: '82vh' }
+  const objectPosition = reversed ? '0' : '100%'
   const makeMediaTag = () => {
-    if (media.endsWith('.png')) return <Image path={media} style={{ width: '100%' }} imgStyle={{ width: '100%' }} />
-    if (media.endsWith('.mp4')) return (
-      <video src={media} autoPlay loop muted playsInline style={{ margin: '0 auto', width: '100%' }} />
-    )
-    if (media.endsWith('.gif')) return <img src={media} type='video/mp4' autoPlay style={{ margin: '0 auto' }} />
+    if (media.endsWith('.png')) {
+      return <Image path={media} style={style} imgStyle={{ objectPosition }} />
+    }
+    if (media.endsWith('.mp4')) {
+      return <video src={media} autoPlay loop muted playsInline style={{ height: '82vh' }} />
+    }
+    if (media.endsWith('.gif')) {
+      return <img alt='' src={media} type='video/mp4' autoPlay style={{ height: '82vh' }} />
+    }
 
     throw new Error(`Could not identify type of media ${media}`)
   }
   const mediaTag = makeMediaTag()
+  const mediaPlaceContent = reversed ? 'flex-start' : 'flex-end'
+  const flex = '2 0 49%'
   const imageTag = (
-    <div
-      key='image'
-      style={{
-        display: 'flex',
-        flexBasis: '63%',
-        flexGrow: 2,
-        placeItems: 'center center'
-      }}
-    >
+    <div key='image' style={{ display: 'flex', flex, flexShrink: 0, gridArea: 'image', placeContent: mediaPlaceContent, placeItems: 'center' }}>
       {mediaTag}
     </div>
   )
+  const textPlaceContent = reversed ? 'flex-end' : 'flex-start'
+  const textTag = <div key='text' style={{ display: 'flex', flex, placeContent: textPlaceContent }}>{text}</div>
 
-  const textTag = (
-    <div key='text' style={{ flexBasis: '31%', flexGrow: 4, flexShrink: 1 }}>
-      {text}
-    </div>
-  )
-
+  const flexWrap = reversed ? 'wrap' : 'wrap-reverse'
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap-reverse', placeItems: 'center', gap: '6%' }}>
+    <div style={{ display: 'flex', flexWrap, gap: '2%' }}>
       {reversed ? [textTag, imageTag] : [imageTag, textTag]}
     </div>
   )

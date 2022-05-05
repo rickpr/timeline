@@ -11,7 +11,7 @@ import 'sass/adalida_page/cyph.scss'
 
 const NextSteps = () => {
   const problem = (
-    <div className='picture-caption' style={{ width: 'min-content' }}>
+    <div className='picture-caption'>
       <PictureCaption
         heading={
           <ScalableText

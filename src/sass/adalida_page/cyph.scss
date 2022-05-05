@@ -15,5 +15,6 @@ li {
 .picture-caption {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1em;
 }
