@@ -30,6 +30,11 @@ $theme-colors: (
 
 
 @font-face {
+  font-family: 'Bodoni';
+  src: local('Bodoni'), url(../fonts/Bodoni.ttf);
+}
+
+@font-face {
   font-family: 'Futura';
   src: local('Futura'), url(../fonts/Futura.ttf);
 }

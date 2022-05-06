@@ -33,8 +33,8 @@ export default (displayFor = 2000) => {
     return () => clearTimeout(timeout)
   }, [displayFor, typewriters])
 
-  return ({ string }) => {
-    const component = <div key={string} ref={React.createRef()} style={{ whiteSpace: 'nowrap' }} />
+  return ({ string, styles }) => {
+    const component = <div key={string} ref={React.createRef()} style={{ whiteSpace: 'nowrap', ...styles }} />
     typewriters.push({ component, string })
     return component
   }
