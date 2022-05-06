@@ -54,6 +54,7 @@ const Takeaways = () => {
           <p className='garamond'>
             I create from mobile first because it is easier to design from small to big screens.
           </p>
+        </p>
       </div>
     </ResponsiveGrid>
   )
