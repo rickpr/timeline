@@ -31,7 +31,7 @@ const Header = () => {
           }}
         >
           <div>
-            <Link to='/adalida' style={linkStyle}>
+            <Link to='/adalida/apps' style={linkStyle}>
               ADALIDA
             </Link>
           </div>
