@@ -18,24 +18,16 @@ const Understand = () => {
   const text = (
     <div style={{ columnWidth: '80ch', width: '100%' }}>
       <p>
-        My research focused on how voting works in the United States,
-        why people don’t vote, what information is useful to voters,
-        and why voting is important.
+        My research demographic was women who enjoy shopping luxury brands.
       </p>
 
       <p>
-        I conducted phone interviews and began empathizing with voters by
-        conducting phone interviews and creating user personas.
+        I conducted phone interviews and built empathy maps to learn about what people liked when online shopping.
       </p>
       <p>
-        After, I created an affinity diagram and conducted a competitive audit where I learned about useful
-        data sources posted publicly available for use like the Federal
-        Election Committee (FEC) website and common pain points for voters.
+        After, I created my information architecture and began designing.
       </p>
 
-      <p>
-        This is also where I began creating my information architecture and process flow.
-      </p>
     </div>
   )
   const carousel = <SwiperCarousel images={[userPersonaOne, userPersonaTwo, informationArchitecture, affinityDiagram]} />

@@ -31,33 +31,29 @@ const Takeaways = () => {
   const thoughts = (
     <ResponsiveGrid breakpoint='30ch' customStyles={{ columnGap: '6%', marginTop: '2em' }}>
       <div>
-        <ScalableText text='Data in Design' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <ScalableText text='User Research' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          I learned how to leverage data as a resource for developing an information architecture and process flows.
+          I focused on my user research to drive to my designs which increased the speed of my designs. I understood what key features the user needed and the design came organically.
         </p>
       </div>
       <div>
-        <ScalableText text='Design Systems' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <ScalableText text='Teamwork' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          I learned how to create a design system for consistent branding throughout my project.
+          I focused on easing the pain for the users when forwarding or rewinding, but to fully fix the problem, I would need to pair with an engineer to improve the performance optimization.
         </p>
       </div>
       <div>
-        <ScalableText text='User Testing' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <ScalableText text='Auto Layout' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          I learned that I can bias the results of my own project by not enough user testing and usability studies.
-        </p>
-      </div>
-      <div>
-        <ScalableText text='Team vs. Self' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
-        <hr />
-        <p className='garamond'>
-          Self projects are great, but working with a team of developers and stakeholders,
-          can elevate designs and the user&apos;s experience.
-        </p>
+          I learned how to set up my designs using components and auto layout. This is helpful for prototyping, design iteration, and responsive web design.
+          <ScalableText text='Responsive Design' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+          <hr />
+          <p className='garamond'>
+            I create from mobile first because it is easier to design from small to big screens.
+          </p>
       </div>
     </ResponsiveGrid>
   )

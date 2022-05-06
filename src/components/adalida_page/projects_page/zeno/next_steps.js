@@ -13,7 +13,7 @@ const NextSteps = () => {
       <PictureCaption
         heading={
           <ScalableText
-            text='Develop Influence Experience'
+            text='Develop Highlight Sections'
             color='#000000'
             customStyles={{
               fontSize: 'initial',
@@ -24,11 +24,11 @@ const NextSteps = () => {
             viewBoxWidthMultiplier={8}
           />
         }
-        text='Design an experience where users can scan products or company logos and learn about politicians they donate to.'
+        text='Expand the design to add different highlight sections like sales, collections, new releases.'
       />
       <PictureCaption
-        heading='User Testing'
-        text='Conduct in-person usability studies.'
+        heading='Prototyping'
+        text='Prototype a logo animation for loading.'
       />
     </div>
   )

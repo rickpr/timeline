@@ -13,11 +13,11 @@ const Prototype = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text="People don't know who their elected officials are or how to connect with them."
+        text="People want to know when their packages are going to arrive."
       />
       <PictureCaption
         heading='Solution'
-        text='Connect voters quickly with their local representatives and a transparent overview of their political, financial, and voting history.'
+        text='Provide a delivery date and time after purchase, so they know when to expect their package.'
       />
     </div>
   )

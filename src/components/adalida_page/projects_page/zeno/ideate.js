@@ -20,7 +20,7 @@ const Ideate = () => {
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
-    <Image path='zeno/ideate.png' width='100%' />
+      <Image path='zeno/ideate.png' width='100%' />
     </div>
   )
   return (
@@ -36,22 +36,22 @@ const Ideate = () => {
         <div className='picture-caption'>
           <PictureCaption
             heading='Problem:'
-            text="Voters feel there is a lack of transparency and tracking regarding representative's voting history."
+            text="People want a fast and speedy checkout."
           />
           <PictureCaption
             heading='Solution'
-            text="Connect voters with an up-to-date database of a representative's voting history."
+            text="Create a fun and speedy checkout."
           />
         </div>
         {image}
         <div className='picture-caption'>
           <PictureCaption
             heading='Problem:'
-            text="People aren't familiar with representative's backgrounds or what committees they sit on."
+            text="People want to see how long it will take to checkout."
           />
           <PictureCaption
             heading='Goals'
-            text= "Provide up-to-date and background information on representative's positions during their political career."
+            text="Provide a progress bar of the step they are on and how many steps are left."
           />
         </div>
       </div>
