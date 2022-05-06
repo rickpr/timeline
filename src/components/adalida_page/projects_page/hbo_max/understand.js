@@ -5,10 +5,9 @@ import SwiperCarousel from 'components/swiper_carousel'
 
 import 'sass/adalida_page/cyph.scss'
 
-const userPersonaOne = 'images/cyph/research/user_persona_one.png'
-const userPersonaTwo = 'images/cyph/research/user_persona_two.png'
-const informationArchitecture = 'images/cyph/research/information_architecture.png'
-const affinityDiagram = 'images/cyph/research/affinity_diagram.png'
+const userPersonaOne = 'images/hbo_max/research/user_persona_one.png'
+const userPersonaTwo = 'images/hbo_max/research/user_persona_two.png'
+const informationArchitecture = 'images/hbo_max/research/information_architecture.png'
 
 const Understand = () => {
   const centerStyles = {
@@ -34,7 +33,7 @@ const Understand = () => {
       </p>
     </div>
   )
-  const carousel = <SwiperCarousel images={[userPersonaOne, userPersonaTwo, informationArchitecture, affinityDiagram]} />
+  const carousel = <SwiperCarousel images={[userPersonaOne, userPersonaTwo, informationArchitecture]} />
   const style = {
     display: 'grid',
     gridTemplateColumns: '1fr',
