@@ -13,11 +13,11 @@ const Define = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text='Citizens United makes it difficult for people to see who is financially sponsoring their local representatives.'
+        text='Users are interested in shopping the latest trends by top designers.'
       />
       <PictureCaption
         heading='Solution'
-        text='Provide a fast and transparent way for people to learn about a politician, their political and voting history, and their donors.'
+        text="Design a section which highlights the newest designer's trends."
       />
     </div>
   )
