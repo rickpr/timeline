@@ -1,60 +1,30 @@
 import React from 'react'
 
 import Card from '../card'
-import Image from 'components/image'
 import PictureCaption from '../picture_caption'
+import MediaWithText from '../media_with_text'
 
-import useIsMobile from 'hooks/use_is_mobile'
+import prototype from 'videos/zeno/prototype.mp4'
 
 import 'sass/adalida_page/cyph.scss'
 
 const Prototype = () => {
-  const isMobile = useIsMobile(1200)
-  const centerStyles = {
-    placeItems: 'center center'
-  }
-  const image = (
-    <div style={{
-      width: '100%',
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      ...centerStyles
-    }}>
-    <Image path='zeno/prototype.png' width='100%' />
+  const pictureCaption = (
+    <div className='picture-caption'>
+      <PictureCaption
+        heading='Problem'
+        text="People don't know who their elected officials are or how to connect with them."
+      />
+      <PictureCaption
+        heading='Solution'
+        text='Connect voters quickly with their local representatives and a transparent overview of their political, financial, and voting history.'
+      />
     </div>
   )
+
   return (
     <Card title='// Prototype'>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr 1fr',
-        columnGap: '6%',
-        width: '100%',
-        ...centerStyles
-      }}>
-
-        <div className='picture-caption'>
-          <PictureCaption
-            heading='Problem:'
-            text="Voters feel there is a lack of transparency and tracking regarding representative's voting history."
-          />
-          <PictureCaption
-            heading='Solution'
-            text="Connect voters with an up-to-date database of a representative's voting history."
-          />
-        </div>
-        {image}
-        <div className='picture-caption'>
-          <PictureCaption
-            heading='Problem:'
-            text="People aren't familiar with representative's backgrounds or what committees they sit on."
-          />
-          <PictureCaption
-            heading='Goals'
-            text= "Provide up-to-date and background information on representative's positions during their political career."
-          />
-        </div>
-      </div>
+      <MediaWithText media={prototype} text={pictureCaption} />
     </Card>
   )
 }

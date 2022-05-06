@@ -19,7 +19,7 @@ const Themes = {
     heroPhoto: 'images/zeno/title.png',
 
     // Colors
-    primary: '#FFFFFF',
+    primary: '#ED6112',
     background: '#ED6112',
     border: '#FFFFFF'
   },

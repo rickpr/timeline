@@ -4,8 +4,6 @@ import Card from '../card'
 import PictureCaption from '../picture_caption'
 import MediaWithText from '../media_with_text'
 
-import test from 'videos/zeno/test.mp4'
-
 import 'sass/adalida_page/cyph.scss'
 
 const Test = () => {
@@ -24,7 +22,7 @@ const Test = () => {
 
   return (
     <Card title='// Test'>
-      <MediaWithText media={test} text={pictureCaption} />
+      <MediaWithText media='images/zeno/test.png' text={pictureCaption} />
     </Card>
   )
 }

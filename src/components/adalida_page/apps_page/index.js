@@ -47,7 +47,6 @@ const AppsPage = () => {
       if (closestProject === 'Splash') setTimeout(() => navigate('/adalida/about'), 500)
     }
     scrollRef.current.addEventListener('scroll', updateClosestProject)
-    updateClosestProject()
     return () => window.removeEventListener('scroll', updateClosestProject)
   }, [navigationLinks])
 
