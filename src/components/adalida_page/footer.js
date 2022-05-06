@@ -5,6 +5,8 @@ import { ThemeContext } from 'theme_context'
 
 import 'sass/adalida_page/footer.scss'
 
+import adalidaResume from 'documents/adalida_resume.pdf'
+
 const Footer = () => {
   const borderColor = useContext(ThemeContext).border || '#FFFFFF'
   const borderStyle = `0.25vh solid ${borderColor}`
@@ -28,7 +30,9 @@ const Footer = () => {
             margin: '0 auto'
           }}
         >
-          <a href='#' style={linkStyle}><IconFileInfo height={iconHeight}/></a>
+          <a href={adalidaResume} style={linkStyle} target='_blank' rel='noreferrer'>
+            <IconFileInfo height={iconHeight}/>
+          </a>
           <a
             href='https://dribbble.com/adalida-baca'
             style={linkStyle}
