@@ -11,11 +11,11 @@ const Test = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem:'
-        text='Voters find it difficult to get involved in local politics.'
+        text='Users stream from several platforms.'
       />
       <PictureCaption
         heading='Solution'
-        text='Cyph provides information on upcoming events and updates for legal, in-person and virtual community events. Voters are suggested events based on real time or location (depending on preferences).'
+        text='Design bottom up or mobile first to ensure the best user-experience. Also, utilize components during the design phase.s'
       />
     </div>
 

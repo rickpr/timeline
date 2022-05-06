@@ -14,12 +14,9 @@ const Takeaways = () => {
   const takeaways = (
     <div style={{ maxWidth: '80vw' }}>
       <p>
-        The goal for this project was to give voters a tool to vote for a representative best aligned with their goals
-        and interests.
-        I enjoyed designing a product from an idea with the aim of solving a person&apos;s problem or need.
-        As a solo project I was able to create a product that was easy to use and intuitive.
-        I am thankful I had the opportunity to work on a project aimed at helping my community and I hope to work on
-        more projects like this.
+        The goal for this project was to improve the user experience and design around major pain points. I worked towards that goal by conducting user research from my close network and by utilizing online forums for helpful feedback.
+        I enjoyed designing a streaming service product and using online comments as a way to conduct user research.
+        I also enjoyed working on a product that was user-friendly and for fun and entertainment.
       </p>
     </div>
   )
@@ -38,7 +35,7 @@ const Takeaways = () => {
         </p>
       </div>
       <div>
-        <ScalableText text='Teamwork' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <ScalableText text='Performance' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
           I focused on easing the pain for the users when forwarding or rewinding, but to fully fix the problem, I would need to pair with an engineer to improve the performance optimization.
@@ -49,11 +46,6 @@ const Takeaways = () => {
         <hr />
         <p className='garamond'>
           I learned how to set up my designs using components and auto layout. This is helpful for prototyping, design iteration, and responsive web design.
-          <ScalableText text='Responsive Design' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
-          <hr />
-          <p className='garamond'>
-            I create from mobile first because it is easier to design from small to big screens.
-          </p>
         </p>
       </div>
     </ResponsiveGrid>
