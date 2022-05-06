@@ -29,7 +29,7 @@ const Takeaways = () => {
         <ScalableText text='Smart Animation' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          I learned how to create the animations in my prototype that I wanted while using Figma's prototype and smart animate features.
+          I learned how to create the animations in my prototype that I wanted while using Figma's prototype and smart animate features. I also learned how to use GIF's in Figma.
         </p>
       </div>
       <div>
