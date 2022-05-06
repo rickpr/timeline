@@ -12,11 +12,11 @@ const ContinueWatching = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text="People don't know who their elected officials are or how to connect with them."
+        text="People want to view more content about the making of the film or show."
       />
       <PictureCaption
         heading='Solution'
-        text='Connect voters quickly with their local representatives and a transparent overview of their political, financial, and voting history.'
+        text='Provide information on the actors, directors, deleted scenes, trailers, etc.'
       />
     </div>
   )
