@@ -24,8 +24,7 @@ const Understand = () => {
       </p>
 
       <p>
-        I conducted phone interviews and began empathizing with voters by
-        conducting phone interviews and creating user personas.
+        I conducted phone interviews and began empathizing with voters by creating user personas.
       </p>
       <p>
         After, I created an affinity diagram and conducted a competitive audit where I learned about useful
@@ -34,7 +33,7 @@ const Understand = () => {
       </p>
 
       <p>
-        This is also where I began creating my information architecture and process flow.
+        This is also where I began creating my information architecture.
       </p>
     </div>
   )

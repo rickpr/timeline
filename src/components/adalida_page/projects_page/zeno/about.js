@@ -38,15 +38,7 @@ const About = () => {
       <p>
         This project is a design challenge for myself to create a hi-fidelity prototype in Figma. I wanted to challenge myself to focus on user interface and the interaction design between frames.
       </p>
-      <p>
-        <a
-          href='https://www.figma.com/proto/rH1irMpGUVzh7ubhgShuOU/Animation--Zeno-Website?page-id=0%3A1&node-id=338%3A1006&viewport=303%2C48%2C0.18&scaling=scale-down&starting-point-node-id=338%3A1006'
-          rel='noreferrer'
-          target='_blank'
-        >
-          Interact with the prototype, but please come back.
-        </a>
-      </p>
+
       <ResponsiveGrid breakpoint={breakpoint}>
         {Object.entries(points).map(makeEntry)}
       </ResponsiveGrid>

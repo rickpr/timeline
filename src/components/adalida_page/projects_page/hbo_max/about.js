@@ -38,15 +38,7 @@ const About = () => {
         This project is a design challenge for myself to redesign the HBOMax app. I wanted to improve the overall user experience
         and solve some problems users were having.
       </p>
-      <p>
-        <a
-          href='https://www.figma.com/proto/aowqr8IIPac4jMYjLrOOyW/HBO-Challenge?page-id=0%3A1&node-id=138%3A193&viewport=303%2C48%2C0.13&scaling=scale-down&starting-point-node-id=138%3A193'
-          rel='noreferrer'
-          target='_blank'
-        >
-          Interact with the prototype, but please come back.
-        </a>
-      </p>
+
       <div>
         <ResponsiveGrid breakpoint={breakpoint}>
           {Object.entries(points).map(makeEntry)}
