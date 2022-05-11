@@ -9,7 +9,7 @@ import Ideate from './ideate'
 import Prototype from './prototype'
 import Test from './test'
 import NextSteps from './next_steps'
-import VisualIdentity from './visual_identity'
+import VisualIdentity from '../visual_identity'
 import Takeaways from './takeaways'
 
 const Zeno = () =>
@@ -22,7 +22,17 @@ const Zeno = () =>
     <Prototype />
     <Test />
     <NextSteps />
-    <VisualIdentity />
+    <VisualIdentity
+      colors={{
+        primary: '#ED6112',
+        secondary: '#424242',
+        tertiary: '#212121',
+        'support-one': '#C4C4C4',
+        'support-two': '#FFFFFF',
+        'support-three': '#BDBDBD'
+      }}
+      fontFamily='Bodoni'
+    />
     <Takeaways />
   </div>
 

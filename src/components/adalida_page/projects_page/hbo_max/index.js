@@ -10,7 +10,7 @@ import Prototype from './prototype'
 import SearchProcess from './search_process'
 import Test from './test'
 import NextSteps from './next_steps'
-import VisualIdentity from './visual_identity'
+import VisualIdentity from '../visual_identity'
 import Takeaways from './takeaways'
 
 const Zeno = () =>
@@ -25,7 +25,17 @@ const Zeno = () =>
     <SearchProcess />
     <Test />
     <NextSteps />
-    <VisualIdentity />
+    <VisualIdentity
+      colors={{
+        primary: '#DB00FF',
+        secondary: '#44156D',
+        tertiary: '#2AE029',
+        'support-one': '#15000F',
+        'support-two': '#BDBDBD',
+        'support-three': '#E0E0E0'
+      }}
+      fontFamily='Inter'
+    />
     <Takeaways />
   </div>
 

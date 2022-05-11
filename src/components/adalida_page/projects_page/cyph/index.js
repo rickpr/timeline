@@ -10,7 +10,7 @@ import Test from './test'
 import IdeateTwo from './ideate_two'
 import PrototypeTwo from './prototype_two'
 import NextSteps from './next_steps'
-import VisualIdentity from './visual_identity'
+import VisualIdentity from '../visual_identity'
 import Takeaways from './takeaways'
 
 const Cyph = () =>
@@ -25,7 +25,17 @@ const Cyph = () =>
     <IdeateTwo />
     <PrototypeTwo />
     <NextSteps />
-    <VisualIdentity />
+    <VisualIdentity
+      colors={{
+        primary: '#000000',
+        secondary: '#4A00E0',
+        tertiary: '#8E2DE2',
+        'support-one': '#72787E',
+        'support-two': '#FFFFFF',
+        'support-three': '#C7C6C4'
+      }}
+      fontFamily='Inconsolata'
+    />
     <Takeaways />
   </div>
 

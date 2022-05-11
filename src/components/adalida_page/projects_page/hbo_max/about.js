@@ -60,6 +60,7 @@ const About = () => {
   const roles = (
     <div style={{
       gridColumn: '1 / -1',
+      marginTop: '1.5em',
       width: '100%',
       display: 'grid',
       gridTemplateColumns: '1fr',
