@@ -36,7 +36,7 @@ const About = () => {
       </p>
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
-        This project is a design challenge for myself to create a hi-fidelity prototype in Figma. I wanted to challenge myself to focus on user interface and the interaction design between frames.
+        This project is a design challenge for myself to create a hi-fidelity prototype in Figma. I challenged myself to focus on a user interface and the interaction design between frames.
       </p>
 
       <ResponsiveGrid breakpoint={breakpoint}>

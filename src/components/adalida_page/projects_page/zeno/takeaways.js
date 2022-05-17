@@ -14,7 +14,7 @@ const Takeaways = () => {
   const takeaways = (
     <div style={{ maxWidth: '80vw' }}>
       <p>
-        The goal for this project was to design and prototype an e-commerce purchasing experience. In order for the experience to feel enjoyable, I need to focus on prototyping and animation for this project. I enjoyed challenging myself to learn small animations and Figma's prototyping features.
+        The goal for this project was to design and prototype an e-commerce purchasing experience. In order for the experience to feel enjoyable and seamless, I needed to focus on prototyping and interaction design for this project. My information architecture helped me organize my thoughts and keep track of where interactions will be needed. Overall, this project was fun to work on and helps women enjoy their shopping experience.
       </p>
     </div>
   )
@@ -26,24 +26,24 @@ const Takeaways = () => {
   const thoughts = (
     <ResponsiveGrid breakpoint='30ch' customStyles={{ columnGap: '6%', marginTop: '2em' }}>
       <div>
-        <ScalableText text='Smart Animation' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <ScalableText text='Prototyping' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          I learned how to create the animations in my prototype that I wanted while using Figma's prototype and smart animate features. I also learned how to use GIF's in Figma.
+          I learned how to create interactions in my prototype which enabled users to enjoy their shopping experience. Figma's smart animation and the ability to add GIF's enabled me to create such an experience.
         </p>
       </div>
       <div>
         <ScalableText text='Organization' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          Before, I would design and and prototype in the same file, but I was limited with what I could animate without disrupting the design. For this project I designed my frames in one file and animated in another.
+          Before, I would design and prototype in the same file, but I was limited with what I could animate without comprising the design. Zeno's file structure was set up differently. I first designed my frames in one file and animated in another file giving me more flexibility and options for interaction designs.
         </p>
       </div>
       <div>
-        <ScalableText text='Communication' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <ScalableText text='Testing' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          My prototype may not always match the production result, but it is good to use it as a test for the user and a reference for the engineer.
+          Zeno required several rounds of in-person usability studies. From these studies, I was able to see where users where getting stuck and what designs and prototype features needed to be adjusted. Usability studies are vital for ensuring the best insight into the problems users are having with the product.
         </p>
       </div>
     </ResponsiveGrid>

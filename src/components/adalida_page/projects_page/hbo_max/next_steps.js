@@ -26,7 +26,7 @@ const NextSteps = () => {
             viewBoxWidthMultiplier={8}
           />
         }
-        text='Design an experience where titles are suggested based on their viewing history. Create an overall more personalized experience for the viewer.'
+        text='Design an experience where titles are suggested based on their viewing history to create an overall more personalized experience for the viewer.'
       />
       <PictureCaption
         heading='User Testing'

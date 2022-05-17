@@ -23,7 +23,7 @@ const IdeateOne = () => {
   )
 
   return (
-    <Card title='// Ideate'>
+    <Card title='// Scan'>
       <MediaWithText media={ideateOne} text={pictureCaption} />
     </Card>
   )

@@ -41,7 +41,7 @@ const Takeaways = () => {
         <ScalableText text='Design Systems' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          I learned how to create a design system for consistent branding throughout my project.
+          I learned how to create a design system for consistent branding throughout my project. Figma's design libraries make it easy to create and use a color system and font family when designing.
         </p>
       </div>
       <div>
@@ -49,14 +49,6 @@ const Takeaways = () => {
         <hr />
         <p className='garamond'>
           I learned that I can bias the results of my own project by not enough user testing and usability studies.
-        </p>
-      </div>
-      <div>
-        <ScalableText text='Team vs. Self' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
-        <hr />
-        <p className='garamond'>
-          Self projects are great, but working with a team of developers and stakeholders,
-          can elevate designs and the user&apos;s experience.
         </p>
       </div>
     </ResponsiveGrid>

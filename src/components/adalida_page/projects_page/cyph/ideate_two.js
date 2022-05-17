@@ -22,7 +22,7 @@ const IdeateTwo = () => {
     </div>
   )
   return (
-    <Card title='// Ideate'>
+    <Card title='// Learn'>
       <MediaWithText media={ideateTwo} text={pictureCaption} reversed={true} />
     </Card>
   )
