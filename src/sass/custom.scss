@@ -20,8 +20,12 @@ $theme-colors: (
 @import './timeline_description';
 @import '@fortawesome/fontawesome-svg-core/styles';
 
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: local('Inconsolata'), url(../fonts/Inconsolata.otf);
+}
 
 @font-face {
   font-family: 'Avenir Next';
@@ -52,7 +56,7 @@ $theme-colors: (
 }
 
 body {
-  font-family: "Inconsolata", "Courier New", Courier, monospace;
+  font-family: 'Inconsolata', 'Courier New', Courier, monospace;
   background: #F5F5F5;
 }
 
