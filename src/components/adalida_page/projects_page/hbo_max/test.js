@@ -15,7 +15,7 @@ const Test = () => {
       />
       <PictureCaption
         heading='Solution'
-        text='Design bottom up or mobile first to ensure the best user-experience. Also, utilize components during the design phase.s'
+        text='Employ bottom up design starting with mobile first to ensure the best user-experience.'
       />
     </div>
 

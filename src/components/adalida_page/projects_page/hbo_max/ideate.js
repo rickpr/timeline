@@ -24,7 +24,7 @@ const Ideate = () => {
     </div>
   )
   return (
-    <Card title='// IDEATE'>
+    <Card title='// More Options'>
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr 1fr',
@@ -36,7 +36,7 @@ const Ideate = () => {
         <div className='picture-caption'>
           <PictureCaption
             heading='Problem:'
-            text="People had a difficult time rewinding and fastforwarding. There is a lack of options when skipping and the load time is slow."
+            text="People had a difficult time rewinding and fast forwarding becauase there is a lack of options when skipping and the load time is slow."
           />
           <PictureCaption
             heading='Solution'
@@ -51,7 +51,7 @@ const Ideate = () => {
           />
           <PictureCaption
             heading='Goals'
-            text="Provide an option to add or change captions while in viewing mode."
+            text="Provide an option to add or change captions, cast, and change the settings while in viewing mode."
           />
         </div>
       </div>

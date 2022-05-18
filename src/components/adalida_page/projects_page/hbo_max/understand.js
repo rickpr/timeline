@@ -17,7 +17,7 @@ const Understand = () => {
   const text = (
     <div style={{ columnWidth: '80ch', width: '100%' }}>
       <p>
-        For my research, I first used the HBOMax subreddit to find user frustrations and pain points.
+        For my research, I used the HBOMax subreddit to find user frustrations and pain points.
         A consistent pain point reddit users experienced was trouble fast-forwarding and rewinding while watching a title.
       </p>
 
@@ -29,7 +29,7 @@ const Understand = () => {
       </p>
 
       <p>
-        With a strong understanding of the problems I wanted to solve, I was able to create my information architecture began designing.
+        With a strong understanding of the users frustrations, I created a strong information architecture grounded in research and began designing in high-fidelity.
       </p>
     </div>
   )

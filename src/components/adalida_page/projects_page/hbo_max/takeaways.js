@@ -14,9 +14,8 @@ const Takeaways = () => {
   const takeaways = (
     <div style={{ maxWidth: '80vw' }}>
       <p>
-        The goal for this project was to improve the user experience and design around major pain points. I worked towards that goal by conducting user research from my close network and by utilizing online forums for helpful feedback.
-        I enjoyed designing a streaming service product and using online comments as a way to conduct user research.
-        I also enjoyed working on a product that was user-friendly and for fun and entertainment.
+        The goal for this project was to improve the user experience and design around major pain points. I worked towards that goal by conducting user research and utilizing online forums for helpful feedback. I let this data drive the design and referred back to my user research frequently to keep me on track.
+        I enjoyed working on a product that was user-friendly and helped people find entertainment that best fits their needs.
       </p>
     </div>
   )
@@ -31,7 +30,7 @@ const Takeaways = () => {
         <ScalableText text='User Research' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          I focused on my user research to drive to my designs which increased the speed of my designs. I understood what key features the user needed and the design came organically.
+          My user research made my designs. By following the research, I was able to increase the speed at which I design and create a product users wanted. From my research, I understood what key features users needed and the design came organically.
         </p>
       </div>
       <div>
@@ -42,10 +41,10 @@ const Takeaways = () => {
         </p>
       </div>
       <div>
-        <ScalableText text='Auto Layout' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <ScalableText text='Hand off' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
         <hr />
         <p className='garamond'>
-          I learned how to set up my designs using components and auto layout. This is helpful for prototyping, design iteration, and responsive web design.
+          I set up my designs in auto-layout using components so they are responsive and are ready for hand off to the engineer.
         </p>
       </div>
     </ResponsiveGrid>

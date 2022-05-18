@@ -22,7 +22,7 @@ const ContinueWatching = () => {
   )
 
   return (
-    <Card title='// Prototype'>
+    <Card title='// Ideate'>
       <MediaWithText media={continueWatching} text={pictureCaption} />
     </Card>
   )

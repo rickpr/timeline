@@ -20,7 +20,7 @@ const Define = () => {
     </div>
   )
   return (
-    <Card title='// Define'>
+    <Card title='// Ideate'>
       <MediaWithText
         media='images/hbo_max/define.png'
         text={pictureCaption}

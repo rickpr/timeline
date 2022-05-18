@@ -17,14 +17,14 @@ const Understand = () => {
   const text = (
     <div style={{ columnWidth: '80ch', width: '100%' }}>
       <p>
-        My research demographic was women who enjoy shopping luxury brands.
+        My research demographic focused on women who enjoy shopping luxury brands.
       </p>
 
       <p>
-        I conducted phone interviews and built empathy maps to learn about what people liked when online shopping.
+        I conducted phone interviews and built empathy maps to learn about what women enjoyed when online shopping.
       </p>
       <p>
-        After, I created my information architecture and began designing.
+        After, I created an information architecture and began designing in high-fidelity.
       </p>
 
     </div>

@@ -24,7 +24,7 @@ const PrototypeTwo = () => {
     </div>
   )
   return (
-    <Card title='// Prototype'>
+    <Card title='// Get Involved'>
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr 1fr',

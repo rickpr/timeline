@@ -33,7 +33,7 @@ const Understand = () => {
       </p>
 
       <p>
-        This is also where I began creating my information architecture.
+        I used these public database to fuel my information architecture and began designing in hi-fidelity.
       </p>
     </div>
   )
