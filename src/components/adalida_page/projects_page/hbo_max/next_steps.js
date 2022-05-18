@@ -37,10 +37,7 @@ const NextSteps = () => {
 
   return (
     <Card title='// Next Steps'>
-      <MediaWithText
-        media={nextSteps}
-        text={problem}
-      />
+      <MediaWithText media={nextSteps} text={problem} />
     </Card>
   )
 }

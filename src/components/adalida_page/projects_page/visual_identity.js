@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Card from './card'
 import ScalableText from 'components/scalable_text'
 
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
+
+import { ThemeContext } from 'theme_context'
 
 const viewBoxWidthMultipliers = {
   Inconsolata: 9,
@@ -14,6 +16,7 @@ const viewBoxWidthMultipliers = {
 }
 
 const VisualIdentity = ({ colors, fontFamily }) => {
+  const color = useContext(ThemeContext).primary || '#000000'
   const centerStyles = {
     placeItems: 'center center'
   }
@@ -76,11 +79,11 @@ const VisualIdentity = ({ colors, fontFamily }) => {
         `,
         alignItems: 'flex-end'
       }}>
-        <ScalableText text='A' color='#BB81EE' customStyles={{ fontFamily }} viewBoxWidthMultiplier={viewBoxWidthMultiplier} />
+        <ScalableText text='A' color={color} customStyles={{ fontFamily }} viewBoxWidthMultiplier={viewBoxWidthMultiplier} />
         <ScalableText
           text='b'
           color='none'
-          customStyles={{ fontFamily, stroke: '#BB81EE', strokeWidth: '0.1px' }}
+          customStyles={{ fontFamily, stroke: color, strokeWidth: '0.1px' }}
           viewBoxWidthMultiplier={viewBoxWidthMultiplier}
         />
       </div>

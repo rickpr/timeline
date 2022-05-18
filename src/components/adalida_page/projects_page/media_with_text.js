@@ -11,10 +11,10 @@ const MediaWithText = ({ media, text, reversed = false }) => {
       return <Image path={media} style={style} />
     }
     if (media.endsWith('.mp4')) {
-      return <video src={media} autoPlay loop muted playsInline style={{ maxHeight }} />
+      return <video src={media} autoPlay loop muted playsInline style={style} />
     }
     if (media.endsWith('.gif')) {
-      return <img alt='' src={media} type='video/mp4' autoPlay style={{ maxHeight}} />
+      return <img alt='' src={media} type='video/mp4' autoPlay style={style} />
     }
 
     throw new Error(`Could not identify type of media ${media}`)
@@ -24,7 +24,7 @@ const MediaWithText = ({ media, text, reversed = false }) => {
   const imageTag = (
     <div
       key='image'
-      style={{ display: 'flex', flex: '2 2 49%', placeContent: 'center', placeItems: 'center', maxWidth: 'max-content' }}
+      style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', maxWidth: 'max-content' }}
     >
       {mediaTag}
     </div>
@@ -33,7 +33,14 @@ const MediaWithText = ({ media, text, reversed = false }) => {
 
   const flexWrap = reversed ? 'wrap' : 'wrap-reverse'
   return (
-    <div style={{ display: 'flex', flexWrap, gap: '2%', placeContent: 'center', margin: '0 auto' }}>
+    <div style={{
+      display: 'flex',
+      flexWrap,
+      gap: '2%',
+      placeContent: 'center',
+      margin: '0 auto',
+      maxWidth: 'max-content'
+    }}>
       {reversed ? [textTag, imageTag] : [imageTag, textTag]}
     </div>
   )
