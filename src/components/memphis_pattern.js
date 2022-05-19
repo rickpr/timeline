@@ -125,7 +125,7 @@ const MemphisPattern = ({ containerRef, backgroundColor }) => {
     const resizeListener = new ResizeObserver(drawMemphisPattern)
     resizeListener.observe(containerRef.current)
     return () => resizeListener.unobserve(containerRef.current)
-  }, [drawMemphisPattern])
+  }, [containerRef, drawMemphisPattern])
 
   return (
     <div className='memphis-pattern'>

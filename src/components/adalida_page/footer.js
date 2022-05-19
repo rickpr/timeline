@@ -17,7 +17,6 @@ const Footer = () => {
     zIndex: 3
   }
   const linkStyle = { color: '#FFFFFF', pointerEvents: 'all', display: 'flex' }
-  const iconHeight = '3vh'
 
   return (
     <>
@@ -31,7 +30,7 @@ const Footer = () => {
           }}
         >
           <a href={adalidaResume} style={linkStyle} target='_blank' rel='noreferrer'>
-            <IconFileInfo height={iconHeight}/>
+            <IconFileInfo />
           </a>
           <a
             href='https://dribbble.com/adalida-baca'
@@ -39,7 +38,7 @@ const Footer = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <IconBrandDribbble height={iconHeight}/>
+            <IconBrandDribbble />
           </a>
           <a
             href='https://www.linkedin.com/in/adalidabaca'
@@ -47,7 +46,7 @@ const Footer = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <IconBrandLinkedin height={iconHeight}/>
+            <IconBrandLinkedin />
           </a>
           <a
             href='mailto:adalida.baca@gmail.com'
@@ -55,7 +54,7 @@ const Footer = () => {
             target='_blank'
             rel='noreferrer'
           >
-            <IconMail height={iconHeight}/>
+            <IconMail />
           </a>
         </div>
       </nav>

@@ -40,7 +40,7 @@ const Ideate = () => {
           />
           <PictureCaption
             heading='Solution'
-            text="Create an egaging and easy to checkout experience."
+            text="Create an engaging and easy to checkout experience."
           />
         </div>
         {image}
