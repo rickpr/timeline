@@ -12,7 +12,7 @@ const About = () => {
       key={title}
       style={{ display: 'flex', flexDirection: 'column' }}
     >
-      <h2>// {title}</h2><ul><li>{content}</li></ul>
+      <h2>{'//'} {title}</h2><ul><li>{content}</li></ul>
     </div>
   )
 
@@ -66,9 +66,8 @@ const About = () => {
       gridTemplateColumns: '1fr',
       placeContent: 'space-between center',
       placeItems: 'center center'
-    }}
-    >
-      <h1>// ROLES</h1>
+    }}>
+      <h1>{'//'} ROLES</h1>
       <ResponsiveGrid breakpoint={rolesBreakpoint}>
         {titles.map(title => <li key={title}>{title}</li>)}
       </ResponsiveGrid>

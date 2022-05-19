@@ -29,7 +29,7 @@ const MediaWithText = ({ media, text, reversed = false }) => {
       {mediaTag}
     </div>
   )
-  const textTag = <div key='text' style={{ display: 'flex', flex, placeContent: 'center' }}>{text}</div>
+  const textTag = <div key='text' style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center' }}>{text}</div>
 
   const flexWrap = reversed ? 'wrap' : 'wrap-reverse'
   return (
