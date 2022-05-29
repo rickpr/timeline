@@ -5,7 +5,7 @@ import Image from 'components/image'
 
 const MediaWithText = ({ media, text, reversed = false }) => {
   const maxHeight = '82vh'
-  const style = { maxHeight }
+  const style = { minWidth: 'min(50ch, 80vw)', maxHeight }
   const makeMediaTag = () => {
     if (media.endsWith('.png')) {
       return <Image path={media} style={style} />

@@ -11,7 +11,7 @@ const Test = () => {
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text="People are interested in learning about trending or popular representatives, but don't know which area's they represent."
+        text="People are interested in learning about trending or popular representatives, but don't know which areas they represent."
       />
       <PictureCaption
         heading='Solution'
