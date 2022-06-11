@@ -21,18 +21,20 @@ const Card = ({ children, title }) => {
   const gridStyle = {
     display: 'grid',
     gridTemplateColumns: '1fr',
-    gridTemplateRows: '10vh 4vh 1fr',
     maxWidth: '100%',
     maxHeight: '100%',
     minHeight: '82vh'
+  }
+  const textStyle = {
+    fontSize: 'min(5em, 7vw)',
+    color: primary
   }
   return (
     <div data-aos='fade-up' style={containerStyle}>
       <div style={gridStyle}>
         <div style={{ display: 'grid', justifyItems: 'center', width: '100%' }}>
-          <ScalableText text={title} color={primary} customStyles={{ width: 'unset' }} />
+          <h1 style={textStyle}>{title}</h1>
         </div>
-        <div />
         <div>{children}</div>
       </div>
     </div>

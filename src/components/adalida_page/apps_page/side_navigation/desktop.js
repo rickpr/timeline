@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Themes } from 'theme_context'
-
 import NavigationLink from './navigation_link'
 
 const Desktop = ({ links }) => {
@@ -23,7 +21,6 @@ const Desktop = ({ links }) => {
     <div style={styles}>
       {Object.entries(links).map(
         ([title, ref], index) => {
-          const { primary } = Themes[title]
           const number = String(index + 1).padStart(2, 0)
           return (
             <NavigationLink
@@ -31,7 +28,6 @@ const Desktop = ({ links }) => {
               number={number}
               click={() => ref.current?.scrollIntoView({ behavior: 'smooth' })}
               title={title}
-              color={primary}
             />
           )
         }

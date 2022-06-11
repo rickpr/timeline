@@ -15,23 +15,23 @@ import 'sass/adalida_page/apps_page.scss'
 
 const AppsPage = () => {
   const isMobile = useIsMobile()
-  const cyphRef = useRef()
   const zenoRef = useRef()
   const HBOMaxRef = useRef()
+  const cyphRef = useRef()
   const splashPageRef = useRef()
 
   const navigationLinks = useMemo(() => {
     const links = {
-      Cyph: cyphRef,
       Zeno: zenoRef,
-      HBOMax: HBOMaxRef
+      HBOMax: HBOMaxRef,
+      Cyph: cyphRef
     }
     if (isMobile) links.Splash = splashPageRef
     return links
   }, [isMobile])
   const splashPage = <SplashPage ref={splashPageRef} />
 
-  const [closestProject, setClosestProject] = useState('Cyph')
+  const [closestProject, setClosestProject] = useState(() => Object.keys(navigationLinks)[0])
 
   const scrollRef = useRef()
   useEffect(() => {

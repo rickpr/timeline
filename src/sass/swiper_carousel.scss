@@ -25,6 +25,17 @@
   color: #000000;
 }
 
-.swiper-pagination-bullet-active {
-  background: #4A00E0;
+.swiper-pagination-bullet-active-Zeno {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: #ED6112;
+}
+
+.swiper-pagination-bullet-active-HBOMax {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: #DB00FF;
+}
+
+.swiper-pagination-bullet-active-Cyph {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: #39FF14;
 }

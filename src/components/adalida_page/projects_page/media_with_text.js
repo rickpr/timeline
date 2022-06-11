@@ -36,7 +36,6 @@ const MediaWithText = ({ media, text, reversed = false }) => {
     <div style={{
       display: 'flex',
       flexWrap,
-      gap: '2%',
       placeContent: 'center',
       margin: '0 auto',
       maxWidth: 'max-content'

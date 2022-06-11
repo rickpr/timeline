@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { ThemeContext } from 'theme_context'
 
 const Desktop = ({ title, click, number }) => {
-  const { name, primary, description } = useContext(ThemeContext)
+  const { border, name, description } = useContext(ThemeContext)
   const active = name === title
-  const backgroundColor = active ? primary : '#CCCCCC88'
+  const backgroundColor = active ? border : '#CCCCCC88'
   const animationDuration = 200
 
   const [textShown, setTextShown] = useState(false)

@@ -2,7 +2,6 @@ import React from 'react'
 
 import Card from '../card'
 import ResponsiveGrid from 'components/responsive_grid'
-import ScalableText from 'components/scalable_text'
 
 import 'sass/adalida_page/cyph.scss'
 
@@ -24,28 +23,25 @@ const Takeaways = () => {
     </div>
   )
 
-  const customStyles = {
-    width: '100%',
-    height: '30%'
-  }
   const thoughts = (
     <ResponsiveGrid breakpoint='30ch' customStyles={{ columnGap: '6%', marginTop: '2em' }}>
       <div>
-        <ScalableText text='Data in Design' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <h1 style={{ textAlign: 'center' }}>Data in Design</h1>
         <hr />
         <p className='garamond'>
           I learned how to leverage data as a resource for developing an information architecture and process flows.
         </p>
       </div>
       <div>
-        <ScalableText text='Design Systems' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <h1 style={{ textAlign: 'center' }}>Design Systems</h1>
         <hr />
         <p className='garamond'>
-          I learned how to create a design system for consistent branding throughout my project. Figma's design libraries make it easy to create and use a color system and font family when designing.
+          I learned how to create a design system for consistent branding throughout my project.
+          Figma&apos;s design libraries make it easy to create and use a color system and font family when designing.
         </p>
       </div>
       <div>
-        <ScalableText text='User Testing' color='black' customStyles={customStyles} viewBoxWidthMultiplier={10} />
+        <h1 style={{ textAlign: 'center' }}>User Testing</h1>
         <hr />
         <p className='garamond'>
           I learned that I can bias the results of my own project by not enough user testing and usability studies.

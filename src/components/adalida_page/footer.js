@@ -49,7 +49,7 @@ const Footer = () => {
             <IconBrandLinkedin />
           </a>
           <a
-            href='mailto:adalida.baca@gmail.com'
+            href='mailto:adalida@adalida.design'
             style={linkStyle}
             target='_blank'
             rel='noreferrer'

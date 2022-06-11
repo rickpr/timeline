@@ -35,7 +35,7 @@ const AboutPage = () =>
         Please reach out if you’d like to have a cup of coffee online and chat.
       </p>
     </div>
-    <Button style={{ backgroundColor: '#FF2079', color: 'white' }} href='mailto:adalida.baca@gmail.com'>
+    <Button style={{ backgroundColor: '#FF2079', color: 'white' }} href='mailto:adalida@adalida.design'>
       Contact Adalida
     </Button>
   </div>
