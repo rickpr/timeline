@@ -18,7 +18,7 @@ const AppsPage = () => {
   const zenoRef = useRef()
   const HBOMaxRef = useRef()
   const cyphRef = useRef()
-  const splashPageRef = useRef()
+  const hireAdiRef = useRef()
 
   const navigationLinks = useMemo(() => {
     const links = {
@@ -26,10 +26,10 @@ const AppsPage = () => {
       HBOMax: HBOMaxRef,
       Cyph: cyphRef
     }
-    if (isMobile) links.Splash = splashPageRef
+    if (isMobile) links['Hire Adi'] = hireAdiRef
     return links
   }, [isMobile])
-  const splashPage = <SplashPage ref={splashPageRef} />
+  const splashPage = <SplashPage ref={hireAdiRef} />
 
   const [closestProject, setClosestProject] = useState(() => Object.keys(navigationLinks)[0])
 
@@ -50,8 +50,8 @@ const AppsPage = () => {
     return () => window.removeEventListener('scroll', updateClosestProject)
   }, [navigationLinks])
 
-  // No app for the splash page, but we want a nav link
-  const apps = Object.entries(navigationLinks).filter(([title, _]) => title !== 'Splash')
+  // No app for the Hire Adi page, but we want a nav link
+  const apps = Object.entries(navigationLinks).filter(([title, _]) => title !== 'Hire Adi')
   return (
     <ThemeContext.Provider value={Themes[closestProject]}>
       <Layout>

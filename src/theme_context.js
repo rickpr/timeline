@@ -3,7 +3,7 @@ import React from 'react'
 const Themes = {
   Cyph: {
     name: 'Cyph',
-    description: "Cyph is designed for voters interested in learning about politicians' financial donors and political history.",
+    description: "Learn about politicians' donors and history.",
     projectPage: '/adalida/projects/cyph',
     heroPhoto: 'images/cyph/title.png',
 
@@ -23,7 +23,7 @@ const Themes = {
     background: '#ED6112',
     border: '#FFFFFF'
   },
-  Splash: {
+  'Hire Adi': {
     name: 'Hire Adi',
     description: '',
     heroPhoto: 'images/adalida_face.jpg',
