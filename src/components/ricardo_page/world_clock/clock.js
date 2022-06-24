@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 const Clock = ({ timeZone }) => {
-  const primary = '#FFFFFF'
+  const primary = '#000000'
   const stroke = '#FFFFFF'
   const gold = '#FFD700'
   const timeZoneFriendly = timeZone.split('/')[1].split('_').join(' ').toUpperCase()
@@ -56,14 +56,14 @@ const Clock = ({ timeZone }) => {
       position: 'absolute',
       top: '50%',
       left: '50%',
-      color: 'white',
+      color: stroke,
       transform: `translate(-50%, -50%) translate(${offsetX}em, ${offsetY}em)`,
       textShadow: `0 0 2px ${gold}`
     }
     return <div key={number} style={style}>{number}</div>
   }
 
-  const dropShadow = { filter: `drop-shadow(0.1em 0.1em 0.2em ${primary})` }
+  const dropShadow = { filter: `drop-shadow(0.1em 0.1em 0.2em ${stroke})` }
   const border =
     <div style={{
       border: `0.3em solid ${primary}`,
@@ -71,6 +71,7 @@ const Clock = ({ timeZone }) => {
       height: '100%',
       width: '100%',
       position: 'absolute',
+      background: '#00000040',
       ...dropShadow
     }}/>
   const handStyles = {

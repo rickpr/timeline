@@ -85,7 +85,7 @@ const Houndstooth = ({ backgroundColor, containerRef }) => {
     ]
 
     // Decrease this to make animation faster (fewer frames)
-    const totalPoints = 200
+    const totalPoints = 100
 
     const animatePath = async points => {
       const allPoints = interpolateWaypoints(points, totalPoints)
@@ -137,19 +137,19 @@ const Houndstooth = ({ backgroundColor, containerRef }) => {
     const styleCanvas = () => {
       const gradient = canvasContext().createLinearGradient(0, 0, fullWidth, fullHeight)
       gradient.addColorStop(0, '#FFD700')
-      gradient.addColorStop(0.5, '#000000')
-      gradient.addColorStop(1, '#C0C0C0')
+      gradient.addColorStop(0.5, '#222222')
+      gradient.addColorStop(1, '#111111')
       canvasContext().fillStyle = gradient
       canvasContext().lineWidth = width
       canvasContext().strokeStyle = '#FFFFFF'
       canvasContext().lineCap = 'round'
-      canvasContext().filter = 'brightness(7)'
+      canvasContext().filter = 'brightness(1)'
     }
 
-    const darkeningFill = async pathsWithOffsets => {
-      let brightness = 7
-      while (brightness > 1) {
-        brightness -= 0.2
+    const brightenFill = async pathsWithOffsets => {
+      let brightness = 0
+      while (brightness < 10) {
+        brightness += 0.4
         canvasContext().filter = `brightness(${brightness})`
         await new Promise(resolve => window.requestAnimationFrame(resolve))
         pathsWithOffsets.forEach(fillPath)
@@ -164,7 +164,7 @@ const Houndstooth = ({ backgroundColor, containerRef }) => {
       const gridSize = Math.ceil(fullWidth / (width * scale))
       const pathsWithOffsets = generateAllOffsets(paths, gridSize, scale)
       await Promise.all(pathsWithOffsets.map(path => animatePath(path)))
-      darkeningFill(pathsWithOffsets)
+      brightenFill(pathsWithOffsets)
     })()
   }
 
