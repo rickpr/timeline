@@ -1,5 +1,5 @@
 import { navigate } from 'gatsby'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { minBy } from 'lodash'
 
 import { ThemeContext, Themes } from 'theme_context'
@@ -15,6 +15,7 @@ import 'sass/adalida_page/apps_page.scss'
 
 const AppsPage = () => {
   const isMobile = useIsMobile()
+  const platoRef = useRef()
   const zenoRef = useRef()
   const HBOMaxRef = useRef()
   const cyphRef = useRef()
@@ -22,6 +23,7 @@ const AppsPage = () => {
 
   const navigationLinks = useMemo(() => {
     const links = {
+      Plato: platoRef,
       Zeno: zenoRef,
       HBOMax: HBOMaxRef,
       Cyph: cyphRef
@@ -44,8 +46,11 @@ const AppsPage = () => {
       }
       const [closestProject] = minBy(Object.entries(navigationLinks), distanceFromWindow)
       setClosestProject(closestProject)
-      if (closestProject === 'Splash') setTimeout(() => navigate('/adalida/about'), 500)
+      console.log(closestProject)
+      if (closestProject === 'Hire Adi') setTimeout(() => navigate('/adalida/about'), 500)
     }
+    // TODO: don't user a timer for this
+    setTimeout(() => scrollRef.current.scrollTo({top: 0, left: 0, behavior: 'smooth'}), 1000)
     scrollRef.current.addEventListener('scroll', updateClosestProject)
     return () => window.removeEventListener('scroll', updateClosestProject)
   }, [navigationLinks])
