@@ -24,14 +24,14 @@ const Plato = () =>
     <NextSteps />
     <VisualIdentity
       colors={{
-        primary: '#ED6112',
-        secondary: '#424242',
-        tertiary: '#212121',
-        'support-one': '#C4C4C4',
-        'support-two': '#FFFFFF',
-        'support-three': '#BDBDBD'
+        primary: '#3357D2',
+        secondary: '#5FCCF0',
+        tertiary: '#0C133D',
+        'support-one': '#F3F6FD',
+        'support-two': '#B4B1B3',
+        'support-three': '#BFBFBF'
       }}
-      fontFamily='Bodoni'
+      fontFamily='Inter'
     />
     <Takeaways />
   </div>

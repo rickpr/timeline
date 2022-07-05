@@ -8,9 +8,9 @@ const Themes = {
     heroPhoto: 'images/plato/title.png',
 
     // Colors
-    primary: '#ED6112',
-    background: '#ED6112',
-    border: '#FFFFFF'
+    primary: '#3357D2',
+    background: '#3357D2',
+    border: '#5FCCF0'
   },
   Zeno: {
     name: 'Zeno',

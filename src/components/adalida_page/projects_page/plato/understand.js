@@ -5,9 +5,10 @@ import SwiperCarousel from 'components/swiper_carousel'
 
 import 'sass/adalida_page/cyph.scss'
 
-const userPersonaOne = 'images/plato/research/user_persona_one.png'
-const userPersonaTwo = 'images/plato/research/user_persona_two.png'
-const informationArchitecture = 'images/plato/research/information_architecture.png'
+const june23 = 'images/plato/research/june_23.png'
+const june24 = 'images/plato/research/june_24.png'
+const june28 = 'images/plato/research/june_28.png'
+const june29 = 'images/plato/research/june_29.png'
 
 const Understand = () => {
   const centerStyles = {
@@ -29,7 +30,7 @@ const Understand = () => {
 
     </div>
   )
-  const carousel = <SwiperCarousel images={[userPersonaOne, userPersonaTwo, informationArchitecture]} />
+  const carousel = <SwiperCarousel images={[june23, june24, june28, june29]} />
   const style = {
     display: 'grid',
     gridTemplateColumns: '1fr',
