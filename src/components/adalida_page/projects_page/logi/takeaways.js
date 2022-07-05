@@ -13,7 +13,7 @@ const Takeaways = () => {
   const takeaways = (
     <div style={{ maxWidth: '80vw' }}>
       <p>
-        The goal for this project was to design a desktop product using an already exisitng design systems. Typically, I create my own design systems, but I wanted to challenge myself by using design systems from different organiztions to practice implementing consistent branding and brand identity.
+        The goal for this project was to design a desktop product using an already existing design system. Typically, I create my own design systems, but I wanted to challenge myself by using design systems from different organiztions to practice implementing consistent branding and brand identity.
       </p>
     </div>
   )

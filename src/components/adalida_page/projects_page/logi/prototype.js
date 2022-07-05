@@ -17,7 +17,7 @@ const Prototype = () => {
       />
       <PictureCaption
         heading='Implementation'
-        text='Implementing the design system was easy because I used the contrast in the monochramtic design to choose wher to apply color.'
+        text='Implementing the design system was easy because I used the contrast in the monochromatic design to choose where to apply color.'
       />
     </div>
   )

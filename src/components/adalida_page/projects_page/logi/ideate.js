@@ -47,7 +47,7 @@ const Ideate = () => {
         <div className='picture-caption'>
           <PictureCaption
             heading='Third'
-            text="Set everything in autolayout for responisve design."
+            text="Set everything in autolayout for responsive design."
           />
           <PictureCaption
             heading='Fourth'
