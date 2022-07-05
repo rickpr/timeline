@@ -18,10 +18,8 @@ const Plato = () =>
     <About />
     <Understand />
     <Define />
-    <Ideate />
     <Prototype />
-    <Test />
-    <NextSteps />
+    <Ideate />
     <VisualIdentity
       colors={{
         primary: '#3357D2',

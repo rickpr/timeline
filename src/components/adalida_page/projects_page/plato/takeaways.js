@@ -13,11 +13,7 @@ const Takeaways = () => {
   const takeaways = (
     <div style={{ maxWidth: '80vw' }}>
       <p>
-        The goal for this project was to design and prototype an e-commerce purchasing experience.
-        In order for the experience to feel enjoyable and seamless,
-        I needed to focus on prototyping and interaction design for this project.
-        My information architecture helped me organize my thoughts and keep track of where interactions will be needed.
-        Overall, this project was fun to work on and helps women enjoy their shopping experience.
+        The goal for this project was to design a desktop product using an already exisitng design systems. Typically, I create my own design systems, but I wanted to challenge myself by using design systems from different organiztions to practice implementing consistent branding and brand identity.
       </p>
     </div>
   )
@@ -25,30 +21,24 @@ const Takeaways = () => {
   const thoughts = (
     <ResponsiveGrid breakpoint='30ch' customStyles={{ columnGap: '6%', marginTop: '2em' }}>
       <div>
-        <h1 style={{ textAlign: 'center' }}>Prototyping</h1>
+        <h1 style={{ textAlign: 'center' }}>Planning</h1>
         <hr />
         <p className='garamond'>
-          I learned how to create interactions in my prototype which enabled users to enjoy their shopping experience.
-          Figma&apos;s smart animation and the ability to add GIFs enabled me to create such an experience.
+        I broke up my designs by layout and color. This helped me plan and manage my project out, which helped me design faster. I usually choose three designs I like and implement different elements and features from each design. This time I decided to design by choosing two design systems, one for layout and one for color.
         </p>
       </div>
       <div>
-        <h1 style={{ textAlign: 'center' }}>Organization</h1>
+        <h1 style={{ textAlign: 'center' }}>Design System</h1>
         <hr />
         <p className='garamond'>
-          Before, I would design and prototype in the same file, but I was limited with what I could animate without
-          compromising the design. Plato&apos;s file structure was set up differently.
-          I first designed my frames in one file and animated in another file giving me more flexibility and options
-          for interaction designs.
+        A design system isn't simply about setting the design system features in Figma, it's about knowing where to use what and when. This includes things like spacing, font, color, and layout.
         </p>
       </div>
       <div>
-        <h1 style={{ textAlign: 'center' }}>Testing</h1>
+        <h1 style={{ textAlign: 'center' }}>ADA Compliant</h1>
         <hr />
         <p className='garamond'>
-          Plato required several rounds of in-person usability studies. From these studies,
-          I was able to see where users were getting stuck and what designs and prototype features needed to be adjusted.
-          Usability studies are vital for ensuring the best insight into the problems users are having with the product.
+        I designed my mockup in monochormatic, which highlighted the contrast and readability between elements. After ensuring readability and use for all users, it was easy to apply things like color and shading to my elements.
         </p>
       </div>
     </ResponsiveGrid>

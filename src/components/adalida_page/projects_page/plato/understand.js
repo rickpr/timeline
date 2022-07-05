@@ -18,14 +18,14 @@ const Understand = () => {
   const text = (
     <div style={{ columnWidth: '80ch', width: '100%' }}>
       <p>
-        My research demographic focused on women who enjoy shopping luxury brands.
+      I began by redesigning a dashboard with an already clear layout. A clear layout has clear and consistent spacing between elements, typography consistency, and is easily navigatable.
       </p>
 
       <p>
-        I conducted phone interviews and built empathy maps to learn about what women enjoyed when online shopping.
+      When recreating the original image, I designed the frame as pixel perfect to the original design.
       </p>
       <p>
-        After, I created an information architecture and began designing in high-fidelity.
+      As I added each component to the design, I focused on making each card responsive and reusable.
       </p>
 
     </div>
@@ -39,7 +39,7 @@ const Understand = () => {
     ...centerStyles
   }
   return (
-    <Card title='// Understand & Empathize'>
+    <Card title='// Layout - Design System '>
       <div style={style}>
         {text}
         {carousel}

@@ -4,26 +4,24 @@ import Card from '../card'
 import PictureCaption from '../picture_caption'
 import MediaWithText from '../media_with_text'
 
-import define from 'videos/plato/define.mp4'
-
 import 'sass/adalida_page/cyph.scss'
 
 const Define = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Problem'
-        text='Users are interested in shopping the latest trends by top designers.'
+        heading='ADA Compliant'
+        text='I ensured my design was ADA compliant by keeping the design monochromatic.'
       />
       <PictureCaption
-        heading='Solution'
-        text="Design a section which highlights the newest designer's trends."
+        heading='How'
+        text="The design when monochromatic ensures a high contrast between elements, which makes it accessible for everyone to see."
       />
     </div>
   )
   return (
-    <Card title='// Define'>
-      <MediaWithText media={define} text={pictureCaption} reversed />
+    <Card title='// Hi-Contrast Mockup'>
+      <MediaWithText media='images/plato/define.png' text={pictureCaption} reversed />
     </Card>
   )
 }

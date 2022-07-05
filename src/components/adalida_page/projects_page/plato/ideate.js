@@ -24,7 +24,7 @@ const Ideate = () => {
     </div>
   )
   return (
-    <Card title='// Ideate'>
+    <Card title='// Process'>
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr 1fr',
@@ -35,23 +35,23 @@ const Ideate = () => {
 
         <div className='picture-caption'>
           <PictureCaption
-            heading='Problem:'
-            text="People want a fast and speedy checkout."
+            heading='First'
+            text="Began by choosing a layout design system to design."
           />
           <PictureCaption
-            heading='Solution'
-            text="Create an engaging and easy to checkout experience."
+            heading='Second'
+            text="Begin designing cards and layout in monochrome."
           />
         </div>
         {image}
         <div className='picture-caption'>
           <PictureCaption
-            heading='Problem:'
-            text="People want to see how long it will take to checkout."
+            heading='Third'
+            text="Set everything in autolayout for responisve design."
           />
           <PictureCaption
-            heading='Goals'
-            text="Provide a progress bar of the step they are on and how many steps are left."
+            heading='Fourth'
+            text="Apply a color design system to the final design."
           />
         </div>
       </div>
