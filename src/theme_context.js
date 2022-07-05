@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Themes = {
-  Plato: {
-    name: 'Plato',
-    description: 'A luxury e-commerce experience.',
-    projectPage: '/adalida/projects/plato',
-    heroPhoto: 'images/plato/title.png',
+  Logi: {
+    name: 'Logi',
+    description: 'A logistical shipping and tracking experience.',
+    projectPage: '/adalida/projects/logi',
+    heroPhoto: 'images/logi/title.png',
 
     // Colors
     primary: '#3357D2',

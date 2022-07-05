@@ -20,7 +20,7 @@ const Ideate = () => {
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
-      <Image path='plato/ideate.png' width='100%' />
+      <Image path='logi/ideate.png' width='100%' />
     </div>
   )
   return (
@@ -36,7 +36,7 @@ const Ideate = () => {
         <div className='picture-caption'>
           <PictureCaption
             heading='First'
-            text="Began by choosing a layout design system to design."
+            text="Begin by choosing a layout design system to design."
           />
           <PictureCaption
             heading='Second'

@@ -4,7 +4,7 @@ import Card from '../card'
 import PictureCaption from '../picture_caption'
 import MediaWithText from '../media_with_text'
 
-import prototype from 'images/plato/prototype.png'
+import prototype from 'images/logi/prototype.png'
 
 import 'sass/adalida_page/cyph.scss'
 
@@ -24,7 +24,7 @@ const Prototype = () => {
 
   return (
     <Card title='// Color - Design System'>
-      <MediaWithText media='images/plato/prototype.png' text={pictureCaption} />
+      <MediaWithText media='images/logi/prototype.png' text={pictureCaption} />
     </Card>
   )
 }

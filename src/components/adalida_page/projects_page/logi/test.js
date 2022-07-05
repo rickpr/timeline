@@ -22,7 +22,7 @@ const Test = () => {
 
   return (
     <Card title='// Test'>
-      <MediaWithText media='images/plato/test.png' text={pictureCaption} />
+      <MediaWithText media='images/logi/test.png' text={pictureCaption} />
     </Card>
   )
 }

@@ -15,7 +15,7 @@ import 'sass/adalida_page/apps_page.scss'
 
 const AppsPage = () => {
   const isMobile = useIsMobile()
-  const platoRef = useRef()
+  const logiRef = useRef()
   const zenoRef = useRef()
   const HBOMaxRef = useRef()
   const cyphRef = useRef()
@@ -23,7 +23,7 @@ const AppsPage = () => {
 
   const navigationLinks = useMemo(() => {
     const links = {
-      Plato: platoRef,
+      Logi: logiRef,
       Zeno: zenoRef,
       HBOMax: HBOMaxRef,
       Cyph: cyphRef

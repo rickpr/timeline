@@ -5,10 +5,10 @@ import SwiperCarousel from 'components/swiper_carousel'
 
 import 'sass/adalida_page/cyph.scss'
 
-const june23 = 'images/plato/research/june_23.png'
-const june24 = 'images/plato/research/june_24.png'
-const june28 = 'images/plato/research/june_28.png'
-const june29 = 'images/plato/research/june_29.png'
+const june23 = 'images/logi/research/june_23.png'
+const june24 = 'images/logi/research/june_24.png'
+const june28 = 'images/logi/research/june_28.png'
+const june29 = 'images/logi/research/june_29.png'
 
 const Understand = () => {
   const centerStyles = {

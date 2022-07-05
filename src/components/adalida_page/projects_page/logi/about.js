@@ -70,7 +70,7 @@ const About = () => {
 
   return (
     <Card title='// ABOUT THE PROJECT'>
-      <MediaWithText media='images/plato/about.png' text={text} />
+      <MediaWithText media='images/logi/about.png' text={text} />
       {roles}
     </Card>
   )

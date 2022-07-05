@@ -35,7 +35,7 @@ const NextSteps = () => {
 
   return (
     <Card title='// Next Steps'>
-      <MediaWithText media='images/plato/next_steps.png' text={problem} />
+      <MediaWithText media='images/logi/next_steps.png' text={problem} />
     </Card>
   )
 }

@@ -1,15 +1,15 @@
 import React from 'react'
 import 'sass/custom.scss'
 
-import Plato from 'components/adalida_page/projects_page/plato'
+import Logi from 'components/adalida_page/projects_page/logi'
 import Layout from 'components/adalida_page/layout'
 import ScrollProgress from 'components/adalida_page/projects_page/scroll_progress'
 import { ThemeContext, Themes } from 'theme_context'
 
-const PlatoPage = () =>
-  <ThemeContext.Provider value={Themes.Plato}>
+const LogiPage = () =>
+  <ThemeContext.Provider value={Themes.Logi}>
     <ScrollProgress />
-    <Layout><Plato /></Layout>
+    <Layout><Logi /></Layout>
   </ThemeContext.Provider>
 
-export default PlatoPage
+export default LogiPage

@@ -12,9 +12,9 @@ import NextSteps from './next_steps'
 import VisualIdentity from '../visual_identity'
 import Takeaways from './takeaways'
 
-const Plato = () =>
+const Logi = () =>
   <div style={{ background: '#FAFAFA' }}>
-    <App title='Plato' />
+    <App title='Logi' />
     <About />
     <Understand />
     <Define />
@@ -34,4 +34,4 @@ const Plato = () =>
     <Takeaways />
   </div>
 
-export default Plato
+export default Logi
