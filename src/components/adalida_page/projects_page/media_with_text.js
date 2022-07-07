@@ -19,17 +19,18 @@ const MediaWithText = ({ media, text, reversed = false }) => {
 
     throw new Error(`Could not identify type of media ${media}`)
   }
+  const padding = '1em'
   const mediaTag = makeMediaTag()
   const flex = '2 2 49%'
   const imageTag = (
     <div
       key='image'
-      style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', maxWidth: 'max-content' }}
+      style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', maxWidth: 'max-content', padding }}
     >
       {mediaTag}
     </div>
   )
-  const textTag = <div key='text' style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center' }}>{text}</div>
+  const textTag = <div key='text' style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', padding }}>{text}</div>
 
   const flexWrap = reversed ? 'wrap' : 'wrap-reverse'
   return (
