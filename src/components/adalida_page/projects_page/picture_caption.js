@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const PictureCaption = ({ heading, text }) =>
   <div>
-    <h1 className='caption' style={{ maxWidth: '100%' }}>{heading}</h1>
+    <h1 className='caption'>{heading}</h1>
     {text}
   </div>
 
