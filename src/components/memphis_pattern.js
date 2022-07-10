@@ -11,7 +11,11 @@ const MemphisPattern = ({ containerRef, backgroundColor }) => {
     const fullHeight = containerRef.current.clientHeight
     // Determine if the color is closer to white or black and use the opposite for the text
     const colorSum = [1, 3, 5].reduce((sum, colorIndex) => sum + parseInt(background.substring(colorIndex, colorIndex + 2)))
-    const colors = ['rgba(255, 148, 173, 0.3)', 'rgba(0, 234, 230, 0.3)', 'rgba(255, 206, 20, 0.3)']
+    const colors = [
+      'rgba(255, 148, 173, 0.3)',
+      'rgba(0, 234, 230, 0.3)',
+      'rgba(255, 206, 20, 0.3)'
+    ]
     const finalColor = colorSum <= 382 ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)'
     colors.push(finalColor)
 

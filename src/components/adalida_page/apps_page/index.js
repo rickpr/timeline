@@ -46,7 +46,6 @@ const AppsPage = () => {
       }
       const [closestProject] = minBy(Object.entries(navigationLinks), distanceFromWindow)
       setClosestProject(closestProject)
-      console.log(closestProject)
       if (closestProject === 'Hire Adi') setTimeout(() => navigate('/adalida/about'), 500)
     }
     // TODO: don't user a timer for this

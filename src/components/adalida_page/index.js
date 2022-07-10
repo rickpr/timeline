@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { navigate } from 'gatsby'
 
 import SplashPage from './splash_page'
@@ -10,7 +10,7 @@ const AdalidaPage = () => {
     setTimeout(() => navigate('/adalida/apps/'), 5000)
   }, [])
 
-  return <SplashPage />
+  return <SplashPage ref={useRef()} />
 }
 
 export default AdalidaPage

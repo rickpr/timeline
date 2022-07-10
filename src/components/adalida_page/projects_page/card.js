@@ -3,16 +3,14 @@ import PropTypes from 'prop-types'
 
 import { ThemeContext } from 'theme_context'
 
-import ScalableText from 'components/scalable_text'
-
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 
 const Card = ({ children, title }) => {
   useAnimateOnScroll()
   const primary = useContext(ThemeContext).primary || '#FFFFFF'
   const containerStyle = {
-    width: '95%',
-    margin: '9vh 2.5vw',
+    minWidth: '95%',
+    margin: '4vh 2.5vw',
     minHeight: '92vh',
     backgroundColor: '#FFFFFF',
     padding: '7%',
@@ -23,7 +21,7 @@ const Card = ({ children, title }) => {
     gridTemplateColumns: '1fr',
     maxWidth: '100%',
     maxHeight: '100%',
-    minHeight: '82vh'
+    minHeight: '79.12vh' // minHeight of 92vh minus 7% margin on top and bottom
   }
   const textStyle = {
     fontSize: 'min(5em, 7vw)',
