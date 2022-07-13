@@ -14,8 +14,6 @@ const SplashPage = React.forwardRef(({ button, paragraphs }, ref) => {
   const viewportHeight = useViewportHeight()
   const height = useMemo(() => {
     return `calc(${viewportHeight}px - 8vh)`
-    const amountToRemove = 0.08 * document.documentElement.clientHeight
-    return `${viewportHeight - amountToRemove}px`
   }, [viewportHeight])
   const hello = (
     <div style={{ textAlign: 'center', fontSize: '10vmin', width: '100%' }}>
@@ -23,12 +21,12 @@ const SplashPage = React.forwardRef(({ button, paragraphs }, ref) => {
       <span style={{ color: '#872234' }}> Adalida Baca</span>
     </div>
   )
-  const borderRadius = '2.5vh'
+  const borderRadius = '10vh 0 10vh 0'
   const image = (
     <Image
       path='images/adalida_face.jpg'
-      style={{ height: '30vmin', borderRadius }}
-      imgStyle={{ borderRadius, height: '30vmin', maxWidth: '100%', maxHeight: '100%' }}
+      style={{ height: '30vmin' }}
+      imgStyle={{ borderRadius, margin: 'auto', maxHeight: '100%', width: 'auto' }}
     />
   )
   const typewriter = (
