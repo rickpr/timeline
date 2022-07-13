@@ -21,7 +21,7 @@ const SplashPage = React.forwardRef(({ button, paragraphs }, ref) => {
       <span style={{ color: '#872234' }}> Adalida Baca</span>
     </div>
   )
-  const borderRadius = '10vh 0 10vh 0'
+  const borderRadius = '10vmin 1vmin 10vmin 1vmin'
   const image = (
     <Image
       path='images/adalida_face.jpg'
