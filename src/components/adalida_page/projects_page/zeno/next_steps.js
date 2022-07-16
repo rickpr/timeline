@@ -3,7 +3,6 @@ import React from 'react'
 import Card from '../card'
 import MediaWithText from '../media_with_text'
 import PictureCaption from '../picture_caption'
-import ScalableText from 'components/scalable_text'
 
 import 'sass/adalida_page/cyph.scss'
 
@@ -11,19 +10,7 @@ const NextSteps = () => {
   const problem = (
     <div className='picture-caption'>
       <PictureCaption
-        heading={
-          <ScalableText
-            text='Develop Highlight Sections'
-            color='#000000'
-            customStyles={{
-              fontSize: 'initial',
-              maxHeight: '3em',
-              maxWidth: '70vw',
-              fontWeight: 'normal'
-            }}
-            viewBoxWidthMultiplier={8}
-          />
-        }
+        heading='Develop Highlight Sections'
         text='Expand the design to add different highlight sections like sales, collections, new releases.'
       />
       <PictureCaption

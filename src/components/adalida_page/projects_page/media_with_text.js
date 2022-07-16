@@ -11,7 +11,8 @@ const MediaWithText = ({ media, text, reversed = false }) => {
       return <Image path={media} style={style} />
     }
     if (media.endsWith('.mp4')) {
-      return <video src={media} autoPlay loop muted playsInline style={style} />
+      const videoStyle = { maxWidth: '80vw', ...style }
+      return <video src={media} autoPlay loop muted playsInline style={videoStyle} />
     }
     if (media.endsWith('.gif')) {
       return <img alt='' src={media} type='video/mp4' autoPlay style={style} />
