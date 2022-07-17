@@ -1,5 +1,6 @@
 import React from 'react'
 
+import AboutList from '../about_list'
 import Card from '../card'
 import MediaWithText from '../media_with_text'
 import ResponsiveGrid from 'components/responsive_grid'
@@ -7,25 +8,12 @@ import ResponsiveGrid from 'components/responsive_grid'
 import 'sass/adalida_page/cyph.scss'
 
 const About = () => {
-  const makeEntry = ([title, content]) => (
-    <div
-      key={title}
-      style={{ display: 'flex', flexDirection: 'column' }}
-    >
-      <h2>{'//'} {title}</h2><ul><li>{content}</li></ul>
-    </div>
-  )
-
   const points = {
     PLATFORM: 'Desktop',
     INDUSTRY: 'Logistics',
     LOCATION: 'Austin, TX',
     DURATION: '1 week'
   }
-  // The length of the word plus the two slashes and space.
-  const sizeOfLargestTitle = Math.max(...Object.keys(points).map(title => title.length)) + 3
-  // 2.4 is a magic number, it should be 2 but probably also involves the font weight.
-  const breakpoint = 2.4 * sizeOfLargestTitle + 'ch'
 
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
@@ -37,9 +25,7 @@ const About = () => {
       The challenge with this project was to create a hi-fidelity design from two different design systems. The first design system is  base for my wireframe and layout. The second design system is the base for my color design system.
       </p>
 
-      <ResponsiveGrid breakpoint={breakpoint}>
-        {Object.entries(points).map(makeEntry)}
-      </ResponsiveGrid>
+      <AboutList points={points} />
     </div>
   )
 
@@ -62,6 +48,7 @@ const About = () => {
       placeItems: 'center center'
     }}>
       <h1>{'//'} ROLES</h1>
+
       <ResponsiveGrid breakpoint={rolesBreakpoint}>
         {titles.map(title => <li key={title}>{title}</li>)}
       </ResponsiveGrid>

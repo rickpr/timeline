@@ -1,6 +1,6 @@
 .adalida-header {
   height: 5vh;
-  border-radius: 2.5vh 2.5vh 0 0; // half the height
+  border-radius: 2vh 2vh 0 0;
   transition: border-color 0.5s ease;
   pointer-events: none;
   position: fixed;
@@ -10,4 +10,27 @@
   left: 0;
   right: 0;
   z-index: 1;
+}
+
+.adalida-header-link {
+  color: #FFFFFF;
+  pointer-events: all;
+  &:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  &::after {
+    content: '';
+    width: 0px;
+    height: 0.25vh;
+    background: white;
+    border-radius: 0.1vh;
+    display: block;
+    transition: 300ms;
+    margin-top: -1vh;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
