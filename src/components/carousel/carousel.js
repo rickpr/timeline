@@ -1,12 +1,39 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import CarouselImages from './carousel_images'
-import CarouselArrow from './carousel_arrow'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+// This has to be imported last
+import { Navigation } from 'swiper'
 
 const Carousel = ({ carousel }) =>
-  <div className='carousel carousel-dark slide' data-ride='carousel' id={`carousel_${carousel.id}`}>
-    <CarouselImages images={carousel.images} />
-    <CarouselArrow direction='prev' carouselId={carousel.id} />
-    <CarouselArrow direction='next' carouselId={carousel.id} />
-  </div>
+  <Swiper
+    centeredSlides
+    grabCursor
+    loop
+    loopedSlides={carousel.images.length}
+    modules={[Navigation]}
+    navigation
+  >
+    {carousel.images.map(({ id, imageUrl, altText }) =>
+      <SwiperSlide key={id} style={{ borderRadius: 0 }}>
+        <img src={imageUrl} alt={altText} />
+      </SwiperSlide>
+    )}
+  </Swiper>
+
+Carousel.propTypes = {
+  carousel: PropTypes.shape({
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        altText: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+        imageUrl: PropTypes.string.isRequired
+      })
+    )
+  })
+}
 
 export default Carousel

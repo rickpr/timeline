@@ -5,19 +5,19 @@ import Icon from './icon'
 
 const Footer = () =>
   <footer>
-    <nav className='navbar-custom'>
-      <div className='row footer-nav'>
-        <div className='col-sm-4 col-12'>
+    <nav>
+      <div className='footer-nav'>
+        <div>
           Adalida Baca<br />
           <Icon href='https://github.com/adalidabaca' icon={faGithub} />
           <Icon href='https://linkedin.com/in/adalidabaca' icon={faLinkedinIn} />
           <Icon href='https://www.hackerrank.com/profile/adalida_baca' icon={faHackerrank} />
         </div>
-        <div className='col-sm-4 col-12'>
+        <div>
           <br />
           <span className='footer-icon'><StaticImage src='../../images/sun-moon.png' /></span>
         </div>
-        <div className='col-sm-4 col-12'>
+        <div>
           Ricardo Piro-Rael<br />
           <Icon href='https://github.com/rickpr' icon={faGithub} />
           <Icon href='https://linkedin.com/in/rickpr' icon={faLinkedinIn} />

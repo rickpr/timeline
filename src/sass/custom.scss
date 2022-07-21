@@ -7,11 +7,9 @@ $theme-colors: (
   warning: #ff2079
 );
 
-@import '~bootstrap/scss/bootstrap';
-
 @import './adalida_page/apps_page';
 @import './wide_timeline';
-@import './centerline';
+@import './crossbar';
 @import './header';
 @import './circle';
 @import './memphis_pattern';
@@ -57,7 +55,14 @@ $theme-colors: (
 
 body {
   font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
   background: #F5F5F5;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {
