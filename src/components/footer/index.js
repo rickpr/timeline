@@ -1,6 +1,7 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { faGithub, faLinkedinIn, faHackerrank } from '@fortawesome/free-brands-svg-icons'
+import { IconBrandGithub, IconBrandLinkedin, IconTerminal2 } from '@tabler/icons'
 import Icon from './icon'
 
 const Footer = () =>
@@ -9,9 +10,15 @@ const Footer = () =>
       <div className='footer-nav'>
         <div>
           Adalida Baca<br />
-          <Icon href='https://github.com/adalidabaca' icon={faGithub} />
-          <Icon href='https://linkedin.com/in/adalidabaca' icon={faLinkedinIn} />
-          <Icon href='https://www.hackerrank.com/profile/adalida_baca' icon={faHackerrank} />
+          <a href='https://github.com/adalidabaca' target='_blank' rel='noreferrer'>
+            <IconBrandGithub />
+          </a>
+          <a href='https://linkedin.com/in/adalidabaca' target='_blank' rel='noreferrer'>
+            <IconBrandLinkedin />
+          </a>
+          <a href='https://www.hackerrank.com/profile/adalida_baca' target='_blank' rel='noreferrer'>
+            <IconTerminal2 />
+          </a>
         </div>
         <div>
           <br />
@@ -19,9 +26,15 @@ const Footer = () =>
         </div>
         <div>
           Ricardo Piro-Rael<br />
-          <Icon href='https://github.com/rickpr' icon={faGithub} />
-          <Icon href='https://linkedin.com/in/rickpr' icon={faLinkedinIn} />
-          <Icon href='https://www.hackerrank.com/profile/fdisk87' icon={faHackerrank} />
+          <a href='https://github.com/rickpr' target='_blank' rel='noreferrer'>
+            <IconBrandGithub />
+          </a>
+          <a href='https://linkedin.com/in/rickpr' target='_blank' rel='noreferrer'>
+            <IconBrandLinkedin />
+          </a>
+          <a href='https://www.hackerrank.com/profile/fdisk87' target='_blank' rel='noreferrer'>
+            <IconTerminal2 />
+          </a>
         </div>
       </div>
     </nav>
