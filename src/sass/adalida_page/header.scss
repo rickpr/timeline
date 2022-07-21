@@ -29,6 +29,9 @@
     transition: 300ms;
     margin-top: -1vh;
   }
+  &.active::after {
+    width: 100%;
+  }
 
   &:hover::after {
     width: 100%;

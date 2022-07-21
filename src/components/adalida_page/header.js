@@ -29,12 +29,12 @@ const Header = () => {
           }}
         >
           <div>
-            <Link to='/adalida/apps' className='adalida-header-link'>
+            <Link to='/adalida/apps' className='adalida-header-link' activeClassName='active'>
               ADALIDA
             </Link>
           </div>
           <div>
-            <Link to='/adalida/about' className='adalida-header-link'>
+            <Link to='/adalida/about' className='adalida-header-link' activeClassName='active'>
               ABOUT
             </Link>
           </div>
