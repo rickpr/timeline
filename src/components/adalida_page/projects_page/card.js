@@ -13,7 +13,7 @@ const Card = ({ children, title }) => {
     margin: '4vh 2.5vw',
     minHeight: '92vh',
     backgroundColor: '#FFFFFF',
-    padding: '7%',
+    padding: '2em 7%',
     borderRadius: '2vh'
   }
   const gridStyle = {

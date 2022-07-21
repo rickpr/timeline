@@ -1,8 +1,6 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import { faGithub, faLinkedinIn, faHackerrank } from '@fortawesome/free-brands-svg-icons'
 import { IconBrandGithub, IconBrandLinkedin, IconTerminal2 } from '@tabler/icons'
-import Icon from './icon'
 
 const Footer = () =>
   <footer>
@@ -22,7 +20,7 @@ const Footer = () =>
         </div>
         <div>
           <br />
-          <span className='footer-icon'><StaticImage src='../../images/sun-moon.png' /></span>
+          <span><StaticImage src='../../images/sun-moon.png' /></span>
         </div>
         <div>
           Ricardo Piro-Rael<br />
