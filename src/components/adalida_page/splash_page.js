@@ -8,7 +8,7 @@ import Image from 'components/image'
 
 import 'sass/adalida_page/index.scss'
 
-const SplashPage = React.forwardRef(({ button, paragraphs }, ref) => {
+const SplashPage = React.forwardRef(({ links, paragraphs }, ref) => {
   const backdropFilter = 'blur(8px)'
   const textAlign = 'center'
   const viewportHeight = useViewportHeight()
@@ -16,17 +16,17 @@ const SplashPage = React.forwardRef(({ button, paragraphs }, ref) => {
     return `calc(${viewportHeight}px - 8vh)`
   }, [viewportHeight])
   const hello = (
-    <div style={{ textAlign: 'center', fontSize: '10vmin', width: '100%' }}>
-      <span style={{ color: '#000000' }}>Hello, I&apos;m</span>
-      <span style={{ color: '#872234' }}> Adalida Baca</span>
+    <div style={{ textAlign: 'center', fontSize: 'max(5vmin, 2em)', width: '100%' }}>
+      <span style={{ color: '#000000' }}>Hello, I&apos;m Adalida Baca and I&apos;m a</span>
+      <span style={{ color: '#3D9AF0' }}> Product Designer</span>
     </div>
   )
-  const borderRadius = '10vmin 1vmin 10vmin 1vmin'
   const image = (
     <Image
-      path='images/adalida_face.jpg'
+      className='oversize-image'
+      path='images/adalida_face.png'
       style={{ height: '30vmin' }}
-      imgStyle={{ borderRadius, margin: 'auto', maxHeight: '100%', width: 'auto' }}
+      imgStyle={{ minHeight: '100%' }}
     />
   )
   const typewriter = (
@@ -42,7 +42,7 @@ const SplashPage = React.forwardRef(({ button, paragraphs }, ref) => {
     <div style={{ textAlign, backdropFilter }}>
       <p>
         Welcome to my portfolio! I&apos;m passionate about&nbsp;
-        <span style={{ color: '#872234' }}>{typewriter}</span>
+        <span style={{ color: '#3D9AF0' }}>{typewriter}</span>
       </p>
       {paragraphs}
     </div>
@@ -53,7 +53,7 @@ const SplashPage = React.forwardRef(({ button, paragraphs }, ref) => {
         {hello}
         {image}
         {welcome}
-        {button}
+        {links}
       </div>
     </div>
   )
@@ -61,7 +61,7 @@ const SplashPage = React.forwardRef(({ button, paragraphs }, ref) => {
 
 SplashPage.displayName = 'SplashPage'
 SplashPage.propTypes = {
-  button: PropTypes.node,
+  links: PropTypes.node,
   paragraphs: PropTypes.node
 }
 

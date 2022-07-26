@@ -48,13 +48,13 @@ const Themes = {
   'Hire Adi': {
     name: 'Hire Adi',
     description: '',
-    heroPhoto: 'images/adalida_face.jpg',
+    heroPhoto: 'images/adalida_face.png',
     projectPage: '/adalida/about',
 
     // Colors
-    primary: '#872234',
+    primary: '#3D9AF0',
     background: '#000000',
-    border: '#872234'
+    border: '#3D9AF0'
   },
 }
 
