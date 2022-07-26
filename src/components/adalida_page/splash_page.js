@@ -23,10 +23,9 @@ const SplashPage = React.forwardRef(({ links, paragraphs }, ref) => {
   )
   const image = (
     <Image
-      className='oversize-image'
-      path='images/adalida_face.png'
+      path='images/adalida_face.jpg'
       style={{ height: '30vmin' }}
-      imgStyle={{ minHeight: '100%' }}
+      imgStyle={{ borderRadius: '50%', margin: 'auto', maxHeight: '100%', width: 'auto' }}
     />
   )
   const typewriter = (

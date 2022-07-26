@@ -48,7 +48,7 @@ const Themes = {
   'Hire Adi': {
     name: 'Hire Adi',
     description: '',
-    heroPhoto: 'images/adalida_face.png',
+    heroPhoto: 'images/adalida_face.jpg',
     projectPage: '/adalida/about',
 
     // Colors

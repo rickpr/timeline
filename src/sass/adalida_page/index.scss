@@ -17,9 +17,3 @@
   bottom: 0;
   border-radius: 2vh;
 }
-
-.oversize-image > div {
-  // This overrides Gatsby's default wrapper styling
-  height: 100%;
-  max-width: unset !important;
-}
