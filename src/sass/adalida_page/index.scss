@@ -6,10 +6,9 @@
   display: grid;
   place-items: center;
   place-content: center;
-  gap: 10%;
+  gap: 10px;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  min-width: 95vw;
   height: 100%;
   margin: 4vh 2.5vw;
   background-color: #FFFFFF;
