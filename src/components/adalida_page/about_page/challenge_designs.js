@@ -9,12 +9,12 @@ const styles = {
   flexDirection: 'row',
   flexWrap: 'wrap',
   placeContent: 'center',
-  gap: '40px'
+  gap: '30px'
 }
 
 const ChallengeDesigns = () =>
   <Card title='Challenge Designs'>
-    <p style={{ width: '100%', textAlign: 'center', marginTop: 0, fontSize: '1.75em' }}>
+    <p style={{ width: '100%', textAlign: 'center', marginTop: 0, fontSize: '1.5em' }}>
       Here are my redesigns I used to practice and grow my skills in responsive design,
       user interface design, and interaction design.
       Reach out if you’d like to view my work in Figma!

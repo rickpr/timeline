@@ -31,7 +31,7 @@ const AppsPage = () => {
     if (isMobile) links['Hire Adi'] = hireAdiRef
     return links
   }, [isMobile])
-  const splashPage = <SplashPage ref={hireAdiRef} />
+  const splashPage = <SplashPage ref={hireAdiRef} showDetail={true} />
 
   const [closestProject, setClosestProject] = useState(() => Object.keys(navigationLinks)[0])
 

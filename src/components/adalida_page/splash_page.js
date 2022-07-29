@@ -5,10 +5,11 @@ import Typewriter from 'typewriter-effect'
 import useViewportHeight from 'hooks/use_viewport_height'
 
 import Image from 'components/image'
+import Links from './about_page/links'
 
 import 'sass/adalida_page/index.scss'
 
-const SplashPage = React.forwardRef(({ links, paragraphs }, ref) => {
+const SplashPage = React.forwardRef(({ showDetail }, ref) => {
   const backdropFilter = 'blur(8px)'
   const textAlign = 'center'
   const viewportHeight = useViewportHeight()
@@ -37,31 +38,42 @@ const SplashPage = React.forwardRef(({ links, paragraphs }, ref) => {
       }}
     />
   )
+
+  const detailParagraphs =
+    <>
+      <p>
+        I&apos;m an enthusastic and outgoing person who enjoys problem solving and
+        desigining simple and elegant solutions.
+      </p>
+      <p>
+        Please reach out if you’d like to have a cup of coffee and design a solution
+        together.
+      </p>
+    </>
   const welcome = (
     <div style={{ textAlign, backdropFilter }}>
       <p>
         Welcome to my portfolio! I&apos;m passionate about&nbsp;
         <span style={{ color: '#3D9AF0' }}>{typewriter}</span>
       </p>
-      {paragraphs}
+      {showDetail && detailParagraphs}
     </div>
   )
   return (
     <div style={{ height }}>
       <div className='about-container' ref={ref}>
         {hello}
-        {image}
+        <div style={{ minHeight: '30vmin' }}>
+          {image}
+        </div>
         {welcome}
-        {links}
+        {showDetail && <Links />}
       </div>
     </div>
   )
 })
 
 SplashPage.displayName = 'SplashPage'
-SplashPage.propTypes = {
-  links: PropTypes.node,
-  paragraphs: PropTypes.node
-}
+SplashPage.propTypes = { showDetail: PropTypes.bool }
 
 export default SplashPage

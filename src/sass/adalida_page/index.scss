@@ -5,7 +5,8 @@
 .about-container {
   display: grid;
   place-items: center;
-  align-content: space-between;
+  place-content: center;
+  gap: 10%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   min-width: 95vw;

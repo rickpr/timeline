@@ -9,8 +9,8 @@ const SmallProject = ({ media }) => {
       style={{
         background: '#F5F5F5',
         display: 'flex',
-        width: '400px',
-        minHeight: '400px',
+        width: '325px',
+        minHeight: '325px',
         borderRadius: '1vh',
         padding: '20px'
       }}
