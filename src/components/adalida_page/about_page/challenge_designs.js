@@ -1,8 +1,10 @@
 import React from 'react'
 
 import Card from '../projects_page/card'
-import ResponsiveGrid from 'components/responsive_grid'
 import SmallProject from './small_project'
+
+import totalSales from 'videos/about/total_sales.mp4'
+import salesAnalytics from 'videos/about/sales_analytics.mp4'
 
 const styles = {
   display: 'flex',
@@ -20,13 +22,15 @@ const ChallengeDesigns = () =>
       Reach out if you’d like to view my work in Figma!
     </p>
     <div style={styles}>
-      <SmallProject media="about/emnify.jpg" />
-      <SmallProject media="about/global_dashboard.jpg" />
-      <SmallProject media="about/richmond.jpg" />
-      <SmallProject media="about/sentra.jpg" />
-      <SmallProject media="about/shazam.png" />
-      <SmallProject media="about/venn_dashboard.jpg" />
-      <SmallProject media="about/clock.jpg" />
+      <SmallProject media='about/emnify.jpg' />
+      <SmallProject media='about/global_dashboard.jpg' />
+      <SmallProject media='about/richmond.jpg' />
+      <SmallProject media='about/sentra.jpg' />
+      <SmallProject media='about/shazam.png' />
+      <SmallProject media='about/venn_dashboard.jpg' />
+      <SmallProject media='about/clock.jpg' />
+      <SmallProject media={totalSales} />
+      <SmallProject media={salesAnalytics} />
     </div>
   </Card>
 
