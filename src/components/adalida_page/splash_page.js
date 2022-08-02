@@ -60,7 +60,7 @@ const SplashPage = React.forwardRef(({ showDetail }, ref) => {
     </div>
   )
   return (
-    <div style={{ height }}>
+    <div style={{ height, minWidth: '95vw' }}>
       <div className='about-container' ref={ref}>
         {hello}
         <div style={{ minHeight: '30vmin' }}>
