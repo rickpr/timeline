@@ -7,7 +7,8 @@ import 'sass/adalida_page/index.scss'
 
 const AdalidaPage = () => {
   useEffect(() => {
-    setTimeout(() => navigate('/adalida/apps'), 5000)
+    const timer = setTimeout(() => navigate('/adalida/apps'), 5000)
+    return () => clearTimeout(timer)
   }, [])
 
   return <SplashPage />
