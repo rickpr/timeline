@@ -1,32 +1,13 @@
+import { Link } from 'gatsby'
 import React from 'react'
-import MobileHamburger from './mobile_hamburger'
-import NavLink from './nav_link'
 
-const Header = () => {
-  const collapsibleId = 'navbarSupportedContent'
-  return (
+const Header = () =>
     <header>
-      <div
-        style={{
-          border: '5px solid black',
-          position: 'absolute',
-          top: '15px',
-          right: '15px',
-          left: '15px',
-          zIndex: -1,
-          height: '2em'
-        }}
-      />
-      <nav className='navbar navbar-expand-lg navbar-light navbar-custom'>
-        <MobileHamburger collapsibleId={collapsibleId} />
-        <div className='navbar-nav row collapse navbar-collapse' id={collapsibleId}>
-          <NavLink href='/adalida' text='Adalida' width={4} />
-          <NavLink href='/us' text='Helios' width={4} />
-          <NavLink href='/ricardo' text='Ricardo' width={4} />
-        </div>
+      <nav className='header-navbar'>
+        <h3><Link to='/adalida' className='nav-link' activeClassName='active'>Adalida</Link></h3>
+        <h3><Link to='/us' className='nav-link' activeClassName='active'>Us</Link></h3>
+        <h3><Link to='/ricardo' className='nav-link' activeClassName='active'>Ricardo</Link></h3>
       </nav>
     </header>
-  )
-}
 
 export default Header

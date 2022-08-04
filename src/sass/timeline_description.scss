@@ -1,6 +1,10 @@
 .timeline-description {
   min-height: 12.6em;
   height: 100%;
+  background: #FFFFFF;
+  border: 1px solid black;
+  border-radius: 2px;
+  position: relative;
 }
 
 .timeline-description-header {
@@ -8,9 +12,13 @@
   color: theme-color('warning');
   font-family: 'Inconsolata';
   font-size: 2em;
+  background: #CCCCCC;
+  padding: 0.5em;
+  bottom-border: 1px solid black;
 }
 
 .timeline-description-body {
+  padding: 1em;
   color: #000000;
   font-size: 0.75em;
   padding-left: 10%;

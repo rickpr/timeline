@@ -14,8 +14,6 @@ const Header = () => {
     borderTop: borderStyle,
     zIndex: 3
   }
-  const linkStyle = { color: '#FFFFFF', pointerEvents: 'all' }
-
   return (
     <>
       <nav className='adalida-header' style={{ mixBlendMode: 'difference' }}>
@@ -31,12 +29,12 @@ const Header = () => {
           }}
         >
           <div>
-            <Link to='/adalida/apps' style={linkStyle}>
+            <Link to='/adalida/apps' className='adalida-header-link' activeClassName='active'>
               ADALIDA
             </Link>
           </div>
           <div>
-            <Link to='/adalida/about' style={linkStyle}>
+            <Link to='/adalida/about' className='adalida-header-link' activeClassName='active'>
               ABOUT
             </Link>
           </div>

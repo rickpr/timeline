@@ -31,7 +31,7 @@ const AppsPage = () => {
     if (isMobile) links['Hire Adi'] = hireAdiRef
     return links
   }, [isMobile])
-  const splashPage = <SplashPage ref={hireAdiRef} />
+  const splashPage = <SplashPage ref={hireAdiRef} showDetail={true} />
 
   const [closestProject, setClosestProject] = useState(() => Object.keys(navigationLinks)[0])
 
@@ -46,7 +46,6 @@ const AppsPage = () => {
       }
       const [closestProject] = minBy(Object.entries(navigationLinks), distanceFromWindow)
       setClosestProject(closestProject)
-      console.log(closestProject)
       if (closestProject === 'Hire Adi') setTimeout(() => navigate('/adalida/about'), 500)
     }
     // TODO: don't user a timer for this

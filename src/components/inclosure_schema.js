@@ -20,39 +20,43 @@ const InclosureSchema = () => {
 
   const [elementToAddToΩ, setElementToAddToΩ] = useState()
   const [elementToAddToX, setElementToAddToX] = useState()
+  const border = '1px solid black'
+  const background = '#CCCCCC'
+  const padding = '5px'
+  const minHeight = '1em'
 
   return (
-    <div className='container'>
-      <div className='card'>
-        <div className='card-header'><h1>Ω</h1></div>
-        <div className='card-body'>
+    <div style={{ width: '80%', margin: '0 auto' }}>
+      <div style={{ border }}>
+        <div style={{ border, background }}><h1>Ω</h1></div>
+        <div style={{ border, minHeight }}>
           {[...Ω].map(element => <ColoredBadge key={element} text={element} />)}
-          <div className='card'>
-            <div className='card-header'><h1>x</h1></div>
-            <div className='card-body'>
+          <div style={{ border, padding }}>
+            <div style={{ border, background }}><h1>x</h1></div>
+            <div style={{ border, minHeight }}>
               {[...x].map(element => <ColoredBadge key={element} text={element} />)}
             </div>
           </div>
         </div>
       </div>
-      <div className='input-group mb-3'>
+      <div>
         <input type='text' onChange={event => setElementToAddToΩ(event.target.value)} className='form-control' />
         <div className='input-group-append'>
           <button onClick={() => addToΩ(elementToAddToΩ)} className='btn btn-primary'>Add to Ω</button>
         </div>
       </div>
-      <div className='input-group mb-3'>
+      <div>
         <input type='text' onChange={event => setElementToAddToX(event.target.value)} className='form-control' />
-        <div className='input-group-append'>
+        <div>
           <button onClick={() => addToX(elementToAddToX)} className='btn btn-primary'>Add to x</button>
         </div>
       </div>
-      <div className='btn-group mb-3' role='group'>
+      <div>
         <button onClick={() => diagonalize(x)} className='btn btn-primary'>Run δ on x</button>
         <button onClick={() => diagonalize(Ω)} className='btn btn-danger'>Run δ on Ω</button>
       </div>
-      <div className='card text-center'>
-        <h1>δ = &#123;{[...δ].map(element => <ColoredBadge text={element} />)}&#125;</h1>
+      <div style={{ border, padding }}>
+        <h1>δ = &#123;{[...δ].map(element => <ColoredBadge key={element} text={element} />)}&#125;</h1>
       </div>
     </div>
   )

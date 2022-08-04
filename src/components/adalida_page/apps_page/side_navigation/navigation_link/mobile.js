@@ -20,7 +20,7 @@ const Mobile = ({ title, click, number }) => {
     pointerEvents: 'none',
     textAlign: 'center',
     display: 'grid',
-    fontSize: '7vw',
+    fontSize: 'min(7vw, 3vh)',
     position: 'relative',
     borderBottom: `0.25vh solid ${borderColor}`,
     ...transitionStyle

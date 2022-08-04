@@ -1,24 +1,30 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
 const TimelineDescription = ({ description, title }) => {
-  const cardHeader = (
-    <div className='card-header timeline-description-header'>
+  const header = (
+    <div className='timeline-description-header'>
       {title}
     </div>
   )
-  const cardBody = (
-    <div className='card-body timeline-description-body'>
+  const body = (
+    <div className='timeline-description-body'>
       {description}
     </div>
   )
 
   return (
-    <div className='card timeline-description'>
+    <div className='timeline-description'>
       <div className='timeline-description-border' />
-      {title && cardHeader}
-      {description && cardBody}
+      {header}
+      {body}
     </div>
   )
+}
+
+TimelineDescription.propTypes = {
+  description: PropTypes.string.required,
+  title: PropTypes.string.required
 }
 
 export default TimelineDescription

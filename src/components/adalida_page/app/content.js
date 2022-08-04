@@ -10,7 +10,7 @@ import Image from 'components/image'
 const Content = ({ title }) => {
   const { heroPhoto, projectPage } = Themes[title]
   const handleClick = () => setTimeout(() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' }), 1000)
-  const maxHeight = useIsMobile() ? '50vh' : '80vh'
+  const maxHeight = useIsMobile() ? '40vh' : '80vh'
 
   const rowStyle = {
     display: 'flex',

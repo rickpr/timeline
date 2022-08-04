@@ -52,11 +52,11 @@ const Themes = {
     projectPage: '/adalida/about',
 
     // Colors
-    primary: '#39FF14',
+    primary: '#3D9AF0',
     background: '#000000',
-    border: '#39FF14'
+    border: '#3D9AF0'
   },
 }
 
-const ThemeContext = React.createContext(Themes.Cyph)
+const ThemeContext = React.createContext(Themes['Hire Adi'])
 export { ThemeContext, Themes }

@@ -1,28 +1,39 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import { faGithub, faLinkedinIn, faHackerrank } from '@fortawesome/free-brands-svg-icons'
-import Icon from './icon'
+import { IconBrandGithub, IconBrandLinkedin, IconTerminal2 } from '@tabler/icons'
+
+import 'sass/footer.scss'
 
 const Footer = () =>
   <footer>
-    <nav className='navbar-custom'>
-      <div className='row footer-nav'>
-        <div className='col-sm-4 col-12'>
-          Adalida Baca<br />
-          <Icon href='https://github.com/adalidabaca' icon={faGithub} />
-          <Icon href='https://linkedin.com/in/adalidabaca' icon={faLinkedinIn} />
-          <Icon href='https://www.hackerrank.com/profile/adalida_baca' icon={faHackerrank} />
-        </div>
-        <div className='col-sm-4 col-12'>
-          <br />
-          <span className='footer-icon'><StaticImage src='../../images/sun-moon.png' /></span>
-        </div>
-        <div className='col-sm-4 col-12'>
-          Ricardo Piro-Rael<br />
-          <Icon href='https://github.com/rickpr' icon={faGithub} />
-          <Icon href='https://linkedin.com/in/rickpr' icon={faLinkedinIn} />
-          <Icon href='https://www.hackerrank.com/profile/fdisk87' icon={faHackerrank} />
-        </div>
+    <nav className='footer-nav'>
+      <div>
+        Adalida Baca<br />
+        <a href='https://github.com/adalidabaca' target='_blank' rel='noreferrer'>
+          <IconBrandGithub />
+        </a>
+        <a href='https://linkedin.com/in/adalidabaca' target='_blank' rel='noreferrer'>
+          <IconBrandLinkedin />
+        </a>
+        <a href='https://www.hackerrank.com/profile/adalida_baca' target='_blank' rel='noreferrer'>
+          <IconTerminal2 />
+        </a>
+      </div>
+      <div>
+        <br />
+        <span><StaticImage src='../../images/sun-moon.png' /></span>
+      </div>
+      <div>
+        Ricardo Piro-Rael<br />
+        <a href='https://github.com/rickpr' target='_blank' rel='noreferrer'>
+          <IconBrandGithub />
+        </a>
+        <a href='https://linkedin.com/in/rickpr' target='_blank' rel='noreferrer'>
+          <IconBrandLinkedin />
+        </a>
+        <a href='https://www.hackerrank.com/profile/fdisk87' target='_blank' rel='noreferrer'>
+          <IconTerminal2 />
+        </a>
       </div>
     </nav>
   </footer>

@@ -5,11 +5,11 @@ import TimelineDescription from './timeline_description'
 import TimelinePost from './timeline_post'
 
 const TimelinePostWithDescription = ({ carousel, description, title }) =>
-  <div className='row'>
-    <div className='col-sm-6' data-aos='fade-up' style={{ zIndex: 1 }}>
+  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', marginBottom: '4em' }}>
+    <div data-aos='fade-up' style={{ zIndex: 1, padding: '0 10px' }}>
       <TimelinePost carousel={carousel} />
     </div>
-    <div className='col-sm-6' data-aos='fade-up' style={{ zIndex: 1 }}>
+    <div data-aos='fade-up' style={{ zIndex: 1 , padding: '0 10px'}}>
       <TimelineDescription description={description} title={title} />
     </div>
   </div>

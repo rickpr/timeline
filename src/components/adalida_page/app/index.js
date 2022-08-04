@@ -26,6 +26,7 @@ const App = React.forwardRef(({ title }, ref) => {
     position: 'relative',
     zIndex: 2,
     width: '100vw',
+    maxWidth: '100%',
     gridTemplateAreas: "'top-space' 'hero-photo' 'button' 'bottom-space'",
     transition: 'opacity 1s ease',
     justifyItems: 'center',

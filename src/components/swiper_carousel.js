@@ -20,11 +20,7 @@ const SwiperCarousel = ({ images }) => {
   const { name } = useContext(ThemeContext)
   return (
     <Swiper
-      coverflowEffect={{
-        depth: 1500,
-        rotate: 0,
-        scale: 1.5
-      }}
+      coverflowEffect={{}}
       centeredSlides
       effect='coverflow'
       grabCursor

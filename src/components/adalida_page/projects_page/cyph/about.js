@@ -1,5 +1,6 @@
 import React from 'react'
 
+import AboutList from '../about_list'
 import Card from '../card'
 import MediaWithText from '../media_with_text'
 import ResponsiveGrid from 'components/responsive_grid'
@@ -7,25 +8,12 @@ import ResponsiveGrid from 'components/responsive_grid'
 import 'sass/adalida_page/cyph.scss'
 
 const About = () => {
-  const makeEntry = ([title, content]) => (
-    <div
-      key={title}
-      style={{ display: 'flex', flexDirection: 'column' }}
-    >
-      <h2>{'//'} {title}</h2><ul><li>{content}</li></ul>
-    </div>
-  )
-
   const points = {
     PLATFORM: 'Mobile iOS',
     INDUSTRY: 'Political Technology',
     LOCATION: 'San Francisco, CA',
     DURATION: '2 months'
   }
-  // The length of the word plus the two slashes and space.
-  const sizeOfLargestTitle = Math.max(...Object.keys(points).map(title => title.length)) + 3
-  // 2.4 is a magic number, it should be 2 but probably also involves the font weight.
-  const breakpoint = 2.4 * sizeOfLargestTitle + 'ch'
 
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
@@ -42,9 +30,7 @@ const About = () => {
         demographics and to help voters vote for what is in <em>their</em> best interest.
       </p>
 
-      <ResponsiveGrid breakpoint={breakpoint}>
-        {Object.entries(points).map(makeEntry)}
-      </ResponsiveGrid>
+      <AboutList points={points} />
     </div>
   )
 
