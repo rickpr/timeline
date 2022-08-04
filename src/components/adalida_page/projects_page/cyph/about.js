@@ -38,12 +38,9 @@ const About = () => {
       </p>
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
-        This project is a design challenge for myself to do something for social good.
-        I wanted to learn about and contribute to solving problems resulting in an increase in voter turnout for all
-        demographics and help voters vote for what is in <em>their</em> best interest.
+        This project is a challenge to design a solution for social good. The problem I wanted to contribute to solving was an increase in voter turnout for all
+        demographics and to help voters vote for what is in <em>their</em> best interest.
       </p>
-      <p>“Politicians should wear sponsor jackets like NASCAR drivers, then we know who owns them”.</p>
-      <p> - Robin Williams </p>
 
       <ResponsiveGrid breakpoint={breakpoint}>
         {Object.entries(points).map(makeEntry)}

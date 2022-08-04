@@ -20,9 +20,9 @@ const About = () => {
 
   const points = {
     PLATFORM: 'Mobile iOS',
-    INDUSTRY: 'Political Technology',
+    INDUSTRY: 'E - Commerce',
     LOCATION: 'San Francisco, CA',
-    DURATION: '2 months'
+    DURATION: '1 month'
   }
   // The length of the word plus the two slashes and space.
   const sizeOfLargestTitle = Math.max(...Object.keys(points).map(title => title.length)) + 3
@@ -36,7 +36,7 @@ const About = () => {
       </p>
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
-        This project is a design challenge for myself to create a hi-fidelity prototype in Figma. I challenged myself to focus on a user interface and the interaction design between frames.
+        This project is a design challenge to create a hi-fidelity prototype in Figma. The challenge was to focus on a user interface and the interaction design between frames.
       </p>
 
       <ResponsiveGrid breakpoint={breakpoint}>
