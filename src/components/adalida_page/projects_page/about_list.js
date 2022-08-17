@@ -2,11 +2,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const AboutList = ({ points }) => {
-  const flexBasis = '50%'
   const makeEntry = ([title, content]) => (
     <div
       key={title}
-      style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}
+      style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', placeItems: 'center' }}
     >
       <h2>{'//'} {title}</h2>
       <ul><li>{content}</li></ul>

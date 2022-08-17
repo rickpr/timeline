@@ -3,7 +3,6 @@ import React from 'react'
 import AboutList from '../about_list'
 import Card from '../card'
 import MediaWithText from '../media_with_text'
-import ResponsiveGrid from 'components/responsive_grid'
 
 import 'sass/adalida_page/cyph.scss'
 
@@ -38,8 +37,6 @@ const About = () => {
     'Interaction Designer',
     'UI Designer'
   ]
-  const sizeOfLargestRole = Math.max(...titles.map(title => title.length)) + 3
-  const rolesBreakpoint = 1.2 * sizeOfLargestRole + 'ch'
   const roles = (
     <div style={{
       gridColumn: '1 / -1',
@@ -51,9 +48,9 @@ const About = () => {
       placeItems: 'center center'
     }}>
       <h1>{'//'} ROLES</h1>
-      <ResponsiveGrid breakpoint={rolesBreakpoint}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', placeContent: 'space-between', width: '100%' }}>
         {titles.map(title => <li key={title}>{title}</li>)}
-      </ResponsiveGrid>
+      </div>
     </div>
   )
 
