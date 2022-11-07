@@ -4,7 +4,7 @@ import Card from '../card'
 import MediaWithText from '../media_with_text'
 import PictureCaption from '../picture_caption'
 
-import 'sass/adalida_page/cyph.scss'
+import 'sass/adalida_page/project.scss'
 
 const NextSteps = () => {
   const problem = (

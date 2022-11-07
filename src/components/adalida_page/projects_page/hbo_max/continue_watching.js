@@ -5,7 +5,7 @@ import PictureCaption from '../picture_caption'
 import MediaWithText from '../media_with_text'
 import continueWatching from 'videos/hbo_max/continue_watching.mp4'
 
-import 'sass/adalida_page/cyph.scss'
+import 'sass/adalida_page/project.scss'
 
 const ContinueWatching = () => {
   const pictureCaption = (

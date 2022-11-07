@@ -3,7 +3,7 @@ import React from 'react'
 import Card from '../card'
 import ResponsiveGrid from 'components/responsive_grid'
 
-import 'sass/adalida_page/cyph.scss'
+import 'sass/adalida_page/project.scss'
 
 const Takeaways = () => {
   const centerStyles = {

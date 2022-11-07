@@ -6,7 +6,7 @@ import PictureCaption from '../picture_caption'
 
 import useIsMobile from 'hooks/use_is_mobile'
 
-import 'sass/adalida_page/cyph.scss'
+import 'sass/adalida_page/project.scss'
 
 const Ideate = () => {
   const isMobile = useIsMobile(1200)

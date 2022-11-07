@@ -17,7 +17,6 @@ const AdalidaPage = () => {
   const logiRef = useRef()
   const zenoRef = useRef()
   const HBOMaxRef = useRef()
-  const cyphRef = useRef()
   const hireAdiRef = useRef()
 
   const navigationLinks = useMemo(() => {
@@ -25,7 +24,6 @@ const AdalidaPage = () => {
       Logi: logiRef,
       Zeno: zenoRef,
       HBOMax: HBOMaxRef,
-      Cyph: cyphRef
     }
     if (isMobile) links['Hire Adi'] = hireAdiRef
     return links

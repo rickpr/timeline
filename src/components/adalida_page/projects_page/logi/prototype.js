@@ -4,9 +4,7 @@ import Card from '../card'
 import PictureCaption from '../picture_caption'
 import MediaWithText from '../media_with_text'
 
-import prototype from 'images/logi/prototype.png'
-
-import 'sass/adalida_page/cyph.scss'
+import 'sass/adalida_page/project.scss'
 
 const Prototype = () => {
   const pictureCaption = (

@@ -6,7 +6,7 @@ import PictureCaption from '../picture_caption'
 
 import nextSteps from 'videos/hbo_max/next_steps.mp4'
 
-import 'sass/adalida_page/cyph.scss'
+import 'sass/adalida_page/project.scss'
 
 const NextSteps = () => {
   const problem = (

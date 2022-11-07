@@ -6,7 +6,7 @@ import MediaWithText from '../media_with_text'
 
 import prototype from 'videos/zeno/prototype.mp4'
 
-import 'sass/adalida_page/cyph.scss'
+import 'sass/adalida_page/project.scss'
 
 const Prototype = () => {
   const pictureCaption = (

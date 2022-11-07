@@ -6,7 +6,7 @@ import MediaWithText from '../media_with_text'
 
 import searchProcess from 'videos/hbo_max/search_process.mp4'
 
-import 'sass/adalida_page/cyph.scss'
+import 'sass/adalida_page/project.scss'
 
 const SearchProcess = () => {
   const pictureCaption = (

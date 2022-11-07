@@ -3,7 +3,7 @@ import React from 'react'
 import Card from '../card'
 import SwiperCarousel from 'components/swiper_carousel'
 
-import 'sass/adalida_page/cyph.scss'
+import 'sass/adalida_page/project.scss'
 
 const userPersonaOne = 'images/hbo_max/research/user_persona_one.png'
 const userPersonaTwo = 'images/hbo_max/research/user_persona_two.png'
