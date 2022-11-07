@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { useMemo } from 'react'
 import Typewriter from 'typewriter-effect'
 
@@ -9,7 +8,7 @@ import Links from './about_page/links'
 
 import 'sass/adalida_page/index.scss'
 
-const SplashPage = React.forwardRef(({ showDetail }, ref) => {
+const SplashPage = () => {
   const backdropFilter = 'blur(8px)'
   const textAlign = 'center'
   const viewportHeight = useViewportHeight()
@@ -56,24 +55,23 @@ const SplashPage = React.forwardRef(({ showDetail }, ref) => {
         Welcome to my portfolio! I&apos;m passionate about&nbsp;
         <span style={{ color: '#3D9AF0' }}>{typewriter}</span>
       </p>
-      {showDetail && detailParagraphs}
+      {detailParagraphs}
     </div>
   )
   return (
     <div style={{ height, minWidth: '95vw' }}>
-      <div className='about-container' ref={ref}>
+      <div className='about-container'>
         {hello}
         <div style={{ minHeight: '30vmin' }}>
           {image}
         </div>
         {welcome}
-        {showDetail && <Links />}
+        {<Links />}
       </div>
     </div>
   )
-})
+}
 
 SplashPage.displayName = 'SplashPage'
-SplashPage.propTypes = { showDetail: PropTypes.bool }
 
 export default SplashPage
