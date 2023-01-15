@@ -23,7 +23,7 @@ const About = () => {
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
         This project is a design challenge to redesign the HBOMax app. I wanted to improve the overall user experience
-        and solve problems for people. I
+        and solve problems for people.
       </p>
 
       <AboutList points={points} />
