@@ -21,7 +21,6 @@ const Box = (props) => {
 
   useEffect(() => {
     const goToLink = (event) => {
-      console.log('going to link')
       if (currentLink.current) {
         if (
           event.clientX === mousePositionWhenClicking.current.x &&
@@ -38,9 +37,9 @@ const Box = (props) => {
 
   const openLink = linkURL => {
     return event => {
-      console.log('opening link')
       currentLink.current = linkURL
       mousePositionWhenClicking.current = { x: event.clientX, y: event.clientY }
+      event.stopPropagation()
     }
   }
 
