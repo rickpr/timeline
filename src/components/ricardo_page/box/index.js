@@ -21,13 +21,12 @@ const Box = (props) => {
 
   useEffect(() => {
     const goToLink = (event) => {
-      if (currentLink.current) {
-        if (
+      if (
+        currentLink.current &&
           event.clientX === mousePositionWhenClicking.current.x &&
-            event.clientY === mousePositionWhenClicking.current.y
-        ) {
-          window.open(currentLink.current, '_blank')
-        }
+          event.clientY === mousePositionWhenClicking.current.y
+      ) {
+        window.open(currentLink.current, '_blank')
       }
       currentLink.current = null
     }
@@ -47,7 +46,7 @@ const Box = (props) => {
     <>
       <ClockFace
         position={[0, 0, SCALE]}
-        onPointerDown={() => { currentLink.current = null} }
+        onPointerDown={openLink(null)}
       />
       <mesh
         {...props}
