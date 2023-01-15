@@ -57,7 +57,7 @@ const Box = (props) => {
         onPointerDown={openLink('https://www.hackerrank.com/profile/fdisk87')}
       >
         <planeGeometry args={[sideSize, sideSize]} />
-        <meshStandardMaterial  map={terminalTexture} />
+        <meshStandardMaterial map={terminalTexture} side={THREE.DoubleSide} />
       </mesh>
       <mesh
         {...props}
@@ -66,7 +66,7 @@ const Box = (props) => {
         onPointerDown={openLink('https://linkedin.com/in/rickpr')}
       >
         <planeGeometry args={[sideSize, sideSize]} />
-        <meshStandardMaterial map={linkedInTexture} />
+        <meshStandardMaterial map={linkedInTexture} side={THREE.DoubleSide} />
       </mesh>
       <mesh
         {...props}
@@ -75,7 +75,7 @@ const Box = (props) => {
         onPointerDown={openLink('https://github.com/rickpr')}
       >
         <planeGeometry args={[sideSize, sideSize]} />
-        <meshStandardMaterial map={githubTexture} />
+        <meshStandardMaterial map={githubTexture} side={THREE.DoubleSide} />
       </mesh>
     </>
   )

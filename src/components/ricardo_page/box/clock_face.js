@@ -54,7 +54,7 @@ const ClockFace = (props) => {
   const backing = (
     <mesh>
       <planeGeometry args={[sideSize, sideSize]} />
-      <meshStandardMaterial map={background} />
+      <meshStandardMaterial map={background} side={THREE.DoubleSide} />
     </mesh>
   )
   const center = (
