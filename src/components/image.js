@@ -6,7 +6,14 @@ import ImageQuery from 'queries/image'
 
 const Image = ({ altText, path, ...options }) => {
   const image = ImageQuery(path)
-  return <GatsbyImage image={getImage(image)} alt={altText || image.name} objectFit='contain' {...options} />
+  return (
+    <GatsbyImage
+      image={getImage(image)}
+      alt={altText || image.name}
+      objectFit='contain'
+      {...options}
+    />
+  )
 }
 
 Image.propTypes = {

@@ -1,43 +1,49 @@
 import React from 'react'
 
+import GainTainPhoto from 'images/gaintain/title.jpg'
+import ZarasCleaningPhoto from 'images/zaras_cleaning/title.jpg'
+import ZenoPhoto from 'images/zeno/title.jpg'
+import HireAdiPhoto from 'images/adalida_face.jpg'
+
 const Themes = {
-  Logi: {
-    name: 'Logi',
+  GainTain: {
+    name: 'GainTain',
     description: 'A logistical shipping and tracking experience.',
-    projectPage: '/adalida/projects/logi',
-    heroPhoto: 'images/logi/title.png',
+    projectPage: '/adalida/projects/gaintain',
+    heroPhoto: GainTainPhoto,
 
     // Colors
     primary: '#3357D2',
     background: '#3357D2',
     border: '#5FCCF0'
   },
-  Zeno: {
-    name: 'Zeno',
-    description: 'A luxury e-commerce experience.',
-    projectPage: '/adalida/projects/zeno',
-    heroPhoto: 'images/zeno/title.png',
-
-    // Colors
-    primary: '#ED6112',
-    background: '#ED6112',
-    border: '#FFFFFF'
-  },
-  HBOMax: {
-    name: 'HBOMax',
+  ZarasCleaning: {
+    name: "Zara's Cleaning",
     description: 'Streaming fit for you.',
-    projectPage: '/adalida/projects/hbo_max',
-    heroPhoto: 'images/hbo_max/title.png',
+    projectPage: '/adalida/projects/zaras_cleaning',
+    heroPhoto: ZarasCleaningPhoto,
 
     // Colors
     primary: '#DB00FF',
     background: 'linear-gradient(to bottom right, #05000F, #44156D)',
     border: '#DB00FF'
   },
+  Zeno: {
+    name: 'Zeno',
+    description: 'A luxury e-commerce experience.',
+    projectPage: '/adalida/projects/zeno',
+    heroPhoto: ZenoPhoto,
+
+    // Colors
+    primary: '#ED6112',
+    background: '#ED6112',
+    border: '#FFFFFF'
+  },
+  // TODO: Remove this and make it independent instead
   'Hire Adi': {
     name: 'Hire Adi',
     description: '',
-    heroPhoto: 'images/adalida_face.jpg',
+    heroPhoto: HireAdiPhoto,
     projectPage: '/adalida/about',
 
     // Colors

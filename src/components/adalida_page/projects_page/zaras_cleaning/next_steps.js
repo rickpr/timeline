@@ -4,7 +4,7 @@ import Card from '../card'
 import MediaWithText from '../media_with_text'
 import PictureCaption from '../picture_caption'
 
-import nextSteps from 'videos/hbo_max/next_steps.mp4'
+import nextSteps from 'videos/zaras_cleaning/next_steps.mp4'
 
 import 'sass/adalida_page/project.scss'
 

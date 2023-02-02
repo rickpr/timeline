@@ -1,69 +1,36 @@
-import { navigate } from 'gatsby'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { minBy } from 'lodash'
+import React from 'react'
 
 import { ThemeContext, Themes } from 'theme_context'
-import useIsMobile from 'hooks/use_is_mobile'
-import useViewportHeight from 'hooks/use_viewport_height'
 
 import App from './app'
-import Layout from './layout'
-import SideNavigation from './side_navigation'
 
 import 'sass/adalida_page/index.scss'
 
+import AdalidaFace from 'images/adalida_face.jpg'
+
 const AdalidaPage = () => {
-  const isMobile = useIsMobile()
-  const logiRef = useRef()
-  const zenoRef = useRef()
-  const HBOMaxRef = useRef()
-  const hireAdiRef = useRef()
-
-  const navigationLinks = useMemo(() => {
-    const links = {
-      Logi: logiRef,
-      Zeno: zenoRef,
-      HBOMax: HBOMaxRef,
-    }
-    if (isMobile) links['Hire Adi'] = hireAdiRef
-    return links
-  }, [isMobile])
-
-  const [closestProject, setClosestProject] = useState(() => Object.keys(navigationLinks)[0])
-
-  const scrollRef = useRef()
-  useEffect(() => {
-    const updateClosestProject = () => {
-      const distanceFromWindow = ([_, ref]) => {
-        if (!ref.current) return Infinity
-
-        const { left, top } = ref.current.getBoundingClientRect()
-        return Math.pow(left, 2) + Math.pow(top, 2)
-      }
-      const [closestProject] = minBy(Object.entries(navigationLinks), distanceFromWindow)
-      setClosestProject(closestProject)
-      if (closestProject === 'Hire Adi') setTimeout(() => navigate('/adalida/about'), 500)
-    }
-    // TODO: don't user a timer for this
-    setTimeout(() => scrollRef.current.scrollTo({ top: 0, left: 0, behavior: 'smooth' }), 1000)
-    scrollRef.current.addEventListener('scroll', updateClosestProject)
-    return () => window.removeEventListener('scroll', updateClosestProject)
-  }, [navigationLinks])
-
-  // No app for the Hire Adi page, but we want a nav link
-  const apps = Object.entries(navigationLinks).filter(([title, _]) => title !== 'Hire Adi')
   return (
-    <ThemeContext.Provider value={Themes[closestProject]}>
-      <Layout>
-        <div
-          className='apps-container'
-          ref={scrollRef}
-          style={{ flexDirection: isMobile ? 'row' : 'column', height: useViewportHeight() }}
-        >
-          {apps.map(([title, ref]) => <App key={title} ref={ref} title={title} />)}
+    <ThemeContext.Provider value={Themes.GainTain}>
+      <div className='apps-page'>
+        <div style={{ padding: '20px 30px' }} className='apps-portrait'>
+          <img alt="Adalida Portrait" src={AdalidaFace} style={{ width: '100%' }} />
+          <h2>Adalida Baca</h2>
+          <p>
+            Hello, I&apos;m an enthusiastic Product Designer in the Bay Area.
+            Welcome to my portfolio!
+          </p>
         </div>
-        <SideNavigation links={navigationLinks} />
-      </Layout>
+        <div className='app-covers'>
+          <div className='apps-row'>
+            <App title='GainTain' />
+            <App title='ZarasCleaning' />
+          </div>
+          <div className='apps-row'>
+            <App title='Zeno' />
+            <div className='app-cover' />
+          </div>
+        </div>
+      </div>
     </ThemeContext.Provider>
   )
 }

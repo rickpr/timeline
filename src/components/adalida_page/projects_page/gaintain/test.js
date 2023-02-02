@@ -3,29 +3,28 @@ import React from 'react'
 import Card from '../card'
 import PictureCaption from '../picture_caption'
 import MediaWithText from '../media_with_text'
-import continueWatching from 'videos/hbo_max/continue_watching.mp4'
 
 import 'sass/adalida_page/project.scss'
 
-const ContinueWatching = () => {
+const Test = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text="People want to view more content about the making of the film or show."
+        text="People want a fast delivery time."
       />
       <PictureCaption
         heading='Solution'
-        text='Provide information on the actors, directors, deleted scenes, trailers, etc.'
+        text='Provide users an option to track their package after checkout and offer a hyper local delivery tracking.'
       />
     </div>
   )
 
   return (
-    <Card title='// Ideate'>
-      <MediaWithText media={continueWatching} text={pictureCaption} />
+    <Card title='// Test'>
+      <MediaWithText media='images/gaintain/test.png' text={pictureCaption} />
     </Card>
   )
 }
 
-export default ContinueWatching
+export default Test

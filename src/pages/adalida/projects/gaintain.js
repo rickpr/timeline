@@ -1,15 +1,15 @@
 import React from 'react'
 import 'sass/custom.scss'
 
-import Logi from 'components/adalida_page/projects_page/logi'
+import GainTain from 'components/adalida_page/projects_page/gaintain'
 import Layout from 'components/adalida_page/layout'
 import ScrollProgress from 'components/adalida_page/projects_page/scroll_progress'
 import { ThemeContext, Themes } from 'theme_context'
 
-const LogiPage = () =>
-  <ThemeContext.Provider value={Themes.Logi}>
+const GainTainPage = () =>
+  <ThemeContext.Provider value={Themes.GainTain}>
     <ScrollProgress />
-    <Layout><Logi /></Layout>
+    <Layout><GainTain /></Layout>
   </ThemeContext.Provider>
 
-export default LogiPage
+export default GainTainPage

@@ -20,7 +20,7 @@ const Ideate = () => {
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
-      <Image path='logi/ideate.png' width='100%' />
+      <Image path='gaintain/ideate.png' width='100%' />
     </div>
   )
   return (

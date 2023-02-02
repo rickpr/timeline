@@ -8,22 +8,20 @@ import 'sass/adalida_page/project.scss'
 
 const About = () => {
   const points = {
-    PLATFORM: 'Mobile iOS',
-    INDUSTRY: 'Video Streaming Service',
-    LOCATION: 'San Francisco, CA',
-    DURATION: '2 weeks'
+    PLATFORM: 'Desktop',
+    INDUSTRY: 'Logistics',
+    LOCATION: 'Austin, TX',
+    DURATION: '1 week'
   }
 
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <p>
-        HBOMax Redesign Challenge
-
+      This is a dashboard focused on shipping and logistics.
       </p>
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
-        This project is a design challenge to redesign the HBOMax app. I wanted to improve the overall user experience
-        and solve problems for people.
+      The challenge with this project was to create a hi-fidelity design from two different design systems. The first design system is  base for my wireframe and layout. The second design system is the base for my color design system.
       </p>
 
       <AboutList points={points} />
@@ -32,10 +30,8 @@ const About = () => {
 
   const titles = [
     'Product Designer',
-    'User Testing',
-    'UX Researcher',
-    'Interaction Designer',
-    'UI Designer'
+    'UI Designer',
+    'UX Designer'
   ]
   const roles = (
     <div style={{
@@ -48,6 +44,7 @@ const About = () => {
       placeItems: 'center center'
     }}>
       <h1>{'//'} ROLES</h1>
+
       <div style={{ display: 'flex', flexWrap: 'wrap', placeContent: 'space-between', width: '100%' }}>
         {titles.map(title => <li key={title}>{title}</li>)}
       </div>
@@ -56,7 +53,7 @@ const About = () => {
 
   return (
     <Card title='// ABOUT THE PROJECT'>
-      <MediaWithText media='images/hbo_max/about.png' text={text} />
+      <MediaWithText media='images/gaintain/about.png' text={text} />
       {roles}
     </Card>
   )

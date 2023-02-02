@@ -1,15 +1,15 @@
 import React from 'react'
 import 'sass/custom.scss'
 
-import HBOMax from 'components/adalida_page/projects_page/hbo_max'
+import ZarasCleaning from 'components/adalida_page/projects_page/zaras_cleaning'
 import Layout from 'components/adalida_page/layout'
 import ScrollProgress from 'components/adalida_page/projects_page/scroll_progress'
 import { ThemeContext, Themes } from 'theme_context'
 
-const HBOMaxPage = () =>
-  <ThemeContext.Provider value={Themes.HBOMax}>
+const ZarasCleaningPage = () =>
+  <ThemeContext.Provider value={Themes.ZarasCleaning}>
     <ScrollProgress />
-    <Layout><HBOMax /></Layout>
+    <Layout><ZarasCleaning /></Layout>
   </ThemeContext.Provider>
 
-export default HBOMaxPage
+export default ZarasCleaningPage

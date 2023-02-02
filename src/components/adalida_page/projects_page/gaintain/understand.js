@@ -5,10 +5,10 @@ import SwiperCarousel from 'components/swiper_carousel'
 
 import 'sass/adalida_page/project.scss'
 
-const june23 = 'images/logi/research/june_23.png'
-const june24 = 'images/logi/research/june_24.png'
-const june28 = 'images/logi/research/june_28.png'
-const june29 = 'images/logi/research/june_29.png'
+const june23 = 'images/gaintain/research/june_23.png'
+const june24 = 'images/gaintain/research/june_24.png'
+const june28 = 'images/gaintain/research/june_28.png'
+const june29 = 'images/gaintain/research/june_29.png'
 
 const Understand = () => {
   const centerStyles = {

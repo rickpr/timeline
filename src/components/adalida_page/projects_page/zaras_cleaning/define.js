@@ -4,32 +4,30 @@ import Card from '../card'
 import PictureCaption from '../picture_caption'
 import MediaWithText from '../media_with_text'
 
-import searchProcess from 'videos/hbo_max/search_process.mp4'
-
 import 'sass/adalida_page/project.scss'
 
-const SearchProcess = () => {
+const Define = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text="Viewers could only search by title and were forced to type out the full title."
+        text="People found HBOMax's user interface difficult to navigate and non-intuitive."
       />
       <PictureCaption
         heading='Solution'
-        text='Provide different ways to browse titles and offer auto-complete and auto-suggestion options.'
+        text="Design a navigation bar that allows users to easily navigate through the app's features."
       />
     </div>
   )
   return (
-    <Card title='// Search Process'>
+    <Card title='// Ideate'>
       <MediaWithText
-        media={searchProcess}
+        media='images/zaras_cleaning/define.png'
         text={pictureCaption}
-        reversed={true}
+        reversed
       />
     </Card>
   )
 }
 
-export default SearchProcess
+export default Define

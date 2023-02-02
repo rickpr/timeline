@@ -10,7 +10,6 @@ const SmallProject = ({ media }) => {
     return () => window.removeEventListener('keydown', setPopUpFalse)
   }, [])
   const style = { height: '100%', width: '100%' }
-  const mediaTag = makeMediaTag({ media, style })
   const popUp = (
     <div
       style={{

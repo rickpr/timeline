@@ -20,7 +20,7 @@ const Ideate = () => {
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
-      <Image path='hbo_max/ideate.png' style={{ width: '100%' }} imgStyle={{ width: '100%' }} />
+      <Image path='zaras_cleaning/ideate.png' style={{ width: '100%' }} imgStyle={{ width: '100%' }} />
     </div>
   )
   return (
