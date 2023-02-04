@@ -22,7 +22,7 @@ const Prototype = () => {
 
   return (
     <Card title='// Color - Design System'>
-      <MediaWithText media='images/logi/prototype.png' text={pictureCaption} />
+      <MediaWithText media='images/gaintain/prototype.png' text={pictureCaption} />
     </Card>
   )
 }

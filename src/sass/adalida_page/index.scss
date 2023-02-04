@@ -32,7 +32,7 @@
   position: relative;
   overflow: hidden;
 
-  width: 100%;
+  width: 50%;
   aspect-ratio: 1/1;
 }
 
@@ -44,6 +44,7 @@
 
 .app-label {
   display: none;
+  color: black;
   position: absolute;
   align-items: center;
   justify-content: center;
@@ -53,6 +54,15 @@
   left: 0;
   transition: backdrop-filter 0.5s ease;
   background-color: #FFFFFF22;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.app-label-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .app-cover:hover .app-label {
@@ -80,14 +90,37 @@
   max-width: 1825px;
 }
 
-.apps-portrait {
+.apps-sidebar-placeholder {
   width: 400px;
   flex: 0 0 400px;
   padding: 20px 30px;
 }
 
+.apps-sidebar {
+  @extend .apps-sidebar-placeholder;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95%;
+}
+
+.apps-sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  a {
+    color: black;
+    &:hover {
+      text-decoration: none;
+      color: #00B8FF;
+    }
+  }
+}
+
 .apps-row {
   display: flex;
+  justify-content: left;
   width: 80%;
   gap: 25px;
   padding: 20px;
@@ -95,14 +128,26 @@
   width: 100%;
 }
 
+.brand-icon {
+  color: black;
+  transition: all 0.5s ease;
+}
+
+.brand-icon:hover {
+  filter: invert(1) opacity(0.25);
+}
+
 @media (max-width: 1024px) {
   .apps-row {
     flex-direction : column;
   }
-  .apps-portrait {
+  .apps-sidebar-placeholder {
     width: 300px;
     flex: 0 0 300px;
     padding: 20px 30px;
+  }
+  .app-cover {
+    width: 100%;
   }
 }
 
@@ -110,8 +155,15 @@
   .apps-page {
     flex-direction: column;
   }
-  .apps-portrait {
+  .apps-sidebar-placeholder {
     width: 100%;
+    display: none;
+  }
+  .apps-sidebar {
+    width: 100%;
+    position: static;
+    display: block;
+    height: unset;
   }
   .apps-grid {
     width: 100%;

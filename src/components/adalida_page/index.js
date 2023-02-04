@@ -1,8 +1,11 @@
+import { Link } from 'gatsby'
 import React from 'react'
+import { IconBrandDribbble, IconBrandLinkedin } from '@tabler/icons'
 
 import { ThemeContext, Themes } from 'theme_context'
 
 import App from './app'
+import BrandIcon from './brand_icon'
 
 import 'sass/adalida_page/index.scss'
 
@@ -12,13 +15,29 @@ const AdalidaPage = () => {
   return (
     <ThemeContext.Provider value={Themes.GainTain}>
       <div className='apps-page'>
-        <div style={{ padding: '20px 30px' }} className='apps-portrait'>
-          <img alt="Adalida Portrait" src={AdalidaFace} style={{ width: '100%' }} />
-          <h2>Adalida Baca</h2>
-          <p>
-            Hello, I&apos;m an enthusiastic Product Designer in the Bay Area.
-            Welcome to my portfolio!
-          </p>
+        <div className='apps-sidebar-placeholder' />
+        <div className='apps-sidebar'>
+          <div className='apps-portrait'>
+            <img alt="Adalida Portrait" src={AdalidaFace} style={{ width: '100%' }} />
+            <h2>Adalida Baca</h2>
+            <p>
+              Hello, I&apos;m an enthusiastic Product Designer in the Bay Area.
+              Welcome to my portfolio!
+            </p>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <a href='https://dribbble.com/adalida-baca' target='_blank' rel='noreferrer' className='brand-icon'>
+                <BrandIcon icon={<IconBrandDribbble />} />
+              </a>
+              <a href='https://linkedin.com/in/adalidabaca' target='_blank' rel='noreferrer' className='brand-icon'>
+                <BrandIcon icon={<IconBrandLinkedin />} />
+              </a>
+            </div>
+          </div>
+          <div className='apps-sidebar-links'>
+            <Link to="/adalida">HOME</Link>
+            <Link to="/adalida/about">ABOUT</Link>
+            <a href="mailto:adalida@adalida.design">CONTACT</a>
+          </div>
         </div>
         <div className='app-covers'>
           <div className='apps-row'>
@@ -27,7 +46,6 @@ const AdalidaPage = () => {
           </div>
           <div className='apps-row'>
             <App title='Zeno' />
-            <div className='app-cover' />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ import Takeaways from './takeaways'
 
 const ZarasCleaning = () =>
   <div style={{ background: '#FAFAFA' }}>
-    <App title="Zara's Cleaning" />
+    <App title='ZarasCleaning' />
     <About />
     <Understand />
     <Define />
