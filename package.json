@@ -12,7 +12,7 @@
     "@react-three/fiber": "^8.8.9",
     "@tabler/icons-react": "^2.3.0",
     "aos": "^3.0.0-beta.6",
-    "gatsby": "4.24.3",
+    "gatsby": "4.25.4",
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-manifest": "^4.24.0",
     "gatsby-plugin-offline": "^5.24.0",
