@@ -20,7 +20,7 @@ export const makeMediaTag = ({ media, style = {} }) => {
 
 const MediaWithText = ({ media, text, reversed = false }) => {
 const maxHeight = '82vh'
-const style = { minWidth: 'min(50ch, 80vw)', maxHeight }
+  const style = { minWidth: 'min(50ch, 80vw)', maxHeight, borderRadius: '10px' }
 
   const padding = '1em'
   const mediaTag = makeMediaTag({ media, style })

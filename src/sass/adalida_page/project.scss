@@ -6,6 +6,17 @@ li {
   margin-left: 2ch;
 }
 
+h3 {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 27px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 27px;
+  color: #60676D;
+}
 
 .caption {
   border-bottom: 1px solid black;
@@ -17,4 +28,153 @@ li {
   justify-content: center;
   gap: 1em;
   padding: 1em;
+}
+
+.project-heading {
+  font-weight: 900;
+  font-size: 88px;
+}
+
+
+.project-description {
+  font-size: 28px;
+}
+
+.more-work {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5% 10%;
+  background-color: #F3F7F8
+}
+
+.more-projects {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 67%;
+  gap: 10px;
+  width: 50%;
+}
+
+.footer-portrait {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.footer-intro {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-intro-and-contact-button {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  width: max-content;
+}
+
+.footer-intro-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-contact-button {
+  display: inline-block;
+  background-color: #FFFFFF;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #778390;
+  border-radius: 18px;
+  border: 1px solid #EDF8F1;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.see-more-of-my-work {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9FA6A9;
+}
+
+.recent-projects {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.recent-project {
+  display: flex;
+  flex: 3 0 calc(50% - 15px);
+  min-width: 300px;
+  background-color: white;
+  gap: 10px;
+  box-shadow: 0 5px 5px #CCCCCC;
+}
+
+.footer-about-me {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33%;
+  gap: 5px;
+  min-width: 350px;
+  justify-content: flex-start;
+}
+
+.recent-project-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.social-footer {
+  background-color: #1A1A1A;
+  color: white;
+  display: flex;
+  padding: 5% 10%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (max-width: 1024px) {
+  .project-heading {
+    font-size: 48px;
+  }
+  .project-description {
+    font-size: 22px;
+  }
+  .more-work {
+    flex-direction: column;
+  }
+  .footer-about-me {
+    flex-basis: unset;
+    justify-content: center;
+  }
+  .footer-intro-and-contact-button {
+    width: 100%;
+  }
+  .more-projects {
+    flex-basis: unset;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-heading {
+    font-size: 35px;
+  }
+  .project-description {
+    font-size: 20px;
+  }
 }

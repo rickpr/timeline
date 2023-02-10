@@ -1,60 +1,49 @@
 import React from 'react'
 
-import AboutList from '../about_list'
 import Card from '../card'
 import MediaWithText from '../media_with_text'
 
 import 'sass/adalida_page/project.scss'
 
 const About = () => {
-  const points = {
-    PLATFORM: 'Desktop',
-    INDUSTRY: 'Logistics',
-    LOCATION: 'Austin, TX',
-    DURATION: '1 week'
-  }
-
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
+      <h3>&#47;&#47; ABOUT THE PROJECT</h3>
       <p>
-      This is a dashboard focused on shipping and logistics.
+        GainTain is a mobile app designed specifically for fitness enthusiasts
+        who want to track their workout data extensively. The app supports time
+        under tension workouts, tracking, and more, making it a comprehensive
+        solution for users looking to improve their fitness.
       </p>
-      <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
-      The challenge with this project was to create a hi-fidelity design from two different design systems. The first design system is  base for my wireframe and layout. The second design system is the base for my color design system.
+        The design process for GainTain was based on a Lean UX Design approach,
+        where the focus was on understanding the client&apos;s needs and
+        creating a tailored solution. The process started with a survey and
+        through close collaboration with the client, a minimum viable product
+        was created and iterated on in real-time as the client used it.
       </p>
 
-      <AboutList points={points} />
-    </div>
-  )
+      <p>
+        This approach allowed for a user-centered design that perfectly matched
+        the client&apos;s workout and tracking needs. The app received positive
+        feedback from the client and users, who appreciated the app&apos;s
+        user-friendly design and comprehensive tracking capabilities.
+      </p>
 
-  const titles = [
-    'Product Designer',
-    'UI Designer',
-    'UX Designer'
-  ]
-  const roles = (
-    <div style={{
-      gridColumn: '1 / -1',
-      marginTop: '1.5em',
-      width: '100%',
-      display: 'grid',
-      gridTemplateColumns: '1fr',
-      placeContent: 'space-between center',
-      placeItems: 'center center'
-    }}>
-      <h1>{'//'} ROLES</h1>
+      <p>Overall, GainTain is a testament to the power of a user-centered design
+        approach and the impact it can have on improving the overall user
+        experience.
+      </p>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', placeContent: 'space-between', width: '100%' }}>
-        {titles.map(title => <li key={title}>{title}</li>)}
-      </div>
+      <p>| <strong>TIMELINE:</strong> 12 weeks</p>
+      <p>| <strong>TEAM:</strong> 1 Designer, 1 Engineer</p>
+      <p>| <strong>ROLES:</strong> Sole Product Designer</p>
     </div>
   )
 
   return (
     <Card title='// ABOUT THE PROJECT'>
-      <MediaWithText media='images/gaintain/about.png' text={text} />
-      {roles}
+      <MediaWithText media='images/gaintain/about.png' text={text} reversed />
     </Card>
   )
 }

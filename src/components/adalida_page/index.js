@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { IconBrandDribbble, IconBrandLinkedin } from '@tabler/icons'
+import { IconBrandDribbble, IconBrandLinkedin } from '@tabler/icons-react'
 
 import { ThemeContext, Themes } from 'theme_context'
 
@@ -25,12 +25,8 @@ const AdalidaPage = () => {
               Welcome to my portfolio!
             </p>
             <div style={{ display: 'flex', gap: '10px' }}>
-              <a href='https://dribbble.com/adalida-baca' target='_blank' rel='noreferrer' className='brand-icon'>
-                <BrandIcon icon={<IconBrandDribbble />} />
-              </a>
-              <a href='https://linkedin.com/in/adalidabaca' target='_blank' rel='noreferrer' className='brand-icon'>
-                <BrandIcon icon={<IconBrandLinkedin />} />
-              </a>
+              <BrandIcon href='https://dribbble.com/adalida-baca' icon={<IconBrandDribbble />} />
+              <BrandIcon href='https://linkedin.com/in/adalidabaca' icon={<IconBrandLinkedin />} />
             </div>
           </div>
           <div className='apps-sidebar-links'>

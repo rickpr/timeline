@@ -10,7 +10,7 @@
   "dependencies": {
     "@react-three/drei": "^9.34.3",
     "@react-three/fiber": "^8.8.9",
-    "@tabler/icons": "^1.101.0",
+    "@tabler/icons-react": "^2.3.0",
     "aos": "^3.0.0-beta.6",
     "gatsby": "4.24.3",
     "gatsby-plugin-image": "^2.24.0",

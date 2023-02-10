@@ -1,4 +1,4 @@
-import { IconFileInfo, IconBrandDribbble, IconBrandLinkedin, IconMail } from '@tabler/icons'
+import { IconFileInfo, IconBrandDribbble, IconBrandLinkedin, IconMail } from '@tabler/icons-react'
 import React from 'react'
 
 import adalidaResume from 'documents/adalida_resume.pdf'

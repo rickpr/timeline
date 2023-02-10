@@ -8,20 +8,22 @@ import HireAdiPhoto from 'images/adalida_face.jpg'
 const Themes = {
   GainTain: {
     name: 'GainTain',
-    description: 'A logistical shipping and tracking experience.',
+    description: 'Designed specifically for fitness enthusiasts who want to track their workout data extensively.',
     projectPage: '/adalida/projects/gaintain',
     heroPhoto: GainTainPhoto,
+    heroPhotoPath: 'images/gaintain/title.jpg',
 
     // Colors
-    primary: '#3357D2',
+    primary: '#F8473D',
     background: '#3357D2',
-    border: '#5FCCF0'
+    border: '#E83161'
   },
   ZarasCleaning: {
     name: "Zara's Cleaning",
     description: 'Streaming fit for you.',
     projectPage: '/adalida/projects/zaras_cleaning',
     heroPhoto: ZarasCleaningPhoto,
+    heroPhotoPath: 'images/zaras_cleaning/title.jpg',
 
     // Colors
     primary: '#DB00FF',
@@ -33,6 +35,7 @@ const Themes = {
     description: 'A luxury e-commerce experience.',
     projectPage: '/adalida/projects/zeno',
     heroPhoto: ZenoPhoto,
+    heroPhotoPath: 'images/zeno/title.jpg',
 
     // Colors
     primary: '#ED6112',
@@ -44,6 +47,7 @@ const Themes = {
     name: 'Hire Adi',
     description: '',
     heroPhoto: HireAdiPhoto,
+    heroPhotoPath: 'images/adalida_face.jpg',
     projectPage: '/adalida/about',
 
     // Colors

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import { IconBrandGithub, IconBrandLinkedin, IconTerminal2 } from '@tabler/icons'
+import { IconBrandGithub, IconBrandLinkedin, IconTerminal2 } from '@tabler/icons-react'
 
 import 'sass/footer.scss'
 
