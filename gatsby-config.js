@@ -31,16 +31,6 @@ module.exports = {
         display: 'minimal-ui',
         icon: 'src/images/favicon.png' // This path is relative to the root of the site.
       }
-    },
-    {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        typeName: 'Rails',
-        fieldName: 'api',
-        url:
-          process.env.API_URL ||
-          'http://adalida-ricardo-api.herokuapp.com/graphql'
-      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
