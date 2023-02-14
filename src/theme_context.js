@@ -2,6 +2,7 @@ import React from 'react'
 
 import GainTainPhoto from 'images/gaintain/title.jpg'
 import ZarasCleaningPhoto from 'images/zaras_cleaning/title.jpg'
+import HBOMaxPhoto from 'images/hbo_max/title.jpg'
 import ZenoPhoto from 'images/zeno/title.jpg'
 import HireAdiPhoto from 'images/adalida_face.jpg'
 
@@ -15,32 +16,44 @@ const Themes = {
 
     // Colors
     primary: '#F8473D',
-    background: '#3357D2',
+    background: 'linear-gradient(#F8473D, #E83161)',
     border: '#E83161'
   },
   ZarasCleaning: {
     name: "Zara's Cleaning",
-    description: 'Streaming fit for you.',
+    description: 'Albuquerque Professional Cleaners',
     projectPage: '/adalida/projects/zaras_cleaning',
     heroPhoto: ZarasCleaningPhoto,
     heroPhotoPath: 'images/zaras_cleaning/title.jpg',
 
     // Colors
-    primary: '#DB00FF',
-    background: 'linear-gradient(to bottom right, #05000F, #44156D)',
-    border: '#DB00FF'
+    primary: '#3A977A',
+    background: 'linear-gradient(to bottom right, #3A977A, #9EE7D3)',
+    border: '#9EE7D3'
   },
   Zeno: {
     name: 'Zeno',
-    description: 'A luxury e-commerce experience.',
+    description: 'Fashion E-commerce Design',
     projectPage: '/adalida/projects/zeno',
     heroPhoto: ZenoPhoto,
     heroPhotoPath: 'images/zeno/title.jpg',
 
     // Colors
-    primary: '#ED6112',
-    background: '#ED6112',
-    border: '#FFFFFF'
+    primary: '#FCBC31',
+    background: 'linear-gradient(to right, #FCBC31, #F68733)',
+    border: '#F68733'
+  },
+  HBOMax: {
+    name: 'HBOMax',
+    description: 'Streaming fit for you.',
+    projectPage: '/adalida/projects/hbo_max',
+    heroPhoto: HBOMaxPhoto,
+    heroPhotoPath: 'images/hbo_max/title.jpg',
+
+    // Colors
+    primary: '#DB00FF',
+    background: 'linear-gradient(to bottom right, #05000F, #44156D)',
+    border: '#DB00FF'
   },
   // TODO: Remove this and make it independent instead
   'Hire Adi': {

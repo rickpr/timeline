@@ -5,9 +5,9 @@ import SwiperCarousel from 'components/swiper_carousel'
 
 import 'sass/adalida_page/project.scss'
 
-const userPersonaOne = 'images/zaras_cleaning/research/user_persona_one.png'
-const userPersonaTwo = 'images/zaras_cleaning/research/user_persona_two.png'
-const informationArchitecture = 'images/zaras_cleaning/research/information_architecture.png'
+const userPersonaOne = 'images/hbo_max/research/user_persona_one.png'
+const userPersonaTwo = 'images/hbo_max/research/user_persona_two.png'
+const informationArchitecture = 'images/hbo_max/research/information_architecture.png'
 
 const Understand = () => {
   const centerStyles = {

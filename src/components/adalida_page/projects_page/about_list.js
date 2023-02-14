@@ -7,7 +7,7 @@ const AboutList = ({ points }) => {
       key={title}
       style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', placeItems: 'center' }}
     >
-      <h2>{'//'} {title}</h2>
+      <h3>{'//'} {title}</h3>
       <ul><li>{content}</li></ul>
     </div>
   )

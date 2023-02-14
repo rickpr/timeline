@@ -18,7 +18,7 @@ const ResponsiveGrid = ({ breakpoint = BREAKPOINT, children, customStyles = {} }
 ResponsiveGrid.propTypes = {
   breakpoint: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  customStyles: PropTypes.object,
+  customStyles: PropTypes.object
 }
 
 export default ResponsiveGrid

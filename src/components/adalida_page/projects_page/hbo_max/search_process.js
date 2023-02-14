@@ -4,7 +4,7 @@ import Card from '../card'
 import PictureCaption from '../picture_caption'
 import MediaWithText from '../media_with_text'
 
-import searchProcess from 'videos/zaras_cleaning/search_process.mp4'
+import searchProcess from 'videos/hbo_max/search_process.mp4'
 
 import 'sass/adalida_page/project.scss'
 

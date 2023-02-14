@@ -5,7 +5,7 @@ import MediaWithText from '../media_with_text'
 
 import 'sass/adalida_page/project.scss'
 
-const About = () => {
+const Make = () => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <h3>&#47;&#47; This is your heading</h3>
@@ -18,10 +18,10 @@ const About = () => {
   )
 
   return (
-    <Card title='// ABOUT THE PROJECT'>
-      <MediaWithText media='images/zaras_cleaning/about.png' text={text} />
+    <Card>
+      <MediaWithText media='images/zaras_cleaning/make.png' text={text} reversed />
     </Card>
   )
 }
 
-export default About
+export default Make

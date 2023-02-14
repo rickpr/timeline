@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const PictureCaption = ({ heading, text }) =>
   <div>
-    <h1 className='caption'>{heading}</h1>
+    <h3>{heading}</h3>
     {text}
   </div>
 

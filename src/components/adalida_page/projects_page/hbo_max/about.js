@@ -4,26 +4,26 @@ import AboutList from '../about_list'
 import Card from '../card'
 import MediaWithText from '../media_with_text'
 
-import about from 'videos/zeno/about.mp4'
-
 import 'sass/adalida_page/project.scss'
 
 const About = () => {
   const points = {
     PLATFORM: 'Mobile iOS',
-    INDUSTRY: 'E - Commerce',
+    INDUSTRY: 'Video Streaming Service',
     LOCATION: 'San Francisco, CA',
-    DURATION: '1 month'
+    DURATION: '2 weeks'
   }
 
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <p>
-        ZENO is a luxury e-commerce app designed for shoppers who enjoy luxury brands created by custom designers.
+        HBOMax Redesign Challenge
+
       </p>
       <p><strong style={{ fontVariationSettings: "'wght' 700" }}>Why? Why do this?</strong></p>
       <p>
-        This project is a design challenge to create a hi-fidelity prototype in Figma. The challenge was to focus on a user interface and the interaction design between frames.
+        This project is a design challenge to redesign the HBOMax app. I wanted to improve the overall user experience
+        and solve problems for people.
       </p>
 
       <AboutList points={points} />
@@ -56,7 +56,7 @@ const About = () => {
 
   return (
     <Card title='// ABOUT THE PROJECT'>
-      <MediaWithText media={about} text={text} />
+      <MediaWithText media='images/hbo_max/about.png' text={text} />
       {roles}
     </Card>
   )

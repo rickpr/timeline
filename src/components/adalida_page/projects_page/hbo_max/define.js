@@ -3,29 +3,31 @@ import React from 'react'
 import Card from '../card'
 import PictureCaption from '../picture_caption'
 import MediaWithText from '../media_with_text'
-import continueWatching from 'videos/zaras_cleaning/continue_watching.mp4'
 
 import 'sass/adalida_page/project.scss'
 
-const ContinueWatching = () => {
+const Define = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
         heading='Problem'
-        text="People want to view more content about the making of the film or show."
+        text="People found HBOMax's user interface difficult to navigate and non-intuitive."
       />
       <PictureCaption
         heading='Solution'
-        text='Provide information on the actors, directors, deleted scenes, trailers, etc.'
+        text="Design a navigation bar that allows users to easily navigate through the app's features."
       />
     </div>
   )
-
   return (
     <Card title='// Ideate'>
-      <MediaWithText media={continueWatching} text={pictureCaption} />
+      <MediaWithText
+        media='images/hbo_max/define.png'
+        text={pictureCaption}
+        reversed
+      />
     </Card>
   )
 }
 
-export default ContinueWatching
+export default Define

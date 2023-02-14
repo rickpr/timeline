@@ -1,7 +1,7 @@
-
 import React from 'react'
 
-import Header from './header'
+import Project from '../project'
+
 import About from './about'
 import Think from './think'
 import Make from './make'
@@ -13,12 +13,8 @@ import WorkoutLibrary from './workout_library'
 import NextSteps from './next_steps'
 import Paragraphs from './paragraphs'
 
-import Footer from './footer'
-import SocialFooter from './social_footer'
-
 const GainTain = () =>
-  <div style={{ background: '#FAFAFA' }}>
-    <Header />
+  <Project>
     <About />
     <Think />
     <Make />
@@ -29,8 +25,6 @@ const GainTain = () =>
     <WorkoutLibrary />
     <NextSteps />
     <Paragraphs />
-    <Footer />
-    <SocialFooter />
-  </div>
+  </Project>
 
 export default GainTain
