@@ -24,7 +24,7 @@ const MediaWithText = ({ media, text, reversed = false }) => {
 
   const padding = '1em'
   const mediaTag = makeMediaTag({ media, style })
-  const flex = '2 2 49%'
+  const flex = '8 8 335px'
   const imageTag = (
     <div
       style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', maxWidth: 'max-content', padding }}

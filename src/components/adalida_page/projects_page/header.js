@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React, { useContext } from 'react'
 
 import { ThemeContext } from 'theme_context'
@@ -16,7 +17,7 @@ const Header = () => {
   }
 
   const text = (
-    <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3, color: '#FFFFFF' }}>
+    <div className='project-header'>
       <h1 className="project-heading">{name}</h1>
       <div className="project-description">
         {description}
@@ -26,13 +27,13 @@ const Header = () => {
 
   return (
     <div style={containerStyle}>
-      <div className='header-intro'>
+      <Link to='/adalida' className='header-intro'>
         <img alt="Adalida Portrait" src={AdalidaFace} className='header-portrait' />
         <div className='header-intro-text'>
           Adalida Baca
           <em style={{ fontSize: '12px' }}>Digital Product Designer</em>
         </div>
-      </div>
+      </Link>
       <MediaWithText media={heroPhotoPath} text={text} reversed />
     </div>
   )

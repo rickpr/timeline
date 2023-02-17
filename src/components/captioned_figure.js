@@ -3,8 +3,8 @@ import React from 'react'
 
 const CaptionedFigure = ({ caption, figure }) =>
   <div style={{ display: 'flex', flexDirection: 'column', placeContent: 'center', textAlign: 'center', color: '#60676D' }}>
-    {figure}
     {caption}
+    {figure}
   </div>
 
 CaptionedFigure.propTypes = {

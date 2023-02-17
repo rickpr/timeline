@@ -33,6 +33,13 @@ p {
   padding: 1em;
 }
 
+.project-header {
+  max-width: 95vw;
+  flex-basis: 37%;
+  flex-grow: 3;
+  color: #FFFFFF;
+}
+
 .project-heading {
   font-weight: 900;
   font-size: 72px;
@@ -196,6 +203,10 @@ p {
 }
 
 @media (max-width: 1024px) {
+  .project-header {
+    flex-basis: 100%;
+  }
+
   .project-heading {
     font-size: 44px;
   }

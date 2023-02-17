@@ -18,9 +18,9 @@ const About = () => {
         This project is a design challenge to create a hi-fidelity prototype in Figma. The challenge was to focus on a user interface and the interaction design between frames.
       </p>
       <p>| <strong>PLATFORM:</strong> Mobile iOS</p>
-      <p>| <strong>ROLES:</strong> E-Commerce</p>
-      <p>| <strong>ROLES:</strong> San Francisco, CA</p>
-      <p>| <strong>ROLES:</strong> 1 month</p>
+      <p>| <strong>INDUSTRY:</strong> E-Commerce</p>
+      <p>| <strong>LOCATION:</strong> San Francisco, CA</p>
+      <p>| <strong>DURATION:</strong> 1 month</p>
       <p>| <strong>ROLES:</strong> Sole Product Designer</p>
     </div>
   )

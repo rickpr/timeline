@@ -21,12 +21,6 @@ const Timer = () => {
         remaining. The FAB follows the user throughout their experience,
         allowing Sarah to keep track of her time throughout her exercise.
       </p>
-      <p>
-        To address the need for timing rest pauses in time-under-tension focused
-        workouts, a Floating Action Button (FAB) was added to display time
-        remaining. The FAB follows the user throughout their experience,
-        allowing Sarah to keep track of her time throughout her exercise.
-      </p>
     </div>
   )
 
