@@ -12,11 +12,11 @@ const NextSteps = () => {
   const problem = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Develop Influence Experience'
+        heading='// Develop Influence Experience'
         text='Design an experience where titles are suggested based on their viewing history to create an overall more personalized experience for the viewer.'
       />
       <PictureCaption
-        heading='User Testing'
+        heading='// User Testing'
         text='Conduct in-person usability studies.'
       />
     </div>

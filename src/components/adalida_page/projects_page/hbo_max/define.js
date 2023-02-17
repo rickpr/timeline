@@ -10,11 +10,11 @@ const Define = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Problem'
+        heading='// Problem'
         text="People found HBOMax's user interface difficult to navigate and non-intuitive."
       />
       <PictureCaption
-        heading='Solution'
+        heading='// Solution'
         text="Design a navigation bar that allows users to easily navigate through the app's features."
       />
     </div>

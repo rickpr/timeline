@@ -11,11 +11,11 @@ const ContinueWatching = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Problem'
+        heading='// Problem'
         text="People want to view more content about the making of the film or show."
       />
       <PictureCaption
-        heading='Solution'
+        heading='// Solution'
         text='Provide information on the actors, directors, deleted scenes, trailers, etc.'
       />
     </div>

@@ -1,61 +1,62 @@
-import PropTypes from 'prop-types'
-import React, { useContext } from 'react'
+import React from 'react'
 
-import Card from './card'
+import Card from '../card'
 import ScalableText from 'components/scalable_text'
 
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
-import { ThemeContext } from 'theme_context'
-
-const viewBoxWidthMultipliers = {
-  Inconsolata: 9,
-  Bodoni: 11,
-  Inter: 12,
-  'Avenir Next': 12
-}
-
-const VisualIdentity = ({ colors, fontFamily }) => {
-  const color = useContext(ThemeContext).primary || '#000000'
+const VisualIdentity = () => {
+  const fontFamily = 'Avenir Next'
   const centerStyles = {
     placeItems: 'center center'
   }
 
   const gridTemplate = `
-    'primary     primary     primary     primary       primary       primary'       4fr
-    'secondary   secondary   secondary   empty-primary empty-primary empty-primary' 1fr
-    'secondary   secondary   secondary   tertiary      tertiary      tertiary'      3fr
-    'support-one support-one support-two support-two   support-three support-three' 1fr / 1fr 1fr 1fr 1fr 1fr 1fr
+    'primary     primary     primary     primary       primary       primary'       4fr / 1fr 1fr 1fr 1fr 1fr
 `
   const fullWidth = { width: '100%', height: '100%', display: 'flex', placeItems: 'center', placeContent: 'center' }
-  const textColor = color => {
-    // Assumes color is in hex format, like #FFFFFF
-    const red = parseInt(color.slice(1, 3), 16)
-    const green = parseInt(color.slice(3, 5), 16)
-    const blue = parseInt(color.slice(5), 16)
-    // TODO: add perceived brightness coefficients
-    // 382.5 is half of 765 which is max brightness
-    return red + green + blue > 382 ? '#000000' : '#FFFFFF'
+  const glassMorphism = {
+    borderRadius: '10px',
+    boxShadow: '0 5px 5px -1px #152163',
+    background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15))',
+    backdropFilter: 'blur(24px)'
   }
-  const gridRow = gridArea => {
-    const color = colors[gridArea]
-    return <div style={{ gridArea, backgroundColor: color, color: textColor(color), ...fullWidth }}>{color}</div>
-  }
+
   const grid = (
     <div style={{
-      display: 'grid',
       flexBasis: '63%',
       flexGrow: 2,
-      gridTemplate,
+      padding: '5%',
+      minHeight: '500px',
+      background: 'linear-gradient(to bottom right, #FF512F, #BB2476)',
       ...centerStyles
     }}>
-      {gridRow('primary')}
-      {gridRow('secondary')}
-      <div style={{ gridArea: 'empty-primary', backgroundColor: colors.primary, ...fullWidth }}>&nbsp;</div>
-      {gridRow('tertiary')}
-      {gridRow('support-one')}
-      {gridRow('support-two')}
-      {gridRow('support-three')}
+      <div style={{
+        opacity: 0.5,
+        ...glassMorphism,
+        ...fullWidth
+      }}>
+        <div style={{
+          ...glassMorphism,
+          ...fullWidth,
+          width: '80%',
+          height: '80%'
+        }}>
+          <div style={{
+            ...glassMorphism,
+            ...fullWidth,
+            width: '80%',
+            height: '80%'
+          }}>
+            <div style={{
+              ...glassMorphism,
+              ...fullWidth,
+              width: '80%',
+              height: '80%'
+            }} />
+          </div>
+        </div>
+      </div>
     </div>
   )
 
@@ -65,7 +66,7 @@ const VisualIdentity = ({ colors, fontFamily }) => {
   // https://en.wikipedia.org/wiki/Zero-width_space
   const generateTypewriterString = (heading, text) => `<​${heading}> ${text} </${heading}>`
   const h1String = generateTypewriterString('H1', '48')
-  const viewBoxWidthMultiplier = viewBoxWidthMultipliers[fontFamily]
+  const viewBoxWidthMultiplier = 12
 
   const typography = (
     <div style={{ flexBasis: '31%', flexGrow: 3, flexShrink: 1 }}>
@@ -110,25 +111,19 @@ const VisualIdentity = ({ colors, fontFamily }) => {
   return (
     <Card>
       <div style={style}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6%', alignItems: 'stretch', width: '100%' }}>
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '6%',
+          alignItems: 'stretch',
+          width: '100%'
+        }}>
           {grid}
           {typography}
         </div>
       </div>
     </Card>
   )
-}
-
-VisualIdentity.propTypes = {
-  colors: PropTypes.shape({
-    primary: PropTypes.string.isRequired,
-    secondary: PropTypes.string.isRequired,
-    tertiary: PropTypes.string.isRequired,
-    'support-one': PropTypes.string.isRequired,
-    'support-two': PropTypes.string.isRequired,
-    'support-three': PropTypes.string.isRequired
-  }).isRequired,
-  fontFamily: PropTypes.string.isRequired
 }
 
 export default VisualIdentity

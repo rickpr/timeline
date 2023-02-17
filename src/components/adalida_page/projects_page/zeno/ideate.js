@@ -32,26 +32,25 @@ const Ideate = () => {
         width: '100%',
         ...centerStyles
       }}>
-
         <div className='picture-caption'>
           <PictureCaption
-            heading='Problem:'
-            text="People want a fast and speedy checkout."
+            heading='// Problem'
+            text='People want a fast and speedy checkout.'
           />
           <PictureCaption
-            heading='Solution'
-            text="Create an engaging and easy to checkout experience."
+            heading='// Solution'
+            text='Create an engaging and easy to checkout experience.'
           />
         </div>
         {image}
         <div className='picture-caption'>
           <PictureCaption
-            heading='Problem:'
-            text="People want to see how long it will take to checkout."
+            heading='// Problem'
+            text='People want to see how long it will take to check out.'
           />
           <PictureCaption
-            heading='Goals'
-            text="Provide a progress bar of the step they are on and how many steps are left."
+            heading='// Goals'
+            text='Provide a progress bar of the step they are on and how many steps are left.'
           />
         </div>
       </div>

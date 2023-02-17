@@ -10,11 +10,11 @@ const Test = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Problem:'
+        heading='// Problem'
         text='Users stream from several platforms.'
       />
       <PictureCaption
-        heading='Solution'
+        heading='// Solution'
         text='Employ bottom up design starting with mobile first to ensure the best user-experience.'
       />
     </div>

@@ -6,7 +6,7 @@ import Footer from './footer'
 import SocialFooter from './social_footer'
 
 const Project = ({ children }) =>
-  <div style={{ background: '#FAFAFA' }}>
+  <div>
     <Header/>
     {children}
     <Footer />

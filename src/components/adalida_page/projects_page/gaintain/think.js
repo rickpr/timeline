@@ -51,7 +51,7 @@ const Think = () => {
 
   return (
     <Card>
-      <MediaWithText media='images/gaintain/about.png' text={text} />
+      <MediaWithText media='images/gaintain/think.png' text={text} />
     </Card>
   )
 }

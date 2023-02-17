@@ -10,11 +10,11 @@ const NextSteps = () => {
   const problem = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Develop Highlight Sections'
+        heading=' // Develop Highlight Sections'
         text='Expand the design to add different highlight sections like sales, collections, new releases.'
       />
       <PictureCaption
-        heading='Prototyping'
+        heading=' // Prototyping'
         text='Prototype a logo animation for loading.'
       />
     </div>

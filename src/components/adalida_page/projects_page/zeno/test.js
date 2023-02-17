@@ -10,11 +10,11 @@ const Test = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Problem'
-        text="People want a fast delivery time."
+        heading='// Problem'
+        text='People want a fast delivery time.'
       />
       <PictureCaption
-        heading='Solution'
+        heading='// Solution'
         text='Provide users an option to track their package after checkout and offer a hyper local delivery tracking.'
       />
     </div>

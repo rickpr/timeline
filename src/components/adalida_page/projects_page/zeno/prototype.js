@@ -12,11 +12,11 @@ const Prototype = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Problem'
-        text="People want to know when their packages are going to arrive."
+        heading='// Problem'
+        text='People want to know when their packages are going to arrive.'
       />
       <PictureCaption
-        heading='Solution'
+        heading='// Solution'
         text='Provide a delivery date and time after purchase, so they know when to expect their package.'
       />
     </div>

@@ -12,11 +12,11 @@ const SearchProcess = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Problem'
+        heading='// Problem'
         text="Viewers could only search by title and were forced to type out the full title."
       />
       <PictureCaption
-        heading='Solution'
+        heading='// Solution'
         text='Provide different ways to browse titles and offer auto-complete and auto-suggestion options.'
       />
     </div>

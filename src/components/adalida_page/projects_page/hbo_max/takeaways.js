@@ -23,22 +23,19 @@ const Takeaways = () => {
     <ResponsiveGrid breakpoint='30ch' customStyles={{ columnGap: '6%', marginTop: '2em' }}>
       <div>
         <h1 style={{ textAlign: 'center' }}>User Research</h1>
-        <hr />
-        <p className='garamond'>
+        <p>
           My user research made my designs. By following the research, I was able to increase the speed at which I design and create a product users wanted. From my research, I understood what key features users needed and the design came organically.
         </p>
       </div>
       <div>
         <h1 style={{ textAlign: 'center' }}>Performance</h1>
-        <hr />
-        <p className='garamond'>
+        <p>
           I focused on easing the pain for the users when forwarding or rewinding, but to fully fix the problem, I would need to pair with an engineer to improve the performance optimization.
         </p>
       </div>
       <div>
         <h1 style={{ textAlign: 'center' }}>Handoff</h1>
-        <hr />
-        <p className='garamond'>
+        <p>
           I set up my designs in auto-layout using components so they are responsive and are ready for hand off to the engineer.
         </p>
       </div>
@@ -46,7 +43,6 @@ const Takeaways = () => {
   )
   const style = {
     display: 'grid',
-    fontFamily: 'Futura',
     gridTemplateColumns: '1fr',
     width: '90%',
     height: '100%',

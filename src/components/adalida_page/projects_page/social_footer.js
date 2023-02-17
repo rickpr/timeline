@@ -11,11 +11,15 @@ const SocialFooter = () => {
   }, [])
   return (
     <div className='social-footer'>
-      Share this on
-      <div style={{ minWidth: '20px' }} />
-      <BrandIcon href={`https://facebook.com/sharer.php?u=${currentPage}`} icon={<IconBrandFacebook />} />
-      <BrandIcon href={`https://twitter.com/share?url=${currentPage}`} icon={<IconBrandTwitter />} />
-      <BrandIcon href={`https://www.linkedin.com/shareArticle?url=${currentPage}`} icon={<IconBrandLinkedin />} />
+      <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+        Coded by&nbsp;<a href="https://fdisk.co">https://fdisk.co</a>
+      </div>
+      <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+        Share this on
+        <BrandIcon href={`https://facebook.com/sharer.php?u=${currentPage}`} icon={<IconBrandFacebook />} />
+        <BrandIcon href={`https://twitter.com/share?url=${currentPage}`} icon={<IconBrandTwitter />} />
+        <BrandIcon href={`https://www.linkedin.com/shareArticle?url=${currentPage}`} icon={<IconBrandLinkedin />} />
+      </div>
     </div>
   )
 }

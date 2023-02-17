@@ -21,7 +21,7 @@ const Make = () => {
 
   return (
     <Card>
-      <MediaWithText media='images/gaintain/about.png' text={text} reversed />
+      <MediaWithText media='images/gaintain/make.png' text={text} reversed />
     </Card>
   )
 }

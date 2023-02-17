@@ -24,7 +24,7 @@ const Check = () => {
 
   return (
     <Card>
-      <MediaWithText media='images/gaintain/about.png' text={text} />
+      <MediaWithText media='images/gaintain/check.png' text={text} />
     </Card>
   )
 }

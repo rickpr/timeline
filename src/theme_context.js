@@ -1,9 +1,9 @@
 import React from 'react'
 
-import GainTainPhoto from 'images/gaintain/title.jpg'
+import GainTainPhoto from 'images/gaintain/cover.jpg'
 import ZarasCleaningPhoto from 'images/zaras_cleaning/cover.jpg'
-import HBOMaxPhoto from 'images/hbo_max/title.jpg'
-import ZenoPhoto from 'images/zeno/title.jpg'
+import HBOMaxPhoto from 'images/hbo_max/cover.png'
+import ZenoPhoto from 'images/zeno/cover.png'
 import HireAdiPhoto from 'images/adalida_face.jpg'
 
 const Themes = {
@@ -12,7 +12,7 @@ const Themes = {
     description: 'Designed specifically for fitness enthusiasts who want to track their workout data extensively.',
     projectPage: '/adalida/projects/gaintain',
     coverPhoto: GainTainPhoto,
-    heroPhotoPath: 'images/gaintain/title.jpg',
+    heroPhotoPath: 'images/gaintain/title.png',
 
     // Colors
     primary: '#F8473D',
@@ -36,7 +36,7 @@ const Themes = {
     description: 'Fashion E-commerce Design',
     projectPage: '/adalida/projects/zeno',
     coverPhoto: ZenoPhoto,
-    heroPhotoPath: 'images/zeno/title.jpg',
+    heroPhotoPath: 'images/zeno/title.png',
 
     // Colors
     primary: '#FCBC31',
@@ -48,7 +48,7 @@ const Themes = {
     description: 'Streaming fit for you.',
     projectPage: '/adalida/projects/hbo_max',
     coverPhoto: HBOMaxPhoto,
-    heroPhotoPath: 'images/hbo_max/title.jpg',
+    heroPhotoPath: 'images/hbo_max/about.png',
 
     // Colors
     primary: '#DB00FF',
@@ -64,9 +64,9 @@ const Themes = {
     projectPage: '/adalida/about',
 
     // Colors
-    primary: '#3D9AF0',
+    primary: '#850021',
     background: '#000000',
-    border: '#3D9AF0'
+    border: '#850021'
   }
 }
 

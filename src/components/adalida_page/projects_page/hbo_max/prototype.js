@@ -10,11 +10,11 @@ const Prototype = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Problem'
+        heading='// Problem'
         text="People found HBOMax's collection small and had trouble viewing their entire title collection."
       />
       <PictureCaption
-        heading='Solution'
+        heading='// Solution'
         text="Provide an easy to navigate search option where viewers can see all titles in a A-Z format and allow them to filter their searches by genre, actor, or title name."
       />
     </div>

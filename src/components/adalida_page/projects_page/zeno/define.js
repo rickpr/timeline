@@ -12,11 +12,11 @@ const Define = () => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
-        heading='Problem'
+        heading='// Problem'
         text='Users are interested in shopping the latest trends by top designers.'
       />
       <PictureCaption
-        heading='Solution'
+        heading='// Solution'
         text="Design a section which highlights the newest designer's trends."
       />
     </div>

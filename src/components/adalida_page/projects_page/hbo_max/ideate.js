@@ -35,22 +35,22 @@ const Ideate = () => {
 
         <div className='picture-caption'>
           <PictureCaption
-            heading='Problem:'
+            heading='// Problem'
             text="People had a difficult time rewinding and fast forwarding becauase there is a lack of options when skipping and the load time is slow."
           />
           <PictureCaption
-            heading='Solution'
+            heading='// Solution'
             text="Provide intervals for skipping options and pair with a developer to increase the load and speed time."
           />
         </div>
         {image}
         <div className='picture-caption'>
           <PictureCaption
-            heading='Problem:'
+            heading='// Problem'
             text="People could not add or change captions while watching the film. Instead, viewers have to exit the viewing mode, add captions, then return to the viewing mode."
           />
           <PictureCaption
-            heading='Goals'
+            heading='// Goals'
             text="Provide an option to add or change captions, cast, and change the settings while in viewing mode."
           />
         </div>

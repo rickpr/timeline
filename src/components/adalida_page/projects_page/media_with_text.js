@@ -9,7 +9,7 @@ export const makeMediaTag = ({ media, style = {} }) => {
   }
   if (media.endsWith('.mp4')) {
     const videoStyle = { maxWidth: '80vw', ...style }
-    return <video src={media} autoPlay loop muted playsInline style={videoStyle} />
+    return <video src={media} autoPlay loop muted playsInline width='100%' style={videoStyle} />
   }
   if (media.endsWith('.gif')) {
     return <img alt='' src={media} type='video/mp4' autoPlay style={style} />
@@ -19,7 +19,7 @@ export const makeMediaTag = ({ media, style = {} }) => {
 }
 
 const MediaWithText = ({ media, text, reversed = false }) => {
-const maxHeight = '82vh'
+  const maxHeight = '82vh'
   const style = { minWidth: 'min(50ch, 80vw)', maxHeight, borderRadius: '10px' }
 
   const padding = '1em'
@@ -27,7 +27,6 @@ const maxHeight = '82vh'
   const flex = '2 2 49%'
   const imageTag = (
     <div
-      key='image'
       style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', maxWidth: 'max-content', padding }}
     >
       {mediaTag}
