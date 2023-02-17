@@ -4,6 +4,7 @@ import GainTainPhoto from 'images/gaintain/cover.jpg'
 import ZarasCleaningPhoto from 'images/zaras_cleaning/cover.jpg'
 import HBOMaxPhoto from 'images/hbo_max/cover.png'
 import ZenoPhoto from 'images/zeno/cover.png'
+import LogiPhoto from 'images/logi/title.png'
 import HireAdiPhoto from 'images/adalida_face.jpg'
 
 const Themes = {
@@ -39,8 +40,8 @@ const Themes = {
     heroPhotoPath: 'images/zeno/title.png',
 
     // Colors
-    primary: '#FCBC31',
-    background: 'linear-gradient(to right, #FCBC31, #F68733)',
+    primary: '#ED6112',
+    background: 'linear-gradient(to right, #ED6112, #F68733)',
     border: '#F68733'
   },
   HBOMax: {
@@ -55,6 +56,18 @@ const Themes = {
     background: 'linear-gradient(to bottom right, #05000F, #44156D)',
     border: '#DB00FF'
   },
+  Logi: {
+    name: 'Logi',
+    description: 'A logistical shipping and tracking experience.',
+    projectPage: '/adalida/projects/logi',
+    coverPhoto: LogiPhoto,
+    heroPhotoPath: 'images/logi/title.png',
+
+    // Colors
+    primary: '#3357D2',
+    background: '#3357D2',
+    border: '#5FCCF0'
+  },
   // TODO: Remove this and make it independent instead
   'Hire Adi': {
     name: 'Hire Adi',
@@ -68,6 +81,7 @@ const Themes = {
     background: '#000000',
     border: '#850021'
   }
+
 }
 
 const ThemeContext = React.createContext(Themes['Hire Adi'])

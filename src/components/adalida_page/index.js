@@ -18,6 +18,9 @@ const AdalidaPage = () => {
           <App title='Zeno' />
           <App title='HBOMax' />
         </div>
+        <div className='apps-row'>
+          <App title='Logi' />
+        </div>
       </div>
     </div>
   )
