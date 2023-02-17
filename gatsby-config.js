@@ -26,8 +26,8 @@ module.exports = {
         name: 'Adalida and Ricardo Page',
         short_name: 'timeline',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#FFFFFF',
+        theme_color: '#FFFFFF',
         display: 'minimal-ui',
         icon: 'src/images/favicon.png' // This path is relative to the root of the site.
       }
