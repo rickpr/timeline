@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { IconCircleArrowUpFilled } from '@tabler/icons-react'
 
-import useIsMobile from 'hooks/use_is_mobile'
 import { ThemeContext } from 'theme_context'
 
 const ScrollProgress = () => {
@@ -27,7 +26,7 @@ const ScrollProgress = () => {
         style={{
           position: 'fixed',
           height: `${scrollProgress}%`,
-          width: '1vmin',
+          width: '1vmax',
           background: primary,
           top: 0,
           zIndex: 3
@@ -36,8 +35,8 @@ const ScrollProgress = () => {
       <div
         style={{
           position: 'fixed',
-          height: '5vw',
-          width: '5vw',
+          height: '5vh',
+          width: '5vh',
           bottom: 0,
           right: 0,
           zIndex: 3,
@@ -47,7 +46,7 @@ const ScrollProgress = () => {
         }}
       >
         <a href='#top' style={{ color: 'black', display: 'block', width: '100%', height: '100%' }}>
-          <IconCircleArrowUpFilled size='5vw' />
+          <IconCircleArrowUpFilled size='5vh' />
         </a>
       </div>
     </>

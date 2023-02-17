@@ -45,9 +45,9 @@ p {
 
 .more-work {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   padding: 5% 10%;
+  gap: 2em;
   background-color: #F3F7F8
 }
 
@@ -82,7 +82,6 @@ p {
   flex-direction: column;
   flex-basis: 67%;
   gap: 10px;
-  width: 50%;
 }
 
 .footer-portrait {
@@ -159,7 +158,6 @@ p {
   flex-direction: column;
   flex-basis: 33%;
   gap: 5px;
-  min-width: 350px;
   justify-content: flex-start;
 }
 
@@ -182,6 +180,21 @@ p {
   flex-wrap: wrap;
 }
 
+.project-outer-paragraphs {
+  display: flex;
+  gap: 2em;
+}
+
+.project-inner-paragraphs {
+  display: flex;
+  flex-basis: 50%;
+  gap: 2em;
+}
+
+.project-individual-paragraph {
+  flex-basis: 50%;
+}
+
 @media (max-width: 1024px) {
   .project-heading {
     font-size: 48px;
@@ -193,15 +206,23 @@ p {
     flex-direction: column;
   }
   .footer-about-me {
-    flex-basis: unset;
+    flex-basis: 100%;
     justify-content: center;
   }
   .footer-intro-and-contact-button {
     width: 100%;
   }
   .more-projects {
-    flex-basis: unset;
-    width: 100%;
+    flex-basis: 100%;
+  }
+  .project-outer-paragraphs {
+    flex-direction: column;
+  }
+  .project-inner-paragraphs {
+    flex-basis: 100%;
+  }
+  .recent-project {
+    flex: 3 0 calc(100% - 15px);
   }
 }
 
@@ -211,5 +232,14 @@ p {
   }
   .project-description {
     font-size: 20px;
+  }
+  .project-inner-paragraphs {
+    flex-direction: column;
+  }
+  .project-individual-paragraph {
+    flex-basis: 100%;
+  }
+  .recent-project {
+    flex: 3 0 calc(100% - 15px);
   }
 }

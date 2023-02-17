@@ -1,15 +1,14 @@
 import React from 'react'
 
-import ResponsiveGrid from 'components/responsive_grid'
 import Card from '../card'
 
 import 'sass/adalida_page/project.scss'
 
 const Paragraphs = () => {
   const text = (
-    <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
-      <ResponsiveGrid breakpoint='360px'>
-        <div style={{ padding: '1em' }}>
+    <div className='project-outer-paragraphs'>
+      <div className='project-inner-paragraphs'>
+        <div className='project-individual-paragraph'>
           <h3>Solve the Source not the Symptom</h3>
           <p>
             The original problem of not having an easy way to track workout
@@ -19,7 +18,7 @@ const Paragraphs = () => {
             this workflow.
           </p>
         </div>
-        <div style={{ padding: '1em' }}>
+        <div className='project-individual-paragraph'>
           <h3>Supporting Roles for Designers</h3>
           <p>
             Project Managers can be particularly helpful when creating PRDs
@@ -27,7 +26,9 @@ const Paragraphs = () => {
             outcome at various stages of the implementation and design process.
           </p>
         </div>
-        <div style={{ padding: '1em' }}>
+      </div>
+      <div className='project-inner-paragraphs'>
+        <div className='project-individual-paragraph'>
           <h3>Design Libraries and Components</h3>
           <p>
             Using Apple&apos;s iOS components in this project, I was introduced
@@ -35,14 +36,14 @@ const Paragraphs = () => {
             their functions.
           </p>
         </div>
-        <div style={{ padding: '1em' }}>
+        <div className='project-individual-paragraph'>
           <h3>Lean UX vs. Other Agile Methods</h3>
           <p>
             Resource constraints and time can dictate the choice of
             user-centered design method or approach.
           </p>
         </div>
-      </ResponsiveGrid>
+      </div>
     </div>
   )
 

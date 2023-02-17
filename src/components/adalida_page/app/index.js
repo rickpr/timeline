@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -9,12 +10,12 @@ const App = ({ title }) => {
   return (
     <div className='app-cover'>
       <img alt={`${title} cover`} src={coverPhoto} className='app-image' />
-      <a href={projectPage} className='app-label'>
+      <Link to={projectPage} className='app-label'>
         <div className='app-label-text'>
           <h2>{name.toUpperCase()}</h2>
           {description}
         </div>
-      </a>
+      </Link>
     </div>
   )
 }
