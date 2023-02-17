@@ -3,10 +3,12 @@ import React from 'react'
 import Sidebar from '../sidebar'
 import ChallengeDesigns from './challenge_designs'
 import MediaWithText from '../projects_page/media_with_text'
+import FileQuery from 'queries/file'
 
 import 'sass/adalida_page/index.scss'
 
 const AboutPage = () => {
+  const resume_pdf = FileQuery('Adalida_Baca_Resume.pdf')
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <h3>About Me</h3>
@@ -26,7 +28,7 @@ const AboutPage = () => {
         design techniques and technologies, and I&apos;m always looking for new
         challenges and opportunities to grow as a designer.
       </p>
-      <p>| <a href="/Adalida_Baca_Resume.pdf" target="_blank" rel="noreferrer">
+      <p>| <a href={resume_pdf.publicURL} target="_blank" rel="noreferrer">
              <strong>VIEW RESUME</strong>
            </a>
       </p>
