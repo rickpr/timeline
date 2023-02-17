@@ -5,6 +5,7 @@ import ZarasCleaningPhoto from 'images/zaras_cleaning/cover.jpg'
 import HBOMaxPhoto from 'images/hbo_max/cover.png'
 import ZenoPhoto from 'images/zeno/cover.png'
 import LogiPhoto from 'images/logi/title.png'
+import CyphPhoto from 'images/cyph/title.png'
 import HireAdiPhoto from 'images/adalida_face.jpg'
 
 const Themes = {
@@ -67,6 +68,18 @@ const Themes = {
     primary: '#3357D2',
     background: '#3357D2',
     border: '#5FCCF0'
+  },
+  Cyph: {
+    name: 'Cyph',
+    description: "Learn about politicians' donors and history.",
+    projectPage: '/adalida/projects/cyph',
+    coverPhoto: CyphPhoto,
+    heroPhotoPath: 'images/cyph/title.png',
+
+    // Colors
+    primary: '#39FF14',
+    background: 'linear-gradient(to bottom left, #4A00E0, #8D2CE2)',
+    border: '#39FF14'
   },
   // TODO: Remove this and make it independent instead
   'Hire Adi': {

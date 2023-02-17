@@ -21,7 +21,7 @@ const Define = () => {
     </div>
   )
   return (
-    <Card title='// Hi-Contrast Mockup'>
+    <Card>
       <MediaWithText media='images/logi/define.png' text={pictureCaption} reversed />
     </Card>
   )
