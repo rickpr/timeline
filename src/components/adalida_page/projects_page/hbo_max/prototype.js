@@ -21,7 +21,7 @@ const Prototype = () => {
   )
 
   return (
-    <Card title='// Prototype'>
+    <Card>
       <MediaWithText media='images/hbo_max/prototype.png' text={pictureCaption} />
     </Card>
   )

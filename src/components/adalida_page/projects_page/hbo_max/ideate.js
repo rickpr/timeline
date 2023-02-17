@@ -24,7 +24,7 @@ const Ideate = () => {
     </div>
   )
   return (
-    <Card title='// More Options'>
+    <Card>
       <div style={{
         display: 'grid',
         gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr 1fr',

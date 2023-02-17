@@ -22,7 +22,7 @@ const Test = () => {
   )
 
   return (
-    <Card title='// Test'>
+    <Card>
       <MediaWithText
         media='images/hbo_max/test.png'
         text={pictureCaption}

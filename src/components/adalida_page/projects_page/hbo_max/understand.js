@@ -42,7 +42,7 @@ const Understand = () => {
     ...centerStyles
   }
   return (
-    <Card title='// Understand & Empathize'>
+    <Card>
       <div style={style}>
         {text}
         {carousel}

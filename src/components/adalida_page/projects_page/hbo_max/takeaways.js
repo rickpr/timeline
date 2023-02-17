@@ -54,7 +54,7 @@ const Takeaways = () => {
     ...centerStyles
   }
   return (
-    <Card title='// Takeaways'>
+    <Card>
       <div style={style}>
         {takeaways}
         {thoughts}

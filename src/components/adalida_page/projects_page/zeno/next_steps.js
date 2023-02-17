@@ -21,7 +21,7 @@ const NextSteps = () => {
   )
 
   return (
-    <Card title='// Next Steps'>
+    <Card>
       <MediaWithText media='images/zeno/next_steps.png' text={problem} />
     </Card>
   )

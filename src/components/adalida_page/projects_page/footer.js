@@ -16,12 +16,12 @@ const Footer = () => {
   const previousProjectName = projectNames[modulus(currentProjectIndex - 1)]
   const nextProjectName = projectNames[modulus(currentProjectIndex + 1)]
   const recentProject = projectName => {
-    const { name, heroPhoto, projectPage } = Themes[projectName]
+    const { name, coverPhoto, projectPage } = Themes[projectName]
     return (
       <a className='recent-project' href={projectPage}>
         <img
           alt={`${name} project`}
-          src={heroPhoto}
+          src={coverPhoto}
           className='recent-project-image'
         />
         <p>{name}</p>

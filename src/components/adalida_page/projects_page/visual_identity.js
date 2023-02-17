@@ -113,7 +113,7 @@ const VisualIdentity = ({ colors, fontFamily }) => {
   }
 
   return (
-    <Card title='// Visual Identity'>
+    <Card>
       <div style={style}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6%', alignItems: 'stretch', width: '100%' }}>
           {grid}

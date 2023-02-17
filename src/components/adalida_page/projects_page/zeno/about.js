@@ -55,7 +55,7 @@ const About = () => {
   )
 
   return (
-    <Card title='// ABOUT THE PROJECT'>
+    <Card>
       <MediaWithText media={about} text={text} />
       {roles}
     </Card>

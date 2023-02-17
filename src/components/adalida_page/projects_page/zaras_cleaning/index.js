@@ -2,16 +2,20 @@ import React from 'react'
 
 import Project from '../project'
 import About from './about'
+import Challenges from './challenges'
 import Think from './think'
-import Make from './make'
-import Check from './check'
+import DesignProcess from './design_process'
+import Results from './results'
+import Conclusion from './conclusion'
 
 const ZarasCleaning = () =>
   <Project>
     <About />
+    <Challenges />
     <Think />
-    <Make />
-    <Check />
+    <DesignProcess />
+    <Results />
+    <Conclusion />
   </Project>
 
 export default ZarasCleaning

@@ -22,7 +22,7 @@ const Define = () => {
     </div>
   )
   return (
-    <Card title='// Define'>
+    <Card>
       <MediaWithText media={define} text={pictureCaption} reversed />
     </Card>
   )

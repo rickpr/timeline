@@ -42,7 +42,7 @@ const About = () => {
   )
 
   return (
-    <Card title='// ABOUT THE PROJECT'>
+    <Card>
       <MediaWithText media='images/gaintain/about.png' text={text} reversed />
     </Card>
   )

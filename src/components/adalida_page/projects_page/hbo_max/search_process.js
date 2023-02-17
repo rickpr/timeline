@@ -22,7 +22,7 @@ const SearchProcess = () => {
     </div>
   )
   return (
-    <Card title='// Search Process'>
+    <Card>
       <MediaWithText
         media={searchProcess}
         text={pictureCaption}

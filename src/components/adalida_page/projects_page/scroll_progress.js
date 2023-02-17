@@ -17,6 +17,7 @@ const ScrollProgress = () => {
       setShowUpArrow(scrollProgress >= 50)
     }
     window.addEventListener('scroll', updateScrollProgressSize)
+    updateScrollProgressSize()
     return () => window.removeEventListener('scroll', updateScrollProgressSize)
   }, [])
 
