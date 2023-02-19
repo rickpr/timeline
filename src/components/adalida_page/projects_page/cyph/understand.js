@@ -42,12 +42,11 @@ const Understand = () => {
     display: 'grid',
     gridTemplateColumns: '1fr',
     width: '100%',
-    height: '100%',
     ...centerStyles
   }
   return (
     <Card>
-      <h1>&#47;&#47; Understand & Empathize</h1>
+      <h1>&#47;&#47; Understand &amp; Empathize</h1>
       <div style={style}>
         {text}
         {carousel}
