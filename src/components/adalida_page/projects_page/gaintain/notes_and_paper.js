@@ -14,12 +14,11 @@ const NotesAndPaper = () => {
   const isMobile = useIsMobile(1200)
   const text = (
     <div>
-      <h3>&#47;&#47; 03 | Notes / Paper</h3>
+      <h3>&#47;&#47; 02 | Notes / Paper</h3>
       <p>
-        Sarah needed an efficient way to track weight and repetition amount for
-        each set of her exercises. A stepper was designed to display
-        Sarah&apos;s previous data and provide easy
-        increase/decrease affordances for the weight.
+        With GainTain&apos;s page controls, Sarah can hyper-focus on her current
+        workout and track her progress easily using steppers that display her
+        previous weight and repetition data.
       </p>
     </div>
   )

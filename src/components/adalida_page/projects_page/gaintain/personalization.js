@@ -8,8 +8,13 @@ import 'sass/adalida_page/project.scss'
 const Personalization = () => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
-      <h3>&#47;&#47; Personalization</h3>
-      <p>A design fit for everyone.</p>
+      <h3>&#47;&#47; A design fit for everyone.</h3>
+      <p>
+        The customizable background color feature of GainTain&apos;s UI design
+        allows users to engage with the app and make it their own. This
+        inclusive feature caters to all types of users, whether they&apos;re
+        tracking weights, reps, or supersets.
+      </p>
     </div>
   )
 

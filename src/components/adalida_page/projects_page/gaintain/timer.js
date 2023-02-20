@@ -14,12 +14,11 @@ const Timer = () => {
   const isMobile = useIsMobile(1200)
   const text = (
     <div>
-      <h3>&#47;&#47; 02 | Timer</h3>
+      <h3>&#47;&#47; 03 | Timer</h3>
       <p>
-        To address the need for timing rest pauses in time-under-tension focused
-        workouts, a Floating Action Button (FAB) was added to display time
-        remaining. The FAB follows the user throughout their experience,
-        allowing Sarah to keep track of her time throughout her exercise.
+        GainTain&apos;s timer feature allows Sarah to easily track her rest
+        pauses during her time under tension workouts, without having to switch
+        between multiple apps.
       </p>
     </div>
   )

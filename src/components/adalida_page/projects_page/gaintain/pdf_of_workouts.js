@@ -6,7 +6,7 @@ import { makeMediaTag } from '../media_with_text'
 
 import useIsMobile from 'hooks/use_is_mobile'
 
-import PickerVideo from 'videos/gaintain/pdf_of_workouts/picker.mp4'
+import PdfOfWorkoutsVideo from 'videos/gaintain/pdf_of_workouts.mp4'
 
 import 'sass/adalida_page/project.scss'
 
@@ -17,9 +17,9 @@ const PdfOfWorkouts = () => {
     <div>
       <h3>&#47;&#47; 01 | PDF of Workouts</h3>
       <p>
-        To address the need for a way to view the current day&apos;s workout, a
-        nested doll experience was provided. This allowed Sarah to focus solely
-        on the current day&apos;s workout, making it easy to track and follow.
+        GainTain&apos;s nested doll architecture eliminates the need for Sarah to
+        keep her workout plan pdf open. She can now focus solely on her
+        current day&apos;s workout.
       </p>
     </div>
   )
@@ -37,7 +37,7 @@ const PdfOfWorkouts = () => {
         <CaptionedFigure caption='Before' figure={makeMediaTag({ media: 'gaintain/pdf_of_workouts/program.png' })} />
         {text}
         <div style={{ maxWidth: '331px' }}>
-          <CaptionedFigure caption='After' figure={makeMediaTag({ media: PickerVideo })} />
+          <CaptionedFigure caption='After' figure={makeMediaTag({ media: PdfOfWorkoutsVideo })} />
         </div>
       </div>
     </Card>

@@ -10,16 +10,14 @@ const Conclusion = () => {
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <h3>&#47;&#47; CONCLUSION</h3>
       <p>
-        The final website design successfully achieved the client&apos;s goals
-        of creating a simple yet effective platform for advertising their
-        cleaning business. The website offered clear information about the
-        services provided and included an easy-to-use scheduling feature for
-        clients. The English and Spanish page translation features enabled the
-        website to reach a broader audience, and the responsive design changes
-        ensured the website looked great on any device. The translator was
+        The web design project for the professional cleaner in Albuquerque was
+        successfully completed in three weeks despite the challenge of a
+        language barrier. The final website design met the client&apos;s
+        requirements and was an effective tool for advertising their cleaning
+        business to potential and current clients. The translator was
         invaluable in helping to bridge the language barrier, and the final
-        design was visually appealing, easy to use, and included all necessary
-        features.
+        design was visually appealing, easy to use, and included all
+        necessary features.
       </p>
     </div>
   )
