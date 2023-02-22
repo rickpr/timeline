@@ -6,7 +6,7 @@ import { makeMediaTag } from '../media_with_text'
 
 import useIsMobile from 'hooks/use_is_mobile'
 
-import IncrementVideo from 'videos/gaintain/notes_and_paper.mp4'
+import TimerVideo from 'videos/gaintain/timer.mp4'
 
 import 'sass/adalida_page/project.scss'
 
@@ -36,7 +36,7 @@ const Timer = () => {
         <CaptionedFigure caption='Before' figure={makeMediaTag({ media: 'gaintain/timer.png' })} />
         {text}
         <div style={{ maxWidth: '331px' }}>
-          <CaptionedFigure caption='After' figure={makeMediaTag({ media: IncrementVideo })} />
+          <CaptionedFigure caption='After' figure={makeMediaTag({ media: TimerVideo })} />
         </div>
       </div>
     </Card>
