@@ -1,6 +1,6 @@
 import React from 'react'
 
-import GainTainPhoto from 'images/gaintain/cover.jpg'
+import GainTainPhoto from 'images/gaintain/cover.png'
 import ZarasCleaningPhoto from 'images/zaras_cleaning/cover.jpg'
 import HBOMaxPhoto from 'images/hbo_max/cover.png'
 import ZenoPhoto from 'images/zeno/cover.png'
