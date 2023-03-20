@@ -4,7 +4,7 @@ import * as THREE from 'three'
 
 import GithubIcon from 'images/ricardo/brand-github.png'
 import LinkedInIcon from 'images/ricardo/brand-linkedin.png'
-import TerminalIcon from 'images/ricardo/terminal-2.png'
+import HackerRankIcon from 'images/ricardo/hackerrank.png'
 
 import ClockFace from './clock_face'
 
@@ -14,7 +14,7 @@ const sideSize = SCALE * 2
 const Box = (props) => {
   const githubTexture = useTexture(GithubIcon)
   const linkedInTexture = useTexture(LinkedInIcon)
-  const terminalTexture = useTexture(TerminalIcon)
+  const hackerRankTexture = useTexture(HackerRankIcon)
 
   const currentLink = useRef(null)
   const mousePositionWhenClicking = useRef(null)
@@ -37,7 +37,10 @@ const Box = (props) => {
   const openLink = linkURL => {
     return event => {
       currentLink.current = linkURL
-      mousePositionWhenClicking.current = { x: event.clientX, y: event.clientY }
+      mousePositionWhenClicking.current = {
+        x: Math.trunc(event.clientX),
+        y: Math.trunc(event.clientY)
+      }
       event.stopPropagation()
     }
   }
@@ -55,7 +58,7 @@ const Box = (props) => {
         onPointerDown={openLink('https://www.hackerrank.com/profile/fdisk87')}
       >
         <planeGeometry args={[sideSize, sideSize]} />
-        <meshStandardMaterial map={terminalTexture} side={THREE.DoubleSide} />
+        <meshStandardMaterial map={hackerRankTexture} side={THREE.DoubleSide} />
       </mesh>
       <mesh
         {...props}
