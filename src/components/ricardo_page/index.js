@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Environment, OrbitControls, PerspectiveCamera, useTexture } from '@react-three/drei'
+import { Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
 
+import FileQuery from 'queries/file'
 import Box from './box'
 
 const SCALE = 8
@@ -15,7 +16,10 @@ const anglesToFaceSidesOfBox = [
   // We add this here so we can snap to it when less than Math.PI without doing
   // any weird wrap-around math. Better math is welcome if it's more efficient.
 ]
-const BackgroundEnvironment = (props) => <Environment background files={'background.hdr'} />
+const BackgroundEnvironment = (props) => {
+  const backgroundImage = FileQuery('ricardo_background.hdr')
+  return <Environment background files={backgroundImage.publicURL} />
+}
 
 const RicardoPage = () => {
   const controlsRef = useRef()

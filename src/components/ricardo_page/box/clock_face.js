@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
 import * as THREE from 'three'
 
-import backgroundImage from 'images/favicon.png'
+import backgroundImage from 'images/ricardo/clock_face.png'
 
 const SCALE = 8
 const sideSize = SCALE * 2
@@ -54,7 +54,11 @@ const ClockFace = (props) => {
   const backing = (
     <mesh>
       <planeGeometry args={[sideSize, sideSize]} />
-      <meshStandardMaterial map={background} side={THREE.DoubleSide} />
+      <meshStandardMaterial
+        map={background}
+        side={THREE.DoubleSide}
+        roughness={0}
+      />
     </mesh>
   )
   const center = (
@@ -64,14 +68,14 @@ const ClockFace = (props) => {
   )
   const frame = (
     <mesh>
-      <torusGeometry args={[clockRadius - frameWidth, frameWidth, 3, 20]} />
+      <torusGeometry args={[clockRadius - frameWidth, frameWidth, 8, 100]} />
     </mesh>
   )
   const secondHand = (
     <group ref={secondHandRef}>
       <mesh position={[0, handOffset, secondHandDepth]} rotation-y={Math.PI / 2}>
         <capsuleGeometry args={[secondHandWidth, handLength, 2, 2]} />
-        <meshStandardMaterial color='red' />
+        <meshStandardMaterial color='red' roughness={0.5} />
       </mesh>
     </group>
   )
@@ -79,7 +83,7 @@ const ClockFace = (props) => {
     <group ref={minuteHandRef}>
       <mesh position={[0, handOffset, minuteHandDepth]} rotation-y={Math.PI / 2}>
         <capsuleGeometry args={[minuteHandWidth, handLength, 2, 2]} />
-        <meshStandardMaterial color='black' />
+        <meshStandardMaterial color='black' roughness={0.5} />
       </mesh>
     </group>
   )
@@ -87,7 +91,7 @@ const ClockFace = (props) => {
     <group ref={hourHandRef}>
       <mesh position={[0, handOffset, hourHandDepth]} rotation-y={Math.PI / 2}>
         <capsuleGeometry args={[hourHandWidth, handLength, 2, 2]} />
-        <meshStandardMaterial color='black' />
+        <meshStandardMaterial color='black' roughness={0.5} />
       </mesh>
     </group>
   )
