@@ -33,9 +33,14 @@ const secondHandDepth = minuteHandDepth + (minuteHandDepth - hourHandDepth)
 const hourHandWidth = secondHandDepth
 const minuteHandWidth = minuteHandDepth
 const secondHandWidth = hourHandDepth
-// Other
-const handLength = sideSize / 3
-const handOffset = handLength / 2
+// Lengths
+const secondHandLength = sideSize / 2
+const minuteHandLength = sideSize / 3
+const hourHandLength = sideSize / 4
+// Offsets
+const hourHandOffset = hourHandLength / 2 - sideSize / 10
+const minuteHandOffset = minuteHandLength / 2 - sideSize / 10
+const secondHandOffset = secondHandLength / 2 - sideSize / 10
 
 const ClockFace = (props) => {
   const background = useTexture(backgroundImage)
@@ -63,7 +68,7 @@ const ClockFace = (props) => {
   )
   const center = (
     <mesh rotation-x={Math.PI / 2}>
-      <capsuleGeometry args={[centerRadius, centerRadius, 3, 20]} />
+      <cylinderGeometry args={[centerRadius, centerRadius, 2, 21]} />
     </mesh>
   )
   const frame = (
@@ -73,24 +78,24 @@ const ClockFace = (props) => {
   )
   const secondHand = (
     <group ref={secondHandRef}>
-      <mesh position={[0, handOffset, secondHandDepth]} rotation-y={Math.PI / 2}>
-        <capsuleGeometry args={[secondHandWidth, handLength, 2, 2]} />
+      <mesh position={[0, secondHandOffset, secondHandDepth]}>
+        <boxGeometry args={[secondHandWidth, secondHandLength, 0.1]} />
         <meshStandardMaterial color='red' roughness={0.5} />
       </mesh>
     </group>
   )
   const minuteHand = (
     <group ref={minuteHandRef}>
-      <mesh position={[0, handOffset, minuteHandDepth]} rotation-y={Math.PI / 2}>
-        <capsuleGeometry args={[minuteHandWidth, handLength, 2, 2]} />
+      <mesh position={[0, minuteHandOffset, minuteHandDepth]}>
+        <boxGeometry args={[minuteHandWidth, minuteHandLength, 0.1]} />
         <meshStandardMaterial color='black' roughness={0.5} />
       </mesh>
     </group>
   )
   const hourHand = (
     <group ref={hourHandRef}>
-      <mesh position={[0, handOffset, hourHandDepth]} rotation-y={Math.PI / 2}>
-        <capsuleGeometry args={[hourHandWidth, handLength, 2, 2]} />
+      <mesh position={[0, hourHandOffset, hourHandDepth]}>
+        <boxGeometry args={[hourHandWidth, hourHandLength, 0.1]} />
         <meshStandardMaterial color='black' roughness={0.5} />
       </mesh>
     </group>
