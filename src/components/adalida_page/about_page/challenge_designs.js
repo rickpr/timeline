@@ -4,8 +4,11 @@ import Typewriter from 'typewriter-effect'
 import Card from '../projects_page/card'
 import SmallProject from './small_project'
 
-import totalSales from 'videos/about/total_sales.mp4'
+import checkmark from 'videos/about/checkmark.mp4'
+import screenRecording from 'videos/about/screen_recording.mp4'
+import challengeDesign from 'videos/about/challenge_design.mp4'
 import salesAnalytics from 'videos/about/sales_analytics.mp4'
+import totalSales from 'videos/about/total_sales.mp4'
 
 const styles = {
   display: 'flex',
@@ -36,15 +39,18 @@ const ChallengeDesigns = () => {
         <span style={{ color: '#850021' }}>{typewriter}</span>
       </p>
       <div style={styles}>
-        <SmallProject media='about/emnify.jpg' />
-        <SmallProject media='about/global_dashboard.jpg' />
-        <SmallProject media='about/richmond.jpg' />
-        <SmallProject media='about/sentra.jpg' />
-        <SmallProject media='about/shazam.png' />
-        <SmallProject media='about/venn_dashboard.jpg' />
-        <SmallProject media='about/clock.jpg' />
-        <SmallProject media={totalSales} />
+        <SmallProject media={checkmark} />
+        <SmallProject media={screenRecording} />
+        <SmallProject media={challengeDesign} />
         <SmallProject media={salesAnalytics} />
+        <SmallProject media={totalSales} />
+        <SmallProject media='about/clock.jpg' />
+        <SmallProject media='about/venn_dashboard.jpg' />
+        <SmallProject media='about/shazam.png' />
+        <SmallProject media='about/sentra.jpg' />
+        <SmallProject media='about/richmond.jpg' />
+        <SmallProject media='about/global_dashboard.jpg' />
+        <SmallProject media='about/emnify.jpg' />
       </div>
     </Card>
   )

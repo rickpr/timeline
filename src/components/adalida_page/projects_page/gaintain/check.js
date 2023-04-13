@@ -15,14 +15,11 @@ const Check = () => {
 
         <h3>&#47;&#47; CHECK</h3>
         <p>
-          The hi-fidelity design process allowed for a basic version of the app
-          to be up and running in a matter of hours, using the iOS component kit
-          available on Figma Community. Over the next 2 months, the app was
-          iteratively improved to enhance its functionality, usability, and
-          design, based on areas for improvement identified through user
-          feedback and testing.
-          These incremental changes resulted in a final polished and user-friendly
-          product.
+          The hi-fidelity design process allowed the GainTain app to be up
+          and running in just a few hours using the iOS component kit available
+          on Figma Community. Over the next two months, the team iteratively
+          improved the app, focusing on enhancing its functionality, usability,
+          and design, based on feedback from users like Tina.
         </p>
       </div>
     </div>

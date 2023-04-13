@@ -10,11 +10,10 @@ const Make = () => {
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <h3>&#47;&#47; MAKE</h3>
       <p>
-        A lean UX approach was adopted for the design and development of the
-        minimum viable product (MVP) for GainTain, using Swift UI and a Figma
-        Community iOS kit. The information architecture was based on the
-        client&apos;s existing workout plan, which was updated throughout the
-        design process.
+        I adopted a Lean UX approach for the development of the GainTain MVP.
+        Using FigJam, the team quickly created an information architecture and user
+        flow that reflected the needs of the user personas. As the design progressed,
+        Tina, and other users provided feedback that was used to iterate and refine the app.
       </p>
     </div>
   )
