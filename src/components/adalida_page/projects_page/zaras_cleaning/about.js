@@ -10,8 +10,7 @@ const About = () => {
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <h3>&#47;&#47; ABOUT</h3>
       <p>
-        This case study presents a web design project that was completed in
-        three weeks. The project was for a professional cleaner in Albuquerque,
+        This project was for a professional cleaner in Albuquerque,
         who needed a simple website to advertise her cleaning business to
         current, prospective, and future clients. The website aimed to offer
         quick access to information about the services provided, as well as a
