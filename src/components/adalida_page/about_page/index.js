@@ -36,7 +36,7 @@ const AboutPage = () => {
   )
 
   return (
-    <div className='apps-page'>
+    <div className='about-page'>
       <Sidebar />
       <div>
         <div style={{ margin: '8vh 0' }}>

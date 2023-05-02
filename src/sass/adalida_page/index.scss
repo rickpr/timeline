@@ -15,8 +15,10 @@
 .app-cover {
   position: relative;
   overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vw;
 
-  width: 50%;
   aspect-ratio: 1/1;
 }
 
@@ -24,6 +26,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-height: 100vh;
+  overflow: auto;
+  scroll-snap-type: both mandatory;
 }
 
 .app-label {
@@ -74,21 +79,21 @@
   transform: scale(1.02);
 }
 
-.apps-page {
+.about-page {
   display: flex;
   flex-direction: row;
   padding: 10px;
   max-width: 1825px;
 }
 
-.apps-sidebar-placeholder {
+.about-sidebar-placeholder {
   width: 400px;
   flex: 0 0 400px;
   padding: 20px 30px;
 }
 
-.apps-sidebar {
-  @extend .apps-sidebar-placeholder;
+.about-sidebar {
+  @extend .about-sidebar-placeholder;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -96,7 +101,7 @@
   height: 95%;
 }
 
-.apps-sidebar-links {
+.about-sidebar-links {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -109,16 +114,6 @@
   }
 }
 
-.apps-row {
-  display: flex;
-  justify-content: left;
-  width: 80%;
-  gap: 25px;
-  padding: 20px;
-  flex-direction: row;
-  width: 100%;
-}
-
 .brand-icon {
   color: black;
   transition: all 0.5s ease;
@@ -129,50 +124,32 @@
 }
 
 @media (max-width: 1024px) {
-  .apps-row {
-    flex-direction : column;
-  }
-  .apps-sidebar-placeholder {
+  .about-sidebar-placeholder {
     width: 300px;
     flex: 0 0 300px;
     padding: 20px 30px;
   }
-  .app-cover {
-    width: 100%;
-  }
-}
-
-.flex-wrap-responsive {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  div {
-    width: 100%;
-  }
 }
 
 @media (max-width: 768px) {
-  .apps-page {
+  .about-page {
     flex-direction: column;
   }
-  .flex-wrap-responsive {
-    flex-direction: column;
-    h3 {
-      font-size: 17px;
-    }
-  }
-  .apps-sidebar-placeholder {
+  .about-sidebar-placeholder {
     width: 100%;
     display: none;
   }
-  .apps-sidebar {
+  .about-sidebar {
     width: 100%;
     position: static;
     display: block;
     height: unset;
   }
-  .apps-grid {
-    width: 100%;
-    grid-template-columns: 1fr;
+  .app-covers {
+    flex-direction: row;
+  }
+  .app-cover {
+    min-width: 100vw;
+    min-height: unset;
   }
 }

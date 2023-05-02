@@ -11,10 +11,10 @@ import AdalidaFace from 'images/adalida_face.jpg'
 const Sidebar = () => {
   return (
     <>
-      <div className='apps-sidebar-placeholder' />
-      <div className='apps-sidebar'>
-        <div className='apps-portrait'>
-          <img alt="Adalida Portrait" src={AdalidaFace} style={{ width: '100%' }} />
+      <div className='about-sidebar-placeholder' />
+      <div className='about-sidebar'>
+        <div>
+          <img alt='Adalida Portrait' src={AdalidaFace} style={{ width: '100%' }} />
           <h2>Adalida Baca</h2>
           <p>
             Hello, I&apos;m an enthusiastic Product Designer in the Bay Area.
