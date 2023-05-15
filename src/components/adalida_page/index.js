@@ -20,7 +20,6 @@ const AdalidaPage = () => {
         </div>
         <div className='apps-row'>
           <App title='Logi' />
-          <App title='Cyph' />
         </div>
       </div>
     </div>
