@@ -11,9 +11,6 @@ const VisualIdentity = () => {
     placeItems: 'center center'
   }
 
-  const gridTemplate = `
-    'primary     primary     primary     primary       primary       primary'       4fr / 1fr 1fr 1fr 1fr 1fr
-`
   const fullWidth = { width: '100%', height: '100%', display: 'flex', placeItems: 'center', placeContent: 'center' }
   const glassMorphism = {
     borderRadius: '10px',
@@ -64,6 +61,7 @@ const VisualIdentity = () => {
   // The library will interpret HTML tags if we don't fool the parser.
   // So the following function has a zero-width space after <
   // https://en.wikipedia.org/wiki/Zero-width_space
+  // eslint-disable-next-line no-irregular-whitespace
   const generateTypewriterString = (heading, text) => `<​${heading}> ${text} </${heading}>`
   const h1String = generateTypewriterString('H1', '48')
   const viewBoxWidthMultiplier = 12

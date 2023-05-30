@@ -8,7 +8,7 @@ import MediaWithText from './media_with_text'
 import 'sass/adalida_page/project.scss'
 
 const Header = () => {
-  const { background, name, description, heroPhotoPath } = useContext(ThemeContext)
+  const { colors: { background }, name, description, heroPhotoPath } = useContext(ThemeContext)
   const containerStyle = {
     minWidth: '95%',
     padding: '5em',

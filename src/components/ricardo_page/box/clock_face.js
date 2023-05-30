@@ -56,6 +56,7 @@ const ClockFace = (props) => {
     minuteHandRef.current.rotation.z = -minuteHandRotation
     hourHandRef.current.rotation.z = -hourHandRotation
   })
+  /* eslint-disable react/no-unknown-property */
   const backing = (
     <mesh>
       <planeGeometry args={[sideSize, sideSize]} />
@@ -100,6 +101,7 @@ const ClockFace = (props) => {
       </mesh>
     </group>
   )
+  /* eslint-enable react/no-unknown-property */
   return (
     <group {...props}>
       {backing}

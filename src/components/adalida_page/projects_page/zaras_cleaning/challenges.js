@@ -13,7 +13,7 @@ const Challenges = () => {
         One of the main challenges of the project was a language barrier between
         myself and the client. Our native languages were different, making it
         difficult to communicate effectively. To overcome this challenge, I
-        hired a translator to help explain the client's needs and requirements.
+        hired a translator to help explain the client&apos;s needs and requirements.
         The translator was also helpful in explaining technical terms such as
         domain name hosting and search engine optimization, which the client was
         not familiar with.

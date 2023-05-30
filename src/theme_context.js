@@ -1,88 +1,22 @@
 import React from 'react'
 
-import GainTainPhoto from 'images/gaintain/cover.png'
-import ZarasCleaningPhoto from 'images/zaras_cleaning/cover.jpg'
-import HBOMaxPhoto from 'images/hbo_max/cover.png'
-import ZenoPhoto from 'images/zeno/cover.png'
-import LogiPhoto from 'images/logi/title.png'
-import HireAdiPhoto from 'images/adalida_face.jpg'
+import Projects from './project_data'
 
-const Themes = {
-  GainTain: {
-    name: 'GainTain',
-    description: 'Designed specifically for fitness enthusiasts who want to track their workout data extensively.',
-    projectPage: '/adalida/projects/gaintain',
-    coverPhoto: GainTainPhoto,
-    heroPhotoPath: 'images/gaintain/title.png',
+import AdalidaFace from 'images/adalida_face.jpg'
 
-    // Colors
-    primary: '#F8473D',
-    background: 'linear-gradient(#F8473D, #E83161)',
-    border: '#E83161'
-  },
-  ZarasCleaning: {
-    name: "Zara's Cleaning",
-    description: 'Albuquerque Professional Cleaners',
-    projectPage: '/adalida/projects/zaras_cleaning',
-    coverPhoto: ZarasCleaningPhoto,
-    heroPhotoPath: 'images/zaras_cleaning/title.png',
+const aboutTheme = {
+  name: 'About Adalida',
+  description: '',
+  coverPhoto: AdalidaFace,
+  heroPhotoPath: 'images/adalida_face.jpg',
+  projectPage: '/adalida/about',
+  roles: [],
 
-    // Colors
-    primary: '#3A977A',
-    background: 'linear-gradient(to bottom right, #3A977A, #9EE7D3)',
-    border: '#9EE7D3'
-  },
-  Zeno: {
-    name: 'Zeno',
-    description: 'Fashion E-commerce Design',
-    projectPage: '/adalida/projects/zeno',
-    coverPhoto: ZenoPhoto,
-    heroPhotoPath: 'images/zeno/title.png',
-
-    // Colors
-    primary: '#ED6112',
-    background: 'linear-gradient(to right, #ED6112, #F68733)',
-    border: '#F68733'
-  },
-  HBOMax: {
-    name: 'HBOMax',
-    description: 'Streaming fit for you.',
-    projectPage: '/adalida/projects/hbo_max',
-    coverPhoto: HBOMaxPhoto,
-    heroPhotoPath: 'images/hbo_max/about.png',
-
-    // Colors
-    primary: '#DB00FF',
-    background: 'linear-gradient(to bottom right, #05000F, #44156D)',
-    border: '#DB00FF'
-  },
-  Logi: {
-    name: 'Logi',
-    description: 'A logistical shipping and tracking experience.',
-    projectPage: '/adalida/projects/logi',
-    coverPhoto: LogiPhoto,
-    heroPhotoPath: 'images/logi/title.png',
-
-    // Colors
-    primary: '#3357D2',
-    background: '#3357D2',
-    border: '#5FCCF0'
-  },
-  // TODO: Remove this and make it independent instead
-  'Hire Adi': {
-    name: 'Hire Adi',
-    description: '',
-    coverPhoto: HireAdiPhoto,
-    heroPhotoPath: 'images/adalida_face.jpg',
-    projectPage: '/adalida/about',
-
-    // Colors
+  colors: {
     primary: '#850021',
-    background: '#000000',
-    border: '#850021'
+    background: '#000000'
   }
-
 }
 
-const ThemeContext = React.createContext(Themes['Hire Adi'])
-export { ThemeContext, Themes }
+const ThemeContext = React.createContext(aboutTheme)
+export { Projects, ThemeContext }

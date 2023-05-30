@@ -3,10 +3,10 @@ import 'sass/custom.scss'
 
 import Zeno from 'components/adalida_page/projects_page/zeno'
 import ScrollProgress from 'components/adalida_page/projects_page/scroll_progress'
-import { ThemeContext, Themes } from 'theme_context'
+import { ThemeContext, Projects } from 'theme_context'
 
 const ZenoPage = () =>
-  <ThemeContext.Provider value={Themes.Zeno}>
+  <ThemeContext.Provider value={Projects.Zeno}>
     <ScrollProgress />
     <Zeno />
   </ThemeContext.Provider>

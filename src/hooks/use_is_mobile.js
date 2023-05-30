@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 export const BREAKPOINT = 576 // px
 
-export default (breakpoint = BREAKPOINT) => {
+const useIsMobile = (breakpoint = BREAKPOINT) => {
   const [windowWidth, setWindowWidth] = useState(breakpoint)
 
   useEffect(() => {
@@ -15,3 +15,5 @@ export default (breakpoint = BREAKPOINT) => {
 
   return windowWidth < breakpoint
 }
+
+export default useIsMobile

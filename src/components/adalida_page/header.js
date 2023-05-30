@@ -1,48 +1,56 @@
-import React, { useContext } from 'react'
-import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
 
-import { ThemeContext } from 'theme_context'
+import Projects from 'project_data'
 
-import 'sass/adalida_page/header.scss'
+const headerStyles = {
+  position: 'fixed',
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%'
+}
+const menuStyles = {
+  color: 'white',
+  display: 'flex',
+  padding: '0 1em',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: '100%'
+}
+const indicatorStyle = {
+  width: '100%',
+  margin: '0.5em 0',
+  padding: '0 1em',
+  display: 'flex',
+  gap: '2dvh',
+  justifyContent: 'space-between'
+}
+const barStyle = {
+  borderWidth: '1dvh',
+  borderRadius: '1dvh',
+  borderStyle: 'solid',
+  flex: '1 0 0',
+  transition: 'all 0.5s ease'
+}
 
-const Header = () => {
-  const borderColor = useContext(ThemeContext).border || '#FFFFFF'
-  const borderStyle = `0.25vh solid ${borderColor}`
-  const borderStyles = {
-    borderLeft: borderStyle,
-    borderRight: borderStyle,
-    borderTop: borderStyle,
-    zIndex: 3
-  }
+const Header = ({ closestProject }) => {
+  const indicators = Object.keys(Projects).map(project => {
+    const active = closestProject === project
+    const opacity = active ? 1 : 0.5
+    const borderColor = active ? 'white' : '#E7E5E7'
+    return <div key={project} style={{ ...barStyle, opacity, borderColor }} />
+  })
   return (
-    <>
-      <nav className='adalida-header' style={{ mixBlendMode: 'difference' }}>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            width: '95%',
-            margin: '0 auto',
-            fontSize: '3vh',
-            padding: '1vh'
-          }}
-        >
-          <div>
-            <Link to='/adalida/apps' className='adalida-header-link' activeClassName='active'>
-              ADALIDA
-            </Link>
-          </div>
-          <div>
-            <Link to='/adalida/about' className='adalida-header-link' activeClassName='active'>
-              ABOUT
-            </Link>
-          </div>
-        </div>
-      </nav>
-      <nav className='adalida-header' style={borderStyles} />
-    </>
+    <div style={headerStyles}>
+      <div style={menuStyles}>
+        <h1 style={{ fontSize: '22px', fontWeight: 700 }}>ADALIDA</h1>
+        <h1 style={{ fontSize: '18px', fontWeight: 400 }}>ABOUT</h1>
+      </div>
+      <div style={indicatorStyle}>{indicators}</div>
+    </div>
   )
 }
+
+Header.propTypes = { closestProject: PropTypes.string }
 
 export default Header

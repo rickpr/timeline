@@ -1,22 +1,20 @@
 import React, { useContext } from 'react'
 
 import AdalidaFace from 'images/adalida_face.jpg'
-import { ThemeContext, Themes } from 'theme_context'
+import { ThemeContext, Projects } from 'theme_context'
 
-const hireAdiKey = 'Hire Adi'
-const { [hireAdiKey]: _, ...projects } = Themes
-const projectNames = Object.keys(projects)
+const projectNames = Object.keys(Projects)
 const numberOfProjects = projectNames.length
 // Javascript's % operator doesn't wrap around to negative numbers
 const modulus = projectIndex => ((projectIndex % numberOfProjects) + numberOfProjects) % numberOfProjects
 
 const Footer = () => {
   const { name } = useContext(ThemeContext)
-  const currentProjectIndex = projectNames.findIndex(key => Themes[key].name === name)
+  const currentProjectIndex = projectNames.findIndex(key => Projects[key].name === name)
   const previousProjectName = projectNames[modulus(currentProjectIndex - 1)]
   const nextProjectName = projectNames[modulus(currentProjectIndex + 1)]
   const recentProject = projectName => {
-    const { name, coverPhoto, projectPage } = Themes[projectName]
+    const { name, coverPhoto, projectPage } = Projects[projectName]
     return (
       <a className='recent-project' href={projectPage}>
         <img

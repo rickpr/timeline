@@ -1,14 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { makeMediaTag } from '../projects_page/media_with_text'
 
 const SmallProject = ({ media }) => {
   const [showPopUp, setShowPopUp] = useState(false)
-  useEffect(() => {
-    const setPopUpFalse = (event) => event.key === 'Escape' && setShowPopUp(false)
-    window.addEventListener('keydown', setPopUpFalse)
-    return () => window.removeEventListener('keydown', setPopUpFalse)
-  }, [])
   const style = { height: '100%', width: '100%' }
   const popUp = (
     <div
@@ -27,6 +22,7 @@ const SmallProject = ({ media }) => {
       role='tab'
       tabIndex={0}
       onClick={() => setShowPopUp(false)}
+      onKeyDown={(event) => [' ', 'Enter', 'Escape'].includes(event.key) && setShowPopUp(false)}
     >
     <div style={{ height: '90vh', width: '90vw', display: 'flex', placeItems: 'center', placeContent: 'center' }}>
         <div style={{ position: 'relative', width: 'max-content', maxWidth: '100%', background: '#000000' }}>

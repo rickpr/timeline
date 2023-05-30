@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types'
-import React, { useContext } from 'react'
+import React from 'react'
 
 import Card from './card'
 import ScalableText from 'components/scalable_text'
 
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
-
-import { ThemeContext } from 'theme_context'
 
 const viewBoxWidthMultipliers = {
   Inconsolata: 9,
@@ -16,7 +14,6 @@ const viewBoxWidthMultipliers = {
 }
 
 const VisualIdentity = ({ colors, fontFamily }) => {
-  const color = useContext(ThemeContext).primary || '#000000'
   const centerStyles = {
     placeItems: 'center center'
   }
@@ -63,6 +60,7 @@ const VisualIdentity = ({ colors, fontFamily }) => {
   // The library will interpret HTML tags if we don't fool the parser.
   // So the following function has a zero-width space after <
   // https://en.wikipedia.org/wiki/Zero-width_space
+  // eslint-disable-next-line no-irregular-whitespace
   const generateTypewriterString = (heading, text) => `<​${heading}> ${text} </${heading}>`
   const h1String = generateTypewriterString('H1', '48')
   const viewBoxWidthMultiplier = viewBoxWidthMultipliers[fontFamily]

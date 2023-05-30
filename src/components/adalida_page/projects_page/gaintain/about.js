@@ -19,7 +19,7 @@ const About = () => {
         With its user-friendly interface and intuitive design, GainTain makes it easy to track your
         progress and stay motivated. You can easily view your workout history, monitor your progress
         over time, and get detailed insights into your performance. And with features like time under
-        tension tracking and exercise instruction videos, you'll have everything you need to take
+        tension tracking and exercise instruction videos, you&apos;ll have everything you need to take
         your workouts to the next level.
       </p>
       <p>| <strong>TIMELINE:</strong> 12 weeks</p>

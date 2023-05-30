@@ -1,3 +1,5 @@
+@import "./app.scss";
+
 .Typewriter {
   display: inline;
 }
@@ -10,73 +12,6 @@
 // Hide scrollbar on Safari and Chrome
 .apps-container::-webkit-scrollbar {
     display: none;
-}
-
-.app-cover {
-  position: relative;
-  overflow: hidden;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  min-height: 100vw;
-
-  aspect-ratio: 1/1;
-}
-
-.app-covers {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-height: 100vh;
-  overflow: auto;
-  scroll-snap-type: both mandatory;
-}
-
-.app-label {
-  color: black;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  transition: all 0.5s ease;
-  transition: background-color 0.5s ease;
-  background-color: #FFFFFF22;
-  opacity: 0;
-  &:hover {
-    opacity: 1;
-    text-decoration: none;
-  }
-}
-
-.app-label-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0 10px;
-}
-
-.app-cover:hover .app-label {
-  display: flex;
-  background-color: #FFFFFFAA;
-  opacity: 1;
-  backdrop-filter: blur(8px) opacity(1);
-}
-
-.app-image {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.2s ease;
-  object-fit: contain;
-}
-
-.app-cover:hover .app-image {
-  transform: scale(1.02);
 }
 
 .about-page {
@@ -144,12 +79,5 @@
     position: static;
     display: block;
     height: unset;
-  }
-  .app-covers {
-    flex-direction: row;
-  }
-  .app-cover {
-    min-width: 100vw;
-    min-height: unset;
   }
 }

@@ -23,6 +23,16 @@ $theme-colors: (
   font-family: 'Avenir Next';
   src: local('Avenir Next'), url(../fonts/AvenirNextLTPro-Regular.otf);
 }
+@font-face {
+  font-family: 'Avenir Next';
+  src: local('Avenir Next'), url(../fonts/AvenirNextLTPro-It.otf);
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Avenir Next';
+  src: local('Avenir Next'), url(../fonts/AvenirNextLTPro-Bold.otf);
+  font-weight: bold;
+}
 
 @font-face {
   font-family: 'Bodoni';
@@ -49,8 +59,18 @@ $theme-colors: (
   src: local('Raleway'), url(../fonts/Raleway-VariableFont_wght.ttf);
 }
 
+@font-face {
+  font-family: 'Work Sans';
+  src: local('Raleway'), url(../fonts/WorkSans-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: 'Work Sans';
+  src: local('Raleway'), url(../fonts/WorkSans-Italic-VariableFont_wght.ttf);
+  font-style: italic;
+}
+
 body {
-  font-family: 'Raleway', 'Inter', 'EB Garamond', sans;
+  font-family: 'Work Sans', 'Inter', 'EB Garamond', sans;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;

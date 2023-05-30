@@ -56,6 +56,7 @@ const Box = (props) => {
     />
   )
 
+  /* eslint-disable react/no-unknown-property */
   const right = (
     <mesh
       {...props}
@@ -115,6 +116,7 @@ const Box = (props) => {
       <meshStandardMaterial map={gliderTexture} side={THREE.DoubleSide} roughness={0} />
     </mesh>
   )
+  /* eslint-enable react/no-unknown-property */
 
   return (
     <>

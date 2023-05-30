@@ -4,7 +4,7 @@ import { IconCircleArrowUpFilled } from '@tabler/icons-react'
 import { ThemeContext } from 'theme_context'
 
 const ScrollProgress = () => {
-  const { primary } = useContext(ThemeContext)
+  const { colors: { primary } } = useContext(ThemeContext)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showUpArrow, setShowUpArrow] = useState(false)
 

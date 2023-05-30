@@ -3,7 +3,6 @@ import React from 'react'
 
 import Project from '../project'
 
-import Header from '../header'
 import About from './about'
 import Understand from './understand'
 import Define from './define'

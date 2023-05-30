@@ -31,6 +31,8 @@ const RicardoPage = () => {
     controlsRef.current.setAzimuthalAngle(angleToFaceClosestSide)
     controlsRef.current.setPolarAngle(Math.PI / 2)
   }
+
+  /* eslint-disable react/no-unknown-property */
   return (
     <Canvas shadows>
       <ambientLight intensity={0.7} />
@@ -48,6 +50,7 @@ const RicardoPage = () => {
       />
     </Canvas>
   )
+  /* eslint-enable react/no-unknown-property */
 }
 
 export default RicardoPage
