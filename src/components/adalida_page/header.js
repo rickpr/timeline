@@ -7,7 +7,8 @@ const headerStyles = {
   position: 'fixed',
   display: 'flex',
   flexDirection: 'column',
-  width: '100%'
+  width: '100%',
+  zIndex: 2
 }
 const menuStyles = {
   color: 'white',
@@ -19,15 +20,14 @@ const menuStyles = {
 }
 const indicatorStyle = {
   width: '100%',
-  margin: '0.5em 0',
-  padding: '0 1em',
+  padding: '0 10dvw',
   display: 'flex',
   gap: '2dvh',
   justifyContent: 'space-between'
 }
 const barStyle = {
-  borderWidth: '1dvh',
-  borderRadius: '1dvh',
+  borderWidth: '1dvw',
+  borderRadius: '1dvw',
   borderStyle: 'solid',
   flex: '1 0 0',
   transition: 'all 0.5s ease'

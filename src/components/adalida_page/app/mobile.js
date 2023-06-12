@@ -2,12 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Projects } from 'theme_context'
-import Header from '../header'
 import Title from './title'
 
 const imageStyles = {
   borderRadius: '1em',
   width: '100%'
+}
+
+const imageContainerStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%',
+  aspectRatio: '1 / 1'
 }
 
 const Mobile = ({ title }) => {
@@ -29,14 +36,13 @@ const Mobile = ({ title }) => {
   }
 
   return (
-    <>
-      <Header />
-      <div style={coverStyles}>
-        <div style={{ minHeight: '8em' }} />
+    <div style={coverStyles} className='mobile-app'>
+      <div style={{ minHeight: '8em' }} />
+      <div style={imageContainerStyles}>
         <img alt={`${title} cover`} src={coverPhoto} style={imageStyles} />
-        <Title title={title} />
       </div>
-    </>
+      <Title title={title} />
+    </div>
   )
 }
 
