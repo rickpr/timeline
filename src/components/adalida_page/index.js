@@ -23,9 +23,10 @@ const coverStyles = {
 }
 
 const distanceFromWindow = ([_project, element]) => {
-  if (!element) return Infinity
+  if (!element.current) return Infinity
 
-  const { left, top } = element.getBoundingClientRect()
+  console.log('element', element)
+  const { left, top } = element.current.getBoundingClientRect()
   // TODO: if splitting into mobile and desktop, use only one dimension
   return Math.pow(left, 2) + Math.pow(top, 2)
 }
@@ -34,9 +35,14 @@ const AdalidaPage = () => {
   const containerRef = useRef(null)
   const projectsContainerRef = useRef(null)
   const projects = Object.keys(Projects)
-  const projectsRefs = useRef({})
-    //projects.map(project => ({ [project]: useRef(null) })).reduce((a, e) => ({ ...a, ...e }), {})
-  //)
+  const projectsRefs = {
+    GainTain: useRef(null),
+    ZarasCleaning: useRef(null),
+    Zeno: useRef(null),
+    HBOMax: useRef(null),
+    Logi: useRef(null)
+  }
+  // projects.map(project => ({ [project]: useRef(null) })).reduce((a, e) => ({ ...a, ...e }), {}))
 
   const [closestProject, setClosestProject] = useState('GainTain')
   const currentProject = Projects[closestProject]
@@ -45,7 +51,7 @@ const AdalidaPage = () => {
     const containerElement = containerRef.current
     const updateClosestProject = () => {
       const [closestProject] = minBy(
-        Object.entries(projectsRefs.current), distanceFromWindow
+        Object.entries(projectsRefs), distanceFromWindow
       )
       setClosestProject(closestProject)
       timer = null
@@ -57,12 +63,12 @@ const AdalidaPage = () => {
     containerElement?.addEventListener('scroll', handleScroll)
     updateClosestProject()
     return () => containerElement?.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [projectsRefs])
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
-      console.log(Object.values(projectsRefs.current))
-      Object.values(projectsRefs.current).forEach(ref => {
+      console.log(Object.values(projectsRefs))
+      Object.values(projectsRefs).forEach(ref => {
         console.log(ref.current)
         gsap.to(
           containerRef.current,
@@ -76,7 +82,7 @@ const AdalidaPage = () => {
               scrub: true,
               markers: true,
               scroller: containerRef.current,
-              onUpdate: (self) => {console.log(self.progress)}
+              onUpdate: (self) => { console.log(self.progress) }
             }
           }
         )
@@ -86,7 +92,7 @@ const AdalidaPage = () => {
       ScrollTrigger.getAll().forEach(t => t.kill())
       context.revert()
     }
-  }, [projectsRefs.current])
+  }, [projectsRefs])
 
   return (
     <ThemeContext.Provider value={currentProject}>
@@ -96,7 +102,7 @@ const AdalidaPage = () => {
             <App
               key={project}
               title={project}
-              ref={ref => { projectsRefs.current[project] = ref }}
+              ref={projectsRefs[project]}
             />
           ))}
       </div>
