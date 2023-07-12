@@ -4,7 +4,7 @@ import Projects from './project_data'
 
 import AdalidaFace from 'images/adalida_face.jpg'
 
-const aboutTheme = {
+export const aboutTheme = {
   name: 'About Adalida',
   description: '',
   coverPhoto: AdalidaFace,
