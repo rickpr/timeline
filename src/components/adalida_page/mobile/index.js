@@ -7,6 +7,7 @@ import Projects from 'project_data'
 
 const coverStyles = {
   display: 'flex',
+  minWidth: '100vw',
   maxHeight: '100vh',
   flexDirection: 'row',
   transition: 'background-color 0.5s ease-in-out',

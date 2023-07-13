@@ -31,7 +31,9 @@ const coverStyles = {
   width: '100dvw',
   minHeight: '100dvh',
   minWidth: '100dvw',
-  padding: '0 10dvw'
+  padding: '0 10dvw',
+  scrollSnapAlign: 'center',
+  scrollSnapStop: 'always'
 }
 
 const App = ({ title, containerRef, closestProject, setClosestProject }) => {
@@ -57,6 +59,8 @@ const App = ({ title, containerRef, closestProject, setClosestProject }) => {
         scrollTrigger: {
           trigger: imageRef.current,
           scroller: containerRef.current,
+          scrub: true,
+          horizontal: true,
           onUpdate: self => { if (self.progress === 0.5) setClosestProject(title) }
         }
       })

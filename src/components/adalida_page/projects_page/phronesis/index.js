@@ -9,8 +9,12 @@ import Logo from 'images/phronesis/logo.svg'
 import AppIcon from 'images/phronesis/app_icon.svg'
 import Text from 'images/phronesis/text.svg'
 import Color from 'images/phronesis/color.svg'
+import FinalLogo from 'images/phronesis/final_logo.svg'
+import ComponentsDarkAndLight from 'images/phronesis/components_dark_light.svg'
 import SpecsTable from 'images/phronesis/specs_table.svg'
 import Specs from 'images/phronesis/specs.svg'
+import PhotosOne from 'images/phronesis/photos_one.svg'
+import PhotosTwo from 'images/phronesis/photos_two.svg'
 
 import 'sass/adalida_page/project.scss'
 
@@ -20,7 +24,7 @@ const containerStyle = {
   margin: '4vh 2.5vw',
   minHeight: '400px',
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(576px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(max(576px, 1fr))',
   alignItems: 'center',
   borderRadius: '2vh',
   justifyContent: 'space-around',
@@ -47,7 +51,10 @@ const Phronesis = () => (
     <ImageContainer images={[InformationArchitecture]} />
     <ImageContainer images={[Logo, AppIcon]} />
     <ImageContainer images={[Text, Color]} />
+    <ImageContainer images={[FinalLogo]} />
+    <ImageContainer images={[ComponentsDarkAndLight]} />
     <ImageContainer images={[Specs, SpecsTable]} />
+    <ImageContainer images={[PhotosOne, PhotosTwo]} />
   </Project>
 )
 

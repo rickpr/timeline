@@ -1,9 +1,7 @@
 import GainTainPhoto from 'images/gaintain/cover.png'
-import PhronesisPhoto from 'images/phronesis/title.png'
+import PhronesisPhoto from 'images/phronesis/cover.png'
 import ZarasCleaningPhoto from 'images/zaras_cleaning/cover.jpg'
-import HBOMaxPhoto from 'images/hbo_max/cover.png'
 import ZenoPhoto from 'images/zeno/cover.png'
-import LogiPhoto from 'images/logi/title.png'
 
 const Projects = {
   GainTain: {
@@ -68,38 +66,6 @@ const Projects = {
     colors: {
       primary: '#ED6112',
       background: 'linear-gradient(to right, #ED6112, #F68733)'
-    }
-  },
-  HBOMax: {
-    name: 'HBOMax',
-    description: 'Streaming fit for you.',
-    projectPage: '/adalida/projects/hbo_max',
-    coverPhoto: HBOMaxPhoto,
-    heroPhotoPath: 'images/hbo_max/about.png',
-    roles: [
-      'User Interface',
-      'User Interaction'
-    ],
-
-    colors: {
-      primary: '#DB00FF',
-      background: 'linear-gradient(to bottom right, #05000F, #44156D)',
-    }
-  },
-  Logi: {
-    name: 'Logi',
-    description: 'A logistical shipping and tracking experience.',
-    projectPage: '/adalida/projects/logi',
-    coverPhoto: LogiPhoto,
-    heroPhotoPath: 'images/logi/title.png',
-    roles: [
-      'Visual Identity',
-      'User Interaction'
-    ],
-
-    colors: {
-      primary: '#3357D2',
-      background: '#3357D2'
     }
   }
 }
