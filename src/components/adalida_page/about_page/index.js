@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Sidebar from '../sidebar'
+import Sidebar from './sidebar'
 import ChallengeDesigns from './challenge_designs'
 import MediaWithText from '../projects_page/media_with_text'
 import FileQuery from 'queries/file'

@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 import { IconBrandDribbble, IconBrandLinkedin } from '@tabler/icons-react'
 
-import BrandIcon from './brand_icon'
+import BrandIcon from '../brand_icon'
 
 import 'sass/adalida_page/index.scss'
 

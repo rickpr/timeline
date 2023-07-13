@@ -4,16 +4,6 @@
   display: inline;
 }
 
-.apps-container {
-  display: flex;
-  position: relative;
-}
-
-// Hide scrollbar on Safari and Chrome
-.apps-container::-webkit-scrollbar {
-    display: none;
-}
-
 .about-page {
   display: flex;
   flex-direction: row;

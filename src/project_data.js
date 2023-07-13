@@ -1,4 +1,5 @@
 import GainTainPhoto from 'images/gaintain/cover.png'
+import PhronesisPhoto from 'images/phronesis/title.png'
 import ZarasCleaningPhoto from 'images/zaras_cleaning/cover.jpg'
 import HBOMaxPhoto from 'images/hbo_max/cover.png'
 import ZenoPhoto from 'images/zeno/cover.png'
@@ -19,6 +20,22 @@ const Projects = {
     colors: {
       primary: '#F8473D',
       background: 'linear-gradient(#F8473D, #E83161)'
+    }
+  },
+  Phronesis: {
+    name: 'Phronesis',
+    description: 'We enable users with the power to visual and understand your data in order to grow your business.',
+    projectPage: '/adalida/projects/phronesis',
+    coverPhoto: PhronesisPhoto,
+    heroPhotoPath: 'images/phronesis/title.png',
+    roles: [
+      'Visual Identity',
+      'User Interaction'
+    ],
+
+    colors: {
+      primary: '#ED6112',
+      background: 'linear-gradient(to right, #ED6112, #F68733)'
     }
   },
   ZarasCleaning: {

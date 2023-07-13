@@ -14,7 +14,9 @@ export const makeMediaTag = ({ media, style = {} }) => {
   if (media.endsWith('.gif')) {
     return <img alt='' src={media} type='video/mp4' autoPlay style={style} />
   }
-
+  if (media.endsWith('.svg')) {
+    return <img alt='' src={media} style={style} />
+  }
   throw new Error(`Could not identify type of media ${media}`)
 }
 

@@ -13,6 +13,8 @@ const Header = () => {
     minWidth: '95%',
     padding: '5em',
     position: 'relative',
+    minHeight: '100dvh',
+    display: 'flex',
     background
   }
 

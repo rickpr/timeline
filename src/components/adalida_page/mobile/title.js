@@ -4,32 +4,33 @@ import React from 'react'
 
 import { Projects } from 'theme_context'
 
+const labelStyles = {
+  color: '#FFFFFF',
+  display: 'flex',
+  width: '100%',
+  height: '100%',
+  transition: 'all 0.5s ease'
+}
+const textStyles = {
+  display: 'flex',
+  flexDirection: 'column'
+}
+const titleStyles = {
+  fontWeight: 800,
+  fontSize: '2rem',
+  fontFamily: 'Avenir Next',
+  padding: 0,
+  margin: 0
+}
+const listStyles = {
+  display: 'flex',
+  justifyContent: 'left',
+  padding: 0,
+  margin: 0
+}
+
 const Title = ({ title }) => {
   const { description, name, projectPage, roles } = Projects[title]
-  const labelStyles = {
-    color: '#FFFFFF',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    height: '100%',
-    transition: 'all 0.5s ease'
-  }
-  const textStyles = {
-    display: 'flex',
-    flexDirection: 'column'
-  }
-  const titleStyles = {
-    fontWeight: 800,
-    fontFamily: 'Avenir Next'
-  }
-  const listStyles = {
-    display: 'flex',
-    justifyContent: 'left',
-    padding: 0,
-    margin: 0
-  }
-
   return (
     <Link to={projectPage} style={labelStyles}>
       <div style={textStyles}>
@@ -44,8 +45,6 @@ const Title = ({ title }) => {
   )
 }
 
-Title.propTypes = {
-  title: PropTypes.string.isRequired
-}
+Title.propTypes = { title: PropTypes.string.isRequired }
 
 export default Title

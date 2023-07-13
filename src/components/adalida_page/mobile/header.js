@@ -13,7 +13,7 @@ const headerStyles = {
 const menuStyles = {
   color: 'white',
   display: 'flex',
-  padding: '0 1em',
+  padding: '0 10dvw',
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%'
