@@ -36,7 +36,28 @@ const About = () => {
     </div>
   )
 
-  return <Card>{text}</Card>
+  return (
+    <div
+      data-aos='fade-up'
+      style={{
+        minWidth: '95%',
+        margin: '4vh 2.5vw',
+        color: '#FFFFFF',
+        padding: '2em 7%',
+        borderRadius: '2vh'
+      }}
+    >
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          maxWidth: '100%',
+          maxHeight: '100%',
+        }}>
+        <div>{text}</div>
+      </div>
+    </div>
+  )
 }
 
 export default About

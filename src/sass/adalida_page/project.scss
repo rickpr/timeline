@@ -43,7 +43,7 @@ p {
 }
 
 .project-heading {
-  font-size: 10dvw;
+  font-size: 72px;
   font-weight: 600;
 }
 
@@ -209,6 +209,10 @@ p {
     justify-content: space-between;
   }
 
+  .project-heading {
+    font-size: 44px;
+  }
+
   .more-work {
     flex-direction: column;
   }
@@ -239,6 +243,9 @@ p {
   }
   .project-individual-paragraph {
     flex-basis: 100%;
+  }
+  .project-heading {
+    font-size: 44px;
   }
   .recent-project {
     flex: 3 0 calc(100% - 15px);

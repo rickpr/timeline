@@ -3,22 +3,18 @@ import React, { useContext, useEffect, useState } from 'react'
 import { IconCircleArrowUpFilled, IconArrowLeft, IconMoonStars } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
-import useLocalStorage from 'hooks/use_local_storage'
 
 const ScrollProgress = () => {
   const { colors: { primary } } = useContext(ThemeContext)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showUpArrow, setShowUpArrow] = useState(false)
-  const [darkMode, setDarkMode] = useLocalStorage('darkMode')
   const navElementStyle = {
     display: 'flex',
     alignItems: 'center',
-    color: darkMode ? 'white' : 'black',
     fontSize: '1.5em',
     border: 'none',
     background: 'none'
   }
-  const background = darkMode ? 'black' : 'white'
 
   useEffect(() => {
     const updateScrollProgressSize = () => {
@@ -39,7 +35,7 @@ const ScrollProgress = () => {
           position: 'sticky',
           top: 0,
           zIndex: 3,
-          background
+          background: 'white'
         }}
       >
         <div style={{
@@ -53,14 +49,9 @@ const ScrollProgress = () => {
               <IconArrowLeft /> Back
             </div>
           </Link>
-          <div style={{ ...navElementStyle, width: '100%', justifyContent: 'flex-end', gap: '1em' }}>
-            <button style={{ ...navElementStyle, background }} onClick={() => { setDarkMode(!darkMode) }}>
-            <IconMoonStars />
-          </button>
           <Link to='/adalida/about'>
-            <div>About</div>
+            <div style={navElementStyle}>About</div>
           </Link>
-          </div>
         </div>
         <div
           style={{

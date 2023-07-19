@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useContext } from 'react'
 
+import { ThemeContext } from 'theme_context'
 import Header from './header'
 import Footer from './footer'
 import SocialFooter from './social_footer'
 
 const Project = ({ children }) => {
+  const { name } = useContext(ThemeContext)
+  const style = name === 'Phronesis' ? { background: '#1A191C' } : {}
   return (
-    <div>
+    <div style={style}>
       <Header />
       {children}
       <Footer />

@@ -8,7 +8,7 @@ export const aboutTheme = {
   name: 'About Adalida',
   description: '',
   coverPhoto: AdalidaFace,
-  heroPhotoPath: 'images/adalida_face.jpg',
+  heroPhoto: AdalidaFace,
   projectPage: '/adalida/about',
   roles: [],
 

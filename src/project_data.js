@@ -1,7 +1,10 @@
-import GainTainPhoto from 'images/gaintain/cover.png'
 import PhronesisPhoto from 'images/phronesis/cover.png'
+import GainTainPhoto from 'images/gaintain/cover.png'
+import GainTainHeroPhoto from 'images/gaintain/title.png'
 import ZarasCleaningPhoto from 'images/zaras_cleaning/cover.jpg'
+import ZarasCleaningHeroPhoto from 'images/zaras_cleaning/title.png'
 import ZenoPhoto from 'images/zeno/cover.png'
+import ZenoHeroPhoto from 'images/zeno/title.png'
 
 const Projects = {
   Phronesis: {
@@ -9,7 +12,7 @@ const Projects = {
     description: 'We enable users with the power to visual and understand your data in order to grow your business.',
     projectPage: '/adalida/projects/phronesis',
     coverPhoto: PhronesisPhoto,
-    heroPhotoPath: 'images/phronesis/cover.png',
+    heroPhoto: PhronesisPhoto,
     roles: [
       'Visual Identity',
       'User Interaction'
@@ -25,7 +28,7 @@ const Projects = {
     description: 'Designed specifically for fitness enthusiasts who want to track their workout data extensively.',
     projectPage: '/adalida/projects/gaintain',
     coverPhoto: GainTainPhoto,
-    heroPhotoPath: 'images/gaintain/title.png',
+    heroPhoto: GainTainHeroPhoto,
     roles: [
       'Product Design',
       'User Research'
@@ -41,7 +44,7 @@ const Projects = {
     description: 'Albuquerque Professional Cleaners',
     projectPage: '/adalida/projects/zaras_cleaning',
     coverPhoto: ZarasCleaningPhoto,
-    heroPhotoPath: 'images/zaras_cleaning/title.png',
+    heroPhoto: ZarasCleaningHeroPhoto,
     roles: [
       'User Interface',
       'Design Systems'
@@ -57,7 +60,7 @@ const Projects = {
     description: 'Fashion E-commerce Design',
     projectPage: '/adalida/projects/zeno',
     coverPhoto: ZenoPhoto,
-    heroPhotoPath: 'images/zeno/title.png',
+    heroPhoto: ZenoHeroPhoto,
     roles: [
       'User Interface',
       'Design Systems'

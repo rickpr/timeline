@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
 
 import { ThemeContext } from 'theme_context'
-import { makeMediaTag } from './media_with_text'
 
 import 'sass/adalida_page/project.scss'
 
 const Header = () => {
-  const { name, heroPhotoPath } = useContext(ThemeContext)
+  const { name, heroPhoto } = useContext(ThemeContext)
   const containerStyle = {
     width: '100%',
     display: 'flex',
@@ -15,12 +14,12 @@ const Header = () => {
     alignItems: 'center',
     overflow: 'hidden'
   }
+  if (name === 'Phronesis') containerStyle.color = 'white'
 
-  const heroPhoto = makeMediaTag({ media: heroPhotoPath })
   const text = (
     <div className='project-header'>
       <div className='project-heading'>{name}</div>
-      {heroPhoto}
+      <img src={heroPhoto} alt={name} />
     </div>
   )
 

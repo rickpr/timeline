@@ -54,9 +54,9 @@ const Phronesis = () => (
     <ImageContainer images={[Logo, AppIcon]} />
     <ImageContainer images={[Text, Color]} />
     <ImageContainer images={[FinalLogo]} />
-    <ImageContainer images={[ComponentsDarkAndLight]} />
     <ImageContainer images={[Specs, SpecsTable]} />
     <ImageContainer images={[PhotosOne, PhotosTwo]} />
+    <ImageContainer images={[ComponentsDarkAndLight]} />
   </Project>
 )
 
