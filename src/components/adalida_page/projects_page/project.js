@@ -7,7 +7,7 @@ import SocialFooter from './social_footer'
 
 const Project = ({ children }) =>
   <div>
-    <Header/>
+    <Header />
     {children}
     <Footer />
     <SocialFooter />

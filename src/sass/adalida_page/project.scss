@@ -37,7 +37,6 @@ p {
   max-width: 95vw;
   flex-basis: 37%;
   flex-grow: 3;
-  color: #FFFFFF;
 }
 
 .project-heading {
@@ -206,6 +205,10 @@ p {
 @media (max-width: 1024px) {
   .project-header {
     flex-basis: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .project-heading {

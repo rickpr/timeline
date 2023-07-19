@@ -4,6 +4,22 @@ import ZarasCleaningPhoto from 'images/zaras_cleaning/cover.jpg'
 import ZenoPhoto from 'images/zeno/cover.png'
 
 const Projects = {
+  Phronesis: {
+    name: 'Phronesis',
+    description: 'We enable users with the power to visual and understand your data in order to grow your business.',
+    projectPage: '/adalida/projects/phronesis',
+    coverPhoto: PhronesisPhoto,
+    heroPhotoPath: 'images/phronesis/title.png',
+    roles: [
+      'Visual Identity',
+      'User Interaction'
+    ],
+
+    colors: {
+      primary: '#F8F8F8',
+      background: '#212025'
+    }
+  },
   GainTain: {
     name: 'GainTain',
     description: 'Designed specifically for fitness enthusiasts who want to track their workout data extensively.',
@@ -18,22 +34,6 @@ const Projects = {
     colors: {
       primary: '#F8473D',
       background: 'linear-gradient(#F8473D, #E83161)'
-    }
-  },
-  Phronesis: {
-    name: 'Phronesis',
-    description: 'We enable users with the power to visual and understand your data in order to grow your business.',
-    projectPage: '/adalida/projects/phronesis',
-    coverPhoto: PhronesisPhoto,
-    heroPhotoPath: 'images/phronesis/title.png',
-    roles: [
-      'Visual Identity',
-      'User Interaction'
-    ],
-
-    colors: {
-      primary: '#ED6112',
-      background: 'linear-gradient(to right, #ED6112, #F68733)'
     }
   },
   ZarasCleaning: {
