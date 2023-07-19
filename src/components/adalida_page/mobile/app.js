@@ -84,6 +84,7 @@ const App = ({ title, containerRef, closestProject, setClosestProject }) => {
         <div style={imageContainerStyles} ref={imageRef}>
           <img alt={`${title} cover`} src={coverPhoto} style={imageStyles} />
         </div>
+        <div style={{ minHeight: '2em' }} />
         <Title title={title} />
       </div>
     </>

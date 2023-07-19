@@ -22,7 +22,6 @@ h3 {
 p {
   font-size: 16px;
   line-height: 27px;
-  color: #60676D;
 }
 
 .picture-caption {
@@ -37,17 +36,17 @@ p {
   max-width: 95vw;
   flex-basis: 37%;
   flex-grow: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2.5%;
 }
 
 .project-heading {
-  font-weight: 900;
-  font-size: 72px;
+  font-size: 10dvw;
+  font-weight: 600;
 }
 
-
-.project-description {
-  font-size: 28px;
-}
 
 .more-work {
   display: flex;
@@ -61,7 +60,6 @@ p {
   display: flex;
   gap: 5px;
   align-items: center;
-  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -211,12 +209,6 @@ p {
     justify-content: space-between;
   }
 
-  .project-heading {
-    font-size: 44px;
-  }
-  .project-description {
-    font-size: 22px;
-  }
   .more-work {
     flex-direction: column;
   }
@@ -242,12 +234,6 @@ p {
 }
 
 @media (max-width: 768px) {
-  .project-heading {
-    font-size: 32px;
-  }
-  .project-description {
-    font-size: 20px;
-  }
   .project-inner-paragraphs {
     flex-direction: column;
   }

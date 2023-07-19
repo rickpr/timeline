@@ -11,7 +11,8 @@ const headerStyles = {
   flexDirection: 'column',
   width: '100%',
   zIndex: 2,
-  pointerEvents: 'none'
+  pointerEvents: 'none',
+  height: '100%'
 }
 const menuStyles = {
   color: 'white',
@@ -23,14 +24,17 @@ const menuStyles = {
 }
 const indicatorStyle = {
   width: '50%',
-  height: '80dvh',
   padding: '0 10dvw',
   display: 'flex',
   flexDirection: 'column',
   gap: '2dvh',
   justifyContent: 'space-between',
   bottom: '10dvh',
-  transition: 'all 0.5s ease'
+  transition: 'all 0.5s ease',
+  height: 'min-content',
+  position: 'fixed',
+  top: '50%',
+  transform: 'translate(0, -50%)'
 }
 const barStyle = {
   borderWidth: '0.5dvw',

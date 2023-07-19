@@ -25,7 +25,7 @@ const Sidebar = () => {
             <BrandIcon href='https://linkedin.com/in/adalidabaca' icon={<IconBrandLinkedin />} />
           </div>
         </div>
-        <div className='apps-sidebar-links'>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <Link to="/adalida">HOME</Link>
           <Link to="/adalida/about">ABOUT</Link>
           <a href="mailto:adalida@adalida.design">CONTACT</a>

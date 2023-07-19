@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 
 import App from './app'
+import Header from './header'
 import Projects from 'project_data'
 
 import 'sass/adalida_page/index.scss'
@@ -21,6 +22,7 @@ const Desktop = ({ closestProject, setClosestProject }) => {
 
   return (
     <div style={{ ...coverStyles }} ref={containerRef}>
+      <Header closestProject={closestProject} />
       {projects.map(project => (
         <App
           key={project}

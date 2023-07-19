@@ -24,7 +24,10 @@ const titleStyles = {
 }
 const listStyles = {
   display: 'flex',
+  fontSize: '0.75rem',
   justifyContent: 'left',
+  gap: '0.5rem',
+  marginBottom: '1rem',
   padding: 0,
   margin: 0
 }

@@ -3,7 +3,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { useEffect, useMemo, useRef } from 'react'
 import PropTypes from 'prop-types'
 
-import Header from './header'
 import Projects from 'project_data'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -77,7 +76,6 @@ const App = ({ title, containerRef, closestProject, setClosestProject }) => {
   return (
     <>
       {fullWidthBackground}
-      <Header closestProject={closestProject} />
       <div style={coverStyles}>
         <div style={imageContainerStyles} ref={imageRef}>
           <img alt={`${title} cover`} src={coverPhoto} style={imageStyles} />

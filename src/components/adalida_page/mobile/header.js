@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -23,6 +24,7 @@ const indicatorStyle = {
   padding: '0 10dvw',
   display: 'flex',
   gap: '2dvh',
+  marginTop: '5dvh',
   justifyContent: 'space-between'
 }
 const barStyle = {
@@ -43,8 +45,12 @@ const Header = ({ closestProject }) => {
   return (
     <div style={headerStyles}>
       <div style={menuStyles}>
-        <h1 style={{ fontSize: '22px', fontWeight: 700 }}>ADALIDA</h1>
-        <h1 style={{ fontSize: '18px', fontWeight: 400 }}>ABOUT</h1>
+        <h1 style={{ fontSize: '22px', fontWeight: 700 }}>
+          <Link to='/adalida'>ADALIDA</Link>
+        </h1>
+        <h1 style={{ fontSize: '18px', fontWeight: 400 }}>
+          <Link to='/adalida/about'>ABOUT</Link>
+        </h1>
       </div>
       <div style={indicatorStyle}>{indicators}</div>
     </div>

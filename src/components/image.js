@@ -10,7 +10,6 @@ const Image = ({ altText, path, ...options }) => {
     <GatsbyImage
       image={getImage(image)}
       alt={altText || image.name}
-      objectFit='contain'
       {...options}
     />
   )

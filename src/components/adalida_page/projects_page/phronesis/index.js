@@ -3,6 +3,7 @@ import React from 'react'
 
 import Project from '../project'
 import ImageCard from '../../image_card'
+import About from './about'
 
 import InformationArchitecture from 'images/phronesis/information_architecture.svg'
 import Logo from 'images/phronesis/logo.svg'
@@ -48,6 +49,7 @@ ImageContainer.propTypes = { images: PropTypes.arrayOf(PropTypes.string).isRequi
 
 const Phronesis = () => (
   <Project>
+    <About />
     <ImageContainer images={[InformationArchitecture]} />
     <ImageContainer images={[Logo, AppIcon]} />
     <ImageContainer images={[Text, Color]} />

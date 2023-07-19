@@ -9,7 +9,7 @@ const Projects = {
     description: 'We enable users with the power to visual and understand your data in order to grow your business.',
     projectPage: '/adalida/projects/phronesis',
     coverPhoto: PhronesisPhoto,
-    heroPhotoPath: 'images/phronesis/title.png',
+    heroPhotoPath: 'images/phronesis/cover.png',
     roles: [
       'Visual Identity',
       'User Interaction'
