@@ -17,17 +17,17 @@ const About = () => {
       </div>
       <p><strong>Project Details</strong></p>
       <p>
-        Phronesis is an extraordinary mobile app designed to help fitness enthusiasts take their workouts
-        to the next level. With extensive workout data tracking capabilities and support for time under
-        tension workouts, Phronesis provides a comprehensive solution for users who want to improve their
-        fitness and achieve their goals.
-      </p>
-      <p>
-        With its user-friendly interface and intuitive design, Phronesis makes it easy to track your
-        progress and stay motivated. You can easily view your workout history, monitor your progress
-        over time, and get detailed insights into your performance. And with features like time under
-        tension tracking and exercise instruction videos, you&apos;ll have everything you need to take
-        your workouts to the next level.
+        Discover the transformative power of Phronesis, a captivating portfolio
+        piece featuring a student-focused landing page. Through thoughtful
+        design and meticulous attention to detail, Phronesis offers a
+        user-friendly interface that enhances the student experience within
+        educational institutions. Seamlessly access important information,
+        communicate effectively, and take control of your academic journey with
+        ease. Experience intuitive design and visually engaging elements that
+        empower students to navigate their educational path with confidence.
+        Phronesis invites you to explore a new era of student information
+        management, where simplicity and functionality meet to create a seamless
+        user experience.
       </p>
       <p><strong>Role Details</strong></p>
       <div>User Experience Design</div>

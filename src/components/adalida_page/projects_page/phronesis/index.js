@@ -5,19 +5,19 @@ import Project from '../project'
 import ImageCard from '../../image_card'
 import About from './about'
 
-import InformationArchitecture from 'images/phronesis/information_architecture.svg'
-import Logo from 'images/phronesis/logo.svg'
-import AppIcon from 'images/phronesis/app_icon.svg'
-import Text from 'images/phronesis/text.svg'
-import Color from 'images/phronesis/color.svg'
-import FinalLogo from 'images/phronesis/final_logo.svg'
-import ComponentsDarkAndLight from 'images/phronesis/components_dark_light.svg'
-import SpecsTable from 'images/phronesis/specs_table.svg'
-import Specs from 'images/phronesis/specs.svg'
-import PhotosOne from 'images/phronesis/photos_one.svg'
-import PhotosTwo from 'images/phronesis/photos_two.svg'
-
 import 'sass/adalida_page/project.scss'
+
+const InformationArchitecture = 'images/phronesis/info_arch.png'
+const Logo = 'images/phronesis/logo.png'
+const AppIcon = 'images/phronesis/app_icon.png'
+const Text = 'images/phronesis/text.png'
+const Color = 'images/phronesis/color.png'
+const FinalLogo = 'images/phronesis/final_logo.png'
+const ComponentsDarkAndLight = 'images/phronesis/components_dark_light.png'
+const SpecsTable = 'images/phronesis/specs_table.png'
+const Specs = 'images/phronesis/specs.png'
+const PhotosOne = 'images/phronesis/photos_one.png'
+const PhotosTwo = 'images/phronesis/photos_two.png'
 
 const containerStyle = {
   minWidth: '95%',
