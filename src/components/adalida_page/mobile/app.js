@@ -61,7 +61,7 @@ const App = ({ title, containerRef, closestProject, setClosestProject }) => {
           scroller: containerRef.current,
           scrub: true,
           horizontal: true,
-          onUpdate: self => { if (self.progress === 0.5) setClosestProject(title) }
+          onUpdate: self => { if (Math.abs(self.progress - 0.5) < 0.05) setClosestProject(title) }
         }
       })
         .from(imageRef.current, { scale: 0.5 })
