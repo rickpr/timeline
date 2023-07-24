@@ -25,7 +25,7 @@ const containerStyle = {
   margin: '4vh 2.5vw',
   minHeight: '400px',
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(576px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
   alignItems: 'center',
   borderRadius: '2vh',
   justifyContent: 'space-around',
