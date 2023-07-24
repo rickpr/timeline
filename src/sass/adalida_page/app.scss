@@ -1,18 +1,3 @@
-.mobile-app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  scroll-snap-stop: always;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
 .app-cover {
   position: relative;
   overflow: hidden;

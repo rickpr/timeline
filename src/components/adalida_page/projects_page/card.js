@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
+import { ThemeContext } from 'theme_context'
 
 const Card = ({ children }) => {
+  const { darkMode } = useContext(ThemeContext)
   useAnimateOnScroll()
   const containerStyle = {
     minWidth: '95%',
     margin: '4vh 2.5vw',
     minHeight: '92vh',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: darkMode ? '#1A191C' : '#F5F5F5',
     padding: '2em 7%',
     borderRadius: '2vh'
   }

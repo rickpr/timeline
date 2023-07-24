@@ -1,19 +1,28 @@
 import { Link } from 'gatsby'
 import React, { useContext, useEffect, useState } from 'react'
-import { IconCircleArrowUpFilled, IconArrowLeft, IconMoonStars } from '@tabler/icons-react'
+import { IconCircleArrowUpFilled, IconMoonStars } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
 
 const ScrollProgress = () => {
-  const { colors: { primary } } = useContext(ThemeContext)
+  const { colors: { scrollBar }, darkMode, setDarkMode } = useContext(ThemeContext)
+  const darkModeButtonStyle = {
+    border: 'none',
+    background: 'none',
+    color: darkMode ? 'white' : 'black',
+    display: 'flex',
+    alignItems: 'flex-end'
+  }
+
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showUpArrow, setShowUpArrow] = useState(false)
   const navElementStyle = {
     display: 'flex',
     alignItems: 'center',
-    fontSize: '1.5em',
+    fontSize: '18px',
     border: 'none',
-    background: 'none'
+    background: 'none',
+    color: darkMode ? 'white' : 'black'
   }
 
   useEffect(() => {
@@ -35,29 +44,38 @@ const ScrollProgress = () => {
           position: 'sticky',
           top: 0,
           zIndex: 3,
-          background: 'white'
+          transition: 'background 0.5s',
+          background: darkMode ? '#1A191C' : '#F5F5F5'
         }}
       >
         <div style={{
           width: '100dvw',
           display: 'flex',
           justifyContent: 'space-between',
-          padding: '1dvh 3%'
+          padding: '1dvh 7.5dvw'
         }}>
-          <Link to='/adalida'>
-            <div style={navElementStyle}>
-              <IconArrowLeft /> Back
-            </div>
-          </Link>
-          <Link to='/adalida/about'>
-            <div style={navElementStyle}>About</div>
-          </Link>
+          <div style={navElementStyle}>
+            <Link to='/adalida'>
+              ADALIDA
+            </Link>
+          </div>
+          <div style={navElementStyle}>
+            <button
+              style={darkModeButtonStyle}
+              onClick={() => { setDarkMode(!darkMode) }}
+            >
+              <IconMoonStars />
+            </button>
+            <Link to='/adalida/about'>
+              ABOUT
+            </Link>
+          </div>
         </div>
         <div
           style={{
             width: `${scrollProgress}%`,
             height: '1vmax',
-            background: primary,
+            background: scrollBar,
             top: 0,
             zIndex: 3
           }}

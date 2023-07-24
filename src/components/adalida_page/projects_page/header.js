@@ -5,16 +5,16 @@ import { ThemeContext } from 'theme_context'
 import 'sass/adalida_page/project.scss'
 
 const Header = () => {
-  const { name, heroPhoto } = useContext(ThemeContext)
+  const { darkMode, name, heroPhoto } = useContext(ThemeContext)
   const containerStyle = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    color: darkMode ? '#F5F5F5' : '#1A191C'
   }
-  if (name === 'Phronesis') containerStyle.color = 'white'
 
   const text = (
     <div className='project-header'>

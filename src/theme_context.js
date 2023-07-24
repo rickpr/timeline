@@ -13,10 +13,14 @@ export const aboutTheme = {
   roles: [],
 
   colors: {
-    primary: '#850021',
+    scrollBar: '#850021',
     background: '#000000'
   }
 }
 
-const ThemeContext = React.createContext(aboutTheme)
+const ThemeContext = React.createContext({
+  darkMode: false,
+  setDarkMode: () => {},
+  ...aboutTheme
+})
 export { Projects, ThemeContext }

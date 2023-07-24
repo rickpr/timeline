@@ -1,7 +1,5 @@
 import React from 'react'
 
-import Card from '../card'
-
 import 'sass/adalida_page/project.scss'
 
 const About = () => {
@@ -42,7 +40,6 @@ const About = () => {
       style={{
         minWidth: '95%',
         margin: '4vh 2.5vw',
-        color: '#FFFFFF',
         padding: '2em 7%',
         borderRadius: '2vh'
       }}
@@ -52,7 +49,7 @@ const About = () => {
           display: 'grid',
           gridTemplateColumns: '1fr',
           maxWidth: '100%',
-          maxHeight: '100%',
+          maxHeight: '100%'
         }}>
         <div>{text}</div>
       </div>

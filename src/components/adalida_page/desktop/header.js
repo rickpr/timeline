@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Projects from 'project_data'
-
 import Title from './title'
 
 const headerStyles = {
@@ -42,17 +40,24 @@ const barStyle = {
   borderStyle: 'solid',
   flex: '1 0 0',
   transition: 'all 0.5s ease',
-  width: '0.5dvw'
+  width: '0.5dvw',
+  background: 'none',
+  padding: 0,
+  pointerEvents: 'auto',
+  cursor: 'pointer'
 }
 
-const Header = ({ closestProject }) => {
-  const indicators = Object.keys(Projects).map(project => {
+const Header = ({ projectRefs, closestProject }) => {
+  const indicators = Object.keys(projectRefs.current).map(project => {
     const active = closestProject === project
     const opacity = active ? 1 : 0.2
     const borderColor = active ? 'white' : '#E7E5E7'
     return (
       <div key={project} style={{ display: 'flex', gap: '1dvw', opacity }}>
-        <div style={{ ...barStyle, borderColor, opacity }} />
+        <button
+          style={{ ...barStyle, borderColor, opacity }}
+          onClick={() => projectRefs.current[project]?.current?.scrollIntoView({ behavior: 'smooth' }) }
+        />
         <Title title={project} active={active} />
       </div>
     )
@@ -60,7 +65,7 @@ const Header = ({ closestProject }) => {
   return (
     <div style={headerStyles}>
       <div style={menuStyles}>
-        <h1 style={{ fontSize: '22px', fontWeight: 700 }}>ADALIDA</h1>
+        <h1 style={{ fontSize: '18px', fontWeight: 400 }}>ADALIDA</h1>
         <h1 style={{ fontSize: '18px', fontWeight: 400 }}>ABOUT</h1>
       </div>
       <div style={indicatorStyle}>
@@ -70,6 +75,9 @@ const Header = ({ closestProject }) => {
   )
 }
 
-Header.propTypes = { closestProject: PropTypes.string }
+Header.propTypes = {
+  projectRefs: PropTypes.object,
+  closestProject: PropTypes.string
+}
 
 export default Header

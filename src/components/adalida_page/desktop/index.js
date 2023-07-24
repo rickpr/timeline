@@ -5,8 +5,6 @@ import App from './app'
 import Header from './header'
 import Projects from 'project_data'
 
-import 'sass/adalida_page/index.scss'
-
 const coverStyles = {
   display: 'flex',
   maxHeight: '100vh',
@@ -19,13 +17,15 @@ const coverStyles = {
 const Desktop = ({ closestProject, setClosestProject }) => {
   const containerRef = useRef(null)
   const projects = Object.keys(Projects)
+  const projectRefs = useRef(Object.fromEntries(projects.map(project => [project, null])))
 
   return (
     <div style={{ ...coverStyles }} ref={containerRef}>
-      <Header closestProject={closestProject} />
+      <Header projectRefs={projectRefs} closestProject={closestProject} />
       {projects.map(project => (
         <App
           key={project}
+          ref={ element => (projectRefs.current[project] = element) }
           title={project}
           containerRef={containerRef}
           closestProject={closestProject}

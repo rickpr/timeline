@@ -18,14 +18,16 @@ const coverStyles = {
 const Mobile = ({ closestProject, setClosestProject }) => {
   const containerRef = useRef(null)
   const projects = Object.keys(Projects)
+  const projectRefs = useRef(Object.fromEntries(projects.map(project => [project, null])))
 
   return (
     <>
-      <Header closestProject={closestProject} />
+      <Header projectRefs={projectRefs} closestProject={closestProject} />
       <div style={coverStyles} ref={containerRef}>
         {projects.map(project => (
           <App
             key={project}
+            ref={ element => (projectRefs.current[project] = element) }
             title={project}
             containerRef={containerRef}
             closestProject={closestProject}

@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Sidebar from './sidebar'
 import ChallengeDesigns from './challenge_designs'
 import MediaWithText from '../projects_page/media_with_text'
 import FileQuery from 'queries/file'
+import { ThemeContext } from 'theme_context'
 
 import 'sass/adalida_page/index.scss'
 
 const AboutPage = () => {
+  const { darkMode } = useContext(ThemeContext)
   const resumePdf = FileQuery('Adalida_Baca_Resume.pdf')
+  const containerStyle = {
+    transition: 'background-color 0.5s ease',
+    backgroundColor: darkMode ? '#1A1A1A' : '#F5F5F5',
+    color: darkMode ? '#F5F5F5' : '#1A1A1A'
+  }
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <h3>About Me</h3>
@@ -36,7 +43,7 @@ const AboutPage = () => {
   )
 
   return (
-    <div className='about-page'>
+    <div className='about-page' style={containerStyle}>
       <Sidebar />
       <div>
         <div style={{ margin: '8vh 0' }}>
