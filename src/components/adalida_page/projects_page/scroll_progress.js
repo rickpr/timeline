@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { IconCircleArrowUpFilled, IconMoonStars } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
+import Header from '../header'
 
 const ScrollProgress = () => {
   const { colors: { scrollBar }, darkMode, setDarkMode } = useContext(ThemeContext)
@@ -48,29 +49,7 @@ const ScrollProgress = () => {
           background: darkMode ? '#1A191C' : '#F5F5F5'
         }}
       >
-        <div style={{
-          width: '100dvw',
-          display: 'flex',
-          justifyContent: 'space-between',
-          padding: '1dvh 7.5dvw'
-        }}>
-          <div style={navElementStyle}>
-            <Link to='/adalida'>
-              ADALIDA
-            </Link>
-          </div>
-          <div style={navElementStyle}>
-            <button
-              style={darkModeButtonStyle}
-              onClick={() => { setDarkMode(!darkMode) }}
-            >
-              <IconMoonStars />
-            </button>
-            <Link to='/adalida/about'>
-              ABOUT
-            </Link>
-          </div>
-        </div>
+        <Header showDarkModeButton={true} />
         <div
           style={{
             width: `${scrollProgress}%`,

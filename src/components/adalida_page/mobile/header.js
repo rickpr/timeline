@@ -1,31 +1,24 @@
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import GlobalHeader from '../header'
+
 const headerStyles = {
-  position: 'fixed',
+  position: 'sticky',
+  flexGrow: 0,
   display: 'flex',
   flexDirection: 'column',
-  width: '100%',
-  height: 'calc((100dvh - 85dvw) / 4)',
-  padding: '1dvh 7.5% 0 7.5%',
+  width: '100dvw',
   overflow: 'hidden',
-  gap: '30px',
   justifyContent: 'space-between',
   zIndex: 2
-}
-const menuStyles = {
-  color: 'white',
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  width: '100%'
 }
 const indicatorStyle = {
   width: '100%',
   display: 'flex',
   gap: '2dvh',
-  justifyContent: 'space-between'
+  padding: '0 7.5dvw',
+  justifyContent: 'space-around'
 }
 const barStyle = {
   borderWidth: '1dvw',
@@ -37,13 +30,6 @@ const barStyle = {
   background: 'none',
   padding: 0,
   cursor: 'pointer'
-}
-const navStyle = {
-  fontSize: '18px',
-  fontWeight: 400,
-  display: 'flex',
-  alignItems: 'center',
-  gap: '10px'
 }
 
 const Header = ({ projectRefs, closestProject }) => {
@@ -61,14 +47,7 @@ const Header = ({ projectRefs, closestProject }) => {
   })
   return (
     <div style={headerStyles}>
-      <div style={menuStyles}>
-        <div style={navStyle}>
-          <Link to='/adalida'>ADALIDA</Link>
-        </div>
-        <div style={navStyle}>
-          <Link to='/adalida/about'>ABOUT</Link>
-        </div>
-      </div>
+      <GlobalHeader showDarkModeButton={false} />
       <div style={indicatorStyle}>{indicators}</div>
     </div>
   )

@@ -4,7 +4,7 @@ import React, { forwardRef, useEffect, useMemo, useRef } from 'react'
 import PropTypes from 'prop-types'
 
 import Projects from 'project_data'
-import Title from './title'
+import ProjectLink from '../project_link'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,15 +16,13 @@ const containerStyles = {
   scrollSnapAlign: 'center',
   scrollSnapStop: 'always',
   WebkitOverflowScrolling: 'touch',
-  height: '100dvh',
   width: '100dvw',
-  minHeight: '100dvh',
   minWidth: '100dvw',
   display: 'grid',
-  gridTemplateColumns: '1fr',
-  gridTemplateRows: `0.5fr ${imageHeight}dvw 1fr`,
+  placeContent: 'center',
   placeItems: 'center',
-  placeContent: 'center'
+  alignSelf: 'center',
+  gridTemplateRows: `${imageHeight}dvw 1fr`
 }
 
 const imageStyles = {
@@ -45,7 +43,8 @@ const imageContainerStyles = {
 const titleStyles = {
   width: '90%',
   height: '100%',
-  overflow: 'hidden'
+  overflow: 'hidden',
+  display: 'flex'
 }
 
 const App = forwardRef(({ title, containerRef, closestProject, setClosestProject }, outerRef) => {
@@ -102,12 +101,11 @@ const App = forwardRef(({ title, containerRef, closestProject, setClosestProject
     <>
       {fullWidthBackground}
       <div style={containerStyles} ref={projectRef}>
-        <div style={{ minHeight: '100%' }}>&nbsp;</div>
         <div style={imageContainerStyles} ref={imageRef}>
           <img alt={`${title} cover`} src={coverPhoto} style={imageStyles} />
         </div>
         <div style={titleStyles}>
-          <Title title={title} />
+          <ProjectLink title={title} />
         </div>
       </div>
     </>

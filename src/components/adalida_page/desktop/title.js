@@ -1,8 +1,8 @@
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
 import { Projects } from 'theme_context'
+import ProjectLink from '../project_link'
 
 const labelStyles = {
   color: '#FFFFFF',
@@ -16,41 +16,23 @@ const textStyles = {
   flexDirection: 'column'
 }
 const titleStyles = {
-  fontWeight: 800,
   fontSize: '2rem',
   fontFamily: 'Avenir Next',
   padding: 0,
   margin: 0
 }
-const listStyles = {
-  display: 'flex',
-  justifyContent: 'left',
-  padding: 0,
-  margin: 0
-}
 
 const Title = ({ title, active }) => {
-  const { description, name, projectPage, roles } = Projects[title]
+  const { name } = Projects[title]
   if (!active) return (
     <div style={labelStyles}>
       <div style={textStyles}>
-        <h2 style={titleStyles}>{name.toUpperCase()}</h2>
+        <div style={titleStyles}>{name.toUpperCase()}</div>
       </div>
     </div>
   )
 
-  return (
-    <Link to={projectPage} style={{ ...labelStyles }}>
-      <div style={textStyles}>
-        <h2 style={titleStyles}>{name.toUpperCase()}</h2>
-        <ul style={listStyles}>
-          {roles.map(role => <li key={role}>{role}</li>)}
-        </ul>
-        {description}
-        <h2 style={{ pointerEvents: 'auto' }}>View Project ➜</h2>
-      </div>
-    </Link>
-  )
+  return <ProjectLink title={title} />
 }
 
 Title.propTypes = {
