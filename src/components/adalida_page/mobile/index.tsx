@@ -24,14 +24,14 @@ const coverStyles = {
   position: 'relative'
 }
 
-const Mobile = ({ closestProject, setClosestProject }) => {
+const Mobile = ({ currentProject, setCurrentProject }) => {
   const containerRef = useRef(null)
   const projects = Object.keys(Projects)
   const projectRefs = useRef(Object.fromEntries(projects.map(project => [project, null])))
 
   return (
     <div style={fullWindowStyles}>
-      <Header projectRefs={projectRefs} closestProject={closestProject} />
+      <Header projectRefs={projectRefs} currentProject={currentProject} />
       <div style={coverStyles} ref={containerRef}>
         {projects.map(project => (
           <App
@@ -39,8 +39,8 @@ const Mobile = ({ closestProject, setClosestProject }) => {
             ref={ element => (projectRefs.current[project] = element) }
             title={project}
             containerRef={containerRef}
-            closestProject={closestProject}
-            setClosestProject={setClosestProject}
+            currentProject={currentProject}
+            setCurrentProject={setCurrentProject}
           />
         ))}
       </div>
@@ -49,8 +49,8 @@ const Mobile = ({ closestProject, setClosestProject }) => {
 }
 
 Mobile.propTypes = {
-  closestProject: PropTypes.string.isRequired,
-  setClosestProject: PropTypes.func.isRequired
+  currentProject: PropTypes.string.isRequired,
+  setCurrentProject: PropTypes.func.isRequired
 }
 
 export default Mobile

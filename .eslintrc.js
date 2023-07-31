@@ -8,7 +8,9 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'react-app',
-    'standard'
+    'standard-with-typescript',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended'
   ],
   globals: {
     __PATH_PREFIX__: true
@@ -16,7 +18,14 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 12,
+    project: ['./tsconfig.json'],
     sourceType: 'module'
   },
-  plugins: ['react']
+  parser: '@typescript-eslint/parser',
+  plugins: [
+    'react',
+    'jsx-a11y',
+    'react-hooks',
+    '@typescript-eslint'
+  ],
 }

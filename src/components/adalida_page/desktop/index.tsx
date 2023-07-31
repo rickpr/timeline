@@ -8,28 +8,35 @@ import Projects from 'project_data'
 const coverStyles = {
   display: 'flex',
   maxHeight: '100vh',
-  flexDirection: 'column',
+  flexDirection: 'column' as const,
   transition: 'background-color 0.5s ease-in-out',
   overflow: 'auto',
   scrollSnapType: 'both mandatory'
 }
 
-const Desktop = ({ closestProject, setClosestProject }) => {
+interface Props {
+  currentProject: string
+  setCurrentProject: (project: string) => void
+}
+
+const Desktop = ({ currentProject, setCurrentProject }: Props) => {
   const containerRef = useRef(null)
   const projects = Object.keys(Projects)
-  const projectRefs = useRef(Object.fromEntries(projects.map(project => [project, null])))
+  const projectRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
+    Object.fromEntries(projects.map(project => [project, null]))
+  )
 
   return (
-    <div style={{ ...coverStyles }} ref={containerRef}>
-      <Header projectRefs={projectRefs} closestProject={closestProject} />
+    <div style={coverStyles} ref={containerRef}>
+      <Header projectRefs={projectRefs} currentProject={currentProject} />
       {projects.map(project => (
         <App
           key={project}
           ref={ element => (projectRefs.current[project] = element) }
           title={project}
           containerRef={containerRef}
-          closestProject={closestProject}
-          setClosestProject={setClosestProject}
+          currentProject={currentProject}
+          setCurrentProject={setCurrentProject}
         />
       ))}
     </div>
@@ -37,8 +44,8 @@ const Desktop = ({ closestProject, setClosestProject }) => {
 }
 
 Desktop.propTypes = {
-  closestProject: PropTypes.string.isRequired,
-  setClosestProject: PropTypes.func.isRequired
+  currentProject: PropTypes.string.isRequired,
+  setCurrentProject: PropTypes.func.isRequired
 }
 
 export default Desktop

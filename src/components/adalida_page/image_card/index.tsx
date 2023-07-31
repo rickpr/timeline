@@ -13,8 +13,8 @@ const ImageCard = ({ media, style }) => {
         style={style}
         role='tab'
         tabIndex={0}
-        onKeyDown={(event) => [' ', 'Enter'].includes(event.key) && setShowPopUp(true)}
-        onClick={() => setShowPopUp(true)}
+        onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && setShowPopUp(true) }}
+        onClick={() => { setShowPopUp(true) }}
       >
         {makeMediaTag({ media, style: { height: '100%', width: '100%' } })}
       </div>

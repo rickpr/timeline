@@ -32,7 +32,7 @@ const useSynchronizedTypewriter = (displayFor = 2000) => {
     }
 
     typeCharacters()
-    return () => clearTimeout(timeout)
+    return () => { clearTimeout(timeout) }
   }, [displayFor, typewriters])
 
   const SynchronizedTypewriter = ({ string, styles }) => {

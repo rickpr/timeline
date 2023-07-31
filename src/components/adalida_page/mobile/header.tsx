@@ -32,9 +32,9 @@ const barStyle = {
   cursor: 'pointer'
 }
 
-const Header = ({ projectRefs, closestProject }) => {
+const Header = ({ projectRefs, currentProject }) => {
   const indicators = Object.keys(projectRefs.current).map(project => {
-    const active = closestProject === project
+    const active = currentProject === project
     const opacity = active ? 1 : 0.5
     const borderColor = active ? 'white' : '#E7E5E7'
     return (
@@ -55,7 +55,7 @@ const Header = ({ projectRefs, closestProject }) => {
 
 Header.propTypes = {
   projectRefs: PropTypes.object,
-  closestProject: PropTypes.string
+  currentProject: PropTypes.string
 }
 
 export default Header

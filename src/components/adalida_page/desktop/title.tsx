@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import { Projects } from 'theme_context'
@@ -13,7 +12,7 @@ const labelStyles = {
 }
 const textStyles = {
   display: 'flex',
-  flexDirection: 'column'
+  flexDirection: 'column' as const
 }
 const titleStyles = {
   fontSize: '2rem',
@@ -22,22 +21,22 @@ const titleStyles = {
   margin: 0
 }
 
-const Title = ({ title, active }) => {
+interface Props {
+  title: string
+  active: boolean
+}
+
+const Title = ({ title, active }: Props): React.ReactElement => {
+  if (active) return <ProjectLink title={title} />
+
   const { name } = Projects[title]
-  if (!active) return (
+  return (
     <div style={labelStyles}>
       <div style={textStyles}>
         <div style={titleStyles}>{name.toUpperCase()}</div>
       </div>
     </div>
   )
-
-  return <ProjectLink title={title} />
-}
-
-Title.propTypes = {
-  title: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired
 }
 
 export default Title

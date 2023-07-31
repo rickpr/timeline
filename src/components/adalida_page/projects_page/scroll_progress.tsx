@@ -35,7 +35,7 @@ const ScrollProgress = () => {
     }
     window.addEventListener('scroll', updateScrollProgressSize)
     updateScrollProgressSize()
-    return () => window.removeEventListener('scroll', updateScrollProgressSize)
+    return () => { window.removeEventListener('scroll', updateScrollProgressSize) }
   }, [])
 
   return (

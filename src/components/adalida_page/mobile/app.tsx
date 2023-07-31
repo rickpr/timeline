@@ -47,9 +47,9 @@ const titleStyles = {
   display: 'flex'
 }
 
-const App = forwardRef(({ title, containerRef, closestProject, setClosestProject }, outerRef) => {
+const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject }, outerRef) => {
   const { coverPhoto, colors: { background } } = Projects[title]
-  const isClosestProject = closestProject === title
+  const isCurrentProject = currentProject === title
   const imageRef = useRef()
   const projectRef = useRef()
   outerRef(projectRef)
@@ -63,8 +63,8 @@ const App = forwardRef(({ title, containerRef, closestProject, setClosestProject
     zIndex: -1,
     width: '100vw',
     height: '100vh',
-    opacity: isClosestProject ? 1 : 0
-  }), [isClosestProject, background])
+    opacity: isCurrentProject ? 1 : 0
+  }), [isCurrentProject, background])
 
   useEffect(() => {
     const context = gsap.context(() => {
@@ -75,7 +75,7 @@ const App = forwardRef(({ title, containerRef, closestProject, setClosestProject
           scrub: true,
           horizontal: true,
           onUpdate: self => {
-            if (Math.abs(self.progress - 0.5) < 0.05) setClosestProject(title)
+            if (Math.abs(self.progress - 0.5) < 0.05) setCurrentProject(title)
           }
         }
       })
@@ -90,10 +90,10 @@ const App = forwardRef(({ title, containerRef, closestProject, setClosestProject
         )
     })
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill())
+      ScrollTrigger.getAll().forEach(t => { t.kill() })
       context.revert()
     }
-  }, [containerRef, projectRef, setClosestProject, title])
+  }, [containerRef, projectRef, setCurrentProject, title])
 
   const fullWidthBackground = <div style={backgroundStyles} />
 
@@ -117,8 +117,8 @@ App.displayName = 'App'
 App.propTypes = {
   title: PropTypes.string.isRequired,
   containerRef: PropTypes.shape({ current: PropTypes.node.isRequired }).isRequired,
-  closestProject: PropTypes.string.isRequired,
-  setClosestProject: PropTypes.func.isRequired
+  currentProject: PropTypes.string.isRequired,
+  setCurrentProject: PropTypes.func.isRequired
 }
 
 export default App

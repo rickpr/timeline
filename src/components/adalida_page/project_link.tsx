@@ -2,12 +2,12 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { Projects } from 'theme_context'
+import Projects from 'project_data'
 
 const labelStyles = {
   color: '#FFFFFF',
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column' as const,
   justifyContent: 'space-around',
   width: '100%',
   transition: 'all 0.5s ease',
@@ -43,7 +43,7 @@ const linkStyles = {
   fontWeight: 'bold'
 }
 
-const ProjectLink = ({ title }) => {
+const ProjectLink = ({ title }: { title: string }) => {
   const { description, name, projectPage, roles } = Projects[title]
   return (
     <Link to={projectPage} style={labelStyles}>

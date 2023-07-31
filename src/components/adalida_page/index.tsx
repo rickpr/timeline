@@ -11,14 +11,13 @@ import 'sass/adalida_page/index.scss'
 
 const AdalidaPage = () => {
   const [darkMode, setDarkMode] = useLocalStorage('darkMode') ?? false
-  const [closestProject, setClosestProject] = useState('GainTain')
-  const currentProject = Projects[closestProject]
+  const [currentProject, setCurrentProject] = useState('GainTain')
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode, ...currentProject }}>
+    <ThemeContext.Provider value={{ darkMode, setDarkMode, ...Projects[currentProject] }}>
       {useIsMobile(768)
-        ? <Mobile closestProject={closestProject} setClosestProject={setClosestProject} />
-        : <Desktop closestProject={closestProject} setClosestProject={setClosestProject} />}
+        ? <Mobile currentProject={currentProject} setCurrentProject={setCurrentProject} />
+        : <Desktop currentProject={currentProject} setCurrentProject={setCurrentProject} />}
     </ThemeContext.Provider>
   )
 }

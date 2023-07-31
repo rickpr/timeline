@@ -21,7 +21,7 @@ const Footer = () =>
       </div>
       <div>
         <br />
-        <span><StaticImage src='../../images/sun-moon.png' /></span>
+        <span><StaticImage src='../images/sun-moon.png' /></span>
       </div>
       <div>
         Ricardo Piro-Rael<br />

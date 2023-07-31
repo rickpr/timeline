@@ -35,7 +35,7 @@ const Box = (props) => {
       currentLink.current = null
     }
     window.addEventListener('mouseup', goToLink)
-    return () => window.removeEventListener('mouseup', goToLink)
+    return () => { window.removeEventListener('mouseup', goToLink) }
   }, [])
 
   const openLink = linkURL => {
