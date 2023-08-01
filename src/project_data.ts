@@ -4,7 +4,20 @@ import GainTainHeroPhoto from 'images/gaintain/title.png'
 import ZenoPhoto from 'images/zeno/cover.png'
 import ZenoHeroPhoto from 'images/zeno/title.png'
 
-const Projects = {
+export interface Project {
+  name: string
+  description: string
+  projectPage: string
+  coverPhoto: string
+  heroPhoto: string
+  roles: string[]
+  colors: {
+    scrollBar: string
+    background: string
+  }
+}
+
+const Projects: Record<string, Project> = {
   Phronesis: {
     name: 'Phronesis',
     description: 'We enable users with the power to visual and understand your data in order to grow your business.',

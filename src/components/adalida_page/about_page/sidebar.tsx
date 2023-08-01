@@ -8,7 +8,7 @@ import 'sass/adalida_page/index.scss'
 
 import AdalidaFace from 'images/adalida_face.jpg'
 
-const Sidebar = () => {
+const Sidebar = (): React.ReactElement => {
   return (
     <>
       <div className='about-sidebar-placeholder' />

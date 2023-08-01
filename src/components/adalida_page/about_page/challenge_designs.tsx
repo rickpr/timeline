@@ -12,13 +12,13 @@ import totalSales from 'videos/about/total_sales.mp4'
 
 const styles = {
   display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
+  flexDirection: 'row' as const,
+  flexWrap: 'wrap' as const,
   placeContent: 'center',
   gap: '30px'
 }
 
-const ChallengeDesigns = () => {
+const ChallengeDesigns = (): React.ReactElement => {
   const typewriter = (
     <Typewriter
       options={{

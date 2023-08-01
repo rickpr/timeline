@@ -8,7 +8,7 @@ import { ThemeContext } from 'theme_context'
 
 import 'sass/adalida_page/index.scss'
 
-const AboutPage = () => {
+const AboutPage = (): React.ReactElement => {
   const { darkMode } = useContext(ThemeContext)
   const resumePdf = FileQuery('Adalida_Baca_Resume.pdf')
   const containerStyle = {

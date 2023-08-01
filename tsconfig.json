@@ -11,5 +11,12 @@
     "baseUrl": "src",
     "skipLibCheck": true
   },
-  "include": ["./src/**/*", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*"]
+  "include": [
+    "./src/**/*",
+    "./__mocks__/*.ts",
+    "./gatsby-node.ts",
+    "./gatsby-config.ts",
+    "./gatsby-browser.tsx",
+    "./plugins/**/*"
+  ]
 }

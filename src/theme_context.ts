@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Projects from './project_data'
+import Projects, { type Project } from './project_data'
 
 import AdalidaFace from 'images/adalida_face.jpg'
 
-export const aboutTheme = {
+export const aboutTheme: Project = {
   name: 'About Adalida',
   description: '',
   coverPhoto: AdalidaFace,
@@ -20,7 +20,7 @@ export const aboutTheme = {
 
 const ThemeContext = React.createContext({
   darkMode: false,
-  setDarkMode: () => {},
+  setDarkMode: () => undefined,
   ...aboutTheme
 })
 export { Projects, ThemeContext }

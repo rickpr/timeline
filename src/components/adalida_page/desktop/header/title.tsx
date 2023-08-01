@@ -1,5 +1,4 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import Projects from 'project_data'
@@ -25,7 +24,6 @@ const listStyles = {
   margin: 0,
   gap: '1em'
 }
-
 const roleStyles = {
   backgroundColor: '#FFFFFF',
   color: '#000000',
@@ -34,27 +32,41 @@ const roleStyles = {
   lineHeight: 1,
   whiteSpace: 'nowrap' as const
 }
-
 const linkStyles = {
   fontSize: '1.2em',
   fontFamily: 'Avenir Next',
   fontWeight: 'bold'
 }
 
-const ProjectLink = ({ title }: { title: string }): React.ReactElement => {
+interface Props {
+  title: string
+  active: boolean
+}
+
+const Title = ({ title, active }: Props): React.ReactElement => {
   const { description, name, projectPage, roles } = Projects[title]
+  const pointerEvents = active ? 'auto' : 'none'
+  const descriptionStyle = {
+    display: 'grid',
+    gridTemplateRows: active ? '1fr' : '0fr',
+    transition: 'all 0.5s ease-in-out',
+    overflow: 'hidden',
+  }
+
   return (
-    <Link to={projectPage} style={labelStyles}>
+    <Link to={projectPage} style={{ pointerEvents, ...labelStyles }} disabled={!active}>
       <div style={titleStyles}>{name.toUpperCase()}</div>
-      <div style={listStyles}>
-        {roles.map(role => <div key={role} style={roleStyles}>{role}</div>)}
+      <div style={descriptionStyle}>
+        <div style={{ overflow: 'hidden' }}>
+          <div style={listStyles}>
+            {roles.map(role => <div key={role} style={roleStyles}>{role}</div>)}
+          </div>
+          <div>{description}</div>
+          <div style={linkStyles}>View Project ➜</div>
+        </div>
       </div>
-      <div>{description}</div>
-      <div style={linkStyles}>View Project ➜</div>
     </Link>
   )
 }
 
-ProjectLink.propTypes = { title: PropTypes.string.isRequired }
-
-export default ProjectLink
+export default Title

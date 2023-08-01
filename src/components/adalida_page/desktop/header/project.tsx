@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Title from '../title'
+import Title from './title'
 
 const barStyle = {
   borderWidth: '0.2dvw',
@@ -39,7 +39,7 @@ const Project = ({ projectRefs, currentProject, project }: Props): React.ReactEl
       style={{ opacity, ...projectStyle }}
       onClick={() => projectRefs.current[project]?.current?.scrollIntoView({ behavior: 'smooth' }) }
     >
-      <div style={{ ...barStyle, borderColor, maxHeight: active ? '100%' : '50%' }} />
+      <div style={{ ...barStyle, borderColor }} />
       <Title title={project} active={active} />
     </div>
   )

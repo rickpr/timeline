@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import ImageCard from '../image_card'
 
@@ -12,8 +11,7 @@ const style = {
   padding: '20px'
 }
 
-const SmallProject = ({ media }) => <ImageCard media={media} style={style} />
-
-SmallProject.propTypes = { media: PropTypes.string.isRequired }
+const SmallProject = ({ media }: { media: string }): React.ReactElement =>
+  <ImageCard media={media} style={style} />
 
 export default SmallProject

@@ -23,10 +23,10 @@ const imageContainerStyles = {
 const coverStyles = {
   display: 'flex',
   justifyContent: 'flex-end',
-  position: 'relative',
+  position: 'relative' as const,
   overflow: 'hidden',
   scrollSnapAlign: 'center',
-  scrollSnapStop: 'always',
+  scrollSnapStop: 'always' as const,
   height: '100dvh',
   width: '100dvw',
   minHeight: '100dvh',
@@ -34,17 +34,25 @@ const coverStyles = {
   padding: '0 10dvw'
 }
 
-const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject }, outerRef) => {
+interface Props {
+  title: string
+  containerRef: React.MutableRefObject<null>
+  currentProject: string
+  setCurrentProject: (project: string) => void
+}
+
+
+const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject }: Props, outerRef) => {
   const { coverPhoto, colors: { background } } = Projects[title]
   const isCurrentProject = currentProject === title
-  const imageRef = useRef()
-  const projectRef = useRef()
+  const imageRef = useRef(null)
+  const projectRef = useRef(null)
   outerRef(projectRef)
   const backgroundStyles = useMemo(() => ({
     background,
     transition: 'opacity 0.5s ease-in-out',
-    position: 'fixed',
-    pointerEvents: 'none',
+    position: 'fixed' as const,
+    pointerEvents: 'none' as const,
     left: 0,
     top: 0,
     zIndex: -1,
