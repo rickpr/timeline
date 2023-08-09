@@ -1,33 +1,17 @@
-import { Link } from 'gatsby'
 import React, { useContext, useEffect, useState } from 'react'
-import { IconCircleArrowUpFilled, IconMoonStars } from '@tabler/icons-react'
+import { IconCircleArrowUpFilled } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
 import Header from '../header'
 
-const ScrollProgress = () => {
-  const { colors: { scrollBar }, darkMode, setDarkMode } = useContext(ThemeContext)
-  const darkModeButtonStyle = {
-    border: 'none',
-    background: 'none',
-    color: darkMode ? 'white' : 'black',
-    display: 'flex',
-    alignItems: 'flex-end'
-  }
+const ScrollProgress = (): JSX.Element => {
+  const { colors: { scrollBar }, darkMode } = useContext(ThemeContext)
 
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showUpArrow, setShowUpArrow] = useState(false)
-  const navElementStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    fontSize: '18px',
-    border: 'none',
-    background: 'none',
-    color: darkMode ? 'white' : 'black'
-  }
 
   useEffect(() => {
-    const updateScrollProgressSize = () => {
+    const updateScrollProgressSize = (): void => {
       const maxScrollY = document.body.clientHeight - document.documentElement.clientHeight
       const scrollProgress = 100 * window.scrollY / maxScrollY
       setScrollProgress(scrollProgress)

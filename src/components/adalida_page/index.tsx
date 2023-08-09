@@ -9,10 +9,11 @@ import Mobile from './mobile'
 
 import 'sass/adalida_page/index.scss'
 
-const AdalidaPage = () => {
+const AdalidaPage = (): JSX.Element => {
   const [darkMode, setDarkMode] = useLocalStorage('darkMode') ?? false
   const [currentProject, setCurrentProject] = useState('GainTain')
   const isMobile = useIsMobile(768)
+  if (isMobile === null) return <div />
 
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode, ...Projects[currentProject] }}>
