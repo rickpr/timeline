@@ -5,7 +5,7 @@ import ScalableText from 'components/scalable_text'
 
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
-const VisualIdentity = () => {
+const VisualIdentity = (): JSX.Element => {
   const fontFamily = 'Avenir Next'
   const centerStyles = {
     placeItems: 'center center'

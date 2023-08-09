@@ -8,7 +8,7 @@ import useIsMobile from 'hooks/use_is_mobile'
 
 import 'sass/adalida_page/project.scss'
 
-const Ideate = () => {
+const Ideate = (): JSX.Element => {
   const isMobile = useIsMobile(1200)
   const centerStyles = {
     placeItems: 'center center'
@@ -28,7 +28,7 @@ const Ideate = () => {
     <Card>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr 1fr',
+        gridTemplateColumns: isMobile !== false ? '1fr' : '1fr 2fr 1fr',
         columnGap: '6%',
         width: '100%',
         ...centerStyles

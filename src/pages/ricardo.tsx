@@ -5,10 +5,10 @@ import useViewportHeight from '../hooks/use_viewport_height'
 
 import RicardoPage from '../components/ricardo_page'
 
-const Ricardo = () => {
+const Ricardo = (): JSX.Element => {
   const layoutRef = useRef(null)
   return (
-    <div ref={layoutRef} style={{ height: `${useViewportHeight()}px`, background: '#000000' }}>
+    <div ref={layoutRef} style={{ height: `${useViewportHeight() ?? 0}px`, background: '#000000' }}>
       <RicardoPage />
     </div>
   )

@@ -20,7 +20,7 @@ export const aboutTheme: Project = {
 
 const ThemeContext = React.createContext({
   darkMode: false,
-  setDarkMode: (_: boolean) => {},
+  setDarkMode: (_: boolean) => { /* Do nothing */ },
   ...aboutTheme
 })
 export { Projects, ThemeContext }

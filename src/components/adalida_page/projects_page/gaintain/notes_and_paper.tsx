@@ -10,7 +10,7 @@ import IncrementVideo from 'videos/gaintain/notes_and_paper.mp4'
 
 import 'sass/adalida_page/project.scss'
 
-const NotesAndPaper = () => {
+const NotesAndPaper = (): JSX.Element => {
   const isMobile = useIsMobile(1200)
   const text = (
     <div>
@@ -27,7 +27,7 @@ const NotesAndPaper = () => {
     <Card>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, minmax(0, 1fr))',
+        gridTemplateColumns: isMobile !== false ? '1fr' : 'repeat(3, minmax(0, 1fr))',
         columnGap: '6%',
         maxWidth: '100%',
         overflow: 'hidden',

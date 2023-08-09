@@ -12,7 +12,6 @@ interface LinkProps {
   to: string
 }
 
-
 module.exports = {
   ...gatsby,
   graphql: jest.fn(),

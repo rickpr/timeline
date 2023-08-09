@@ -8,7 +8,7 @@ import useIsMobile from 'hooks/use_is_mobile'
 
 import WorkoutLibraryVideo from 'videos/gaintain/workout_library.mp4'
 
-const WorkoutLibrary = () => {
+const WorkoutLibrary = (): JSX.Element => {
   const isMobile = useIsMobile(1200)
   const text = (
     <div>
@@ -25,7 +25,7 @@ const WorkoutLibrary = () => {
     <Card>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, minmax(0, 1fr))',
+        gridTemplateColumns: isMobile !== false ? '1fr' : 'repeat(3, minmax(0, 1fr))',
         columnGap: '6%',
         maxWidth: '100%',
         overflow: 'hidden',

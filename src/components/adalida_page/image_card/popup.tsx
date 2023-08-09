@@ -14,7 +14,7 @@ const style = {
   zIndex: 4
 }
 
-const Popup = ({ closePopUp, media }: { closePopUp: () => void, media: string }) => (
+const Popup = ({ closePopUp, media }: { closePopUp: () => void, media: string }): JSX.Element => (
   <div
     style={style}
     role='tab'

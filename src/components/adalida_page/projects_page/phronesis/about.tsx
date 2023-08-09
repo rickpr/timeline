@@ -2,7 +2,7 @@ import React from 'react'
 
 import 'sass/adalida_page/project.scss'
 
-const About = () => {
+const About = (): JSX.Element => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', paddingRight: '10%' }}>

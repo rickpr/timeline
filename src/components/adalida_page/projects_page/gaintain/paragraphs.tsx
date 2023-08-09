@@ -4,7 +4,7 @@ import Card from '../card'
 
 import 'sass/adalida_page/project.scss'
 
-const Paragraphs = () => {
+const Paragraphs = (): JSX.Element => {
   const text = (
     <div className='project-outer-paragraphs'>
       <div className='project-inner-paragraphs'>

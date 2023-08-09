@@ -53,13 +53,16 @@ const SegmentedPicker = ({ pickedSegment, setPickedSegment, segments }: Props): 
         const active = pickedSegment === segment
         const color = active ? '#FFFFFF' : '#000000'
         return (
-          <a
+          <div
             key={segment}
             style={{ ...buttonStyles, color }}
             onClick={() => { setPickedSegment(segment) }}
+            role='tab'
+            tabIndex={0}
+            onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && setPickedSegment(segment) }}
           >
             {segment}
-          </a>
+          </div>
         )
       }
       )}

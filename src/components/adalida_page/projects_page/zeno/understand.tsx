@@ -9,7 +9,7 @@ const userPersonaOne = 'images/zeno/research/user_persona_one.png'
 const userPersonaTwo = 'images/zeno/research/user_persona_two.png'
 const informationArchitecture = 'images/zeno/research/information_architecture.png'
 
-const Understand = () => {
+const Understand = (): JSX.Element => {
   const centerStyles = {
     placeContent: 'space-between center',
     placeItems: 'center center'

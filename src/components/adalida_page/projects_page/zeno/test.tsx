@@ -6,7 +6,7 @@ import MediaWithText from '../media_with_text'
 
 import 'sass/adalida_page/project.scss'
 
-const Test = () => {
+const Test = (): JSX.Element => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption

@@ -14,7 +14,7 @@ interface SynchronizedTypewriterProps {
   styles?: React.CSSProperties
 }
 
-const useSynchronizedTypewriter = (displayFor = 2000) => {
+const useSynchronizedTypewriter = (displayFor = 2000): ({ string, styles }: SynchronizedTypewriterProps) => JSX.Element => {
   // The "natural" delay for typing each character is 120 - 160 milliseconds
   // https://github.com/tameemsafi/typewriterjs/blob/867425e30b7087f9c5341a966f799589c58ca6d2/src/core/Typewriter.js#L553
   const maxTypingDelay = 160 // ms
@@ -33,12 +33,12 @@ const useSynchronizedTypewriter = (displayFor = 2000) => {
     // @ts-expect-error we are manually grabbing the ref here
     typewriters.forEach(object => { object.typewriter = new Typewriter(object.component.ref.current) })
 
-    let timeout: NodeJS.Timeout | undefined = undefined
-    const typeCharacters = () => {
+    let timeout: NodeJS.Timeout | undefined
+    const typeCharacters = (): void => {
       typewriters.forEach(({ string, typewriter }) => typewriter.typeString(string).start())
       timeout = setTimeout(deleteCharacters, delayAfterTyping)
     }
-    const deleteCharacters = () => {
+    const deleteCharacters = (): void => {
       typewriters.forEach(({ typewriter }) => typewriter.deleteAll().start())
       timeout = setTimeout(typeCharacters, delayAfterDeletion)
     }

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, type GroupProps } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
 import * as THREE from 'three'
 
@@ -42,7 +42,7 @@ const hourHandOffset = hourHandLength / 2 - sideSize / 10
 const minuteHandOffset = minuteHandLength / 2 - sideSize / 10
 const secondHandOffset = secondHandLength / 2 - sideSize / 10
 
-const ClockFace = (props: any) => {
+const ClockFace = (props: GroupProps): JSX.Element => {
   const background = useTexture(backgroundImage)
   const secondHandRef = useRef(null)
   const minuteHandRef = useRef(null)

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useTexture } from '@react-three/drei'
+import type { MeshProps, ThreeEvent } from '@react-three/fiber'
 import * as THREE from 'three'
 
 import Me from 'images/ricardo/me.jpg'
@@ -13,7 +14,7 @@ import ClockFace from './clock_face'
 const SCALE = 8
 const sideSize = SCALE * 2
 
-const Box = (props: any) => {
+const Box = (props: MeshProps): JSX.Element => {
   const meTexture = useTexture(Me)
   const gliderTexture = useTexture(Glider)
   const githubTexture = useTexture(GithubIcon)
@@ -40,7 +41,7 @@ const Box = (props: any) => {
     return () => { window.removeEventListener('mouseup', goToLink) }
   }, [])
 
-  const openLink = (linkURL: string | null): (event: MouseEvent) => void => {
+  const openLink = (linkURL: string | null): (event: ThreeEvent<PointerEvent>) => void => {
     return event => {
       currentLink.current = linkURL
       mousePositionWhenClicking.current = {
@@ -100,7 +101,6 @@ const Box = (props: any) => {
       position={[0, SCALE, 0]}
       rotation={[-Math.PI / 2, 0, 0]}
       onPointerDown={openLink(null)}
-      roughness={0}
     >
       <planeGeometry args={[sideSize, sideSize]} />
       <meshStandardMaterial map={meTexture} side={THREE.DoubleSide} roughness={0} />

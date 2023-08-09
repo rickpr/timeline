@@ -5,7 +5,7 @@ import useSynchronizedTypewriter from '../use_synchronized_typewriter'
 
 describe('useSynchronizedTyperwriter', () => {
   it('creates a div with whitespace: nowrap', () => {
-    const FunctionComponent = () => {
+    const FunctionComponent = (): JSX.Element => {
       const SynchronizedTypewriter = useSynchronizedTypewriter()
       return <SynchronizedTypewriter string='test' />
     }

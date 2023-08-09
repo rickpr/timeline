@@ -5,7 +5,7 @@ import MediaWithText from '../media_with_text'
 
 import 'sass/adalida_page/project.scss'
 
-const Think = () => {
+const Think = (): JSX.Element => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <h3>&#47;&#47; THINK</h3>

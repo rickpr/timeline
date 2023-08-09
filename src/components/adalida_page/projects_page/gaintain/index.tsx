@@ -15,7 +15,7 @@ import NextSteps from './next_steps'
 import VisualIdentity from './visual_identity'
 import Paragraphs from './paragraphs'
 
-const GainTain = () =>
+const GainTain = (): JSX.Element =>
   <Project>
     <About />
     <Think />

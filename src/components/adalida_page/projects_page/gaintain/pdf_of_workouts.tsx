@@ -10,7 +10,7 @@ import PdfOfWorkoutsVideo from 'videos/gaintain/pdf_of_workouts.mp4'
 
 import 'sass/adalida_page/project.scss'
 
-const PdfOfWorkouts = () => {
+const PdfOfWorkouts = (): JSX.Element => {
   const isMobile = useIsMobile(1200)
   const centerStyles = { placeItems: 'center center' }
   const text = (
@@ -28,7 +28,7 @@ const PdfOfWorkouts = () => {
     <Card>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, minmax(0, 1fr))',
+        gridTemplateColumns: isMobile !== false ? '1fr' : 'repeat(3, minmax(0, 1fr))',
         columnGap: '6%',
         maxWidth: '100%',
         overflow: 'hidden',

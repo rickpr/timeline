@@ -11,7 +11,7 @@ import NextSteps from './next_steps'
 import VisualIdentity from '../visual_identity'
 import Takeaways from './takeaways'
 
-const Zeno = () =>
+const Zeno = (): JSX.Element =>
   <Project>
     <About />
     <Understand />

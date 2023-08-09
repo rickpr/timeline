@@ -6,7 +6,7 @@ import PictureCaption from '../picture_caption'
 
 import 'sass/adalida_page/project.scss'
 
-const NextSteps = () => {
+const NextSteps = (): JSX.Element => {
   const problem = (
     <div className='picture-caption'>
       <PictureCaption

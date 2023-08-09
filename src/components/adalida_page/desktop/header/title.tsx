@@ -50,7 +50,7 @@ const Title = ({ title, active }: Props): React.ReactElement => {
     display: 'grid',
     gridTemplateRows: active ? '1fr' : '0fr',
     transition: 'all 0.5s ease-in-out',
-    overflow: 'hidden',
+    overflow: 'hidden'
   }
 
   return (

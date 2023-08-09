@@ -3,6 +3,6 @@ import 'sass/custom.scss'
 
 import AdalidaPage from 'components/adalida_page'
 
-const Adalida = () => <AdalidaPage />
+const Adalida = (): JSX.Element => <AdalidaPage />
 
 export default Adalida

@@ -8,7 +8,7 @@ import define from 'videos/zeno/define.mp4'
 
 import 'sass/adalida_page/project.scss'
 
-const Define = () => {
+const Define = (): JSX.Element => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption

@@ -5,7 +5,7 @@ import ResponsiveGrid from 'components/responsive_grid'
 
 import 'sass/adalida_page/project.scss'
 
-const Takeaways = () => {
+const Takeaways = (): JSX.Element => {
   const centerStyles = {
     placeItems: 'center center'
   }

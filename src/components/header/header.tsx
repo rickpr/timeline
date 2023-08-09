@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
-const Header = () =>
+const Header = (): JSX.Element =>
     <header>
       <nav className='header-navbar'>
         <h3><Link to='/adalida' className='nav-link' activeClassName='active'>Adalida</Link></h3>

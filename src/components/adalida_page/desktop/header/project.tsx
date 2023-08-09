@@ -33,11 +33,15 @@ const Project = ({ projectRefs, currentProject, project }: Props): React.ReactEl
   const active = currentProject === project
   const opacity = active ? 1 : 0.2
   const borderColor = active ? 'white' : '#E7E5E7'
+  const scrollIntoView = (): void => projectRefs.current[project]?.current?.scrollIntoView({ behavior: 'smooth' })
   return (
     <div
       key={project}
       style={{ opacity, ...projectStyle }}
-      onClick={() => projectRefs.current[project]?.current?.scrollIntoView({ behavior: 'smooth' }) }
+      onClick={scrollIntoView}
+      role='tab'
+      tabIndex={0}
+      onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && scrollIntoView() }}
     >
       <div style={{ ...barStyle, borderColor }} />
       <Title title={project} active={active} />

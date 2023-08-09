@@ -4,7 +4,7 @@ const useViewportHeight = (): number | undefined => {
   const [viewportHeight, setViewportHeight] = useState<number>()
 
   useEffect(() => {
-    const updateDimensions = () => { setViewportHeight(window.innerHeight) }
+    const updateDimensions = (): void => { setViewportHeight(window.innerHeight) }
     window.addEventListener('resize', updateDimensions)
     updateDimensions()
     return () => { window.removeEventListener('resize', updateDimensions) }

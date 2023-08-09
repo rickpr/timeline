@@ -21,9 +21,9 @@ const BackgroundEnvironment = (): JSX.Element => {
   return <Environment background files={backgroundImage.publicURL} />
 }
 
-const RicardoPage = () => {
+const RicardoPage = (): JSX.Element => {
   const controlsRef = useRef(null)
-  const faceSideOfBox = () => {
+  const faceSideOfBox = (): void => {
     // @ts-expect-error we should have this not null by now
     const azimuthalAngle = controlsRef.current.getAzimuthalAngle()
     const angleToFaceClosestSide = anglesToFaceSidesOfBox.reduce((closestSide, nextSide) =>

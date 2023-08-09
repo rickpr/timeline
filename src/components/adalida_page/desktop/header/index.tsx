@@ -34,7 +34,8 @@ interface Props {
 }
 
 const previousAndNextProjects = ({ projectRefs, currentProject }: Props): {
-  previousProject: string | undefined, nextProject: string | undefined
+  previousProject: string | undefined
+  nextProject: string | undefined
 } => {
   const projects = Object.keys(projectRefs.current)
   const currentProjectIndex = projects.indexOf(currentProject)
@@ -50,12 +51,12 @@ const Header = ({ projectRefs, currentProject }: Props): React.ReactElement => {
     if (refCurrent == null) return
 
     const { previousProject, nextProject } = previousAndNextProjects({ projectRefs, currentProject })
-    const previousProjectRef = previousProject && projectRefs.current[previousProject]
-    const nextProjectRef = nextProject && projectRefs.current[nextProject]
-    const handleWheel = (event: WheelEvent) => {
-      if (event.deltaY < 0 && previousProjectRef) {
+    const previousProjectRef = previousProject === undefined ? null : projectRefs.current[previousProject]
+    const nextProjectRef = nextProject === undefined ? null : projectRefs.current[nextProject]
+    const handleWheel = (event: WheelEvent): void => {
+      if (event.deltaY < 0 && previousProjectRef !== null) {
         previousProjectRef.current.scrollIntoView({ behavior: 'smooth' })
-      } else if (event.deltaY > 0 && nextProjectRef) {
+      } else if (event.deltaY > 0 && nextProjectRef !== null) {
         nextProjectRef.current.scrollIntoView({ behavior: 'smooth' })
       }
     }

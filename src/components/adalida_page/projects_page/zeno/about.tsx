@@ -7,7 +7,7 @@ import about from 'videos/zeno/about.mp4'
 
 import 'sass/adalida_page/project.scss'
 
-const About = () => {
+const About = (): JSX.Element => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
       <p>

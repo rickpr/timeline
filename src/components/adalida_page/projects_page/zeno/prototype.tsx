@@ -8,7 +8,7 @@ import prototype from 'videos/zeno/prototype.mp4'
 
 import 'sass/adalida_page/project.scss'
 
-const Prototype = () => {
+const Prototype = (): JSX.Element => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption

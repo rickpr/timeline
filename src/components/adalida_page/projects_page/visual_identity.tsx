@@ -12,7 +12,6 @@ const viewBoxWidthMultipliers = {
   'Avenir Next': 12
 }
 
-
 interface Props {
   colors: {
     primary: string
