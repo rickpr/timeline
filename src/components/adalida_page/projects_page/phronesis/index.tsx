@@ -28,15 +28,13 @@ const containerStyle = {
   gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
   alignItems: 'center',
   borderRadius: '2vh',
-  justifyContent: 'space-around',
-  gap: '2vh'
+  justifyContent: 'space-around'
 }
 
 const cardStyle = {
   background: '#1A191C',
   cursor: 'pointer',
   minHeight: '325px',
-  borderRadius: '1vh',
   padding: '20px'
 }
 

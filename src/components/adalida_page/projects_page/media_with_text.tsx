@@ -26,7 +26,7 @@ interface Props {
   reversed?: boolean
 }
 
-const MediaWithText = ({ media, text, reversed = false }: Props) => {
+const MediaWithText = ({ media, text, reversed = false }: Props): JSX.Element => {
   const maxHeight = '82vh'
   const style = { minWidth: 'min(50ch, 80vw)', maxHeight, borderRadius: '10px' }
 

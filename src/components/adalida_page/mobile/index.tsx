@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 
 import App from './app'
@@ -14,8 +13,9 @@ const fullWindowStyles = {
 }
 
 const coverStyles = {
-  display: 'flex',
+  display: 'grid',
   minWidth: '100vw',
+  gridTemplateColumns: '1fr 1fr 1fr',
   flexDirection: 'row' as const,
   transition: 'background-color 0.5s ease-in-out',
   overflow: 'auto',

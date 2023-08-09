@@ -37,8 +37,9 @@ const ScrollProgress = (): JSX.Element => {
         <div
           style={{
             width: `${scrollProgress}%`,
-            height: '1vmax',
+            height: '1vh',
             background: scrollBar,
+            borderRadius: '0 1vh 1vh 0',
             top: 0,
             zIndex: 3
           }}

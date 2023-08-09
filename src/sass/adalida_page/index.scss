@@ -4,27 +4,6 @@
   display: inline;
 }
 
-.about-page {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-}
-
-.about-sidebar-placeholder {
-  width: 400px;
-  flex: 0 0 400px;
-  padding: 20px 30px;
-}
-
-.about-sidebar {
-  @extend .about-sidebar-placeholder;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 95%;
-}
-
 .about-sidebar-links {
   display: flex;
   flex-direction: column;
@@ -45,28 +24,4 @@
 
 .brand-icon:hover {
   filter: invert(1) opacity(0.25);
-}
-
-@media (max-width: 1024px) {
-  .about-sidebar-placeholder {
-    width: 300px;
-    flex: 0 0 300px;
-    padding: 20px 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-page {
-    flex-direction: column;
-  }
-  .about-sidebar-placeholder {
-    width: 100%;
-    display: none;
-  }
-  .about-sidebar {
-    width: 100%;
-    position: static;
-    display: block;
-    height: unset;
-  }
 }

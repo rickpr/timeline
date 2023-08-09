@@ -13,7 +13,7 @@ export const aboutTheme: Project = {
   roles: [],
 
   colors: {
-    scrollBar: '#850021',
+    scrollBar: '#FE347E',
     background: '#000000'
   }
 }

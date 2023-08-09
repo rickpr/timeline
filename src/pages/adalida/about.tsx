@@ -6,7 +6,7 @@ import ScrollProgress from 'components/adalida_page/projects_page/scroll_progres
 import useLocalStorage from 'hooks/use_local_storage'
 import { aboutTheme, ThemeContext } from 'theme_context'
 
-const About = () => {
+const About = (): JSX.Element => {
   const [darkMode, setDarkMode] = useLocalStorage('darkMode')
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode, ...aboutTheme }}>

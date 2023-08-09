@@ -10,7 +10,8 @@ const labelStyles = {
   flexDirection: 'column' as const,
   width: '100%',
   height: '100%',
-  transition: 'all 0.5s ease'
+  transition: 'all 0.5s ease',
+  justifyContent: 'space-around'
 }
 const titleStyles = {
   fontSize: '2rem',

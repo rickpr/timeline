@@ -1,21 +1,13 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
-import { IconMoonStars } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
 
-const Header = ({ showDarkModeButton }: { showDarkModeButton: boolean }) => {
-  const { darkMode, setDarkMode } = useContext(ThemeContext)
+import DarkModeButton from './dark_mode_button'
+
+const Header = ({ showDarkModeButton }: { showDarkModeButton: boolean }): JSX.Element => {
+  const { darkMode } = useContext(ThemeContext)
   const color = !showDarkModeButton || darkMode ? 'white' : 'black'
-  const darkModeButtonStyle = {
-    border: 'none',
-    background: 'none',
-    color,
-    display: 'flex',
-    alignItems: 'flex-end',
-    marginRight: '1em'
-  }
 
   const navElementStyle = {
     display: 'flex',
@@ -23,17 +15,9 @@ const Header = ({ showDarkModeButton }: { showDarkModeButton: boolean }) => {
     fontSize: '18px',
     border: 'none',
     background: 'none',
+    pointerEvents: 'auto' as const,
     color
   }
-
-  const darkModeButton = (
-    <button
-      style={darkModeButtonStyle}
-      onClick={() => { setDarkMode(!darkMode) }}
-    >
-      <IconMoonStars />
-    </button>
-  )
 
   return (
     <div style={{
@@ -47,18 +31,18 @@ const Header = ({ showDarkModeButton }: { showDarkModeButton: boolean }) => {
           ADALIDA
         </Link>
       </div>
+      {showDarkModeButton &&
+       <div style={navElementStyle}>
+         {showDarkModeButton && <DarkModeButton />}
+       </div>
+      }
       <div style={navElementStyle}>
-        {showDarkModeButton && darkModeButton}
         <Link to='/adalida/about'>
           ABOUT
         </Link>
       </div>
     </div>
   )
-}
-
-Header.propTypes = {
-  showDarkModeButton: PropTypes.bool
 }
 
 export default Header

@@ -18,10 +18,11 @@ const containerStyles = {
   width: '100dvw',
   minWidth: '100dvw',
   display: 'grid',
-  placeContent: 'center',
   placeItems: 'center',
-  alignSelf: 'center',
-  gridTemplateRows: `${imageHeight}dvw 1fr`
+  placeContent: 'space-around center',
+  height: '100%',
+  gridTemplateRows: `${imageHeight}dvw 1fr`,
+  padding: '7.5dvw 0'
 }
 
 const imageStyles = {
@@ -40,10 +41,8 @@ const imageContainerStyles = {
 }
 
 const titleStyles = {
-  width: '90%',
-  height: '100%',
-  overflow: 'hidden',
-  display: 'flex'
+  width: '85dvw',
+  height: '100%'
 }
 
 interface Props {

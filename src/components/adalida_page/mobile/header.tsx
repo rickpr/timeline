@@ -3,19 +3,17 @@ import React from 'react'
 import GlobalHeader from '../header'
 
 const headerStyles = {
-  position: 'sticky' as const,
   flexGrow: 0,
   display: 'flex',
   flexDirection: 'column' as const,
   width: '100dvw',
-  overflow: 'hidden',
   justifyContent: 'space-between',
   zIndex: 2
 }
 const indicatorStyle = {
   width: '100%',
   display: 'flex',
-  gap: '2dvh',
+  gap: '2dvw',
   padding: '0 7.5dvw',
   justifyContent: 'space-around'
 }
