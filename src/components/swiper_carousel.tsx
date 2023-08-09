@@ -13,8 +13,7 @@ import 'swiper/css/pagination'
 import 'sass/swiper_carousel.scss'
 
 // This has to be imported last
-// @ts-expect-error this isn't getting the types
-import { EffectCoverflow, Pagination, Navigation } from 'swiper'
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'
 
 const SwiperCarousel = ({ images }: { images: string[] }): JSX.Element => {
   const { name } = useContext(ThemeContext)
@@ -24,8 +23,6 @@ const SwiperCarousel = ({ images }: { images: string[] }): JSX.Element => {
       centeredSlides
       effect='coverflow'
       grabCursor
-      loop
-      loopedSlides={images.length}
       modules={[EffectCoverflow, Pagination, Navigation]}
       navigation
       pagination={{ bulletActiveClass: `swiper-pagination-bullet-active-${name}` }}
