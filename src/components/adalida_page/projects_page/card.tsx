@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
 
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 import { ThemeContext } from 'theme_context'
 
-const Card = ({ children }) => {
+const Card = ({ children }: { children: React.ReactNode }): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
   useAnimateOnScroll()
   const containerStyle = {
@@ -30,7 +29,5 @@ const Card = ({ children }) => {
     </div>
   )
 }
-
-Card.propTypes = { children: PropTypes.node.isRequired }
 
 export default Card

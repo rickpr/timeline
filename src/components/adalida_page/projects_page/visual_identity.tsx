@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import Card from './card'
@@ -13,7 +12,20 @@ const viewBoxWidthMultipliers = {
   'Avenir Next': 12
 }
 
-const VisualIdentity = ({ colors, fontFamily }) => {
+
+interface Props {
+  colors: {
+    primary: string
+    secondary: string
+    tertiary: string
+    'support-one': string
+    'support-two': string
+    'support-three': string
+  }
+  fontFamily: keyof typeof viewBoxWidthMultipliers
+}
+
+const VisualIdentity = ({ colors, fontFamily }: Props): JSX.Element => {
   const centerStyles = {
     placeItems: 'center center'
   }
@@ -25,7 +37,7 @@ const VisualIdentity = ({ colors, fontFamily }) => {
     'support-one support-one support-two support-two   support-three support-three' 1fr / 1fr 1fr 1fr 1fr 1fr 1fr
 `
   const fullWidth = { width: '100%', height: '100%', display: 'flex', placeItems: 'center', placeContent: 'center' }
-  const textColor = color => {
+  const textColor = (color: string): string => {
     // Assumes color is in hex format, like #FFFFFF
     const red = parseInt(color.slice(1, 3), 16)
     const green = parseInt(color.slice(3, 5), 16)
@@ -34,7 +46,7 @@ const VisualIdentity = ({ colors, fontFamily }) => {
     // 382.5 is half of 765 which is max brightness
     return red + green + blue > 382 ? '#000000' : '#FFFFFF'
   }
-  const gridRow = gridArea => {
+  const gridRow = (gridArea: keyof Props['colors']): JSX.Element => {
     const color = colors[gridArea]
     return <div style={{ gridArea, backgroundColor: color, color: textColor(color), ...fullWidth }}>{color}</div>
   }
@@ -61,7 +73,7 @@ const VisualIdentity = ({ colors, fontFamily }) => {
   // So the following function has a zero-width space after <
   // https://en.wikipedia.org/wiki/Zero-width_space
   // eslint-disable-next-line no-irregular-whitespace
-  const generateTypewriterString = (heading, text) => `<​${heading}> ${text} </${heading}>`
+  const generateTypewriterString = (heading: string, text: string): string => `<​${heading}> ${text} </${heading}>`
   const h1String = generateTypewriterString('H1', '48')
   const viewBoxWidthMultiplier = viewBoxWidthMultipliers[fontFamily]
 
@@ -115,18 +127,6 @@ const VisualIdentity = ({ colors, fontFamily }) => {
       </div>
     </Card>
   )
-}
-
-VisualIdentity.propTypes = {
-  colors: PropTypes.shape({
-    primary: PropTypes.string.isRequired,
-    secondary: PropTypes.string.isRequired,
-    tertiary: PropTypes.string.isRequired,
-    'support-one': PropTypes.string.isRequired,
-    'support-two': PropTypes.string.isRequired,
-    'support-three': PropTypes.string.isRequired
-  }).isRequired,
-  fontFamily: PropTypes.string.isRequired
 }
 
 export default VisualIdentity

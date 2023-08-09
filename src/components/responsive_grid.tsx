@@ -1,9 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { type CSSProperties } from 'react'
 
 const BREAKPOINT = '40vw'
 
-const ResponsiveGrid = ({ breakpoint = BREAKPOINT, children, customStyles = {} }) =>
+interface Props {
+  breakpoint?: string
+  children: React.ReactNode
+  customStyles?: CSSProperties
+}
+
+const ResponsiveGrid = ({ breakpoint = BREAKPOINT, children, customStyles = {} }: Props): JSX.Element =>
   <div
     style={{
       display: 'grid',
@@ -14,11 +19,5 @@ const ResponsiveGrid = ({ breakpoint = BREAKPOINT, children, customStyles = {} }
   >
     {children}
   </div>
-
-ResponsiveGrid.propTypes = {
-  breakpoint: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  customStyles: PropTypes.object
-}
 
 export default ResponsiveGrid

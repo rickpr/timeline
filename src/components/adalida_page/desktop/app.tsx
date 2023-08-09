@@ -1,7 +1,6 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { forwardRef, useEffect, useMemo, useRef } from 'react'
-import PropTypes from 'prop-types'
 
 import Projects from 'project_data'
 
@@ -41,13 +40,17 @@ interface Props {
   setCurrentProject: (project: string) => void
 }
 
-
 const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject }: Props, outerRef) => {
   const { coverPhoto, colors: { background } } = Projects[title]
   const isCurrentProject = currentProject === title
   const imageRef = useRef(null)
   const projectRef = useRef(null)
-  outerRef(projectRef)
+  if (typeof outerRef === 'function') {
+    outerRef(projectRef)
+  } else {
+    console.error(`Desktop: outerRef is not a function: ${typeof outerRef}`)
+  }
+
   const backgroundStyles = useMemo(() => ({
     background,
     transition: 'opacity 0.5s ease-in-out',
@@ -96,12 +99,5 @@ const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject
 })
 
 App.displayName = 'App'
-
-App.propTypes = {
-  title: PropTypes.string.isRequired,
-  containerRef: PropTypes.shape({ current: PropTypes.node.isRequired }).isRequired,
-  currentProject: PropTypes.string.isRequired,
-  setCurrentProject: PropTypes.func.isRequired
-}
 
 export default App

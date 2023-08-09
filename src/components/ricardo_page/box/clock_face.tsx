@@ -42,18 +42,21 @@ const hourHandOffset = hourHandLength / 2 - sideSize / 10
 const minuteHandOffset = minuteHandLength / 2 - sideSize / 10
 const secondHandOffset = secondHandLength / 2 - sideSize / 10
 
-const ClockFace = (props) => {
+const ClockFace = (props: any) => {
   const background = useTexture(backgroundImage)
-  const secondHandRef = useRef()
-  const minuteHandRef = useRef()
-  const hourHandRef = useRef()
+  const secondHandRef = useRef(null)
+  const minuteHandRef = useRef(null)
+  const hourHandRef = useRef(null)
   useFrame(() => {
     const now = new Date()
     const secondHandRotation = now.getSeconds() * secondToRadian + now.getMilliseconds() * millisecondToRadian
     const minuteHandRotation = now.getMinutes() * minuteToRadian + secondHandRotation * secondToMinute
     const hourHandRotation = now.getHours() * hourToRadian + minuteHandRotation * minuteToHour
+    // @ts-expect-error these are already initialized
     secondHandRef.current.rotation.z = -secondHandRotation
+    // @ts-expect-error these are already initialized
     minuteHandRef.current.rotation.z = -minuteHandRotation
+    // @ts-expect-error these are already initialized
     hourHandRef.current.rotation.z = -hourHandRotation
   })
   /* eslint-disable react/no-unknown-property */

@@ -5,15 +5,17 @@ import { ThemeContext, Projects } from 'theme_context'
 
 const projectNames = Object.keys(Projects)
 const numberOfProjects = projectNames.length
-// Javascript's % operator doesn't wrap around to negative numbers
-const modulus = projectIndex => ((projectIndex % numberOfProjects) + numberOfProjects) % numberOfProjects
+const modulus = (projectIndex: number): number => (
+  // Javascript's % operator doesn't wrap around to negative numbers
+  ((projectIndex % numberOfProjects) + numberOfProjects) % numberOfProjects
+)
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   const { name } = useContext(ThemeContext)
   const currentProjectIndex = projectNames.findIndex(key => Projects[key].name === name)
   const previousProjectName = projectNames[modulus(currentProjectIndex - 1)]
   const nextProjectName = projectNames[modulus(currentProjectIndex + 1)]
-  const recentProject = projectName => {
+  const recentProject = (projectName: string): JSX.Element => {
     const { name, coverPhoto, projectPage } = Projects[projectName]
     return (
       <a className='recent-project' href={projectPage}>

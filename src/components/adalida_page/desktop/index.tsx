@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 
 import App from './app'
@@ -19,7 +18,7 @@ interface Props {
   setCurrentProject: (project: string) => void
 }
 
-const Desktop = ({ currentProject, setCurrentProject }: Props) => {
+const Desktop = ({ currentProject, setCurrentProject }: Props): JSX.Element => {
   const containerRef = useRef(null)
   const projects = Object.keys(Projects)
   const projectRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
@@ -32,7 +31,7 @@ const Desktop = ({ currentProject, setCurrentProject }: Props) => {
       {projects.map(project => (
         <App
           key={project}
-          ref={ element => (projectRefs.current[project] = element) }
+          ref={ (element: React.MutableRefObject<HTMLDivElement>) => (projectRefs.current[project] = element) }
           title={project}
           containerRef={containerRef}
           currentProject={currentProject}
@@ -41,11 +40,6 @@ const Desktop = ({ currentProject, setCurrentProject }: Props) => {
       ))}
     </div>
   )
-}
-
-Desktop.propTypes = {
-  currentProject: PropTypes.string.isRequired,
-  setCurrentProject: PropTypes.func.isRequired
 }
 
 export default Desktop

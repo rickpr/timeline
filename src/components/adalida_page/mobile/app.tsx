@@ -1,7 +1,6 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { forwardRef, useEffect, useMemo, useRef } from 'react'
-import PropTypes from 'prop-types'
 
 import Projects from 'project_data'
 import ProjectLink from '../project_link'
@@ -12,10 +11,10 @@ const imageHeight = 85
 const translationAmount = 75 - imageHeight / 2
 
 const containerStyles = {
-  scrollBehavior: 'smooth',
+  scrollBehavior: 'smooth' as const,
   scrollSnapAlign: 'center',
-  scrollSnapStop: 'always',
-  WebkitOverflowScrolling: 'touch',
+  scrollSnapStop: 'always' as const,
+  WebkitOverflowScrolling: 'touch' as const,
   width: '100dvw',
   minWidth: '100dvw',
   display: 'grid',
@@ -32,7 +31,7 @@ const imageStyles = {
 
 const imageContainerStyles = {
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column' as const,
   justifyContent: 'center',
   alignItems: 'center',
   aspectRatio: '1 / 1',
@@ -47,17 +46,29 @@ const titleStyles = {
   display: 'flex'
 }
 
-const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject }, outerRef) => {
+interface Props {
+  title: string
+  containerRef: React.MutableRefObject<null>
+  currentProject: string
+  setCurrentProject: (project: string) => void
+}
+
+const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject }: Props, outerRef) => {
   const { coverPhoto, colors: { background } } = Projects[title]
   const isCurrentProject = currentProject === title
-  const imageRef = useRef()
-  const projectRef = useRef()
-  outerRef(projectRef)
+  const imageRef = useRef(null)
+  const projectRef = useRef(null)
+  if (typeof outerRef === 'function') {
+    outerRef(projectRef)
+  } else {
+    console.error(`Mobile: outerRef is not a function: ${typeof outerRef}`)
+  }
+
   const backgroundStyles = useMemo(() => ({
     background,
     transition: 'opacity 0.5s ease-in-out',
-    position: 'fixed',
-    pointerEvents: 'none',
+    position: 'fixed' as const,
+    pointerEvents: 'none' as const,
     left: 0,
     top: 0,
     zIndex: -1,
@@ -113,12 +124,5 @@ const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject
 })
 
 App.displayName = 'App'
-
-App.propTypes = {
-  title: PropTypes.string.isRequired,
-  containerRef: PropTypes.shape({ current: PropTypes.node.isRequired }).isRequired,
-  currentProject: PropTypes.string.isRequired,
-  setCurrentProject: PropTypes.func.isRequired
-}
 
 export default App

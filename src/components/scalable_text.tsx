@@ -1,7 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-const ScalableText = ({ text, color, customStyles = {}, viewBoxWidthMultiplier = 9 }) => {
+interface Props {
+  text: string
+  color: string
+  customStyles?: React.CSSProperties
+  viewBoxWidthMultiplier?: number
+}
+
+const ScalableText = ({ text, color, customStyles = {}, viewBoxWidthMultiplier = 9 }: Props): JSX.Element => {
   // Makes an SVG containing the desired text,
   // which will scale with the parent container
 
@@ -16,13 +22,6 @@ const ScalableText = ({ text, color, customStyles = {}, viewBoxWidthMultiplier =
       <text x='50%' y='50%' dominantBaseline='middle' textAnchor='middle'>{text}</text>
     </svg>
   )
-}
-
-ScalableText.propTypes = {
-  text: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  customStyles: PropTypes.object,
-  viewBoxWidthMultiplier: PropTypes.number
 }
 
 export default ScalableText

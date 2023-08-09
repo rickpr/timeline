@@ -13,21 +13,23 @@ import ClockFace from './clock_face'
 const SCALE = 8
 const sideSize = SCALE * 2
 
-const Box = (props) => {
+const Box = (props: any) => {
   const meTexture = useTexture(Me)
   const gliderTexture = useTexture(Glider)
   const githubTexture = useTexture(GithubIcon)
   const linkedInTexture = useTexture(LinkedInIcon)
   const hackerRankTexture = useTexture(HackerRankIcon)
 
-  const currentLink = useRef(null)
-  const mousePositionWhenClicking = useRef(null)
+  const currentLink = useRef<string | null>(null)
+  const mousePositionWhenClicking = useRef<{ x: number, y: number } | null>(null)
 
   useEffect(() => {
-    const goToLink = (event) => {
+    const goToLink = (event: MouseEvent): void => {
       if (
-        currentLink.current &&
+        currentLink.current !== null &&
+          // @ts-expect-error these refs should be initialized by now
           event.clientX === mousePositionWhenClicking.current.x &&
+          // @ts-expect-error these refs should be initialized by now
           event.clientY === mousePositionWhenClicking.current.y
       ) {
         window.open(currentLink.current, '_blank')
@@ -38,7 +40,7 @@ const Box = (props) => {
     return () => { window.removeEventListener('mouseup', goToLink) }
   }, [])
 
-  const openLink = linkURL => {
+  const openLink = (linkURL: string | null): (event: MouseEvent) => void => {
     return event => {
       currentLink.current = linkURL
       mousePositionWhenClicking.current = {

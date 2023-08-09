@@ -1,13 +1,12 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import GlobalHeader from '../header'
 
 const headerStyles = {
-  position: 'sticky',
+  position: 'sticky' as const,
   flexGrow: 0,
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column' as const,
   width: '100dvw',
   overflow: 'hidden',
   justifyContent: 'space-between',
@@ -32,7 +31,12 @@ const barStyle = {
   cursor: 'pointer'
 }
 
-const Header = ({ projectRefs, currentProject }) => {
+interface Props {
+  projectRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
+  currentProject: string
+}
+
+const Header = ({ projectRefs, currentProject }: Props): JSX.Element => {
   const indicators = Object.keys(projectRefs.current).map(project => {
     const active = currentProject === project
     const opacity = active ? 1 : 0.5
@@ -51,11 +55,6 @@ const Header = ({ projectRefs, currentProject }) => {
       <div style={indicatorStyle}>{indicators}</div>
     </div>
   )
-}
-
-Header.propTypes = {
-  projectRefs: PropTypes.object,
-  currentProject: PropTypes.string
 }
 
 export default Header

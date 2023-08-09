@@ -9,26 +9,32 @@ const fullWindowStyles = {
   minHeight: '100dvh',
   minWidth: '100dvw',
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column' as const,
   justifyContent: 'space-between'
 }
 
 const coverStyles = {
   display: 'flex',
   minWidth: '100vw',
-  flexDirection: 'row',
+  flexDirection: 'row' as const,
   transition: 'background-color 0.5s ease-in-out',
   overflow: 'auto',
   scrollSnapType: 'both mandatory',
   flexGrow: 3,
-  position: 'relative'
+  position: 'relative' as const
 }
 
-const Mobile = ({ currentProject, setCurrentProject }) => {
+interface Props {
+  currentProject: string
+  setCurrentProject: (project: string) => void
+}
+
+const Mobile = ({ currentProject, setCurrentProject }: Props): JSX.Element => {
   const containerRef = useRef(null)
   const projects = Object.keys(Projects)
-  const projectRefs = useRef(Object.fromEntries(projects.map(project => [project, null])))
-
+  const projectRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
+    Object.fromEntries(projects.map(project => [project, null]))
+  )
   return (
     <div style={fullWindowStyles}>
       <Header projectRefs={projectRefs} currentProject={currentProject} />
@@ -36,7 +42,7 @@ const Mobile = ({ currentProject, setCurrentProject }) => {
         {projects.map(project => (
           <App
             key={project}
-            ref={ element => (projectRefs.current[project] = element) }
+            ref={ (element: React.MutableRefObject<HTMLDivElement>) => (projectRefs.current[project] = element) }
             title={project}
             containerRef={containerRef}
             currentProject={currentProject}
@@ -46,11 +52,6 @@ const Mobile = ({ currentProject, setCurrentProject }) => {
       </div>
     </div>
   )
-}
-
-Mobile.propTypes = {
-  currentProject: PropTypes.string.isRequired,
-  setCurrentProject: PropTypes.func.isRequired
 }
 
 export default Mobile

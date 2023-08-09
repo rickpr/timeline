@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { IconBrandFacebook, IconBrandLinkedin, IconBrandTwitter } from '@tabler/icons-react'
 
 import BrandIcon from 'components/adalida_page/brand_icon'
 
-const SocialFooter = () => {
-  const [currentPage, setCurrentPage] = useState()
-  useEffect(() => {
-    setCurrentPage(window.location.href)
-  }, [])
+const SocialFooter = (): JSX.Element => {
+  const [currentPage] = useState<string>(() => window.location.href)
   return (
     <div className='social-footer'>
       <div style={{ display: 'flex', justifyContent: 'flex-start' }}>

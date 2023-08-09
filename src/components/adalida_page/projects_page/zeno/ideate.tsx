@@ -20,7 +20,8 @@ const Ideate = () => {
       gridTemplateColumns: '1fr',
       ...centerStyles
     }}>
-      <Image path='zeno/ideate.png' width='100%' />
+      {/* @ts-expect-error TODO: see if width is doing anything */}
+      <Image path='zeno/ideate.png' width='100%' alt='Ideate' />
     </div>
   )
   return (

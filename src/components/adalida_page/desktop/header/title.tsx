@@ -54,7 +54,7 @@ const Title = ({ title, active }: Props): React.ReactElement => {
   }
 
   return (
-    <Link to={projectPage} style={{ pointerEvents, ...labelStyles }} disabled={!active}>
+    <Link to={projectPage} style={{ pointerEvents, ...labelStyles }}>
       <div style={titleStyles}>{name.toUpperCase()}</div>
       <div style={descriptionStyle}>
         <div style={{ overflow: 'hidden' }}>

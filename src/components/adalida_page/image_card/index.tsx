@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { type CSSProperties, useState } from 'react'
 import { makeMediaTag } from '../projects_page/media_with_text'
 import Popup from './popup'
 
-const ImageCard = ({ media, style }) => {
+const ImageCard = ({ media, style }: { media: string, style?: CSSProperties }): JSX.Element => {
   const [showPopUp, setShowPopUp] = useState(false)
 
   return (
@@ -21,10 +20,4 @@ const ImageCard = ({ media, style }) => {
     </>
   )
 }
-
-ImageCard.propTypes = {
-  media: PropTypes.string.isRequired,
-  style: PropTypes.object
-}
-
 export default ImageCard

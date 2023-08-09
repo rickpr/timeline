@@ -1,17 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { type CSSProperties } from 'react'
 
 import Image from 'components/image'
 
-export const makeMediaTag = ({ media, style = {} }) => {
+export const makeMediaTag = ({ media, style = {} }: { media: string, style?: CSSProperties }): JSX.Element => {
   if (media.endsWith('.png') || media.endsWith('jpg')) {
-    return <Image path={media} style={style} />
+    return <Image path={media} style={style} alt={media} />
   }
   if (media.endsWith('.mp4')) {
     const videoStyle = { maxWidth: '80vw', ...style }
     return <video src={media} autoPlay loop muted playsInline width='100%' style={videoStyle} />
   }
   if (media.endsWith('.gif')) {
+    // @ts-expect-error We're using type to hack the behavior - double check if this is needed
     return <img alt='' src={media} type='video/mp4' autoPlay style={style} />
   }
   if (media.endsWith('.svg')) {
@@ -20,7 +20,13 @@ export const makeMediaTag = ({ media, style = {} }) => {
   throw new Error(`Could not identify type of media ${media}`)
 }
 
-const MediaWithText = ({ media, text, reversed = false }) => {
+interface Props {
+  media: string
+  text: React.ReactNode
+  reversed?: boolean
+}
+
+const MediaWithText = ({ media, text, reversed = false }: Props) => {
   const maxHeight = '82vh'
   const style = { minWidth: 'min(50ch, 80vw)', maxHeight, borderRadius: '10px' }
 
@@ -48,12 +54,6 @@ const MediaWithText = ({ media, text, reversed = false }) => {
       {reversed ? [textTag, imageTag] : [imageTag, textTag]}
     </div>
   )
-}
-
-MediaWithText.propTypes = {
-  media: PropTypes.string.isRequired,
-  text: PropTypes.node.isRequired,
-  reversed: PropTypes.bool
 }
 
 export default MediaWithText

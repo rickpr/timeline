@@ -4,12 +4,12 @@ import { ThemeContext } from 'theme_context'
 
 import 'sass/adalida_page/project.scss'
 
-const Header = () => {
+const Header = (): JSX.Element => {
   const { darkMode, name, heroPhoto } = useContext(ThemeContext)
   const containerStyle = {
     width: '100%',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as const,
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',

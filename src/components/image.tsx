@@ -1,24 +1,22 @@
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import PropTypes from 'prop-types'
+import { GatsbyImage, getImage, type GatsbyImageProps } from 'gatsby-plugin-image'
 import React from 'react'
 
 import ImageQuery from 'queries/image'
 
-const Image = ({ altText, path, ...options }) => {
+interface Props extends Omit<GatsbyImageProps, 'image'> {
+  path: string
+}
+
+const Image = ({ path, ...gatsbyImageProps }: Props): JSX.Element => {
   const image = ImageQuery(path)
   return (
     <GatsbyImage
+      // @ts-expect-error We need to figure out GraphQL types
       image={getImage(image)}
-      alt={altText || image.name}
       objectFit='contain'
-      {...options}
+      {...gatsbyImageProps}
     />
   )
-}
-
-Image.propTypes = {
-  altText: PropTypes.string,
-  path: PropTypes.string.isRequired
 }
 
 export default Image

@@ -10,6 +10,7 @@ describe('useSynchronizedTyperwriter', () => {
       return <SynchronizedTypewriter string='test' />
     }
     const component = renderer.create(<FunctionComponent />).toJSON()
+    // @ts-expect-error We're missing a type here
     expect(component.props.style).toEqual({ whiteSpace: 'nowrap' })
   })
 })

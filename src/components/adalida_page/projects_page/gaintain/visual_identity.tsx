@@ -62,7 +62,7 @@ const VisualIdentity = () => {
   // So the following function has a zero-width space after <
   // https://en.wikipedia.org/wiki/Zero-width_space
   // eslint-disable-next-line no-irregular-whitespace
-  const generateTypewriterString = (heading, text) => `<​${heading}> ${text} </${heading}>`
+  const generateTypewriterString = (heading: string, text: string): string => `<​${heading}> ${text} </${heading}>`
   const h1String = generateTypewriterString('H1', '48')
   const viewBoxWidthMultiplier = 12
 

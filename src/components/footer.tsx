@@ -4,7 +4,7 @@ import { IconBrandGithub, IconBrandLinkedin, IconTerminal2 } from '@tabler/icons
 
 import 'sass/footer.scss'
 
-const Footer = () =>
+const Footer = (): JSX.Element =>
   <footer>
     <nav className='footer-nav'>
       <div>
@@ -21,7 +21,7 @@ const Footer = () =>
       </div>
       <div>
         <br />
-        <span><StaticImage src='../images/sun-moon.png' /></span>
+        <span><StaticImage src='../images/sun-moon.png' alt='Adalida and Ricardo' /></span>
       </div>
       <div>
         Ricardo Piro-Rael<br />

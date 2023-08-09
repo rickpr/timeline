@@ -5,7 +5,7 @@ import { IconMoonStars } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
 
-const Header = ({ showDarkModeButton }) => {
+const Header = ({ showDarkModeButton }: { showDarkModeButton?: boolean }) => {
   const { darkMode, setDarkMode } = useContext(ThemeContext)
   const color = !showDarkModeButton || darkMode ? 'white' : 'black'
   const darkModeButtonStyle = {

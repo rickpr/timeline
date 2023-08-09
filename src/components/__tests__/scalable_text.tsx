@@ -8,13 +8,15 @@ describe('ScalableText', () => {
     const svg = renderer
       .create(<ScalableText text='Meow Wolf' color='#FFFFFF' />)
       .toJSON()
-    expect(svg.type).toEqual('svg')
+    // @ts-expect-error We're missing a type here
+    expect(svg?.type).toEqual('svg')
   })
 
   it('uses the fill attribute to set the color', () => {
     const svg = renderer
       .create(<ScalableText text='Adalida and Ricardo' color='#FFFFFF' />)
       .toJSON()
+    // @ts-expect-error We're missing a type here
     expect(svg.props.style.fill).toEqual('#FFFFFF')
   })
 
@@ -25,6 +27,7 @@ describe('ScalableText', () => {
       .toJSON()
     const letterCount = string.length
     const expectedWidth = 9 * letterCount
+    // @ts-expect-error We're missing a type here
     expect(svg.props.viewBox).toEqual(`0 0 ${expectedWidth} 17`)
   })
 })

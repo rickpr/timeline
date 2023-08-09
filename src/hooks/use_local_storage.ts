@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
-const useLocalStorage = key => {
+const useLocalStorage = (key: string): [boolean, (_: boolean) => void] => {
   const [value, setValue] = useState(() => {
-    return typeof window !== 'undefined' && JSON.parse(localStorage.getItem(key))
+    return typeof window !== 'undefined' && JSON.parse(localStorage.getItem(key) ?? 'null')
   })
 
   useEffect(() => {

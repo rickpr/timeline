@@ -40,14 +40,14 @@ const cardStyle = {
   padding: '20px'
 }
 
-const ImageContainer = ({ images }) => (
+const ImageContainer = ({ images }: { images: string[] }): JSX.Element => (
   <div style={containerStyle}>
-    {images.map((image) => <ImageCard key={image} media={image} style={cardStyle} />)}
+    {images.map((image: string) => <ImageCard key={image} media={image} style={cardStyle} />)}
   </div>
 )
 ImageContainer.propTypes = { images: PropTypes.arrayOf(PropTypes.string).isRequired }
 
-const Phronesis = () => (
+const Phronesis = (): JSX.Element => (
   <Project>
     <About />
     <ImageContainer images={[InformationArchitecture]} />
