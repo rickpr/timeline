@@ -5,7 +5,7 @@ import { IconMoonStars } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
 
-const Header = ({ showDarkModeButton }: { showDarkModeButton?: boolean }) => {
+const Header = ({ showDarkModeButton }: { showDarkModeButton: boolean }) => {
   const { darkMode, setDarkMode } = useContext(ThemeContext)
   const color = !showDarkModeButton || darkMode ? 'white' : 'black'
   const darkModeButtonStyle = {
@@ -13,7 +13,8 @@ const Header = ({ showDarkModeButton }: { showDarkModeButton?: boolean }) => {
     background: 'none',
     color,
     display: 'flex',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    marginRight: '1em'
   }
 
   const navElementStyle = {

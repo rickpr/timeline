@@ -3,7 +3,7 @@ import { useLayoutEffect, useState } from 'react'
 export const BREAKPOINT = 576 // px
 
 const useIsMobile = (breakpoint = BREAKPOINT) => {
-  const [windowWidth, setWindowWidth] = useState(breakpoint)
+  const [windowWidth, setWindowWidth] = useState(() => document.documentElement.clientWidth)
 
   useLayoutEffect(() => {
     const handleResize = () => { setWindowWidth(document.documentElement.clientWidth) }
