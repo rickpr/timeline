@@ -6,7 +6,7 @@ import Projects from 'project_data'
 
 const coverStyles = {
   display: 'flex',
-  maxHeight: '100vh',
+  maxHeight: '100dvh',
   flexDirection: 'column' as const,
   transition: 'background-color 0.5s ease-in-out',
   overflow: 'auto',

@@ -3,6 +3,7 @@ import React from 'react'
 import GlobalHeader from '../header'
 
 const headerStyles = {
+  position: 'sticky' as const,
   flexGrow: 0,
   display: 'flex',
   flexDirection: 'column' as const,
@@ -13,7 +14,7 @@ const headerStyles = {
 const indicatorStyle = {
   width: '100%',
   display: 'flex',
-  gap: '2dvw',
+  gap: '2dvh',
   padding: '0 7.5dvw',
   justifyContent: 'space-around'
 }

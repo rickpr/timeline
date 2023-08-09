@@ -22,7 +22,8 @@ const containerStyles = {
   placeContent: 'space-around center',
   height: '100%',
   gridTemplateRows: `${imageHeight}dvw 1fr`,
-  padding: '7.5dvw 0'
+  padding: '5dvh 0',
+  overflow: 'hidden'
 }
 
 const imageStyles = {
@@ -70,6 +71,7 @@ const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject
     pointerEvents: 'none' as const,
     left: 0,
     top: 0,
+    backgroundSize: 'cover',
     zIndex: -1,
     width: '100vw',
     height: '100vh',

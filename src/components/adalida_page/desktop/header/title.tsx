@@ -25,10 +25,10 @@ const listStyles = {
   gap: '1em'
 }
 const roleStyles = {
-  backgroundColor: '#FFFFFF',
-  color: '#000000',
-  padding: '0.8em 0.5em',
-  borderRadius: '0.5em',
+  backgroundColor: '#303233',
+  color: '#FFFFFF',
+  padding: '0.8em',
+  borderRadius: '500px',
   lineHeight: 1,
   whiteSpace: 'nowrap' as const
 }

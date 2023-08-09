@@ -6,22 +6,25 @@ import Projects from 'project_data'
 
 const fullWindowStyles = {
   minHeight: '100dvh',
+  maxHeight: '100dvh',
   minWidth: '100dvw',
   display: 'flex',
   flexDirection: 'column' as const,
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  overflowY: 'hidden' as const
 }
 
 const coverStyles = {
   display: 'grid',
-  minWidth: '100vw',
+  minWidth: '100dvw',
   gridTemplateColumns: '1fr 1fr 1fr',
   flexDirection: 'row' as const,
   transition: 'background-color 0.5s ease-in-out',
-  overflow: 'auto',
+  overflowX: 'auto' as const,
+  overflowY: 'hidden' as const,
   scrollSnapType: 'both mandatory',
   flexGrow: 3,
-  position: 'relative' as const
+  position: 'relative' as const,
 }
 
 interface Props {
