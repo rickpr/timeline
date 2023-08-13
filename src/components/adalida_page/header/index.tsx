@@ -13,6 +13,7 @@ const Header = ({ showDarkModeButton }: { showDarkModeButton: boolean }): JSX.El
     display: 'flex',
     alignItems: 'center',
     fontSize: '18px',
+    lineHeight: 1,
     border: 'none',
     background: 'none',
     pointerEvents: 'auto' as const,
@@ -24,7 +25,7 @@ const Header = ({ showDarkModeButton }: { showDarkModeButton: boolean }): JSX.El
       width: '100dvw',
       display: 'flex',
       justifyContent: 'space-between',
-      padding: '1dvh 7.5dvw'
+      padding: '18px 7.5dvw 0 7.5dvw'
     }}>
       <div style={navElementStyle}>
         <Link to='/adalida'>

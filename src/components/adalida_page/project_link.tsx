@@ -11,10 +11,11 @@ const labelStyles = {
   width: '100%',
   height: '100%',
   transition: 'all 0.5s ease',
-  justifyContent: 'space-around'
+  justifyContent: 'space-between'
 }
 const titleStyles = {
   fontSize: '2rem',
+  lineHeight: 1,
   fontFamily: 'Avenir Next',
   padding: 0,
   margin: 0

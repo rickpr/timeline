@@ -13,6 +13,7 @@ const labelStyles = {
 }
 const titleStyles = {
   fontSize: '2rem',
+  lineHeight: 1,
   fontFamily: 'Avenir Next',
   padding: 0,
   margin: 0

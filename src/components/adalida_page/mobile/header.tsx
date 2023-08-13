@@ -15,13 +15,13 @@ const indicatorStyle = {
   width: '100%',
   display: 'flex',
   gap: '2dvh',
-  padding: '0 7.5dvw',
+  padding: '7.5dvw',
   justifyContent: 'space-around'
 }
 const barStyle = {
-  borderWidth: '1dvw',
-  borderRadius: '1dvw',
-  height: '1dvw',
+  borderWidth: '4px',
+  borderRadius: '4px',
+  height: '4px',
   borderStyle: 'solid',
   flex: '1 0 0',
   transition: 'all 0.5s ease',

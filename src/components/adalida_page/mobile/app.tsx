@@ -17,12 +17,9 @@ const containerStyles = {
   WebkitOverflowScrolling: 'touch' as const,
   width: '100dvw',
   minWidth: '100dvw',
-  display: 'grid',
-  placeItems: 'center',
-  placeContent: 'space-around center',
-  height: '100%',
-  gridTemplateRows: `${imageHeight}dvw 1fr`,
-  padding: '5dvh 0',
+  display: 'flex',
+  flexDirection: 'column' as const,
+  padding: '0 7.5dvw',
   overflow: 'hidden'
 }
 
@@ -37,13 +34,14 @@ const imageContainerStyles = {
   justifyContent: 'center',
   alignItems: 'center',
   aspectRatio: '1 / 1',
-  height: `${imageHeight}dvw`,
-  width: `${imageHeight}dvw`
+  width: '100%'
 }
 
 const titleStyles = {
   width: '85dvw',
-  height: '100%'
+  height: '100%',
+  paddingTop: '7.5dvw',
+  maxHeight: '55dvw'
 }
 
 interface Props {
