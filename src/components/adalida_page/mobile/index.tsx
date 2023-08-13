@@ -15,7 +15,6 @@ const fullWindowStyles = {
   display: 'flex',
   flexDirection: 'column' as const,
   justifyContent: 'space-between',
-  overflowY: 'hidden' as const,
   transition: 'background-color 0.5s ease-in-out'
 }
 
@@ -25,9 +24,9 @@ const coverStyles = {
   gridTemplateColumns: '1fr 1fr 1fr',
   flexDirection: 'row' as const,
   overflowX: 'auto' as const,
-  overflowY: 'hidden' as const,
-  scrollSnapType: 'both mandatory',
+  scrollSnapType: 'x mandatory',
   flexGrow: 3,
+  paddingBottom: '18px',
   position: 'relative' as const
 }
 

@@ -19,29 +19,29 @@ const containerStyles = {
   minWidth: '100dvw',
   display: 'flex',
   flexDirection: 'column' as const,
-  padding: '0 7.5dvw',
-  overflow: 'hidden'
+  padding: '0 7.5dvw'
 }
 
 const imageStyles = {
   borderRadius: '1em',
-  width: '100%'
+  height: '100%'
 }
 
 const imageContainerStyles = {
   display: 'flex',
+  flexShrink: 3,
   flexDirection: 'column' as const,
   justifyContent: 'center',
   alignItems: 'center',
   aspectRatio: '1 / 1',
-  width: '100%'
+  maxWidth: '100%',
+  minWidth: 0
 }
 
 const titleStyles = {
   width: '85dvw',
   height: '100%',
-  paddingTop: '7.5dvw',
-  maxHeight: '52dvw'
+  paddingTop: '7.5dvw'
 }
 
 interface Props {
@@ -94,7 +94,7 @@ const App = forwardRef(({ title, containerRef, setCurrentProject }: Props, outer
       <div style={imageContainerStyles} ref={imageRef}>
         <img alt={`${title} cover`} src={coverPhoto} style={imageStyles} />
       </div>
-    <div style={titleStyles}>
+      <div style={titleStyles}>
         <ProjectLink title={title} />
       </div>
     </div>

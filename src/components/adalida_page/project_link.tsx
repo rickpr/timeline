@@ -13,7 +13,8 @@ const labelStyles = {
   width: '100%',
   height: '100%',
   transition: 'all 0.5s ease',
-  justifyContent: 'space-between'
+  justifyContent: 'flex-start',
+  gap: '1em'
 }
 const titleStyles = {
   fontSize: '2rem',
