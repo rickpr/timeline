@@ -1,8 +1,12 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
+
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
 import App from './app'
 import Header from './header'
 import Projects from 'project_data'
+
+import { ThemeContext } from 'theme_context'
 
 const coverStyles = {
   display: 'flex',
@@ -10,15 +14,18 @@ const coverStyles = {
   flexDirection: 'column' as const,
   transition: 'background-color 0.5s ease-in-out',
   overflow: 'auto',
-  scrollSnapType: 'both mandatory'
+  scrollSnapType: 'both mandatory',
+  background: '#212025'
 }
 
 interface Props {
-  currentProject: string
   setCurrentProject: (project: string) => void
 }
 
-const Desktop = ({ currentProject, setCurrentProject }: Props): JSX.Element => {
+const Desktop = ({ setCurrentProject }: Props): JSX.Element => {
+  const { darkMode } = useContext(ThemeContext)
+  const { background, text } = useDarkModeStyle(darkMode)
+  const styles = { background, color: text }
   const containerRef = useRef(null)
   const projects = Object.keys(Projects)
   const projectRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
@@ -26,15 +33,14 @@ const Desktop = ({ currentProject, setCurrentProject }: Props): JSX.Element => {
   )
 
   return (
-    <div style={coverStyles} ref={containerRef}>
-      <Header projectRefs={projectRefs} currentProject={currentProject} />
+    <div style={{ ...coverStyles, ...styles }} ref={containerRef}>
+      <Header projectRefs={projectRefs} />
       {projects.map(project => (
         <App
           key={project}
           ref={ (element: React.MutableRefObject<HTMLDivElement>) => (projectRefs.current[project] = element) }
           title={project}
           containerRef={containerRef}
-          currentProject={currentProject}
           setCurrentProject={setCurrentProject}
         />
       ))}

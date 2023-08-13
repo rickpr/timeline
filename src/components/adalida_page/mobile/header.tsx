@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext, type CSSProperties } from 'react'
+
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
 import GlobalHeader from '../header'
+
+import { ThemeContext } from 'theme_context'
 
 const headerStyles = {
   position: 'sticky' as const,
@@ -32,25 +36,26 @@ const barStyle = {
 
 interface Props {
   projectRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
-  currentProject: string
 }
 
-const Header = ({ projectRefs, currentProject }: Props): JSX.Element => {
+const Header = ({ projectRefs }: Props): JSX.Element => {
+  const { name, darkMode } = useContext(ThemeContext)
+  const { background } = useDarkModeStyle(!darkMode)
+
   const indicators = Object.keys(projectRefs.current).map(project => {
-    const active = currentProject === project
-    const opacity = active ? 1 : 0.5
-    const borderColor = active ? 'white' : '#E7E5E7'
+    const active = name === project
+    const opacity = active ? 1 : 0.2
     return (
       <button
         key={project}
-        style={{ ...barStyle, opacity, borderColor }}
+        style={{ ...barStyle, opacity, borderColor: background as CSSProperties['borderColor'] }}
         onClick={() => projectRefs.current[project]?.current?.scrollIntoView({ behavior: 'smooth' }) }
       />
     )
   })
   return (
     <div style={headerStyles}>
-      <GlobalHeader showDarkModeButton={false} />
+      <GlobalHeader />
       <div style={indicatorStyle}>{indicators}</div>
     </div>
   )

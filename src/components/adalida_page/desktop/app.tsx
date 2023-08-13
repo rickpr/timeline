@@ -1,6 +1,6 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { forwardRef, useEffect, useMemo, useRef } from 'react'
+import React, { forwardRef, useEffect, useRef } from 'react'
 
 import Projects from 'project_data'
 
@@ -36,13 +36,11 @@ const coverStyles = {
 interface Props {
   title: string
   containerRef: React.MutableRefObject<null>
-  currentProject: string
   setCurrentProject: (project: string) => void
 }
 
-const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject }: Props, outerRef) => {
-  const { coverPhoto, colors: { background } } = Projects[title]
-  const isCurrentProject = currentProject === title
+const App = forwardRef(({ title, containerRef, setCurrentProject }: Props, outerRef) => {
+  const { coverPhoto } = Projects[title]
   const imageRef = useRef(null)
   const projectRef = useRef(null)
   if (typeof outerRef === 'function') {
@@ -50,19 +48,6 @@ const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject
   } else {
     console.error(`Desktop: outerRef is not a function: ${typeof outerRef}`)
   }
-
-  const backgroundStyles = useMemo(() => ({
-    background,
-    transition: 'opacity 0.5s ease-in-out',
-    position: 'fixed' as const,
-    pointerEvents: 'none' as const,
-    left: 0,
-    top: 0,
-    zIndex: -1,
-    width: '100vw',
-    height: '100vh',
-    opacity: isCurrentProject ? 1 : 0
-  }), [isCurrentProject, background])
 
   useEffect(() => {
     const context = gsap.context(() => {
@@ -84,17 +69,12 @@ const App = forwardRef(({ title, containerRef, currentProject, setCurrentProject
     }
   }, [containerRef, setCurrentProject, title])
 
-  const fullWidthBackground = <div style={backgroundStyles} />
-
   return (
-    <>
-      {fullWidthBackground}
-      <div style={coverStyles} ref={projectRef}>
-        <div style={imageContainerStyles} ref={imageRef}>
-          <img alt={`${title} cover`} src={coverPhoto} style={imageStyles} />
-        </div>
+    <div style={coverStyles} ref={projectRef}>
+      <div style={imageContainerStyles} ref={imageRef}>
+        <img alt={`${title} cover`} src={coverPhoto} style={imageStyles} />
       </div>
-    </>
+    </div>
   )
 })
 

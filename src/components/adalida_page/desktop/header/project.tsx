@@ -1,5 +1,7 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { type CSSProperties, useContext } from 'react'
+
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import { ThemeContext } from 'theme_context'
 
 import Title from './title'
 
@@ -25,14 +27,14 @@ const projectStyle = {
 
 interface Props {
   projectRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
-  currentProject: string
   project: string
 }
 
-const Project = ({ projectRefs, currentProject, project }: Props): React.ReactElement => {
-  const active = currentProject === project
+const Project = ({ projectRefs, project }: Props): React.ReactElement => {
+  const { name, darkMode } = useContext(ThemeContext)
+  const { background } = useDarkModeStyle(!darkMode)
+  const active = name === project
   const opacity = active ? 1 : 0.2
-  const borderColor = active ? 'white' : '#E7E5E7'
   const scrollIntoView = (): void => projectRefs.current[project]?.current?.scrollIntoView({ behavior: 'smooth' })
   return (
     <div
@@ -43,16 +45,10 @@ const Project = ({ projectRefs, currentProject, project }: Props): React.ReactEl
       tabIndex={0}
       onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && scrollIntoView() }}
     >
-      <div style={{ ...barStyle, borderColor }} />
+      <div style={{ ...barStyle, borderColor: background as CSSProperties['borderColor'] }} />
       <Title title={project} active={active} />
     </div>
   )
-}
-
-Project.propTypes = {
-  projectRefs: PropTypes.object,
-  currentProject: PropTypes.string,
-  project: PropTypes.string
 }
 
 export default Project

@@ -5,9 +5,9 @@ import { ThemeContext } from 'theme_context'
 
 import DarkModeButton from './dark_mode_button'
 
-const Header = ({ showDarkModeButton }: { showDarkModeButton: boolean }): JSX.Element => {
+const Header = (): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
-  const color = !showDarkModeButton || darkMode ? 'white' : 'black'
+  const color = darkMode ? 'white' : 'black'
 
   const navElementStyle = {
     display: 'flex',
@@ -32,11 +32,9 @@ const Header = ({ showDarkModeButton }: { showDarkModeButton: boolean }): JSX.El
           ADALIDA
         </Link>
       </div>
-      {showDarkModeButton &&
-       <div style={navElementStyle}>
-         {showDarkModeButton && <DarkModeButton />}
-       </div>
-      }
+      <div style={navElementStyle}>
+        <DarkModeButton />
+      </div>
       <div style={navElementStyle}>
         <Link to='/adalida/about'>
           ABOUT

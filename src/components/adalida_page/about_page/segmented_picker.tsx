@@ -9,6 +9,7 @@ const styles = {
   border: `1px solid ${activeBackgroundColor}`,
   borderRadius: '500px',
   width: 'max-content',
+  cursor: 'pointer',
   position: 'relative' as const
 }
 
@@ -51,7 +52,7 @@ const SegmentedPicker = ({ pickedSegment, setPickedSegment, segments }: Props): 
       <div style={{ ...backgroundStyles, transform: `translateX(${translateX}%)` }} />
       {segments.map(segment => {
         const active = pickedSegment === segment
-        const color = active ? '#FFFFFF' : '#000000'
+        const color = active ? '#FFFFFF' : 'inherit'
         return (
           <div
             key={segment}

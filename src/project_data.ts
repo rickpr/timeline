@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react'
+
 import PhronesisPhoto from 'images/phronesis/cover.png'
 import GainTainPhoto from 'images/gaintain/cover.png'
 import GainTainHeroPhoto from 'images/gaintain/title.png'
@@ -11,13 +13,10 @@ export interface Project {
   coverPhoto: string
   heroPhoto: string
   roles: string[]
-  colors: {
-    scrollBar: string
-    background: string
-  }
+  background: CSSProperties['background']
 }
 
-const Projects: Record<string, Project> = {
+export const Projects: Record<string, Project> = {
   Phronesis: {
     name: 'Phronesis',
     description: 'We enable users with the power to visual and understand your data in order to grow your business.',
@@ -28,10 +27,7 @@ const Projects: Record<string, Project> = {
       'Visual Identity',
       'User Interaction'
     ],
-    colors: {
-      scrollBar: '#22D91F',
-      background: '#212025'
-    }
+    background: '#22D91F'
   },
 
   GainTain: {
@@ -44,10 +40,7 @@ const Projects: Record<string, Project> = {
       'Product Design',
       'User Research'
     ],
-    colors: {
-      scrollBar: 'linear-gradient(#FF512F, #DD2476)',
-      background: 'linear-gradient(#FF512F, #DD2476)'
-    }
+    background: 'linear-gradient(#FF512F, #DD2476)'
   },
 
   Zeno: {
@@ -60,10 +53,7 @@ const Projects: Record<string, Project> = {
       'User Interface',
       'Design Systems'
     ],
-    colors: {
-      scrollBar: '#ED6112',
-      background: '#ED6112'
-    }
+    background: '#ED6112'
   }
 }
 

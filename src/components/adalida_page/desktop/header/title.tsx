@@ -1,10 +1,11 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useContext } from 'react'
 
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import { ThemeContext } from 'theme_context'
 import Projects from 'project_data'
 
 const labelStyles = {
-  color: '#FFFFFF',
   display: 'flex',
   flexDirection: 'column' as const,
   width: '100%',
@@ -26,8 +27,7 @@ const listStyles = {
   gap: '1em'
 }
 const roleStyles = {
-  backgroundColor: '#303233',
-  color: '#FFFFFF',
+  transition: 'background-color 0.5s ease-in-out',
   padding: '0.8em',
   borderRadius: '500px',
   lineHeight: 1,
@@ -45,6 +45,8 @@ interface Props {
 }
 
 const Title = ({ title, active }: Props): React.ReactElement => {
+  const { darkMode } = useContext(ThemeContext)
+  const { button } = useDarkModeStyle(darkMode)
   const { description, name, projectPage, roles } = Projects[title]
   const pointerEvents = active ? 'auto' : 'none'
   const descriptionStyle = {
@@ -60,7 +62,7 @@ const Title = ({ title, active }: Props): React.ReactElement => {
       <div style={descriptionStyle}>
         <div style={{ overflow: 'hidden' }}>
           <div style={listStyles}>
-            {roles.map(role => <div key={role} style={roleStyles}>{role}</div>)}
+            {roles.map(role => <div key={role} style={{ ...roleStyles, background: button }}>{role}</div>)}
           </div>
           <div>{description}</div>
           <div style={linkStyles}>View Project ➜</div>

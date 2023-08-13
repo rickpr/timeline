@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
+
+import { ThemeContext } from 'theme_context'
 
 import GlobalHeader from '../../header'
 import Project from './project'
@@ -30,27 +32,27 @@ const indicatorStyle = {
 
 interface Props {
   projectRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
-  currentProject: string
 }
 
-const previousAndNextProjects = ({ projectRefs, currentProject }: Props): {
+const previousAndNextProjects = ({ projectRefs, name }: Props & { name: string }): {
   previousProject: string | undefined
   nextProject: string | undefined
 } => {
   const projects = Object.keys(projectRefs.current)
-  const currentProjectIndex = projects.indexOf(currentProject)
+  const currentProjectIndex = projects.indexOf(name)
   const previousProject = projects[currentProjectIndex - 1]
   const nextProject = projects[currentProjectIndex + 1]
   return { previousProject, nextProject }
 }
 
-const Header = ({ projectRefs, currentProject }: Props): React.ReactElement => {
+const Header = ({ projectRefs }: Props): React.ReactElement => {
+  const { name } = useContext(ThemeContext)
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const refCurrent = ref.current
     if (refCurrent == null) return
 
-    const { previousProject, nextProject } = previousAndNextProjects({ projectRefs, currentProject })
+    const { previousProject, nextProject } = previousAndNextProjects({ projectRefs, name })
     const previousProjectRef = previousProject === undefined ? null : projectRefs.current[previousProject]
     const nextProjectRef = nextProject === undefined ? null : projectRefs.current[nextProject]
     const handleWheel = (event: WheelEvent): void => {
@@ -62,14 +64,14 @@ const Header = ({ projectRefs, currentProject }: Props): React.ReactElement => {
     }
     refCurrent.addEventListener('wheel', handleWheel)
     return () => { refCurrent.removeEventListener('wheel', handleWheel) }
-  }, [ref, currentProject, projectRefs])
+  }, [ref, name, projectRefs])
 
   const indicators = Object.keys(projectRefs.current).map(project =>
-    <Project key={project} projectRefs={projectRefs} currentProject={currentProject} project={project} />
+    <Project key={project} projectRefs={projectRefs} project={project} />
   )
   return (
     <div style={headerStyles} ref={ref}>
-      <GlobalHeader showDarkModeButton={false} />
+      <GlobalHeader />
       <div style={indicatorStyle}>
         {indicators}
       </div>

@@ -5,7 +5,7 @@ import { ThemeContext } from 'theme_context'
 import Header from '../header'
 
 const ScrollProgress = (): JSX.Element => {
-  const { colors: { scrollBar }, darkMode } = useContext(ThemeContext)
+  const { darkMode, background } = useContext(ThemeContext)
 
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showUpArrow, setShowUpArrow] = useState(false)
@@ -33,12 +33,12 @@ const ScrollProgress = (): JSX.Element => {
           background: darkMode ? '#1A191C' : '#F5F5F5'
         }}
       >
-        <Header showDarkModeButton={true} />
+        <Header />
         <div
           style={{
             width: `${scrollProgress}%`,
             height: '1vh',
-            background: scrollBar,
+            background,
             borderRadius: '0 1vh 1vh 0',
             top: 0,
             zIndex: 3
