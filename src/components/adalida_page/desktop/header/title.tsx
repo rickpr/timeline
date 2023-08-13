@@ -35,6 +35,7 @@ const roleStyles = {
 }
 const linkStyles = {
   fontSize: '1.2em',
+  lineHeight: 1,
   fontFamily: 'Avenir Next',
   fontWeight: 'bold'
 }

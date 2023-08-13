@@ -11,7 +11,6 @@ const labelStyles = {
   display: 'flex',
   flexDirection: 'column' as const,
   width: '100%',
-  height: '100%',
   transition: 'all 0.5s ease',
   justifyContent: 'flex-start',
   gap: '1em'
@@ -41,6 +40,7 @@ const roleStyles = {
 
 const linkStyles = {
   fontSize: '1.2em',
+  lineHeight: 1,
   fontFamily: 'Avenir Next',
   fontWeight: 'bold'
 }

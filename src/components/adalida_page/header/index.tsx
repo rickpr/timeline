@@ -15,7 +15,6 @@ const Header = (): JSX.Element => {
     fontSize: '18px',
     lineHeight: 1,
     border: 'none',
-    background: 'none',
     pointerEvents: 'auto' as const,
     color
   }

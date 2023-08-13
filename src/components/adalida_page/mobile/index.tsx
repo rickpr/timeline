@@ -9,13 +9,12 @@ import Projects from 'project_data'
 import { ThemeContext } from 'theme_context'
 
 const fullWindowStyles = {
-  minHeight: '100dvh',
   maxHeight: '100dvh',
   minWidth: '100dvw',
   display: 'flex',
   flexDirection: 'column' as const,
   justifyContent: 'space-between',
-  transition: 'background-color 0.5s ease-in-out'
+  transition: 'background-color 0.5s ease-in-out',
 }
 
 const coverStyles = {
@@ -26,7 +25,6 @@ const coverStyles = {
   overflowX: 'auto' as const,
   scrollSnapType: 'x mandatory',
   flexGrow: 3,
-  paddingBottom: '18px',
   position: 'relative' as const
 }
 
