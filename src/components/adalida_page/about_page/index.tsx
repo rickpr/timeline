@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 
 import About from './about'
@@ -11,11 +12,12 @@ import 'sass/adalida_page/index.scss'
 
 const AboutPage = (): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
+  const { background, text } = useDarkModeStyle(darkMode)
   const [pickedSegment, setPickedSegment] = useState('About')
   const containerStyle = {
     transition: 'background-color 0.5s ease',
-    backgroundColor: darkMode ? '#1A1A1A' : '#F5F5F5',
-    color: darkMode ? '#F5F5F5' : '#1A1A1A',
+    background,
+    color: text,
     padding: '1dvh 7.5dvw',
     display: 'flex',
     flexDirection: 'column' as const,

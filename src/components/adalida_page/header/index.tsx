@@ -1,22 +1,16 @@
 import { Link } from 'gatsby'
-import React, { useContext } from 'react'
-
-import { ThemeContext } from 'theme_context'
+import React from 'react'
 
 import DarkModeButton from './dark_mode_button'
 
 const Header = (): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
-  const color = darkMode ? 'white' : 'black'
-
   const navElementStyle = {
     display: 'flex',
     alignItems: 'center',
     fontSize: '18px',
     lineHeight: 1,
     border: 'none',
-    pointerEvents: 'auto' as const,
-    color
+    pointerEvents: 'auto' as const
   }
 
   return (

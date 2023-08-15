@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 import Header from './header'
 import Footer from './footer'
@@ -7,10 +8,11 @@ import SocialFooter from './social_footer'
 
 const Project = ({ children }: { children: React.ReactNode }): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
+  const { background, text } = useDarkModeStyle(darkMode)
   const style = {
     transition: 'background-color 0.5s ease',
-    background: darkMode ? '#1A191C' : '#F5F5F5',
-    color: darkMode ? '#F5F5F5' : '#1A191C'
+    background,
+    color: text
   }
   return (
     <div style={style}>

@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { IconCircleArrowUpFilled } from '@tabler/icons-react'
 
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 import Header from '../header'
 
 const ScrollProgress = (): JSX.Element => {
-  const { darkMode, background } = useContext(ThemeContext)
+  const { darkMode, background: scrollBar } = useContext(ThemeContext)
+  const { background, text: color } = useDarkModeStyle(darkMode)
 
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showUpArrow, setShowUpArrow] = useState(false)
@@ -30,7 +32,8 @@ const ScrollProgress = (): JSX.Element => {
           top: 0,
           zIndex: 3,
           transition: 'background 0.5s',
-          background: darkMode ? '#1A191C' : '#F5F5F5'
+          background,
+          color
         }}
       >
         <Header />
@@ -38,7 +41,7 @@ const ScrollProgress = (): JSX.Element => {
           style={{
             width: `${scrollProgress}%`,
             height: '1vh',
-            background,
+            background: scrollBar,
             borderRadius: '0 1vh 1vh 0',
             top: 0,
             zIndex: 3

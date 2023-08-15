@@ -40,7 +40,7 @@ interface Props {
 
 const Header = ({ projectRefs }: Props): JSX.Element => {
   const { name, darkMode } = useContext(ThemeContext)
-  const { background } = useDarkModeStyle(!darkMode)
+  const { text } = useDarkModeStyle(darkMode)
 
   const indicators = Object.keys(projectRefs.current).map(project => {
     const active = name === project
@@ -48,13 +48,13 @@ const Header = ({ projectRefs }: Props): JSX.Element => {
     return (
       <button
         key={project}
-        style={{ ...barStyle, opacity, borderColor: background as CSSProperties['borderColor'] }}
+        style={{ ...barStyle, opacity, borderColor: text as CSSProperties['borderColor'] }}
         onClick={() => projectRefs.current[project]?.current?.scrollIntoView({ behavior: 'smooth' }) }
       />
     )
   })
   return (
-    <div style={headerStyles}>
+    <div style={{ ...headerStyles, color: text }}>
       <GlobalHeader />
       <div style={indicatorStyle}>{indicators}</div>
     </div>

@@ -9,6 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "baseUrl": "src",
+    "noEmit": true,
     "skipLibCheck": true
   },
   "include": [

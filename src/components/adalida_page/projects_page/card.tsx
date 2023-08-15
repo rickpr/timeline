@@ -1,16 +1,19 @@
 import React, { useContext } from 'react'
 
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 
 const Card = ({ children }: { children: React.ReactNode }): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
+  const { background, text } = useDarkModeStyle(darkMode)
   useAnimateOnScroll()
   const containerStyle = {
     minWidth: '95%',
     margin: '4vh 2.5vw',
     minHeight: '92vh',
-    backgroundColor: darkMode ? '#1A191C' : '#F5F5F5',
+    background,
+    color: text,
     padding: '2em 7%',
     borderRadius: '2vh'
   }

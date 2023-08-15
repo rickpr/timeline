@@ -7,7 +7,7 @@ interface Colors {
 }
 
 const darkColor = '#212025'
-const lightColor = '#F5F5F5'
+const lightColor = '#DEDFDA'
 
 const darkModeStyles: Colors = {
   background: darkColor,
@@ -18,7 +18,7 @@ const darkModeStyles: Colors = {
 const lightmodeStyles: Colors = {
   background: lightColor,
   text: darkColor,
-  button: '#E6E3E7'
+  button: '#CFCDCC'
 }
 
 const useDarkModeStyle = (darkMode: boolean): Colors => {

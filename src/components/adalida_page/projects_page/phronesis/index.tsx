@@ -1,5 +1,7 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useContext } from 'react'
+
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import { ThemeContext } from 'theme_context'
 
 import Project from '../project'
 import ImageCard from '../../image_card'
@@ -32,18 +34,20 @@ const containerStyle = {
 }
 
 const cardStyle = {
-  background: '#1A191C',
   cursor: 'pointer',
   minHeight: '325px',
   padding: '20px'
 }
 
-const ImageContainer = ({ images }: { images: string[] }): JSX.Element => (
-  <div style={containerStyle}>
-    {images.map((image: string) => <ImageCard key={image} media={image} style={cardStyle} />)}
-  </div>
-)
-ImageContainer.propTypes = { images: PropTypes.arrayOf(PropTypes.string).isRequired }
+const ImageContainer = ({ images }: { images: string[] }): JSX.Element => {
+  const { darkMode } = useContext(ThemeContext)
+  const { background } = useDarkModeStyle(!darkMode)
+  return (
+    <div style={containerStyle}>
+      {images.map((image: string) => <ImageCard key={image} media={image} style={{ ...cardStyle, background }} />)}
+    </div>
+  )
+}
 
 const Phronesis = (): JSX.Element => (
   <Project>

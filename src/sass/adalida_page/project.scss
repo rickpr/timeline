@@ -7,7 +7,7 @@ li {
 }
 
 a {
-  color: unset;
+  color: inherit;
   &:hover {
     text-decoration: none;
   }
@@ -31,22 +31,6 @@ p {
   gap: 1em;
   padding: 1em;
 }
-
-.project-header {
-  max-width: 95vw;
-  flex-basis: 37%;
-  flex-grow: 3;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 0 2.5%;
-}
-
-.project-heading {
-  font-size: 72px;
-  font-weight: 600;
-}
-
 
 .more-work {
   display: flex;
@@ -199,18 +183,6 @@ p {
 }
 
 @media (max-width: 1024px) {
-  .project-header {
-    flex-basis: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .project-heading {
-    font-size: 44px;
-  }
-
   .more-work {
     flex-direction: column;
   }
@@ -241,9 +213,6 @@ p {
   }
   .project-individual-paragraph {
     flex-basis: 100%;
-  }
-  .project-heading {
-    font-size: 44px;
   }
   .recent-project {
     flex: 3 0 calc(100% - 15px);
