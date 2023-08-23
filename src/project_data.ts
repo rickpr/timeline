@@ -28,7 +28,7 @@ export const Projects: Record<string, Project> = {
       'Visual Identity',
       'User Interaction'
     ],
-    background: '#22D91F'
+    background: '#2D2D31'
   },
 
   GainTain: {
