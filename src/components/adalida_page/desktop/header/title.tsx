@@ -9,8 +9,7 @@ const labelStyles = {
   display: 'flex',
   flexDirection: 'column' as const,
   width: '100%',
-  height: '100%',
-  transition: 'all 0.5s ease'
+  height: '100%'
 }
 const titleStyles = {
   lineHeight: 1,
@@ -54,7 +53,6 @@ const Title = ({ title, active }: Props): React.ReactElement => {
     display: 'grid',
     gridTemplateRows: active ? '1fr' : '0fr',
     paddingTop: active ? '1rem' : 0,
-    transition: 'all 0.5s ease-in-out',
     overflow: 'hidden'
   }
 

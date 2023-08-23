@@ -23,7 +23,6 @@ const indicatorStyle = {
   gap: '2dvh',
   justifyContent: 'space-between',
   bottom: '10dvh',
-  transition: 'all 0.5s ease',
   height: 'min-content',
   position: 'fixed' as const,
   top: '50%',
