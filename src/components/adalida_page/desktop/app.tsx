@@ -21,7 +21,7 @@ const imageContainerStyles = {
 
 const coverStyles = {
   display: 'flex',
-  justifyContent: 'flex-end',
+  justifyContent: 'flex-start',
   position: 'relative' as const,
   overflow: 'hidden',
   scrollSnapAlign: 'center',

@@ -27,6 +27,7 @@ const indicatorStyle = {
   height: 'min-content',
   position: 'fixed' as const,
   top: '50%',
+  left: '50%',
   transform: 'translate(0, -50%)'
 }
 

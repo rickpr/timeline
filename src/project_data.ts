@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react'
 
 import PhronesisPhoto from 'images/phronesis/cover.png'
+import PhronesisHeroPhoto from 'images/phronesis/title.jpg'
 import GainTainPhoto from 'images/gaintain/cover.png'
 import GainTainHeroPhoto from 'images/gaintain/title.png'
 import ZenoPhoto from 'images/zeno/cover.png'
@@ -22,7 +23,7 @@ export const Projects: Record<string, Project> = {
     description: 'We enable users with the power to visual and understand your data in order to grow your business.',
     projectPage: '/adalida/projects/phronesis',
     coverPhoto: PhronesisPhoto,
-    heroPhoto: PhronesisPhoto,
+    heroPhoto: PhronesisHeroPhoto,
     roles: [
       'Visual Identity',
       'User Interaction'

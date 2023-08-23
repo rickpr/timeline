@@ -13,7 +13,6 @@ const labelStyles = {
   transition: 'all 0.5s ease'
 }
 const titleStyles = {
-  fontSize: '2rem',
   lineHeight: 1,
   fontFamily: 'Avenir Next',
   padding: 0,
@@ -21,6 +20,7 @@ const titleStyles = {
 }
 const listStyles = {
   display: 'flex',
+  flexWrap: 'wrap' as const,
   justifyContent: 'left',
   padding: 0,
   margin: 0,
@@ -35,7 +35,6 @@ const roleStyles = {
 }
 const linkStyles = {
   fontSize: '1.2em',
-  lineHeight: 1,
   fontFamily: 'Avenir Next',
   fontWeight: 'bold'
 }
@@ -50,18 +49,20 @@ const Title = ({ title, active }: Props): React.ReactElement => {
   const { button } = useDarkModeStyle(darkMode)
   const { description, name, projectPage, roles } = Projects[title]
   const pointerEvents = active ? 'auto' : 'none'
+  const fontSize = active ? '2.6rem' : '1rem'
   const descriptionStyle = {
     display: 'grid',
     gridTemplateRows: active ? '1fr' : '0fr',
+    paddingTop: active ? '1rem' : 0,
     transition: 'all 0.5s ease-in-out',
     overflow: 'hidden'
   }
 
   return (
     <Link to={projectPage} style={{ pointerEvents, ...labelStyles }}>
-      <div style={titleStyles}>{name.toUpperCase()}</div>
+      <div style={{ ...titleStyles, fontSize, padding: active ? 0 : '1rem 0' }}>{active ? name.toUpperCase() : name}</div>
       <div style={descriptionStyle}>
-        <div style={{ overflow: 'hidden' }}>
+        <div style={{ overflowY: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div style={listStyles}>
             {roles.map(role => <div key={role} style={{ ...roleStyles, background: button }}>{role}</div>)}
           </div>

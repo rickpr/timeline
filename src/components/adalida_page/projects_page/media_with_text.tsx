@@ -3,7 +3,7 @@ import React, { type CSSProperties } from 'react'
 import Image from 'components/image'
 
 export const makeMediaTag = ({ media, style = {} }: { media: string, style?: CSSProperties }): JSX.Element => {
-  if (media.endsWith('.png') || media.endsWith('jpg')) {
+  if (media.endsWith('.png') || media.endsWith('.jpg') || media.endsWith('.webp')) {
     return <Image path={media} style={style} alt={media} />
   }
   if (media.endsWith('.mp4')) {

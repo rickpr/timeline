@@ -15,11 +15,12 @@ const AppIcon = 'images/phronesis/app_icon.png'
 const Text = 'images/phronesis/text.png'
 const Color = 'images/phronesis/color.png'
 const FinalLogo = 'images/phronesis/final_logo.png'
-const ComponentsDarkAndLight = 'images/phronesis/components_dark_light.png'
+const FinalImage = 'images/phronesis/final_image.webp'
+const ComponentsDarkAndLight = 'images/phronesis/components_dark_light.webp'
 const SpecsTable = 'images/phronesis/specs_table.png'
 const Specs = 'images/phronesis/specs.png'
 const PhotosOne = 'images/phronesis/photos_one.png'
-const PhotosTwo = 'images/phronesis/photos_two.png'
+const PhotosTwo = 'images/phronesis/photos_two.webp'
 
 const containerStyle = {
   minWidth: '95%',
@@ -58,7 +59,7 @@ const Phronesis = (): JSX.Element => (
     <ImageContainer images={[FinalLogo]} />
     <ImageContainer images={[Specs, SpecsTable]} />
     <ImageContainer images={[PhotosOne, PhotosTwo]} />
-    <ImageContainer images={[ComponentsDarkAndLight]} />
+    <ImageContainer images={[ComponentsDarkAndLight, FinalImage]} />
   </Project>
 )
 
