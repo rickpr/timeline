@@ -3,6 +3,8 @@ import React, { useContext } from 'react'
 import AdalidaFace from 'images/adalida_face.jpg'
 import { ThemeContext, Projects } from 'theme_context'
 
+import RecentProject from './recent_project'
+
 const projectNames = Object.keys(Projects)
 const numberOfProjects = projectNames.length
 const modulus = (projectIndex: number): number => (
@@ -10,24 +12,23 @@ const modulus = (projectIndex: number): number => (
   ((projectIndex % numberOfProjects) + numberOfProjects) % numberOfProjects
 )
 
+const seeMoreOfMyWorkStyles = {
+  fontSize: '12px',
+  fontWeight: 600,
+  color: '#9FA6A9'
+}
+
+const recentProjectsStyle = {
+  display: 'flex',
+  gap: '30px',
+  flexWrap: 'wrap' as const
+}
+
 const Footer = (): JSX.Element => {
   const { name } = useContext(ThemeContext)
   const currentProjectIndex = projectNames.findIndex(key => Projects[key].name === name)
   const previousProjectName = projectNames[modulus(currentProjectIndex - 1)]
   const nextProjectName = projectNames[modulus(currentProjectIndex + 1)]
-  const recentProject = (projectName: string): JSX.Element => {
-    const { name, coverPhoto, projectPage } = Projects[projectName]
-    return (
-      <a className='recent-project' href={projectPage}>
-        <img
-          alt={`${name} project`}
-          src={coverPhoto}
-          className='recent-project-image'
-        />
-        <p>{name}</p>
-      </a>
-    )
-  }
 
   return (
     <div className='more-work'>
@@ -46,12 +47,10 @@ const Footer = (): JSX.Element => {
         </div>
       </div>
       <div className='more-projects'>
-        <div className='see-more-of-my-work'>
-          SEE MORE OF MY WORK:
-        </div>
-        <div className='recent-projects'>
-          {recentProject(previousProjectName)}
-          {recentProject(nextProjectName)}
+        <div style={seeMoreOfMyWorkStyles}>SEE MORE OF MY WORK:</div>
+        <div style={recentProjectsStyle}>
+          <RecentProject projectName={previousProjectName} />
+          <RecentProject projectName={nextProjectName} />
         </div>
       </div>
     </div>

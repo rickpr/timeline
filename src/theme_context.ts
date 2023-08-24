@@ -15,7 +15,7 @@ export const AboutTheme: Project = {
 }
 
 const ThemeContext = React.createContext({
-  darkMode: false,
+  darkMode: true,
   setDarkMode: (_: boolean) => { /* Do nothing */ },
   ...AboutTheme
 })

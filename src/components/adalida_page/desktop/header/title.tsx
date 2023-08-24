@@ -53,7 +53,8 @@ const Title = ({ title, active }: Props): React.ReactElement => {
     display: 'grid',
     gridTemplateRows: active ? '1fr' : '0fr',
     paddingTop: active ? '1rem' : 0,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    transition: 'grid-template-rows 0.5s ease-in-out'
   }
 
   return (

@@ -1,7 +1,4 @@
-import React, { useContext } from 'react'
-
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
-import { ThemeContext } from 'theme_context'
+import React from 'react'
 
 import Project from '../project'
 import ImageCard from '../../image_card'
@@ -24,13 +21,13 @@ const PhotosTwo = 'images/phronesis/photos_two.webp'
 
 const containerStyle = {
   minWidth: '95%',
-  maxWidth: '95vw',
-  margin: '4vh 2.5vw',
+  maxWidth: '95dvw',
+  margin: '4vh 2.5dvw',
   minHeight: '400px',
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
   alignItems: 'center',
-  borderRadius: '2vh',
+  borderRadius: '2dvh',
   justifyContent: 'space-around'
 }
 
@@ -41,11 +38,9 @@ const cardStyle = {
 }
 
 const ImageContainer = ({ images }: { images: string[] }): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
-  const { background } = useDarkModeStyle(!darkMode)
   return (
     <div style={containerStyle}>
-      {images.map((image: string) => <ImageCard key={image} media={image} style={{ ...cardStyle, background }} />)}
+      {images.map((image: string) => <ImageCard key={image} media={image} style={{ ...cardStyle }} />)}
     </div>
   )
 }
@@ -58,8 +53,8 @@ const Phronesis = (): JSX.Element => (
     <ImageContainer images={[Text, Color]} />
     <ImageContainer images={[FinalLogo]} />
     <ImageContainer images={[Specs, SpecsTable]} />
-    <ImageContainer images={[PhotosOne, PhotosTwo]} />
-    <ImageContainer images={[ComponentsDarkAndLight, FinalImage]} />
+    <ImageContainer images={[PhotosOne, ComponentsDarkAndLight]} />
+    <ImageContainer images={[PhotosTwo, FinalImage]} />
   </Project>
 )
 

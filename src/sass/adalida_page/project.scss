@@ -110,22 +110,10 @@ p {
   font-size: 12px;
   color: #778390;
   border-radius: 18px;
-  border: 1px solid #EDF8F1;
+  border: 1px solid #D5D5D5;
   &:hover {
     text-decoration: none;
   }
-}
-
-.see-more-of-my-work {
-  font-size: 12px;
-  font-weight: 600;
-  color: #9FA6A9;
-}
-
-.recent-projects {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
 }
 
 .recent-project {
@@ -133,7 +121,11 @@ p {
   flex: 3 0 calc(50% - 15px);
   min-width: 300px;
   gap: 10px;
-  box-shadow: 0 5px 5px #888888;
+  background: #FFFFFF;
+  color: #778390;
+  border-radius: 10px;
+  border: 1px solid #D5D5D5;
+  overflow: hidden;
   &:hover {
     text-decoration: none;
   }
@@ -145,13 +137,6 @@ p {
   flex-basis: 33%;
   gap: 5px;
   justify-content: flex-start;
-}
-
-.recent-project-image {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  background-color: #3357D2;
 }
 
 .social-footer {
