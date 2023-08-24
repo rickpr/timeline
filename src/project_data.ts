@@ -20,7 +20,7 @@ export interface Project {
 export const Projects: Record<string, Project> = {
   Phronesis: {
     name: 'Phronesis',
-    description: 'We enable users with the power to visual and understand your data in order to grow your business.',
+    description: 'Seamlessly access important information, communicate effectively, and take control of your academic journey with ease.',
     projectPage: '/adalida/projects/phronesis',
     coverPhoto: PhronesisPhoto,
     heroPhoto: PhronesisHeroPhoto,
