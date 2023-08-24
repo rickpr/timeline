@@ -4,7 +4,7 @@ import { IconMoonStars, IconSun } from '@tabler/icons-react'
 import { ThemeContext } from 'theme_context'
 
 const DarkModeButton = (): JSX.Element => {
-  const { darkMode, setDarkMode } = useContext(ThemeContext)
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext)
   const color = darkMode ? 'white' : 'black'
   const darkModeButtonStyle = {
     border: 'none',
@@ -16,7 +16,7 @@ const DarkModeButton = (): JSX.Element => {
   return (
     <button
       style={darkModeButtonStyle}
-      onClick={() => { setDarkMode(!darkMode) }}
+      onClick={toggleDarkMode}
     >
       {darkMode ? <IconMoonStars /> : <IconSun />}
     </button>

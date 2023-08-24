@@ -10,7 +10,7 @@ const About = (): JSX.Element => {
           <strong>Client</strong><span>Phronesis</span>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <strong>Date</strong><span>12 weeks</span>
+          <strong>Date</strong><span>2 weeks</span>
         </div>
       </div>
       <p><strong>Project Details</strong></p>

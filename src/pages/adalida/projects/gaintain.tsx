@@ -3,13 +3,13 @@ import 'sass/custom.scss'
 
 import GainTain from 'components/adalida_page/projects_page/gaintain'
 import ScrollProgress from 'components/adalida_page/projects_page/scroll_progress'
-import useLocalStorage from 'hooks/use_local_storage'
+import useDarkMode from 'hooks/use_dark_mode'
 import { ThemeContext, Projects } from 'theme_context'
 
 const GainTainPage = (): JSX.Element => {
-  const [darkMode, setDarkMode] = useLocalStorage('darkMode')
+  const [darkMode, toggleDarkMode] = useDarkMode()
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode, ...Projects.GainTain }}>
+    <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...Projects.GainTain }}>
       <ScrollProgress />
       <GainTain />
     </ThemeContext.Provider>

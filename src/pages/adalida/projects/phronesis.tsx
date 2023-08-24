@@ -3,13 +3,13 @@ import 'sass/custom.scss'
 
 import Phronesis from 'components/adalida_page/projects_page/phronesis'
 import ScrollProgress from 'components/adalida_page/projects_page/scroll_progress'
-import useLocalStorage from 'hooks/use_local_storage'
+import useDarkMode from 'hooks/use_dark_mode'
 import { ThemeContext, Projects } from 'theme_context'
 
 const PhronesisPage = (): JSX.Element => {
-  const [darkMode, setDarkMode] = useLocalStorage('darkMode')
+  const [darkMode, toggleDarkMode] = useDarkMode()
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode, ...Projects.Phronesis }}>
+    <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...Projects.Phronesis }}>
       <ScrollProgress />
       <Phronesis />
     </ThemeContext.Provider>

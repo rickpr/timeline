@@ -26,7 +26,8 @@ export const Projects: Record<string, Project> = {
     heroPhoto: PhronesisHeroPhoto,
     roles: [
       'Visual Identity',
-      'User Interaction'
+      'SaaS',
+      'B2B'
     ],
     background: '#2D2D31'
   },
