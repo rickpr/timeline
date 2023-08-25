@@ -5,14 +5,33 @@ on:
     branches:
       - main
 jobs:
-  Type-Check-lint-and-test:
+  setup:
+    name: Setup node and install dependencies
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: 20
+        cache: 'npm'
     - run: npm ci
+  typecheck:
+    needs: setup
+    name: TypeScript type check
+    steps:
     - run: npm run tsc
+  lint:
+    needs: setup
+    name: ESLint/TSLint check
+    steps:
     - run: npm run lint
+  test:
+    needs: setup
+    name: Run jest tests
+    steps:
     - run: npm test
+  build:
+    needs: setup
+    name: Build the bundle
+    steps:
+    - run: npm run build
