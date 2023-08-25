@@ -1,13 +1,18 @@
+name: CI
+run-name: Type check, lint, and test
 on:
   push:
     branches:
       - main
-steps:
-- uses: actions/checkout@v3
-- uses: actions/setup-node@v3
-  with:
-    node-version: 20
-- run: npm ci
-- run: npm run tsc
-- run: npm run lint
-- run: npm test
+jobs:
+  Type-Check-lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 20
+    - run: npm ci
+    - run: npm run tsc
+    - run: npm run lint
+    - run: npm test
