@@ -18,20 +18,24 @@ jobs:
   typecheck:
     needs: setup
     name: TypeScript type check
+    runs-on: ubuntu-latest
     steps:
     - run: npm run tsc
   lint:
     needs: setup
     name: ESLint/TSLint check
+    runs-on: ubuntu-latest
     steps:
     - run: npm run lint
   test:
     needs: setup
     name: Run jest tests
+    runs-on: ubuntu-latest
     steps:
     - run: npm test
   build:
     needs: setup
     name: Build the bundle
+    runs-on: ubuntu-latest
     steps:
     - run: npm run build
