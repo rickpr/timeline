@@ -6,7 +6,7 @@ import MediaWithText from '../media_with_text'
 
 import 'sass/adalida_page/project.scss'
 
-const Test = (): JSX.Element => {
+const ProblemSolution = (): JSX.Element => {
   const pictureCaption = (
     <div className='picture-caption'>
       <PictureCaption
@@ -27,4 +27,4 @@ const Test = (): JSX.Element => {
   )
 }
 
-export default Test
+export default ProblemSolution

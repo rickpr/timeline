@@ -35,6 +35,7 @@ const MediaWithText = ({ media, text, reversed = false }: Props): JSX.Element =>
   const flex = '8 8 335px'
   const imageTag = (
     <div
+      key='image'
       style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', maxWidth: 'max-content', padding }}
     >
       {mediaTag}

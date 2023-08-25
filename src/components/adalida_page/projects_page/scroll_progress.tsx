@@ -51,8 +51,8 @@ const ScrollProgress = (): JSX.Element => {
       <div
         style={{
           position: 'fixed',
-          height: '5vh',
-          width: '5vh',
+          height: '5dvh',
+          width: '5dvh',
           bottom: 0,
           right: 0,
           zIndex: 3,
@@ -62,7 +62,7 @@ const ScrollProgress = (): JSX.Element => {
         }}
       >
         <a href='#top' style={{ color: 'black', display: 'block', width: '100%', height: '100%' }}>
-          <IconCircleArrowUpFilled size='5vh' />
+          <IconCircleArrowUpFilled size='100%' />
         </a>
       </div>
     </>

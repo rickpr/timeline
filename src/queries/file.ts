@@ -1,6 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
-export const FileQuery = (filePath: string): any => {
+interface File {
+  publicURL: string
+  name: string
+  relativePath: string
+}
+
+export const FileQuery = (filePath: string): File => {
   const files = useStaticQuery(graphql`
     query {
       allFile(filter: {sourceInstanceName: {eq: "files"}}) {

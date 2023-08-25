@@ -28,6 +28,6 @@ describe('ScalableText', () => {
     const letterCount = string.length
     const expectedWidth = 9 * letterCount
     // @ts-expect-error We're missing a type here
-    expect(svg.props.viewBox).toEqual(`0 0 ${expectedWidth} 17`)
+    expect(svg.props.viewBox).toEqual(`0 0 ${expectedWidth} 20`)
   })
 })

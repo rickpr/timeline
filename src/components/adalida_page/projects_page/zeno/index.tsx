@@ -6,7 +6,7 @@ import Understand from './understand'
 import Define from './define'
 import Ideate from './ideate'
 import Prototype from './prototype'
-import Test from './test'
+import ProblemSolution from './problem_solution'
 import NextSteps from './next_steps'
 import VisualIdentity from '../visual_identity'
 import Takeaways from './takeaways'
@@ -18,7 +18,7 @@ const Zeno = (): JSX.Element =>
     <Define />
     <Ideate />
     <Prototype />
-    <Test />
+    <ProblemSolution />
     <NextSteps />
     <VisualIdentity
       colors={{

@@ -1,6 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
-export const ImageQuery = (imagePath: string): any => {
+interface Image {
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData
+  }
+  name: string
+  relativePath: string
+}
+
+export const ImageQuery = (imagePath: string): Image => {
   const images = useStaticQuery(graphql`
     query {
       allFile(filter: {sourceInstanceName: {eq: "images"}}) {
