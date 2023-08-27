@@ -7,7 +7,6 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'react-app',
     'standard-with-typescript',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended'
@@ -19,7 +18,7 @@ module.exports = {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 12,
     project: ['./tsconfig.json'],
-    sourceType: 'module'
+    sourceType: 'module',
   },
   parser: '@typescript-eslint/parser',
   plugins: [
@@ -28,4 +27,9 @@ module.exports = {
     'react-hooks',
     '@typescript-eslint'
   ],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  }
 }
