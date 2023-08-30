@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { IconMoonStars, IconSun } from '@tabler/icons-react'
+import Icon from './icon'
 
 import { ThemeContext } from 'theme_context'
 
@@ -18,7 +18,7 @@ const DarkModeButton = (): JSX.Element => {
       style={darkModeButtonStyle}
       onClick={toggleDarkMode}
     >
-      {darkMode ? <IconMoonStars /> : <IconSun />}
+      <Icon darkMode={darkMode} />
     </button>
   )
 }
