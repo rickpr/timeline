@@ -37,7 +37,7 @@ const PdfOfWorkouts = (): JSX.Element => {
         <CaptionedFigure caption='Before' figure={makeMediaTag({ media: 'gaintain/pdf_of_workouts/program.png' })} />
         {text}
         <div style={{ maxWidth: '331px' }}>
-          <CaptionedFigure caption='After' figure={makeMediaTag({ media: PdfOfWorkoutsVideo })} />
+          <CaptionedFigure caption='After' figure={makeMediaTag({ media: PdfOfWorkoutsVideo, style: { borderRadius: '60px' } })} />
         </div>
       </div>
     </Card>

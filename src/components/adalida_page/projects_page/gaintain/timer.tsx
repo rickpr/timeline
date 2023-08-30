@@ -36,7 +36,7 @@ const Timer = (): JSX.Element => {
         <CaptionedFigure caption='Before' figure={makeMediaTag({ media: 'gaintain/timer.png' })} />
         {text}
         <div style={{ maxWidth: '331px' }}>
-          <CaptionedFigure caption='After' figure={makeMediaTag({ media: TimerVideo })} />
+          <CaptionedFigure caption='After' figure={makeMediaTag({ media: TimerVideo, style: { borderRadius: '60px' } })} />
         </div>
       </div>
     </Card>

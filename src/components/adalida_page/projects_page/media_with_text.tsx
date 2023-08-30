@@ -24,19 +24,27 @@ interface Props {
   media: string
   text: React.ReactNode
   reversed?: boolean
+  style?: CSSProperties
 }
 
-const MediaWithText = ({ media, text, reversed = false }: Props): JSX.Element => {
+const MediaWithText = ({ media, text, reversed = false, style = {} }: Props): JSX.Element => {
   const maxHeight = '82vh'
-  const style = { minWidth: 'min(50ch, 80vw)', maxHeight, borderRadius: '10px' }
+  const styles = { maxHeight, borderRadius: '10px', ...style }
 
   const padding = '1em'
-  const mediaTag = makeMediaTag({ media, style })
+  const mediaTag = makeMediaTag({ media, style: styles })
   const flex = '8 8 335px'
   const imageTag = (
     <div
       key='image'
-      style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', maxWidth: 'max-content', padding }}
+      style={{
+        display: 'flex',
+        flex,
+        placeContent: 'center',
+        placeItems: 'center',
+        maxWidth: 'max-content',
+        padding
+      }}
     >
       {mediaTag}
     </div>

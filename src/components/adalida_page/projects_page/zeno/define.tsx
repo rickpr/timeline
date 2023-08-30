@@ -23,7 +23,7 @@ const Define = (): JSX.Element => {
   )
   return (
     <Card>
-      <MediaWithText media={define} text={pictureCaption} reversed />
+      <MediaWithText media={define} text={pictureCaption} reversed style={{ borderRadius: '8vh' }} />
     </Card>
   )
 }

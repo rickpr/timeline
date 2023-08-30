@@ -31,6 +31,7 @@ const Ideate = (): JSX.Element => {
         gridTemplateColumns: isMobile !== false ? '1fr' : '1fr 2fr 1fr',
         columnGap: '6%',
         width: '100%',
+        height: '100%',
         ...centerStyles
       }}>
         <div className='picture-caption'>

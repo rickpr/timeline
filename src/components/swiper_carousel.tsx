@@ -13,7 +13,7 @@ import 'swiper/css/pagination'
 import 'sass/swiper_carousel.scss'
 
 // This has to be imported last
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'
+import { EffectCoverflow, Pagination, Navigation } from 'swiper'
 
 const SwiperCarousel = ({ images }: { images: string[] }): JSX.Element => {
   const { name } = useContext(ThemeContext)

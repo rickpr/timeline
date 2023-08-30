@@ -36,7 +36,7 @@ const NotesAndPaper = (): JSX.Element => {
         <CaptionedFigure caption='Before' figure={makeMediaTag({ media: 'gaintain/notes_and_paper.png' })} />
         {text}
         <div style={{ maxWidth: '331px' }}>
-          <CaptionedFigure caption='After' figure={makeMediaTag({ media: IncrementVideo })} />
+          <CaptionedFigure caption='After' figure={makeMediaTag({ media: IncrementVideo, style: { borderRadius: '60px' } })} />
         </div>
       </div>
     </Card>

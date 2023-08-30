@@ -27,7 +27,7 @@ const About = (): JSX.Element => {
 
   return (
     <Card>
-      <MediaWithText media={about} text={text} />
+      <MediaWithText media={about} text={text} style={{ borderRadius: '7vh' }} />
     </Card>
   )
 }

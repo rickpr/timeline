@@ -24,7 +24,7 @@ const Prototype = (): JSX.Element => {
 
   return (
     <Card>
-      <MediaWithText media={prototype} text={pictureCaption} />
+      <MediaWithText media={prototype} text={pictureCaption} style={{ borderRadius: '7vh' }} />
     </Card>
   )
 }

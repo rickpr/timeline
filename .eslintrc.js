@@ -18,7 +18,7 @@ module.exports = {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 12,
     project: ['./tsconfig.json'],
-    sourceType: 'module',
+    sourceType: 'module'
   },
   parser: '@typescript-eslint/parser',
   plugins: [
@@ -28,8 +28,6 @@ module.exports = {
     '@typescript-eslint'
   ],
   settings: {
-    react: {
-      version: 'detect'
-    }
+    react: { version: 'detect' }
   }
 }
