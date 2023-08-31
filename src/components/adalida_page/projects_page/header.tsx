@@ -39,7 +39,7 @@ const Header = (): JSX.Element => {
     <div style={containerStyle}>
       <div style={textAndImageStyle}>
         <div>{name}</div>
-        <img src={heroPhoto} alt={name} style={imageStyle} />
+        {heroPhoto !== undefined && <img src={heroPhoto} alt={name} style={imageStyle} />}
       </div>
     </div>
   )
