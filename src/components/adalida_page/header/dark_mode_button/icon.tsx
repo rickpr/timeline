@@ -1,13 +1,14 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 
 const Icon = ({ darkMode }: { darkMode: boolean }): JSX.Element => {
-  const animateProps = {
+  const [dur, setDur] = useState('1ms')
+  const animateProps = useMemo(() => ({
     begin: 'indefinite',
     attributeName: 'd',
     attributeType: 'XML',
-    dur: '250ms',
+    dur,
     fill: 'freeze'
-  }
+  }), [dur])
 
   const innerMoonAnimate = useRef<SVGAnimateElement>(null)
   const outerMoonAnimate = useRef<SVGAnimateElement>(null)
@@ -57,13 +58,9 @@ const Icon = ({ darkMode }: { darkMode: boolean }): JSX.Element => {
     planet4AnimateReverse.current?.beginElement()
   }
 
-  useEffect(() => {
-    if (darkMode) {
-      animateReverse()
-    } else {
-      animateForward()
-    }
-  }, [darkMode])
+  useEffect(() => { darkMode ? animateReverse() : animateForward() }, [darkMode])
+  // This prevents the animation from running on page load
+  useEffect(() => { setTimeout(() => { setDur('250ms') }, 1000) }, [])
 
   return (
     <svg
