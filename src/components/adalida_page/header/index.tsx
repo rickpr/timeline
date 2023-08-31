@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 
 import DarkModeButton from './dark_mode_button'
+import Logo from './logo'
 
 const Header = (): JSX.Element => {
   const navElementStyle = {
@@ -21,7 +22,8 @@ const Header = (): JSX.Element => {
       padding: '18px 7.5dvw 0 7.5dvw'
     }}>
       <div style={navElementStyle}>
-        <Link to='/adalida'>
+        <Link style={{ display: 'flex', alignItems: 'center', gap: '5px' }} to='/adalida'>
+          <Logo style={{ height: '15px' }} />
           ADALIDA
         </Link>
       </div>
