@@ -16,7 +16,7 @@ const coverStyles = {
   overflowY: 'auto' as const,
   overflowX: 'hidden' as const,
   scrollSnapType: 'y mandatory',
-  background: '#212025'
+  background: '#121212'
 }
 
 interface Props {

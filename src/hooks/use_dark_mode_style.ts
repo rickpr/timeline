@@ -6,7 +6,7 @@ interface Colors {
   button: CSSProperties['background']
 }
 
-const darkColor = '#212025'
+const darkColor = '#121212'
 const lightColor = '#F5F5F5'
 
 const darkModeStyles: Colors = {
