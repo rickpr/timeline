@@ -88,7 +88,7 @@ const Header = ({ sticky, isAboutPage, setIsAboutPage }: Props): JSX.Element => 
     <Link style={{ display: 'flex', alignItems: 'center', gap: '10px' }} to='/'>
       <Logo style={logoStyle} />
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'start', alignItems: 'flex-start', gap: '8px' }}>
-        {!isMobile &&
+        {isMobile === false &&
          <>
            <span style={{ ...nameStyle, fontWeight: 600 }}>Adalida Baca</span>
            <span style={{ ...nameStyle, fontWeight: 300 }}>Product Designer</span>
