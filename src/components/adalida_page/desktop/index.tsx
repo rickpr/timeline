@@ -10,9 +10,9 @@ import { ThemeContext } from 'theme_context'
 
 const coverStyles = {
   display: 'flex',
-  maxHeight: '100dvh',
+  maxHeight: 'calc(100dvh - 100px)',
   flexDirection: 'column' as const,
-  transition: 'background-color 0.5s ease-in-out',
+  transition: 'background-color 0.5s',
   overflowY: 'auto' as const,
   overflowX: 'hidden' as const,
   scrollSnapType: 'y mandatory',
@@ -35,7 +35,6 @@ const Desktop = ({ setCurrentProject }: Props): JSX.Element => {
 
   return (
     <div style={{ ...coverStyles, ...styles }} ref={containerRef}>
-      <Header projectRefs={projectRefs} />
       {projects.map(project => (
         <App
           key={project}
@@ -45,6 +44,7 @@ const Desktop = ({ setCurrentProject }: Props): JSX.Element => {
           setCurrentProject={setCurrentProject}
         />
       ))}
+      <Header projectRefs={projectRefs} />
     </div>
   )
 }

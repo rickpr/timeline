@@ -1,10 +1,4 @@
 [[redirects]]
-  from = "https://adalida.design"
-  to = "https://adalida.design/adalida"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "https://fdisk.co"
   to = "https://fdisk.co/ricardo"
   status = 200

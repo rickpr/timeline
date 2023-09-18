@@ -9,7 +9,7 @@ export const AboutTheme: Project = {
   description: '',
   coverPhoto: AdalidaFace,
   heroPhoto: AdalidaFace,
-  projectPage: '/adalida/about',
+  projectPage: '/about',
   roles: [],
   background: '#FE347E'
 }

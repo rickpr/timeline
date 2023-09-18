@@ -19,7 +19,7 @@ export const Projects: Record<string, Project> = {
   Phronesis: {
     name: 'Phronesis',
     description: 'Seamlessly access important information, communicate effectively, and take control of your academic journey with ease.',
-    projectPage: '/adalida/projects/phronesis',
+    projectPage: '/projects/phronesis',
     coverPhoto: PhronesisPhoto,
     heroPhoto: PhronesisHeroPhoto,
     roles: [
@@ -33,7 +33,7 @@ export const Projects: Record<string, Project> = {
   GainTain: {
     name: 'GainTain',
     description: 'Designed specifically for fitness enthusiasts who want to track their workout data extensively.',
-    projectPage: '/adalida/projects/gaintain',
+    projectPage: '/projects/gaintain',
     coverPhoto: GainTainPhoto,
     roles: [
       'Product Design',
@@ -45,7 +45,7 @@ export const Projects: Record<string, Project> = {
   Zeno: {
     name: 'Zeno',
     description: 'Fashion E-commerce Design',
-    projectPage: '/adalida/projects/zeno',
+    projectPage: '/projects/zeno',
     coverPhoto: ZenoPhoto,
     roles: [
       'User Interface',

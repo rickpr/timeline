@@ -2,8 +2,6 @@ import React, { useContext, type CSSProperties } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
-import GlobalHeader from '../header'
-
 import { ThemeContext } from 'theme_context'
 
 const headerStyles = {
@@ -55,7 +53,6 @@ const Header = ({ projectRefs }: Props): JSX.Element => {
   })
   return (
     <div style={{ ...headerStyles, color: text }}>
-      <GlobalHeader />
       <div style={indicatorStyle}>{indicators}</div>
     </div>
   )

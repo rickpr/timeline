@@ -26,9 +26,9 @@ const coverStyles = {
   overflow: 'hidden',
   scrollSnapAlign: 'center',
   scrollSnapStop: 'always' as const,
-  height: '100dvh',
+  height: 'calc(100dvh - 100px)',
   width: '100dvw',
-  minHeight: '100dvh',
+  minHeight: 'calc(100dvh - 100px)',
   minWidth: '100dvw',
   padding: '0 10dvw'
 }
