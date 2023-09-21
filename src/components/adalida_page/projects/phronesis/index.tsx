@@ -1,28 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
+import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
+
+import CarouselOverlay from '../../carousel_overlay'
 import Project from '../project'
 import ImageCard from '../../image_card'
 import About from './about'
 
 import 'sass/adalida_page/project.scss'
 
-import InformationArchitecture from 'images/phronesis/info_arch.png'
-import Logo from 'images/phronesis/logo.png'
-import AppIcon from 'images/phronesis/app_icon.png'
-import Text from 'images/phronesis/text.png'
-import Color from 'images/phronesis/color.png'
-import FinalLogo from 'images/phronesis/final_logo.png'
-import FinalImage from 'images/phronesis/final_image.webp'
-import ComponentsDarkAndLight from 'images/phronesis/components_dark_light.webp'
-import SpecsTable from 'images/phronesis/specs_table.png'
-import Specs from 'images/phronesis/specs.png'
-import PhotosOne from 'images/phronesis/photos_one.png'
-import PhotosTwo from 'images/phronesis/photos_two.webp'
+const InformationArchitecture = 'images/phronesis/info_arch.png'
+const Logo = 'images/phronesis/logo.png'
+const AppIcon = 'images/phronesis/app_icon.png'
+const Text = 'images/phronesis/text.png'
+const Color = 'images/phronesis/color.png'
+const FinalLogo = 'images/phronesis/final_logo.png'
+const FinalImage = 'images/phronesis/final_image.webp'
+const ComponentsDarkAndLight = 'images/phronesis/components_dark_light.webp'
+const SpecsTable = 'images/phronesis/specs_table.png'
+const Specs = 'images/phronesis/specs.png'
+const PhotosOne = 'images/phronesis/photos_one.png'
+const PhotosTwo = 'images/phronesis/photos_two.webp'
 
 const containerStyle = {
   minWidth: '95%',
   maxWidth: '95dvw',
-  margin: '4vh 2.5dvw',
+  margin: '0 2.5dvw',
   minHeight: '400px',
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
@@ -37,25 +40,54 @@ const cardStyle = {
   padding: '20px'
 }
 
-const ImageContainer = ({ images }: { images: string[] }): JSX.Element => {
-  return (
-    <div style={containerStyle}>
-      {images.map((image: string) => <ImageCard key={image} media={image} style={{ ...cardStyle }} />)}
+const allImages = [
+  [InformationArchitecture],
+  [Logo, AppIcon],
+  [Text, Color],
+  [FinalLogo],
+  [Specs, SpecsTable],
+  [PhotosOne, ComponentsDarkAndLight],
+  [PhotosTwo, FinalImage]
+]
+
+const Phronesis = (): JSX.Element => {
+  useAnimateOnScroll()
+  const [showCarousel, setShowCarousel] = useState(false)
+  const [mediaIndex, setMediaIndex] = useState(0)
+  const dismiss = (): void => { setShowCarousel(false) }
+  const displayCarousel = (index: number): void => {
+    setMediaIndex(index)
+    setShowCarousel(true)
+  }
+
+  let imageIndex = 0
+  const images = allImages.map((imageGroup, index) =>
+    <div key={index} style={containerStyle}>
+      {imageGroup.map((image: string) => {
+        const currentIndex = imageIndex++
+        return (
+          <div
+            key={image}
+            tabIndex={0}
+            data-aos='fade-up'
+            role='tab'
+            onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && displayCarousel(currentIndex) }}
+            onClick={() => { displayCarousel(currentIndex) }}
+          >
+            <ImageCard media={image} style={cardStyle} />
+          </div>
+        )
+      })}
     </div>
   )
-}
 
-const Phronesis = (): JSX.Element => (
-  <Project>
-    <About />
-    <ImageContainer images={[InformationArchitecture]} />
-    <ImageContainer images={[Logo, AppIcon]} />
-    <ImageContainer images={[Text, Color]} />
-    <ImageContainer images={[FinalLogo]} />
-    <ImageContainer images={[Specs, SpecsTable]} />
-    <ImageContainer images={[PhotosOne, ComponentsDarkAndLight]} />
-    <ImageContainer images={[PhotosTwo, FinalImage]} />
-  </Project>
-)
+  return (
+    <Project>
+      <About />
+      {images}
+      {showCarousel && <CarouselOverlay dismiss={dismiss} media={allImages.flat()} index={mediaIndex} />}
+    </Project>
+  )
+}
 
 export default Phronesis

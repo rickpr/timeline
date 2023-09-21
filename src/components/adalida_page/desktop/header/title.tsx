@@ -31,11 +31,13 @@ const roleStyles = {
   ...glassStyles,
   transition: 'background-color 0.5s ease-in-out',
   padding: '0.8em',
+  fontSize: '10px',
   lineHeight: 1,
   whiteSpace: 'nowrap' as const
 }
 const linkStyles = {
   fontSize: '1.2em',
+  lineHeight: 1,
   fontFamily: 'Avenir Next',
   fontWeight: 'bold'
 }

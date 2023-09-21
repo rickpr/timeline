@@ -115,39 +115,12 @@ p {
   }
 }
 
-.recent-project {
-  display: flex;
-  flex: 3 0 calc(50% - 15px);
-  min-width: 300px;
-  gap: 10px;
-  background: #FFFFFF;
-  color: #778390;
-  border-radius: 10px;
-  overflow: hidden;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 .footer-about-me {
   display: flex;
   flex-direction: column;
   flex-basis: 33%;
   gap: 5px;
   justify-content: flex-start;
-}
-
-.social-footer {
-  background-color: #1A1A1A;
-  color: white;
-  display: flex;
-  padding: 5% 10%;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  z-index: 4;
-  flex-wrap: wrap;
 }
 
 .project-outer-paragraphs {

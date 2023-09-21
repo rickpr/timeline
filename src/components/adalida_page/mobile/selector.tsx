@@ -3,6 +3,7 @@ import React, { useContext, type CSSProperties } from 'react'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
 import { ThemeContext } from 'theme_context'
+import { Projects } from 'project_data'
 
 const selectorStyles = {
   position: 'sticky' as const,
@@ -35,7 +36,7 @@ const Header = ({ projectRefs }: Props): JSX.Element => {
   const { text } = useDarkModeStyle(darkMode)
 
   const indicators = Object.keys(projectRefs.current).map(project => {
-    const active = name === project
+    const active = name === Projects[project].name
     const opacity = active ? 1 : 0.2
     return (
       <button

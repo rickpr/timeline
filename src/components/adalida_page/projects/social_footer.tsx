@@ -4,6 +4,19 @@ import { IconBrandFacebook, IconBrandLinkedin, IconBrandTwitter } from '@tabler/
 
 import BrandIcon from 'components/adalida_page/brand_icon'
 
+const styles = {
+  backgroundColor: '#1A1A1A',
+  color: 'white',
+  display: 'flex',
+  padding: '5% 10%',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  gap: '10px',
+  position: 'relative' as const,
+  zIndex: 4,
+  flexWrap: 'wrap' as const
+}
+
 const SocialFooter = (): JSX.Element => {
   const [currentPage, setCurrentPage] = useState<string>('')
   useEffect(() => {
@@ -11,7 +24,7 @@ const SocialFooter = (): JSX.Element => {
     setCurrentPage(window.location.href)
   }, [])
   return (
-    <div className='social-footer'>
+    <div style={styles}>
       <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
         Coded by&nbsp;<a href="https://fdisk.co">https://fdisk.co</a>
       </div>

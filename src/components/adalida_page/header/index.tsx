@@ -27,7 +27,7 @@ const Header = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element => {
       zIndex: 1,
       background,
       color,
-      width: '100dvw',
+      width: '100%',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',

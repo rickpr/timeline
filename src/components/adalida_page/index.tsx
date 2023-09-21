@@ -19,7 +19,7 @@ interface Props {
 }
 
 const AdalidaPage = ({ aboutPage = false, darkMode, toggleDarkMode }: Props): JSX.Element => {
-  const [currentProject, setCurrentProject] = useState('Phronesis')
+  const [currentProject, setCurrentProject] = useState('AirbrushArtStudio')
   const [isAboutPage, setIsAboutPage] = useState(aboutPage)
   const isMobile = useIsMobile(768)
   const content = useMemo(() => {

@@ -1,6 +1,7 @@
 import React, { type CSSProperties, useContext } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import { Projects } from 'project_data'
 import { ThemeContext } from 'theme_context'
 
 import Title from './title'
@@ -33,7 +34,7 @@ interface Props {
 const Project = ({ projectRefs, project }: Props): React.ReactElement => {
   const { name, darkMode } = useContext(ThemeContext)
   const { background } = useDarkModeStyle(!darkMode)
-  const active = name === project
+  const active = name === Projects[project].name
   const opacity = active ? 1 : 0.2
   const scrollIntoView = (): void => projectRefs.current[project]?.current?.scrollIntoView({ behavior: 'smooth' })
   return (

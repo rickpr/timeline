@@ -23,7 +23,7 @@ const fullWindowStyles = {
 const coverStyles = {
   display: 'grid',
   minWidth: '100dvw',
-  gridTemplateColumns: '1fr 1fr 1fr',
+  gridTemplateColumns: '1fr 1fr 1fr 1fr', // TODO: WTF
   flexDirection: 'row' as const,
   overflowX: 'auto' as const,
   overflowY: 'hidden' as const,

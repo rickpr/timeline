@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 
+import AirbrushArtStudioPhoto from 'images/airbrush_art_studio/cover.png'
 import PhronesisPhoto from 'images/phronesis/cover.png'
 import PhronesisHeroPhoto from 'images/phronesis/title.jpg'
 import GainTainPhoto from 'images/gaintain/cover.png'
@@ -16,6 +17,20 @@ export interface Project {
 }
 
 export const Projects: Record<string, Project> = {
+  AirbrushArtStudio: {
+    name: 'Airbrush Art Studio',
+    description: 'A unique digital portfolio showcasing the remarkable talents of Armando Diaz, a distinguished artist hailing from New Mexico.',
+    projectPage: '/projects/airbrush_art_studio',
+    coverPhoto: AirbrushArtStudioPhoto,
+    heroPhoto: AirbrushArtStudioPhoto,
+    roles: [
+      'Web Design',
+      'Responsive Design',
+      'Copywriting'
+    ],
+    background: '#CAB8F5'
+  },
+
   Phronesis: {
     name: 'Phronesis',
     description: 'Seamlessly access important information, communicate effectively, and take control of your academic journey with ease.',
@@ -53,6 +68,7 @@ export const Projects: Record<string, Project> = {
     ],
     background: '#ED6112'
   }
+
 }
 
 export default Projects

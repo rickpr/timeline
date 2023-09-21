@@ -27,6 +27,7 @@ const titleStyles = {
 const listStyles = {
   display: 'flex',
   justifyContent: 'left',
+  flexWrap: 'wrap' as const,
   padding: 0,
   margin: 0,
   gap: '1em'
@@ -36,6 +37,7 @@ const roleStyles = {
   ...glassStyles,
   transition: 'background-color 0.5s ease-in-out',
   padding: '0.8em',
+  fontSize: '10px',
   lineHeight: 1,
   whiteSpace: 'nowrap' as const
 }

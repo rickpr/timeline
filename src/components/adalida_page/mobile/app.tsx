@@ -22,7 +22,7 @@ const containerStyles = {
   display: 'flex',
   flexDirection: 'column' as const,
   alignItems: 'center',
-  padding: '0 7.5dvw',
+  padding: '0 10dvw',
   maxHeight: `calc(100dvh - ${headerPixels + 42}px)` // selector is 42px
 }
 

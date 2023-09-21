@@ -1,22 +1,10 @@
-import React, { type CSSProperties, useState } from 'react'
-import Popup from './popup'
+import React, { type CSSProperties } from 'react'
 
-const ImageCard = ({ media, style }: { media: string, style?: CSSProperties }): JSX.Element => {
-  const [showPopUp, setShowPopUp] = useState(false)
+import { makeMediaTag } from '../projects/media_with_text'
 
-  return (
-    <>
-      {showPopUp && <Popup closePopUp={() => { setShowPopUp(false) }} media={media} />}
-      <div
-        style={style}
-        role='tab'
-        tabIndex={0}
-        onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && setShowPopUp(true) }}
-        onClick={() => { setShowPopUp(true) }}
-      >
-        <img src={media} style={{ height: '100%', width: '100%' }} alt={media} />
-      </div>
-    </>
-  )
-}
+const ImageCard = ({ media, style }: { media: string, style?: CSSProperties }): JSX.Element =>
+  <div style={style}>
+    {makeMediaTag({ media, style: { height: '100%', width: '100%', minWidth: '100%' } })}
+  </div>
+
 export default ImageCard

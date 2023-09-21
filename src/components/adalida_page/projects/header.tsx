@@ -30,8 +30,7 @@ const Header = (): JSX.Element => {
   const imageStyle = {
     width: '100%',
     height: 'auto',
-    maxHeight: '90vh',
-    objectFit: 'cover' as const,
+    objectFit: 'contain' as const,
     borderRadius: '20px'
   }
 
