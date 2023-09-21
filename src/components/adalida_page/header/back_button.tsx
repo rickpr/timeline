@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import { IconArrowLeft } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
-import { glassStyles } from './styles'
+import { glassStyles } from '../styles'
 
 const BackButton = (): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)

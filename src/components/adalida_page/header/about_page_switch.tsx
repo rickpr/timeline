@@ -1,5 +1,5 @@
 import React from 'react'
-import { glassStyles } from './styles'
+import { glassStyles } from '../styles'
 
 const switchGridStyle = {
   color: 'unset',
@@ -11,15 +11,15 @@ const switchGridStyle = {
   gridAutoColumns: 'minmax(0, 1fr)',
   placeItems: 'center',
   placeContent: 'center',
-  gap: '24px',
-  padding: '12px',
+  gap: '12px',
+  padding: '6px',
   minHeight: '100%',
   pointerEvents: 'auto' as const,
   cursor: 'pointer' as const
 }
 
 const switchTextStyle = {
-  fontSize: '18px',
+  fontSize: '16px',
   lineHeight: 1
 }
 
@@ -27,7 +27,7 @@ const containerStyle = {
   ...glassStyles,
   padding: '6px',
   position: 'absolute' as const,
-  top: '10px',
+  top: '20px',
   left: '50%',
   transform: 'translateX(-50%)'
 }
@@ -50,8 +50,8 @@ const AboutPageSwitch = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element =>
   return (
     <div style={containerStyle}>
       <button style={switchGridStyle} onClick={() => { toggleAboutPage(setIsAboutPage) }}>
-        <span style={switchTextStyle}>ABOUT</span>
         <span style={switchTextStyle}>WORK</span>
+        <span style={switchTextStyle}>ABOUT</span>
         <div style={{
           ...glassStyles,
           position: 'absolute',
@@ -61,7 +61,7 @@ const AboutPageSwitch = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element =>
           height: '100%',
           transition: 'all 0.2s ease-in-out',
           left: 0,
-          transform: isAboutPage === true ? undefined : 'translateX(100%)'
+          transform: isAboutPage !== true ? undefined : 'translateX(100%)'
         }} />
       </button>
     </div>

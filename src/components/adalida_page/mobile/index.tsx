@@ -2,13 +2,14 @@ import React, { useContext, useRef } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
-import App from './app'
-import Selector from './selector'
 import Projects from 'project_data'
-
 import { ThemeContext } from 'theme_context'
 
-const maxHeight = 'calc(100dvh - 74px)' // header is 74px
+import App from './app'
+import Selector from './selector'
+import { headerPixels } from '../header'
+
+const maxHeight = `calc(100dvh - ${headerPixels}px)`
 
 const fullWindowStyles = {
   minHeight: maxHeight,

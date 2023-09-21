@@ -5,6 +5,8 @@ import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 import Projects from 'project_data'
 
+import { glassStyles } from '../../styles'
+
 const labelStyles = {
   display: 'flex',
   flexDirection: 'column' as const,
@@ -26,9 +28,9 @@ const listStyles = {
   gap: '1em'
 }
 const roleStyles = {
+  ...glassStyles,
   transition: 'background-color 0.5s ease-in-out',
   padding: '0.8em',
-  borderRadius: '500px',
   lineHeight: 1,
   whiteSpace: 'nowrap' as const
 }

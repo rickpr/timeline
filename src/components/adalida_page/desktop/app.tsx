@@ -4,6 +4,8 @@ import React, { forwardRef, useEffect, useRef } from 'react'
 
 import Projects from 'project_data'
 
+import { headerPixels } from '../header'
+
 gsap.registerPlugin(ScrollTrigger)
 
 const imageStyles = {
@@ -11,7 +13,7 @@ const imageStyles = {
   width: '100%'
 }
 
-const height = 'calc(100dvh - 74px)' // header is 74px
+const height = `calc(100dvh - ${headerPixels}px)`
 
 const imageContainerStyles = {
   display: 'flex',

@@ -15,7 +15,8 @@ const ImageCard = ({ media, style }: { media: string, style?: CSSProperties }): 
         onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && setShowPopUp(true) }}
         onClick={() => { setShowPopUp(true) }}
       >
-        {makeMediaTag({ media, style: { height: '100%', width: '100%' } })}
+
+        <img src={media} style={{ height: '100%', width: '100%' }} alt={media} />
       </div>
     </>
   )

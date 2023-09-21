@@ -3,7 +3,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { forwardRef, useEffect, useRef } from 'react'
 
 import Projects from 'project_data'
+
 import ProjectLink from '../project_link'
+import { headerPixels } from '../header'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -21,7 +23,8 @@ const containerStyles = {
   flexDirection: 'column' as const,
   alignItems: 'center',
   padding: '0 7.5dvw',
-  maxHeight: 'calc(100dvh - 92px)' // header is 74px, selector is 18px
+  overflowY: 'hidden' as const,
+  maxHeight: `calc(100dvh - ${headerPixels + 42}px)` // selector is 42px
 }
 
 const imageStyles = {

@@ -13,6 +13,8 @@ interface Props {
   setIsAboutPage?: (updateAboutPage: boolean | ((isAboutPage: boolean) => boolean)) => void
 }
 
+export const headerPixels = 80
+
 const Header = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
   const { background, text: color } = useDarkModeStyle(darkMode)
@@ -30,7 +32,7 @@ const Header = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element => {
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: '10px 7.5dvw',
-      height: '74px'
+      height: `${headerPixels}px`
     }}>
       {isHomePage ? <HomeLink /> : <BackButton />}
       {isHomePage && <AboutPageSwitch isAboutPage={isAboutPage} setIsAboutPage={setIsAboutPage} />}

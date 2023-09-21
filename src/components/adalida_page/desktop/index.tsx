@@ -1,16 +1,16 @@
 import React, { useContext, useRef } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import { ThemeContext } from 'theme_context'
+import Projects from 'project_data'
 
 import App from './app'
 import Header from './header'
-import Projects from 'project_data'
-
-import { ThemeContext } from 'theme_context'
+import { headerPixels } from '../header'
 
 const coverStyles = {
   display: 'flex',
-  maxHeight: 'calc(100dvh - 74px)', // header is 74px
+  maxHeight: `calc(100dvh - ${headerPixels}px)`,
   flexDirection: 'column' as const,
   transition: 'background-color 0.5s',
   overflowY: 'auto' as const,

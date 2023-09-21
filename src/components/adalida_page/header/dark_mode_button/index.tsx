@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import Icon from './icon'
 
 import { ThemeContext } from 'theme_context'
-import { glassStyles } from '../styles'
+import { glassStyles } from '../../styles'
 
 const DarkModeButton = (): JSX.Element => {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext)

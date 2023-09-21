@@ -6,6 +6,7 @@ import About from './about'
 
 import 'sass/adalida_page/project.scss'
 
+/*
 const InformationArchitecture = 'images/phronesis/info_arch.png'
 const Logo = 'images/phronesis/logo.png'
 const AppIcon = 'images/phronesis/app_icon.png'
@@ -18,6 +19,20 @@ const SpecsTable = 'images/phronesis/specs_table.png'
 const Specs = 'images/phronesis/specs.png'
 const PhotosOne = 'images/phronesis/photos_one.png'
 const PhotosTwo = 'images/phronesis/photos_two.webp'
+*/
+
+import InformationArchitecture from 'images/phronesis/info_arch.png'
+import Logo from 'images/phronesis/logo.png'
+import AppIcon from 'images/phronesis/app_icon.png'
+import Text from 'images/phronesis/text.png'
+import Color from 'images/phronesis/color.png'
+import FinalLogo from 'images/phronesis/final_logo.png'
+import FinalImage from 'images/phronesis/final_image.webp'
+import ComponentsDarkAndLight from 'images/phronesis/components_dark_light.webp'
+import SpecsTable from 'images/phronesis/specs_table.png'
+import Specs from 'images/phronesis/specs.png'
+import PhotosOne from 'images/phronesis/photos_one.png'
+import PhotosTwo from 'images/phronesis/photos_two.webp'
 
 const containerStyle = {
   minWidth: '95%',

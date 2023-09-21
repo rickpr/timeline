@@ -4,26 +4,20 @@ import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
 import { ThemeContext } from 'theme_context'
 
-const headerStyles = {
+const selectorStyles = {
   position: 'sticky' as const,
   flexGrow: 0,
   display: 'flex',
-  flexDirection: 'column' as const,
   width: '100dvw',
-  justifyContent: 'space-between',
-  zIndex: 2
-}
-const indicatorStyle = {
-  width: '100%',
-  display: 'flex',
+  zIndex: 2,
   gap: '2dvh',
-  padding: '0 7.5dvw 10px',
+  padding: '10px calc(7.5dvw + 40px) 30px',
   justifyContent: 'space-around'
 }
 const barStyle = {
-  borderWidth: '4px',
-  borderRadius: '4px',
-  height: '4px',
+  borderWidth: '2px',
+  borderRadius: '2px',
+  height: '2px',
   borderStyle: 'solid',
   flex: '1 0 0',
   transition: 'all 0.5s ease',
@@ -51,11 +45,7 @@ const Header = ({ projectRefs }: Props): JSX.Element => {
       />
     )
   })
-  return (
-    <div style={{ ...headerStyles, color: text }}>
-      <div style={indicatorStyle}>{indicators}</div>
-    </div>
-  )
+  return <div style={{ ...selectorStyles, color: text }}>{indicators}</div>
 }
 
 export default Header
