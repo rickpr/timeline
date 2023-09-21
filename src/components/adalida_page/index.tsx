@@ -9,7 +9,6 @@ import AboutPage from './about_page'
 import Desktop from './desktop'
 import Header from './header'
 import Mobile from './mobile'
-import Selector from './mobile/selector'
 import ScrollProgress from './projects/scroll_progress'
 
 import 'sass/adalida_page/index.scss'

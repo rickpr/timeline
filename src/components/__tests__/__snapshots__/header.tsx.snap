@@ -8,7 +8,7 @@ exports[`Header renders correctly 1`] = `
     <h3>
       <a
         className="nav-link"
-        href="/adalida"
+        href="/"
       >
         Adalida
       </a>
