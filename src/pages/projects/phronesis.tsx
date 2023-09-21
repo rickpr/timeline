@@ -1,20 +1,12 @@
 import React from 'react'
 import 'sass/custom.scss'
 
-import Phronesis from 'components/adalida_page/projects_page/phronesis'
-import Header from 'components/adalida_page/header'
-import ScrollProgress from 'components/adalida_page/projects_page/scroll_progress'
-import useDarkMode from 'hooks/use_dark_mode'
-import { ThemeContext, Projects } from 'theme_context'
+import { Projects } from 'theme_context'
 
-const PhronesisPage = (): JSX.Element => {
-  const [darkMode, toggleDarkMode] = useDarkMode()
-  return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...Projects.Phronesis }}>
-      <Header sticky={<ScrollProgress />} />
-      <Phronesis />
-    </ThemeContext.Provider>
-  )
-}
+import Layout from 'components/adalida_page/projects/layout'
+import Phronesis from 'components/adalida_page/projects/phronesis'
+
+const PhronesisPage = (): JSX.Element =>
+  <Layout project={Projects.phronesis}><Phronesis /></Layout>
 
 export default PhronesisPage

@@ -4,21 +4,20 @@ import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
 import { ThemeContext } from 'theme_context'
 
-const selectorStyles = {
+const headerStyles = {
   position: 'sticky' as const,
   flexGrow: 0,
   display: 'flex',
   flexDirection: 'column' as const,
   width: '100dvw',
   justifyContent: 'space-between',
-  marginTop: '60px',
   zIndex: 2
 }
 const indicatorStyle = {
   width: '100%',
   display: 'flex',
   gap: '2dvh',
-  padding: '7.5dvw',
+  padding: '15px 7.5dvw',
   justifyContent: 'space-around'
 }
 const barStyle = {
@@ -37,7 +36,7 @@ interface Props {
   projectRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
 }
 
-const Selector = ({ projectRefs }: Props): JSX.Element => {
+const Header = ({ projectRefs }: Props): JSX.Element => {
   const { name, darkMode } = useContext(ThemeContext)
   const { text } = useDarkModeStyle(darkMode)
 
@@ -53,10 +52,10 @@ const Selector = ({ projectRefs }: Props): JSX.Element => {
     )
   })
   return (
-    <div style={{ ...selectorStyles, color: text }}>
+    <div style={{ ...headerStyles, color: text }}>
       <div style={indicatorStyle}>{indicators}</div>
     </div>
   )
 }
 
-export default Selector
+export default Header

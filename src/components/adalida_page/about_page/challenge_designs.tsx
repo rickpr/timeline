@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Card from '../projects_page/card'
+import Card from '../projects/card'
 import SmallProject from './small_project'
 
 import checkmark from 'videos/about/checkmark.mp4'

@@ -1,9 +1,9 @@
 import React from 'react'
 import 'sass/custom.scss'
 
-import GainTain from 'components/adalida_page/projects_page/gaintain'
+import GainTain from 'components/adalida_page/projects/gaintain'
 import Header from 'components/adalida_page/header'
-import ScrollProgress from 'components/adalida_page/projects_page/scroll_progress'
+import ScrollProgress from 'components/adalida_page/projects/scroll_progress'
 import useDarkMode from 'hooks/use_dark_mode'
 import { ThemeContext, Projects } from 'theme_context'
 

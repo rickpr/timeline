@@ -3,14 +3,16 @@ import React, { useContext, useRef } from 'react'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
 import App from './app'
-import Header from './header'
+import Selector from './selector'
 import Projects from 'project_data'
 
 import { ThemeContext } from 'theme_context'
 
+const maxHeight = 'calc(100dvh - 100px)' // header is 100px
+
 const fullWindowStyles = {
-  minHeight: '100dvh',
-  maxHeight: '100dvh',
+  minHeight: maxHeight,
+  maxHeight,
   minWidth: '100dvw',
   display: 'flex',
   flexDirection: 'column' as const,
@@ -43,7 +45,7 @@ const Mobile = ({ setCurrentProject }: Props): JSX.Element => {
   )
   return (
     <div style={{ ...fullWindowStyles, ...styles }}>
-      <Header projectRefs={projectRefs} />
+      <Selector projectRefs={projectRefs} />
       <div style={coverStyles} ref={containerRef}>
         {projects.map(project => (
           <App

@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeMediaTag } from '../projects_page/media_with_text'
+import { makeMediaTag } from '../projects/media_with_text'
 
 const style = {
   display: 'flex',

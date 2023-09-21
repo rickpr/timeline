@@ -10,7 +10,7 @@ import { ThemeContext } from 'theme_context'
 
 const coverStyles = {
   display: 'flex',
-  maxHeight: 'calc(100dvh - 100px)',
+  maxHeight: '100dvh',
   flexDirection: 'column' as const,
   transition: 'background-color 0.5s',
   overflowY: 'auto' as const,

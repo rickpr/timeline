@@ -9,7 +9,8 @@ import AboutPage from './about_page'
 import Desktop from './desktop'
 import Header from './header'
 import Mobile from './mobile'
-import ScrollProgress from './projects_page/scroll_progress'
+import Selector from './mobile/selector'
+import ScrollProgress from './projects/scroll_progress'
 
 import 'sass/adalida_page/index.scss'
 
@@ -28,7 +29,6 @@ const AdalidaPage = ({ aboutPage = false }: { aboutPage?: boolean }): JSX.Elemen
     () => isAboutPage ? AboutTheme : Projects[currentProject],
     [isAboutPage, currentProject]
   )
-
   if (isMobile === null) return <div />
 
   return (
@@ -38,6 +38,7 @@ const AdalidaPage = ({ aboutPage = false }: { aboutPage?: boolean }): JSX.Elemen
         setIsAboutPage={setIsAboutPage}
         sticky={isAboutPage ? <ScrollProgress /> : undefined}
       />
+      <div style={{ minHeight: '100px' }} />
       {content}
     </ThemeContext.Provider>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 
 import FileQuery from 'queries/file'
 
-import MediaWithText from '../projects_page/media_with_text'
+import MediaWithText from '../projects/media_with_text'
 
 const About = (): JSX.Element => {
   const resumePdf = FileQuery('Adalida_Baca_Resume.pdf')

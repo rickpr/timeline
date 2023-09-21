@@ -17,7 +17,8 @@ const DarkModeButton = (): JSX.Element => {
     color,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    cursor: 'pointer' as const
   }
 
   return (
