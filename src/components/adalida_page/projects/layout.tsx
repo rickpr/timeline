@@ -7,9 +7,9 @@ import Header from '../header'
 import ScrollProgress from './scroll_progress'
 
 interface Props {
-  children: React.ReactNode,
-  project: Project,
-  darkMode: boolean,
+  children: React.ReactNode
+  project: Project
+  darkMode: boolean
   toggleDarkMode: () => void
 }
 

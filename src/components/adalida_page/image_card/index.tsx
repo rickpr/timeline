@@ -1,5 +1,4 @@
 import React, { type CSSProperties, useState } from 'react'
-import { makeMediaTag } from '../projects/media_with_text'
 import Popup from './popup'
 
 const ImageCard = ({ media, style }: { media: string, style?: CSSProperties }): JSX.Element => {
@@ -15,7 +14,6 @@ const ImageCard = ({ media, style }: { media: string, style?: CSSProperties }): 
         onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && setShowPopUp(true) }}
         onClick={() => { setShowPopUp(true) }}
       >
-
         <img src={media} style={{ height: '100%', width: '100%' }} alt={media} />
       </div>
     </>

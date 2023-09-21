@@ -6,21 +6,6 @@ import About from './about'
 
 import 'sass/adalida_page/project.scss'
 
-/*
-const InformationArchitecture = 'images/phronesis/info_arch.png'
-const Logo = 'images/phronesis/logo.png'
-const AppIcon = 'images/phronesis/app_icon.png'
-const Text = 'images/phronesis/text.png'
-const Color = 'images/phronesis/color.png'
-const FinalLogo = 'images/phronesis/final_logo.png'
-const FinalImage = 'images/phronesis/final_image.webp'
-const ComponentsDarkAndLight = 'images/phronesis/components_dark_light.webp'
-const SpecsTable = 'images/phronesis/specs_table.png'
-const Specs = 'images/phronesis/specs.png'
-const PhotosOne = 'images/phronesis/photos_one.png'
-const PhotosTwo = 'images/phronesis/photos_two.webp'
-*/
-
 import InformationArchitecture from 'images/phronesis/info_arch.png'
 import Logo from 'images/phronesis/logo.png'
 import AppIcon from 'images/phronesis/app_icon.png'

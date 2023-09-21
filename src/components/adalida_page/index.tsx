@@ -13,8 +13,8 @@ import ScrollProgress from './projects/scroll_progress'
 import 'sass/adalida_page/index.scss'
 
 interface Props {
-  aboutPage?: boolean,
-  darkMode: boolean,
+  aboutPage?: boolean
+  darkMode: boolean
   toggleDarkMode: () => void
 }
 
