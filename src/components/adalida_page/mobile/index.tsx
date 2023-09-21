@@ -9,11 +9,11 @@ import App from './app'
 import Selector from './selector'
 import { headerPixels } from '../header'
 
-const maxHeight = `calc(100dvh - ${headerPixels}px)`
+const height = `calc(100dvh - ${headerPixels}px)`
 
 const fullWindowStyles = {
-  minHeight: maxHeight,
-  maxHeight,
+  minHeight: height,
+  maxHeight: height,
   minWidth: '100dvw',
   display: 'flex',
   flexDirection: 'column' as const,
