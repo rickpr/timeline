@@ -8,7 +8,7 @@ import Projects from 'project_data'
 
 import { ThemeContext } from 'theme_context'
 
-const maxHeight = 'calc(100dvh - 100px)' // header is 100px
+const maxHeight = 'calc(100dvh - 74px)' // header is 74px
 
 const fullWindowStyles = {
   minHeight: maxHeight,

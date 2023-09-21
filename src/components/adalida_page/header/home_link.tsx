@@ -12,8 +12,6 @@ const logoStyle = {
   justifyContent: 'center',
   flexShrink: 0,
   display: 'flex',
-  height: '60px',
-  width: '60px',
   padding: '8px'
 }
 
@@ -23,12 +21,13 @@ const nameStyle = {
 }
 
 const HomeLink = (): JSX.Element => {
-  const isMobile = useIsMobile(768)
+  const isMobile = useIsMobile(768) === true
+  const size = isMobile ? '40px' : '54px'
   return (
     <Link style={{ display: 'flex', alignItems: 'center', gap: '10px', lineHeight: 1 }} to='/'>
-      <Logo style={logoStyle} />
+      <Logo style={{ ...logoStyle, height: size, width: size }} />
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'start', alignItems: 'flex-start', gap: '8px' }}>
-        {isMobile === false &&
+        {!isMobile &&
          <>
            <span style={{ ...nameStyle, fontWeight: 600 }}>Adalida Baca</span>
            <span style={{ ...nameStyle, fontWeight: 300 }}>Product Designer</span>

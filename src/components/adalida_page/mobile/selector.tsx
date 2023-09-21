@@ -17,7 +17,7 @@ const indicatorStyle = {
   width: '100%',
   display: 'flex',
   gap: '2dvh',
-  padding: '15px 7.5dvw',
+  padding: '0 7.5dvw 10px',
   justifyContent: 'space-around'
 }
 const barStyle = {

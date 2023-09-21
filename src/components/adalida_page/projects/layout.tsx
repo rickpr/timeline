@@ -13,8 +13,8 @@ const Layout = (
   const [darkMode, toggleDarkMode] = useDarkMode()
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...project }}>
-      <Header sticky={<ScrollProgress />} />
-      <div style={{ minHeight: '100px' }} />
+      <Header />
+      <ScrollProgress />
       {children}
     </ThemeContext.Provider>
   )

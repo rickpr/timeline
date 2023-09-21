@@ -7,6 +7,6 @@ import Layout from 'components/adalida_page/projects/layout'
 import Phronesis from 'components/adalida_page/projects/phronesis'
 
 const PhronesisPage = (): JSX.Element =>
-  <Layout project={Projects.phronesis}><Phronesis /></Layout>
+  <Layout project={Projects.Phronesis}><Phronesis /></Layout>
 
 export default PhronesisPage

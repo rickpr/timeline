@@ -36,9 +36,8 @@ const AdalidaPage = ({ aboutPage = false }: { aboutPage?: boolean }): JSX.Elemen
       <Header
         isAboutPage={isAboutPage}
         setIsAboutPage={setIsAboutPage}
-        sticky={isAboutPage ? <ScrollProgress /> : undefined}
       />
-      <div style={{ minHeight: '100px' }} />
+      {isAboutPage && <ScrollProgress />}
       {content}
     </ThemeContext.Provider>
   )

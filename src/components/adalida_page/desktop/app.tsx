@@ -11,12 +11,15 @@ const imageStyles = {
   width: '100%'
 }
 
+const height = 'calc(100dvh - 74px)' // header is 74px
+
 const imageContainerStyles = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   width: '50%',
-  aspectRatio: '1 / 1'
+  aspectRatio: '1 / 1',
+  padding: '0 15px'
 }
 
 const coverStyles = {
@@ -26,9 +29,9 @@ const coverStyles = {
   overflow: 'hidden',
   scrollSnapAlign: 'center',
   scrollSnapStop: 'always' as const,
-  height: '100dvh',
+  height,
   width: '100dvw',
-  minHeight: '100dvh',
+  minHeight: height,
   minWidth: '100dvw',
   padding: '0 10dvw'
 }

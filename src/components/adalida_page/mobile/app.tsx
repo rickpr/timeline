@@ -21,7 +21,7 @@ const containerStyles = {
   flexDirection: 'column' as const,
   alignItems: 'center',
   padding: '0 7.5dvw',
-  maxHeight: 'calc(100dvh - calc(40px + 22.5dvw))'
+  maxHeight: 'calc(100dvh - 92px)' // header is 74px, selector is 18px
 }
 
 const imageStyles = {
@@ -35,7 +35,7 @@ const imageStyles = {
 const titleStyles = {
   width: '85dvw',
   height: 'max-content',
-  paddingTop: '7.5dvw'
+  paddingTop: '15px'
 }
 
 interface Props {

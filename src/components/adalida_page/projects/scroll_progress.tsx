@@ -19,16 +19,17 @@ const ScrollProgress = (): JSX.Element => {
   }, [])
 
   return (
-    <div>
-      <div
-        style={{
-          width: `${scrollProgress}%`,
-          height: '1vh',
-          background: scrollBar,
-          borderRadius: '0 1vh 1vh 0'
-        }}
-      />
-    </div>
+    <div
+      style={{
+        position: 'fixed',
+        top: '74px',
+        width: `${scrollProgress}%`,
+        height: '1vh',
+        background: scrollBar,
+        borderRadius: '0 1vh 1vh 0',
+        zIndex: 1
+      }}
+    />
   )
 }
 

@@ -11,7 +11,7 @@ const switchGridStyle = {
   gridAutoColumns: 'minmax(0, 1fr)',
   placeItems: 'center',
   placeContent: 'center',
-  gap: '14px',
+  gap: '24px',
   padding: '12px',
   minHeight: '100%',
   pointerEvents: 'auto' as const,
@@ -27,6 +27,7 @@ const containerStyle = {
   ...glassStyles,
   padding: '6px',
   position: 'absolute' as const,
+  top: '10px',
   left: '50%',
   transform: 'translateX(-50%)'
 }
