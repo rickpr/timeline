@@ -2,7 +2,6 @@ import React, { useMemo, useState } from 'react'
 
 import Projects from 'project_data'
 import { AboutTheme, ThemeContext } from 'theme_context'
-import useDarkMode from 'hooks/use_dark_mode'
 import useIsMobile from 'hooks/use_is_mobile'
 
 import AboutPage from './about_page'
@@ -13,8 +12,13 @@ import ScrollProgress from './projects/scroll_progress'
 
 import 'sass/adalida_page/index.scss'
 
-const AdalidaPage = ({ aboutPage = false }: { aboutPage?: boolean }): JSX.Element => {
-  const [darkMode, toggleDarkMode] = useDarkMode()
+interface Props {
+  aboutPage?: boolean,
+  darkMode: boolean,
+  toggleDarkMode: () => void
+}
+
+const AdalidaPage = ({ aboutPage = false, darkMode, toggleDarkMode }: Props): JSX.Element => {
   const [currentProject, setCurrentProject] = useState('Phronesis')
   const [isAboutPage, setIsAboutPage] = useState(aboutPage)
   const isMobile = useIsMobile(768)
