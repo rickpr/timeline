@@ -26,6 +26,7 @@ const coverStyles = {
   gridTemplateColumns: '1fr 1fr 1fr',
   flexDirection: 'row' as const,
   overflowX: 'auto' as const,
+  overflowY: 'hidden' as const,
   scrollSnapType: 'x mandatory',
   flexGrow: 3,
   position: 'relative' as const

@@ -23,7 +23,6 @@ const containerStyles = {
   flexDirection: 'column' as const,
   alignItems: 'center',
   padding: '0 7.5dvw',
-  overflowY: 'hidden' as const,
   maxHeight: `calc(100dvh - ${headerPixels + 42}px)` // selector is 42px
 }
 
