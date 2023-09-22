@@ -29,7 +29,7 @@ interface Props {
 
 const MediaWithText = ({ media, text, reversed = false, style = {} }: Props): JSX.Element => {
   const maxHeight = '82vh'
-  const styles = { maxHeight, borderRadius: '10px', ...style }
+  const styles = { maxHeight, borderRadius: '10px', height: '100%', width: '100%', ...style }
 
   const padding = '1em'
   const mediaTag = makeMediaTag({ media, style: styles })
@@ -42,7 +42,8 @@ const MediaWithText = ({ media, text, reversed = false, style = {} }: Props): JS
         flex,
         placeContent: 'center',
         placeItems: 'center',
-        maxWidth: 'max-content',
+        width: '100%',
+        height: '100%',
         padding
       }}
     >
@@ -58,7 +59,6 @@ const MediaWithText = ({ media, text, reversed = false, style = {} }: Props): JS
       flexWrap,
       placeContent: 'center',
       margin: '0 auto',
-      maxWidth: 'max-content'
     }}>
       {reversed ? [textTag, imageTag] : [imageTag, textTag]}
     </div>

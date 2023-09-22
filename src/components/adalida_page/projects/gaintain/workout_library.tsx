@@ -1,6 +1,5 @@
 import React from 'react'
 
-import CaptionedFigure from 'components/captioned_figure'
 import Card from '../card'
 import { makeMediaTag } from '../media_with_text'
 
@@ -25,16 +24,15 @@ const WorkoutLibrary = (): JSX.Element => {
     <Card>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: isMobile !== false ? '1fr' : 'repeat(3, minmax(0, 1fr))',
+        gridTemplateColumns: isMobile !== false ? '1fr' : 'repeat(2, minmax(0, 1fr))',
         columnGap: '6%',
         maxWidth: '100%',
         overflow: 'hidden',
         placeItems: 'center center'
       }}>
-        <CaptionedFigure caption='Before' figure={makeMediaTag({ media: 'gaintain/workout_library.png' })} />
         {text}
         <div style={{ maxWidth: '331px' }}>
-          <CaptionedFigure caption='After' figure={makeMediaTag({ media: WorkoutLibraryVideo, style: { borderRadius: '60px' } })} />
+          {makeMediaTag({ media: WorkoutLibraryVideo, style: { borderRadius: '60px' } })}
         </div>
       </div>
     </Card>

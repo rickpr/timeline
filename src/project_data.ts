@@ -39,6 +39,7 @@ export const Projects: Record<string, Project> = {
     heroPhoto: PhronesisHeroPhoto,
     roles: [
       'Visual Identity',
+      'User Interface Design',
       'SaaS',
       'B2B'
     ],
@@ -52,7 +53,9 @@ export const Projects: Record<string, Project> = {
     coverPhoto: GainTainPhoto,
     roles: [
       'Product Design',
-      'User Research'
+      'Visual Identity',
+      'UX Design',
+      'SaaS'
     ],
     background: 'linear-gradient(#FF512F, #DD2476)'
   },
@@ -63,8 +66,9 @@ export const Projects: Record<string, Project> = {
     projectPage: '/projects/zeno',
     coverPhoto: ZenoPhoto,
     roles: [
-      'User Interface',
-      'Design Systems'
+      'User Interface Design',
+      'Prototyping',
+      'E-commerce'
     ],
     background: '#ED6112'
   }

@@ -47,7 +47,7 @@ const Check = (): JSX.Element => {
         maxWidth: 'max-content'
       }}>
         <div
-          style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', maxWidth: 'max-content', padding }}
+          style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', padding }}
         >
           <CaptionedFigure caption={figmaLink} figure={mediaTag} />
         </div>

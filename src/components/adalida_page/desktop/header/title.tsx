@@ -25,7 +25,7 @@ const listStyles = {
   justifyContent: 'left',
   padding: 0,
   margin: 0,
-  gap: '1em'
+  gap: '0.5em'
 }
 const roleStyles = {
   ...glassStyles,

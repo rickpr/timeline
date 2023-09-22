@@ -28,16 +28,15 @@ const PdfOfWorkouts = (): JSX.Element => {
     <Card>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: isMobile !== false ? '1fr' : 'repeat(3, minmax(0, 1fr))',
+        gridTemplateColumns: isMobile !== false ? '1fr' : 'repeat(2, minmax(0, 1fr))',
         columnGap: '6%',
         maxWidth: '100%',
         overflow: 'hidden',
         ...centerStyles
       }}>
-        <CaptionedFigure caption='Before' figure={makeMediaTag({ media: 'gaintain/pdf_of_workouts/program.png' })} />
         {text}
         <div style={{ maxWidth: '331px' }}>
-          <CaptionedFigure caption='After' figure={makeMediaTag({ media: PdfOfWorkoutsVideo, style: { borderRadius: '60px' } })} />
+          {makeMediaTag({ media: PdfOfWorkoutsVideo, style: { borderRadius: '60px' } })}
         </div>
       </div>
     </Card>
