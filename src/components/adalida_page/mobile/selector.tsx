@@ -21,7 +21,7 @@ const barStyle = {
   height: '2px',
   borderStyle: 'solid',
   flex: '1 0 0',
-  transition: 'all 0.5s ease',
+  transition: 'all 0.5s ease-in-out',
   background: 'none',
   padding: 0,
   cursor: 'pointer'

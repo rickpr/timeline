@@ -1,5 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { type MouseEvent, useCallback, useContext, useEffect, useState } from 'react'
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
+
+import { ThemeContext } from 'theme_context'
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
 import { makeMediaTag } from './projects/media_with_text'
 
@@ -35,19 +38,23 @@ const CloseButton = ({ dismiss }: { dismiss: () => void }): JSX.Element =>
   </div>
 
 const CarouselOverlay = ({ dismiss, media, index }: { dismiss: () => void, media: string[], index: number }): JSX.Element => {
+  const { darkMode } = useContext(ThemeContext)
+  const { background } = useDarkModeStyle(darkMode)
   const [currentIndex, setCurrentIndex] = useState(index)
-  const navigateLeft = useCallback((): void => {
+  const navigateLeft = useCallback((event: MouseEvent | KeyboardEvent): void => {
+    event.stopPropagation()
     setCurrentIndex(oldIndex => modulus({ mediaLength: media.length, index: oldIndex - 1 }))
   }, [media.length])
-  const navigateRight = useCallback((): void => {
+  const navigateRight = useCallback((event: MouseEvent | KeyboardEvent): void => {
+    event.stopPropagation()
     setCurrentIndex(oldIndex => modulus({ mediaLength: media.length, index: oldIndex + 1 }))
   }, [media.length])
   const showLeftArrow = currentIndex > 0
   const showRightArrow = currentIndex < media.length - 1
   useEffect(() => {
     const keyPressListener = (event: KeyboardEvent): void => {
-      if (event.key === 'ArrowLeft' && showLeftArrow) navigateLeft()
-      if (event.key === 'ArrowRight' && showRightArrow) navigateRight()
+      if (event.key === 'ArrowLeft' && showLeftArrow) navigateLeft(event)
+      if (event.key === 'ArrowRight' && showRightArrow) navigateRight(event)
       if ([' ', 'Enter', 'Escape'].includes(event.key)) dismiss()
     }
     window.addEventListener('keydown', keyPressListener)
@@ -71,13 +78,25 @@ const CarouselOverlay = ({ dismiss, media, index }: { dismiss: () => void, media
     </div>
   )
   return (
-    <div style={style}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div style={style} onClick={dismiss} tabIndex={0} role='tab'>
       <div style={{ height: '90vh', width: '90vw', display: 'flex', placeItems: 'center', placeContent: 'center' }}>
-        <div style={{ position: 'relative', width: '100%', maxWidth: '100%' }}>
+        <div
+          style={{ position: 'relative', width: '100%', maxWidth: '100%', background }}
+          // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
+          onClick={(event: MouseEvent) => { event.stopPropagation() } }
+        >
           <CloseButton dismiss={dismiss} />
-          {makeMediaTag({ media: media[currentIndex], style: { maxHeight: '90vh', maxWidth: '90vw', height: '100%', width: '100%' } })}
-          {media.length > 1 && navigationArrows}
+          {makeMediaTag({
+            media: media[currentIndex],
+            style: {
+              maxHeight: '90vh',
+              maxWidth: '90vw',
+              height: '100%'
+            }
+          })}
         </div>
+        {media.length > 1 && navigationArrows}
       </div>
     </div>
   )

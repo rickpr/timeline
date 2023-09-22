@@ -13,7 +13,7 @@ const styles = {
   alignItems: 'center',
   gap: '10px',
   position: 'relative' as const,
-  zIndex: 4,
+  zIndex: 3,
   flexWrap: 'wrap' as const
 }
 

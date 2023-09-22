@@ -15,7 +15,7 @@ const AboutPage = (): JSX.Element => {
   const { background, text } = useDarkModeStyle(darkMode)
   const [pickedSegment, setPickedSegment] = useState('About')
   const containerStyle = {
-    transition: 'background-color 0.5s ease',
+    transition: 'background-color 0.5s ease-in-out',
     background,
     color: text,
     padding: '1dvh 7.5dvw',

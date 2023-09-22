@@ -16,8 +16,10 @@ const InformationArchitecture = 'images/airbrush_art_studio/information_architec
 const Tools = 'images/airbrush_art_studio/tools.webp'
 const Mockups = 'images/airbrush_art_studio/mockups.webp'
 const ServicePage = 'images/airbrush_art_studio/service_page.webp'
+const ServiceComponents = 'images/airbrush_art_studio/service_components.webp'
 const Responsively = 'images/airbrush_art_studio/responsively.webp'
 const Splash = 'images/airbrush_art_studio/splash.webp'
+const ResponsiveComponents = 'images/airbrush_art_studio/responsive_components.webp'
 const Publish = 'images/airbrush_art_studio/publish.webp'
 
 const containerStyle = {
@@ -41,8 +43,10 @@ const allImages = [
   Tools,
   Mockups,
   ServicePage,
+  ServiceComponents,
   Responsively,
   Splash,
+  ResponsiveComponents,
   Publish
 ]
 

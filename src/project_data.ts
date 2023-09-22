@@ -18,7 +18,7 @@ export interface Project {
 
 export const Projects: Record<string, Project> = {
   AirbrushArtStudio: {
-    name: 'Airbrush Art Studio',
+    name: 'Airbrush Art',
     description: 'A unique digital portfolio showcasing the remarkable talents of Armando Diaz, a distinguished artist hailing from New Mexico.',
     projectPage: '/projects/airbrush_art_studio',
     coverPhoto: AirbrushArtStudioPhoto,

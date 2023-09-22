@@ -15,13 +15,13 @@ const barStyle = {
   background: 'none',
   padding: 0,
   pointerEvents: 'auto' as const,
-  transition: 'all 0.5s ease',
+  transition: 'all 0.5s ease-in-out',
   cursor: 'pointer'
 }
 const projectStyle = {
   display: 'flex',
   gap: '1dvw',
-  transition: 'all 0.5s ease',
+  transition: 'all 0.5s ease-in-out',
   pointerEvents: 'auto' as const,
   cursor: 'pointer'
 }

@@ -7,7 +7,7 @@ import { glassStyles } from './styles'
 
 const styles = {
   ...glassStyles,
-  transition: 'all 0.5s ease',
+  transition: 'all 0.5s ease-in-out',
   borderRadius: '500px',
   width: '40px',
   height: '40px',

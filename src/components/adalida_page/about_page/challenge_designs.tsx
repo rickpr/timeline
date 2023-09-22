@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import Box from './box'
+
 import CarouselOverlay from '../carousel_overlay'
 import Card from '../projects/card'
 import SmallProject from './small_project'
@@ -57,6 +59,7 @@ const ChallengeDesigns = (): React.ReactElement => {
           </div>
         )}
       </div>
+
       {showCarousel && <CarouselOverlay dismiss={dismiss} media={allMedia} index={mediaIndex} />}
     </Card>
   )

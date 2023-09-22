@@ -23,7 +23,7 @@ const Header = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element => {
     <div style={{
       position: 'sticky',
       top: 0,
-      transition: 'all 0.5s',
+      transition: 'all 0.5s ease-in-out',
       zIndex: 1,
       background,
       color,

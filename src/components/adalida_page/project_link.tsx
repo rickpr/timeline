@@ -13,7 +13,7 @@ const labelStyles = {
   display: 'flex',
   flexDirection: 'column' as const,
   width: '100%',
-  transition: 'all 0.5s ease',
+  transition: 'all 0.5s ease-in-out',
   justifyContent: 'flex-start',
   gap: '1em'
 }

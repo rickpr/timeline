@@ -10,7 +10,7 @@ const Project = ({ children }: { children: React.ReactNode }): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
   const { background, text } = useDarkModeStyle(darkMode)
   const style = {
-    transition: 'background-color 0.5s ease',
+    transition: 'background-color 0.5s ease-in-out',
     background,
     color: text
   }

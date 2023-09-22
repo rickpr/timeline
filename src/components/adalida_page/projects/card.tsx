@@ -9,6 +9,7 @@ const Card = ({ children }: { children: React.ReactNode }): JSX.Element => {
   const { background, text } = useDarkModeStyle(darkMode)
   useAnimateOnScroll()
   const containerStyle = {
+    transition: 'all 0.5s ease-in-out',
     minWidth: '95%',
     margin: '4vh 2.5vw',
     minHeight: '92vh',
