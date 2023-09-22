@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 
-import CarouselOverlay from '../../carousel_overlay'
+import CarouselOverlay, { carouselMediaTag } from '../../carousel_overlay'
 import Project from '../project'
 import ImageCard from '../../image_card'
 import About from './about'
@@ -50,6 +50,8 @@ const allImages = [
   Publish
 ]
 
+const carouselMedia = allImages.map(carouselMediaTag)
+
 const AirbrushArtStudio = (): JSX.Element => {
   useAnimateOnScroll()
   const [showCarousel, setShowCarousel] = useState(false)
@@ -79,7 +81,7 @@ const AirbrushArtStudio = (): JSX.Element => {
     <Project>
       <About />
       {images}
-      {showCarousel && <CarouselOverlay dismiss={dismiss} media={allImages} index={mediaIndex} />}
+      {showCarousel && <CarouselOverlay dismiss={dismiss} media={carouselMedia} index={mediaIndex} />}
     </Project>
   )
 }

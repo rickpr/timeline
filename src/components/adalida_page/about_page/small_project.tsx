@@ -5,7 +5,7 @@ import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
 import ImageCard from '../image_card'
 
-const style = {
+export const style = {
   transition: 'all 0.5s ease-in-out',
   cursor: 'pointer',
   display: 'flex',

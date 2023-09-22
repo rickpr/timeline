@@ -27,17 +27,25 @@ const buttonStyles = {
   border: 0
 }
 
+const mediaStyles = {
+  maxHeight: '90vh',
+  maxWidth: '90vw',
+  height: '100%'
+}
+
 const modulus = ({ mediaLength, index }: { mediaLength: number, index: number }): number => (
   // Javascript's % operator doesn't wrap around to negative numbers
   ((index % mediaLength) + mediaLength) % mediaLength
 )
+
+export const carouselMediaTag = (media: string): JSX.Element => makeMediaTag({ media, style: mediaStyles })
 
 const CloseButton = ({ dismiss }: { dismiss: () => void }): JSX.Element =>
   <div style={{ position: 'absolute', top: 0, right: 0, zIndex: 5, background: '#000000' }}>
     <button style={buttonStyles} onClick={dismiss} >&#x2715;</button>
   </div>
 
-const CarouselOverlay = ({ dismiss, media, index }: { dismiss: () => void, media: string[], index: number }): JSX.Element => {
+const CarouselOverlay = ({ dismiss, media, index }: { dismiss: () => void, media: JSX.Element[], index: number }): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
   const { background } = useDarkModeStyle(darkMode)
   const [currentIndex, setCurrentIndex] = useState(index)
@@ -77,29 +85,23 @@ const CarouselOverlay = ({ dismiss, media, index }: { dismiss: () => void, media
       </button>
     </div>
   )
+  /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
+  // We have global key listeners, and stopping propagation is not an interaction.
   return (
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <div style={style} onClick={dismiss} tabIndex={0} role='tab'>
       <div style={{ height: '90vh', width: '90vw', display: 'flex', placeItems: 'center', placeContent: 'center' }}>
         <div
           style={{ position: 'relative', width: '100%', maxWidth: '100%', background }}
-          // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
           onClick={(event: MouseEvent) => { event.stopPropagation() } }
         >
           <CloseButton dismiss={dismiss} />
-          {makeMediaTag({
-            media: media[currentIndex],
-            style: {
-              maxHeight: '90vh',
-              maxWidth: '90vw',
-              height: '100%'
-            }
-          })}
+          {media[currentIndex]}
         </div>
         {media.length > 1 && navigationArrows}
       </div>
     </div>
   )
+  /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
 }
 
 export default CarouselOverlay

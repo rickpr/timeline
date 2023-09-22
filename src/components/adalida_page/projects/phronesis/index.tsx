@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 
-import CarouselOverlay from '../../carousel_overlay'
+import CarouselOverlay, { carouselMediaTag } from '../../carousel_overlay'
 import Project from '../project'
 import ImageCard from '../../image_card'
 import About from './about'
@@ -30,14 +30,14 @@ const containerStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
   alignItems: 'center',
-  borderRadius: '2dvh',
   justifyContent: 'space-around'
 }
 
 const cardStyle = {
   cursor: 'pointer',
   minHeight: '325px',
-  padding: '20px'
+  borderRadius: '2dvmax',
+  overflow: 'hidden'
 }
 
 const allImages = [
@@ -49,6 +49,8 @@ const allImages = [
   [PhotosOne, ComponentsDarkAndLight],
   [PhotosTwo, FinalImage]
 ]
+
+const carouselMedia = allImages.flat().map(carouselMediaTag)
 
 const Phronesis = (): JSX.Element => {
   useAnimateOnScroll()
@@ -68,6 +70,7 @@ const Phronesis = (): JSX.Element => {
         return (
           <div
             key={image}
+            style={{ padding: '20px' }}
             tabIndex={0}
             data-aos='fade-up'
             role='tab'
@@ -85,7 +88,7 @@ const Phronesis = (): JSX.Element => {
     <Project>
       <About />
       {images}
-      {showCarousel && <CarouselOverlay dismiss={dismiss} media={allImages.flat()} index={mediaIndex} />}
+      {showCarousel && <CarouselOverlay dismiss={dismiss} media={carouselMedia} index={mediaIndex} />}
     </Project>
   )
 }
