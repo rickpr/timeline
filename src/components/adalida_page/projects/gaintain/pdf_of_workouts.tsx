@@ -1,6 +1,5 @@
 import React from 'react'
 
-import CaptionedFigure from 'components/captioned_figure'
 import Card from '../card'
 import { makeMediaTag } from '../media_with_text'
 

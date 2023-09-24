@@ -12,7 +12,7 @@ const coverStyles = {
   display: 'flex',
   maxHeight: `calc(100dvh - ${headerPixels}px)`,
   flexDirection: 'column' as const,
-  transition: 'background-color 0.5s',
+  transition: 'background-color 0.5s ease-in-out',
   overflowY: 'auto' as const,
   overflowX: 'hidden' as const,
   scrollSnapType: 'y mandatory',

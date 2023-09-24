@@ -58,7 +58,7 @@ const MediaWithText = ({ media, text, reversed = false, style = {} }: Props): JS
       display: 'flex',
       flexWrap,
       placeContent: 'center',
-      margin: '0 auto',
+      margin: '0 auto'
     }}>
       {reversed ? [textTag, imageTag] : [imageTag, textTag]}
     </div>

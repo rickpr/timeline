@@ -1,10 +1,10 @@
 import type { CSSProperties } from 'react'
 
 import AirbrushArtStudioPhoto from 'images/airbrush_art_studio/cover.png'
-import PhronesisPhoto from 'images/phronesis/cover.png'
+import PhronesisPhoto from 'images/phronesis/cover.webp'
 import PhronesisHeroPhoto from 'images/phronesis/title.jpg'
 import GainTainPhoto from 'images/gaintain/cover.png'
-import ZenoPhoto from 'images/zeno/cover.png'
+import TLDRPhoto from 'images/tldr/cover.png'
 
 export interface Project {
   name: string
@@ -17,6 +17,21 @@ export interface Project {
 }
 
 export const Projects: Record<string, Project> = {
+  TLDR: {
+    name: 'TL;DR',
+    description: 'Tired of not understanding what you “agree” to when signing up for software? We are too, which is why we created a generative AI legalese summarizer',
+    projectPage: '/projects/tldr',
+    coverPhoto: TLDRPhoto,
+    heroPhoto: TLDRPhoto,
+    roles: [
+      'Product Design',
+      'SaaS',
+      'B2C',
+      '1 day Hackathon'
+    ],
+    background: '#59145F'
+  },
+
   AirbrushArtStudio: {
     name: 'Airbrush Art',
     description: 'A unique digital portfolio showcasing the remarkable talents of Armando Diaz, a distinguished artist hailing from New Mexico.',
@@ -58,21 +73,7 @@ export const Projects: Record<string, Project> = {
       'SaaS'
     ],
     background: 'linear-gradient(#FF512F, #DD2476)'
-  },
-
-  Zeno: {
-    name: 'Zeno',
-    description: 'Fashion E-commerce Design',
-    projectPage: '/projects/zeno',
-    coverPhoto: ZenoPhoto,
-    roles: [
-      'User Interface Design',
-      'Prototyping',
-      'E-commerce'
-    ],
-    background: '#ED6112'
   }
-
 }
 
 export default Projects
