@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import Favicon from 'images/favicon.png'
+import Logo from '../../logo'
 import { ThemeContext, Projects } from 'theme_context'
 
 import RecentProject from './recent_project'
@@ -36,12 +36,6 @@ const introTextStyles = {
   flexDirection: 'column' as const
 }
 
-const logoStyles = {
-  width: '100px',
-  height: '100px',
-  borderRadius: '50%'
-}
-
 const Footer = (): JSX.Element => {
   const { name } = useContext(ThemeContext)
   const currentProjectIndex = projectNames.findIndex(key => Projects[key].name === name)
@@ -53,7 +47,7 @@ const Footer = (): JSX.Element => {
       <div className='footer-about-me'>
         <div className='footer-intro-and-contact-button'>
           <div style={introStyles}>
-            <img alt='Adalida Logo' src={Favicon} style={logoStyles} />
+            <Logo />
             <div style={introTextStyles}>
               <strong>Adalida Baca</strong>
               <em>Product Designer</em>

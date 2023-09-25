@@ -27,7 +27,7 @@ const iconContainerStyles = {
   width: '100%',
   display: 'flex',
   padding: '10px',
-  minWidth: '300px',
+  minWidth: '310px',
   maxWidth: '1000px',
   margin: '0 auto',
   justifyContent: 'space-between',
@@ -42,7 +42,7 @@ const ContactInformation = (): React.ReactElement => {
 
   const isMobile = useIsMobile() === true
 
-  const strings = [`Based in ${isMobile ? 'SF' : 'San\xa0Francisco'},\xa0CA`]
+  const strings = [`Based\xa0in\xa0${isMobile ? 'SF' : 'San\xa0Francisco'},\xa0CA`]
   const typewriter = (
     <Typewriter
       options={{
