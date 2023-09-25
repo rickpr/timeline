@@ -30,9 +30,9 @@ const SocialFooter = (): JSX.Element => {
       </div>
       <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
         Share this on
-        <BrandIcon href={`https://facebook.com/sharer.php?u=${currentPage}`} icon={<IconBrandFacebook />} />
-        <BrandIcon href={`https://twitter.com/share?url=${currentPage}`} icon={<IconBrandTwitter />} />
-        <BrandIcon href={`https://www.linkedin.com/shareArticle?url=${currentPage}`} icon={<IconBrandLinkedin />} />
+        <BrandIcon href={`https://facebook.com/sharer.php?u=${currentPage}`} Icon={IconBrandFacebook} />
+        <BrandIcon href={`https://twitter.com/share?url=${currentPage}`} Icon={IconBrandTwitter} />
+        <BrandIcon href={`https://www.linkedin.com/shareArticle?url=${currentPage}`} Icon={IconBrandLinkedin} />
       </div>
     </div>
   )

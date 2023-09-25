@@ -26,8 +26,9 @@ const About = (): JSX.Element => {
         offers a comprehensive look into the design process, user research, and the transformative impact of TL;DR in
         bridging the gap between legal jargon and user comprehension.
       </p>
-      <p><strong>Role Details</strong></p>
-      <div>Product Design</div>
+      <p><strong>Team</strong></p>
+      <div>One Product Designer</div>
+      <div>One Software Engineer</div>
       <p>
         <a
           href='https://www.figma.com/proto/IdXeFw3mk3ISLgPNwKNy0O/TL%3BDR-%7C-Generative-AI-Hackathon?page-id=20%3A625&type=design&node-id=21-6713&viewport=30%2C-88%2C0.08&t=7CnvT6l8xkXgxrFy-1&scaling=scale-down&starting-point-node-id=21%3A6713&show-proto-sidebar=1&mode=design'

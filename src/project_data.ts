@@ -24,10 +24,9 @@ export const Projects: Record<string, Project> = {
     coverPhoto: TLDRPhoto,
     heroPhoto: TLDRPhoto,
     roles: [
+      '1 day Hackathon',
       'Product Design',
-      'SaaS',
-      'B2C',
-      '1 day Hackathon'
+      'Prototyping'
     ],
     background: '#59145F'
   },
@@ -67,8 +66,7 @@ export const Projects: Record<string, Project> = {
     projectPage: '/projects/gaintain',
     coverPhoto: GainTainPhoto,
     roles: [
-      'Product Design',
-      'Visual Identity',
+      'User Interaction Design',
       'UX Design',
       'SaaS'
     ],

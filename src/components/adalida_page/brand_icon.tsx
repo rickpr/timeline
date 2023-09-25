@@ -1,3 +1,4 @@
+import type { TablerIconsProps } from '@tabler/icons-react'
 import React, { useContext } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
@@ -16,7 +17,7 @@ const styles = {
   placeItems: 'center'
 }
 
-const BrandIcon = ({ href, icon }: { href: string, icon: React.ReactNode }): React.ReactElement => {
+const BrandIcon = ({ href, Icon }: { href: string, Icon: (props: TablerIconsProps) => JSX.Element }): React.ReactElement => {
   const { darkMode } = useContext(ThemeContext)
   const { text: color } = useDarkModeStyle(darkMode)
   return (
@@ -27,7 +28,7 @@ const BrandIcon = ({ href, icon }: { href: string, icon: React.ReactNode }): Rea
       className='brand-icon'
       style={{ color, ...styles }}
     >
-      {icon}
+      <Icon />
     </a>
   )
 }
