@@ -11,11 +11,12 @@ const switchGridStyle = {
   gridAutoColumns: 'minmax(0, 1fr)',
   placeItems: 'center',
   placeContent: 'center',
-  gap: '12px',
-  padding: '6px',
+  gap: '18px',
+  padding: '6px 9px',
   minHeight: '100%',
   pointerEvents: 'auto' as const,
-  cursor: 'pointer' as const
+  cursor: 'pointer' as const,
+  fontFamily: 'Inconsolata'
 }
 
 const switchTextStyle = {
@@ -50,7 +51,7 @@ const AboutPageSwitch = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element =>
   return (
     <div style={containerStyle}>
       <button style={switchGridStyle} onClick={() => { toggleAboutPage(setIsAboutPage) }}>
-        <span style={switchTextStyle}>WORK</span>
+        <span style={switchTextStyle}>DESIGNS</span>
         <span style={switchTextStyle}>ABOUT</span>
         <div style={{
           ...glassStyles,

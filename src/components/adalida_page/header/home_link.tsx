@@ -16,7 +16,6 @@ const logoStyle = {
 }
 
 const nameStyle = {
-  fontFamily: 'Inter',
   fontSize: '15px'
 }
 

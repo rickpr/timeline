@@ -1,13 +1,8 @@
-import React, { useContext, useState } from 'react'
-
-import { ThemeContext } from 'theme_context'
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import React, { useState } from 'react'
 
 import CarouselOverlay, { carouselMediaTag } from '../carousel_overlay'
 import Card from '../projects/card'
-import SmallProject, { style } from './small_project'
-
-import BoxDesign from './box_design'
+import SmallProject from './small_project'
 
 import checkmark from 'videos/about/checkmark.mp4'
 import screenRecording from 'videos/about/screen_recording.mp4'
@@ -41,8 +36,6 @@ const allMedia = [
 const carouselMedia = allMedia.map(carouselMediaTag)
 
 const ChallengeDesigns = (): React.ReactElement => {
-  const { darkMode } = useContext(ThemeContext)
-  const { background } = useDarkModeStyle(!darkMode)
   const [showCarousel, setShowCarousel] = useState(false)
   const [mediaIndex, setMediaIndex] = useState(0)
   const dismiss = (): void => { setShowCarousel(false) }
@@ -65,7 +58,6 @@ const ChallengeDesigns = (): React.ReactElement => {
             <SmallProject media={media} />
           </div>
         )}
-        <div style={{ ...style, background }}><BoxDesign /></div>
       </div>
 
       {showCarousel && <CarouselOverlay dismiss={dismiss} media={carouselMedia} index={mediaIndex} />}

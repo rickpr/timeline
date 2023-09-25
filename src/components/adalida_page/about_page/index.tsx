@@ -3,7 +3,6 @@ import React, { useContext } from 'react'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 
-import About from './about'
 import ContactInformation from './contact_information'
 import ChallengeDesigns from './challenge_designs'
 
@@ -26,7 +25,6 @@ const AboutPage = (): JSX.Element => {
     <div style={containerStyle}>
       <ContactInformation />
       <ChallengeDesigns />
-      <About />
     </div>
   )
 }

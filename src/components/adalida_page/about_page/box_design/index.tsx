@@ -34,10 +34,11 @@ const BoxDesign = (): JSX.Element => {
   return (
     <Canvas shadows>
       <ambientLight intensity={1} />
-      <PerspectiveCamera makeDefault position={[0, 0, SCALE * 4]} />
+      <PerspectiveCamera makeDefault position={[0, 0, SCALE * 3.25]} />
       <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
       <Box position={[0, 0, 0]} />
       <OrbitControls
+        autoRotate
         ref={controlsRef}
         enablePan={false}
         enableZoom={false}

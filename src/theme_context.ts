@@ -2,13 +2,13 @@ import React from 'react'
 
 import Projects, { type Project } from './project_data'
 
-import AdalidaFace from 'images/adalida_face.jpg'
+import Favicon from 'images/favicon.png'
 
 export const AboutTheme: Project = {
   name: 'About Adalida',
   description: '',
-  coverPhoto: AdalidaFace,
-  heroPhoto: AdalidaFace,
+  coverPhoto: Favicon,
+  heroPhoto: Favicon,
   projectPage: '/about',
   roles: [],
   background: '#FE347E'

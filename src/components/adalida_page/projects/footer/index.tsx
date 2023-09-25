@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import AdalidaFace from 'images/adalida_face.jpg'
+import Favicon from 'images/favicon.png'
 import { ThemeContext, Projects } from 'theme_context'
 
 import RecentProject from './recent_project'
@@ -24,6 +24,24 @@ const recentProjectsStyle = {
   flexWrap: 'wrap' as const
 }
 
+const introStyles = {
+  display: 'flex',
+  gap: '5px',
+  alignItems: 'center',
+  justifyContent: 'center'
+}
+
+const introTextStyles = {
+  display: 'flex',
+  flexDirection: 'column' as const
+}
+
+const logoStyles = {
+  width: '100px',
+  height: '100px',
+  borderRadius: '50%'
+}
+
 const Footer = (): JSX.Element => {
   const { name } = useContext(ThemeContext)
   const currentProjectIndex = projectNames.findIndex(key => Projects[key].name === name)
@@ -34,11 +52,11 @@ const Footer = (): JSX.Element => {
     <div className='more-work'>
       <div className='footer-about-me'>
         <div className='footer-intro-and-contact-button'>
-          <div className='footer-intro'>
-            <img alt="Adalida Portrait" src={AdalidaFace} className='footer-portrait' />
-            <div className='footer-intro-text'>
+          <div style={introStyles}>
+            <img alt='Adalida Logo' src={Favicon} style={logoStyles} />
+            <div style={introTextStyles}>
               <strong>Adalida Baca</strong>
-              <em>Digital Product Designer</em>
+              <em>Product Designer</em>
             </div>
           </div>
           <div className='footer-contact-button-container'>

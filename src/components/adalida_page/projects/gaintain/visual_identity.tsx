@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import ScalableText from 'components/scalable_text'
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
+import { ThemeContext } from 'theme_context'
 
 import Card from '../card'
-import ScalableText from 'components/scalable_text'
-
-import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 
 const VisualIdentity = (): JSX.Element => {
+  const { darkMode } = useContext(ThemeContext)
+  const { text: color } = useDarkModeStyle(darkMode)
   const fontFamily = 'Avenir Next'
-  const centerStyles = {
-    placeItems: 'center center'
-  }
+  const centerStyles = { placeItems: 'center center' }
 
   const fullWidth = { width: '100%', height: '100%', display: 'flex', placeItems: 'center', placeContent: 'center' }
   const glassMorphism = {
@@ -73,11 +75,11 @@ const VisualIdentity = (): JSX.Element => {
         flexDirection: 'row',
         alignItems: 'flex-end'
       }}>
-        <ScalableText text='A' color='#000000' customStyles={{ fontFamily }} viewBoxWidthMultiplier={viewBoxWidthMultiplier} />
+        <ScalableText text='A' color={color as string} customStyles={{ fontFamily }} viewBoxWidthMultiplier={viewBoxWidthMultiplier} />
         <ScalableText
           text='b'
           color='none'
-          customStyles={{ fontFamily, stroke: '#000000', strokeWidth: '0.1px' }}
+          customStyles={{ fontFamily, stroke: color, strokeWidth: '0.1px' }}
           viewBoxWidthMultiplier={viewBoxWidthMultiplier}
         />
       </div>

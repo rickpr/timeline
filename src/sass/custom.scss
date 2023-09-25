@@ -9,13 +9,10 @@ $theme-colors: (
 
 @import './adalida_page';
 @import './header';
-@import './scalable_text';
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway');
 
 @font-face {
   font-family: 'Inconsolata';
-  src: local('Inconsolata'), url(../fonts/Inconsolata.otf);
+  src: local('Inconsolata'), url(../fonts/Inconsolata-VariableFont_wdth,wght.ttf);
 }
 
 @font-face {
@@ -33,47 +30,12 @@ $theme-colors: (
   font-weight: bold;
 }
 
-@font-face {
-  font-family: 'Bodoni';
-  src: local('Bodoni'), url(../fonts/Bodoni.ttf);
-}
-
-@font-face {
-  font-family: 'Futura';
-  src: local('Futura'), url(../fonts/Futura.ttf);
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: local('Inter'), url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
-}
-
-@font-face {
-  font-family: 'EB Garamond';
-  src: local('EB Garamond'), url(../fonts/EBGaramond-VariableFont_wght.ttf);
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: local('Raleway'), url(../fonts/Raleway-VariableFont_wght.ttf);
-}
-
-@font-face {
-  font-family: 'Work Sans';
-  src: local('Work Sans'), url(../fonts/WorkSans-VariableFont_wght.ttf);
-}
-@font-face {
-  font-family: 'Work Sans';
-  src: local('Work Sans'), url(../fonts/WorkSans-Italic-VariableFont_wght.ttf);
-  font-style: italic;
-}
-
 html {
   overscroll-behavior: none;
 }
 
 body {
-  font-family: 'Work Sans', 'Inter', 'EB Garamond', sans;
+  font-family: 'Inconsolata', monospace;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;

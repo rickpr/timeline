@@ -20,7 +20,6 @@ const labelStyles = {
 const titleStyles = {
   fontSize: '2rem',
   lineHeight: 1,
-  fontFamily: 'Avenir Next',
   padding: 0,
   margin: 0
 }
@@ -45,7 +44,6 @@ const roleStyles = {
 const linkStyles = {
   fontSize: '1.2em',
   lineHeight: 1,
-  fontFamily: 'Avenir Next',
   fontWeight: 'bold'
 }
 

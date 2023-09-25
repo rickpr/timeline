@@ -35,7 +35,7 @@ const containerStyle = {
 
 const cardStyle = {
   cursor: 'pointer',
-  minHeight: '325px',
+  minHeight: '300px',
   borderRadius: '2dvmax',
   overflow: 'hidden'
 }
