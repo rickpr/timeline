@@ -9,4 +9,5 @@ const About = (): JSX.Element => {
   return <AdalidaPage aboutPage={true} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 }
 
+export const Head = (): JSX.Element => <title>About</title>
 export default About
