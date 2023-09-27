@@ -32,10 +32,10 @@ const NotesAndPaper = (): JSX.Element => {
         overflow: 'hidden',
         placeItems: 'center center'
       }}>
-        {text}
         <div style={{ maxWidth: '331px' }}>
           {makeMediaTag({ media: IncrementVideo, style: { borderRadius: '60px' } })}
         </div>
+        {text}
       </div>
     </Card>
   )

@@ -3,8 +3,7 @@ import React from 'react'
 import type { Project } from 'project_data'
 import { ThemeContext } from 'theme_context'
 
-import Header from '../header'
-import ScrollProgress from './scroll_progress'
+import Header from './header'
 
 interface Props {
   children: React.ReactNode
@@ -19,7 +18,6 @@ const Layout = (
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...project }}>
       <Header />
-      <ScrollProgress />
       {children}
     </ThemeContext.Provider>
   )

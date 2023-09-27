@@ -5,7 +5,7 @@ import { Projects } from 'theme_context'
 import useDarkMode from 'hooks/use_dark_mode'
 
 import TLDR from 'components/adalida_page/projects/tldr'
-import Layout from 'components/adalida_page/projects/layout'
+import Layout from 'components/adalida_page/layout'
 
 const TLDRPage = (): JSX.Element => {
   const [darkMode, toggleDarkMode] = useDarkMode()

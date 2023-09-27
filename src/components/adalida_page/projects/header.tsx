@@ -5,6 +5,23 @@ import { ThemeContext } from 'theme_context'
 
 import 'sass/adalida_page/project.scss'
 
+const textAndImageStyle = {
+  display: 'flex',
+  flexDirection: 'column' as const,
+  justifyContent: 'flex-start',
+  fontSize: '3rem',
+  fontWeight: 'bold',
+  width: '85%'
+}
+
+const imageStyle = {
+  width: '100%',
+  height: 'auto',
+  objectFit: 'contain' as const,
+  borderRadius: '20px',
+  transition: 'transform 1s ease-in-out'
+}
+
 const Header = (): JSX.Element => {
   const { darkMode, name, heroPhoto } = useContext(ThemeContext)
   const { text: color } = useDarkModeStyle(darkMode)
@@ -18,24 +35,8 @@ const Header = (): JSX.Element => {
     color
   }
 
-  const textAndImageStyle = {
-    display: 'flex',
-    flexDirection: 'column' as const,
-    justifyContent: 'flex-start',
-    fontSize: '3rem',
-    fontWeight: 'bold',
-    width: '85%'
-  }
-
-  const imageStyle = {
-    width: '100%',
-    height: 'auto',
-    objectFit: 'contain' as const,
-    borderRadius: '20px'
-  }
-
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} data-aos='slide-up'>
       <div style={textAndImageStyle}>
         <div>{name}</div>
         {heroPhoto !== undefined && <img src={heroPhoto} alt={name} style={imageStyle} />}

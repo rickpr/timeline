@@ -68,7 +68,7 @@ const ContactInformation = (): React.ReactElement => {
         </a>
         <div style={{ height: '45dvh' }}><BoxDesign /></div>
       </div>
-      <Card fullHeight={false}>
+      <Card>
         <div style={iconContainerStyles}>
           <span style={{ marginLeft: '16px' }}>{typewriter}</span>
           <div style={{ display: 'flex', gap: '10px', marginLeft: '10px' }}>

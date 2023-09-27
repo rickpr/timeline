@@ -9,4 +9,5 @@ const Root = (): JSX.Element => {
   return <AdalidaPage darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 }
 
+export const Head = (): JSX.Element => <title>Adalida&apos;s Designs</title>
 export default Root

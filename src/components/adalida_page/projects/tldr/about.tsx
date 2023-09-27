@@ -31,15 +31,6 @@ const About = (): JSX.Element => {
       <div>One Software Engineer</div>
       <p>
         <a
-          href='https://www.figma.com/proto/IdXeFw3mk3ISLgPNwKNy0O/TL%3BDR-%7C-Generative-AI-Hackathon?page-id=20%3A625&type=design&node-id=21-6713&viewport=30%2C-88%2C0.08&t=7CnvT6l8xkXgxrFy-1&scaling=scale-down&starting-point-node-id=21%3A6713&show-proto-sidebar=1&mode=design'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <strong>VIEW FIGMA ➜</strong>
-        </a>
-      </p>
-      <p>
-        <a
           href='https://docs.google.com/presentation/d/1qXeKJTsfPWMx_gYd4cbBtRxIbwm7jJqWRpy747TrlWM/edit?usp=sharing'
           target='_blank'
           rel='noreferrer'

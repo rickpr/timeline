@@ -8,7 +8,6 @@ import AboutPage from './about_page'
 import Desktop from './desktop'
 import Header from './header'
 import Mobile from './mobile'
-import ScrollProgress from './projects/scroll_progress'
 
 import 'sass/adalida_page/index.scss'
 
@@ -40,7 +39,6 @@ const AdalidaPage = ({ aboutPage = false, darkMode, toggleDarkMode }: Props): JS
         isAboutPage={isAboutPage}
         setIsAboutPage={setIsAboutPage}
       />
-      {isAboutPage && <ScrollProgress />}
       {content}
     </ThemeContext.Provider>
   )

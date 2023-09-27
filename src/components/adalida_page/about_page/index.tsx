@@ -16,6 +16,7 @@ const AboutPage = (): JSX.Element => {
     background,
     color: text,
     padding: '1dvh 7.5dvw',
+    gap: '2em',
     display: 'flex',
     flexDirection: 'column' as const,
     alignItems: 'center'

@@ -7,8 +7,7 @@ export const makeMediaTag = ({ media, style = {} }: { media: string, style?: CSS
     return <Image path={media} style={style} alt={media} />
   }
   if (media.endsWith('.mp4')) {
-    const videoStyle = { maxWidth: '80vw', ...style }
-    return <video src={media} autoPlay loop muted playsInline width='100%' style={videoStyle} />
+    return <video src={media} autoPlay loop muted playsInline width='100%' style={style} />
   }
   if (media.endsWith('.gif')) {
     // @ts-expect-error We're using type to hack the behavior - double check if this is needed

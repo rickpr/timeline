@@ -4,7 +4,7 @@ import 'sass/custom.scss'
 import { Projects } from 'theme_context'
 import useDarkMode from 'hooks/use_dark_mode'
 
-import Layout from 'components/adalida_page/projects/layout'
+import Layout from 'components/adalida_page/layout'
 import AirbrushArtStudio from 'components/adalida_page/projects/airbrush_art_studio'
 
 const AirbrushArtStudioPage = (): JSX.Element => {

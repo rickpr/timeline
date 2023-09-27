@@ -17,20 +17,6 @@ export interface Project {
 }
 
 export const Projects: Record<string, Project> = {
-  TLDR: {
-    name: 'TL;DR',
-    description: 'Tired of not understanding what you “agree” to when signing up for software? We are too, which is why we created a generative AI legalese summarizer',
-    projectPage: '/projects/tldr',
-    coverPhoto: TLDRPhoto,
-    heroPhoto: TLDRPhoto,
-    roles: [
-      '1 day Hackathon',
-      'Product Design',
-      'Prototyping'
-    ],
-    background: '#59145F'
-  },
-
   AirbrushArtStudio: {
     name: 'Airbrush Art',
     description: 'A unique digital portfolio showcasing the remarkable talents of Armando Diaz, a distinguished artist hailing from New Mexico.',
@@ -43,6 +29,20 @@ export const Projects: Record<string, Project> = {
       'Copywriting'
     ],
     background: '#CAB8F5'
+  },
+
+  TLDR: {
+    name: 'TL;DR',
+    description: 'Tired of not understanding what you “agree” to when signing up for software? We are too, which is why we created a generative AI legalese summarizer',
+    projectPage: '/projects/tldr',
+    coverPhoto: TLDRPhoto,
+    heroPhoto: TLDRPhoto,
+    roles: [
+      '1 day Hackathon',
+      'Product Design',
+      'Prototyping'
+    ],
+    background: '#59145F'
   },
 
   Phronesis: {
@@ -68,7 +68,8 @@ export const Projects: Record<string, Project> = {
     roles: [
       'User Interaction Design',
       'UX Design',
-      'SaaS'
+      'SaaS',
+      'B2C'
     ],
     background: 'linear-gradient(#FF512F, #DD2476)'
   }
