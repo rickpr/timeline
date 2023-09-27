@@ -19,7 +19,6 @@ const ServicePage = 'images/airbrush_art_studio/service_page.webp'
 const ServiceComponents = 'images/airbrush_art_studio/service_components.webp'
 const Responsively = 'images/airbrush_art_studio/responsively.webp'
 const Splash = 'images/airbrush_art_studio/splash.webp'
-const ResponsiveComponents = 'images/airbrush_art_studio/responsive_components.webp'
 const Publish = 'images/airbrush_art_studio/publish.webp'
 
 const containerStyle = {
@@ -46,7 +45,6 @@ const allImages = [
   ServiceComponents,
   Responsively,
   Splash,
-  ResponsiveComponents,
   Publish
 ]
 

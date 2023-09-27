@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 
-import EmpathizeDataVideo from 'videos/tldr/empathize_data.mp4'
 import PrototypeVideo from 'videos/tldr/prototype.mp4'
 import PrototypePhase5Video from 'videos/tldr/prototype_phase_5.mp4'
 import CarouselOverlay, { carouselMediaTag } from '../../carousel_overlay'
@@ -14,7 +13,6 @@ import EmbeddedVideo, { type EmbeddedVideoProps } from './embedded_video'
 import 'sass/adalida_page/project.scss'
 
 const EmpathizeProblem = 'images/tldr/empathize_problem.webp'
-const EmpathizeData = 'images/tldr/empathize_data.webp'
 const EmpathizeUsers = 'images/tldr/empathize_users.webp'
 const DefineProblem = 'images/tldr/define_problem.webp'
 const ValueProposition = 'images/tldr/value_proposition.webp'
@@ -41,7 +39,6 @@ const cardStyle = {
 
 const allMedia = [
   [EmpathizeProblem],
-  [EmpathizeDataVideo],
   [EmpathizeUsers],
   [DefineProblem],
   [ValueProposition],
@@ -76,20 +73,6 @@ const embeddedVideoProps: Record<string, EmbeddedVideoProps> = {
       videoYOffsetPx: 222
     },
     rounded: true
-  },
-  [EmpathizeDataVideo]: {
-    video: EmpathizeDataVideo,
-    imagePath: EmpathizeData,
-    measurements: {
-      containerWidthPx: 1606,
-      containerHeightPx: 1178,
-      videoWidthPx: 1460,
-      videoHeightPx: 915,
-      videoXOffsetPx: 73,
-      videoYOffsetPx: 142
-    },
-    rounded: true,
-    videoStyle: { background: '#4D1355' }
   }
 }
 
