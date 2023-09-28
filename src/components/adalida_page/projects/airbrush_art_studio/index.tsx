@@ -2,9 +2,14 @@ import React, { useState } from 'react'
 
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 
+import HandoffSmallScreenVideo from 'videos/airbrush_art_studio/handoff_small_screen.mp4'
+import HandoffLargeScreenVideo from 'videos/airbrush_art_studio/handoff_large_screen.mp4'
+import HandoffVideo from 'videos/airbrush_art_studio/handoff.mp4'
+
 import CarouselOverlay, { carouselMediaTag } from '../../carousel_overlay'
-import Project from '../project'
 import ImageCard from '../../image_card'
+import EmbeddedVideo, { type EmbeddedVideoProps } from '../embedded_video'
+import Project from '../project'
 import About from './about'
 
 import 'sass/adalida_page/project.scss'
@@ -20,6 +25,8 @@ const ServiceComponents = 'images/airbrush_art_studio/service_components.webp'
 const Responsively = 'images/airbrush_art_studio/responsively.webp'
 const Splash = 'images/airbrush_art_studio/splash.webp'
 const Publish = 'images/airbrush_art_studio/publish.webp'
+const HandoffScreens = 'images/airbrush_art_studio/handoff_screens.webp'
+const Handoff = 'images/airbrush_art_studio/handoff.webp'
 
 const containerStyle = {
   minWidth: '95%',
@@ -45,8 +52,61 @@ const allImages = [
   ServiceComponents,
   Responsively,
   Splash,
-  Publish
+  Publish,
+  HandoffSmallScreenVideo,
+  HandoffVideo
 ]
+
+const embeddedVideoProps: Record<string, EmbeddedVideoProps> = {
+  [HandoffSmallScreenVideo]: {
+    image: {
+      path: HandoffScreens,
+      widthPx: 1606,
+      heightPx: 1009,
+      alt: 'Handoff Interactions Included'
+    },
+    videos: [
+      {
+        path: HandoffSmallScreenVideo,
+        widthPx: 316,
+        heightPx: 686,
+        xOffsetPx: 187,
+        yOffsetPx: 184,
+        rounded: true
+      },
+      {
+        path: HandoffLargeScreenVideo,
+        widthPx: 696,
+        heightPx: 483,
+        xOffsetPx: 765,
+        yOffsetPx: 315,
+        rounded: true
+      }
+    ]
+  },
+  [HandoffVideo]: {
+    image: {
+      path: Handoff,
+      widthPx: 1606,
+      heightPx: 916,
+      alt: 'Handoff'
+    },
+    videos: [{
+      path: HandoffVideo,
+      widthPx: 630,
+      heightPx: 394,
+      xOffsetPx: 482,
+      yOffsetPx: 240,
+      rounded: true
+    }]
+  }
+}
+
+// TODO: dedupe this method
+const createMediaTag = (media: string): JSX.Element =>
+  media in embeddedVideoProps
+    ? <EmbeddedVideo {...embeddedVideoProps[media]} />
+    : <ImageCard media={media} style={cardStyle} />
 
 const carouselMedia = allImages.map(carouselMediaTag)
 
@@ -71,7 +131,7 @@ const AirbrushArtStudio = (): JSX.Element => {
       data-aos='fade-up'
       onClick={() => { displayCarousel(index) }}
     >
-      <ImageCard media={image} style={cardStyle} />
+      {createMediaTag(image)}
     </div>
   )
 

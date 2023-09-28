@@ -4,7 +4,7 @@ import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 
-const Card = ({ children, fullHeight = true }: { children: React.ReactNode, fullHeight?: boolean }): JSX.Element => {
+const Card = ({ children }: { children: React.ReactNode }): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
   const { background, text } = useDarkModeStyle(darkMode)
   useAnimateOnScroll()
@@ -21,7 +21,7 @@ const Card = ({ children, fullHeight = true }: { children: React.ReactNode, full
     display: 'grid',
     gridTemplateColumns: '1fr',
     maxWidth: '100%',
-    maxHeight: '100%',
+    maxHeight: '100%'
   }
   return (
     <div data-aos='fade-up' style={containerStyle}>

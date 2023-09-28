@@ -7,8 +7,8 @@ import PrototypePhase5Video from 'videos/tldr/prototype_phase_5.mp4'
 import CarouselOverlay, { carouselMediaTag } from '../../carousel_overlay'
 import Project from '../project'
 import ImageCard from '../../image_card'
+import EmbeddedVideo, { type EmbeddedVideoProps } from '../embedded_video'
 import About from './about'
-import EmbeddedVideo, { type EmbeddedVideoProps } from './embedded_video'
 
 import 'sass/adalida_page/project.scss'
 
@@ -28,7 +28,8 @@ const containerStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
   alignItems: 'center',
-  justifyContent: 'space-around'
+  justifyContent: 'space-around',
+  padding: '10px 20px'
 }
 
 const cardStyle = {
@@ -38,45 +39,51 @@ const cardStyle = {
 }
 
 const allMedia = [
-  [EmpathizeProblem],
-  [EmpathizeUsers],
-  [DefineProblem],
-  [ValueProposition],
-  [Ideate],
-  [PrototypeVideo],
-  [PrototypeRoadmap],
-  [PrototypePhase5Video]
+  EmpathizeProblem,
+  EmpathizeUsers,
+  DefineProblem,
+  ValueProposition,
+  Ideate,
+  PrototypeVideo,
+  PrototypeRoadmap,
+  PrototypePhase5Video
 ]
 
 const embeddedVideoProps: Record<string, EmbeddedVideoProps> = {
   [PrototypeVideo]: {
-    video: PrototypeVideo,
-    imagePath: Prototype,
-    measurements: {
-      containerWidthPx: 1606,
-      containerHeightPx: 1190,
-      videoWidthPx: 1008,
-      videoHeightPx: 630,
-      videoXOffsetPx: 409,
-      videoYOffsetPx: 251
-    }
+    image: {
+      path: Prototype,
+      widthPx: 1606,
+      heightPx: 1190,
+      alt: 'Prototype'
+    },
+    videos: [{
+      path: PrototypeVideo,
+      widthPx: 1008,
+      heightPx: 630,
+      xOffsetPx: 409,
+      yOffsetPx: 251
+    }]
   },
   [PrototypePhase5Video]: {
-    video: PrototypePhase5Video,
-    imagePath: PrototypePhase5,
-    measurements: {
-      containerWidthPx: 1606,
-      containerHeightPx: 1190,
-      videoWidthPx: 330,
-      videoHeightPx: 716,
-      videoXOffsetPx: 139,
-      videoYOffsetPx: 222
+    image: {
+      path: PrototypePhase5,
+      widthPx: 1606,
+      heightPx: 1190,
+      alt: 'Prototype Phase 5'
     },
-    rounded: true
+    videos: [{
+      path: PrototypePhase5Video,
+      widthPx: 330,
+      heightPx: 716,
+      xOffsetPx: 139,
+      yOffsetPx: 222,
+      rounded: true
+    }]
   }
 }
 
-const carouselMedia = allMedia.flat().map(carouselMediaTag)
+const carouselMedia = allMedia.map(carouselMediaTag)
 
 const createMediaTag = (media: string): JSX.Element =>
   media in embeddedVideoProps
@@ -93,25 +100,17 @@ const TLDR = (): JSX.Element => {
     setShowCarousel(true)
   }
 
-  let displayMediaIndex = 0
-  const displayMedia = allMedia.map((mediaGroup, index) =>
-    <div key={index} style={containerStyle}>
-      {mediaGroup.map((media: string) => {
-        const currentIndex = displayMediaIndex++
-        return (
-          <div
-            key={media}
-            style={{ padding: '10px 20px' }}
-            tabIndex={0}
-            data-aos='fade-up'
-            role='tab'
-            onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && displayCarousel(currentIndex) }}
-            onClick={() => { displayCarousel(currentIndex) }}
-          >
-            {createMediaTag(media)}
-          </div>
-        )
-      })}
+  const displayMedia = allMedia.map((media, index) =>
+    <div
+      key={index}
+      style={containerStyle}
+      tabIndex={0}
+      data-aos='fade-up'
+      role='tab'
+      onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && displayCarousel(index) }}
+      onClick={() => { displayCarousel(index) }}
+    >
+      {createMediaTag(media)}
     </div>
   )
 
