@@ -20,7 +20,7 @@ interface FloatingVideoProps {
 const FloatingVideo = ({ video, imageWidthPx, imageHeightPx }: FloatingVideoProps): JSX.Element => {
   const videoContainerStyle = {
     position: 'absolute' as const,
-    borderRadius: video.rounded === true ? '2dvh' : 0,
+    borderRadius: video.rounded === true ? '1dvw' : 0,
     overflow: 'hidden',
     left: `calc(100% * calc(${video.xOffsetPx} / ${imageWidthPx}))`,
     top: `calc(100% * calc(${video.yOffsetPx} / ${imageHeightPx}))`,
