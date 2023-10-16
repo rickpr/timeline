@@ -35,6 +35,11 @@ $theme-colors: (
   src: local('Open Sans'), url(../fonts/OpenSans-VariableFont_wdth,wght.ttf);
 }
 
+@font-face {
+  font-family: 'Fire Code';
+  src: local('Fira Code'), url(../fonts/FiraCode-VF.ttf);
+}
+
 html {
   overscroll-behavior: none;
 }
