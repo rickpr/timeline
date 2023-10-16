@@ -79,8 +79,7 @@ const embeddedVideoProps: Record<string, EmbeddedVideoProps> = {
         widthPx: 696,
         heightPx: 483,
         xOffsetPx: 765,
-        yOffsetPx: 315,
-        rounded: true
+        yOffsetPx: 315
       }
     ]
   },

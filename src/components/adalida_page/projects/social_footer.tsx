@@ -9,7 +9,7 @@ const styles = {
   color: 'white',
   display: 'flex',
   padding: '5% 10%',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-end',
   alignItems: 'center',
   gap: '10px',
   position: 'relative' as const,
@@ -25,9 +25,6 @@ const SocialFooter = (): JSX.Element => {
   }, [])
   return (
     <div style={styles}>
-      <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-        Coded by&nbsp;<a href="https://fdisk.co">https://fdisk.co</a>
-      </div>
       <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
         Share this on
         <BrandIcon href={`https://facebook.com/sharer.php?u=${currentPage}`} Icon={IconBrandFacebook} />
