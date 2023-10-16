@@ -19,15 +19,20 @@ $theme-colors: (
   font-family: 'Avenir Next';
   src: local('Avenir Next'), url(../fonts/AvenirNextLTPro-Regular.otf);
 }
+
 @font-face {
-  font-family: 'Avenir Next';
-  src: local('Avenir Next'), url(../fonts/AvenirNextLTPro-It.otf);
-  font-style: italic;
+  font-family: 'Playfair Display';
+  src: local('Playfair Display'), url(../fonts/PlayfairDisplay-VariableFont_wght.ttf);
 }
 @font-face {
-  font-family: 'Avenir Next';
-  src: local('Avenir Next'), url(../fonts/AvenirNextLTPro-Bold.otf);
-  font-weight: bold;
+  font-family: 'Playfair Display Italic';
+  src: local('Playfair Display Italic'), url(../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+  font-weight: italic;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans'), url(../fonts/OpenSans-VariableFont_wdth,wght.ttf);
 }
 
 html {
