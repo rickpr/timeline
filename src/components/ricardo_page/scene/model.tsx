@@ -11,6 +11,7 @@ import { useGLTF, useTexture } from '@react-three/drei'
 import type { GLTF } from 'three-stdlib'
 
 import Wood from 'images/ricardo/scene/wood.jpg'
+import FileQuery from 'queries/file'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -89,7 +90,8 @@ type GLTFResult = GLTF & {
 
 export default function Model (props: JSX.IntrinsicElements['group']): JSX.Element {
   const woodTexture = useTexture(Wood)
-  const { nodes, materials } = useGLTF('/desk_scene.glb') as GLTFResult
+  const deskScene = FileQuery('desk_scene.glb')
+  const { nodes, materials } = useGLTF(deskScene.publicURL) as GLTFResult
   return (
     <group {...props} dispose={null}>
       <group position={[-16.231, 31.498, 20.875]} rotation={[0.03, -Math.PI / 2, 0]} scale={20}>
