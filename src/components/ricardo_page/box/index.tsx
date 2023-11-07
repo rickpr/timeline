@@ -7,7 +7,7 @@ import Me from 'images/ricardo/me.jpg'
 import Glider from 'images/ricardo/glider.jpg'
 import GithubIcon from 'images/ricardo/brand-github.png'
 import LinkedInIcon from 'images/ricardo/brand-linkedin.png'
-import HackerRankIcon from 'images/ricardo/hackerrank.png'
+import Blog from 'images/ricardo/blog.png'
 
 import ClockFace from './clock_face'
 
@@ -19,7 +19,7 @@ const Box = (props: MeshProps): JSX.Element => {
   const gliderTexture = useTexture(Glider)
   const githubTexture = useTexture(GithubIcon)
   const linkedInTexture = useTexture(LinkedInIcon)
-  const hackerRankTexture = useTexture(HackerRankIcon)
+  const blogTexture = useTexture(Blog)
 
   const currentLink = useRef<string | null>(null)
   const mousePositionWhenClicking = useRef<{ x: number, y: number } | null>(null)
@@ -65,10 +65,10 @@ const Box = (props: MeshProps): JSX.Element => {
       {...props}
       position={[SCALE, 0, 0]}
       rotation={[0, Math.PI / 2, 0]}
-      onPointerDown={openLink('https://www.hackerrank.com/profile/fdisk87')}
+      onPointerDown={openLink('https://fdisk.co/ricardo/scene')}
     >
       <planeGeometry args={[sideSize, sideSize]} />
-      <meshStandardMaterial map={hackerRankTexture} side={THREE.DoubleSide} roughness={0} />
+      <meshStandardMaterial map={blogTexture} side={THREE.DoubleSide} roughness={0} />
     </mesh>
   )
   const left = (
