@@ -106,6 +106,11 @@ const Scene = (): JSX.Element => {
               License
             </Link>
           </li>
+          <li>
+            <Link to="https://www.freepik.com/free-photo/close-up-black-marble-textured-background_3472377.htm#query=marble%20texture&position=0&from_view=keyword&track=ais">
+              Marble texture by rawpixel.com on Freepik
+            </Link>
+          </li>
         </ul>
         <div style={styles.heading}>
           2. Building the scene
