@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconBrandDribbble, IconBrandLinkedin, IconExternalLink, IconMail } from '@tabler/icons-react'
+import { IconBackpack, IconBrandDribbble, IconBrandLinkedin, IconExternalLink, IconMail } from '@tabler/icons-react'
 import Typewriter from 'typewriter-effect'
 
 import useIsMobile from 'hooks/use_is_mobile'
@@ -72,6 +72,7 @@ const ContactInformation = (): React.ReactElement => {
         <div style={iconContainerStyles}>
           <span style={{ marginLeft: '16px' }}>{typewriter}</span>
           <div style={{ display: 'flex', gap: '10px', marginLeft: '10px' }}>
+            <BrandIcon href='https://www.interaction-design.org/members/adalida-baca' Icon={IconBackpack} />
             <BrandIcon href='https://dribbble.com/adalida-baca' Icon={IconBrandDribbble} />
             <BrandIcon href='https://linkedin.com/in/adalidabaca' Icon={IconBrandLinkedin} />
             <BrandIcon href="mailto:adalida@adalida.design" Icon={IconMail} />

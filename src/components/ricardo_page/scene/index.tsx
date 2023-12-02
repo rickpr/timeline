@@ -111,6 +111,11 @@ const Scene = (): JSX.Element => {
               Marble texture by rawpixel.com on Freepik
             </Link>
           </li>
+          <li>
+            <Link to="https://sketchfab.com/3d-models/eames-elephant-4fd3bb0ba70d40ab871d72c5875d69b6">
+              Eames Elephant
+            </Link>
+          </li>
         </ul>
         <div style={styles.heading}>
           2. Building the scene

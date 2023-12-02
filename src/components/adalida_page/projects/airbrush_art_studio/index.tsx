@@ -16,7 +16,6 @@ import 'sass/adalida_page/project.scss'
 
 const Understanding = 'images/airbrush_art_studio/understanding.webp'
 const Research = 'images/airbrush_art_studio/research.webp'
-const ResearchClient = 'images/airbrush_art_studio/research_client.webp'
 const InformationArchitecture = 'images/airbrush_art_studio/information_architecture.webp'
 const Tools = 'images/airbrush_art_studio/tools.webp'
 const Mockups = 'images/airbrush_art_studio/mockups.webp'
@@ -42,9 +41,9 @@ const containerStyle = {
 const cardStyle = { cursor: 'pointer' }
 
 const allImages = [
+  HandoffVideo,
   Understanding,
   Research,
-  ResearchClient,
   InformationArchitecture,
   Tools,
   Mockups,
@@ -53,11 +52,25 @@ const allImages = [
   Responsively,
   Splash,
   Publish,
-  HandoffSmallScreenVideo,
-  HandoffVideo
+  HandoffSmallScreenVideo
 ]
 
 const embeddedVideoProps: Record<string, EmbeddedVideoProps> = {
+  [HandoffVideo]: {
+    image: {
+      path: Handoff,
+      widthPx: 1606,
+      heightPx: 916,
+      alt: 'Handoff'
+    },
+    videos: [{
+      path: HandoffVideo,
+      widthPx: 630,
+      heightPx: 394,
+      xOffsetPx: 485,
+      yOffsetPx: 240
+    }]
+  },
   [HandoffSmallScreenVideo]: {
     image: {
       path: HandoffScreens,
@@ -82,22 +95,6 @@ const embeddedVideoProps: Record<string, EmbeddedVideoProps> = {
         yOffsetPx: 315
       }
     ]
-  },
-  [HandoffVideo]: {
-    image: {
-      path: Handoff,
-      widthPx: 1606,
-      heightPx: 916,
-      alt: 'Handoff'
-    },
-    videos: [{
-      path: HandoffVideo,
-      widthPx: 630,
-      heightPx: 394,
-      xOffsetPx: 482,
-      yOffsetPx: 240,
-      rounded: true
-    }]
   }
 }
 
