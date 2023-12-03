@@ -7,7 +7,6 @@ import AboutPageSwitch from './about_page_switch'
 import DarkModeButton from './dark_mode_button'
 import HomeLink from './home_link'
 import BackButton from './back_button'
-import ScrollProgress from './scroll_progress'
 
 interface Props {
   isAboutPage?: boolean
@@ -20,7 +19,6 @@ const Header = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
   const { background, text: color } = useDarkModeStyle(darkMode)
   const isHomePage = setIsAboutPage !== undefined
-  const showScrollProgress = isAboutPage !== false
   return (
     <>
       <div style={{
@@ -41,7 +39,6 @@ const Header = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element => {
         {isHomePage && <AboutPageSwitch isAboutPage={isAboutPage} setIsAboutPage={setIsAboutPage} />}
         <DarkModeButton />
       </div>
-      {showScrollProgress && <ScrollProgress />}
     </>
   )
 }

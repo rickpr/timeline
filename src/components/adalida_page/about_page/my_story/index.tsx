@@ -54,7 +54,7 @@ const styles = {
   },
   lookingFor: {
     fontSize: '1.25em',
-    fontWeight: 700,
+    fontWeight: 700
   },
   paragraphHeading: {
     fontSize: '1.25em',
@@ -158,9 +158,9 @@ const MyStory = (): JSX.Element => {
               Consortium of Environmental Rhetoric and Writing website, which
               launched my freelance design business. During this time, I also
               worked as a Student Program Coordinator planning events, designing
-              experiences and flyers. I helped recharter and was elected
-              Vice-President of the Lobo Gardens. Lastly, I was the co-winner of
-              the Dale and Melada scholarship award.
+              experiences and marketing materials. I helped recharter and was
+              elected Vice-President of the Lobo Gardens. Lastly, I was the
+              co-winner of the Dale and Melada scholarship award.
             </div>
           </div>
         </div>

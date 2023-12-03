@@ -5,7 +5,6 @@ import Typewriter from 'typewriter-effect'
 import useIsMobile from 'hooks/use_is_mobile'
 import FileQuery from 'queries/file'
 
-import Card from '../projects/card'
 import BrandIcon from '../brand_icon'
 import { glassStyles } from '../styles'
 import BoxDesign from './box_design'
@@ -65,17 +64,15 @@ const ContactInformation = (): React.ReactElement => {
         </a>
         <div style={{ height: '45vh' }}><BoxDesign /></div>
       </div>
-      <Card>
-        <div style={iconContainerStyles}>
-          <span style={{ marginLeft: '16px' }}>{typewriter}</span>
-          <div style={{ display: 'flex', gap: '10px', marginLeft: '10px' }}>
-            <BrandIcon href='https://www.interaction-design.org/members/adalida-baca' Icon={IconBackpack} />
-            <BrandIcon href='https://dribbble.com/adalida-baca' Icon={IconBrandDribbble} />
-            <BrandIcon href='https://linkedin.com/in/adalidabaca' Icon={IconBrandLinkedin} />
-            <BrandIcon href="mailto:adalida@adalida.design" Icon={IconMail} />
-          </div>
+      <div style={iconContainerStyles}>
+        <span style={{ marginLeft: '16px' }}>{typewriter}</span>
+        <div style={{ display: 'flex', gap: '10px', marginLeft: '10px' }}>
+          <BrandIcon href='https://www.interaction-design.org/members/adalida-baca' Icon={IconBackpack} />
+          <BrandIcon href='https://dribbble.com/adalida-baca' Icon={IconBrandDribbble} />
+          <BrandIcon href='https://linkedin.com/in/adalidabaca' Icon={IconBrandLinkedin} />
+          <BrandIcon href="mailto:adalida@adalida.design" Icon={IconMail} />
         </div>
-      </Card>
+      </div>
     </div>
   )
 }

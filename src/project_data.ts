@@ -13,7 +13,9 @@ export interface Project {
   coverPhoto: string
   heroPhoto?: string
   roles: string[]
-  background: CSSProperties['background']
+  scrollBar: CSSProperties['background']
+  lightModeBackground?: CSSProperties['background']
+  darkModeBackground?: CSSProperties['background']
 }
 
 export const Projects: Record<string, Project> = {
@@ -28,7 +30,7 @@ export const Projects: Record<string, Project> = {
       'Responsive Design',
       'Copywriting'
     ],
-    background: '#CAB8F5'
+    scrollBar: '#CAB8F5'
   },
 
   TLDR: {
@@ -42,7 +44,7 @@ export const Projects: Record<string, Project> = {
       'Product Design',
       'Prototyping'
     ],
-    background: '#59145F'
+    scrollBar: '#59145F'
   },
 
   Phronesis: {
@@ -57,7 +59,7 @@ export const Projects: Record<string, Project> = {
       'SaaS',
       'B2B'
     ],
-    background: '#2D2D31'
+    scrollBar: '#2D2D31'
   },
 
   GainTain: {
@@ -71,7 +73,7 @@ export const Projects: Record<string, Project> = {
       'SaaS',
       'B2C'
     ],
-    background: 'linear-gradient(#FF512F, #DD2476)'
+    scrollBar: 'linear-gradient(#FF512F, #DD2476)'
   }
 }
 

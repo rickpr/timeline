@@ -11,7 +11,7 @@ export const AboutTheme: Project = {
   heroPhoto: Favicon,
   projectPage: '/about',
   roles: [],
-  background: '#FE347E'
+  scrollBar: '#FE347E'
 }
 
 const ThemeContext = React.createContext({

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'theme_context'
 
 const ScrollProgress = (): JSX.Element => {
-  const { background: scrollBar } = useContext(ThemeContext)
+  const { scrollBar } = useContext(ThemeContext)
 
   const [scrollProgress, setScrollProgress] = useState(0)
 

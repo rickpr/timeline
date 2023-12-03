@@ -7,8 +7,7 @@ const switchGridStyle = {
   background: 'none',
   border: 'none',
   position: 'relative' as const,
-  gridAutoFlow: 'column',
-  gridAutoColumns: 'minmax(0, 1fr)',
+  gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
   placeItems: 'center',
   placeContent: 'center',
   gap: '18px',
@@ -16,12 +15,12 @@ const switchGridStyle = {
   minHeight: '100%',
   pointerEvents: 'auto' as const,
   cursor: 'pointer' as const,
-  fontFamily: 'Inconsolata'
+  fontFamily: 'Work Sans, sans-serif'
 }
 
 const switchTextStyle = {
-  fontSize: '16px',
-  lineHeight: 1
+  lineHeight: 1,
+  width: '100%'
 }
 
 const containerStyle = {
@@ -30,7 +29,8 @@ const containerStyle = {
   position: 'absolute' as const,
   top: '20px',
   left: '50%',
-  transform: 'translateX(-50%)'
+  transform: 'translateX(-50%)',
+  width: 'max-content'
 }
 
 interface Props {
@@ -51,8 +51,8 @@ const AboutPageSwitch = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element =>
   return (
     <div style={containerStyle}>
       <button style={switchGridStyle} onClick={() => { toggleAboutPage(setIsAboutPage) }}>
-        <span style={switchTextStyle}>DESIGNS</span>
-        <span style={switchTextStyle}>ABOUT</span>
+        <div style={switchTextStyle}>Person</div>
+        <div style={switchTextStyle}>Profession</div>
         <div style={{
           ...glassStyles,
           position: 'absolute',
@@ -62,7 +62,7 @@ const AboutPageSwitch = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element =>
           height: '100%',
           transition: 'all 0.2s ease-in-out',
           left: 0,
-          transform: isAboutPage !== true ? undefined : 'translateX(100%)'
+          transform: isAboutPage === true ? undefined : 'translateX(100%)'
         }} />
       </button>
     </div>

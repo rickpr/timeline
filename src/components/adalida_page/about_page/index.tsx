@@ -8,12 +8,17 @@ import MyStory from './my_story'
 
 import 'sass/adalida_page/index.scss'
 
+const gradients = {
+  lightMode: 'linear-gradient(159deg, #F6F6F6 -4.28%, rgba(209, 12, 24, 0.99) 210.45%), linear-gradient(142deg, #121212 10.56%, #590517 88.51%)',
+  darkMode: 'linear-gradient(142deg, #121212 10.56%, #590517 88.51%)'
+}
+
 const AboutPage = (): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
-  const { background, text } = useDarkModeStyle(darkMode)
+  const { text } = useDarkModeStyle(darkMode)
   const containerStyle = {
     transition: 'background-color 0.5s ease-in-out',
-    background,
+    background: darkMode ? gradients.darkMode : gradients.lightMode,
     color: text,
     padding: '0 7.5dvw',
     gap: '2em',
