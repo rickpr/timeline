@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Card from '../card'
-import { makeMediaTag } from '../media_with_text'
+import { makeMediaTag } from '../../media_with_text'
 
 import useIsMobile from 'hooks/use_is_mobile'
 

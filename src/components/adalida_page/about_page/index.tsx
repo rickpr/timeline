@@ -4,7 +4,7 @@ import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 
 import ContactInformation from './contact_information'
-import ChallengeDesigns from './challenge_designs'
+import MyStory from './my_story'
 
 import 'sass/adalida_page/index.scss'
 
@@ -25,7 +25,7 @@ const AboutPage = (): JSX.Element => {
   return (
     <div style={containerStyle}>
       <ContactInformation />
-      <ChallengeDesigns />
+      <MyStory />
     </div>
   )
 }

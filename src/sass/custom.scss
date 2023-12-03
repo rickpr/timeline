@@ -35,6 +35,16 @@ $theme-colors: (
   src: local('Open Sans'), url(../fonts/OpenSans-VariableFont_wdth,wght.ttf);
 }
 
+@font-face {
+  font-family: 'Work Sans';
+  src: local('Work Sans'), url(../fonts/WorkSans-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: 'Work Sans Italic';
+  src: local('Work Sans Italic'), url(../fonts/WorkSans-Italic-VariableFont_wght.ttf);
+  font-weight: italic;
+}
+
 html {
   overscroll-behavior: none;
 }

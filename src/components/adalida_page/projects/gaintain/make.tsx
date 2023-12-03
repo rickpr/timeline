@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Card from '../card'
-import MediaWithText from '../media_with_text'
+import MediaWithText from '../../media_with_text'
 
 import 'sass/adalida_page/project.scss'
 

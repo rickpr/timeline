@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { makeMediaTag } from '../media_with_text'
+import { makeMediaTag } from '../../media_with_text'
 
 export interface Video {
   path: string

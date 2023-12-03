@@ -4,7 +4,7 @@ import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
 import { ThemeContext } from 'theme_context'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
-import { makeMediaTag } from './projects/media_with_text'
+import { makeMediaTag } from './media_with_text'
 
 const style = {
   display: 'flex',
