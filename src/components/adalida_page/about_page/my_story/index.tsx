@@ -93,7 +93,7 @@ const MyStory = (): JSX.Element => {
         <div style={{ ...styles.myStoryLine, borderColor: color }}></div>
       </div>
       <div style={headerStyle}>
-        I&apos;m passionate about people. I want to hear their stories and learn.
+        I&apos;m energized by people. I learn from their stories.
       </div>
       <RowPair isMobile={isMobile}>
         {imageTag(BacaFamily)}
