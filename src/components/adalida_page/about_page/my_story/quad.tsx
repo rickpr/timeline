@@ -27,7 +27,7 @@ const Quad = ({ children, isMobile }: QuadProps): JSX.Element => {
     display: 'grid',
     gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
     width: '100%',
-    rowGap: '2em',
+    rowGap: '1em',
     columnGap: '2em'
   }
   return (

@@ -19,7 +19,7 @@ const RowPair = ({ children, isMobile, reversed = false }: RowPairProps): JSX.El
     display: 'grid',
     gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
     width: '100%',
-    rowGap: '2em',
+    rowGap: '1em',
     columnGap: '2em'
   }
   return (

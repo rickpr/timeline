@@ -8,7 +8,6 @@ import FileQuery from 'queries/file'
 import Card from '../projects/card'
 import BrandIcon from '../brand_icon'
 import { glassStyles } from '../styles'
-import { boxShadow } from './styles'
 import BoxDesign from './box_design'
 
 import 'sass/adalida_page/index.scss'
@@ -27,13 +26,11 @@ const iconContainerStyles = {
   width: '100%',
   display: 'flex',
   padding: '10px',
-  minWidth: '310px',
   maxWidth: '1000px',
   margin: '0 auto',
   justifyContent: 'space-between',
   alignItems: 'center',
   fontSize: 'min(1.5em, 3.5dvw)',
-  boxShadow,
   fontWeight: 300
 }
 
@@ -66,7 +63,7 @@ const ContactInformation = (): React.ReactElement => {
         >
           Resume <IconExternalLink size={16} />
         </a>
-        <div style={{ height: '45dvh' }}><BoxDesign /></div>
+        <div style={{ height: '45vh' }}><BoxDesign /></div>
       </div>
       <Card>
         <div style={iconContainerStyles}>

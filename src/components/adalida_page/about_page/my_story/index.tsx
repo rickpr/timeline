@@ -5,6 +5,7 @@ import { makeMediaTag } from 'components/adalida_page/media_with_text'
 import useIsMobile from 'hooks/use_is_mobile'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
+import { glassStyles } from '../../styles'
 
 import RowPair from './row_pair'
 import Quad from './quad'
@@ -21,12 +22,11 @@ const styles = {
     display: 'flex',
     flexDirection: 'column' as const,
     alignItems: 'center',
-    padding: '1dvh',
     transition: 'background-color 0.5s ease-in-out',
     fontFamily: 'Work Sans, sans-serif',
     width: '100%',
     maxWidth: '950px',
-    gap: '2em'
+    gap: '1em'
   },
   myStory: {
     fontSize: '1em',
@@ -39,20 +39,22 @@ const styles = {
   },
   myStoryLine: {
     minWidth: '100px',
-    border: '1.5px solid white',
+    borderWidth: '1.5px',
+    borderStyle: 'solid',
     borderRadius: '5px',
     height: 0
   },
-  header: {
-    fontSize: '2em',
-    fontWeight: 600
-  },
+  header: { fontWeight: 600 },
   photo: {
+    ...glassStyles,
     width: '100%',
     height: '100%',
     padding: '10px',
-    borderRadius: '18px',
-    background: 'linear-gradient(159deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.10) 100.06%)'
+    borderRadius: '18px'
+  },
+  lookingFor: {
+    fontSize: '1.25em',
+    fontWeight: 700,
   },
   paragraphHeading: {
     fontSize: '1.25em',
@@ -64,7 +66,9 @@ const styles = {
     display: 'flex',
     flexDirection: 'column' as const,
     gap: '1em'
-  }
+  },
+  textBox: { padding: '0 1em' },
+  link: { textDecoration: 'underline' }
 }
 
 const imageTag = (media: string): JSX.Element => (
@@ -78,25 +82,29 @@ const MyStory = (): JSX.Element => {
   const { text: color } = useDarkModeStyle(darkMode)
   const isMobile = useIsMobile() === true
 
+  const textColor = darkMode ? '#C4C4C4' : '#606367'
+  const paragraphStyle = { ...styles.paragraph, color: textColor }
+  const headerStyle = { fontWeight: 600, fontSize: isMobile ? '1.25em' : '2em' }
+
   return (
     <div style={{ ...styles.container, color }}>
       <div style={styles.myStory}>
         <div>My Story</div>
-        <div style={styles.myStoryLine}></div>
+        <div style={{ ...styles.myStoryLine, borderColor: color }}></div>
       </div>
-      <div style={styles.header}>
+      <div style={headerStyle}>
         I&apos;m passionate about people. I want to hear their stories and learn.
       </div>
       <RowPair isMobile={isMobile}>
         {imageTag(BacaFamily)}
-        <div>
+        <div style={styles.textBox}>
           <div style={styles.paragraphHeading}>New Mexico Grown</div>
-          <div style={styles.paragraph}>
+          <div style={paragraphStyle}>
             <div>
               I&apos;m New Mexican grown with a large family spanning across
               Northern and Southern New Mexico. My grandma and her 18 brothers
               and sisters originated in La Jara, New Mexico where our
-              <i>Maestas family</i> received the Del Nacimento Land Grant.
+              <i>Maestas</i> family received the Del Nacimiento Land Grant.
             </div>
             <div>
               My mom raised my siblings and I in the South Valley one block down
@@ -111,7 +119,12 @@ const MyStory = (): JSX.Element => {
               Baca into the first Hispanic popular culture hero in the United
               States, representing him in six comic books, a feature film,
               and related merchandising.&rsquo; - Read about him&nbsp;
-              <a href='https://en.wikipedia.org/wiki/Elfego_Baca' target='_blank' rel='noreferrer'>
+              <a
+                href='https://en.wikipedia.org/wiki/Elfego_Baca'
+                target='_blank'
+                rel='noreferrer'
+                style={styles.link}
+              >
                 here.
               </a>
             </div>
@@ -121,9 +134,9 @@ const MyStory = (): JSX.Element => {
 
       <RowPair isMobile={isMobile} reversed={true}>
         {imageTag(AdalidaFace)}
-        <div>
+        <div style={styles.textBox}>
           <div style={styles.paragraphHeading}>B.A. in English-Philosophy</div>
-          <div style={styles.paragraph}>
+          <div style={paragraphStyle}>
             <div>
               In 2020 I graduated from the University of New Mexico with a B.A
               in English-Philosophy and a certificate in Technical and
@@ -131,7 +144,8 @@ const MyStory = (): JSX.Element => {
             </div>
             <div>
               My favorite Philosophy courses included symbolic logic, the
-              history and philosophy of mathematics, and Wittgenstein.
+              history and philosophy of mathematics, philosophy of mind, and
+              Wittgenstein.
             </div>
             <div>
               My English courses focused on technical and professional
@@ -139,29 +153,29 @@ const MyStory = (): JSX.Element => {
               an internship with Project ECHO, and an independent study focused
               on designing a website promoting ecological studies at UNM.
             </div>
-            My professor later contracted me to redesign the National
-            Consortium of Environmental Rhetoric and Writing website, which
-            launched my freelance design business. During this time, I also
-            worked as a Student Program Coordinator planning events, designing
-            experiences and flyers. I helped recharter and was elected
-            Vice-President of the Lobo Gardens. Lastly, I was the co-winner of
-            the Dale and Melinda scholarship award.
             <div>
+              My professor later contracted me to redesign the National
+              Consortium of Environmental Rhetoric and Writing website, which
+              launched my freelance design business. During this time, I also
+              worked as a Student Program Coordinator planning events, designing
+              experiences and flyers. I helped recharter and was elected
+              Vice-President of the Lobo Gardens. Lastly, I was the co-winner of
+              the Dale and Melada scholarship award.
             </div>
           </div>
         </div>
       </RowPair>
       <Quad isMobile={isMobile}>
         {imageTag(Balcony)}
-        <div>
+        <div style={styles.textBox}>
           <div style={styles.paragraphHeading}>Big Changes</div>
-          <div style={styles.paragraph}>
+          <div style={paragraphStyle}>
             <div>
               During my winter, summer, fall, and spring breaks I&apos;d visit
-              my long distance boyfriend (now fiancé) Ricardo in San Francisco,
-              California. During this time I worked with Robert Half as an
-              Administrative Assistant in a variety of offices like Samsara,
-              World Economic Forum, User Testing, the Watermark, and more.
+              my fiancé Ricardo in San Francisco, California. During this time I
+              worked with Robert Half as an Administrative Assistant in a
+              variety of offices like Samsara, World Economic Forum, User
+              Testing, the Watermark, and more.
             </div>
             <div>
               During my last semester of college, Covid started. This turned out
@@ -184,15 +198,15 @@ const MyStory = (): JSX.Element => {
           </div>
         </div>
         {imageTag(Portland)}
-        <div>
+        <div style={styles.textBox}>
           <div style={styles.paragraphHeading}>In my spare time</div>
-          <div style={styles.paragraph}>
+          <div style={paragraphStyle}>
             <div>
-              I&apos;m probably designing something for Ricardo to implement via
-              code. This website is a great example of our work together.
-              I&apos;m a great designer, and he&apos;s an excellent coder so
-              together we have a graveyard of projects. Currently, we&apos;re
-              developing a mobile workout app for ourselves. Check out
+              I&apos;m designing something for Ricardo to implement via code.
+              This website is a great example of our work together. I&apos;m a
+              great designer, and he&apos;s an excellent coder so together we
+              have a plethora of projects. Currently, we&apos;re developing a
+              mobile workout app for ourselves. Check out
               <Link to='/projects/gaintain'> Gaintain</Link>.
             </div>
             <div>
@@ -205,8 +219,6 @@ const MyStory = (): JSX.Element => {
             </div>
             <div>
               My professional goals and aspirations include:
-            </div>
-            <div>
               <ul>
                 <li>Growing my user research and design skills</li>
                 <li>Becoming a product designer at a start up</li>
@@ -219,32 +231,33 @@ const MyStory = (): JSX.Element => {
       </Quad>
       <Quad isMobile={isMobile}>
         {imageTag(Gym)}
-        <div>
-          <div style={styles.paragraphHeading}>
+        <div style={styles.textBox}>
+          <div style={styles.lookingFor}>
             Portfolio made with lots of Yellow Red Bull and professional button
             pushing.
           </div>
         </div>
         {imageTag(MuscleBeach)}
-        <div>
-          <div style={styles.paragraphHeading}>
+        <div style={styles.textBox}>
+          <div style={styles.lookingFor}>
             Looking for a Designer?
           </div>
-          <div style={styles.paragraph}>
+          <div style={paragraphStyle}>
             <div>
               Reach Adalida at: <a href='mailto:hi@adalida.design'>hi@adalida.design</a>
             </div>
           </div>
-          <div style={styles.paragraphHeading}>
+          <div style={styles.lookingFor}>
             Looking for an Engineer?
           </div>
-          <div style={styles.paragraph}>
+          <div style={paragraphStyle}>
             <div>
               Reach Ricardo at: <a href='mailto:fdisk87@yahoo.com'>fdisk87@yahoo.com</a>
             </div>
           </div>
         </div>
       </Quad>
+      <div style={{ minHeight: '1em' }} />
     </div>
   )
 }

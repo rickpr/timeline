@@ -15,7 +15,7 @@ const AboutPage = (): JSX.Element => {
     transition: 'background-color 0.5s ease-in-out',
     background,
     color: text,
-    padding: '1dvh 7.5dvw',
+    padding: '0 7.5dvw',
     gap: '2em',
     display: 'flex',
     flexDirection: 'column' as const,
