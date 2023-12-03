@@ -19,8 +19,8 @@ const Portland = 'images/about/portland.webp'
 
 const styles = {
   container: {
-    display: 'flex',
-    flexDirection: 'column' as const,
+    display: 'grid',
+    gridTemplateColumns: '1fr',
     alignItems: 'center',
     transition: 'background-color 0.5s ease-in-out',
     fontFamily: 'Work Sans, sans-serif',
