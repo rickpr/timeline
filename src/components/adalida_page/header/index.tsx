@@ -1,7 +1,4 @@
-import React, { useContext } from 'react'
-
-import { ThemeContext } from 'theme_context'
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import React from 'react'
 
 import AboutPageSwitch from './about_page_switch'
 import DarkModeButton from './dark_mode_button'
@@ -16,18 +13,13 @@ interface Props {
 export const headerPixels = 80
 
 const Header = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
-  const { background, text: color } = useDarkModeStyle(darkMode)
   const isHomePage = setIsAboutPage !== undefined
   return (
     <>
       <div style={{
         position: 'sticky',
         top: 0,
-        transition: 'all 0.5s ease-in-out',
         zIndex: 1,
-        background,
-        color,
         width: '100%',
         display: 'flex',
         alignItems: 'center',

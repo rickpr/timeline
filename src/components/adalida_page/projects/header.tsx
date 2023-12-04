@@ -18,8 +18,7 @@ const imageStyle = {
   width: '100%',
   height: 'auto',
   objectFit: 'contain' as const,
-  borderRadius: '20px',
-  transition: 'transform 1s ease-in-out'
+  borderRadius: '20px'
 }
 
 const Header = (): JSX.Element => {

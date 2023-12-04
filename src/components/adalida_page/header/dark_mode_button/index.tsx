@@ -2,11 +2,12 @@ import React, { useContext } from 'react'
 import Icon from './icon'
 
 import { ThemeContext } from 'theme_context'
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { glassStyles } from '../../styles'
 
 const DarkModeButton = (): JSX.Element => {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext)
-  const color = darkMode ? 'white' : 'black'
+  const { text: color } = useDarkModeStyle(darkMode)
   const darkModeButtonStyle = {
     ...glassStyles,
     height: '40px',

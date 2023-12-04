@@ -1,9 +1,6 @@
-import React, { useContext, useRef } from 'react'
-
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import React, { useRef } from 'react'
 
 import Projects from 'project_data'
-import { ThemeContext } from 'theme_context'
 
 import App from './app'
 import Selector from './selector'
@@ -16,8 +13,7 @@ const fullWindowStyles = {
   maxHeight: height,
   minWidth: '100dvw',
   display: 'flex',
-  flexDirection: 'column' as const,
-  transition: 'background-color 0.5s ease-in-out'
+  flexDirection: 'column' as const
 }
 
 const coverStyles = {
@@ -37,16 +33,13 @@ interface Props {
 }
 
 const Mobile = ({ setCurrentProject }: Props): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
-  const { background, text } = useDarkModeStyle(darkMode)
-  const styles = { background, color: text }
   const containerRef = useRef(null)
   const projects = Object.keys(Projects)
   const projectRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
     Object.fromEntries(projects.map(project => [project, null]))
   )
   return (
-    <div style={{ ...fullWindowStyles, ...styles }}>
+    <div style={fullWindowStyles}>
       <Selector projectRefs={projectRefs} />
       <div style={coverStyles} ref={containerRef}>
         {projects.map(project => (

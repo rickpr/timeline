@@ -1,7 +1,5 @@
-import React, { useContext, useRef } from 'react'
+import React, { useRef } from 'react'
 
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
-import { ThemeContext } from 'theme_context'
 import Projects from 'project_data'
 
 import App from './app'
@@ -12,11 +10,9 @@ const coverStyles = {
   display: 'flex',
   maxHeight: `calc(100dvh - ${headerPixels}px)`,
   flexDirection: 'column' as const,
-  transition: 'background-color 0.5s ease-in-out',
   overflowY: 'auto' as const,
   overflowX: 'hidden' as const,
-  scrollSnapType: 'y mandatory',
-  background: '#121212'
+  scrollSnapType: 'y mandatory'
 }
 
 interface Props {
@@ -24,9 +20,6 @@ interface Props {
 }
 
 const Desktop = ({ setCurrentProject }: Props): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
-  const { background, text } = useDarkModeStyle(darkMode)
-  const styles = { background, color: text }
   const containerRef = useRef(null)
   const projects = Object.keys(Projects)
   const projectRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
@@ -34,7 +27,7 @@ const Desktop = ({ setCurrentProject }: Props): JSX.Element => {
   )
 
   return (
-    <div style={{ ...coverStyles, ...styles }} ref={containerRef}>
+    <div style={coverStyles} ref={containerRef}>
       {projects.map(project => (
         <App
           key={project}

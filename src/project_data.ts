@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 
+import Favicon from 'images/favicon.png'
 import AirbrushArtStudioPhoto from 'images/airbrush_art_studio/cover.png'
 import PhronesisPhoto from 'images/phronesis/cover.webp'
 import PhronesisHeroPhoto from 'images/phronesis/title.jpg'
@@ -18,7 +19,20 @@ export interface Project {
   darkModeBackground?: CSSProperties['background']
 }
 
+export const About: Project = {
+  name: 'About Adalida',
+  description: '',
+  coverPhoto: Favicon,
+  heroPhoto: Favicon,
+  projectPage: '/about',
+  roles: [],
+  scrollBar: '#FE347E',
+  lightModeBackground: 'linear-gradient(117deg, #D2D6D9 -8.17%, rgba(210, 164, 208, 0.99) 46.24%, #D5D5D5 98.47%), linear-gradient(248deg, #464046 13.28%, #8D2470 58.07%, #464040 90.12%)',
+  darkModeBackground: 'linear-gradient(248deg, #464046 13.28%, #8D2470 58.07%, #464040 90.12%)'
+}
+
 export const Projects: Record<string, Project> = {
+
   AirbrushArtStudio: {
     name: 'Airbrush Art',
     description: 'A unique digital portfolio showcasing the remarkable talents of Armando Diaz, a distinguished artist hailing from New Mexico.',

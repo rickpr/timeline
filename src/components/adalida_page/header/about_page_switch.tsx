@@ -53,17 +53,19 @@ const AboutPageSwitch = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element =>
       <button style={switchGridStyle} onClick={() => { toggleAboutPage(setIsAboutPage) }}>
         <div style={switchTextStyle}>Person</div>
         <div style={switchTextStyle}>Profession</div>
-        <div style={{
-          ...glassStyles,
-          position: 'absolute',
-          backdropFilter: undefined,
-          border: '1px solid rgba(255, 255, 255, 0.25)',
-          width: '50%',
-          height: '100%',
-          transition: 'all 0.2s ease-in-out',
-          left: 0,
-          transform: isAboutPage === true ? undefined : 'translateX(100%)'
-        }} />
+        <div
+          style={{
+            ...glassStyles,
+            position: 'absolute',
+            backdropFilter: undefined,
+            border: '1px solid rgba(255, 255, 255, 0.25)',
+            width: '50%',
+            height: '100%',
+            transition: 'all 0.2s ease-in-out',
+            left: 0,
+            transform: isAboutPage === true ? undefined : 'translateX(100%)'
+          }}
+        />
       </button>
     </div>
   )

@@ -22,7 +22,7 @@ const styles = {
     display: 'grid',
     gridTemplateColumns: '1fr',
     alignItems: 'center',
-    transition: 'background-color 0.5s ease-in-out',
+    transition: 'all 0.5s ease-in-out',
     fontFamily: 'Work Sans, sans-serif',
     width: '100%',
     maxWidth: '950px',
@@ -33,7 +33,6 @@ const styles = {
     fontWeight: 600,
     display: 'flex',
     gap: '25px',
-    color: '#8C8F92',
     alignItems: 'center',
     width: '100%'
   },
@@ -42,7 +41,8 @@ const styles = {
     borderWidth: '1.5px',
     borderStyle: 'solid',
     borderRadius: '5px',
-    height: 0
+    height: 0,
+    transition: 'all 0.5s ease-in-out'
   },
   header: { fontWeight: 600 },
   photo: {
@@ -88,7 +88,7 @@ const MyStory = (): JSX.Element => {
 
   return (
     <div style={{ ...styles.container, color }}>
-      <div style={styles.myStory}>
+      <div style={{ ...styles.myStory, color: textColor }}>
         <div>My Story</div>
         <div style={{ ...styles.myStoryLine, borderColor: color }}></div>
       </div>

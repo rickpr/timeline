@@ -1,5 +1,7 @@
 import type { CSSProperties } from 'react'
 
+import type { Project } from '../project_data'
+
 interface Colors {
   background: CSSProperties['background']
   text: CSSProperties['color']
@@ -21,8 +23,13 @@ const lightmodeStyles: Colors = {
   button: '#CFCDCC'
 }
 
-const useDarkModeStyle = (darkMode: boolean): Colors => {
-  return darkMode ? darkModeStyles : lightmodeStyles
+const useDarkModeStyle = (darkMode: boolean, project?: Project): Colors => {
+  const styles = darkMode ? darkModeStyles : lightmodeStyles
+  const projectBackground = darkMode ? project?.darkModeBackground : project?.lightModeBackground
+  return {
+    ...styles,
+    background: projectBackground ?? styles.background
+  }
 }
 
 export default useDarkModeStyle

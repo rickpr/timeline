@@ -11,6 +11,7 @@ const BackButton = (): JSX.Element => {
   const color = darkMode ? 'white' : 'black'
   const backButtonStyle = {
     ...glassStyles,
+    transition: 'all 0.5s ease-in-out',
     height: '40px',
     width: '40px',
     color,
