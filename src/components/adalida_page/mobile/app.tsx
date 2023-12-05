@@ -2,9 +2,9 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { forwardRef, useEffect, useRef } from 'react'
 
-import Projects from 'project_data'
+import CaseStudyThemes from 'case_study_themes'
 
-import ProjectLink from '../project_link'
+import CaseStudyLink from '../case_study_link'
 import { headerPixels } from '../header'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -43,15 +43,15 @@ const titleStyles = {
 interface Props {
   title: string
   containerRef: React.MutableRefObject<null>
-  setCurrentProject: (project: string) => void
+  setCurrentCaseStudy: (caseStudy: string) => void
 }
 
-const App = forwardRef(({ title, containerRef, setCurrentProject }: Props, outerRef) => {
-  const { coverPhoto } = Projects[title]
+const App = forwardRef(({ title, containerRef, setCurrentCaseStudy }: Props, outerRef) => {
+  const { coverPhoto } = CaseStudyThemes[title]
   const imageRef = useRef(null)
-  const projectRef = useRef(null)
+  const caseStudyRef = useRef(null)
   if (typeof outerRef === 'function') {
-    outerRef(projectRef)
+    outerRef(caseStudyRef)
   } else {
     console.error(`Mobile: outerRef is not a function: ${typeof outerRef}`)
   }
@@ -60,12 +60,12 @@ const App = forwardRef(({ title, containerRef, setCurrentProject }: Props, outer
     const context = gsap.context(() => {
       gsap.timeline({
         scrollTrigger: {
-          trigger: projectRef.current,
+          trigger: caseStudyRef.current,
           scroller: containerRef.current,
           scrub: true,
           horizontal: true,
           onUpdate: self => {
-            if (Math.abs(self.progress - 0.5) < 0.05) setCurrentProject(title)
+            if (Math.abs(self.progress - 0.5) < 0.05) setCurrentCaseStudy(title)
           }
         }
       })
@@ -83,13 +83,13 @@ const App = forwardRef(({ title, containerRef, setCurrentProject }: Props, outer
       ScrollTrigger.getAll().forEach(t => { t.kill() })
       context.revert()
     }
-  }, [containerRef, projectRef, setCurrentProject, title])
+  }, [containerRef, caseStudyRef, setCurrentCaseStudy, title])
 
   return (
-    <div style={containerStyles} ref={projectRef}>
+    <div style={containerStyles} ref={caseStudyRef}>
       <img alt={`${title} cover`} src={coverPhoto} style={imageStyles} ref={imageRef} />
       <div style={titleStyles}>
-        <ProjectLink title={title} />
+        <CaseStudyLink title={title} />
       </div>
     </div>
   )

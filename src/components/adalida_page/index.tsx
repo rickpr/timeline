@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react'
 
-import Projects, { About } from 'project_data'
+import FacetThemes from 'facet_themes'
+import { AboutTheme } from 'theme_context'
 import useIsMobile from 'hooks/use_is_mobile'
 
 import AboutPage from './about_page'
@@ -18,20 +19,23 @@ interface Props {
 
 const AdalidaPage = ({ aboutPage = false, darkMode, toggleDarkMode }: Props): JSX.Element => {
   const [isAboutPage, setIsAboutPage] = useState(aboutPage)
-  const [currentProject, setCurrentProject] = useState('AirbrushArtStudio')
+  const [currentFacet, setCurrentFacet] = useState('Who')
   const isMobile = useIsMobile(768)
   const content = useMemo(() => {
     if (isAboutPage) return <AboutPage />
     return isMobile === true
-      ? <Mobile setCurrentProject={setCurrentProject} />
-      : <Desktop setCurrentProject={setCurrentProject} />
+      ? <Mobile setCurrentCaseStudy={setCurrentFacet} />
+      : <Desktop setCurrentCaseStudy={setCurrentFacet} />
   }, [isAboutPage, isMobile])
-  const projectTheme = useMemo(() => isAboutPage ? About : Projects[currentProject], [isAboutPage, currentProject])
+  const facetTheme = useMemo(
+    () => isAboutPage ? AboutTheme : FacetThemes[currentFacet],
+    [isAboutPage, currentFacet]
+  )
   if (isMobile === null) return <div />
 
   return (
     <Layout
-      project={projectTheme}
+      theme={facetTheme}
       darkMode={darkMode}
       toggleDarkMode={toggleDarkMode}
       isAboutPage={isAboutPage}

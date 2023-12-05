@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Project from './project'
+import CaseStudy from './case_study'
 
 const indicatorStyle = {
   width: '50%',
@@ -19,12 +19,12 @@ const indicatorStyle = {
 }
 
 interface Props {
-  projectRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
+  caseStudyRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
 }
 
-const Header = ({ projectRefs }: Props): React.ReactElement => {
-  const indicators = Object.keys(projectRefs.current).map(project =>
-    <Project key={project} projectRefs={projectRefs} project={project} />
+const Header = ({ caseStudyRefs }: Props): React.ReactElement => {
+  const indicators = Object.keys(caseStudyRefs.current).map(caseStudy =>
+    <CaseStudy key={caseStudy} caseStudyRefs={caseStudyRefs} caseStudy={caseStudy} />
   )
   return <div style={indicatorStyle}>{indicators}</div>
 }

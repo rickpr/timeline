@@ -207,7 +207,7 @@ const MyStory = (): JSX.Element => {
               great designer, and he&apos;s an excellent coder so together we
               have a plethora of projects. Currently, we&apos;re developing a
               mobile workout app for ourselves. Check out
-              <Link to='/projects/gaintain'> Gaintain</Link>.
+              <Link to='/case_studies/gaintain'> Gaintain</Link>.
             </div>
             <div>
               My other time consists of the gym, traveling, exploring, costume

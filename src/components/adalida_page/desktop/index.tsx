@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import Projects from 'project_data'
+import CaseStudyThemes from 'case_study_themes'
 
 import App from './app'
 import Header from './header'
@@ -16,28 +16,28 @@ const coverStyles = {
 }
 
 interface Props {
-  setCurrentProject: (project: string) => void
+  setCurrentCaseStudy: (caseStudy: string) => void
 }
 
-const Desktop = ({ setCurrentProject }: Props): JSX.Element => {
+const Desktop = ({ setCurrentCaseStudy }: Props): JSX.Element => {
   const containerRef = useRef(null)
-  const projects = Object.keys(Projects)
-  const projectRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
-    Object.fromEntries(projects.map(project => [project, null]))
+  const caseStudies = Object.keys(CaseStudyThemes)
+  const caseStudyRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
+    Object.fromEntries(caseStudies.map(caseStudy => [caseStudy, null]))
   )
 
   return (
     <div style={coverStyles} ref={containerRef}>
-      {projects.map(project => (
+      {caseStudies.map(caseStudy => (
         <App
-          key={project}
-          ref={ (element: React.MutableRefObject<HTMLDivElement>) => (projectRefs.current[project] = element) }
-          title={project}
+          key={caseStudy}
+          ref={ (element: React.MutableRefObject<HTMLDivElement>) => (caseStudyRefs.current[caseStudy] = element) }
+          title={caseStudy}
           containerRef={containerRef}
-          setCurrentProject={setCurrentProject}
+          setCurrentCaseStudy={setCurrentCaseStudy}
         />
       ))}
-      <Header projectRefs={projectRefs} />
+      <Header caseStudyRefs={caseStudyRefs} />
     </div>
   )
 }

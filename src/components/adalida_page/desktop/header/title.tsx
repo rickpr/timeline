@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
-import Projects from 'project_data'
+import CaseStudyThemes from 'case_study_themes'
 
 import { glassStyles } from '../../styles'
 
@@ -48,7 +48,7 @@ interface Props {
 const Title = ({ title, active }: Props): React.ReactElement => {
   const { darkMode } = useContext(ThemeContext)
   const { button } = useDarkModeStyle(darkMode)
-  const { description, name, projectPage, roles } = Projects[title]
+  const { description, name, caseStudyPage, roles } = CaseStudyThemes[title]
   const pointerEvents = active ? 'auto' : 'none'
   const fontSize = active ? '2.6rem' : '1rem'
   const descriptionStyle = {
@@ -60,7 +60,7 @@ const Title = ({ title, active }: Props): React.ReactElement => {
   }
 
   return (
-    <Link to={projectPage} style={{ pointerEvents, ...labelStyles }}>
+    <Link to={caseStudyPage} style={{ pointerEvents, ...labelStyles }}>
       <div style={{ ...titleStyles, fontSize, padding: active ? 0 : '1rem 0' }}>{active ? name.toUpperCase() : name}</div>
       <div style={descriptionStyle}>
         <div style={{ overflowY: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -68,7 +68,7 @@ const Title = ({ title, active }: Props): React.ReactElement => {
             {roles.map(role => <div key={role} style={{ ...roleStyles, background: button }}>{role}</div>)}
           </div>
           <div>{description}</div>
-          <div style={linkStyles}>View Project ➜</div>
+          <div style={linkStyles}>View Case Study ➜</div>
         </div>
       </div>
     </Link>
