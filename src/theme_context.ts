@@ -11,6 +11,11 @@ export interface Theme {
   roles: string[]
   lightModeBackground?: CSSProperties['background']
   darkModeBackground?: CSSProperties['background']
+  link?: {
+    text: string
+    url: string
+  }
+  usesDarkMode?: boolean
 }
 
 export const AboutTheme: Theme = {

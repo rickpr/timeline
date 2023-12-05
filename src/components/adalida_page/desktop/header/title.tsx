@@ -2,8 +2,7 @@ import { Link } from 'gatsby'
 import React, { useContext } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
-import { ThemeContext } from 'theme_context'
-import CaseStudyThemes from 'case_study_themes'
+import { ThemeContext, type Theme } from 'theme_context'
 
 import { glassStyles } from '../../styles'
 
@@ -41,14 +40,14 @@ const linkStyles = {
 }
 
 interface Props {
-  title: string
+  theme: Theme
   active: boolean
 }
 
-const Title = ({ title, active }: Props): React.ReactElement => {
+const Title = ({ theme, active }: Props): React.ReactElement => {
   const { darkMode } = useContext(ThemeContext)
   const { button } = useDarkModeStyle(darkMode)
-  const { description, name, caseStudyPage, roles } = CaseStudyThemes[title]
+  const { description, name, link, roles } = theme
   const pointerEvents = active ? 'auto' : 'none'
   const fontSize = active ? '2.6rem' : '1rem'
   const descriptionStyle = {
@@ -59,8 +58,8 @@ const Title = ({ title, active }: Props): React.ReactElement => {
     transition: 'grid-template-rows 0.5s ease-in-out'
   }
 
-  return (
-    <Link to={caseStudyPage} style={{ pointerEvents, ...labelStyles }}>
+  const innerContent = (
+    <>
       <div style={{ ...titleStyles, fontSize, padding: active ? 0 : '1rem 0' }}>{active ? name.toUpperCase() : name}</div>
       <div style={descriptionStyle}>
         <div style={{ overflowY: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -68,10 +67,24 @@ const Title = ({ title, active }: Props): React.ReactElement => {
             {roles.map(role => <div key={role} style={{ ...roleStyles, background: button }}>{role}</div>)}
           </div>
           <div>{description}</div>
-          <div style={linkStyles}>View Case Study ➜</div>
+          {link !== undefined && <div style={linkStyles}>{link.text} ➜</div>}
         </div>
       </div>
-    </Link>
+    </>
+  )
+
+  if (link !== undefined) {
+    return (
+      <Link to={link.url} style={{ pointerEvents, ...labelStyles }}>
+        {innerContent}
+      </Link>
+    )
+  }
+
+  return (
+    <div style={{ pointerEvents, ...labelStyles }}>
+      {innerContent}
+    </div>
   )
 }
 

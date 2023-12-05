@@ -1,8 +1,7 @@
 import React, { type CSSProperties, useContext } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
-import CaseStudyThemes from 'case_study_themes'
-import { ThemeContext } from 'theme_context'
+import { ThemeContext, type Theme } from 'theme_context'
 
 import Title from './title'
 
@@ -18,7 +17,7 @@ const barStyle = {
   transition: 'all 0.5s ease-in-out',
   cursor: 'pointer'
 }
-const caseStudyStyle = {
+const infoStyle = {
   display: 'flex',
   gap: '1dvw',
   pointerEvents: 'auto' as const,
@@ -26,29 +25,30 @@ const caseStudyStyle = {
 }
 
 interface Props {
-  caseStudyRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
-  caseStudy: string
+  appRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
+  theme: Theme
+  title: string
 }
 
-const CaseStudy = ({ caseStudyRefs, caseStudy }: Props): React.ReactElement => {
+const Info = ({ appRefs, theme, title }: Props): React.ReactElement => {
   const { name, darkMode } = useContext(ThemeContext)
   const { background } = useDarkModeStyle(!darkMode)
-  const active = name === CaseStudyThemes[caseStudy].name
+  const active = name === theme.name
   const opacity = active ? 1 : 0.2
-  const scrollIntoView = (): void => caseStudyRefs.current[caseStudy]?.current?.scrollIntoView({ behavior: 'smooth' })
+  const scrollIntoView = (): void => appRefs.current[title]?.current?.scrollIntoView({ behavior: 'smooth' })
   return (
     <div
-      key={caseStudy}
-      style={{ opacity, ...caseStudyStyle }}
+      key={title}
+      style={{ opacity, ...infoStyle }}
       onClick={scrollIntoView}
       role='tab'
       tabIndex={0}
       onKeyDown={(event) => { [' ', 'Enter'].includes(event.key) && scrollIntoView() }}
     >
       <div style={{ ...barStyle, borderColor: background as CSSProperties['borderColor'] }} />
-      <Title title={caseStudy} active={active} />
+      <Title theme={theme} active={active} />
     </div>
   )
 }
 
-export default CaseStudy
+export default Info

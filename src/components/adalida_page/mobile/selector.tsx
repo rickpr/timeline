@@ -2,8 +2,7 @@ import React, { useContext, type CSSProperties } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
-import { ThemeContext } from 'theme_context'
-import CaseStudyThemes from 'case_study_themes'
+import { ThemeContext, type Theme } from 'theme_context'
 
 const selectorStyles = {
   position: 'sticky' as const,
@@ -28,21 +27,22 @@ const barStyle = {
 }
 
 interface Props {
-  caseStudyRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
+  themes: Record<string, Theme>
+  appRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
 }
 
-const Header = ({ caseStudyRefs }: Props): JSX.Element => {
+const Header = ({ themes, appRefs }: Props): JSX.Element => {
   const { name, darkMode } = useContext(ThemeContext)
   const { text } = useDarkModeStyle(darkMode)
 
-  const indicators = Object.keys(caseStudyRefs.current).map(caseStudy => {
-    const active = name === CaseStudyThemes[caseStudy].name
+  const indicators = Object.keys(appRefs.current).map(title => {
+    const active = name === themes[title].name
     const opacity = active ? 1 : 0.2
     return (
       <button
-        key={caseStudy}
+        key={title}
         style={{ ...barStyle, opacity, borderColor: text as CSSProperties['borderColor'] }}
-        onClick={() => caseStudyRefs.current[caseStudy]?.current?.scrollIntoView({ behavior: 'smooth' }) }
+        onClick={() => appRefs.current[title]?.current?.scrollIntoView({ behavior: 'smooth' }) }
       />
     )
   })

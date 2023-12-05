@@ -1,11 +1,8 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React, { useContext } from 'react'
 
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
-import { ThemeContext } from 'theme_context'
-
-import CaseStudyThemes from 'case_study_themes'
+import { ThemeContext, type Theme } from 'theme_context'
 
 import { glassStyles } from './styles'
 
@@ -46,22 +43,34 @@ const linkStyles = {
   fontWeight: 'bold'
 }
 
-const CaseStudyLink = ({ title }: { title: string }): React.ReactElement => {
+const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
   const { darkMode } = useContext(ThemeContext)
   const { button } = useDarkModeStyle(darkMode)
-  const { description, name, caseStudyPage, roles } = CaseStudyThemes[title]
-  return (
-    <Link to={caseStudyPage} style={labelStyles}>
+  const { description, name, link, roles } = theme
+  const innerContent = (
+    <>
       <div style={titleStyles}>{name.toUpperCase()}</div>
       <div style={listStyles}>
         {roles.map(role => <div key={role} style={{ ...roleStyles, background: button }}>{role}</div>)}
       </div>
       <div>{description}</div>
-      <div style={linkStyles}>View Case Study ➜</div>
-    </Link>
+      {link !== undefined && <div style={linkStyles}>{link.text} ➜</div>}
+    </>
+  )
+
+  if (link !== undefined) {
+    return (
+      <Link to={link.url} style={labelStyles}>
+        {innerContent}
+      </Link>
+    )
+  }
+
+  return (
+    <div style={labelStyles}>
+      {innerContent}
+    </div>
   )
 }
 
-CaseStudyLink.propTypes = { title: PropTypes.string.isRequired }
-
-export default CaseStudyLink
+export default ThemedLink

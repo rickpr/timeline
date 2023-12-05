@@ -1,10 +1,11 @@
 import React from 'react'
 
-import CaseStudy from './case_study'
+import type { Theme } from 'theme_context'
+import Info from './info'
 
 const indicatorStyle = {
   width: '50%',
-  padding: '0 10dvw',
+  padding: '0 10dvw 0 0',
   display: 'flex',
   flexDirection: 'column' as const,
   gap: '2dvh',
@@ -19,12 +20,13 @@ const indicatorStyle = {
 }
 
 interface Props {
-  caseStudyRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
+  themes: Record<string, Theme>
+  appRefs: React.MutableRefObject<Record<string, React.MutableRefObject<HTMLDivElement> | null>>
 }
 
-const Header = ({ caseStudyRefs }: Props): React.ReactElement => {
-  const indicators = Object.keys(caseStudyRefs.current).map(caseStudy =>
-    <CaseStudy key={caseStudy} caseStudyRefs={caseStudyRefs} caseStudy={caseStudy} />
+const Header = ({ themes, appRefs }: Props): React.ReactElement => {
+  const indicators = Object.keys(appRefs.current).map(title =>
+    <Info key={title} appRefs={appRefs} theme={themes[title]} title={title} />
   )
   return <div style={indicatorStyle}>{indicators}</div>
 }

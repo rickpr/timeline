@@ -113,7 +113,7 @@ const MyStory = (): JSX.Element => {
               and dedication in my work every day.
             </div>
             <div>
-              Below is my grandpa and I. He’s my rock. We are both the
+              This is my grandpa and I. He&apos;s my rock. We are both the
               descendants of Elfego Baca who is best known for the Frisco
               shootout in Reserve. &lsquo;In the late 1950s, Walt Disney turned
               Baca into the first Hispanic popular culture hero in the United

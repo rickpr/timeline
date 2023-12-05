@@ -24,8 +24,8 @@ const AdalidaPage = ({ aboutPage = false, darkMode, toggleDarkMode }: Props): JS
   const content = useMemo(() => {
     if (isAboutPage) return <AboutPage />
     return isMobile === true
-      ? <Mobile setCurrentCaseStudy={setCurrentFacet} />
-      : <Desktop setCurrentCaseStudy={setCurrentFacet} />
+       ? <Mobile themes={FacetThemes} setCurrentTheme={setCurrentFacet} />
+       : <Desktop themes={FacetThemes} setCurrentTheme={setCurrentFacet} />
   }, [isAboutPage, isMobile])
   const facetTheme = useMemo(
     () => isAboutPage ? AboutTheme : FacetThemes[currentFacet],

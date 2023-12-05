@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import CaseStudyThemes from 'case_study_themes'
+import type { Theme } from 'theme_context'
 
 import App from './app'
 import Selector from './selector'
@@ -19,7 +19,6 @@ const fullWindowStyles = {
 const coverStyles = {
   display: 'grid',
   minWidth: '100dvw',
-  gridTemplateColumns: '1fr 1fr 1fr 1fr', // TODO: WTF
   flexDirection: 'row' as const,
   overflowX: 'auto' as const,
   overflowY: 'hidden' as const,
@@ -29,26 +28,29 @@ const coverStyles = {
 }
 
 interface Props {
-  setCurrentCaseStudy: (caseStudy: string) => void
+  themes: Record<string, Theme>
+  setCurrentTheme: (title: string) => void
 }
 
-const Mobile = ({ setCurrentCaseStudy }: Props): JSX.Element => {
+const Mobile = ({ themes, setCurrentTheme }: Props): JSX.Element => {
+  const gridTemplateColumns = `repeat(${Object.keys(themes).length}, 1fr)`
   const containerRef = useRef(null)
-  const caseStudies = Object.keys(CaseStudyThemes)
-  const caseStudyRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
-    Object.fromEntries(caseStudies.map(caseStudy => [caseStudy, null]))
+  const themeTitles = Object.keys(themes)
+  const appRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
+    Object.fromEntries(themeTitles.map(title => [title, null]))
   )
   return (
     <div style={fullWindowStyles}>
-      <Selector caseStudyRefs={caseStudyRefs} />
-      <div style={coverStyles} ref={containerRef}>
-        {caseStudies.map(caseStudy => (
+      <Selector themes={themes} appRefs={appRefs} />
+      <div style={{ ...coverStyles, gridTemplateColumns }} ref={containerRef}>
+        {themeTitles.map(title => (
           <App
-            key={caseStudy}
-            ref={ (element: React.MutableRefObject<HTMLDivElement>) => (caseStudyRefs.current[caseStudy] = element) }
-            title={caseStudy}
+            key={title}
+            ref={ (element: React.MutableRefObject<HTMLDivElement>) => (appRefs.current[title] = element) }
+            theme={themes[title]}
+            title={title}
             containerRef={containerRef}
-            setCurrentCaseStudy={setCurrentCaseStudy}
+            setCurrentTheme={setCurrentTheme}
           />
         ))}
       </div>

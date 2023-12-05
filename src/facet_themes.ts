@@ -5,12 +5,8 @@ import WherePhoto from 'images/facets/where.webp'
 import HowPhoto from 'images/facets/how.webp'
 import WhyPhoto from 'images/facets/why.webp'
 
-interface FacetTheme extends Theme {
+interface FacetTheme extends Omit<Theme, 'subtitle'> {
   subtitle: string
-  link?: {
-    text: string
-    url: string
-  }
 }
 
 const FacetThemes: Record<string, FacetTheme> = {
@@ -75,7 +71,7 @@ const FacetThemes: Record<string, FacetTheme> = {
     darkModeBackground: 'linear-gradient(248deg, #464046 13.28%, #8D5D24 55.3%, #464040 90.12%)',
     lightModeBackground: 'linear-gradient(248deg, #D2D6D9 13.28%, #D2C0A4 58.07%, #D2D6D9 90.12%)',
     link: {
-      url: 'https://www.interaction-design.org/adalida-baca',
+      url: 'https://www.interaction-design.org/members/adalida-baca',
       text: "View Adalida's IxDF profile"
     }
   },

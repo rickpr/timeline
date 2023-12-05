@@ -15,14 +15,14 @@ interface Props {
 }
 
 const CaseStudies = ({ darkMode, toggleDarkMode }: Props): JSX.Element => {
-  const [currentCaseStudy, setCurrentCaseStudy] = useState('AirbrushArtStudio')
+  const [currentTheme, setCurrentTheme] = useState('AirbrushArtStudio')
   const isMobile = useIsMobile(768)
   const content = useMemo(() => {
     return isMobile === true
-      ? <Mobile setCurrentCaseStudy={setCurrentCaseStudy} />
-      : <Desktop setCurrentCaseStudy={setCurrentCaseStudy} />
+      ? <Mobile themes={CaseStudyThemes} setCurrentTheme={setCurrentTheme} />
+      : <Desktop themes={CaseStudyThemes} setCurrentTheme={setCurrentTheme} />
   }, [isMobile])
-  const caseStudyTheme = useMemo(() => CaseStudyThemes[currentCaseStudy], [currentCaseStudy])
+  const caseStudyTheme = useMemo(() => CaseStudyThemes[currentTheme], [currentTheme])
   if (isMobile === null) return <div />
 
   return (

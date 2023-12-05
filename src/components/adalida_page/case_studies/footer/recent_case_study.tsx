@@ -23,9 +23,9 @@ const imageStyles = {
 const RecentCaseStudy = ({ caseStudyName }: { caseStudyName: string }): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
   const background = darkMode ? '#1A1A1A' : '#FFFFFF'
-  const { name, coverPhoto, caseStudyPage } = CaseStudyThemes[caseStudyName]
+  const { name, coverPhoto, link } = CaseStudyThemes[caseStudyName]
   return (
-    <a className='recent-case-study' href={caseStudyPage} style={{ ...containerStyles, background }}>
+    <a className='recent-case-study' href={link.url} style={{ ...containerStyles, background }}>
       <img
         alt={`${name} case study`}
         src={coverPhoto}

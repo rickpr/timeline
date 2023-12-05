@@ -2,13 +2,14 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { forwardRef, useEffect, useRef } from 'react'
 
-import CaseStudyThemes from 'case_study_themes'
+import type { Theme } from 'theme_context'
 
-import CaseStudyLink from '../case_study_link'
+import ThemedLink from '../themed_link'
 import { headerPixels } from '../header'
 
 gsap.registerPlugin(ScrollTrigger)
 
+// TODO: What are these magic numbers?
 const imageHeight = 85
 const translationAmount = 75 - imageHeight / 2
 
@@ -31,7 +32,8 @@ const imageStyles = {
   objectFit: 'contain' as const,
   minHeight: 0,
   width: 'max-content',
-  maxWidth: '100%'
+  maxWidth: '100%',
+  maxHeight: `${imageHeight / 2}dvh`
 }
 
 const titleStyles = {
@@ -42,12 +44,13 @@ const titleStyles = {
 
 interface Props {
   title: string
+  theme: Theme
   containerRef: React.MutableRefObject<null>
-  setCurrentCaseStudy: (caseStudy: string) => void
+  setCurrentTheme: (title: string) => void
 }
 
-const App = forwardRef(({ title, containerRef, setCurrentCaseStudy }: Props, outerRef) => {
-  const { coverPhoto } = CaseStudyThemes[title]
+const App = forwardRef(({ title, theme, containerRef, setCurrentTheme }: Props, outerRef) => {
+  const { coverPhoto } = theme
   const imageRef = useRef(null)
   const caseStudyRef = useRef(null)
   if (typeof outerRef === 'function') {
@@ -65,7 +68,7 @@ const App = forwardRef(({ title, containerRef, setCurrentCaseStudy }: Props, out
           scrub: true,
           horizontal: true,
           onUpdate: self => {
-            if (Math.abs(self.progress - 0.5) < 0.05) setCurrentCaseStudy(title)
+            if (Math.abs(self.progress - 0.5) < 0.05) setCurrentTheme(title)
           }
         }
       })
@@ -83,13 +86,13 @@ const App = forwardRef(({ title, containerRef, setCurrentCaseStudy }: Props, out
       ScrollTrigger.getAll().forEach(t => { t.kill() })
       context.revert()
     }
-  }, [containerRef, caseStudyRef, setCurrentCaseStudy, title])
+  }, [containerRef, caseStudyRef, setCurrentTheme, title])
 
   return (
     <div style={containerStyles} ref={caseStudyRef}>
       <img alt={`${title} cover`} src={coverPhoto} style={imageStyles} ref={imageRef} />
       <div style={titleStyles}>
-        <CaseStudyLink title={title} />
+        <ThemedLink theme={theme} />
       </div>
     </div>
   )

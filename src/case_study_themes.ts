@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 
 import type { Theme } from './theme_context'
 import AirbrushArtStudioPhoto from 'images/airbrush_art_studio/cover.png'
@@ -7,16 +6,17 @@ import PhronesisHeroPhoto from 'images/phronesis/title.jpg'
 import GainTainPhoto from 'images/gaintain/cover.png'
 import TLDRPhoto from 'images/tldr/cover.png'
 
-interface CaseStudyTheme extends Theme {
-  scrollBar: CSSProperties['background']
-  caseStudyPage: string
+interface CaseStudyTheme extends Omit<Theme, 'link'> {
+  link: {
+    text: 'View Case Study'
+    url: string
+  }
 }
 
 const CaseStudyThemes: Record<string, CaseStudyTheme> = {
   AirbrushArtStudio: {
     name: 'Airbrush Art',
     description: 'A unique digital portfolio showcasing the remarkable talents of Armando Diaz, a distinguished artist hailing from New Mexico.',
-    caseStudyPage: '/case_studies/airbrush_art_studio',
     coverPhoto: AirbrushArtStudioPhoto,
     heroPhoto: AirbrushArtStudioPhoto,
     roles: [
@@ -24,13 +24,15 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'Responsive Design',
       'Copywriting'
     ],
-    scrollBar: '#CAB8F5'
+    link: {
+      text: 'View Case Study',
+      url: '/case_studies/airbrush_art_studio'
+    }
   },
 
   TLDR: {
     name: 'TL;DR',
     description: 'Tired of not understanding what you “agree” to when signing up for software? We are too, which is why we created a generative AI legalese summarizer',
-    caseStudyPage: '/case_studies/tldr',
     coverPhoto: TLDRPhoto,
     heroPhoto: TLDRPhoto,
     roles: [
@@ -38,13 +40,15 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'Product Design',
       'Prototyping'
     ],
-    scrollBar: '#59145F'
+    link: {
+      text: 'View Case Study ➜',
+      url: '/case_studies/tldr'
+    }
   },
 
   Phronesis: {
     name: 'Phronesis',
     description: 'Seamlessly access important information, communicate effectively, and take control of your academic journey with ease.',
-    caseStudyPage: '/case_studies/phronesis',
     coverPhoto: PhronesisPhoto,
     heroPhoto: PhronesisHeroPhoto,
     roles: [
@@ -53,13 +57,15 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'SaaS',
       'B2B'
     ],
-    scrollBar: '#2D2D31'
+    link: {
+      text: 'View Case Study',
+      url: '/case_studies/phronesis'
+    }
   },
 
   GainTain: {
     name: 'GainTain',
     description: 'Designed specifically for fitness enthusiasts who want to track their workout data extensively.',
-    caseStudyPage: '/case_studies/gaintain',
     coverPhoto: GainTainPhoto,
     roles: [
       'User Interaction Design',
@@ -67,7 +73,10 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'SaaS',
       'B2C'
     ],
-    scrollBar: 'linear-gradient(#FF512F, #DD2476)'
+    link: {
+      text: 'View Case Study',
+      url: '/case_studies/gaintain'
+    }
   }
 }
 
