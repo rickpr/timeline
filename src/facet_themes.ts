@@ -51,10 +51,6 @@ const FacetThemes: Record<string, FacetTheme> = {
         background: 'linear-gradient(248deg, #D2D6D9 13.28%, #A4D2D0 58.07%, #D2D6D9 90.12%)',
         text: lightColor
       }
-    },
-    link: {
-      text: 'View case studies',
-      url: '/case_studies'
     }
   },
   Where: {

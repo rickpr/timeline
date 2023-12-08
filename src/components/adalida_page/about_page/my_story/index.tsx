@@ -82,13 +82,11 @@ const MyStory = (): JSX.Element => {
   const { text: color } = useDarkModeStyle(themeContext.darkMode, themeContext)
   const isMobile = useIsMobile() === true
 
-  const textColor = themeContext.darkMode ? '#C4C4C4' : '#606367'
-  const paragraphStyle = { ...styles.paragraph, color: textColor }
   const headerStyle = { fontWeight: 600, fontSize: isMobile ? '1.25em' : '2em' }
 
   return (
     <div style={{ ...styles.container, color }}>
-      <div style={{ ...styles.myStory, color: textColor }}>
+      <div style={styles.myStory}>
         <div>My Story</div>
         <div style={{ ...styles.myStoryLine, borderColor: color }}></div>
       </div>
@@ -99,7 +97,7 @@ const MyStory = (): JSX.Element => {
         {imageTag(BacaFamily)}
         <div style={styles.textBox}>
           <div style={styles.paragraphHeading}>New Mexico Grown</div>
-          <div style={paragraphStyle}>
+          <div style={styles.paragraph}>
             <div>
               I&apos;m New Mexican grown with a large family spanning across
               Northern and Southern New Mexico. My grandma and her 18 brothers
@@ -136,7 +134,7 @@ const MyStory = (): JSX.Element => {
         {imageTag(AdalidaFace)}
         <div style={styles.textBox}>
           <div style={styles.paragraphHeading}>B.A. in English-Philosophy</div>
-          <div style={paragraphStyle}>
+          <div style={styles.paragraph}>
             <div>
               In 2020 I graduated from the University of New Mexico with a B.A
               in English-Philosophy and a certificate in Technical and
@@ -169,7 +167,7 @@ const MyStory = (): JSX.Element => {
         {imageTag(Balcony)}
         <div style={styles.textBox}>
           <div style={styles.paragraphHeading}>Big Changes</div>
-          <div style={paragraphStyle}>
+          <div style={styles.paragraph}>
             <div>
               During my winter, summer, fall, and spring breaks I&apos;d visit
               my fiancé Ricardo in San Francisco, California. During this time I
@@ -200,7 +198,7 @@ const MyStory = (): JSX.Element => {
         {imageTag(Portland)}
         <div style={styles.textBox}>
           <div style={styles.paragraphHeading}>In my spare time</div>
-          <div style={paragraphStyle}>
+          <div style={styles.paragraph}>
             <div>
               I&apos;m designing something for Ricardo to implement via code.
               This website is a great example of our work together. I&apos;m a
@@ -242,7 +240,7 @@ const MyStory = (): JSX.Element => {
           <div style={styles.lookingFor}>
             Looking for a Designer?
           </div>
-          <div style={paragraphStyle}>
+          <div style={styles.paragraph}>
             <div>
               Reach Adalida at: <a href='mailto:hi@adalida.design'>hi@adalida.design</a>
             </div>
@@ -250,7 +248,7 @@ const MyStory = (): JSX.Element => {
           <div style={styles.lookingFor}>
             Looking for an Engineer?
           </div>
-          <div style={paragraphStyle}>
+          <div style={styles.paragraph}>
             <div>
               Reach Ricardo at: <a href='mailto:fdisk87@yahoo.com'>fdisk87@yahoo.com</a>
             </div>
