@@ -1,8 +1,7 @@
 import { Link } from 'gatsby'
-import React, { useContext } from 'react'
+import React from 'react'
 
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
-import { ThemeContext, type Theme } from 'theme_context'
+import type { Theme } from 'theme_context'
 
 import { glassStyles } from './styles'
 
@@ -15,6 +14,7 @@ const labelStyles = {
 }
 const titleStyles = {
   fontSize: '2rem',
+  fontWeight: 900,
   lineHeight: 1,
   padding: 0,
   margin: 0
@@ -30,6 +30,7 @@ const listStyles = {
 
 const roleStyles = {
   ...glassStyles,
+  fontWeight: 700,
   transition: 'background-color 0.5s ease-in-out',
   padding: '0.8em',
   fontSize: '10px',
@@ -44,16 +45,14 @@ const linkStyles = {
 }
 
 const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
-  const { darkMode } = useContext(ThemeContext)
-  const { button } = useDarkModeStyle(darkMode)
-  const { description, name, link, roles } = theme
+  const { description, name, subtitle, link, roles } = theme
   const innerContent = (
     <>
-      <div style={titleStyles}>{name.toUpperCase()}</div>
+      <div style={titleStyles}>{subtitle ?? name.toUpperCase()}</div>
       <div style={listStyles}>
-        {roles.map(role => <div key={role} style={{ ...roleStyles, background: button }}>{role}</div>)}
+        {roles.map(role => <div key={role} style={roleStyles}>{role}</div>)}
       </div>
-      <div>{description}</div>
+      <div style={{ fontWeight: 600 }}>{description}</div>
       {link !== undefined && <div style={linkStyles}>{link.text} ➜</div>}
     </>
   )

@@ -1,35 +1,19 @@
-import type { CSSProperties } from 'react'
+import { darkColor, lightColor, type Colors, type Theme } from '../theme_context'
 
-import type { Theme } from '../theme_context'
-
-interface Colors {
-  background: CSSProperties['background']
-  text: CSSProperties['color']
-  button: CSSProperties['background']
-}
-
-const darkColor = '#121212'
-const lightColor = '#F5F5F5'
-
-const darkModeStyles: Colors = {
+const darkModeDefaultColors: Colors = {
   background: darkColor,
   text: lightColor,
-  button: '#303233'
 }
 
-const lightmodeStyles: Colors = {
+const lightModeDefaultColors: Colors = {
   background: lightColor,
   text: darkColor,
-  button: '#CFCDCC'
 }
 
 const useDarkModeStyle = (darkMode: boolean, theme?: Theme): Colors => {
-  const styles = darkMode ? darkModeStyles : lightmodeStyles
-  const themeBackground = darkMode ? theme?.darkModeBackground : theme?.lightModeBackground
-  return {
-    ...styles,
-    background: themeBackground ?? styles.background
-  }
+  const defaultColors = darkMode ? darkModeDefaultColors : lightModeDefaultColors
+  const themeColors = darkMode ? theme?.colors?.darkMode : theme?.colors?.lightMode
+  return themeColors ?? defaultColors
 }
 
 export default useDarkModeStyle

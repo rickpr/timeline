@@ -32,11 +32,11 @@ interface Props {
 }
 
 const Header = ({ themes, appRefs }: Props): JSX.Element => {
-  const { name, darkMode } = useContext(ThemeContext)
-  const { text } = useDarkModeStyle(darkMode)
+  const themeContext = useContext(ThemeContext)
+  const { text } = useDarkModeStyle(themeContext.darkMode, themeContext)
 
   const indicators = Object.keys(appRefs.current).map(title => {
-    const active = name === themes[title].name
+    const active = themeContext.name === themes[title].name
     const opacity = active ? 1 : 0.2
     return (
       <button

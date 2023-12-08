@@ -1,8 +1,7 @@
 import { Link } from 'gatsby'
-import React, { useContext } from 'react'
+import React from 'react'
 
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
-import { ThemeContext, type Theme } from 'theme_context'
+import type { Theme } from 'theme_context'
 
 import { glassStyles } from '../../styles'
 
@@ -27,6 +26,7 @@ const listStyles = {
 }
 const roleStyles = {
   ...glassStyles,
+  fontWeight: 700,
   transition: 'background-color 0.5s ease-in-out',
   padding: '0.8em',
   fontSize: '10px',
@@ -45,26 +45,27 @@ interface Props {
 }
 
 const Title = ({ theme, active }: Props): React.ReactElement => {
-  const { darkMode } = useContext(ThemeContext)
-  const { button } = useDarkModeStyle(darkMode)
-  const { description, name, link, roles } = theme
+  const { description, name, subtitle, link, roles } = theme
   const pointerEvents = active ? 'auto' : 'none'
   const fontSize = active ? '2.6rem' : '1rem'
+  const fontWeight = active ? 900 : 500
   const descriptionStyle = {
     display: 'grid',
+    fontWeight: 600,
     gridTemplateRows: active ? '1fr' : '0fr',
     paddingTop: active ? '1rem' : 0,
     overflow: 'hidden',
     transition: 'grid-template-rows 0.5s ease-in-out'
   }
 
+  const activeName = subtitle ?? name.toUpperCase()
   const innerContent = (
     <>
-      <div style={{ ...titleStyles, fontSize, padding: active ? 0 : '1rem 0' }}>{active ? name.toUpperCase() : name}</div>
+      <div style={{ ...titleStyles, fontWeight, fontSize, padding: active ? 0 : '1rem 0' }}>{active ? activeName : name}</div>
       <div style={descriptionStyle}>
         <div style={{ overflowY: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div style={listStyles}>
-            {roles.map(role => <div key={role} style={{ ...roleStyles, background: button }}>{role}</div>)}
+            {roles.map(role => <div key={role} style={roleStyles}>{role}</div>)}
           </div>
           <div>{description}</div>
           {link !== undefined && <div style={linkStyles}>{link.text} ➜</div>}

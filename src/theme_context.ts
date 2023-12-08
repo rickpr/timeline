@@ -2,6 +2,11 @@ import React, { type CSSProperties } from 'react'
 
 import Favicon from 'images/favicon.png'
 
+export interface Colors {
+  background: CSSProperties['background']
+  text: CSSProperties['color']
+}
+
 export interface Theme {
   name: string
   subtitle?: string
@@ -9,14 +14,18 @@ export interface Theme {
   coverPhoto: string
   heroPhoto?: string
   roles: string[]
-  lightModeBackground?: CSSProperties['background']
-  darkModeBackground?: CSSProperties['background']
+  colors?: {
+    darkMode?: Colors
+    lightMode?: Colors
+  }
   link?: {
     text: string
     url: string
   }
-  usesDarkMode?: boolean
 }
+
+export const darkColor = '#121212'
+export const lightColor = '#F5F5F5'
 
 export const AboutTheme: Theme = {
   name: 'About Adalida',
@@ -24,11 +33,24 @@ export const AboutTheme: Theme = {
   coverPhoto: Favicon,
   heroPhoto: Favicon,
   roles: [],
-  lightModeBackground: 'linear-gradient(117deg, #D2D6D9 -8.17%, rgba(210, 164, 208, 0.99) 46.24%, #D5D5D5 98.47%), linear-gradient(248deg, #464046 13.28%, #8D2470 58.07%, #464040 90.12%)',
-  darkModeBackground: 'linear-gradient(248deg, #464046 13.28%, #8D2470 58.07%, #464040 90.12%)'
+  colors: {
+    lightMode: {
+      background: 'linear-gradient(248deg, #D2D6D9 13.28%, rgba(210, 164, 208, 0.99) 58.07%, #D5D5D5 98.47%), linear-gradient(248deg, #464046 13.28%, #8D2470 58.07%, #464040 90.12%)',
+      text: lightColor
+    },
+    darkMode: {
+      background: 'linear-gradient(248deg, #464046 13.28%, #8D2470 58.07%, #464040 90.12%)',
+      text: lightColor
+    }
+  }
 }
 
-const ThemeContext = React.createContext({
+interface ThemeContextType extends Theme {
+  darkMode: boolean
+  toggleDarkMode: () => void
+}
+
+const ThemeContext = React.createContext<ThemeContextType>({
   darkMode: true,
   toggleDarkMode: (): void => { /* Do nothing */ },
   ...AboutTheme

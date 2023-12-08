@@ -78,11 +78,11 @@ const imageTag = (media: string): JSX.Element => (
 )
 
 const MyStory = (): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
-  const { text: color } = useDarkModeStyle(darkMode)
+  const themeContext = useContext(ThemeContext)
+  const { text: color } = useDarkModeStyle(themeContext.darkMode, themeContext)
   const isMobile = useIsMobile() === true
 
-  const textColor = darkMode ? '#C4C4C4' : '#606367'
+  const textColor = themeContext.darkMode ? '#C4C4C4' : '#606367'
   const paragraphStyle = { ...styles.paragraph, color: textColor }
   const headerStyle = { fontWeight: 600, fontSize: isMobile ? '1.25em' : '2em' }
 

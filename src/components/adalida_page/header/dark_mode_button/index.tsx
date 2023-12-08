@@ -6,8 +6,8 @@ import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { glassStyles } from '../../styles'
 
 const DarkModeButton = (): JSX.Element => {
-  const { darkMode, toggleDarkMode } = useContext(ThemeContext)
-  const { text: color } = useDarkModeStyle(darkMode)
+  const themeContext = useContext(ThemeContext)
+  const { text: color } = useDarkModeStyle(themeContext.darkMode, themeContext)
   const darkModeButtonStyle = {
     ...glassStyles,
     height: '40px',
@@ -22,9 +22,9 @@ const DarkModeButton = (): JSX.Element => {
   return (
     <button
       style={darkModeButtonStyle}
-      onClick={toggleDarkMode}
+      onClick={themeContext.toggleDarkMode}
     >
-      <Icon darkMode={darkMode} />
+      <Icon darkMode={themeContext.darkMode} />
     </button>
   )
 }

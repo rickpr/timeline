@@ -33,21 +33,15 @@ const iconContainerStyles = {
   fontWeight: 300
 }
 
+const iconSize = 'min(40px, 8dvw)'
+
 const ContactInformation = (): React.ReactElement => {
   const resumeLink = FileQuery('Adalida_Baca_Resume.pdf').publicURL
 
   const isMobile = useIsMobile() === true
 
   const strings = [`Based\xa0in\xa0${isMobile ? 'SF' : 'San\xa0Francisco'},\xa0CA`]
-  const typewriter = (
-    <Typewriter
-      options={{
-        strings,
-        autoStart: true,
-        loop: true
-      }}
-    />
-  )
+  const typewriter = <Typewriter options={{ strings, autoStart: true, loop: true }} />
 
   return (
     <div style={styles}>
@@ -67,10 +61,10 @@ const ContactInformation = (): React.ReactElement => {
       <div style={iconContainerStyles}>
         <span style={{ marginLeft: '16px' }}>{typewriter}</span>
         <div style={{ display: 'flex', gap: '10px', marginLeft: '10px' }}>
-          <BrandIcon href='https://www.interaction-design.org/members/adalida-baca' Icon={IconBackpack} />
-          <BrandIcon href='https://dribbble.com/adalida-baca' Icon={IconBrandDribbble} />
-          <BrandIcon href='https://linkedin.com/in/adalidabaca' Icon={IconBrandLinkedin} />
-          <BrandIcon href="mailto:adalida@adalida.design" Icon={IconMail} />
+          <BrandIcon href='https://www.interaction-design.org/members/adalida-baca' Icon={IconBackpack} size={iconSize} />
+          <BrandIcon href='https://dribbble.com/adalida-baca' Icon={IconBrandDribbble} size={iconSize} />
+          <BrandIcon href='https://linkedin.com/in/adalidabaca' Icon={IconBrandLinkedin} size={iconSize} />
+          <BrandIcon href="mailto:adalida@adalida.design" Icon={IconMail} size={iconSize} />
         </div>
       </div>
     </div>

@@ -32,7 +32,7 @@ interface Props {
 
 const Info = ({ appRefs, theme, title }: Props): React.ReactElement => {
   const { name, darkMode } = useContext(ThemeContext)
-  const { background } = useDarkModeStyle(!darkMode)
+  const { text: background } = useDarkModeStyle(darkMode, theme)
   const active = name === theme.name
   const opacity = active ? 1 : 0.2
   const scrollIntoView = (): void => appRefs.current[title]?.current?.scrollIntoView({ behavior: 'smooth' })

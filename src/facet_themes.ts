@@ -1,4 +1,5 @@
-import type { Theme } from './theme_context'
+import { lightColor, type Theme } from './theme_context'
+
 import WhoPhoto from 'images/facets/who.webp'
 import WhatPhoto from 'images/facets/what.webp'
 import WherePhoto from 'images/facets/where.webp'
@@ -20,8 +21,16 @@ const FacetThemes: Record<string, FacetTheme> = {
       'Contact',
       'Background'
     ],
-    darkModeBackground: 'linear-gradient(248deg, #464046 13.28%, #8D2470 58.07%, #464040 90.12%)',
-    lightModeBackground: 'linear-gradient(246deg, #D2D6D9 0%, rgba(210, 164, 208, 0.99) 47.65%, #D5D5D5 93.39%)'
+    colors: {
+      darkMode: {
+        background: 'linear-gradient(248deg, #464046 13.28%, #8D2470 58.07%, #464040 90.12%)',
+        text: lightColor
+      },
+      lightMode: {
+        background: 'linear-gradient(248deg, #D2D6D9 0%, rgba(210, 164, 208, 0.99) 58.07%, #D5D5D5 90.12%)',
+        text: lightColor
+      }
+    }
   },
   What: {
     name: 'What do I do?',
@@ -33,8 +42,16 @@ const FacetThemes: Record<string, FacetTheme> = {
       'Brand Identity',
       'Product Design'
     ],
-    darkModeBackground: 'linear-gradient(248deg, #464046 13.28%, #24878D 58.07%, #464040 90.12%)',
-    lightModeBackground: 'linear-gradient(248deg, #D2D6D9 13.28%, #A4D2D0 58.07%, #D2D6D9 90.12%)',
+    colors: {
+      darkMode: {
+        background: 'linear-gradient(248deg, #464046 13.28%, #24878D 58.07%, #464040 90.12%)',
+        text: lightColor
+      },
+      lightMode: {
+        background: 'linear-gradient(248deg, #D2D6D9 13.28%, #A4D2D0 58.07%, #D2D6D9 90.12%)',
+        text: lightColor
+      }
+    },
     link: {
       text: 'View case studies',
       url: '/case_studies'
@@ -51,8 +68,16 @@ const FacetThemes: Record<string, FacetTheme> = {
       'Animation',
       'Figma'
     ],
-    darkModeBackground: 'linear-gradient(248deg, #464046 13.28%, #245B8D 58.07%, #464040 90.12%)',
-    lightModeBackground: 'linear-gradient(248deg, #D2D6D9 13.28%, #A4C1D2 58.07%, #D2D6D9 90.12%)',
+    colors: {
+      darkMode: {
+        background: 'linear-gradient(248deg, #464046 13.28%, #245B8D 58.07%, #464040 90.12%)',
+        text: lightColor
+      },
+      lightMode: {
+        background: 'linear-gradient(248deg, #D2D6D9 13.28%, #A4C1D2 58.07%, #D2D6D9 90.12%)',
+        text: lightColor
+      }
+    },
     link: {
       text: 'View case studies',
       url: '/case_studies'
@@ -68,8 +93,16 @@ const FacetThemes: Record<string, FacetTheme> = {
       'Data Driven Design',
       'User Research Methods'
     ],
-    darkModeBackground: 'linear-gradient(248deg, #464046 13.28%, #8D5D24 55.3%, #464040 90.12%)',
-    lightModeBackground: 'linear-gradient(248deg, #D2D6D9 13.28%, #D2C0A4 58.07%, #D2D6D9 90.12%)',
+    colors: {
+      darkMode: {
+        background: 'linear-gradient(248deg, #464046 13.28%, #8D5D24 55.3%, #464040 90.12%)',
+        text: lightColor
+      },
+      lightMode: {
+        background: 'linear-gradient(248deg, #D2D6D9 13.28%, #D2C0A4 58.07%, #D2D6D9 90.12%)',
+        text: lightColor
+      }
+    },
     link: {
       url: 'https://www.interaction-design.org/members/adalida-baca',
       text: "View Adalida's IxDF profile"
@@ -85,8 +118,16 @@ const FacetThemes: Record<string, FacetTheme> = {
       'People Problems',
       'Design Problems'
     ],
-    darkModeBackground: 'linear-gradient(248deg, #464046 13.28%, #59248D 58.07%, #464040 90.12%)',
-    lightModeBackground: 'linear-gradient(248deg, #D2D6D9 13.28%, #C3A4D2 58.07%, #D2D6D9 90.12%)',
+    colors: {
+      darkMode: {
+        background: 'linear-gradient(248deg, #464046 13.28%, #59248D 58.07%, #464040 90.12%)',
+        text: lightColor
+      },
+      lightMode: {
+        background: 'linear-gradient(248deg, #D2D6D9 13.28%, #C3A4D2 58.07%, #D2D6D9 90.12%)',
+        text: lightColor
+      }
+    },
     link: {
       text: 'Read my Story',
       url: '/about'
