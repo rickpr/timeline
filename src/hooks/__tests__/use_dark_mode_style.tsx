@@ -23,11 +23,15 @@ describe('useDarkModeStyle', () => {
 
     it('gives the case study dark mode background when it is dark mode', () => {
       const { background } = useDarkModeStyle(true, AboutTheme)
-      expect(background).toEqual(AboutTheme.darkModeBackground)
+      const expectedBackground = AboutTheme.colors?.darkMode?.background
+      expect(expectedBackground).not.toBeNull()
+      expect(background).toEqual(expectedBackground)
     })
     it('gives the case study light mode background when it is light mode', () => {
       const { background } = useDarkModeStyle(false, AboutTheme)
-      expect(background).toEqual(AboutTheme.lightModeBackground)
+      const expectedBackground = AboutTheme.colors?.lightMode?.background
+      expect(expectedBackground).not.toBeNull()
+      expect(background).toEqual(expectedBackground)
     })
   })
 })

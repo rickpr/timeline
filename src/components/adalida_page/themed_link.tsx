@@ -52,7 +52,7 @@ const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
       <div style={listStyles}>
         {roles.map(role => <div key={role} style={roleStyles}>{role}</div>)}
       </div>
-      <div style={{ fontWeight: 600 }}>{description}</div>
+      <div style={{ fontWeight: 500, fontSize: '0.5em' }}>{description}</div>
       {link !== undefined && <div style={linkStyles}>{link.text} ➜</div>}
     </>
   )

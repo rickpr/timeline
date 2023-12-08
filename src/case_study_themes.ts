@@ -41,7 +41,7 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'Prototyping'
     ],
     link: {
-      text: 'View Case Study ➜',
+      text: 'View Case Study',
       url: '/case_studies/tldr'
     }
   },
