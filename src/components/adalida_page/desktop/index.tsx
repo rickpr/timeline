@@ -1,8 +1,6 @@
-import React, { useContext, useRef } from 'react'
+import React, { useRef } from 'react'
 
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
-import { ThemeContext } from 'theme_context'
-import Projects from 'project_data'
+import type { Theme } from 'theme_context'
 
 import App from './app'
 import Header from './header'
@@ -12,39 +10,36 @@ const coverStyles = {
   display: 'flex',
   maxHeight: `calc(100dvh - ${headerPixels}px)`,
   flexDirection: 'column' as const,
-  transition: 'background-color 0.5s ease-in-out',
   overflowY: 'auto' as const,
   overflowX: 'hidden' as const,
-  scrollSnapType: 'y mandatory',
-  background: '#121212'
+  scrollSnapType: 'y mandatory'
 }
 
 interface Props {
-  setCurrentProject: (project: string) => void
+  themes: Record<string, Theme>
+  setCurrentTheme: (themeName: string) => void
 }
 
-const Desktop = ({ setCurrentProject }: Props): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
-  const { background, text } = useDarkModeStyle(darkMode)
-  const styles = { background, color: text }
+const Desktop = ({ themes, setCurrentTheme }: Props): JSX.Element => {
   const containerRef = useRef(null)
-  const projects = Object.keys(Projects)
-  const projectRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
-    Object.fromEntries(projects.map(project => [project, null]))
+  const themeTitles = Object.keys(themes)
+  const appRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
+    Object.fromEntries(themeTitles.map(title => [title, null]))
   )
 
   return (
-    <div style={{ ...coverStyles, ...styles }} ref={containerRef}>
-      {projects.map(project => (
+    <div style={coverStyles} ref={containerRef}>
+      {themeTitles.map(title => (
         <App
-          key={project}
-          ref={ (element: React.MutableRefObject<HTMLDivElement>) => (projectRefs.current[project] = element) }
-          title={project}
+          key={title}
+          ref={ (element: React.MutableRefObject<HTMLDivElement>) => (appRefs.current[title] = element) }
+          theme={themes[title]}
+          title={title}
           containerRef={containerRef}
-          setCurrentProject={setCurrentProject}
+          setCurrentTheme={setCurrentTheme}
         />
       ))}
-      <Header projectRefs={projectRefs} />
+      <Header themes={themes} appRefs={appRefs} />
     </div>
   )
 }

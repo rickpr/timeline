@@ -1,9 +1,6 @@
-import React, { useContext, useRef } from 'react'
+import React, { useRef } from 'react'
 
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
-
-import Projects from 'project_data'
-import { ThemeContext } from 'theme_context'
+import type { Theme } from 'theme_context'
 
 import App from './app'
 import Selector from './selector'
@@ -16,14 +13,12 @@ const fullWindowStyles = {
   maxHeight: height,
   minWidth: '100dvw',
   display: 'flex',
-  flexDirection: 'column' as const,
-  transition: 'background-color 0.5s ease-in-out'
+  flexDirection: 'column' as const
 }
 
 const coverStyles = {
   display: 'grid',
   minWidth: '100dvw',
-  gridTemplateColumns: '1fr 1fr 1fr 1fr', // TODO: WTF
   flexDirection: 'row' as const,
   overflowX: 'auto' as const,
   overflowY: 'hidden' as const,
@@ -33,29 +28,29 @@ const coverStyles = {
 }
 
 interface Props {
-  setCurrentProject: (project: string) => void
+  themes: Record<string, Theme>
+  setCurrentTheme: (title: string) => void
 }
 
-const Mobile = ({ setCurrentProject }: Props): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
-  const { background, text } = useDarkModeStyle(darkMode)
-  const styles = { background, color: text }
+const Mobile = ({ themes, setCurrentTheme }: Props): JSX.Element => {
+  const gridTemplateColumns = `repeat(${Object.keys(themes).length}, 1fr)`
   const containerRef = useRef(null)
-  const projects = Object.keys(Projects)
-  const projectRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
-    Object.fromEntries(projects.map(project => [project, null]))
+  const themeTitles = Object.keys(themes)
+  const appRefs = useRef<Record<string, React.MutableRefObject<HTMLDivElement> | null>>(
+    Object.fromEntries(themeTitles.map(title => [title, null]))
   )
   return (
-    <div style={{ ...fullWindowStyles, ...styles }}>
-      <Selector projectRefs={projectRefs} />
-      <div style={coverStyles} ref={containerRef}>
-        {projects.map(project => (
+    <div style={fullWindowStyles}>
+      <Selector themes={themes} appRefs={appRefs} />
+      <div style={{ ...coverStyles, gridTemplateColumns }} ref={containerRef}>
+        {themeTitles.map(title => (
           <App
-            key={project}
-            ref={ (element: React.MutableRefObject<HTMLDivElement>) => (projectRefs.current[project] = element) }
-            title={project}
+            key={title}
+            ref={ (element: React.MutableRefObject<HTMLDivElement>) => (appRefs.current[title] = element) }
+            theme={themes[title]}
+            title={title}
             containerRef={containerRef}
-            setCurrentProject={setCurrentProject}
+            setCurrentTheme={setCurrentTheme}
           />
         ))}
       </div>

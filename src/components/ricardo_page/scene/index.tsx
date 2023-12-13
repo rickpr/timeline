@@ -123,11 +123,11 @@ const Scene = (): JSX.Element => {
         <p>
           I&apos;m going to use Blender to compose the 3D models. The first
           hurdle is importing the VariDesk model.
-          It&apos;s in <Link to='https://en.wikipedia.org/wiki/.dwg'> dwg </Link>
-          format, so I&apos;ll need to use a plugin.
-          I&apos;m going to follow
+          It&apos;s in&nbsp;<Link to='https://en.wikipedia.org/wiki/.dwg'>dwg</Link>
+          &nbsp;format, so I&apos;ll need to use a plugin.
+          I&apos;m going to follow&nbsp;
           <Link to='https://all3dp.com/2/dwg-blender-import-files/#google_vignette'>
-            this blog post </Link> to figure out how this is done. Here we go!
+            this blog post</Link> to figure out how this is done. Here we go!
         </p>
         <img style={styles.image} src={PreferencesScreenshot} alt='Edit -> Preferences menu.' />
         <p>
@@ -139,7 +139,7 @@ const Scene = (): JSX.Element => {
         <p>
           Also, the blog post doesn&apos;t recommend one particular tool to
           convert DWG to DXF. When possible, I try to use the most official tool.
-          This appears to me to be the
+          This appears to me to be the&nbsp;
           <Link to='https://www.opendesign.com/guestfiles/oda_file_converter'>
             Open Design Alliance&apos;s. DWG-DXF converter. </Link> I&apos;m running
           EndeavourOS so I&apos;ll have to use the AppImage. After some trial and error,
@@ -149,7 +149,7 @@ const Scene = (): JSX.Element => {
         <p>
           I&apos;ll import this into Blender - here is the start of the scene!
           <img style={styles.image} src={BlenderScreenshot} alt='Initial Scene' />
-          Next I want to import the microphone - but first I learned about
+          Next I want to import the microphone - but first I learned about&nbsp;
           <Link to='https://docs.blender.org/manual/en/latest/scene_layout/collections/collections.html'>
             Blender collections </Link>. I&apos;ll create a collection for the desk so the
           pieces don&apos;t get mixed up.
@@ -262,7 +262,7 @@ const Scene = (): JSX.Element => {
         transform the scene and provide a React component for us. I run the
         following command:
       </p>
-      <p style={styles.blockCode}>
+      <p style={styles.codeBlock}>
         npx gltfjsx desk_scene.glb --transform -t
       </p>
       <p>

@@ -65,7 +65,7 @@ const Box = (props: MeshProps): JSX.Element => {
       {...props}
       position={[SCALE, 0, 0]}
       rotation={[0, Math.PI / 2, 0]}
-      onPointerDown={openLink('https://fdisk.co/ricardo/scene')}
+      onPointerDown={() => { window.location.href = '/ricardo/scene' }}
     >
       <planeGeometry args={[sideSize, sideSize]} />
       <meshStandardMaterial map={blogTexture} side={THREE.DoubleSide} roughness={0} />

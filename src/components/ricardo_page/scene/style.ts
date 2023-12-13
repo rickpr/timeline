@@ -1,46 +1,64 @@
 const colors = {
-  primary: '#002B36',
-  secondary: '#073642',
-  accent1: '#D33682',
-  accent2: '#268BD2',
-  neutral: '#EEE8D5',
-  text: '#586E75'
+  background: '#000000', // Background
+  foreground: '#FDFDFD', // Foreground (Text)
+
+  color_01: '#222222', // Black (Host)
+  color_02: '#F01818', // Red (Syntax string)
+  color_03: '#24D830', // Green (Command)
+  color_04: '#F0D824', // Yellow (Command second)
+  color_05: '#7890F0', // Blue (Path)
+  color_06: '#F078D8', // Magenta (Syntax var)
+  color_07: '#54E4E4', // Cyan (Prompt)
+  color_08: '#A5A5A5', // White
+
+  color_09: '#888888', // Bright Black
+  color_10: '#EF8383', // Bright Red (Command error)
+  color_11: '#7ED684', // Bright Green (Exec)
+  color_12: '#EFE28B', // Bright Yellow
+  color_13: '#B3BFEF', // Bright Blue (Folder)
+  color_14: '#EFB3E3', // Bright Magenta
+  color_15: '#9CE2E2', // Bright Cyan
+  color_16: '#FFFFFF' // Bright White
 }
 
 export const styles = {
   container: {
     display: 'flex',
     flexDirection: 'column' as const,
-    backgroundColor: colors.neutral,
-    color: colors.text,
+    backgroundColor: colors.background,
+    color: colors.foreground,
     width: '100dvw',
     minHeight: '100dvh',
-    padding: '0 10% 2em'
+    padding: '0 10% 2em',
+    textShadow: `0 0 0.5em ${colors.foreground}`
   },
   header: {
     display: 'flex',
     flexDirection: 'row' as const,
     alignItems: 'center',
     justifyContent: 'center',
-    color: colors.accent2,
-    backgroundColor: colors.primary,
+    color: colors.color_06,
+    backgroundColor: colors.color_01,
+    border: `1px solid ${colors.color_04}`,
+    borderRadius: '0 0 0.5em 0.5em',
+    borderTop: 'none',
     fontSize: '2em',
-    fontFamily: 'Open Sans'
+    fontFamily: 'Inconsolata'
   },
   heading: {
     display: 'flex',
     flexDirection: 'row' as const,
     alignItems: 'center',
-    color: colors.text,
+    color: colors.color_02,
     fontSize: '1.5em',
-    fontFamily: 'Open Sans'
+    fontFamily: 'Inconsolata'
   },
   body: {
     display: 'flex',
     flexDirection: 'column' as const,
-    backgroundColor: colors.neutral,
-    color: colors.text,
-    fontFamily: 'Playfair Display'
+    backgroundColor: colors.background,
+    color: colors.foreground,
+    fontFamily: 'Inconsolata'
   },
   image: {
     width: 'max-content',
@@ -48,24 +66,25 @@ export const styles = {
     borderRadius: '0.5em'
   },
   inlineCode: {
-    backgroundColor: colors.secondary,
-    color: colors.accent1,
+    backgroundColor: colors.color_01,
+    color: colors.color_06,
     padding: '0 0.5em',
     fontFamily: 'Inconsolata',
     marginLeft: '1ch',
     borderRadius: '0.5em',
-    border: `1px solid ${colors.primary}`
+    border: `1px solid ${colors.color_04}`
   },
-  blockCode: {
-    backgroundColor: colors.secondary,
-    color: colors.accent1,
+  codeBlock: {
+    backgroundColor: colors.color_01,
+    color: colors.color_06,
     padding: '0.5em',
     fontFamily: 'Inconsolata',
     borderRadius: '0.5em',
-    border: `1px solid ${colors.primary}`
+    border: `1px solid ${colors.color_04}`
   },
   link: {
-    color: colors.accent2,
-    textDecoration: 'underline'
+    color: colors.color_05,
+    textDecoration: 'underline',
+    display: 'inline-flex'
   }
 }

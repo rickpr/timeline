@@ -21,18 +21,13 @@ $theme-colors: (
 }
 
 @font-face {
-  font-family: 'Playfair Display';
-  src: local('Playfair Display'), url(../fonts/PlayfairDisplay-VariableFont_wght.ttf);
+  font-family: 'Work Sans';
+  src: local('Work Sans'), url(../fonts/WorkSans-VariableFont_wght.ttf);
 }
 @font-face {
-  font-family: 'Playfair Display Italic';
-  src: local('Playfair Display Italic'), url(../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+  font-family: 'Work Sans Italic';
+  src: local('Work Sans Italic'), url(../fonts/WorkSans-Italic-VariableFont_wght.ttf);
   font-weight: italic;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  src: local('Open Sans'), url(../fonts/OpenSans-VariableFont_wdth,wght.ttf);
 }
 
 html {
@@ -40,7 +35,7 @@ html {
 }
 
 body {
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;

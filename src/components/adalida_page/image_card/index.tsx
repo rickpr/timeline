@@ -1,6 +1,6 @@
 import React, { type CSSProperties } from 'react'
 
-import { makeMediaTag } from '../projects/media_with_text'
+import { makeMediaTag } from '../media_with_text'
 
 const ImageCard = ({ media, style }: { media: string, style?: CSSProperties }): JSX.Element =>
   <div style={style}>
