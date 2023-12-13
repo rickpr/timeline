@@ -42,15 +42,17 @@ export const styles = {
     border: `1px solid ${colors.color_04}`,
     borderRadius: '0 0 0.5em 0.5em',
     borderTop: 'none',
-    fontSize: '2em',
-    fontFamily: 'Inconsolata'
+    fontSize: '3em',
+    fontFamily: 'Inconsolata',
+    textAlign: 'center' as const,
+    boxShadow: `0 0 0.5em ${colors.color_06}`
   },
   heading: {
     display: 'flex',
     flexDirection: 'row' as const,
     alignItems: 'center',
     color: colors.color_02,
-    fontSize: '1.5em',
+    fontSize: '2em',
     fontFamily: 'Inconsolata'
   },
   body: {
@@ -70,7 +72,6 @@ export const styles = {
     color: colors.color_06,
     padding: '0 0.5em',
     fontFamily: 'Inconsolata',
-    marginLeft: '1ch',
     borderRadius: '0.5em',
     border: `1px solid ${colors.color_04}`
   },
