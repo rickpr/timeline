@@ -34,23 +34,25 @@ const containerStyle = {
 }
 
 interface Props {
-  isAboutPage?: boolean
-  setIsAboutPage?: (updateAboutPage: boolean | ((isAboutPage: boolean) => boolean)) => void
+  isProfessionPage?: boolean
+  setIsProfessionPage?: (updateProfessionPage: boolean | ((isProfessionPage: boolean) => boolean)) => void
 }
 
-const toggleAboutPage = (setIsAboutPage?: (updateAboutPage: (isAboutPage: boolean) => boolean) => void): void => {
-  if (setIsAboutPage === undefined) return
+const toggleProfessionPage = (
+  setIsProfessionPage?: (updateAboutPage: (isProfessionPage: boolean) => boolean) => void
+): void => {
+  if (setIsProfessionPage === undefined) return
 
-  setIsAboutPage((isAboutPage: boolean) => {
-    history.pushState({}, '', isAboutPage ? '/' : '/about')
-    return !isAboutPage
+  setIsProfessionPage((isProfessionPage: boolean) => {
+    history.pushState({}, '', isProfessionPage ? '/person' : '/')
+    return !isProfessionPage
   })
 }
 
-const AboutPageSwitch = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element => {
+const ProfessionPageSwitch = ({ isProfessionPage, setIsProfessionPage }: Props): JSX.Element => {
   return (
     <div style={containerStyle}>
-      <button style={switchGridStyle} onClick={() => { toggleAboutPage(setIsAboutPage) }}>
+      <button style={switchGridStyle} onClick={() => { toggleProfessionPage(setIsProfessionPage) }}>
         <div style={switchTextStyle}>Person</div>
         <div style={switchTextStyle}>Profession</div>
         <div
@@ -63,7 +65,7 @@ const AboutPageSwitch = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element =>
             height: '100%',
             transition: 'all 0.2s ease-in-out',
             left: 0,
-            transform: isAboutPage === true ? undefined : 'translateX(100%)'
+            transform: isProfessionPage === true ? 'translateX(100%)' : undefined
           }}
         />
       </button>
@@ -71,4 +73,4 @@ const AboutPageSwitch = ({ isAboutPage, setIsAboutPage }: Props): JSX.Element =>
   )
 }
 
-export default AboutPageSwitch
+export default ProfessionPageSwitch

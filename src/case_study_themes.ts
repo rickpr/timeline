@@ -1,4 +1,3 @@
-
 import type { Theme } from './theme_context'
 import AirbrushArtStudioPhoto from 'images/airbrush_art_studio/cover.png'
 import PhronesisPhoto from 'images/phronesis/cover.webp'
@@ -8,7 +7,7 @@ import TLDRPhoto from 'images/tldr/cover.png'
 
 interface CaseStudyTheme extends Omit<Theme, 'link'> {
   link: {
-    text: 'View Case Study'
+    text: 'READ CASE STUDY'
     url: string
   }
 }
@@ -25,7 +24,7 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'Copywriting'
     ],
     link: {
-      text: 'View Case Study',
+      text: 'READ CASE STUDY',
       url: '/case_studies/airbrush_art_studio'
     }
   },
@@ -41,7 +40,7 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'Prototyping'
     ],
     link: {
-      text: 'View Case Study',
+      text: 'READ CASE STUDY',
       url: '/case_studies/tldr'
     }
   },
@@ -58,7 +57,7 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'B2B'
     ],
     link: {
-      text: 'View Case Study',
+      text: 'READ CASE STUDY',
       url: '/case_studies/phronesis'
     }
   },
@@ -74,7 +73,7 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'B2C'
     ],
     link: {
-      text: 'View Case Study',
+      text: 'READ CASE STUDY',
       url: '/case_studies/gaintain'
     }
   }

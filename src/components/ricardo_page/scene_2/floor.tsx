@@ -9,11 +9,14 @@ const SCALE = 80
 const Y_OFFSET = -30
 const sideSize = SCALE * 2
 
-const Floor = (props: MeshProps): JSX.Element => {
+/* eslint-disable react/no-unknown-property */
+
+const Floor = (props: MeshProps): JSX.Element[] => {
   const woodTexture = useTexture(Wood)
 
   const floor = (
     <mesh
+      key='floor'
       {...props}
       position={[0, Y_OFFSET, 0]}
       rotation={[-Math.PI / 2, 0, 0]}
@@ -23,51 +26,54 @@ const Floor = (props: MeshProps): JSX.Element => {
     </mesh>
   )
 
-    const ceiling = (
+  const ceiling = (
     <mesh
+      key='ceiling'
       {...props}
       position={[0, SCALE * 2 + Y_OFFSET, 0]}
       rotation={[Math.PI / 2, 0, 0]}
     >
-        <planeGeometry args={[sideSize, sideSize]} />
-        <meshStandardMaterial map={woodTexture} side={THREE.DoubleSide} />
+      <planeGeometry args={[sideSize, sideSize]} />
+      <meshStandardMaterial map={woodTexture} side={THREE.DoubleSide} />
     </mesh>
-    )
+  )
 
-    const leftWall = (
+  const leftWall = (
     <mesh
+      key='leftWall'
       {...props}
       position={[-SCALE, SCALE + Y_OFFSET, 0]}
       rotation={[0, Math.PI / 2, 0]}
     >
-        <planeGeometry args={[sideSize, sideSize]} />
-        <meshStandardMaterial map={woodTexture} side={THREE.DoubleSide} />
+      <planeGeometry args={[sideSize, sideSize]} />
+      <meshStandardMaterial map={woodTexture} side={THREE.DoubleSide} />
     </mesh>
-    )
+  )
 
-    const rightWall = (
-        <mesh
-        {...props}
-        position={[SCALE, SCALE + Y_OFFSET, 0]}
-        rotation={[0, -Math.PI / 2, 0]}
-        >
-        <planeGeometry args={[sideSize, sideSize]} />
-        <meshStandardMaterial map={woodTexture} side={THREE.DoubleSide} />
+  const rightWall = (
+    <mesh
+      key='rightWall'
+      {...props}
+      position={[SCALE, SCALE + Y_OFFSET, 0]}
+      rotation={[0, -Math.PI / 2, 0]}
+    >
+      <planeGeometry args={[sideSize, sideSize]} />
+      <meshStandardMaterial map={woodTexture} side={THREE.DoubleSide} />
     </mesh>
-    )
+  )
 
-    const backWall = (
-        <mesh
-        {...props}
-        position={[0, SCALE + Y_OFFSET, SCALE]}
-        rotation={[0, 0, 0]}
-        >
-        <planeGeometry args={[sideSize, sideSize]} />
-        <meshStandardMaterial map={woodTexture} side={THREE.DoubleSide} />
+  const backWall = (
+    <mesh
+      key='backWall'
+      {...props}
+      position={[0, SCALE + Y_OFFSET, SCALE]}
+      rotation={[0, 0, 0]}
+    >
+      <planeGeometry args={[sideSize, sideSize]} />
+      <meshStandardMaterial map={woodTexture} side={THREE.DoubleSide} />
     </mesh>
-    )
+  )
 
-
-    return [floor, ceiling, leftWall, rightWall, backWall]
+  return [floor, ceiling, leftWall, rightWall, backWall]
 }
 export default Floor

@@ -11,19 +11,19 @@ interface Props {
   theme: Theme
   darkMode: boolean
   toggleDarkMode: () => void
-  isAboutPage?: boolean
-  setIsAboutPage?: (updateAboutPage: boolean | ((isAboutPage: boolean) => boolean)) => void
+  isProfessionPage?: boolean
+  setIsProfessionPage?: (updateProfessionPage: boolean | ((isProfessionPage: boolean) => boolean)) => void
 }
 
 const Layout = (
-  { children, theme, darkMode, toggleDarkMode, isAboutPage, setIsAboutPage }: Props
+  { children, theme, darkMode, toggleDarkMode, isProfessionPage, setIsProfessionPage }: Props
 ): JSX.Element => {
   const { background, text: color } = useDarkModeStyle(darkMode, theme)
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...theme }}>
       <Background background={background} />
       <div style={{ color, transition: 'all 0.5s ease-in-out' }}>
-        <Header isAboutPage={isAboutPage} setIsAboutPage={setIsAboutPage} />
+        <Header isProfessionPage={isProfessionPage} setIsProfessionPage={setIsProfessionPage} />
         {children}
       </div>
     </ThemeContext.Provider>

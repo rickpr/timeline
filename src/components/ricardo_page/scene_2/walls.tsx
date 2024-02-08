@@ -9,6 +9,8 @@ const SCALE = 80
 const Y_OFFSET = -30
 const sideSize = SCALE * 2
 
+/* eslint-disable react/no-unknown-property */
+
 const Walls = (props: MeshProps): JSX.Element[] => {
   const woodTexture = useTexture(Wood)
 

@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import React, { useContext } from 'react'
 
 import { makeMediaTag } from 'components/adalida_page/media_with_text'
+import SectionHeading from 'components/adalida_page/section_heading'
 import useIsMobile from 'hooks/use_is_mobile'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
@@ -28,23 +29,6 @@ const styles = {
     maxWidth: '950px',
     gap: '1em'
   },
-  myStory: {
-    fontSize: '1em',
-    fontWeight: 600,
-    display: 'flex',
-    gap: '25px',
-    alignItems: 'center',
-    width: '100%'
-  },
-  myStoryLine: {
-    minWidth: '100px',
-    borderWidth: '1.5px',
-    borderStyle: 'solid',
-    borderRadius: '5px',
-    height: 0,
-    transition: 'all 0.5s ease-in-out'
-  },
-  header: { fontWeight: 600 },
   photo: {
     ...glassStyles,
     width: '100%',
@@ -86,10 +70,7 @@ const MyStory = (): JSX.Element => {
 
   return (
     <div style={{ ...styles.container, color }}>
-      <div style={styles.myStory}>
-        <div>My Story</div>
-        <div style={{ ...styles.myStoryLine, borderColor: color }}></div>
-      </div>
+      <SectionHeading title='My Story' />
       <div style={headerStyle}>
         I&apos;m energized by people. I learn from their stories.
       </div>
@@ -186,7 +167,7 @@ const MyStory = (): JSX.Element => {
             <div>
               After graduation, I began learning User Experience Design through
               Google&apos;s Coursera courses, a mentor, the Interaction Design
-              foundation, Hackathons, and the clientele I receive from my design
+              Foundation, Hackathons, and the clientele I receive from my design
               business.
             </div>
             <div>
