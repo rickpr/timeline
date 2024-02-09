@@ -33,7 +33,7 @@ export const CardStyles = {
 export const ContainerStyles = {
   display: 'grid',
   gap: GAP,
-  gridTemplateColumns: `repeat(auto-fit, ${MAX_CARD_WIDTH}px)`,
+  gridTemplateColumns: `repeat(auto-fit, min(95dvw, ${MAX_CARD_WIDTH}px))`,
   justifyContent: 'center',
   maxWidth: `min(${MAX_WIDTH}px, 95dvw)`,
   margin: '25px auto'
