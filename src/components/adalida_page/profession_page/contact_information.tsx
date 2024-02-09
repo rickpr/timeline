@@ -1,9 +1,8 @@
 import React from 'react'
-import { IconBackpack, IconBrandDribbble, IconBrandLinkedin, IconExternalLink, IconMail } from '@tabler/icons-react'
+import { IconBackpack, IconBrandDribbble, IconBrandLinkedin, IconMail } from '@tabler/icons-react'
 import Typewriter from 'typewriter-effect'
 
 import useIsMobile from 'hooks/use_is_mobile'
-import FileQuery from 'queries/file'
 
 import BrandIcon from '../brand_icon'
 import { glassStyles } from '../styles'
@@ -36,8 +35,6 @@ const iconContainerStyles = {
 const iconSize = 'min(40px, 8dvw)'
 
 const ContactInformation = (): React.ReactElement => {
-  const resumeLink = FileQuery('Adalida_Baca_Resume.pdf').publicURL
-
   const isMobile = useIsMobile() === true
 
   const strings = [`Based\xa0in\xa0${isMobile ? 'SF' : 'San\xa0Francisco'},\xa0CA`]
@@ -45,17 +42,10 @@ const ContactInformation = (): React.ReactElement => {
 
   return (
     <div style={styles}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <h2 style={{ margin: 0 }}>Adalida Baca</h2>
-        <h2 style={{ fontWeight: 300, margin: 0 }}>Product Designer</h2>
-        <a
-          style={{ margin: 0, fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '1ch' }}
-          href={resumeLink}
-          target='_blank'
-          rel='noreferrer'
-        >
-          Resume <IconExternalLink size={16} />
-        </a>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+        <div style={{ fontSize: '36px', fontWeight: 800 }}>Adalida Baca</div>
+        <div style={{ fontSize: '20px', textAlign: 'center' }}>Crafting Digital Dreams One Pixel at a Time</div>
+        <div style={{ fontSize: '20px', fontWeight: 700 }}>Product Designer</div>
         <div style={{ height: '45vh' }}><BoxDesign /></div>
       </div>
       <div style={iconContainerStyles}>

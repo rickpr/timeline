@@ -19,7 +19,7 @@ const ProfessionPage = (): JSX.Element => {
   return (
     <div style={containerStyle}>
       <ContactInformation />
-      <div style={{ maxWidth: '100dvw', overflow: 'auto' }}>
+      <div style={{ maxWidth: '100dvw' }}>
         <SectionHeading title='Portfolio' />
         <Container />
       </div>

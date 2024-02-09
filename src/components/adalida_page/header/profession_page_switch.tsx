@@ -20,7 +20,8 @@ const switchGridStyle = {
 
 const switchTextStyle = {
   lineHeight: 1,
-  width: '100%'
+  width: '100%',
+  fontWeight: 600
 }
 
 const containerStyle = {

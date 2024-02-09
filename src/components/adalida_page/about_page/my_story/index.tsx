@@ -83,7 +83,13 @@ const MyStory = (): JSX.Element => {
               I&apos;m New Mexican grown with a large family spanning across
               Northern and Southern New Mexico. My grandma and her 18 brothers
               and sisters originated in La Jara, New Mexico where our
-              <i>Maestas</i> family received the Del Nacimiento Land Grant.
+              <i>Maestas</i> family received the{' '}
+              <a
+                style={styles.link}
+                href='https://jemezvalleyhistory.org/wp-content/uploads/2015/10/original-grantees-Cuba.jpg'
+              >
+                Del Nacimiento Land Grant.
+              </a>
             </div>
             <div>
               My mom raised my siblings and I in the South Valley one block down
@@ -128,8 +134,11 @@ const MyStory = (): JSX.Element => {
             </div>
             <div>
               My English courses focused on technical and professional
-              communication which included courses on visual rhetoric, editing,
-              an internship with Project ECHO, and an independent study focused
+              communication which included courses on visual rhetoric, editing, an{' '}
+              <a style={styles.link} href='https://adalidabaca.wixsite.com/internship-portfolio'>
+                internship with Project ECHO
+              </a>
+              , and an independent study focused
               on designing a website promoting ecological studies at UNM.
             </div>
             <div>

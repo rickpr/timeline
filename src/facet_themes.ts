@@ -76,7 +76,7 @@ const FacetThemes: Record<string, FacetTheme> = {
     },
     link: {
       text: 'View case studies',
-      url: '/case_studies'
+      url: '/'
     }
   },
   How: {
