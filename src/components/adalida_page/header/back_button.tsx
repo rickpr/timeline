@@ -4,11 +4,12 @@ import React, { useContext } from 'react'
 import { IconArrowLeft } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
+import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { glassStyles } from '../styles'
 
 const BackButton = (): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
-  const color = darkMode ? 'white' : 'black'
+  const themeContext = useContext(ThemeContext)
+  const { text: color } = useDarkModeStyle(themeContext.darkMode, themeContext)
   const backButtonStyle = {
     ...glassStyles,
     transition: 'all 0.5s ease-in-out',
