@@ -1,8 +1,9 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useMemo, useContext } from 'react'
 
 import type { Theme } from 'theme_context'
 
+import { HomePageContext } from './home_page_context'
 import { glassStyles } from './styles'
 
 const containerStyles = {
@@ -43,8 +44,24 @@ const descriptionStyles = {
 
 const linkStyles = { fontSize: '0.75rem' }
 
+const onClick = (
+  setIsProfessionPage: (updateProfessionPage: boolean | ((isProfessionPage: boolean) => boolean)) => void,
+  setScrollToCaseStudies: (updateScrollToCaseStudies: boolean | ((scrollToCaseStudies: boolean) => boolean)) => void
+): true => {
+  setIsProfessionPage(true)
+  setScrollToCaseStudies(true)
+  return true
+}
+
 const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
   const { description, name, subtitle, link, roles } = theme
+  const { setIsProfessionPage, setScrollToCaseStudies } = useContext(HomePageContext)
+  const click = useMemo(() => {
+    if (link?.url === '/') {
+      return () => onClick(setIsProfessionPage, setScrollToCaseStudies)
+    }
+  }, [setIsProfessionPage, setScrollToCaseStudies, link?.url])
+
   const innerContent = (
     <>
       <div style={roleListStyles}>
@@ -58,7 +75,7 @@ const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
 
   if (link !== undefined) {
     return (
-      <Link to={link.url} style={containerStyles}>
+      <Link to={link.url} style={containerStyles} onClick={click}>
         {innerContent}
       </Link>
     )

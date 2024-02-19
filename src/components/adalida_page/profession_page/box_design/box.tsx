@@ -49,7 +49,7 @@ const Box = (props: MeshProps): JSX.Element => {
   )
 
   const frontGlass = (
-    <mesh {...props} position={[0, 0, HALF_DEPTH - 0.001]}>
+    <mesh {...props} position={[0, 0, HALF_DEPTH]}>
       <planeGeometry args={[WIDTH, HEIGHT]} />
       <meshStandardMaterial roughness={0} transparent opacity={0.1} side={THREE.DoubleSide} />
     </mesh>
@@ -78,7 +78,7 @@ const Box = (props: MeshProps): JSX.Element => {
   const rightGlass = (
     <mesh
       {...props}
-      position={[HALF_WIDTH - 0.001, 0, 0]}
+      position={[HALF_WIDTH, 0, 0]}
       rotation={[0, Math.PI / 2, 0]}
     >
       <planeGeometry args={[DEPTH, HEIGHT]} />

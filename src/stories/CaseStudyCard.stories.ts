@@ -1,23 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { AllThemes } from './const'
-import { Layout } from './Layout'
+import CaseStudyThemes from 'case_study_themes'
+import { CaseStudyCard } from './CaseStudyCard'
 
-const themeNames = Object.keys(AllThemes)
+const themeNames = Object.keys(CaseStudyThemes)
 
 const meta = {
-  title: 'Layout',
-  component: Layout,
+  title: 'Case Study Card',
+  component: CaseStudyCard,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
-    layout: 'fullscreen'
+    layout: 'centered'
   },
   argTypes: {
-    theme: { options: themeNames }
+    theme: {
+      options: themeNames,
+      control: { type: 'select' }
+    }
   }
-} satisfies Meta<typeof Layout>
+} satisfies Meta<typeof CaseStudyCard>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -25,8 +28,6 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     darkMode: false,
-    isProfessionPage: false,
-    isHomePage: true,
-    theme: 'About'
+    theme: themeNames[0]
   }
 }

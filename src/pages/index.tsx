@@ -1,13 +1,9 @@
 import React from 'react'
 import 'sass/custom.scss'
 
-import AdalidaPage from 'components/adalida_page'
-import useDarkMode from 'hooks/use_dark_mode'
+import Profession from './profession'
 
-const Root = (): JSX.Element => {
-  const [darkMode, toggleDarkMode] = useDarkMode()
-  return <AdalidaPage professionPage darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-}
+const Root = (): JSX.Element => <Profession />
 
-export const Head = (): JSX.Element => <title>Person</title>
+export const Head = (): JSX.Element => <title>Adalida Baca</title>
 export default Root

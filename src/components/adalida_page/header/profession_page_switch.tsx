@@ -40,12 +40,12 @@ interface Props {
 }
 
 const toggleProfessionPage = (
-  setIsProfessionPage?: (updateAboutPage: (isProfessionPage: boolean) => boolean) => void
+  setIsProfessionPage?: (updateProfessionPage: (isProfessionPage: boolean) => boolean) => void
 ): void => {
   if (setIsProfessionPage === undefined) return
 
   setIsProfessionPage((isProfessionPage: boolean) => {
-    history.pushState({}, '', isProfessionPage ? '/person' : '/')
+    history.pushState({}, '', isProfessionPage ? '/person' : '/profession')
     return !isProfessionPage
   })
 }

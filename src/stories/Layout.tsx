@@ -1,12 +1,9 @@
 import React from 'react'
 
-import FacetThemes from 'facet_themes'
-import CaseStudyThemes from 'case_study_themes'
-import { AboutTheme } from 'theme_context'
 import LayoutComponent from 'components/adalida_page/layout'
+import { AllThemes } from './const'
 
-const themes = { ...FacetThemes, ...CaseStudyThemes, About: AboutTheme }
-type ThemeName = keyof typeof themes
+type ThemeName = keyof typeof AllThemes
 
 interface LayoutProps {
   darkMode: boolean
@@ -17,7 +14,7 @@ interface LayoutProps {
 
 export const Layout = ({ darkMode, isProfessionPage, isHomePage, theme = 'About' }: LayoutProps): JSX.Element => (
   <LayoutComponent
-    theme={themes[theme]}
+    theme={AllThemes[theme]}
     darkMode={darkMode}
     toggleDarkMode={() => {}}
     isProfessionPage={isProfessionPage}

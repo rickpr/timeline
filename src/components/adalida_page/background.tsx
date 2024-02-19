@@ -27,7 +27,6 @@ const Background = ({ background }: { background: CSSProperties['background'] })
     }
   }, [background, oldBackground])
 
-  console.log(new Date().getMilliseconds(), oldBackground, background)
   return (
     <>
       <div style={{ ...styles, background: oldBackground }} />

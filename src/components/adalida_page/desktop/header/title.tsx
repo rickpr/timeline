@@ -1,9 +1,10 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useContext, useMemo } from 'react'
 
 import type { Theme } from 'theme_context'
 
 import { glassStyles } from '../../styles'
+import { HomePageContext } from '../../home_page_context'
 
 const labelStyles = {
   display: 'flex',
@@ -44,8 +45,25 @@ interface Props {
   active: boolean
 }
 
+const onClick = (
+  // TODO: Dedupe this function with the one in themed_link.tsx
+  setIsProfessionPage: (updateProfessionPage: boolean | ((isProfessionPage: boolean) => boolean)) => void,
+  setScrollToCaseStudies: (updateScrollToCaseStudies: boolean | ((scrollToCaseStudies: boolean) => boolean)) => void
+): true => {
+  setIsProfessionPage(true)
+  setScrollToCaseStudies(true)
+  return true
+}
+
 const Title = ({ theme, active }: Props): React.ReactElement => {
   const { description, name, subtitle, link, roles } = theme
+  const { setIsProfessionPage, setScrollToCaseStudies } = useContext(HomePageContext)
+  const click = useMemo(() => {
+    if (link?.url === '/') {
+      return () => onClick(setIsProfessionPage, setScrollToCaseStudies)
+    }
+  }, [setIsProfessionPage, setScrollToCaseStudies, link?.url])
+
   const pointerEvents = active ? 'auto' : 'none'
   const fontSize = active ? '2.6rem' : '1rem'
   const fontWeight = active ? 900 : 500
@@ -76,7 +94,7 @@ const Title = ({ theme, active }: Props): React.ReactElement => {
 
   if (link !== undefined) {
     return (
-      <Link to={link.url} style={{ pointerEvents, ...labelStyles }}>
+      <Link to={link.url} style={{ pointerEvents, ...labelStyles }} onClick={click}>
         {innerContent}
       </Link>
     )
