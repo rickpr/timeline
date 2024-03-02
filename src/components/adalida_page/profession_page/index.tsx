@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ContactInformation from './contact_information'
-import Container from '../card/container'
+import Container from './container'
 import SectionHeading from '../section_heading'
 
 import 'sass/adalida_page/index.scss'

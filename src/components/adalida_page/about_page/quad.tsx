@@ -1,8 +1,9 @@
 import React from 'react'
 
-interface QuadProps {
+import useIsMobile from 'hooks/use_is_mobile'
+
+interface Props {
   children: [React.ReactNode, React.ReactNode, React.ReactNode, React.ReactNode]
-  isMobile: boolean
 }
 
 const columnStyle = {
@@ -20,7 +21,8 @@ const elementStyle = {
 const order = [0, 3, 1, 2]
 const mobileOrder = [0, 1, 2, 3]
 
-const Quad = ({ children, isMobile }: QuadProps): JSX.Element => {
+const Quad = ({ children }: Props): JSX.Element => {
+  const isMobile = useIsMobile() === true
   const orderInUse = isMobile ? mobileOrder : order
   const [firstCell, secondCell, thirdCell, fourthCell] = orderInUse.map(index => children[index])
   const styles = {

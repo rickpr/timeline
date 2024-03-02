@@ -14,7 +14,7 @@ const FacetThemes: Record<string, FacetTheme> = {
   Who: {
     name: 'Who am I?',
     subtitle: "Hi, I'm Adalida Baca",
-    description: 'Welcome to my design portfolio.',
+    description: 'I craft digital dreams one pixel at a time.',
     coverPhoto: WhoPhoto,
     roles: [
       'About',
@@ -30,6 +30,10 @@ const FacetThemes: Record<string, FacetTheme> = {
         background: 'linear-gradient(248deg, #D2D6D9 0%, rgba(210, 164, 208, 0.99) 58.07%, #D5D5D5 90.12%)',
         text: lightColor
       }
+    },
+    link: {
+      text: 'Read my story',
+      url: '/about'
     }
   },
   What: {
@@ -51,6 +55,10 @@ const FacetThemes: Record<string, FacetTheme> = {
         background: 'linear-gradient(248deg, #D2D6D9 13.28%, #A4D2D0 58.07%, #D2D6D9 90.12%)',
         text: lightColor
       }
+    },
+    link: {
+      text: "Let's work together",
+      url: '/services'
     }
   },
   Where: {
@@ -107,12 +115,12 @@ const FacetThemes: Record<string, FacetTheme> = {
   Why: {
     name: 'Why?',
     subtitle: "I'm a Problem Solver",
-    description: 'I learned the joy and importance of solving real world problems at a young age. Growing up, UX was not a career path, but I was practicing UX in how I approached problems and designed solutions.',
+    description: 'I enjoy designing elegant and functional solutions best fit for the user and business needs.',
     coverPhoto: WhyPhoto,
     roles: [
-      'Business Problems',
-      'People Problems',
-      'Design Problems'
+      'Insightful',
+      'Resourceful',
+      'Utility Player'
     ],
     colors: {
       darkMode: {
@@ -123,10 +131,6 @@ const FacetThemes: Record<string, FacetTheme> = {
         background: 'linear-gradient(248deg, #D2D6D9 13.28%, #C3A4D2 58.07%, #D2D6D9 90.12%)',
         text: lightColor
       }
-    },
-    link: {
-      text: 'Read my Story',
-      url: '/about'
     }
   }
 }

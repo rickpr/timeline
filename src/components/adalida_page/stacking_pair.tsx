@@ -1,8 +1,9 @@
 import React from 'react'
 
-interface RowPairProps {
+import useIsMobile from 'hooks/use_is_mobile'
+
+interface Props {
   children: [React.ReactNode, React.ReactNode]
-  isMobile: boolean
   reversed?: boolean
 }
 
@@ -12,7 +13,8 @@ const elementStyle = {
   height: '100%'
 }
 
-const RowPair = ({ children, isMobile, reversed = false }: RowPairProps): JSX.Element => {
+const StackingPair = ({ children, reversed = false }: Props): JSX.Element => {
+  const isMobile = useIsMobile() === true
   const [firstCell, secondCell] = children
   const actuallyReversed = reversed && !isMobile
   const styles = {
@@ -34,4 +36,4 @@ const RowPair = ({ children, isMobile, reversed = false }: RowPairProps): JSX.El
   )
 }
 
-export default RowPair
+export default StackingPair

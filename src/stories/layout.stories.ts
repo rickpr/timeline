@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { AllThemes } from './const'
-import { Layout } from './Layout'
+import { Layout } from './layout'
 
 const themeNames = Object.keys(AllThemes)
 

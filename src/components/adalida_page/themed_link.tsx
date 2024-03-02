@@ -4,7 +4,7 @@ import React, { useMemo, useContext } from 'react'
 import type { Theme } from 'theme_context'
 
 import { HomePageContext } from './home_page_context'
-import { glassStyles } from './styles'
+import GlassBadge from './glass_badge'
 
 const containerStyles = {
   display: 'flex',
@@ -25,16 +25,6 @@ const roleListStyles = {
   padding: 0,
   margin: '0 0 14px 0',
   gap: '0.5em'
-}
-
-const roleStyles = {
-  ...glassStyles,
-  fontWeight: 500,
-  transition: 'background-color 0.5s ease-in-out',
-  padding: '0.8em',
-  fontSize: '12px',
-  lineHeight: 1,
-  whiteSpace: 'nowrap' as const
 }
 
 const descriptionStyles = {
@@ -65,7 +55,7 @@ const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
   const innerContent = (
     <>
       <div style={roleListStyles}>
-        {roles.map(role => <div key={role} style={roleStyles}>{role}</div>)}
+        {roles.map(role => <GlassBadge key={role}>{role}</GlassBadge>)}
       </div>
       <div style={titleStyles}>{subtitle ?? name.toUpperCase()}</div>
       <div style={descriptionStyles}>{description}</div>

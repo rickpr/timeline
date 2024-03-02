@@ -1,6 +1,5 @@
-import { glassStyles } from '../styles'
+import { PADDING } from '../glass_card/styles'
 
-const PADDING = 10
 const GAP = 20
 const MAX_COLUMNS = 2
 const MAX_WIDTH = 950
@@ -21,14 +20,6 @@ export const ImageStyles = {
   minHeight: `calc(${IMAGE_WIDTH_CSS} / 2)`,
   objectFit: 'cover' as const,
   borderRadius: '12px'
-}
-
-export const CardStyles = {
-  ...glassStyles,
-  borderRadius: '12px',
-  padding: PADDING,
-  display: 'flex',
-  flexDirection: 'column' as const
 }
 
 export const ContainerStyles = {

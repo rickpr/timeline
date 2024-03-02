@@ -1,20 +1,31 @@
 import React from 'react'
 
-import MyStory from './my_story'
+import SectionHeading from 'components/adalida_page/section_heading'
+import useIsMobile from 'hooks/use_is_mobile'
 
-import 'sass/adalida_page/index.scss'
+import Page from '../page'
 
-const containerStyle = {
-  transition: 'background-color 0.5s ease-in-out',
-  padding: '0 7.5dvw',
-  gap: '2em',
-  display: 'flex',
-  flexDirection: 'column' as const,
-  alignItems: 'center'
-}
+import BigChanges from './big_changes'
+import Degree from './degree'
+import NewMexicoGrown from './new_mexico_grown'
+import Contact from './contact'
 
 const AboutPage = (): JSX.Element => {
-  return <div style={containerStyle}><MyStory /></div>
+  const isMobile = useIsMobile() === true
+  const headerStyle = { fontWeight: 600, fontSize: isMobile ? '1.25em' : '2em' }
+  return (
+    <Page>
+      <SectionHeading title='My Story' />
+      <div style={headerStyle}>
+        I&apos;m energized by people. I learn from their stories.
+      </div>
+      <NewMexicoGrown />
+      <Degree />
+      <BigChanges />
+      <Contact />
+      <div style={{ minHeight: '1em' }} />
+    </Page>
+  )
 }
 
 export default AboutPage

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useRef } from 'react'
 import CaseStudyThemes from 'case_study_themes'
 import { HomePageContext } from '../home_page_context'
 import { headerPixels } from '../header'
-import Card from '.'
+import Card from './card'
 import { ContainerStyles } from './styles'
 
 const Container = (): JSX.Element => {
@@ -11,7 +11,6 @@ const Container = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
     if (scrollToCaseStudies) {
-      console.log(containerRef.current)
       setTimeout(() => {
         const top = containerRef.current?.getBoundingClientRect()?.top
         if (top !== undefined) {
