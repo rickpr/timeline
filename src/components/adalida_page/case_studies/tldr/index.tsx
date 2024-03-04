@@ -10,8 +10,6 @@ import ImageCard from '../../image_card'
 import EmbeddedVideo, { type EmbeddedVideoProps } from '../embedded_video'
 import About from './about'
 
-import 'sass/adalida_page/case_study.scss'
-
 const EmpathizeProblem = 'images/tldr/empathize_problem.webp'
 const EmpathizeUsers = 'images/tldr/empathize_users.webp'
 const DefineProblem = 'images/tldr/define_problem.webp'

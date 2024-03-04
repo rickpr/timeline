@@ -12,8 +12,6 @@ import EmbeddedVideo, { type EmbeddedVideoProps } from '../embedded_video'
 import CaseStudy from '../case_study'
 import About from './about'
 
-import 'sass/adalida_page/case_study.scss'
-
 const Understanding = 'images/airbrush_art_studio/understanding.webp'
 const Research = 'images/airbrush_art_studio/research.webp'
 const InformationArchitecture = 'images/airbrush_art_studio/information_architecture.webp'

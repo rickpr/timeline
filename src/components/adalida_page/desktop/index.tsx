@@ -6,14 +6,7 @@ import App from './app'
 import Header from './header'
 import { headerPixels } from '../header'
 
-const coverStyles = {
-  display: 'flex',
-  maxHeight: `calc(100dvh - ${headerPixels}px)`,
-  flexDirection: 'column' as const,
-  overflowY: 'auto' as const,
-  overflowX: 'hidden' as const,
-  scrollSnapType: 'y mandatory'
-}
+const height = `calc(100dvh - ${headerPixels * 2}px)`
 
 interface Props {
   themes: Record<string, Theme>
@@ -28,7 +21,8 @@ const Desktop = ({ themes, setCurrentTheme }: Props): JSX.Element => {
   )
 
   return (
-    <div style={coverStyles} ref={containerRef}>
+    <div className='apps-container' style={{ maxHeight: height }} ref={containerRef}>
+      <div className='glass' style={{ position: 'absolute', minHeight: height, minWidth: '85dvw' }} />
       {themeTitles.map(title => (
         <App
           key={title}

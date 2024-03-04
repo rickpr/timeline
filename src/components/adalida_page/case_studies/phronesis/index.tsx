@@ -7,8 +7,6 @@ import CaseStudy from '../case_study'
 import ImageCard from '../../image_card'
 import About from './about'
 
-import 'sass/adalida_page/case_study.scss'
-
 const InformationArchitecture = 'images/phronesis/info_arch.png'
 const Logo = 'images/phronesis/logo.png'
 const AppIcon = 'images/phronesis/app_icon.png'

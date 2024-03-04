@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../sass/custom.scss'
 
 import Scene2Component from '../../components/ricardo_page/scene_2'
 

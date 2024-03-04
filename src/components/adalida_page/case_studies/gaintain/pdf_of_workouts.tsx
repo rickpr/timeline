@@ -7,8 +7,6 @@ import useIsMobile from 'hooks/use_is_mobile'
 
 import PdfOfWorkoutsVideo from 'videos/gaintain/pdf_of_workouts.mp4'
 
-import 'sass/adalida_page/case_study.scss'
-
 const PdfOfWorkouts = (): JSX.Element => {
   const isMobile = useIsMobile(1200)
   const centerStyles = { placeItems: 'center center' }

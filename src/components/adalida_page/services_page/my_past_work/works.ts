@@ -1,5 +1,4 @@
 import JessRuedaImage from 'images/works/jessrueda.webp'
-import QuerqueCandlesImage from 'images/works/querquecandles.webp'
 import AirbrushImage from 'images/works/airbrush.webp'
 import ZaraImage from 'images/works/zara.webp'
 import SunbeltImage from 'images/works/sunbelt.webp'
@@ -21,13 +20,6 @@ export const Works: Work[] = [
     description: 'Artist selling fine prints and stickers.',
     url: 'https://jessnrueda.com/',
     coverImage: JessRuedaImage
-  },
-  {
-    name: 'Querque Candles',
-    badges: ['Website Design', 'Responsive', 'Shopify'],
-    description: 'Candle shop specializing in handcrafted designs.',
-    url: 'https://us.nextdoor.com/pages/querque-candles-albuquerque-nm/',
-    coverImage: QuerqueCandlesImage
   },
   {
     name: 'Airbrush Art Studio',

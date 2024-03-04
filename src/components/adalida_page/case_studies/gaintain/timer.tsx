@@ -7,8 +7,6 @@ import useIsMobile from 'hooks/use_is_mobile'
 
 import TimerVideo from 'videos/gaintain/timer.mp4'
 
-import 'sass/adalida_page/case_study.scss'
-
 const Timer = (): JSX.Element => {
   const isMobile = useIsMobile(1200)
   const text = (

@@ -1,7 +1,5 @@
 import React from 'react'
 
-import 'sass/adalida_page/case_study.scss'
-
 const About = (): JSX.Element => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>

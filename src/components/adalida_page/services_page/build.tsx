@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Image from 'components/adalida_page/logo/image'
-import GlassCard from '../glass_card'
 
 import StackingPair from '../stacking_pair'
 
@@ -17,7 +16,9 @@ const Build = (): JSX.Element => {
           Start your project <div style={{ transform: 'rotate(-60deg)', fontWeight: 400 }}>➜</div>
         </div>
       </div>
-      <GlassCard><Image style={{ width: '80%', height: '80%', margin: 'auto' }} /></GlassCard>
+      <div className='glass card'>
+        <Image style={{ width: '80%', height: '80%', margin: 'auto' }} />
+      </div>
     </StackingPair>
   )
 }

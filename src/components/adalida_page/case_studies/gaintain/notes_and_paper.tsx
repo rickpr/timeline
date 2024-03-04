@@ -7,8 +7,6 @@ import useIsMobile from 'hooks/use_is_mobile'
 
 import IncrementVideo from 'videos/gaintain/notes_and_paper.mp4'
 
-import 'sass/adalida_page/case_study.scss'
-
 const NotesAndPaper = (): JSX.Element => {
   const isMobile = useIsMobile(1200)
   const text = (

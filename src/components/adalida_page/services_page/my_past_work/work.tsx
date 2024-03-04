@@ -1,23 +1,48 @@
-import React from 'react'
-
-import GlassBadge from '../../glass_badge'
+import React, { useEffect, useState } from 'react'
 
 import type { Work as WorkType } from './works'
+import NavigationButtons from './navigation_buttons'
 
-const Work = ({ work }: { work: WorkType }): JSX.Element => {
+interface Props {
+  work: WorkType
+  active: boolean
+  setCurrentCard: React.Dispatch<React.SetStateAction<number>>
+}
+
+const Work = ({ work, active, setCurrentCard }: Props): JSX.Element => {
+  const [shown, setShown] = useState(active)
+  const [hidden, setHidden] = useState(!active)
+  useEffect(() => {
+    let timeout: NodeJS.Timeout
+    if (active) {
+      setShown(true)
+      timeout = setTimeout(() => { setHidden(false) }, 500)
+    } else {
+      setHidden(true)
+      timeout = setTimeout(() => { setShown(false) }, 500)
+    }
+    return () => { clearTimeout(timeout) }
+  }, [active])
+
   return (
-    <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', minWidth: 'min(85dvw, 950px)' }}>
-      <div style={{ width: 'min(274px, 85dvw)', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', gap: '12px' }}>
-        <div style={{ fontSize: '1.625em', fontWeight: 800 }}>{work.name}</div>
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-          {work.badges.map(badge => <GlassBadge key={badge}>{badge}</GlassBadge>)}
+    <div className={`work ${shown ? 'shown' : ''} ${hidden ? 'hidden' : ''}`}>
+      <div className='work-title'>
+        <div className='work-name'>{work.name}</div>
+        <div className='work-badges-container'>
+          <div className='work-badges-row'>
+            {work.badges.slice(0, 2).map(badge => <div className='glass badge' key={badge}>{badge}</div>)}
+          </div>
+          <div className='work-badges-row'>
+            {work.badges.slice(2).map(badge => <div className='glass badge' key={badge}>{badge}</div>)}
+          </div>
         </div>
-        <a style={{ fontWeight: 600, fontSize: '1.125em', display: 'flex', marginTop: '8px' }} href={work.url}>
+        <a className='work-link' href={work.url}>
           Visit website <div style={{ transform: 'rotate(-60deg)', fontWeight: 400 }}>➜</div>
         </a>
       </div>
-      <div style={{ width: 'min(656px, 85dvw)' }}>
-        <img src={work.coverImage} alt={work.name} style={{ width: '100%', borderRadius: '8px' }} />
+      <div className='work-image'>
+        <img src={work.coverImage} alt={work.name} />
+        <NavigationButtons setCurrentCard={setCurrentCard} />
       </div>
     </div>
   )

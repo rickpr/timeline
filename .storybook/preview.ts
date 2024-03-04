@@ -24,9 +24,6 @@ window.___navigate = pathname => {
 import 'sass/custom.scss'
 import 'sass/adalida_page/index.scss'
 import 'sass/adalida_page/case_study.scss'
-import 'sass/adalida_page/case_study.scss'
-import 'sass/footer.scss'
-import 'sass/header.scss'
 
 const preview: Preview = {
   parameters: {

@@ -1,5 +1,4 @@
 import React from 'react'
-import 'sass/custom.scss'
 
 import AdalidaPage from 'components/adalida_page'
 import { HomePageProvider } from 'components/adalida_page/home_page_context'

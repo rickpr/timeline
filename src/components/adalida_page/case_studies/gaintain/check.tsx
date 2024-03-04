@@ -4,8 +4,6 @@ import Card from '../card'
 import CaptionedFigure from 'components/captioned_figure'
 import { makeMediaTag } from '../../media_with_text'
 
-import 'sass/adalida_page/case_study.scss'
-
 const Check = (): JSX.Element => {
   const flex = '8 8 335px'
   const padding = '1em'

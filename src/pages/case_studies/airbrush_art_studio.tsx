@@ -1,5 +1,4 @@
 import React from 'react'
-import 'sass/custom.scss'
 
 import CaseStudyThemes from 'case_study_themes'
 import useDarkMode from 'hooks/use_dark_mode'

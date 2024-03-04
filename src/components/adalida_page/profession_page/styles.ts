@@ -1,5 +1,4 @@
-import { PADDING } from '../glass_card/styles'
-
+const PADDING = 10
 const GAP = 20
 const MAX_COLUMNS = 2
 const MAX_WIDTH = 950

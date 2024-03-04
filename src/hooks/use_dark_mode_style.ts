@@ -1,12 +1,12 @@
-import { darkColor, lightColor, type Colors, type Theme } from '../theme_context'
+import { darkColor, lightColor, darkGradientColor, lightGradientColor, type Colors, type Theme } from '../theme_context'
 
 const darkModeDefaultColors: Colors = {
-  background: darkColor,
+  background: darkGradientColor,
   text: lightColor
 }
 
 const lightModeDefaultColors: Colors = {
-  background: lightColor,
+  background: lightGradientColor,
   text: darkColor
 }
 

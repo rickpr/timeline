@@ -4,10 +4,7 @@ import React, { useContext, type CSSProperties } from 'react'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 
-import { glassStyles } from './styles'
-
 const styles = {
-  ...glassStyles,
   transition: 'all 0.5s ease-in-out',
   borderRadius: '500px',
   display: 'flex',
@@ -29,7 +26,7 @@ const BrandIcon = ({ href, Icon, size = '40px' }: Props): React.ReactElement => 
       href={href}
       target='_blank'
       rel='noreferrer'
-      className='brand-icon'
+      className='brand-icon glass'
       style={{ color, ...styles, width: size, height: size }}
     >
       <Icon size={`calc(${size} * 0.6)`} />

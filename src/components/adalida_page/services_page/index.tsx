@@ -7,6 +7,7 @@ import Build from './build'
 import Services from './services'
 import MyProcess from './my_process'
 import MyPastWork from './my_past_work'
+import FAQs from './faqs'
 
 const ServicesPage = (): JSX.Element => {
   return (
@@ -20,6 +21,8 @@ const ServicesPage = (): JSX.Element => {
       <MyProcess />
       <SectionHeading title='My Past Work' />
       <MyPastWork />
+      <SectionHeading title='FAQs' />
+      <FAQs />
     </Page>
   )
 }

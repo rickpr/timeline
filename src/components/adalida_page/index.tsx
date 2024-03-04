@@ -10,8 +10,6 @@ import Mobile from './mobile'
 import { HomePageContext } from './home_page_context'
 import Layout from './layout'
 
-import 'sass/adalida_page/index.scss'
-
 interface Props {
   darkMode: boolean
   toggleDarkMode: () => void

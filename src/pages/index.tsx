@@ -1,5 +1,4 @@
 import React from 'react'
-import 'sass/custom.scss'
 
 import Profession from './profession'
 

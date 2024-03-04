@@ -4,8 +4,6 @@ import ContactInformation from './contact_information'
 import Container from './container'
 import SectionHeading from '../section_heading'
 
-import 'sass/adalida_page/index.scss'
-
 const containerStyle = {
   transition: 'background-color 0.5s ease-in-out',
   padding: '0 7.5dvw',

@@ -2,8 +2,6 @@ import React from 'react'
 
 import Card from '../card'
 
-import 'sass/adalida_page/case_study.scss'
-
 const Paragraphs = (): JSX.Element => {
   const text = (
     <div className='case-study-match-outer-paragraphs'>

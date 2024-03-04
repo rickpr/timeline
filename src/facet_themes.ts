@@ -14,7 +14,7 @@ const FacetThemes: Record<string, FacetTheme> = {
   Who: {
     name: 'Who am I?',
     subtitle: "Hi, I'm Adalida Baca",
-    description: 'I craft digital dreams one pixel at a time.',
+    description: 'Welcome to my design portfolio.',
     coverPhoto: WhoPhoto,
     roles: [
       'About',
@@ -23,11 +23,11 @@ const FacetThemes: Record<string, FacetTheme> = {
     ],
     colors: {
       darkMode: {
-        background: 'linear-gradient(248deg, #464046 13.28%, #8D2470 58.07%, #464040 90.12%)',
+        background: '#8D2470',
         text: lightColor
       },
       lightMode: {
-        background: 'linear-gradient(248deg, #D2D6D9 0%, rgba(210, 164, 208, 0.99) 58.07%, #D5D5D5 90.12%)',
+        background: '#D2A4D0',
         text: lightColor
       }
     },
@@ -48,11 +48,11 @@ const FacetThemes: Record<string, FacetTheme> = {
     ],
     colors: {
       darkMode: {
-        background: 'linear-gradient(248deg, #464046 13.28%, #24878D 58.07%, #464040 90.12%)',
+        background: '#24878D',
         text: lightColor
       },
       lightMode: {
-        background: 'linear-gradient(248deg, #D2D6D9 13.28%, #A4D2D0 58.07%, #D2D6D9 90.12%)',
+        background: '#A4D2D0',
         text: lightColor
       }
     },
@@ -74,11 +74,11 @@ const FacetThemes: Record<string, FacetTheme> = {
     ],
     colors: {
       darkMode: {
-        background: 'linear-gradient(248deg, #464046 13.28%, #245B8D 58.07%, #464040 90.12%)',
+        background: '#245B8D',
         text: lightColor
       },
       lightMode: {
-        background: 'linear-gradient(248deg, #D2D6D9 13.28%, #A4C1D2 58.07%, #D2D6D9 90.12%)',
+        background: '#A4C1D2',
         text: lightColor
       }
     },
@@ -99,11 +99,11 @@ const FacetThemes: Record<string, FacetTheme> = {
     ],
     colors: {
       darkMode: {
-        background: 'linear-gradient(248deg, #464046 13.28%, #8D5D24 55.3%, #464040 90.12%)',
+        background: '#8D5D24',
         text: lightColor
       },
       lightMode: {
-        background: 'linear-gradient(248deg, #D2D6D9 13.28%, #D2C0A4 58.07%, #D2D6D9 90.12%)',
+        background: '#D2C0A4',
         text: lightColor
       }
     },
@@ -124,11 +124,11 @@ const FacetThemes: Record<string, FacetTheme> = {
     ],
     colors: {
       darkMode: {
-        background: 'linear-gradient(248deg, #464046 13.28%, #59248D 58.07%, #464040 90.12%)',
+        background: '#59248D',
         text: lightColor
       },
       lightMode: {
-        background: 'linear-gradient(248deg, #D2D6D9 13.28%, #C3A4D2 58.07%, #D2D6D9 90.12%)',
+        background: '#C3A4D2',
         text: lightColor
       }
     }

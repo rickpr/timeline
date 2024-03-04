@@ -2,11 +2,19 @@ import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { IconBrandGithub, IconBrandLinkedin, IconTerminal2 } from '@tabler/icons-react'
 
-import 'sass/footer.scss'
+const footerStyle = {
+  display: 'flex',
+  flexDirection: 'row' as const,
+  flexWrap: 'wrap' as const,
+  justifyContent: 'space-around',
+  textAlign: 'center' as const,
+  width: '100%',
+  margin: 0
+}
 
 const Footer = (): JSX.Element =>
   <footer>
-    <nav className='footer-nav'>
+    <nav style={footerStyle}>
       <div>
         Adalida Baca<br />
         <a href='https://github.com/adalidabaca' target='_blank' rel='noreferrer'>

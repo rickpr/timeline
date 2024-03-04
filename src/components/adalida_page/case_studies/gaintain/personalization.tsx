@@ -3,8 +3,6 @@ import React from 'react'
 import Card from '../card'
 import MediaWithText from '../../media_with_text'
 
-import 'sass/adalida_page/case_study.scss'
-
 const Personalization = (): JSX.Element => {
   const text = (
     <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>

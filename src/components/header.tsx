@@ -1,12 +1,22 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
+const navbarStyles = {
+  border: '5px solid black',
+  display: 'flex',
+  flexWrap: 'wrap' as const,
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  marginBottom: '2em',
+  minheight: '5em'
+}
+
 const Header = (): JSX.Element =>
     <header>
-      <nav className='header-navbar'>
-        <h3><Link to='/' className='nav-link' activeClassName='active'>Adalida</Link></h3>
-        <h3><Link to='/us' className='nav-link' activeClassName='active'>Us</Link></h3>
-        <h3><Link to='/ricardo' className='nav-link' activeClassName='active'>Ricardo</Link></h3>
+      <nav style={navbarStyles}>
+        <h3><Link to='/'>Adalida</Link></h3>
+        <h3><Link to='/us'>Us</Link></h3>
+        <h3><Link to='/ricardo'>Ricardo</Link></h3>
       </nav>
     </header>
 

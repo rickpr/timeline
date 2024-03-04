@@ -3,7 +3,6 @@ import React, { useContext, useMemo } from 'react'
 
 import type { Theme } from 'theme_context'
 
-import { glassStyles } from '../../styles'
 import { HomePageContext } from '../../home_page_context'
 
 const labelStyles = {
@@ -26,7 +25,6 @@ const listStyles = {
   gap: '0.5em'
 }
 const roleStyles = {
-  ...glassStyles,
   fontWeight: 700,
   transition: 'background-color 0.5s ease-in-out',
   padding: '0.8em',
@@ -83,7 +81,7 @@ const Title = ({ theme, active }: Props): React.ReactElement => {
       <div style={descriptionStyle}>
         <div style={{ overflowY: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div style={listStyles}>
-            {roles.map(role => <div key={role} style={roleStyles}>{role}</div>)}
+            {roles.map(role => <div key={role} className='glass' style={roleStyles}>{role}</div>)}
           </div>
           <div>{description}</div>
           {link !== undefined && <div style={linkStyles}>{link.text} ➜</div>}

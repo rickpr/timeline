@@ -3,8 +3,6 @@ import React, { useContext } from 'react'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext } from 'theme_context'
 
-import 'sass/adalida_page/case_study.scss'
-
 const textAndImageStyle = {
   display: 'flex',
   flexDirection: 'column' as const,

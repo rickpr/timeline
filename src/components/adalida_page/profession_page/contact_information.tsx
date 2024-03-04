@@ -5,10 +5,7 @@ import Typewriter from 'typewriter-effect'
 import useIsMobile from 'hooks/use_is_mobile'
 
 import BrandIcon from '../brand_icon'
-import { glassStyles } from '../styles'
 import BoxDesign from './box_design'
-
-import 'sass/adalida_page/index.scss'
 
 const styles = {
   display: 'flex',
@@ -20,7 +17,6 @@ const styles = {
 }
 
 const iconContainerStyles = {
-  ...glassStyles,
   width: '100%',
   display: 'flex',
   padding: '10px',
@@ -48,7 +44,7 @@ const ContactInformation = (): React.ReactElement => {
         <div style={{ fontSize: '20px', fontWeight: 700 }}>Product Designer</div>
         <div style={{ height: '45vh' }}><BoxDesign /></div>
       </div>
-      <div style={iconContainerStyles}>
+      <div className='glass' style={iconContainerStyles}>
         <span style={{ marginLeft: '16px' }}>{typewriter}</span>
         <div style={{ display: 'flex', gap: '10px', marginLeft: '10px' }}>
           <BrandIcon href='https://www.interaction-design.org/members/adalida-baca' Icon={IconBackpack} size={iconSize} />

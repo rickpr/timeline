@@ -18,10 +18,10 @@ interface Props {
 const Layout = (
   { children, theme, darkMode, toggleDarkMode, isProfessionPage, setIsProfessionPage }: Props
 ): JSX.Element => {
-  const { background, text: color } = useDarkModeStyle(darkMode, theme)
+  const { text: color } = useDarkModeStyle(darkMode, theme)
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...theme }}>
-      <Background background={background} />
+      <Background />
       <div style={{ color, transition: 'all 0.5s ease-in-out' }}>
         <Header isProfessionPage={isProfessionPage} setIsProfessionPage={setIsProfessionPage} />
         {children}

@@ -16,8 +16,8 @@ const Degree = (): JSX.Element => {
         <div style={paragraph}>
           <div>
             In 2020 I graduated from the University of New Mexico with an
-            interdisciplinary B.A in English-Philosophy and a certificate in
-            Technical and Professional Communication.
+            interdisciplinary Bachelor of Arts degree in English-Philosophy and
+            a certificate in Technical and Professional Communication.
           </div>
           <div>
             My favorite Philosophy courses included symbolic logic, the

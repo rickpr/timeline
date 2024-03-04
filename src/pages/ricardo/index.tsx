@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import '../../sass/custom.scss'
 
 import RicardoPage from '../../components/ricardo_page'
 

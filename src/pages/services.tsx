@@ -1,5 +1,4 @@
 import React from 'react'
-import 'sass/custom.scss'
 
 import Layout from 'components/adalida_page/layout'
 import ServicesPage from 'components/adalida_page/services_page'

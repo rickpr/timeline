@@ -4,7 +4,7 @@ import Card from './card'
 
 import StackingPair from '../stacking_pair'
 
-const Design = (): JSX.Element => {
+const MyProcess = (): JSX.Element => {
   return (
     <StackingPair>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5em' }}>
@@ -45,4 +45,4 @@ const Design = (): JSX.Element => {
   )
 }
 
-export default Design
+export default MyProcess
