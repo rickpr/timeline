@@ -6,7 +6,7 @@ import App from './app'
 import Header from './header'
 import { headerPixels } from '../header'
 
-const height = `calc(100dvh - ${headerPixels * 2}px)`
+const height = `calc(100dvh - ${headerPixels}px)`
 
 interface Props {
   themes: Record<string, Theme>
@@ -22,7 +22,6 @@ const Desktop = ({ themes, setCurrentTheme }: Props): JSX.Element => {
 
   return (
     <div className='apps-container' style={{ maxHeight: height }} ref={containerRef}>
-      <div className='glass' style={{ position: 'absolute', minHeight: height, minWidth: '85dvw' }} />
       {themeTitles.map(title => (
         <App
           key={title}

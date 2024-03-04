@@ -7,7 +7,7 @@ import StackingPair from '../stacking_pair'
 const MyProcess = (): JSX.Element => {
   return (
     <StackingPair>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5em' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5em', height: '100%', }}>
         <div style={{ fontWeight: 700, fontSize: '2.25em' }}>Design that actually reflects the quality and rarity of your business</div>
         <div style={{ fontWeight: 500, fontSize: '1.25em' }}>
           Because generic is no longer an option.

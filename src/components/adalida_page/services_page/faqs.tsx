@@ -7,7 +7,7 @@ import StackingPair from '../stacking_pair'
 const FAQs = (): JSX.Element => {
   return (
     <StackingPair>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5em' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5em', height: '100%' }}>
         <div style={{ fontWeight: 700, fontSize: '2.25em' }}>Let&apos;s answer some FAQs</div>
         <div style={{ fontWeight: 500, fontSize: '1.25em' }}>
           Don’t hesitate to reach out if you have any questions.

@@ -8,7 +8,7 @@ import { headerPixels } from '../header'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const height = `calc(100dvh - ${headerPixels * 2}px)`
+const height = `calc(100dvh - ${headerPixels}px)`
 const halfHeight = `calc(${height} / 2)`
 const imageStyles = {
   borderRadius: '1em',
@@ -38,8 +38,7 @@ const coverStyles = {
   height,
   width: '100dvw',
   minHeight: height,
-  minWidth: '100dvw',
-  padding: '0 10dvw'
+  minWidth: '100dvw'
 }
 
 interface Props {

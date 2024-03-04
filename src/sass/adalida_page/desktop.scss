@@ -1,15 +1,7 @@
 .apps-container {
   display: flex;
-  maxWidth: 85dvw;
-  margin: 0 7.5dvw;
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.apps-container::-webkit-scrollbar {
-  display: none;
 }
