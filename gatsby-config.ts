@@ -8,7 +8,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-preload-fonts',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
