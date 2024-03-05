@@ -1,9 +1,8 @@
-import { lightColor, type Theme } from './theme_context'
+import { AboutTheme, lightColor, type Theme } from './theme_context'
 
 import HowPhoto from 'images/facets/how.webp'
 import WhatPhoto from 'images/facets/what.webp'
 import WherePhoto from 'images/facets/where.webp'
-import WhoPhoto from 'images/facets/who.webp'
 
 interface FacetTheme extends Omit<Theme, 'subtitle'> {
   subtitle: string
@@ -86,31 +85,7 @@ const FacetThemes: Record<string, FacetTheme> = {
       url: '/services'
     }
   },
-  About: {
-    name: 'About',
-    subtitle: "I'm a Burqueña",
-    description: 'I grew up one block from the famous Los Pollos Hermanos in the show Breaking Bad. Now, I’m transplanted in San Francisco. Read more about me and my professional background here.',
-    coverPhoto: WhoPhoto,
-    roles: [
-      'UNM',
-      'Interdisciplinary BA',
-      'English-Philosophy'
-    ],
-    colors: {
-      darkMode: {
-        background: '#8D5D24',
-        text: lightColor
-      },
-      lightMode: {
-        background: '#D2C0A4',
-        text: lightColor
-      }
-    },
-    link: {
-      url: '/about',
-      text: 'View About'
-    }
-  }
+  About: AboutTheme as FacetTheme
 }
 
 export default FacetThemes

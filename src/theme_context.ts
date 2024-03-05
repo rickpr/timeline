@@ -1,6 +1,6 @@
 import React, { type CSSProperties } from 'react'
 
-import Favicon from 'images/favicon.png'
+import WhoPhoto from 'images/facets/who.webp'
 
 export interface Colors {
   background: CSSProperties['background']
@@ -43,20 +43,28 @@ export const lightBackgroundGradient = (color: string): string => {
 }
 
 export const AboutTheme: Theme = {
-  name: 'About Adalida',
-  description: '',
-  coverPhoto: Favicon,
-  heroPhoto: Favicon,
-  roles: [],
+  name: 'About',
+  subtitle: "I'm a Burqueña",
+  description: 'I grew up one block from the famous Los Pollos Hermanos in the show Breaking Bad. Now, I’m transplanted in San Francisco. Read more about me and my professional background here.',
+  coverPhoto: WhoPhoto,
+  roles: [
+    'UNM',
+    'Interdisciplinary BA',
+    'English-Philosophy'
+  ],
   colors: {
-    lightMode: {
-      background: '#D2A4D0',
+    darkMode: {
+      background: '#8D5D24',
       text: lightColor
     },
-    darkMode: {
-      background: '#8D2470',
+    lightMode: {
+      background: '#D2C0A4',
       text: lightColor
     }
+  },
+  link: {
+    url: '/about',
+    text: 'View About'
   }
 }
 
