@@ -18,7 +18,8 @@ const VisualIdentity = (): JSX.Element => {
     borderRadius: '10px',
     boxShadow: '0 5px 5px -1px #152163',
     background: 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15))',
-    backdropFilter: 'blur(24px)'
+    backdropFilter: 'blur(24px)',
+    WebkitBackdropFilter: 'blur(24px)'
   }
 
   const grid = (

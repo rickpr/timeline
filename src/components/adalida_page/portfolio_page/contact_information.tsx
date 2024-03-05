@@ -50,7 +50,7 @@ const ContactInformation = (): React.ReactElement => {
           <BrandIcon href='https://www.interaction-design.org/members/adalida-baca' Icon={IconBackpack} size={iconSize} />
           <BrandIcon href='https://dribbble.com/adalida-baca' Icon={IconBrandDribbble} size={iconSize} />
           <BrandIcon href='https://linkedin.com/in/adalidabaca' Icon={IconBrandLinkedin} size={iconSize} />
-          <BrandIcon href="mailto:adalida@adalida.design" Icon={IconMail} size={iconSize} />
+          <BrandIcon href="mailto:hi@adalida.design" Icon={IconMail} size={iconSize} />
         </div>
       </div>
     </div>

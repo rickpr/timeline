@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Profession from './profession'
+import Portfolio from './portfolio'
 
-const Root = (): JSX.Element => <Profession />
+const Root = (): JSX.Element => <Portfolio />
 
 export const Head = (): JSX.Element => <title>Adalida Baca</title>
 export default Root

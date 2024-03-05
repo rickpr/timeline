@@ -9,8 +9,7 @@ interface Props {
 
 const elementStyle = {
   display: 'flex',
-  alignItems: 'center',
-  height: '100%'
+  alignItems: 'center'
 }
 
 const StackingPair = ({ children, reversed = false }: Props): JSX.Element => {
@@ -21,7 +20,7 @@ const StackingPair = ({ children, reversed = false }: Props): JSX.Element => {
     display: 'grid',
     gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
     width: '100%',
-    rowGap: '1em',
+    gap: '1em',
     columnGap: '2em'
   }
   return (

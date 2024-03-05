@@ -55,7 +55,7 @@ const Footer = (): JSX.Element => {
             </div>
           </div>
           <div className='footer-contact-button-container'>
-            <a className='footer-contact-button' href='mailto:adalida@adalida.design'>CONTACT</a>
+            <a className='footer-contact-button' href='mailto:hi@adalida.design'>CONTACT</a>
           </div>
         </div>
       </div>

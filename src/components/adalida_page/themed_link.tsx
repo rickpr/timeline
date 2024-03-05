@@ -34,22 +34,22 @@ const descriptionStyles = {
 const linkStyles = { fontSize: '0.75rem' }
 
 const onClick = (
-  setIsProfessionPage: (updateProfessionPage: boolean | ((isProfessionPage: boolean) => boolean)) => void,
+  setIsPortfolioPage: (updatePortfolioPage: boolean | ((isPortfolioPage: boolean) => boolean)) => void,
   setScrollToCaseStudies: (updateScrollToCaseStudies: boolean | ((scrollToCaseStudies: boolean) => boolean)) => void
 ): true => {
-  setIsProfessionPage(true)
+  setIsPortfolioPage(true)
   setScrollToCaseStudies(true)
   return true
 }
 
 const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
   const { description, name, subtitle, link, roles } = theme
-  const { setIsProfessionPage, setScrollToCaseStudies } = useContext(HomePageContext)
+  const { setIsPortfolioPage, setScrollToCaseStudies } = useContext(HomePageContext)
   const click = useMemo(() => {
     if (link?.url === '/') {
-      return () => onClick(setIsProfessionPage, setScrollToCaseStudies)
+      return () => onClick(setIsPortfolioPage, setScrollToCaseStudies)
     }
-  }, [setIsProfessionPage, setScrollToCaseStudies, link?.url])
+  }, [setIsPortfolioPage, setScrollToCaseStudies, link?.url])
 
   const innerContent = (
     <>

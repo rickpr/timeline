@@ -1,25 +1,24 @@
 import { lightColor, type Theme } from './theme_context'
 
-import WhoPhoto from 'images/facets/who.webp'
+import HowPhoto from 'images/facets/how.webp'
 import WhatPhoto from 'images/facets/what.webp'
 import WherePhoto from 'images/facets/where.webp'
-import HowPhoto from 'images/facets/how.webp'
-import WhyPhoto from 'images/facets/why.webp'
+import WhoPhoto from 'images/facets/who.webp'
 
 interface FacetTheme extends Omit<Theme, 'subtitle'> {
   subtitle: string
 }
 
 const FacetThemes: Record<string, FacetTheme> = {
-  Who: {
-    name: 'Who am I?',
+  Contact: {
+    name: 'Contact',
     subtitle: "Hi, I'm Adalida Baca",
-    description: 'Welcome to my design portfolio.',
-    coverPhoto: WhoPhoto,
+    description: "Specializing in crafting products that are as functional as they are visually appealing, I'm on the search for my next opportunity to make a significant impact.",
+    coverPhoto: HowPhoto,
     roles: [
-      'About',
-      'Contact',
-      'Background'
+      'Insightful',
+      'Resourceful',
+      'Utility Player'
     ],
     colors: {
       darkMode: {
@@ -32,19 +31,20 @@ const FacetThemes: Record<string, FacetTheme> = {
       }
     },
     link: {
-      text: 'Read my story',
-      url: '/about'
+      text: "Let's chat",
+      url: 'mailto:hi@adalida.design'
     }
   },
-  What: {
-    name: 'What do I do?',
+  Portfolio: {
+    name: 'Portfolio',
     subtitle: "I'm a Product Designer",
-    description: 'Specializing in empowering small businesses by crafting websites that not only showcase their company, but also drive engagement and sales.',
+    description: 'Check out my portfolio where I design aesthetically pleasing and functional solutions.',
     coverPhoto: WhatPhoto,
     roles: [
-      'Web Design',
-      'Brand Identity',
-      'Product Design'
+      'Figma',
+      'User Research',
+      'UX Design',
+      'Animation'
     ],
     colors: {
       darkMode: {
@@ -57,20 +57,19 @@ const FacetThemes: Record<string, FacetTheme> = {
       }
     },
     link: {
-      text: "Let's work together",
-      url: '/services'
+      text: 'View portfolio',
+      url: '/portfolio'
     }
   },
-  Where: {
-    name: 'Where am I going in my career?',
-    subtitle: "I'm a Disruptor",
-    description: "I'm growing my skills to break into the start up industry. My case studies cover problem solving in the design, prototyping, animation, research, and product design space.",
+  Services: {
+    name: 'Services',
+    subtitle: "I'm a Freelance Designer",
+    description: 'Specializing in empowering small businesses by crafting websites that not only showcase their company, but also drive engagement and sales.',
     coverPhoto: WherePhoto,
     roles: [
-      'User Research',
-      'UX Design',
-      'Animation',
-      'Figma'
+      'Web Design',
+      'Brand Identity',
+      'Product Design'
     ],
     colors: {
       darkMode: {
@@ -83,19 +82,19 @@ const FacetThemes: Record<string, FacetTheme> = {
       }
     },
     link: {
-      text: 'View case studies',
-      url: '/'
+      text: 'View services',
+      url: '/services'
     }
   },
-  How: {
-    name: 'How do I grow?',
-    subtitle: "I'm an IxDF Member",
-    description: 'The Interaction Design Foundation (IxDF) is my go to learning portal. Check out my profile for my course history and performance!',
-    coverPhoto: HowPhoto,
+  About: {
+    name: 'About',
+    subtitle: "I'm a Burqueña",
+    description: 'I grew up one block from the famous Los Pollos Hermanos in the show Breaking Bad. Now, I’m transplanted in San Francisco. Read more about me and my professional background here.',
+    coverPhoto: WhoPhoto,
     roles: [
-      'Journey Mapping',
-      'Data Driven Design',
-      'User Research Methods'
+      'UNM',
+      'Interdisciplinary BA',
+      'English-Philosophy'
     ],
     colors: {
       darkMode: {
@@ -108,29 +107,8 @@ const FacetThemes: Record<string, FacetTheme> = {
       }
     },
     link: {
-      url: 'https://www.interaction-design.org/members/adalida-baca',
-      text: "View Adalida's IxDF profile"
-    }
-  },
-  Why: {
-    name: 'Why?',
-    subtitle: "I'm a Problem Solver",
-    description: 'I enjoy designing elegant and functional solutions best fit for the user and business needs.',
-    coverPhoto: WhyPhoto,
-    roles: [
-      'Insightful',
-      'Resourceful',
-      'Utility Player'
-    ],
-    colors: {
-      darkMode: {
-        background: '#59248D',
-        text: lightColor
-      },
-      lightMode: {
-        background: '#C3A4D2',
-        text: lightColor
-      }
+      url: '/about',
+      text: 'View About'
     }
   }
 }

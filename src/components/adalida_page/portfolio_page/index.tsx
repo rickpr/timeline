@@ -13,7 +13,7 @@ const containerStyle = {
   alignItems: 'center'
 }
 
-const ProfessionPage = (): JSX.Element => {
+const PortfolioPage = (): JSX.Element => {
   return (
     <div style={containerStyle}>
       <ContactInformation />
@@ -25,4 +25,4 @@ const ProfessionPage = (): JSX.Element => {
   )
 }
 
-export default ProfessionPage
+export default PortfolioPage

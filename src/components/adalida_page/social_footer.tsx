@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { IconBrandFacebook, IconBrandLinkedin, IconBrandTwitter } from '@tabler/icons-react'
 
-import BrandIcon from 'components/adalida_page/brand_icon'
+import BrandIcon from './brand_icon'
 
 const styles = {
   backgroundColor: '#1A1A1A',

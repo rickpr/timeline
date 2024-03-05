@@ -35,38 +35,39 @@ const containerStyle = {
 }
 
 interface Props {
-  isProfessionPage?: boolean
-  setIsProfessionPage?: (updateProfessionPage: boolean | ((isProfessionPage: boolean) => boolean)) => void
+  isPortfolioPage?: boolean
+  setIsPortfolioPage?: (updatePortfolioPage: boolean | ((isPortfolioPage: boolean) => boolean)) => void
 }
 
-const toggleProfessionPage = (
-  setIsProfessionPage?: (updateProfessionPage: (isProfessionPage: boolean) => boolean) => void
+const togglePortfolioPage = (
+  setIsPortfolioPage?: (updatePortfolioPage: (isPortfolioPage: boolean) => boolean) => void
 ): void => {
-  if (setIsProfessionPage === undefined) return
+  if (setIsPortfolioPage === undefined) return
 
-  setIsProfessionPage((isProfessionPage: boolean) => {
-    history.pushState({}, '', isProfessionPage ? '/person' : '/profession')
-    return !isProfessionPage
+  setIsPortfolioPage((isPortfolioPage: boolean) => {
+    history.pushState({}, '', isPortfolioPage ? '/person' : '/portfolio')
+    return !isPortfolioPage
   })
 }
 
-const ProfessionPageSwitch = ({ isProfessionPage, setIsProfessionPage }: Props): JSX.Element => {
+const PortfolioPageSwitch = ({ isPortfolioPage, setIsPortfolioPage }: Props): JSX.Element => {
   return (
     <div style={containerStyle}>
-      <button style={switchGridStyle} onClick={() => { toggleProfessionPage(setIsProfessionPage) }}>
-        <div style={switchTextStyle}>Person</div>
-        <div style={switchTextStyle}>Profession</div>
+      <button style={switchGridStyle} onClick={() => { togglePortfolioPage(setIsPortfolioPage) }}>
+        <div style={switchTextStyle}>About</div>
+        <div style={switchTextStyle}>Portfolio</div>
         <div
           style={{
             ...glassStyles,
             position: 'absolute',
             backdropFilter: undefined,
+            WebkitBackdropFilter: undefined,
             border: '1px solid rgba(255, 255, 255, 0.25)',
             width: '50%',
             height: '100%',
             transition: 'all 0.2s ease-in-out',
             left: 0,
-            transform: isProfessionPage === true ? 'translateX(100%)' : undefined
+            transform: isPortfolioPage === true ? 'translateX(100%)' : undefined
           }}
         />
       </button>
@@ -74,4 +75,4 @@ const ProfessionPageSwitch = ({ isProfessionPage, setIsProfessionPage }: Props):
   )
 }
 
-export default ProfessionPageSwitch
+export default PortfolioPageSwitch

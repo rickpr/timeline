@@ -7,18 +7,18 @@ type ThemeName = keyof typeof AllThemes
 
 interface LayoutProps {
   darkMode: boolean
-  isProfessionPage: boolean
+  isPortfolioPage: boolean
   isHomePage: boolean
   theme: ThemeName
 }
 
-export const Layout = ({ darkMode, isProfessionPage, isHomePage, theme = 'About' }: LayoutProps): JSX.Element => (
+export const Layout = ({ darkMode, isPortfolioPage, isHomePage, theme = 'About' }: LayoutProps): JSX.Element => (
   <LayoutComponent
     theme={AllThemes[theme]}
     darkMode={darkMode}
     toggleDarkMode={() => {}}
-    isProfessionPage={isProfessionPage}
-    setIsProfessionPage={isHomePage ? () => {} : undefined}
+    isPortfolioPage={isPortfolioPage}
+    setIsPortfolioPage={isHomePage ? () => {} : undefined}
   >
     <div />
   </LayoutComponent>

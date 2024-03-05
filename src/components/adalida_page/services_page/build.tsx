@@ -13,7 +13,7 @@ const Build = (): JSX.Element => {
           Creating custom web solutions tailored for businesses to maximize online presence and fuel growth.
         </div>
         <div style={{ fontWeight: 600, fontSize: '1.125em', display: 'flex' }}>
-          Start your project <div style={{ transform: 'rotate(-60deg)', fontWeight: 400 }}>➜</div>
+          Start your project <div className='rotated-arrow' />
         </div>
       </div>
       <div className='glass card'>

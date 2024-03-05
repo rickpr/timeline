@@ -54,24 +54,20 @@ const Services = (): JSX.Element => {
           <li>Packaging Design</li>
         </InlineList>
       </Card>
-
-      <Card title='Site Development' width={CARD_WIDTH}>
-        Transform your online presence with our Website Development & Design Package, tailored for businesses looking
-        to stand out online. This package delivers a blend of aesthetics and functionality.
-        <div style={{ fontSize: '0.8125rem', fontWeight: 600 }}>Your Website includes:</div>
+      <Card title='Content Development' width={CARD_WIDTH}>
+        Ideal for businesses requiring expert assistance in managing and refreshing their digital storefronts or websites.
+        Charged hourly, this service ensures your online presence is always engaging and up-to-date.
+        <div style={{ fontSize: '0.8125rem', fontWeight: 600 }}>Your Services include:</div>
         <InlineList>
-          <li>Strategic Web Development</li>
-          <li>User Experience (UX) Analysis</li>
-          <li>Responsive Layout</li>
-          <li>Content Management System (CMS)</li>
-          <li>Search Engine Optimization (SE0)</li>
-          <li>Copywriting</li>
-          <li>Support Available Post Launch</li>
+          <li>Inventory Updates</li>
+          <li>Content Refresh</li>
+          <li>Banner Updates</li>
+          <li>Seasonal Adjustments</li>
+          <li>Performance Monitoring</li>
         </InlineList>
         ADD-ONS AVAILABLE:
         <InlineList>
-          <li>Product Photography</li>
-          <li>Packaging Design</li>
+          <li>Copywriting + Editing</li>
         </InlineList>
       </Card>
     </div>

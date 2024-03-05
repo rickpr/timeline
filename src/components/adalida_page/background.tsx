@@ -3,14 +3,14 @@ import React, { useContext, useEffect, useState, type CSSProperties } from 'reac
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 import { ThemeContext, darkGradientColor, lightGradientColor } from 'theme_context'
 
-const backgroundGradient = (color: string, darkMode: boolean): string => {
+const backgroundGradient = (color: string | number | undefined, darkMode: boolean): string => {
   const gradientColor = darkMode ? darkGradientColor : lightGradientColor
-  return `linear-gradient(248deg, ${gradientColor} 13.28%, ${color} 58.07%, ${gradientColor} 90.12%)`
+  return `linear-gradient(248deg, ${gradientColor} 13.28%, ${color ?? gradientColor} 58.07%, ${gradientColor} 90.12%)`
 }
 
-const sphereGradient = (color: string, darkMode: boolean): string => {
+const sphereGradient = (color: string | number | undefined, darkMode: boolean): string => {
   const gradientColor = darkMode ? darkGradientColor : lightGradientColor
-  return `radial-gradient(circle at 33% 33%, ${color}, ${gradientColor})`
+  return `radial-gradient(circle at 33% 33%, ${color ?? gradientColor}, ${gradientColor})`
 }
 
 const Background = (): JSX.Element => {

@@ -1,21 +1,21 @@
 import React from 'react'
 
-import ProfessionPageSwitch from './profession_page_switch'
+import PortfolioPageSwitch from './portfolio_page_switch'
 import DarkModeButton from './dark_mode_button'
 import HomeLink from './home_link'
 import BackButton from './back_button'
 import { glassStyles } from '../styles'
 
 interface Props {
-  isProfessionPage?: boolean
-  setIsProfessionPage?: (updateProfessionPage: boolean | ((isProfessionPage: boolean) => boolean)) => void
+  isPortfolioPage?: boolean
+  setIsPortfolioPage?: (updatePortfolioPage: boolean | ((isPortfolioPage: boolean) => boolean)) => void
 }
 
 export const headerPixels = 80
 
-const Header = ({ isProfessionPage, setIsProfessionPage }: Props): JSX.Element => {
-  const isHomePage = setIsProfessionPage !== undefined
-  const { backdropFilter } = glassStyles
+const Header = ({ isPortfolioPage, setIsPortfolioPage }: Props): JSX.Element => {
+  const isHomePage = setIsPortfolioPage !== undefined
+  const { backdropFilter, WebkitBackdropFilter } = glassStyles
   return (
     <>
       <div style={{
@@ -28,10 +28,11 @@ const Header = ({ isProfessionPage, setIsProfessionPage }: Props): JSX.Element =
         justifyContent: 'space-between',
         padding: '10px 7.5dvw',
         height: `${headerPixels}px`,
-        backdropFilter
+        backdropFilter,
+        WebkitBackdropFilter
       }}>
         {isHomePage ? <HomeLink /> : <BackButton />}
-        {isHomePage && <ProfessionPageSwitch isProfessionPage={isProfessionPage} setIsProfessionPage={setIsProfessionPage} />}
+        {isHomePage && <PortfolioPageSwitch isPortfolioPage={isPortfolioPage} setIsPortfolioPage={setIsPortfolioPage} />}
         <DarkModeButton />
       </div>
     </>

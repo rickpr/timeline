@@ -7,7 +7,7 @@ import useDarkMode from 'hooks/use_dark_mode'
 const Person = (): JSX.Element => {
   const [darkMode, toggleDarkMode] = useDarkMode()
   return (
-    <HomePageProvider professionPage={false}>
+    <HomePageProvider portfolioPage={false}>
       <AdalidaPage darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
     </HomePageProvider>
   )

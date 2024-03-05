@@ -35,7 +35,9 @@ const roleStyles = {
 const linkStyles = {
   fontSize: '1.2em',
   lineHeight: 1,
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  display: 'flex',
+  gap: '0.5em'
 }
 
 interface Props {
@@ -45,22 +47,23 @@ interface Props {
 
 const onClick = (
   // TODO: Dedupe this function with the one in themed_link.tsx
-  setIsProfessionPage: (updateProfessionPage: boolean | ((isProfessionPage: boolean) => boolean)) => void,
+  setIsPortfolioPage: (updatePorfolioPage: boolean | ((isPortfolioPage: boolean) => boolean)) => void,
   setScrollToCaseStudies: (updateScrollToCaseStudies: boolean | ((scrollToCaseStudies: boolean) => boolean)) => void
 ): true => {
-  setIsProfessionPage(true)
+  setIsPortfolioPage(true)
   setScrollToCaseStudies(true)
   return true
 }
 
 const Title = ({ theme, active }: Props): React.ReactElement => {
   const { description, name, subtitle, link, roles } = theme
-  const { setIsProfessionPage, setScrollToCaseStudies } = useContext(HomePageContext)
+  const arrow = link?.url?.includes(':') === true ? <div className='rotated-arrow' /> : ' ➜'
+  const { setIsPortfolioPage, setScrollToCaseStudies } = useContext(HomePageContext)
   const click = useMemo(() => {
-    if (link?.url === '/') {
-      return () => onClick(setIsProfessionPage, setScrollToCaseStudies)
+    if (link?.url === '/portfolio') {
+      return () => onClick(setIsPortfolioPage, setScrollToCaseStudies)
     }
-  }, [setIsProfessionPage, setScrollToCaseStudies, link?.url])
+  }, [setIsPortfolioPage, setScrollToCaseStudies, link?.url])
 
   const pointerEvents = active ? 'auto' : 'none'
   const fontSize = active ? '2.6rem' : '1rem'
@@ -84,7 +87,7 @@ const Title = ({ theme, active }: Props): React.ReactElement => {
             {roles.map(role => <div key={role} className='glass' style={roleStyles}>{role}</div>)}
           </div>
           <div>{description}</div>
-          {link !== undefined && <div style={linkStyles}>{link.text} ➜</div>}
+          {link !== undefined && <div style={linkStyles}>{link.text}{arrow}</div>}
         </div>
       </div>
     </>

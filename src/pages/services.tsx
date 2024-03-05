@@ -8,7 +8,7 @@ import useDarkMode from 'hooks/use_dark_mode'
 const Services = (): JSX.Element => {
   const [darkMode, toggleDarkMode] = useDarkMode()
   return (
-    <Layout theme={FacetThemes.What} darkMode={darkMode} toggleDarkMode={toggleDarkMode}>
+    <Layout theme={FacetThemes.Services} darkMode={darkMode} toggleDarkMode={toggleDarkMode}>
       <ServicesPage />
     </Layout>
   )

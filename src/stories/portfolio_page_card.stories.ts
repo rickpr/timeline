@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import CaseStudyThemes from 'case_study_themes'
-import { ProfessionPageCard } from './profession_page_card'
+import { PortfolioPageCard } from './portfolio_page_card'
 
 const themeNames = Object.keys(CaseStudyThemes)
 
 const meta = {
-  title: 'Profession Page Card',
-  component: ProfessionPageCard,
+  title: 'Portfolio Page Card',
+  component: PortfolioPageCard,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
@@ -20,7 +20,7 @@ const meta = {
       control: { type: 'select' }
     }
   }
-} satisfies Meta<typeof ProfessionPageCard>
+} satisfies Meta<typeof PortfolioPageCard>
 
 export default meta
 type Story = StoryObj<typeof meta>
