@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
 
-import type { Work as WorkType } from './works'
+import { Works } from 'work_themes'
 import NavigationButtons from './navigation_buttons'
 
 interface Props {
-  work: WorkType
+  workKey: keyof typeof Works
   active: boolean
-  setCurrentCard: React.Dispatch<React.SetStateAction<number>>
+  setCurrentCard: React.Dispatch<React.SetStateAction<keyof typeof Works>>
 }
 
-const Work = ({ work, active, setCurrentCard }: Props): JSX.Element => {
+const Work = ({ workKey, active, setCurrentCard }: Props): JSX.Element => {
   const [shown, setShown] = useState(active)
   const [hidden, setHidden] = useState(!active)
+  const work = Works[workKey]
   useEffect(() => {
     let timeout: NodeJS.Timeout
     if (active) {
@@ -30,18 +31,18 @@ const Work = ({ work, active, setCurrentCard }: Props): JSX.Element => {
         <div className='work-name'>{work.name}</div>
         <div className='work-badges-container'>
           <div className='work-badges-row'>
-            {work.badges.slice(0, 2).map(badge => <div className='glass badge' key={badge}>{badge}</div>)}
+            {work.roles.slice(0, 2).map(badge => <div className='glass badge' key={badge}>{badge}</div>)}
           </div>
           <div className='work-badges-row'>
-            {work.badges.slice(2).map(badge => <div className='glass badge' key={badge}>{badge}</div>)}
+            {work.roles.slice(2).map(badge => <div className='glass badge' key={badge}>{badge}</div>)}
           </div>
         </div>
-        <a className='work-link' href={work.url}>
+        <a className='work-link' href={work.link.url}>
           Visit website <div className='rotated-arrow' />
         </a>
       </div>
       <div className='work-image'>
-        <img src={work.coverImage} alt={work.name} />
+        <img src={work.coverPhoto} alt={work.name} />
         <NavigationButtons setCurrentCard={setCurrentCard} />
       </div>
     </div>

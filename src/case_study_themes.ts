@@ -1,5 +1,4 @@
 import type { Theme } from './theme_context'
-import AirbrushArtStudioPhoto from 'images/airbrush_art_studio/cover.png'
 import PhronesisPhoto from 'images/phronesis/cover.webp'
 import PhronesisHeroPhoto from 'images/phronesis/title.jpg'
 import GainTainPhoto from 'images/gaintain/cover.png'
@@ -13,22 +12,6 @@ interface CaseStudyTheme extends Omit<Theme, 'link'> {
 }
 
 const CaseStudyThemes: Record<string, CaseStudyTheme> = {
-  AirbrushArtStudio: {
-    name: 'Airbrush Art',
-    description: 'A unique digital portfolio showcasing the remarkable talents of Armando Diaz, a distinguished artist hailing from New Mexico.',
-    coverPhoto: AirbrushArtStudioPhoto,
-    heroPhoto: AirbrushArtStudioPhoto,
-    roles: [
-      'Web Design',
-      'Responsive Design',
-      'Copywriting'
-    ],
-    link: {
-      text: 'READ CASE STUDY',
-      url: '/case_studies/airbrush_art_studio'
-    }
-  },
-
   TLDR: {
     name: 'TL;DR',
     description: 'Tired of not understanding what you “agree” to when signing up for software? We are too, which is why we created a generative AI legalese summarizer',

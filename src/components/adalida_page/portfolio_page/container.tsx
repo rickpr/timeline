@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react'
 
 import CaseStudyThemes from 'case_study_themes'
+import { Works } from 'work_themes'
 import { HomePageContext } from '../home_page_context'
 import { headerPixels } from '../header'
 import Card from './card'
@@ -22,7 +23,7 @@ const Container = (): JSX.Element => {
   }, [scrollToCaseStudies, setScrollToCaseStudies])
   return (
     <div style={ContainerStyles} ref={containerRef}>
-      {Object.values(CaseStudyThemes).map((theme) => <Card key={theme.name} theme={theme} />)}
+      {Object.values({ ...CaseStudyThemes, ...Works }).map((theme) => <Card key={theme.name} theme={theme} />)}
     </div>
   )
 }

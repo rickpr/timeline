@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
 
-import { Works } from './works'
+import { Works } from 'work_themes'
 import Work from './work'
 
+const WorkKeys = Object.keys(Works)
+
 const MyPastWork = (): JSX.Element => {
-  const [currentCard, setCurrentCard] = useState(0)
+  const [currentCard, setCurrentCard] = useState(WorkKeys[0])
   return (
     <div className='my-past-work'>
-      {Works.map((work, index) =>
+      {WorkKeys.map(work =>
         <Work
-          key={work.name}
-          work={work}
-          active={currentCard === index}
+          key={work}
+          workKey={work}
+          active={currentCard === work}
           setCurrentCard={setCurrentCard}
         />
       )}

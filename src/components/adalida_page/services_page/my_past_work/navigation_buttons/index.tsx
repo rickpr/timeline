@@ -1,23 +1,31 @@
 import React, { useCallback } from 'react'
 
 import Button from './button'
-import { Works } from '../works'
+import { Works } from 'work_themes'
 
 interface Props {
-  setCurrentCard: React.Dispatch<React.SetStateAction<number>>
+  setCurrentCard: React.Dispatch<React.SetStateAction<keyof typeof Works>>
 }
+
+const WorkKeys = Object.keys(Works)
 
 const modulus = (index: number): number => (
   // Javascript's % operator doesn't wrap around to negative numbers
-  ((index % Works.length) + Works.length) % Works.length
+  ((index % WorkKeys.length) + WorkKeys.length) % WorkKeys.length
 )
 
 const NavigationButtons = ({ setCurrentCard }: Props): JSX.Element => {
   const navigateLeft = useCallback(() => {
-    setCurrentCard(previousCard => modulus(previousCard - 1))
+    setCurrentCard(previousCard => {
+      const previousCardIndex = WorkKeys.indexOf(previousCard)
+      return WorkKeys[modulus(previousCardIndex - 1)]
+    })
   }, [setCurrentCard])
   const navigateRight = useCallback(() => {
-    setCurrentCard(previousCard => modulus(previousCard + 1))
+    setCurrentCard(previousCard => {
+      const previousCardIndex = WorkKeys.indexOf(previousCard)
+      return WorkKeys[modulus(previousCardIndex + 1)]
+    })
   }, [setCurrentCard])
 
   return (
