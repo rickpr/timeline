@@ -1,15 +1,13 @@
 {
-  "name": "adalida-and-ricardo-timeline",
+  "name": "adalida-portfolio",
   "private": true,
-  "description": "Our personal website",
+  "description": "Adalida's portfolio",
   "version": "0.1.0",
   "contributors": [
     "Ricardo Piro-Rael <fdisk@fdisk.co>",
     "Adalida Baca <adalida@adalida.design>"
   ],
   "dependencies": {
-    "@react-three/drei": "^9.97.6",
-    "@react-three/fiber": "^8.15.16",
     "@tabler/icons-react": "^2.47.0",
     "aos": "^3.0.0-beta.6",
     "gatsby": "5.13.3",
@@ -25,7 +23,6 @@
     "gatsby-source-graphql": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "gsap": "^3.12.5",
-    "highlight.js": "^11.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.71.0",

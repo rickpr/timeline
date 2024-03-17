@@ -56,3 +56,12 @@ hr {
   border-top: 2px solid black;
   opacity: 1;
 }
+
+.not-found-page {
+  width: 100dvw;
+  height: 100dvh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

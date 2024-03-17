@@ -1,4 +1,4 @@
-# Ricardo and Adalida's homepage
+# Adalida's homepage and portfolio
 This personal webpage is for fun, practice, and to show off a bit of a portfolio.
 
 ## 🚀 Quick start

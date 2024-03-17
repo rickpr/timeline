@@ -2,8 +2,8 @@ import path from 'path'
 
 module.exports = {
   siteMetadata: {
-    title: 'Adalida and Ricardo',
-    description: 'Our blog front-end',
+    title: 'Adalida',
+    description: 'My portfolio',
     authors: ['@adalidabaca', '@rickpr']
   },
   plugins: [
@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Adalida and Ricardo Page',
+        name: 'Adalida Page',
         short_name: 'timeline',
         start_url: '/',
         background_color: '#121212',
