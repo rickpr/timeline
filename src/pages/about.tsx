@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Layout from 'components/adalida_page/layout'
-import AboutPage from 'components/adalida_page/about_page'
+import Layout from 'components/layout'
+import AboutPage from 'components/about_page'
 import useDarkMode from 'hooks/use_dark_mode'
 import FacetThemes from 'facet_themes'
 

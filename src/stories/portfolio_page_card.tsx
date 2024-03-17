@@ -2,7 +2,7 @@ import React from 'react'
 
 import CaseStudyThemes from 'case_study_themes'
 import { AboutTheme, ThemeContext } from 'theme_context'
-import Card from 'components/adalida_page/portfolio_page/card'
+import Card from 'components/portfolio_page/card'
 import useDarkModeStyle from 'hooks/use_dark_mode_style'
 
 type ThemeName = keyof typeof CaseStudyThemes

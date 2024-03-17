@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LayoutComponent from 'components/adalida_page/layout'
+import LayoutComponent from 'components/layout'
 import { AllThemes } from './const'
 
 type ThemeName = keyof typeof AllThemes

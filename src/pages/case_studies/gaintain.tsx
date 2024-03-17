@@ -3,8 +3,8 @@ import React from 'react'
 import CaseStudyThemes from 'case_study_themes'
 import useDarkMode from 'hooks/use_dark_mode'
 
-import GainTain from 'components/adalida_page/case_studies/gaintain'
-import Layout from 'components/adalida_page/layout'
+import GainTain from 'components/case_studies/gaintain'
+import Layout from 'components/layout'
 
 const GainTainPage = (): JSX.Element => {
   const [darkMode, toggleDarkMode] = useDarkMode()

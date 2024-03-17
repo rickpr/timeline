@@ -1,0 +1,43 @@
+.switch-container {
+  @extend .glass;
+  padding: 6px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+}
+
+.switch-grid {
+  color: unset;
+  display: grid;
+  background: none;
+  border: none;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  place-content: center;
+  gap: 18px;
+  padding: 6px 9px;
+  min-height: 100%;
+  pointer-events: auto;
+  cursor: pointer;
+  font-family: Work Sans, sans-serif;
+}
+
+.switch-text {
+  line-height: 1;
+  width: 100%;
+  font-weight: 600;
+}
+
+.switch-indicator {
+  @extend .glass;
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 50%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+  z-index: -1;
+  left: 0;
+}

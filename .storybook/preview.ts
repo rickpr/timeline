@@ -22,8 +22,8 @@ window.___navigate = pathname => {
 // Styles will not import each other, so import them all here
 // This may be fixable with a webpack config in main.ts
 import 'sass/custom.scss'
-import 'sass/adalida_page/index.scss'
-import 'sass/adalida_page/case_study.scss'
+import 'sass/index.scss'
+import 'sass/case_study.scss'
 
 const preview: Preview = {
   parameters: {

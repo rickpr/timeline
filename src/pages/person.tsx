@@ -1,14 +1,14 @@
 import React from 'react'
 
-import AdalidaPage from 'components/adalida_page'
-import { HomePageProvider } from 'components/adalida_page/home_page_context'
+import MainPage from 'components'
+import { HomePageProvider } from 'components/home_page_context'
 import useDarkMode from 'hooks/use_dark_mode'
 
 const Person = (): JSX.Element => {
   const [darkMode, toggleDarkMode] = useDarkMode()
   return (
     <HomePageProvider portfolioPage={false}>
-      <AdalidaPage darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <MainPage darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
     </HomePageProvider>
   )
 }
