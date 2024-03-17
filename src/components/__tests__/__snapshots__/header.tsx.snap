@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<div
+  className="thin-glass"
+  style={
+    {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "80px",
+      "justifyContent": "space-between",
+      "padding": "10px 7.5dvw",
+      "position": "sticky",
+      "top": 0,
+      "width": "100%",
+      "zIndex": 1,
+    }
+  }
+>
+  <a
+    className="glass"
+    href="/"
+    style={
+      {
+        "alignItems": "center",
+        "color": "#F5F5F5",
+        "cursor": "pointer",
+        "display": "flex",
+        "height": "40px",
+        "justifyContent": "center",
+        "transition": "all 0.5s ease-in-out",
+        "width": "40px",
+      }
+    }
+  >
+    <svg
+      className="tabler-icon tabler-icon-arrow-left"
+      fill="none"
+      height={24}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 12l14 0"
+      />
+      <path
+        d="M5 12l6 6"
+      />
+      <path
+        d="M5 12l6 -6"
+      />
+    </svg>
+  </a>
+  <button
+    className="glass"
+    onClick={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "color": "#F5F5F5",
+        "cursor": "pointer",
+        "display": "flex",
+        "height": "40px",
+        "justifyContent": "center",
+        "width": "40px",
+      }
+    }
+  >
+    <svg
+      fill="none"
+      height="22"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="22"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+      <path
+        d="
+M12 3 a7.5 7.5 0 0 0 7.92 12.446
+M19.92 15.446 a9 9 0 1 1 -8.313 -12.454
+M17 4.5 v0.5
+M18.5 6 h-0.5
+M17 7.5 v-0.5
+M15.5 6 h0.5
+M19 11 l1 0
+M20 10 l0 1
+M20 11 l1 0
+M20 11 l0 1
+"
+      >
+        <animate
+          attributeName="d"
+          attributeType="XML"
+          begin="indefinite"
+          dur="1ms"
+          fill="freeze"
+          from="
+M12 3 a7.5 7.5 0 0 0 7.92 12.446
+M19.92 15.446 a9 9 0 1 1 -8.313 -12.454
+M17 4.5 v0.5
+M18.5 6 h-0.5
+M17 7.5 v-0.5
+M15.5 6 h0.5
+M19 11 l1 0
+M20 10 l0 1
+M20 11 l1 0
+M20 11 l0 1
+"
+          to="
+M15 15 a4 4 0 0 0 -6 -6
+M15 15 a4 4 0 1 1 -6 -6
+M12 3 v1
+M3 12 h1
+M12 20 v1
+M20 12 h1
+M5.6 5.6 l.7 .7
+M18.4 5.6 l-.7 .7
+M17.7 17.7 l.7 .7
+M6.3 17.7 l-.7 .7
+"
+        />
+        <animate
+          attributeName="d"
+          attributeType="XML"
+          begin="indefinite"
+          dur="1ms"
+          fill="freeze"
+          from="
+M15 15 a4 4 0 0 0 -6 -6
+M15 15 a4 4 0 1 1 -6 -6
+M12 3 v1
+M3 12 h1
+M12 20 v1
+M20 12 h1
+M5.6 5.6 l.7 .7
+M18.4 5.6 l-.7 .7
+M17.7 17.7 l.7 .7
+M6.3 17.7 l-.7 .7
+"
+          to="
+M12 3 a7.5 7.5 0 0 0 7.92 12.446
+M19.92 15.446 a9 9 0 1 1 -8.313 -12.454
+M17 4.5 v0.5
+M18.5 6 h-0.5
+M17 7.5 v-0.5
+M15.5 6 h0.5
+M19 11 l1 0
+M20 10 l0 1
+M20 11 l1 0
+M20 11 l0 1
+"
+        />
+      </path>
+    </svg>
+  </button>
+</div>
+`;

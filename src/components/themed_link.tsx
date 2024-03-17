@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import React, { useMemo, useContext } from 'react'
 
 import type { Theme } from 'theme_context'
@@ -64,9 +63,9 @@ const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
 
   if (link !== undefined) {
     return (
-      <Link to={link.url} style={containerStyles} onClick={click}>
+      <a href={link.url} style={containerStyles} onClick={click}>
         {innerContent}
-      </Link>
+      </a>
     )
   }
 

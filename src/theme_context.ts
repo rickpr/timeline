@@ -3,7 +3,7 @@ import React, { type CSSProperties } from 'react'
 import WhoPhoto from 'images/facets/who.webp'
 
 export interface Colors {
-  background: CSSProperties['background']
+  background: CSSProperties['color']
   text: CSSProperties['color']
 }
 
