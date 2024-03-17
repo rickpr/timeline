@@ -5,7 +5,6 @@ import Typewriter from 'typewriter-effect'
 import useIsMobile from 'hooks/use_is_mobile'
 
 import BrandIcon from '../brand_icon'
-import BoxDesign from './box_design'
 
 const styles = {
   display: 'flex',
@@ -42,7 +41,6 @@ const ContactInformation = (): React.ReactElement => {
         <div style={{ fontSize: '36px', fontWeight: 800 }}>Adalida Baca</div>
         <div style={{ fontSize: '20px', textAlign: 'center' }}>Crafting Digital Dreams One Pixel at a Time</div>
         <div style={{ fontSize: '20px', fontWeight: 700 }}>Product Designer</div>
-        <div style={{ height: '45vh' }}><BoxDesign /></div>
       </div>
       <div className='glass' style={iconContainerStyles}>
         <span style={{ marginLeft: '16px' }}>{typewriter}</span>
