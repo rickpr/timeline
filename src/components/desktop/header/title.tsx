@@ -31,6 +31,7 @@ const Title = ({ theme, active }: Props): React.ReactElement => {
   }, [setIsPortfolioPage, setScrollToCaseStudies, link?.url])
 
   const pointerEvents = active ? 'auto' : 'none'
+  const padding = active ? '1rem' : '0 1rem'
   const fontSize = active ? '2.6rem' : '1rem'
   const fontWeight = active ? 900 : 500
 
@@ -57,14 +58,14 @@ const Title = ({ theme, active }: Props): React.ReactElement => {
 
   if (link !== undefined) {
     return (
-      <Link className='app-label' to={link.url} style={{ pointerEvents }} onClick={click}>
+      <Link className='app-label' to={link.url} style={{ pointerEvents, padding }} onClick={click}>
         {innerContent}
       </Link>
     )
   }
 
   return (
-    <div className='app-label' style={{ pointerEvents }}>
+    <div className='app-label' style={{ pointerEvents, padding }}>
       {innerContent}
     </div>
   )

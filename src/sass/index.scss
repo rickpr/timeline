@@ -4,6 +4,7 @@
 @import './header';
 @import './services';
 @import './themed_link';
+@import './portfolio_page.scss';
 
 .Typewriter {
   display: inline;
@@ -43,6 +44,8 @@
   @extend .glass;
   font-weight: 500;
   transition: background-color 0.5s ease-in-out;
+  border-color: rgba(255, 255, 255, 0.20);
+  box-shadow: 4px 4px 4px -1px rgba(99, 99, 99, 0.25);
   padding: 0.8em;
   font-size: 12px;
   line-height: 1;
@@ -75,4 +78,21 @@
   padding: 8px;
   height: 40px;
   width: 40px;
+}
+
+.section-heading-container {
+  font-size: 1em;
+  font-weight: 600;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  width: 100%;
+  .line {
+    min-width: 100px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-radius: 5px;
+    height: 0;
+    transition: all 0.5s ease-in-out;
+  }
 }

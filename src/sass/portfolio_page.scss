@@ -1,0 +1,57 @@
+.portfolio-container {
+  transition: background-color 0.5s ease-in-out;
+  padding: 0 7.5dvw;
+  gap: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .portfolio-section {
+    max-width: 100dvw;
+    .heading { padding: 1em 0; }
+  }
+}
+.contact-information {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100dvw;
+  row-gap: 2em;
+  .icon-container {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    font-size: min(1.5em, 3.5dvw);
+    font-weight: 300;
+  }
+  .intro {
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+    maxWidth: 85dvw;
+    .title {
+      font-size: 36px;
+      font-weight: 800;
+    }
+    .subtitle {
+      font-size: 20px;
+    }
+    .tagline {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 20px;
+      font-weight: 700;
+      .link {
+        display: flex;
+      }
+    }
+  }
+}

@@ -6,27 +6,6 @@ import useIsMobile from 'hooks/use_is_mobile'
 
 import BrandIcon from '../brand_icon'
 
-const styles = {
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'column' as const,
-  width: '100%',
-  maxWidth: '100dvw',
-  rowGap: '2em'
-}
-
-const iconContainerStyles = {
-  width: '100%',
-  display: 'flex',
-  padding: '10px',
-  maxWidth: '1000px',
-  margin: '0 auto',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  fontSize: 'min(1.5em, 3.5dvw)',
-  fontWeight: 300
-}
-
 const iconSize = 'min(40px, 8dvw)'
 
 const ContactInformation = (): React.ReactElement => {
@@ -36,13 +15,15 @@ const ContactInformation = (): React.ReactElement => {
   const typewriter = <Typewriter options={{ strings, autoStart: true, loop: true }} />
 
   return (
-    <div style={styles}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-        <div style={{ fontSize: '36px', fontWeight: 800 }}>Adalida Baca</div>
-        <div style={{ fontSize: '20px', textAlign: 'center' }}>Crafting Digital Dreams One Pixel at a Time</div>
-        <div style={{ fontSize: '20px', fontWeight: 700 }}>Product Designer</div>
+    <div className='contact-information'>
+      <div className='intro'>
+        <div className='title'>Adalida Baca</div>
+        <div className='subtitle'>Crafting Digital Dreams One Pixel at a Time</div>
+        <div className='tagline'>Product Designer &mdash;&nbsp;{' '}
+          <a className='link' href='mailto:hi@adalida.design'>Open to Work&nbsp; <div className='rotated-arrow' /></a>
+        </div>
       </div>
-      <div className='glass' style={iconContainerStyles}>
+      <div className='glass icon-container'>
         <span style={{ marginLeft: '16px' }}>{typewriter}</span>
         <div style={{ display: 'flex', gap: '10px', marginLeft: '10px' }}>
           <BrandIcon href='https://www.interaction-design.org/members/adalida-baca' Icon={IconBackpack} size={iconSize} />
