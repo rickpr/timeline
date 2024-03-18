@@ -16,6 +16,7 @@ const onClick = (
 const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
   const { description, name, subtitle, link, roles } = theme
   const { setIsPortfolioPage, setScrollToCaseStudies } = useContext(HomePageContext)
+  const arrow = link?.url?.includes(':') === true ? <div className='rotated-arrow' /> : ' ➜'
   const click = useMemo(() => {
     if (link?.url === '/') {
       return () => onClick(setIsPortfolioPage, setScrollToCaseStudies)
@@ -29,7 +30,7 @@ const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
       </div>
       <div className='title'>{subtitle ?? name.toUpperCase()}</div>
       <div className='description'>{description}</div>
-      {link !== undefined && <div className='link'>{link.text} ➜</div>}
+      {link !== undefined && <div className='link'>{link.text}&nbsp; {arrow}</div>}
     </>
   )
 

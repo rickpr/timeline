@@ -2,11 +2,11 @@ import type { Theme } from './theme_context'
 import PhronesisPhoto from 'images/phronesis/cover.webp'
 import PhronesisHeroPhoto from 'images/phronesis/title.jpg'
 import GainTainPhoto from 'images/gaintain/cover.png'
-import TLDRPhoto from 'images/tldr/cover.png'
+import TLDRPhoto from 'images/tldr.webp'
 
 interface CaseStudyTheme extends Omit<Theme, 'link'> {
   link: {
-    text: 'READ CASE STUDY'
+    text: 'READ CASE STUDY' | 'VIEW PRESENTATION'
     url: string
   }
 }
@@ -23,11 +23,10 @@ const CaseStudyThemes: Record<string, CaseStudyTheme> = {
       'Prototyping'
     ],
     link: {
-      text: 'READ CASE STUDY',
-      url: '/case_studies/tldr'
+      text: 'VIEW PRESENTATION',
+      url: 'https://docs.google.com/presentation/d/1qXeKJTsfPWMx_gYd4cbBtRxIbwm7jJqWRpy747TrlWM'
     }
   },
-
   Phronesis: {
     name: 'Phronesis',
     description: 'Seamlessly access important information, communicate effectively, and take control of your academic journey with ease.',

@@ -21,5 +21,8 @@
     font-size: 0.875rem;
     margin-bottom: 0.75em;
   }
-  .link { fontSize: 0.75rem; }
+  .link {
+    display: flex;
+    fontSize: 0.75rem;
+  }
 }

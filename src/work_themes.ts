@@ -10,7 +10,7 @@ import LoboGardensImage from 'images/works/lobogardens.webp'
 
 export interface WorkTheme extends Omit<Theme, 'link'> {
   link: {
-    text: 'VISIT WEBSITE' | 'VIEW FIGMA'
+    text: 'VISIT WEBSITE' | 'VIEW FIGMA' | 'VIEW DESIGNS'
     url: string
   }
 }
@@ -83,7 +83,7 @@ export const Works: Record<string, WorkTheme> = {
     coverPhoto: LoboGardensImage,
     link: {
       text: 'VISIT WEBSITE',
-      url: 'https://sustainability.unm.edu/campus-action/lobo-gardens.html'
+      url: 'https://dribbble.com/shots/16868644-Flyer-Designs-Business-Card-and-Brochure-Lobo-Gardens'
     }
   }
 }
