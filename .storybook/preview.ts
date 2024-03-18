@@ -15,15 +15,9 @@ global.__BASE_PATH__ = '/'
 // Navigating through a gatsby app using gatsby-link or any other gatsby component will use the `___navigate` method.
 // In Storybook, it makes more sense to log an action than doing an actual navigate. Check out the actions addon docs for more info: https://storybook.js.org/docs/react/essentials/actions
 // @ts-expect-error
-window.___navigate = pathname => {
-  action('NavigateTo:')(pathname)
-}
+window.___navigate = (pathname: string): void => { action('NavigateTo:')(pathname) }
 
-// Styles will not import each other, so import them all here
-// This may be fixable with a webpack config in main.ts
 import 'sass/custom.scss'
-import 'sass/index.scss'
-import 'sass/case_study.scss'
 
 const preview: Preview = {
   parameters: {

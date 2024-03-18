@@ -13,7 +13,7 @@ interface PortfolioPageCardProps {
 }
 
 export const PortfolioPageCard = ({ darkMode, theme = 'AirbrushArtStudio' }: PortfolioPageCardProps): JSX.Element => {
-  const { background, text: color } = useDarkModeStyle(darkMode, AboutTheme)
+  const { background, text: color } = useDarkModeStyle(darkMode)
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode: () => {}, ...AboutTheme }}>
       <div style={{ color, width: '500px', position: 'relative', background, padding: '10px' }}>
