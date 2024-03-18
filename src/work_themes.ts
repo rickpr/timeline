@@ -5,17 +5,28 @@ import AirbrushImage from 'images/works/airbrush.webp'
 import ZaraImage from 'images/works/zara.webp'
 import SunbeltImage from 'images/works/sunbelt.webp'
 import NCERWImage from 'images/works/ncerw.webp'
+import QuerqueImage from 'images/works/querque.webp'
 import LoboGardensImage from 'images/works/lobogardens.webp'
 
 export interface WorkTheme extends Omit<Theme, 'link'> {
   link: {
-    text: 'VISIT WEBSITE'
+    text: 'VISIT WEBSITE' | 'VIEW FIGMA'
     url: string
   }
 }
 
 export const Works: Record<string, WorkTheme> = {
-  JessNRuead: {
+  QuerQueCandles: {
+    name: 'QuerQue Candles',
+    roles: ['Brand Identity', 'Graphic Design'],
+    description: 'Candle shop specializing in handcrafted candles.',
+    coverPhoto: QuerqueImage,
+    link: {
+      text: 'VIEW FIGMA',
+      url: 'https://www.figma.com/file/3yeMcqsp6NQ5bf7EnJVrCH/QuerQue-Candles?type=design&node-id=0-1'
+    }
+  },
+  JessNRueda: {
     name: 'JessNRueda',
     roles: ['Website Design', 'Responsive', 'Shopify'],
     description: 'Artist selling fine prints and stickers.',

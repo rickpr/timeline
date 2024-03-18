@@ -38,7 +38,7 @@ const Work = ({ workKey, active, setCurrentCard }: Props): JSX.Element => {
           </div>
         </div>
         <a className='work-link' href={work.link.url}>
-          Visit website <div className='rotated-arrow' />
+          {work.link.text}&nbsp;<div className='rotated-arrow' />
         </a>
       </div>
       <div className='work-image'>
