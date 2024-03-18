@@ -5,41 +5,6 @@ import type { Theme } from 'theme_context'
 
 import { HomePageContext } from '../../home_page_context'
 
-const labelStyles = {
-  display: 'flex',
-  flexDirection: 'column' as const,
-  width: '100%',
-  height: '100%'
-}
-const titleStyles = {
-  lineHeight: 1,
-  padding: 0,
-  margin: 0
-}
-const listStyles = {
-  display: 'flex',
-  flexWrap: 'wrap' as const,
-  justifyContent: 'left',
-  padding: 0,
-  margin: 0,
-  gap: '0.5em'
-}
-const roleStyles = {
-  fontWeight: 700,
-  transition: 'background-color 0.5s ease-in-out',
-  padding: '0.8em',
-  fontSize: '10px',
-  lineHeight: 1,
-  whiteSpace: 'nowrap' as const
-}
-const linkStyles = {
-  fontSize: '1.2em',
-  lineHeight: 1,
-  fontWeight: 'bold',
-  display: 'flex',
-  gap: '0.5em'
-}
-
 interface Props {
   theme: Theme
   active: boolean
@@ -68,26 +33,23 @@ const Title = ({ theme, active }: Props): React.ReactElement => {
   const pointerEvents = active ? 'auto' : 'none'
   const fontSize = active ? '2.6rem' : '1rem'
   const fontWeight = active ? 900 : 500
+
   const descriptionStyle = {
-    display: 'grid',
-    fontWeight: 600,
     gridTemplateRows: active ? '1fr' : '0fr',
-    paddingTop: active ? '1rem' : 0,
-    overflow: 'hidden',
-    transition: 'grid-template-rows 0.5s ease-in-out'
+    paddingTop: active ? '1rem' : 0
   }
 
   const activeName = subtitle ?? name.toUpperCase()
   const innerContent = (
     <>
-      <div style={{ ...titleStyles, fontWeight, fontSize, padding: active ? 0 : '1rem 0' }}>{active ? activeName : name}</div>
-      <div style={descriptionStyle}>
+      <div className='title' style={{ fontWeight, fontSize, padding: active ? 0 : '1rem 0' }}>{active ? activeName : name}</div>
+      <div className='description' style={descriptionStyle}>
         <div style={{ overflowY: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <div style={listStyles}>
-            {roles.map(role => <div key={role} className='glass' style={roleStyles}>{role}</div>)}
+          <div className='roles'>
+            {roles.map(role => <div key={role} className='badge'>{role}</div>)}
           </div>
           <div>{description}</div>
-          {link !== undefined && <div style={linkStyles}>{link.text}{arrow}</div>}
+          {link !== undefined && <div className='link'>{link.text}{arrow}</div>}
         </div>
       </div>
     </>
@@ -95,14 +57,14 @@ const Title = ({ theme, active }: Props): React.ReactElement => {
 
   if (link !== undefined) {
     return (
-      <Link to={link.url} style={{ pointerEvents, ...labelStyles }} onClick={click}>
+      <Link className='app-label' to={link.url} style={{ pointerEvents }} onClick={click}>
         {innerContent}
       </Link>
     )
   }
 
   return (
-    <div style={{ pointerEvents, ...labelStyles }}>
+    <div className='app-label' style={{ pointerEvents }}>
       {innerContent}
     </div>
   )

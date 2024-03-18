@@ -4,34 +4,6 @@ import type { Theme } from 'theme_context'
 
 import { HomePageContext } from './home_page_context'
 
-const containerStyles = {
-  display: 'flex',
-  flexDirection: 'column' as const,
-  width: '100%',
-  justifyContent: 'flex-start',
-  padding: '10px'
-}
-const titleStyles = {
-  fontSize: '1.625rem',
-  fontWeight: 800,
-  marginBottom: '6px'
-}
-const roleListStyles = {
-  display: 'flex',
-  justifyContent: 'left',
-  flexWrap: 'wrap' as const,
-  padding: 0,
-  margin: '0 0 14px 0',
-  gap: '0.5em'
-}
-
-const descriptionStyles = {
-  fontSize: '0.875rem',
-  marginBottom: '0.75em'
-}
-
-const linkStyles = { fontSize: '0.75rem' }
-
 const onClick = (
   setIsPortfolioPage: (updatePortfolioPage: boolean | ((isPortfolioPage: boolean) => boolean)) => void,
   setScrollToCaseStudies: (updateScrollToCaseStudies: boolean | ((scrollToCaseStudies: boolean) => boolean)) => void
@@ -52,28 +24,24 @@ const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
 
   const innerContent = (
     <>
-      <div style={roleListStyles}>
+      <div className='role-list'>
         {roles.map(role => <div className='badge' key={role}>{role}</div>)}
       </div>
-      <div style={titleStyles}>{subtitle ?? name.toUpperCase()}</div>
-      <div style={descriptionStyles}>{description}</div>
-      {link !== undefined && <div style={linkStyles}>{link.text} ➜</div>}
+      <div className='title'>{subtitle ?? name.toUpperCase()}</div>
+      <div className='description'>{description}</div>
+      {link !== undefined && <div className='link'>{link.text} ➜</div>}
     </>
   )
 
   if (link !== undefined) {
     return (
-      <a href={link.url} style={containerStyles} onClick={click}>
+      <a href={link.url} className='themed-link-container' onClick={click}>
         {innerContent}
       </a>
     )
   }
 
-  return (
-    <div style={containerStyles}>
-      {innerContent}
-    </div>
-  )
+  return <div className='themed-link-container'>{innerContent}</div>
 }
 
 export default ThemedLink

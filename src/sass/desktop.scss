@@ -5,3 +5,73 @@
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
 }
+
+
+.app-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  .title {
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+  }
+  .description {
+    display: grid;
+    overflow: hidden;
+    transition: grid-template-rows 0.5s ease-in-out;
+  }
+  .link {
+    font-size: 1.2em;
+    line-height: 1;
+    font-weight: bold;
+    display: flex;
+    gap: 0.5em;
+  }
+  .roles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    gap: 0.5em;
+    border-radius: 6px;
+  }
+}
+
+.desktop-app-indicators {
+  width: 50%;
+  padding: 0 10dvw 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2dvh;
+  justify-content: space-between;
+  bottom: 10dvh;
+  height: min-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+  pointer-events: none;
+}
+
+.desktop-app-info {
+  display: flex;
+  gap: 1dvw;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.desktop-app-indicator-bar {
+  border-width: 0.2dvw;
+  border-radius: 0.2dvw;
+  border-style: solid;
+  flex: 1 0 0;
+  width: 0.5dvw;
+  background: none;
+  padding: 0;
+  pointer-events: auto;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
