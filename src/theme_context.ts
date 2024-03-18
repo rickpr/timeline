@@ -24,10 +24,10 @@ export interface Theme {
   }
 }
 
-export const darkColor = '#121212'
+export const darkColor = '#3E4242'
 export const lightColor = '#F5F5F5'
-export const darkGradientColor = '#464046'
-export const lightGradientColor = '#D2D6D9'
+export const darkGradientColor = '#090B0B'
+export const lightGradientColor = '#F5F5F5'
 
 const backgroundGradient = (color: string, darkMode: boolean): string => {
   const gradientColor = darkMode ? darkGradientColor : lightGradientColor
@@ -59,7 +59,7 @@ export const AboutTheme: Theme = {
     },
     lightMode: {
       background: '#D2C0A4',
-      text: lightColor
+      text: darkColor
     }
   },
   link: {

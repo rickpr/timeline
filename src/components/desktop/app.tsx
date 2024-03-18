@@ -13,18 +13,17 @@ const halfHeight = `calc(${height} / 2)`
 const imageStyles = {
   borderRadius: '1em',
   objectFit: 'contain' as const,
-  width: '100%',
   height: '100%',
   maxHeight: halfHeight
 }
 
 const imageContainerStyles = {
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'flex-end',
   alignItems: 'center',
   width: '50%',
   maxHeight: halfHeight,
-  padding: '0 15px',
+  padding: '0 5em',
   margin: 'auto 0'
 }
 

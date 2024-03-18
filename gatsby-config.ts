@@ -16,13 +16,6 @@ module.exports = {
         path: path.join(__dirname, 'src', 'images')
       }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'files',
-        path: path.join(__dirname, 'src', 'files')
-      }
-    },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -32,8 +25,8 @@ module.exports = {
         name: 'Adalida Page',
         short_name: 'timeline',
         start_url: '/',
-        background_color: '#121212',
-        theme_color: '#121212',
+        background_color: '#3E4242',
+        theme_color: '#3E4242',
         display: 'minimal-ui',
         icon: 'src/images/favicon.png' // This path is relative to the root of the site.
       }

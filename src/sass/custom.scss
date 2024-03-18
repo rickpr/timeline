@@ -10,11 +10,6 @@ $theme-colors: (
 @import '.';
 
 @font-face {
-  font-family: 'Inconsolata';
-  src: local('Inconsolata'), url(../fonts/Inconsolata-VariableFont_wdth,wght.ttf);
-}
-
-@font-face {
   font-family: 'Avenir Next';
   src: local('Avenir Next'), url(../fonts/AvenirNextLTPro-Regular.otf);
 }

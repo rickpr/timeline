@@ -15,8 +15,8 @@ export interface WorkTheme extends Omit<Theme, 'link'> {
 }
 
 export const Works: Record<string, WorkTheme> = {
-  JessicaRueda: {
-    name: 'Jessica Rueda',
+  JessNRuead: {
+    name: 'JessNRueda',
     roles: ['Website Design', 'Responsive', 'Shopify'],
     description: 'Artist selling fine prints and stickers.',
     coverPhoto: JessRuedaImage,
