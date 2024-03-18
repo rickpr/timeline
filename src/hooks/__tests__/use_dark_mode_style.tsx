@@ -6,19 +6,19 @@ describe('useDarkModeStyle', () => {
   describe('background', () => {
     it('gives the default background when there is no case study and it is dark mode', () => {
       const { background } = useDarkModeStyle(true)
-      expect(background).toEqual('#464046')
+      expect(background).toEqual('#090B0B')
     })
     it('gives the default background when there is no case study and it is light mode', () => {
       const { background } = useDarkModeStyle(false)
-      expect(background).toEqual('#D2D6D9')
+      expect(background).toEqual('#F5F5F5')
     })
     it('gives the default background when the case study has no dark mode background and it is dark mode', () => {
       const { background } = useDarkModeStyle(true, CaseStudyThemes.AirbrushArtStudio)
-      expect(background).toEqual('#464046')
+      expect(background).toEqual('#090B0B')
     })
     it('gives the default background when the case study has no light mode background and it is light mode', () => {
       const { background } = useDarkModeStyle(false, CaseStudyThemes.AirbrushArtStudio)
-      expect(background).toEqual('#D2D6D9')
+      expect(background).toEqual('#F5F5F5')
     })
 
     it('gives the case study dark mode background when it is dark mode', () => {
