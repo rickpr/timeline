@@ -21,8 +21,10 @@ const elementStyle = {
 const order = [0, 3, 1, 2]
 const mobileOrder = [0, 1, 2, 3]
 
-const Quad = ({ children }: Props): JSX.Element => {
-  const isMobile = useIsMobile() === true
+const Quad = ({ children }: Props): JSX.Element | null => {
+  const isMobile = useIsMobile()
+  if (isMobile === null) return null
+
   const orderInUse = isMobile ? mobileOrder : order
   const [firstCell, secondCell, thirdCell, fourthCell] = orderInUse.map(index => children[index])
   const styles = {

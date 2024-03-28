@@ -28,15 +28,12 @@ module.exports = {
         name: 'Adalida Page',
         short_name: 'timeline',
         start_url: '/',
-        background_color: '#3E4242',
-        theme_color: '#3E4242',
+        background_color: '#F5F5F5',
+        theme_color: '#F5F5F5',
         display: 'minimal-ui',
         icon: 'src/images/favicon.png' // This path is relative to the root of the site.
       }
     },
     'gatsby-plugin-typescript'
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
-    // In your gatsby-config.js
   ]
 }

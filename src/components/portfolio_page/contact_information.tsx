@@ -8,8 +8,9 @@ import BrandIcon from '../brand_icon'
 
 const iconSize = 'min(40px, 8dvw)'
 
-const ContactInformation = (): React.ReactElement => {
-  const isMobile = useIsMobile() === true
+const ContactInformation = (): React.ReactElement | null => {
+  const isMobile = useIsMobile()
+  if (isMobile === null) return null
 
   const strings = [`Based\xa0in\xa0${isMobile ? 'SF' : 'San\xa0Francisco'},\xa0CA`]
   const typewriter = <Typewriter options={{ strings, autoStart: true, loop: true }} />

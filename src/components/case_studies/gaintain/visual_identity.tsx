@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import ScalableText from 'components/scalable_text'
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import darkModeStyle from 'dark_mode_style'
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 import { ThemeContext } from 'theme_context'
 
@@ -9,7 +9,7 @@ import Card from '../card'
 
 const VisualIdentity = (): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
-  const { text: color } = useDarkModeStyle(darkMode)
+  const { text: color } = darkModeStyle(darkMode)
   const fontFamily = 'Avenir Next'
   const centerStyles = { placeItems: 'center center' }
 

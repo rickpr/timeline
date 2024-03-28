@@ -1,16 +1,17 @@
 import React, { useContext, useMemo } from 'react'
 
-import { ThemeContext, darkGradientColor, lightGradientColor } from 'theme_context'
+import { ThemeContext, darkBackgroundColor, lightBackgroundColor } from 'theme_context'
 import Blobs from './blobs'
 
 const Background = (): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
+  const context = useContext(ThemeContext)
+  const { darkMode } = context
   const background = useMemo(
-    () => darkMode ? darkGradientColor : lightGradientColor,
+    () => darkMode ? darkBackgroundColor : lightBackgroundColor,
     [darkMode]
   )
   return (
-    <div className='fixed-background' style={{ backgroundColor: background }}>
+    <div className='fixed-background' style={{ background }}>
       <Blobs />
     </div>
   )

@@ -10,11 +10,11 @@ import { HomePageContext } from './home_page_context'
 import Layout from './layout'
 
 interface Props {
-  darkMode: boolean
+  darkMode: boolean | null
   toggleDarkMode: () => void
 }
 
-const MainPage = ({ darkMode, toggleDarkMode }: Props): JSX.Element => {
+const MainPage = ({ darkMode, toggleDarkMode }: Props): JSX.Element | null => {
   const {
     isPortfolioPage,
     setIsPortfolioPage,
@@ -33,7 +33,7 @@ const MainPage = ({ darkMode, toggleDarkMode }: Props): JSX.Element => {
     () => isPortfolioPage ? FacetThemes.Portfolio : FacetThemes[currentFacet],
     [isPortfolioPage, currentFacet]
   )
-  if (isMobile === null) return <div />
+  if (isMobile === null || darkMode === null) return null
 
   return (
     <Layout

@@ -2,7 +2,7 @@ import React, { type MouseEvent, useCallback, useContext, useEffect, useState } 
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
 
 import { ThemeContext } from 'theme_context'
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import darkModeStyle from 'dark_mode_style'
 
 import { makeMediaTag } from './media_with_text'
 
@@ -47,7 +47,7 @@ const CloseButton = ({ dismiss }: { dismiss: () => void }): JSX.Element =>
 
 const CarouselOverlay = ({ dismiss, media, index }: { dismiss: () => void, media: JSX.Element[], index: number }): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)
-  const { background } = useDarkModeStyle(darkMode)
+  const { background } = darkModeStyle(darkMode)
   const [currentIndex, setCurrentIndex] = useState(index)
   const navigateLeft = useCallback((event: MouseEvent | KeyboardEvent): void => {
     event.stopPropagation()

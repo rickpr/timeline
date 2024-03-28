@@ -6,8 +6,10 @@ import Logo from '../logo'
 
 const nameStyle = { fontSize: '15px' }
 
-const HomeLink = (): JSX.Element => {
-  const isMobile = useIsMobile(768) === true
+const HomeLink = (): JSX.Element | null => {
+  const isMobile = useIsMobile(768)
+  if (isMobile === null) return null
+
   return (
     <Link style={{ display: 'flex', alignItems: 'center', gap: '10px', lineHeight: 1 }} to='/'>
       <Logo />

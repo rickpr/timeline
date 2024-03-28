@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import { ThemeContext } from 'theme_context'
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import darkModeStyle from 'dark_mode_style'
 
 import ImageCard from '../image_card'
 import { boxShadow } from './styles'
@@ -19,7 +19,7 @@ const style = {
 
 const SmallProject = ({ media }: { media: string }): React.ReactElement => {
   const { darkMode } = useContext(ThemeContext)
-  const { background } = useDarkModeStyle(!darkMode)
+  const { background } = darkModeStyle(!darkMode)
   return <ImageCard media={media} style={{ ...style, background }} />
 }
 

@@ -9,7 +9,6 @@ interface Props extends Omit<GatsbyImageProps, 'image'> {
 
 const Image = ({ path, ...gatsbyImageProps }: Props): JSX.Element => {
   const image = ImageQuery(path)
-  console.log(image)
   return (
     <GatsbyImage
       // @ts-expect-error We need to figure out GraphQL types

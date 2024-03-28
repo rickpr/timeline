@@ -1,6 +1,6 @@
 import React, { useContext, type CSSProperties } from 'react'
 
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import darkModeStyle from 'dark_mode_style'
 
 import { ThemeContext, type Theme } from 'theme_context'
 
@@ -33,7 +33,7 @@ interface Props {
 
 const Header = ({ themes, appRefs }: Props): JSX.Element => {
   const themeContext = useContext(ThemeContext)
-  const { text } = useDarkModeStyle(themeContext.darkMode, themeContext)
+  const { text } = darkModeStyle(themeContext.darkMode, themeContext)
 
   const indicators = Object.keys(appRefs.current).map(title => {
     const active = themeContext.name === themes[title].name

@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import Icon from './icon'
 
 import { ThemeContext } from 'theme_context'
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import darkModeStyle from 'dark_mode_style'
 
 const DarkModeButton = (): JSX.Element => {
   const themeContext = useContext(ThemeContext)
-  const { text: color } = useDarkModeStyle(themeContext.darkMode, themeContext)
+  const { text: color } = darkModeStyle(themeContext.darkMode, themeContext)
   const darkModeButtonStyle = {
     height: '40px',
     width: '40px',

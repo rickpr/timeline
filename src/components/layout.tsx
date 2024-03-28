@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { ThemeContext, type Theme } from 'theme_context'
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import darkModeStyle from 'dark_mode_style'
 
 import Background from './background'
 import Header from './header'
@@ -9,7 +9,7 @@ import Header from './header'
 interface Props {
   children: React.ReactNode
   theme: Theme
-  darkMode: boolean
+  darkMode: boolean | null
   toggleDarkMode: () => void
   isPortfolioPage?: boolean
   setIsPortfolioPage?: (updatePortfolioPage: boolean | ((isPortfolioPage: boolean) => boolean)) => void
@@ -17,8 +17,9 @@ interface Props {
 
 const Layout = (
   { children, theme, darkMode, toggleDarkMode, isPortfolioPage, setIsPortfolioPage }: Props
-): JSX.Element => {
-  const { text: color } = useDarkModeStyle(darkMode, theme)
+): JSX.Element | null => {
+  if (darkMode === null) return null
+  const { text: color } = darkModeStyle(darkMode, theme)
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...theme }}>
       <Background />

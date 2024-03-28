@@ -1,4 +1,4 @@
-import { AboutTheme, darkColor, lightColor, type Theme } from './theme_context'
+import { AboutTheme, darkTextColor, lightTextColor, type Theme } from './theme_context'
 
 import HowPhoto from 'images/facets/how.webp'
 import WhatPhoto from 'images/facets/what.webp'
@@ -22,11 +22,11 @@ const FacetThemes: Record<string, FacetTheme> = {
     colors: {
       darkMode: {
         background: '#8D2470',
-        text: lightColor
+        text: lightTextColor
       },
       lightMode: {
         background: '#D2A4D0',
-        text: darkColor
+        text: darkTextColor
       }
     },
     link: {
@@ -48,11 +48,11 @@ const FacetThemes: Record<string, FacetTheme> = {
     colors: {
       darkMode: {
         background: '#24878D',
-        text: lightColor
+        text: lightTextColor
       },
       lightMode: {
         background: '#A4D2D0',
-        text: darkColor
+        text: darkTextColor
       }
     },
     link: {
@@ -73,11 +73,11 @@ const FacetThemes: Record<string, FacetTheme> = {
     colors: {
       darkMode: {
         background: '#245B8D',
-        text: lightColor
+        text: lightTextColor
       },
       lightMode: {
         background: '#A4C1D2',
-        text: darkColor
+        text: darkTextColor
       }
     },
     link: {

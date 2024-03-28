@@ -10,8 +10,10 @@ import Degree from './degree'
 import NewMexicoGrown from './new_mexico_grown'
 import Contact from './contact'
 
-const AboutPage = (): JSX.Element => {
-  const isMobile = useIsMobile() === true
+const AboutPage = (): JSX.Element | null => {
+  const isMobile = useIsMobile()
+  if (isMobile === null) return null
+
   const headerStyle = { fontWeight: 600, fontSize: isMobile ? '1.25em' : '2em' }
   return (
     <Page>

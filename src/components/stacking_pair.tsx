@@ -12,8 +12,10 @@ const elementStyle = {
   alignItems: 'center'
 }
 
-const StackingPair = ({ children, reversed = false }: Props): JSX.Element => {
-  const isMobile = useIsMobile() === true
+const StackingPair = ({ children, reversed = false }: Props): JSX.Element | null => {
+  const isMobile = useIsMobile()
+  if (isMobile === null) return null
+
   const [firstCell, secondCell] = children
   const actuallyReversed = reversed && !isMobile
   const styles = {

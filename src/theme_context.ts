@@ -24,13 +24,13 @@ export interface Theme {
   }
 }
 
-export const darkColor = '#3E4242'
-export const lightColor = '#F5F5F5'
-export const darkGradientColor = '#090B0B'
-export const lightGradientColor = '#F5F5F5'
+export const darkTextColor = '#3E4242'
+export const lightTextColor = '#F5F5F5'
+export const darkBackgroundColor = '#090B0B'
+export const lightBackgroundColor = '#F5F5F5'
 
 const backgroundGradient = (color: string, darkMode: boolean): string => {
-  const gradientColor = darkMode ? darkGradientColor : lightGradientColor
+  const gradientColor = darkMode ? darkBackgroundColor : lightBackgroundColor
   return `linear-gradient(248deg, ${gradientColor} 13.28%, ${color} 58.07%, ${gradientColor} 90.12%)`
 }
 
@@ -55,11 +55,11 @@ export const AboutTheme: Theme = {
   colors: {
     darkMode: {
       background: '#8D5D24',
-      text: lightColor
+      text: lightTextColor
     },
     lightMode: {
       background: '#D2C0A4',
-      text: darkColor
+      text: darkTextColor
     }
   },
   link: {

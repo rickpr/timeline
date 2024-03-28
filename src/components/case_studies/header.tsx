@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import useDarkModeStyle from 'hooks/use_dark_mode_style'
+import darkModeStyle from 'dark_mode_style'
 import { ThemeContext } from 'theme_context'
 
 const textAndImageStyle = {
@@ -21,7 +21,7 @@ const imageStyle = {
 
 const Header = (): JSX.Element => {
   const { darkMode, name, heroPhoto } = useContext(ThemeContext)
-  const { text: color } = useDarkModeStyle(darkMode)
+  const { text: color } = darkModeStyle(darkMode)
   const containerStyle = {
     width: '100%',
     display: 'flex',
