@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconBackpack, IconBrandDribbble, IconBrandLinkedin, IconMail } from '@tabler/icons-react'
+import { IconBrandLinkedin } from '@tabler/icons-react'
 import Typewriter from 'typewriter-effect'
 
 import useIsMobile from 'hooks/use_is_mobile'
