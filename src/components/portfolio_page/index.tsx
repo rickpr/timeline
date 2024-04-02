@@ -6,15 +6,11 @@ import SectionHeading from '../section_heading'
 
 const PortfolioPage = (): JSX.Element => {
   return (
-    <div className='portfolio-container'>
+    <>
       <ContactInformation />
-      <div className='portfolio-section'>
-        <div className='heading'>
-          <SectionHeading title='Portfolio' />
-        </div>
-        <Container />
-      </div>
-    </div>
+      <SectionHeading title='Selected Work' />
+      <Container />
+    </>
   )
 }
 

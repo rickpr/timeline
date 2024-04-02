@@ -1,6 +1,5 @@
 @import './background';
 @import './case_study';
-@import './desktop';
 @import './header';
 @import './services';
 @import './themed_link';
@@ -81,6 +80,7 @@
 }
 
 .section-heading-container {
+  margin-top: 64px;
   font-size: 1em;
   font-weight: 600;
   display: flex;

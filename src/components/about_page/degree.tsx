@@ -5,12 +5,12 @@ import StackingPair from '../stacking_pair'
 import GlassImage from './glass_image'
 import { link, paragraph, paragraphHeading, textBox } from './styles'
 
-const AdalidaFace = 'images/about/adalida_face.webp'
+const BacaFamily = 'images/about/baca_family.webp'
 
 const Degree = (): JSX.Element => {
   return (
     <StackingPair reversed>
-      <GlassImage media={AdalidaFace} />
+      <GlassImage media={BacaFamily} />
       <div style={textBox}>
         <div style={paragraphHeading}>B.A. in English-Philosophy</div>
         <div style={paragraph}>

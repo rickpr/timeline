@@ -11,7 +11,7 @@ const togglePortfolioPage = (
   if (setIsPortfolioPage === undefined) return
 
   setIsPortfolioPage((isPortfolioPage: boolean) => {
-    history.pushState({}, '', isPortfolioPage ? '/person' : '/portfolio')
+    history.pushState({}, '', isPortfolioPage ? '/about' : '/portfolio')
     return !isPortfolioPage
   })
 }
@@ -22,10 +22,10 @@ const PortfolioPageSwitch = ({ isPortfolioPage, setIsPortfolioPage }: Props): JS
       <button className='switch-grid' onClick={() => { togglePortfolioPage(setIsPortfolioPage) }}>
         <div
           className='switch-indicator'
-          style={{ transform: isPortfolioPage === true ? 'translateX(100%)' : undefined }}
+          style={{ transform: isPortfolioPage === true ? undefined : 'translateX(100%)' }}
         />
-        <div className='switch-text'>About</div>
         <div className='switch-text'>Portfolio</div>
+        <div className='switch-text'>About</div>
       </button>
     </div>
   )

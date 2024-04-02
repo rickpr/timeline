@@ -1,7 +1,5 @@
 import React, { type CSSProperties } from 'react'
 
-import WhoPhoto from 'images/facets/who.webp'
-
 export interface Colors {
   background: CSSProperties['color']
   text: CSSProperties['color']
@@ -11,7 +9,7 @@ export interface Theme {
   name: string
   subtitle?: string
   description: string
-  coverPhoto: string
+  coverPhoto?: string
   heroPhoto?: string
   roles: string[]
   colors?: {
@@ -46,7 +44,6 @@ export const AboutTheme: Theme = {
   name: 'About',
   subtitle: "I'm a Burqueña",
   description: 'I grew up one block from the famous Los Pollos Hermanos in the show Breaking Bad. Now, I’m transplanted in San Francisco. Read more about me and my professional background here.',
-  coverPhoto: WhoPhoto,
   roles: [
     'UNM',
     'Interdisciplinary BA',

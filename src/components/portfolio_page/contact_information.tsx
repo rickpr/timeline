@@ -19,18 +19,15 @@ const ContactInformation = (): React.ReactElement | null => {
     <div className='contact-information'>
       <div className='intro'>
         <div className='title'>Adalida Baca</div>
-        <div className='subtitle'>Crafting Digital Dreams One Pixel at a Time</div>
-        <div className='tagline'>Product Designer &mdash;&nbsp;{' '}
-          <a className='link' href='mailto:hi@adalida.design'>Open to Work&nbsp; <div className='rotated-arrow' /></a>
+        <div className='subtitle'>Rubber Duck cosplaying as a Product Designer</div>
+        <div className='tagline'>Open to Work &mdash;&nbsp;{' '}
+          <a className='link' href='mailto:hi@adalida.design'>Let&apos;s Connect&nbsp; <div className='rotated-arrow' /></a>
         </div>
       </div>
       <div className='glass icon-container'>
         <span style={{ marginLeft: '16px' }}>{typewriter}</span>
         <div style={{ display: 'flex', gap: '10px', marginLeft: '10px' }}>
-          <BrandIcon href='https://www.interaction-design.org/members/adalida-baca' Icon={IconBackpack} size={iconSize} />
-          <BrandIcon href='https://dribbble.com/adalida-baca' Icon={IconBrandDribbble} size={iconSize} />
           <BrandIcon href='https://linkedin.com/in/adalidabaca' Icon={IconBrandLinkedin} size={iconSize} />
-          <BrandIcon href="mailto:hi@adalida.design" Icon={IconMail} size={iconSize} />
         </div>
       </div>
     </div>

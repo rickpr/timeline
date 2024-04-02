@@ -1,32 +1,19 @@
 import React from 'react'
 
-import SectionHeading from 'components/section_heading'
-import useIsMobile from 'hooks/use_is_mobile'
+import ShapingCompanies from '../services/shaping_companies'
+import FAQs from '../services/faqs'
 
-import Page from '../page'
-
-import BigChanges from './big_changes'
 import Degree from './degree'
 import NewMexicoGrown from './new_mexico_grown'
-import Contact from './contact'
 
-const AboutPage = (): JSX.Element | null => {
-  const isMobile = useIsMobile()
-  if (isMobile === null) return null
-
-  const headerStyle = { fontWeight: 600, fontSize: isMobile ? '1.25em' : '2em' }
+const AboutPage = (): JSX.Element => {
   return (
-    <Page>
-      <SectionHeading title='My Story' />
-      <div style={headerStyle}>
-        I&apos;m energized by people. I learn from their stories.
-      </div>
+    <>
       <NewMexicoGrown />
       <Degree />
-      <BigChanges />
-      <Contact />
-      <div style={{ minHeight: '1em' }} />
-    </Page>
+      <ShapingCompanies />
+      <FAQs />
+    </>
   )
 }
 

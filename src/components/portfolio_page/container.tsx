@@ -5,7 +5,6 @@ import { Works } from 'work_themes'
 import { HomePageContext } from '../home_page_context'
 import { headerPixels } from '../header'
 import Card from './card'
-import { ContainerStyles } from './styles'
 
 const Container = (): JSX.Element => {
   const { scrollToCaseStudies, setScrollToCaseStudies } = useContext(HomePageContext)
@@ -22,8 +21,8 @@ const Container = (): JSX.Element => {
     }
   }, [scrollToCaseStudies, setScrollToCaseStudies])
   return (
-    <div style={ContainerStyles} ref={containerRef}>
-      {Object.values({ ...CaseStudyThemes, ...Works }).map((theme) => <Card key={theme.name} theme={theme} />)}
+    <div className='portfolio-container' ref={containerRef}>
+      {Object.values({ ...Works, ...CaseStudyThemes }).map((theme) => <Card key={theme.name} theme={theme} />)}
     </div>
   )
 }

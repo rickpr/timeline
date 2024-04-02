@@ -5,7 +5,7 @@ import darkModeStyle from 'dark_mode_style'
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
 import { ThemeContext } from 'theme_context'
 
-import Card from '../card'
+import Card from './card'
 
 const VisualIdentity = (): JSX.Element => {
   const { darkMode } = useContext(ThemeContext)

@@ -1,15 +1,3 @@
-.portfolio-container {
-  transition: background-color 0.5s ease-in-out;
-  padding: 0 7.5dvw;
-  gap: 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .portfolio-section {
-    max-width: 100dvw;
-    .heading { padding: 1em 0; }
-  }
-}
 .contact-information {
   display: flex;
   align-items: center;

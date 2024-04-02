@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import CarouselOverlay, { carouselMediaTag } from '../carousel_overlay'
-import Card from '../case_studies/card'
+import Card from '../case_studies/gaintain/card'
 import SmallProject from './small_project'
 
 import checkmark from 'videos/about/checkmark.mp4'

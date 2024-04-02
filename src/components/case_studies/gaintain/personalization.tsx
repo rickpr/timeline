@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Card from '../card'
+import Card from './card'
 import MediaWithText from '../../media_with_text'
 
 const Personalization = (): JSX.Element => {
