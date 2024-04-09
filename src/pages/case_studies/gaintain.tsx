@@ -15,4 +15,6 @@ const GainTainPage = (): JSX.Element => {
   )
 }
 
+export const Head = (): JSX.Element => <title>GainTain</title>
+
 export default GainTainPage

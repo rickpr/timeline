@@ -9,7 +9,7 @@ const SectionHeading = ({ title }: { title: string }): JSX.Element => {
   return (
     <div className='section-heading-container'>
       <div>{title}</div>
-      <div className='line' style={{ borderColor: color }}></div>
+      <div className='section-heading-line' style={{ borderColor: color }}></div>
     </div>
   )
 }

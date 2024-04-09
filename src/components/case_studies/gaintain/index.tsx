@@ -1,7 +1,5 @@
 import React from 'react'
 
-import CaseStudy from '../case_study'
-
 import About from './about'
 import Think from './think'
 import Make from './make'
@@ -16,7 +14,7 @@ import VisualIdentity from './visual_identity'
 import Paragraphs from './paragraphs'
 
 const GainTain = (): JSX.Element =>
-  <CaseStudy>
+  <>
     <About />
     <Think />
     <Make />
@@ -29,6 +27,6 @@ const GainTain = (): JSX.Element =>
     <NextSteps />
     <VisualIdentity />
     <Paragraphs />
-  </CaseStudy>
+  </>
 
 export default GainTain

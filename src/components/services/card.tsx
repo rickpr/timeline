@@ -10,8 +10,8 @@ const Card = ({ title, children, width = '100%' }: Props): JSX.Element => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', width }}>
       <div className='glass card'>
-        <div style={{ padding: '20px', fontSize: '0.75rem', fontWeight: 500, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-          <h2 style={{ margin: 0 }}>{title}</h2>
+        <div className='services-card-content'>
+          <div className='services-card-title'>{title}</div>
           {children}
         </div>
       </div>

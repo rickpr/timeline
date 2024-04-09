@@ -9,7 +9,6 @@ import HandoffVideo from 'videos/airbrush_art_studio/handoff.mp4'
 import CarouselOverlay, { carouselMediaTag } from '../../carousel_overlay'
 import ImageCard from '../../image_card'
 import EmbeddedVideo, { type EmbeddedVideoProps } from '../embedded_video'
-import CaseStudy from '../case_study'
 import About from './about'
 
 const Understanding = 'images/airbrush_art_studio/understanding.webp'
@@ -130,11 +129,11 @@ const AirbrushArtStudio = (): JSX.Element => {
   )
 
   return (
-    <CaseStudy>
+    <>
       <About />
       {images}
       {showCarousel && <CarouselOverlay dismiss={dismiss} media={carouselMedia} index={mediaIndex} />}
-    </CaseStudy>
+    </>
   )
 }
 

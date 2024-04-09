@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 
 import CarouselOverlay, { carouselMediaTag } from '../../carousel_overlay'
-import CaseStudy from '../case_study'
 import ImageCard from '../../image_card'
 import About from './about'
 
@@ -83,11 +82,11 @@ const Phronesis = (): JSX.Element => {
   )
 
   return (
-    <CaseStudy>
+    <>
       <About />
       {images}
       {showCarousel && <CarouselOverlay dismiss={dismiss} media={carouselMedia} index={mediaIndex} />}
-    </CaseStudy>
+    </>
   )
 }
 

@@ -24,6 +24,12 @@ $theme-colors: (
   font-weight: italic;
 }
 
+
+@font-face {
+  font-family: Inconsolata;
+  src: local(Inconsolata), url(../fonts/Inconsolata-VariableFont_wdth,wght.ttf);
+}
+
 html {
   overscroll-behavior: none;
 }

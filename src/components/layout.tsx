@@ -4,6 +4,7 @@ import { ThemeContext, type Theme } from 'theme_context'
 import darkModeStyle from 'dark_mode_style'
 
 import Background from './background'
+import Footer from './footer'
 import Header from './header'
 import Page from './page'
 
@@ -27,6 +28,8 @@ const Layout = (
       <div style={{ color, transition: 'all 0.5s ease-in-out' }}>
         <Header isPortfolioPage={isPortfolioPage} setIsPortfolioPage={setIsPortfolioPage} />
         <Page>{children}</Page>
+        <div style={{ minHeight: '5em' }} />
+        <Footer />
       </div>
     </ThemeContext.Provider>
   )

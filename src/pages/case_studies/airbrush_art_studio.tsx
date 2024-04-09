@@ -15,4 +15,6 @@ const AirbrushArtStudioPage = (): JSX.Element => {
   )
 }
 
+export const Head = (): JSX.Element => <title>Airbrush Art Studio</title>
+
 export default AirbrushArtStudioPage

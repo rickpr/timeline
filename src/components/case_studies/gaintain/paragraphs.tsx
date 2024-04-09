@@ -4,9 +4,9 @@ import Card from './card'
 
 const Paragraphs = (): JSX.Element => {
   const text = (
-    <div className='case-study-match-outer-paragraphs'>
-      <div className='case-study-match-inner-paragraphs'>
-        <div className='case-study-match-individual-paragraph'>
+    <div>
+      <div>
+        <div>
           <h3>Solve the Source not the Symptom</h3>
           <p>
             The original problem of not having an easy way to track workout
@@ -16,7 +16,7 @@ const Paragraphs = (): JSX.Element => {
             this workflow.
           </p>
         </div>
-        <div className='case-study-match-individual-paragraph'>
+        <div>
           <h3>Supporting Roles for Designers</h3>
           <p>
             Project Managers can be particularly helpful when creating PRDs
@@ -25,8 +25,8 @@ const Paragraphs = (): JSX.Element => {
           </p>
         </div>
       </div>
-      <div className='case-study-match-inner-paragraphs'>
-        <div className='case-study-match-individual-paragraph'>
+      <div>
+        <div>
           <h3>Design Libraries and Components</h3>
           <p>
             Using Apple&apos;s iOS components in this project, I was introduced
@@ -34,7 +34,7 @@ const Paragraphs = (): JSX.Element => {
             their functions.
           </p>
         </div>
-        <div className='case-study-match-individual-paragraph'>
+        <div>
           <h3>Lean UX vs. Other Agile Methods</h3>
           <p>
             Resource constraints and time can dictate the choice of

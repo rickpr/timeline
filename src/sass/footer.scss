@@ -1,0 +1,34 @@
+.footer {
+  padding: 10px 7.5dvw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.footer-row {
+  display: flex;
+  gap: 1em;
+}
+
+.build-time {
+  font-family: Inconsolata, monospace;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.footer-link {
+  display: flex;
+  gap: 0.25em;
+  fontSize: 0.75rem;
+}
+
+@media (max-width: 1250px) {
+  .footer {
+    flex-direction: column;
+  }
+}

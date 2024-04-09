@@ -19,7 +19,7 @@ const FAQs = (): JSX.Element => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%' }}>
           <Card title='How much does it cost?'>
             The cost of a website varies based on project requirements and complexity.
-            We provide customized quotes tailored to your specific needs.
+            I provide customized quotes tailored to your specific needs.
           </Card>
 
           <Card title='How long will the process be?'>
@@ -28,18 +28,18 @@ const FAQs = (): JSX.Element => {
           </Card>
 
           <Card title='Will my website be mobile friendly?'>
-            Absolutely! We prioritize mobile-friendly design to ensure your website functions seamlessly
+            Absolutely! I prioritize mobile-friendly design to ensure your website functions seamlessly
             on different devices and screen sizes.
           </Card>
 
           <Card title='What if I need help on my site down the road?'>
-            We offer ongoing support and maintenance services to provide assistance with your website whenever you need it.
-            We&apos;re here to help!
+            I offer ongoing support and maintenance services to provide assistance with your website whenever you need it.
+            I&apos;m here to help!
           </Card>
 
           <Card title='Can I access the website?'>
-            Yes, we provide access to the backend or content management system (CMS) of your website.
-            We&apos;ll also provide training to ensure you can manage your content effectively.
+            Yes, I provide access to the backend or content management system (CMS) of your website.
+            I&apos;ll also provide training to ensure you can manage your content effectively.
           </Card>
         </div>
       </StackingPair>

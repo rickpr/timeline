@@ -1,5 +1,6 @@
 @import './background';
 @import './case_study';
+@import './footer';
 @import './header';
 @import './services';
 @import './themed_link';
@@ -61,8 +62,10 @@
 }
 
 .rotated-arrow {
-  transform: rotate(-60deg);
-  font-weight: 400 ;
+  font-size: 1.414em;
+  line-height: 1;
+  transform: rotate(-45deg);
+  font-weight: 400;
 }
 
 .rotated-arrow::before {
@@ -87,12 +90,13 @@
   gap: 25px;
   align-items: center;
   width: 100%;
-  .line {
-    min-width: 100px;
-    border-width: 1.5px;
-    border-style: solid;
-    border-radius: 5px;
-    height: 0;
-    transition: all 0.5s ease-in-out;
-  }
+}
+
+.section-heading-line {
+  min-width: 100px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-radius: 5px;
+  height: 0;
+  transition: all 0.5s ease-in-out;
 }

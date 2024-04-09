@@ -6,7 +6,8 @@ const NotFoundPage = (): JSX.Element => (
     <div style={{ fontSize: '8em', fontWeight: 900 }}>404</div>
     <Link to='/'>Go back to the homepage</Link>
   </div>
-
 )
+
+export const Head = (): JSX.Element => <title>Not Found</title>
 
 export default NotFoundPage
