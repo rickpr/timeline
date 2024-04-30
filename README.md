@@ -3,8 +3,8 @@ This personal webpage is for fun, practice, and to show off a bit of a portfolio
 
 ## 🚀 Quick start
     ```shell
-    git clone https://github.com/rickpr/timeline
-    cd timeline
+    git clone https://github.com/rickpr/adalida.design
+    cd adalida.design
     npm install
     npm start
     ```

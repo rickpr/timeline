@@ -25,7 +25,7 @@ const Layout = (
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...theme }}>
       <Background />
-      <div style={{ color, transition: 'all 0.5s ease-in-out' }}>
+      <div style={{ color, transition: 'all 0.5s ease-in-out' }} data-nosnippet>
         <Header isPortfolioPage={isPortfolioPage} setIsPortfolioPage={setIsPortfolioPage} />
         <Page>{children}</Page>
         <div style={{ minHeight: '5em' }} />
