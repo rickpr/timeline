@@ -4,6 +4,7 @@ import CaseStudyThemes from 'case_study_themes'
 import useDarkMode from 'hooks/use_dark_mode'
 
 import Layout from 'components/layout'
+import SEO from 'components/seo'
 import AirbrushArtStudio from 'components/case_studies/airbrush_art_studio'
 
 const AirbrushArtStudioPage = (): JSX.Element => {
@@ -15,6 +16,6 @@ const AirbrushArtStudioPage = (): JSX.Element => {
   )
 }
 
-export const Head = (): JSX.Element => <title>Airbrush Art Studio</title>
+export const Head = (): JSX.Element => <SEO title='Airbrush Art Studio' />
 
 export default AirbrushArtStudioPage

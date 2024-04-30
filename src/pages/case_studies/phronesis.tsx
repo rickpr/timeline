@@ -4,6 +4,7 @@ import CaseStudyThemes from 'case_study_themes'
 import useDarkMode from 'hooks/use_dark_mode'
 
 import Layout from 'components/layout'
+import SEO from 'components/seo'
 import Phronesis from 'components/case_studies/phronesis'
 
 const PhronesisPage = (): JSX.Element => {
@@ -15,6 +16,6 @@ const PhronesisPage = (): JSX.Element => {
   )
 }
 
-export const Head = (): JSX.Element => <title>GainTain</title>
+export const Head = (): JSX.Element => <SEO title='Phronesis' />
 
 export default PhronesisPage
