@@ -1,8 +1,11 @@
-import type { TablerIconsProps } from '@tabler/icons-react'
+import type { Icon as IconType, IconProps } from '@tabler/icons-react'
 import React, { useContext, type CSSProperties } from 'react'
 
 import darkModeStyle from 'dark_mode_style'
 import { ThemeContext } from 'theme_context'
+
+// https://github.com/tabler/tabler-icons/issues/1035#issuecomment-1997198857
+type TablerIcon = React.ForwardRefExoticComponent<Omit<IconProps, 'ref'> & React.RefAttributes<IconType>>
 
 const styles = {
   transition: 'all 0.5s ease-in-out',
@@ -14,7 +17,7 @@ const styles = {
 
 interface Props {
   href: string
-  Icon: (props: TablerIconsProps) => JSX.Element
+  Icon: TablerIcon
   size?: CSSProperties['width']
 }
 

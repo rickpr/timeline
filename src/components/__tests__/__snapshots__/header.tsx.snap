@@ -2,20 +2,7 @@
 
 exports[`Header renders correctly 1`] = `
 <div
-  className="thin-glass"
-  style={
-    {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "80px",
-      "justifyContent": "space-between",
-      "padding": "10px 7.5dvw",
-      "position": "sticky",
-      "top": 0,
-      "width": "100%",
-      "zIndex": 1,
-    }
-  }
+  className="thin-glass navbar"
 >
   <a
     className="glass"
@@ -34,7 +21,7 @@ exports[`Header renders correctly 1`] = `
     }
   >
     <svg
-      className="tabler-icon tabler-icon-arrow-left"
+      className="tabler-icon tabler-icon-arrow-left "
       fill="none"
       height={24}
       stroke="currentColor"
