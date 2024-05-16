@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 
-import FacetThemes from 'facet_themes'
+import { Themes } from 'themes'
 import useIsMobile from 'hooks/use_is_mobile'
 
 import PortfolioPage from './portfolio_page'
@@ -21,7 +21,7 @@ const MainPage = ({ darkMode, toggleDarkMode }: Props): JSX.Element | null => {
     return isPortfolioPage ? <PortfolioPage /> : <AboutPage />
   }, [isPortfolioPage])
   const facetTheme = useMemo(
-    () => isPortfolioPage ? FacetThemes.Portfolio : FacetThemes.About,
+    () => isPortfolioPage ? Themes.Portfolio : Themes.About,
     [isPortfolioPage]
   )
   if (isMobile === null || darkMode === null) return null

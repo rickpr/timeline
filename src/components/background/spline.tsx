@@ -3,7 +3,8 @@ import SplineComponent from '@splinetool/react-spline'
 import type { Application } from '@splinetool/runtime'
 
 import FileQuery from 'queries/file'
-import { ThemeContext, darkBackgroundColor, lightBackgroundColor } from 'theme_context'
+import { ThemeContext } from 'theme_context'
+import { darkBackgroundColor, lightBackgroundColor } from 'themes'
 
 const ANIMATION_DURATION = 42000
 

@@ -1,11 +1,12 @@
 import React from 'react'
 
-import CaseStudyThemes from 'case_study_themes'
-import { AboutTheme, ThemeContext } from 'theme_context'
+import ProjectThemes from 'project_themes'
+import { ThemeContext } from 'theme_context'
+import { Themes } from 'themes'
 import Card from 'components/portfolio_page/card'
 import darkModeStyle from 'dark_mode_style'
 
-type ThemeName = keyof typeof CaseStudyThemes
+type ThemeName = keyof typeof ProjectThemes
 
 interface PortfolioPageCardProps {
   darkMode: boolean
@@ -15,9 +16,9 @@ interface PortfolioPageCardProps {
 export const PortfolioPageCard = ({ darkMode, theme = 'AirbrushArtStudio' }: PortfolioPageCardProps): JSX.Element => {
   const { background, text: color } = darkModeStyle(darkMode)
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode: () => {}, ...AboutTheme }}>
+    <ThemeContext.Provider value={{ darkMode, toggleDarkMode: () => {}, ...Themes.About }}>
       <div style={{ color, width: '500px', position: 'relative', background, padding: '10px' }}>
-        <Card theme={CaseStudyThemes[theme]} />
+        <Card theme={ProjectThemes[theme]} />
       </div>
     </ThemeContext.Provider>
   )

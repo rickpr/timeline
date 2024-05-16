@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import CaseStudyThemes from 'case_study_themes'
+import ProjectThemes from 'project_themes'
 import { PortfolioPageCard } from './portfolio_page_card'
 
-const themeNames = Object.keys(CaseStudyThemes)
+const themeNames = Object.keys(ProjectThemes)
 
 const meta = {
   title: 'Portfolio Page Card',

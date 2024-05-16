@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { ThemeContext, type Theme } from 'theme_context'
+import { ThemeContext } from 'theme_context'
+import type { Theme } from 'themes'
 import darkModeStyle from 'dark_mode_style'
 
 import Background from './background'

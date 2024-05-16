@@ -1,6 +1,6 @@
 import React, { useMemo, useContext } from 'react'
 
-import type { Theme } from 'theme_context'
+import type { ProjectTheme } from 'project_themes'
 
 import { HomePageContext } from './home_page_context'
 
@@ -13,10 +13,10 @@ const onClick = (
   return true
 }
 
-const ThemedLink = ({ theme }: { theme: Theme }): React.ReactElement => {
+const ThemedLink = ({ theme }: { theme: ProjectTheme }): React.ReactElement => {
   const { description, name, subtitle, link, roles } = theme
   const { setIsPortfolioPage, setScrollToCaseStudies } = useContext(HomePageContext)
-  const arrow = link?.url?.includes(':') === true ? <div className='rotated-arrow' /> : ' ➜'
+  const arrow = link?.url?.includes(':') ? <div className='rotated-arrow' /> : ' ➜'
   const click = useMemo(() => {
     if (link?.url === '/') {
       return () => onClick(setIsPortfolioPage, setScrollToCaseStudies)

@@ -1,4 +1,4 @@
-import { darkTextColor, lightTextColor, darkBackgroundColor, lightBackgroundColor, type Colors, type Theme } from 'theme_context'
+import { darkTextColor, lightTextColor, darkBackgroundColor, lightBackgroundColor, type Colors, type Theme } from 'themes'
 
 const darkModeDefaultColors: Colors = {
   background: darkBackgroundColor,
