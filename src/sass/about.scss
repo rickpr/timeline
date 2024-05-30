@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .about-page {
   display: flex;
   flex-direction: column;
@@ -24,12 +26,12 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-  @media (min-width: $page-width / 0.85) {
+  @media (min-width: math.div($page-width, 0.85)) {
     flex-direction: row;
     align-items: stretch;
     > .glass {
       // Two 20px gaps make 40px
-      width: ($page-width - 40px) / 3;
+      width: math.div(($page-width - 40px), 3);
     }
   }
 }
