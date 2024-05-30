@@ -1,16 +1,17 @@
 import React from 'react'
 
-import ShapingCompanies from '../services/shaping_companies'
-import FAQs from '../services/faqs'
-
 import Degree from './degree'
+import Interests from './interests'
+import Services from './services'
+import ValueIBring from './value_i_bring'
 
 const AboutPage = (): JSX.Element => {
   return (
     <div className='about-page'>
       <Degree />
-      <ShapingCompanies />
-      <FAQs />
+      <Services />
+      <ValueIBring />
+      <Interests />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconBrandLinkedin } from '@tabler/icons-react'
+import { IconBrandLinkedin, IconMail } from '@tabler/icons-react'
 import Typewriter from 'typewriter-effect'
 
 import useIsMobile from 'hooks/use_is_mobile'
@@ -20,8 +20,10 @@ const ContactInformation = (): React.ReactElement | null => {
       <div className='intro'>
         <div className='title'>Adalida Baca</div>
         <div className='subtitle'>Rubber Duck cosplaying as a Product Designer</div>
-        <div className='tagline'>Open to Work &mdash;&nbsp;{' '}
-          <a className='link' href='mailto:hi@adalida.design'>Let&apos;s Connect&nbsp; <div className='rotated-arrow' /></a>
+        <div className='tagline'>
+          <span>Open to Work &mdash;</span>
+          <span>Let&apos;s Connect</span>
+          <BrandIcon href='mailto:hi@adalida.design' Icon={IconMail} size={iconSize} />
         </div>
       </div>
       <div className='glass icon-container'>

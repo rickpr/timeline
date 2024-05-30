@@ -1,4 +1,5 @@
 @import './variables';
+@import './colors';
 @import './fonts';
 @import './typography';
 @import './custom';
@@ -8,7 +9,6 @@
 @import './case_study';
 @import './footer';
 @import './header';
-@import './services';
 @import './portfolio_page';
 @import './themed_link';
 
@@ -70,8 +70,8 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   .arrow {
+    font-weight: 400;
     font-size: 1.25em;
-    font-weight: 100;
   }
 }
 
@@ -85,16 +85,17 @@
   h2 { margin: 0; }
 }
 
-.rotated-arrow {
-  font-size: 1.414em;
-  line-height: 1;
-  transform: rotate(-45deg);
-  font-weight: 400;
+
+.arrow {
+  &::before {
+    content: '→';
+  }
+  &.rotated::before {
+    font-size: 1.1em;
+    content: '↗';
+  }
 }
 
-.rotated-arrow::before {
-  content: '➜';
-}
 
 .logo {
   align-items: center;
@@ -131,4 +132,8 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+}
+
+.no-margins {
+  margin: 0;
 }

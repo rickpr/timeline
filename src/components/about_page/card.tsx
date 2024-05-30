@@ -8,7 +8,7 @@ interface Props {
 const Card = ({ title, children }: Props): JSX.Element => {
   return (
     <div className='glass card'>
-      <div className='services-card-content'>
+      <div className='about-card-content'>
         <h2>{title}</h2>
         {children}
       </div>

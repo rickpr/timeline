@@ -16,7 +16,8 @@ const onClick = (
 const ThemedLink = ({ theme }: { theme: ProjectTheme }): React.ReactElement => {
   const { description, name, subtitle, link, roles } = theme
   const { setIsPortfolioPage, setScrollToCaseStudies } = useContext(HomePageContext)
-  const arrow = link?.url?.includes(':') ? <div className='rotated-arrow' /> : ' ➜'
+  const external = link?.url?.includes(':')
+  const arrow = <div className={`arrow ${external ? 'rotated' : ''}`} />
   const click = useMemo(() => {
     if (link?.url === '/') {
       return () => onClick(setIsPortfolioPage, setScrollToCaseStudies)

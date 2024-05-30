@@ -34,12 +34,11 @@
     .tagline {
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
       font-size: 20px;
       font-weight: 700;
-      .link {
-        display: flex;
-      }
+      gap: 0.75em;
     }
   }
 }

@@ -1,24 +1,27 @@
 .footer {
-  padding: 10px 7.5dvw;
+  padding: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1em;
+  gap: 2em;
+  background: $dark-background;
+  color: $light-text;
 }
 
 .footer-row {
   display: flex;
-  gap: 1em;
+  gap: 2em;
 }
 
 .build-time {
   font-family: Inconsolata, monospace;
+  color: $dark-text;
 }
 
 .footer-column {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 2em;
 }
 
 .footer-link {

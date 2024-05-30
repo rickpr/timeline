@@ -30,7 +30,7 @@ const About = (): JSX.Element => {
       <div>Visual Design</div>
       <p>
         <a href='https://www.figma.com/community/file/1275945844735159445/PHRONESIS' target='_blank' rel='noreferrer'>
-          <strong>VIEW FIGMA ➜</strong>
+          <strong>VIEW FIGMA <span className='arrow' /></strong>
         </a>
       </p>
     </div>

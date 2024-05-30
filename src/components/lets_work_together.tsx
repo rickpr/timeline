@@ -8,7 +8,7 @@ const LetsWorkTogether = (): JSX.Element => {
   const { background, text } = darkModeStyle(!darkMode)
   return (
     <a className='lets-work-together' href='mailto:hi@adalida.design' style={{ background, color: text }}>
-      Let&apos;s Work Together <span className='arrow'>➜</span>
+      Let&apos;s Work Together <span className='arrow' />
     </a>
   )
 }
