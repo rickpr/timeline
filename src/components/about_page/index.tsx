@@ -4,16 +4,14 @@ import ShapingCompanies from '../services/shaping_companies'
 import FAQs from '../services/faqs'
 
 import Degree from './degree'
-import Transplant from './transplant'
 
 const AboutPage = (): JSX.Element => {
   return (
-    <>
+    <div className='about-page'>
       <Degree />
-      <Transplant />
       <ShapingCompanies />
       <FAQs />
-    </>
+    </div>
   )
 }
 

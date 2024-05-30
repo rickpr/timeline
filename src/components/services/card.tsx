@@ -3,17 +3,14 @@ import React from 'react'
 interface Props {
   title: string
   children: React.ReactNode
-  width?: React.CSSProperties['width']
 }
 
-const Card = ({ title, children, width = '100%' }: Props): JSX.Element => {
+const Card = ({ title, children }: Props): JSX.Element => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', width }}>
-      <div className='glass card'>
-        <div className='services-card-content'>
-          <div className='services-card-title'>{title}</div>
-          {children}
-        </div>
+    <div className='glass card'>
+      <div className='services-card-content'>
+        <h2>{title}</h2>
+        {children}
       </div>
     </div>
   )

@@ -87,8 +87,8 @@ const VisualIdentity = (): JSX.Element => {
       <h1><SynchronizedTypewriter string={fontFamily} styles={{ fontFamily }}/></h1>
       <hr />
       <h1><SynchronizedTypewriter string={h1String} styles={{ fontFamily }}/></h1>
-      {/* Fix the container width */}
-      <h1 style={{ visibility: 'hidden', whiteSpace: 'nowrap', maxHeight: 0 }}>{h1String}&nbsp;</h1>
+      {/* Make the container width fixed */}
+      <h1 style={{ visibility: 'hidden', whiteSpace: 'nowrap', maxHeight: 0, margin: 0 }}>{h1String}&nbsp;</h1>
       <hr />
       <h2><SynchronizedTypewriter string={generateTypewriterString('H2', '36')} styles={{ fontFamily }}/></h2>
       <hr />
