@@ -14,7 +14,7 @@ const Interests = (): JSX.Element => {
         </Card>
         <Card title='Design'>
           <p>
-            I design in different mediums; screens, experiences, print, events, writing, interiors, etc.
+            I live by designing in different mediums; screens, experiences, print, events, writing, interiors, etc.
           </p>
         </Card>
         <Card title='Problem Solving'>
@@ -55,7 +55,7 @@ const Interests = (): JSX.Element => {
         </Card>
         <Card title='Growth'>
           <p>
-            I love a challenge because I learn and grow. I don’t like the feeling of being stagnant.
+            I love a challenge because I learn and adapt. I don’t like the feeling of being stagnant.
             I also like plants for the same reason.
           </p>
         </Card>

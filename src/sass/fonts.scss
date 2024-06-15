@@ -18,3 +18,13 @@
   font-family: Inconsolata;
   src: local(Inconsolata), url(../fonts/Inconsolata-VariableFont_wdth,wght.ttf);
 }
+
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: local('Bodoni Moda'), url(../fonts/BodoniModa-VariableFont.ttf);
+}
+@font-face {
+  font-family: 'Bodoni Moda Italic';
+  src: local('Bodoni Moda'), url(../fonts/BodoniModa-Italic-VariableFont.ttf);
+  font-weight: italic;
+}

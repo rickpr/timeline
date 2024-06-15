@@ -1,33 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import SplineComponent from '@splinetool/react-spline'
-import type { Application } from '@splinetool/runtime'
 
 import FileQuery from 'queries/file'
 import { ThemeContext } from 'theme_context'
-import { darkBackgroundColor, lightBackgroundColor } from 'themes'
-
-const ANIMATION_DURATION = 42000
 
 const Spline = (): JSX.Element => {
   const context = useContext(ThemeContext)
   const { darkMode } = context
   const filename = `${darkMode ? 'dark' : 'light'}_mode.splinecode`
   const backgroundAnimation = FileQuery(filename).publicURL
-  const [spline, setSpline] = useState<Application | null>(null)
 
-  const onSplineLoad = (splineApplication: Application): void => {
-    setSpline(splineApplication)
-    setInterval(() => {
-      splineApplication.stop()
-      splineApplication.play()
-    }, ANIMATION_DURATION)
-  }
-
-  useEffect(() => {
-    spline?.setBackgroundColor(darkMode ? darkBackgroundColor : lightBackgroundColor)
-  }, [darkMode, spline])
-
-  return <SplineComponent scene={backgroundAnimation} onLoad={onSplineLoad} style={{ transition: 'background-color 0.5s ease-in-out' }} />
+  return <SplineComponent scene={backgroundAnimation} />
 }
 
 export default Spline

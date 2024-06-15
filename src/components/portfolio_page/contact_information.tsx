@@ -12,7 +12,7 @@ const ContactInformation = (): React.ReactElement | null => {
   const isMobile = useIsMobile()
   if (isMobile === null) return null
 
-  const strings = [`Based\xa0in\xa0${isMobile ? 'SF' : 'San\xa0Francisco'},\xa0CA`]
+  const strings = [`Based\xa0in\xa0${isMobile ? 'SF' : 'San\xa0Francisco'},\xa0CA\xa0-\xa0Open\xa0to\xa0Work`]
   const typewriter = <Typewriter options={{ strings, autoStart: true, loop: true }} />
 
   return (
@@ -21,7 +21,6 @@ const ContactInformation = (): React.ReactElement | null => {
         <div className='title'>Adalida Baca</div>
         <div className='subtitle'>Rubber Duck cosplaying as a Product Designer</div>
         <div className='tagline'>
-          <span>Open to Work &mdash;</span>
           <span>Let&apos;s Connect</span>
           <BrandIcon href='mailto:hi@adalida.design' Icon={IconMail} size={iconSize} />
         </div>

@@ -29,7 +29,7 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   QuerQueCandles: {
     name: 'QuerQue Candles',
     roles: ['Brand Identity', 'Graphic Design'],
-    description: 'Candle shop specializing in handcrafted candles.',
+    description: 'Querque Candles needed an online presence. I chose Shopify, designed a brand identity, created a logo, and built a user-friendly website. Despite non-payment for the website, the branding successfully enhanced their market visibility.',
     coverPhoto: QuerqueImage,
     link: {
       text: 'VIEW FIGMA',
@@ -39,7 +39,7 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   JessNRueda: {
     name: 'JessNRueda',
     roles: ['Website Design', 'Responsive', 'Shopify'],
-    description: 'Artist selling fine prints and stickers.',
+    description: 'Jessica Rueda required a digital platform for her art. I developed a Shopify website with e-commerce functionality, secure payments, SEO optimization, and mobile responsiveness. This increased her online visibility and sales.',
     coverPhoto: JessRuedaImage,
     link: {
       text: 'VISIT WEBSITE',
@@ -48,7 +48,7 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   },
   Phronesis: {
     name: 'Phronesis',
-    description: 'Seamlessly access important information, communicate effectively, and take control of your academic journey with ease.',
+    description: 'I created visual UI designs in Figma for an educational startup. The project included branding elements such as a logo, color pallets, components, dark and light mode designs, and a simple information architecture. This practice project highlighted my interest in educational startups and my skills in visual design.',
     coverPhoto: PhronesisPhoto,
     heroPhoto: PhronesisHeroPhoto,
     roles: [
@@ -64,7 +64,7 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   },
   TLDR: {
     name: 'TL;DR',
-    description: 'Tired of not understanding what you “agree” to when signing up for software? We are too, which is why we created a generative AI legalese summarizer',
+    description: 'Participated in a one-day hackathon focused on using AI to summarize legal language in End User Terms Agreements. As a product design project, our team created an MVP to quickly inform users about what they are signing away. This project involved intensive collaboration and rapid prototyping, culminating in a Google Presentation showcasing our solution.',
     coverPhoto: TLDRPhoto,
     heroPhoto: TLDRPhoto,
     roles: [
@@ -79,7 +79,7 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   },
   GainTain: {
     name: 'GainTain',
-    description: 'Designed specifically for fitness enthusiasts who want to track their workout data extensively.',
+    description: 'Designed the user interface and interactions for GainTain, a mobile application focusing on tracking workouts and solving the challenge of logging weight lifting between sets. Currently developing this project with my partner to enhance the user experience in fitness tracking. This ongoing project aims to provide a seamless and efficient solution for fitness enthusiasts to monitor their progress.',
     coverPhoto: GainTainPhoto,
     roles: [
       'User Interaction Design',
@@ -95,7 +95,7 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   AirbrushArtStudio: {
     name: 'Airbrush Art Studio',
     roles: ['Website Design', 'Responsive', 'Editor X'],
-    description: 'Professional portfolio for a New Mexican Muralist',
+    description: 'Utilized Wix to design the digital presence for Airbrush Art Studio, emphasizing effective Information Architecture. Delivered copywriting and SEO services to boost online visibility and client engagement. This budget-friendly project focused on showcasing the studio&apos;s portfolio without extensive branding.',
     coverPhoto: AirbrushImage,
     link: {
       text: 'VISIT WEBSITE',
@@ -105,7 +105,7 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   ZarasCleaning: {
     name: "Zara's Cleaning",
     roles: ['Website Design', 'Responsive', 'Editor X'],
-    description: 'Cleaning service located in Albuquerque New Mexico.',
+    description: 'Developed a user-friendly website for Zaras Cleaning using Wix, concentrating on clear and efficient information architecture. Provided comprehensive copywriting and SEO services to enhance search engine performance and attract new clients. The project aimed to present essential information within a limited budget framework.',
     coverPhoto: ZaraImage,
     link: {
       text: 'VISIT WEBSITE',
@@ -115,7 +115,7 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   SunbeltProperties: {
     name: 'Sunbelt Properties',
     roles: ['Website Design', 'Responsive', 'Wix'],
-    description: 'Sunbelt Properties, Inc. is a residential and commercial construction services company in the Albuquerque offering service since 1979.',
+    description: 'Crafted the online presence for Sunbelt Properties with Wix, designing an intuitive Information Architecture for a seamless user experience. Offered targeted copywriting and SEO services to increase the visibility of property listings and drive user inquiries. This low-budget initiative prioritized functionality and accessibility over extensive branding.',
     coverPhoto: SunbeltImage,
     link: {
       text: 'VISIT WEBSITE',
@@ -135,7 +135,7 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   LoboGardens: {
     name: 'Lobo Gardens',
     roles: ['Volunteer', 'Business Cards', 'Event Flyers', 'Branding'],
-    description: 'Represents a constellation of stakeholders locally and nationally centered around educational principles and cultural practices that promote the ecological relationships of language and literacy.',
+    description: 'As part of a community project, I contributed to the branding and promotional design for Lobo Gardens, an urban gardening initiative. This involved creating a logo, designing educational materials, and developing a website to increase community engagement and support for campus gardening activities.',
     coverPhoto: LoboGardensImage,
     link: {
       text: 'VISIT WEBSITE',
