@@ -11,14 +11,15 @@ type ThemeName = keyof typeof ProjectThemes
 interface PortfolioPageCardProps {
   darkMode: boolean
   theme: ThemeName
+  reverse: boolean
 }
 
-export const PortfolioPageCard = ({ darkMode, theme = 'AirbrushArtStudio' }: PortfolioPageCardProps): JSX.Element => {
+export const PortfolioPageCard = ({ darkMode, theme = 'AirbrushArtStudio', reverse = false }: PortfolioPageCardProps): JSX.Element => {
   const { background, text: color } = darkModeStyle(darkMode)
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode: () => {}, ...Themes.About }}>
       <div style={{ color, width: '500px', position: 'relative', background, padding: '10px' }}>
-        <Card theme={ProjectThemes[theme]} />
+        <Card theme={ProjectThemes[theme]} reverse={reverse} />
       </div>
     </ThemeContext.Provider>
   )

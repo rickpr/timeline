@@ -28,7 +28,7 @@ const About = (): JSX.Element => {
 
   return (
     <Card>
-      <MediaWithText media='images/gaintain/about.png' text={text} reversed />
+      <MediaWithText media='images/gaintain/about.webp' text={text} reversed />
     </Card>
   )
 }

@@ -1,4 +1,5 @@
 @import './variables';
+@import './mixins';
 @import './colors';
 @import './fonts';
 @import './typography';
@@ -6,18 +7,17 @@
 
 @import './about';
 @import './background';
-@import './case_study';
+@import './case_studies';
 @import './footer';
 @import './header';
 @import './portfolio_page';
-@import './themed_link';
 
 .Typewriter {
   display: inline;
 }
 
 .brand-icon {
-  @extend .glass;
+  @include glass;
   &:hover {
     filter: invert(1) opacity(0.5);
   }
@@ -31,31 +31,6 @@
   flex-direction: column;
   width: min(calc(950px + 15dvw), 100dvw);
   margin: auto;
-}
-
-.thin-glass {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-.glass {
-  @extend .thin-glass;
-  border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: linear-gradient(159deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.10) 100.06%);
-  box-shadow: 0px 4px 24px -1px rgba(99, 99, 99, 0.25);
-}
-
-.badge {
-  @extend .glass;
-  font-weight: 500;
-  transition: background-color 0.5s ease-in-out;
-  border-color: rgba(255, 255, 255, 0.20);
-  box-shadow: 4px 4px 4px -1px rgba(99, 99, 99, 0.25);
-  padding: 0.8em;
-  font-size: 12px;
-  line-height: 1;
-  white-space: nowrap;
 }
 
 .lets-work-together {
@@ -74,17 +49,6 @@
     font-size: 1.25em;
   }
 }
-
-.card {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  h2 { margin: 0; }
-}
-
 
 .arrow {
   &::before {

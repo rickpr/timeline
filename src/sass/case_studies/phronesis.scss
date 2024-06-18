@@ -1,0 +1,18 @@
+.phronesis-container {
+  min-width: 95%;
+  max-width: 95dvw;
+  margin: 0 2.5dvw;
+  min-height: 400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.phronesis-card {
+  cursor: pointer;
+  min-height: 300px;
+  border-radius: 1.5dvmax;
+  overflow: hidden;
+}

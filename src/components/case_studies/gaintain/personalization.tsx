@@ -18,7 +18,7 @@ const Personalization = (): JSX.Element => {
 
   return (
     <Card>
-      <MediaWithText media='images/gaintain/personalization.png' text={text} reversed />
+      <MediaWithText media='images/gaintain/personalization.webp' text={text} reversed />
     </Card>
   )
 }

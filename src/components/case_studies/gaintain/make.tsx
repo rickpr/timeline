@@ -18,7 +18,7 @@ const Make = (): JSX.Element => {
 
   return (
     <Card>
-      <MediaWithText media='images/gaintain/make.png' text={text} reversed />
+      <MediaWithText media='images/gaintain/make.webp' text={text} reversed />
     </Card>
   )
 }

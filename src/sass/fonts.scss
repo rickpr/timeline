@@ -13,18 +13,17 @@
   font-weight: italic;
 }
 
-
 @font-face {
   font-family: Inconsolata;
   src: local(Inconsolata), url(../fonts/Inconsolata-VariableFont_wdth,wght.ttf);
 }
 
 @font-face {
-  font-family: 'Bodoni Moda';
-  src: local('Bodoni Moda'), url(../fonts/BodoniModa-VariableFont.ttf);
+  font-family: Inter;
+  src: local(Inter), url(../fonts/Inter-VariableFont_slnt,wght.ttf);
 }
+
 @font-face {
-  font-family: 'Bodoni Moda Italic';
-  src: local('Bodoni Moda'), url(../fonts/BodoniModa-Italic-VariableFont.ttf);
-  font-weight: italic;
+  font-family: Georgia;
+  src: local(Georgia), url(../fonts/Georgia.ttf);
 }

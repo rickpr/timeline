@@ -21,7 +21,9 @@ const Container = (): JSX.Element => {
   }, [scrollToCaseStudies, setScrollToCaseStudies])
   return (
     <div className='portfolio-container' ref={containerRef}>
-      {Object.values(ProjectThemes).map((theme) => <Card key={theme.name} theme={theme} />)}
+      {Object.values(ProjectThemes).map((theme, index) =>
+        <Card key={theme.name} reverse={Boolean(index % 2)} theme={theme} />)
+      }
     </div>
   )
 }

@@ -2,14 +2,14 @@ import React from 'react'
 
 import type { ProjectTheme } from 'project_themes'
 
-import ThemedLink from '../themed_link'
+import Description from './description'
 import Image from './image'
 
-const Card = ({ theme }: { theme: ProjectTheme }): JSX.Element => {
+const Card = ({ theme, reverse }: { theme: ProjectTheme, reverse: boolean }): JSX.Element => {
   return (
-    <div className='glass card'>
+    <div className={`portfolio-card ${reverse ? 'reverse' : ''}`}>
       <Image theme={theme} />
-      <ThemedLink theme={theme} />
+      <Description theme={theme} />
     </div>
   )
 }

@@ -23,7 +23,7 @@ const Check = (): JSX.Element => {
     </div>
   )
 
-  const mediaTag = makeMediaTag({ media: 'images/gaintain/check.png' })
+  const mediaTag = makeMediaTag({ media: 'images/gaintain/check.webp' })
   const figmaLink = (
     <a
       href='https://www.figma.com/proto/p9h30Mv9nEaMXP9CEaMJTz/GainTain-Creative-Process?page-id=0%3A1&node-id=283%3A652&viewport=-398%2C-458%2C0.1&scaling=contain&starting-point-node-id=283%3A652'

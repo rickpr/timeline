@@ -19,7 +19,7 @@ const Think = (): JSX.Element => {
 
   return (
     <Card>
-      <MediaWithText media='images/gaintain/think.png' text={text} />
+      <MediaWithText media='images/gaintain/think.webp' text={text} />
     </Card>
   )
 }

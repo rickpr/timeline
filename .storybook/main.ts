@@ -1,3 +1,5 @@
+import type { Options } from '@swc/core'
+import path from 'path'
 import type { StorybookConfig } from '@storybook/react-webpack5'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import type { RuleSetRule } from 'webpack'
@@ -51,7 +53,7 @@ const config: StorybookConfig = {
               },
               require.resolve('resolve-url-loader'),
               {
-                loader: require.resolve("sass-loader"),
+                loader: require.resolve('sass-loader'),
                 options: {
                   // Want to add more Sass options? Read more here: https://webpack.js.org/loaders/sass-loader/#options
                   implementation: require.resolve('sass'),
@@ -63,15 +65,30 @@ const config: StorybookConfig = {
           }
         ]
       }
-    }
+    },
+    '@storybook/addon-webpack5-compiler-swc',
+    '@chromatic-com/storybook'
   ],
   framework: {
     name: '@storybook/react-webpack5',
     options: {
-      builder: { useSWC: true },
+      builder: {},
     }
   },
-  docs: { autodocs: 'tag' },
+  docs: {},
+  swc: (config: Options) => {
+    return ({
+      ...config,
+      jsc: {
+        ...config.jsc,
+        baseUrl: path.resolve(__dirname),
+        paths: {
+          'queries/build_time': [path.resolve(__dirname, 'mocks', 'build_time.ts')],
+          'queries/file': [path.resolve(__dirname, 'mocks', 'file.ts')],
+        }
+      }
+    })
+  },
   webpackFinal: async config => {
     config.resolve.plugins = [new TsconfigPathsPlugin()]
     const rule = config.module.rules.find((rule) => JSON.stringify(rule).includes('/swc-loader/')) as RuleSetRule

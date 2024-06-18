@@ -15,7 +15,7 @@ const NextSteps = (): JSX.Element => {
 
   return (
     <Card>
-      <MediaWithText media='images/gaintain/next_steps.png' text={text} />
+      <MediaWithText media='images/gaintain/next_steps.webp' text={text} />
     </Card>
   )
 }

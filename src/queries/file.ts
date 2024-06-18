@@ -1,19 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
-interface File {
-  publicURL: string
-  name: string
-  relativePath: string
-}
-
-export const FileQuery = (filePath: string): File => {
+export const FileQuery = (filePath: string): string => {
   const files = useStaticQuery(graphql`
     query {
       allFile(filter: {sourceInstanceName: {eq: "files"}}) {
         edges {
           node {
             publicURL
-            name
             relativePath
           }
         }
@@ -27,7 +20,7 @@ export const FileQuery = (filePath: string): File => {
   const file = files.find(({ node: { relativePath } }: { node: { relativePath: string } }): boolean => (
     relativePath === desiredRelativePath
   ))
-  if (file !== undefined) return file.node
+  if (file !== undefined) return file.node.publicURL
 
   throw new Error(`No file found for ${filePath}`)
 }

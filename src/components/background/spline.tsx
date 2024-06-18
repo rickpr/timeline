@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+// @ts-expect-error no type definitions
 import SplineComponent from '@splinetool/react-spline'
 
 import FileQuery from 'queries/file'
@@ -8,7 +9,7 @@ const Spline = (): JSX.Element => {
   const context = useContext(ThemeContext)
   const { darkMode } = context
   const filename = `${darkMode ? 'dark' : 'light'}_mode.splinecode`
-  const backgroundAnimation = FileQuery(filename).publicURL
+  const backgroundAnimation = FileQuery(filename)
 
   return <SplineComponent scene={backgroundAnimation} />
 }

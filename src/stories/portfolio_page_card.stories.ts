@@ -28,6 +28,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     darkMode: false,
-    theme: themeNames[0]
+    theme: themeNames[0],
+    reverse: false
   }
 }
