@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-// @ts-expect-error no type definitions
 import SplineComponent from '@splinetool/react-spline'
 
 import FileQuery from 'queries/file'

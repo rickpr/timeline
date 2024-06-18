@@ -29,7 +29,7 @@
   gap: 1em;
   display: flex;
   flex-direction: column;
-  width: min(calc(950px + 15dvw), 100dvw);
+  width: min(calc($page-width + 15dvw), 100dvw);
   margin: auto;
 }
 
