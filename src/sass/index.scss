@@ -25,11 +25,11 @@
 
 .page {
   transition: all 0.5s ease-in-out;
-  padding: 0 7.5dvw;
+  padding: 0 10dvw;
   gap: 1em;
   display: flex;
   flex-direction: column;
-  width: min(calc($page-width + 15dvw), 100dvw);
+  width: min(calc($page-width + 20dvw), 100dvw);
   margin: auto;
 }
 
