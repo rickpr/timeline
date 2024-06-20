@@ -8,7 +8,7 @@ const Description = ({ theme }: { theme: ProjectTheme }): React.ReactElement => 
   const arrow = <div className={`arrow ${external ? 'rotated' : ''}`} />
 
   return (
-    <a href={link.url} className='project-description'>
+    <div className='project-description'>
       {logo !== undefined && (
         <div className='logo' style={{ backgroundColor: logo.color }}>
           <img src={logo.image} alt={`${name} logo`} />
@@ -19,8 +19,8 @@ const Description = ({ theme }: { theme: ProjectTheme }): React.ReactElement => 
         {roles.map(role => <div className='role' key={role}>{role}</div>)}
       </div>
       <div className='description'>{description}</div>
-      <div className='link'>{link.text}&nbsp; {arrow}</div>
-    </a>
+      <a href={link.url} className='link'>{link.text}&nbsp; {arrow}</a>
+    </div>
   )
 }
 

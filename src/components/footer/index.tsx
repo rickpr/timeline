@@ -22,7 +22,7 @@ const Footer = (): JSX.Element => {
         </div>
         <div className='footer-column'>
           <Link to='mailto:hi@adalida.design' text='Email' />
-          <Link to='https://aheavenlyread.notion.site/A-Heavenly-Read-dfe9351a7e204898a1451de826b3e812' text='Blog' />
+          <Link to='https://adalida.notion.site/A-Heavenly-Read-dfe9351a7e204898a1451de826b3e812' text='Blog' />
         </div>
       </div>
       <div className='footer-row build-time'>
