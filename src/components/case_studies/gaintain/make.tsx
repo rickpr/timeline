@@ -5,7 +5,7 @@ import MediaWithText from '../../media_with_text'
 
 const Make = (): JSX.Element => {
   const text = (
-    <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
+    <div className='gaintain-text'>
       <h3>&#47;&#47; MAKE</h3>
       <p>
         I adopted a Lean UX approach for the development of the GainTain MVP.

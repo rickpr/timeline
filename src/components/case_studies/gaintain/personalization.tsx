@@ -5,7 +5,7 @@ import MediaWithText from '../../media_with_text'
 
 const Personalization = (): JSX.Element => {
   const text = (
-    <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
+    <div className='gaintain-text'>
       <h3>&#47;&#47; Design for Everyone</h3>
       <p>
         Tina was particularly impressed with GainTain&apos;s customizable

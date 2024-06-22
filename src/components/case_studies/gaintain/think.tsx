@@ -5,7 +5,7 @@ import MediaWithText from '../../media_with_text'
 
 const Think = (): JSX.Element => {
   const text = (
-    <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
+    <div className='gaintain-text'>
       <h3>&#47;&#47; THINK</h3>
       <p>
         As part of the research phase for the GainTain app, a survey was

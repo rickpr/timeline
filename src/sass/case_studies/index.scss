@@ -1,2 +1,20 @@
 @import './gaintain';
 @import './phronesis';
+
+.about-case-study {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex-basis: 37%;
+  flex-grow: 3;
+  .client-and-date {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 10%;
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

@@ -2,15 +2,12 @@ import React from 'react'
 
 const About = (): JSX.Element => {
   const text = (
-    <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', paddingRight: '10%' }}>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <strong>Client</strong><span>Phronesis</span>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <strong>Date</strong><span>2 weeks</span>
-        </div>
+    <div className='about-case-study'>
+      <div className='client-and-date'>
+        <div><strong>Client</strong><span>Phronesis</span></div>
+        <div><strong>Date</strong><span>2 weeks</span></div>
       </div>
+
       <p><strong>Case Study Details</strong></p>
       <p>
         Discover the transformative power of Phronesis, a captivating portfolio

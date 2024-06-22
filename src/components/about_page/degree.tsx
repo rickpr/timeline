@@ -23,6 +23,10 @@ const Degree = (): JSX.Element | null => {
           <h2>B.A. in English-Philosophy</h2>
           <div className='paragraphs'>
             <p>
+              I&apos;m a strategic and innovative designer eager to leverage my diverse background to contribute to tech
+              industry advancements.
+            </p>
+            <p>
               I grew up one block down from the famous Los Pollos Hermanos Restaurant in the show Breaking Bad.
             </p>
             <p>
@@ -46,10 +50,6 @@ const Degree = (): JSX.Element | null => {
             <p>
               After graduation, I began learning Product Design through a mentor, Google&apos;s Coursera courses, the
               Interaction Design Foundation, Hackathons, volunteer work, and the clientele I receive from my design business.
-            </p>
-            <p>
-              I&apos;m a strategic and innovative designer eager to leverage my diverse background to contribute to tech
-              industry advancements.
             </p>
           </div>
           <LetsWorkTogether />

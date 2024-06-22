@@ -5,7 +5,7 @@ import MediaWithText from '../../media_with_text'
 
 const About = (): JSX.Element => {
   const text = (
-    <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
+    <div className='about-case-study'>
       <h3>&#47;&#47; ABOUT</h3>
       <p>
         GainTain is an extraordinary mobile app designed to help fitness enthusiasts take their workouts
@@ -20,9 +20,9 @@ const About = (): JSX.Element => {
         tension tracking and exercise instruction videos, you&apos;ll have everything you need to take
         your workouts to the next level.
       </p>
-      <p>| <strong>TIMELINE:</strong> 12 weeks</p>
-      <p>| <strong>TEAM:</strong> 1 Designer, 1 Engineer</p>
-      <p>| <strong>ROLES:</strong> Sole Product Designer</p>
+      <p><strong>TIMELINE:</strong> 12 weeks</p>
+      <p><strong>TEAM:</strong> 1 Designer, 1 Engineer</p>
+      <p><strong>ROLES:</strong> Sole Product Designer</p>
     </div>
   )
 

@@ -50,7 +50,7 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-  @media (min-width: $page-width) {
+  @media (min-width: $max-width) {
     flex-direction: row;
     align-items: stretch;
     > .glass {

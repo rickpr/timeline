@@ -6,11 +6,9 @@ import { makeMediaTag } from '../../media_with_text'
 
 const Check = (): JSX.Element => {
   const flex = '8 8 335px'
-  const padding = '1em'
   const text = (
-    <div key='text' style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', padding }}>
-      <div style={{ maxWidth: '95vw', flexBasis: '37%', flexGrow: 3 }}>
-
+    <div style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center' }}>
+      <div className='gaintain-text'>
         <h3>&#47;&#47; CHECK</h3>
         <p>
           The hi-fidelity design process allowed the GainTain app to be up
@@ -38,15 +36,14 @@ const Check = (): JSX.Element => {
     <Card>
       <div style={{
         display: 'flex',
-        flexWrap: 'wrap',
+        flexWrap: 'wrap-reverse',
         placeContent: 'center',
         placeItems: 'center',
         margin: '0 auto',
-        maxWidth: 'max-content'
+        maxWidth: 'max-content',
+        gap: '20px'
       }}>
-        <div
-          style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', padding }}
-        >
+        <div style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center' }}>
           <CaptionedFigure caption={figmaLink} figure={mediaTag} />
         </div>
         {text}

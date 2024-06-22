@@ -1,14 +1,12 @@
 import React from 'react'
 
-import Card from './card'
-import { makeMediaTag } from '../../media_with_text'
-
-import useIsMobile from 'hooks/use_is_mobile'
-
 import TimerVideo from 'videos/gaintain/timer.mp4'
 
+import Card from './card'
+import { videoBorderRadius } from './style'
+import { makeMediaTag } from '../../media_with_text'
+
 const Timer = (): JSX.Element => {
-  const isMobile = useIsMobile(1200)
   const text = (
     <div>
       <h3>&#47;&#47; 03 | Timer</h3>
@@ -22,17 +20,10 @@ const Timer = (): JSX.Element => {
 
   return (
     <Card>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: isMobile !== false ? '1fr' : 'repeat(2, minmax(0, 1fr))',
-        columnGap: '6%',
-        maxWidth: '100%',
-        overflow: 'hidden',
-        placeItems: 'center center'
-      }}>
+      <div className='video-card-content'>
         {text}
         <div style={{ maxWidth: '331px' }}>
-          {makeMediaTag({ media: TimerVideo, style: { borderRadius: '60px' } })}
+          {makeMediaTag({ media: TimerVideo, style: { borderRadius: videoBorderRadius } })}
         </div>
       </div>
     </Card>

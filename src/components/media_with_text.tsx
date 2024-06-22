@@ -30,7 +30,6 @@ const MediaWithText = ({ media, text, reversed = false, style = {} }: Props): JS
   const maxHeight = '82vh'
   const styles = { maxHeight, borderRadius: '10px', height: '100%', width: '100%', ...style }
 
-  const padding = '1em'
   const mediaTag = makeMediaTag({ media, style: styles })
   const flex = '8 8 335px'
   const imageTag = (
@@ -42,14 +41,13 @@ const MediaWithText = ({ media, text, reversed = false, style = {} }: Props): JS
         placeContent: 'center',
         placeItems: 'center',
         width: '100%',
-        height: '100%',
-        padding
+        height: '100%'
       }}
     >
       {mediaTag}
     </div>
   )
-  const textTag = <div key='text' style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center', padding }}>{text}</div>
+  const textTag = <div key='text' style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center' }}>{text}</div>
 
   const flexWrap = reversed ? 'wrap' : 'wrap-reverse'
   return (
@@ -57,7 +55,8 @@ const MediaWithText = ({ media, text, reversed = false, style = {} }: Props): JS
       display: 'flex',
       flexWrap,
       placeContent: 'center',
-      margin: '0 auto'
+      margin: '0 auto',
+      gap: '20px'
     }}>
       {reversed ? [textTag, imageTag] : [imageTag, textTag]}
     </div>

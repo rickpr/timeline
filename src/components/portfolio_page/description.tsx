@@ -14,7 +14,7 @@ const Description = ({ theme }: { theme: ProjectTheme }): React.ReactElement => 
           <img src={logo.image} alt={`${name} logo`} />
         </div>
       )}
-      <div className='title'>{name}</div>
+      <h1>{name}</h1>
       <div className='role-list'>
         {roles.map(role => <div className='role' key={role}>{role}</div>)}
       </div>
