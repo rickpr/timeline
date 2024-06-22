@@ -1,2 +1,4 @@
 $breakpoint: 768px;
-$page-width: 1412px;
+$max-width: 1100px;
+$page-padding: 10dvw;
+$page-width: min($max-width, calc(100dvw - (2 * $page-padding)));

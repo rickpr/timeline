@@ -25,11 +25,10 @@
 
 .page {
   transition: all 0.5s ease-in-out;
-  padding: 0 10dvw;
   gap: 1em;
   display: flex;
   flex-direction: column;
-  width: min(calc($page-width + 20dvw), 100dvw);
+  width: $page-width;
   margin: auto;
 }
 
@@ -89,7 +88,7 @@
   border-style: solid;
   border-radius: 5px;
   height: 0;
-  @media (min-width: $breakpoint) { border-width: 3px; }
+  @media (min-width: $breakpoint) { border-width: 2px; }
 }
 
 .pull-right {

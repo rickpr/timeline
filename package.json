@@ -32,15 +32,6 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.24.7",
-    "@storybook/addon-essentials": "^8.1.1",
-    "@storybook/addon-interactions": "^8.1.1",
-    "@storybook/addon-links": "^8.1.1",
-    "@storybook/addon-onboarding": "^8.1.1",
-    "@storybook/addon-styling-webpack": "^1.0.0",
-    "@storybook/blocks": "^8.1.1",
-    "@storybook/react": "^8.1.1",
-    "@storybook/react-webpack5": "^8.1.1",
-    "@storybook/test": "^8.1.1",
     "@swc/core": "^1.5.7",
     "@types/aos": "^3.0.7",
     "@types/jest": "^29.5.12",
@@ -59,7 +50,6 @@
     "eslint-plugin-promise": "^6.2.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-storybook": "^0.8.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
@@ -68,7 +58,6 @@
     "resolve-url-loader": "^5.0.0",
     "sass-loader": "^14.2.1",
     "standard": "^17.1.0",
-    "storybook": "^8.1.1",
     "style-loader": "^4.0.0",
     "ts-node": "^10.9.2",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
@@ -88,9 +77,7 @@
     "serve": "gatsby serve",
     "test": "jest",
     "tsc": "tsc",
-    "lint": "eslint .",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",

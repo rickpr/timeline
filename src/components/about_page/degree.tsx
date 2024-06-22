@@ -1,10 +1,9 @@
 import React from 'react'
 
 import LetsWorkTogether from 'components/lets_work_together'
+import { makeMediaTag } from 'components/media_with_text'
 import SectionHeading from 'components/section_heading'
 import useIsMobile from 'hooks/use_is_mobile'
-import StackingPair from '../stacking_pair'
-import GlassImage from './glass_image'
 
 const AdalidaFace = 'images/about/adalida_face.webp'
 
@@ -16,9 +15,11 @@ const Degree = (): JSX.Element | null => {
     <div>
       <SectionHeading title='Hi' />
       <h1 style={{ marginTop: 0 }}>I&apos;m Adalida, energetic, resourceful, and versatile.</h1>
-      <StackingPair>
-        <GlassImage media={AdalidaFace} />
-        <div>
+      <div className='stacking-pair'>
+        <div className='image'>
+          {makeMediaTag({ media: AdalidaFace, style: { borderRadius: '8px' } })}
+        </div>
+        <div className='text'>
           <h2>B.A. in English-Philosophy</h2>
           <div className='paragraphs'>
             <p>
@@ -53,7 +54,7 @@ const Degree = (): JSX.Element | null => {
           </div>
           <LetsWorkTogether />
         </div>
-      </StackingPair>
+      </div>
     </div>
   )
 }

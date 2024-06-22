@@ -1,6 +1,8 @@
+$blur: 60px;
+
 @mixin thin-glass {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
 }
 
 @mixin glass {

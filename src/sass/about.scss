@@ -18,6 +18,30 @@
   line-height: 1.173;
 }
 
+
+.stacking-pair {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+
+  .image {
+    @include glass;
+    @include card;
+  }
+
+  .text {
+    > h2 {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: $breakpoint) {
+    flex-direction: row;
+  }
+}
+
 .stacking-cards {
   &.more-below { margin-bottom: 20px; }
   display: flex;
@@ -26,12 +50,12 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-  @media (min-width: math.div($page-width, 0.85)) {
+  @media (min-width: $page-width) {
     flex-direction: row;
     align-items: stretch;
     > .glass {
-      // Two 20px gaps make 40px
-      width: math.div(($page-width - 40px), 3);
+      align-self: stretch;
+      height: unset;
     }
   }
 }
