@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
-
 import CarouselOverlay, { carouselMediaTag } from '../../carousel_overlay'
 import Card from './card'
 import About from './about'
@@ -32,7 +30,6 @@ const allImages = [
 const carouselMedia = allImages.flat().map(carouselMediaTag)
 
 const Phronesis = (): JSX.Element => {
-  useAnimateOnScroll()
   const [showCarousel, setShowCarousel] = useState(false)
   const [mediaIndex, setMediaIndex] = useState(0)
   const dismiss = (): void => { setShowCarousel(false) }

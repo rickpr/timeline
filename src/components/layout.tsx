@@ -1,5 +1,7 @@
 import React from 'react'
 
+import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
+
 import { ThemeContext } from 'theme_context'
 import type { Theme } from 'themes'
 import darkModeStyle from 'dark_mode_style'
@@ -21,6 +23,8 @@ interface Props {
 const Layout = (
   { children, theme, darkMode, toggleDarkMode, isPortfolioPage, setIsPortfolioPage }: Props
 ): JSX.Element | null => {
+  useAnimateOnScroll()
+
   if (darkMode === null) return null
   const { text: color } = darkModeStyle(darkMode, theme)
   return (
