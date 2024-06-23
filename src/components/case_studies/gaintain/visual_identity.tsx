@@ -3,12 +3,12 @@ import React, { useContext } from 'react'
 import ScalableText from 'components/scalable_text'
 import darkModeStyle from 'dark_mode_style'
 import useSynchronizedTypewriter from 'hooks/use_synchronized_typewriter'
-import { ThemeContext } from 'theme_context'
+import DarkModeContext from 'dark_mode_context'
 
 import Card from './card'
 
 const VisualIdentity = (): JSX.Element => {
-  const { darkMode } = useContext(ThemeContext)
+  const { darkMode } = useContext(DarkModeContext)
   const { text: color } = darkModeStyle(darkMode)
   const fontFamily = 'Avenir Next'
 

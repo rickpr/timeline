@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 
 import darkModeStyle from 'dark_mode_style'
-import { ThemeContext } from 'theme_context'
+import DarkModeContext from 'dark_mode_context'
 
 const Page = ({ children }: { children: React.ReactNode }): JSX.Element => {
-  const themeContext = useContext(ThemeContext)
-  const { text: color } = darkModeStyle(themeContext.darkMode, themeContext)
+  const { darkMode } = useContext(DarkModeContext)
+  const { text: color } = darkModeStyle(darkMode)
   return <div style={{ color }} className='page'>{children}</div>
 }
 

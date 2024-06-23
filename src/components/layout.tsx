@@ -2,8 +2,7 @@ import React from 'react'
 
 import useAnimateOnScroll from 'hooks/use_animate_on_scroll'
 
-import { ThemeContext } from 'theme_context'
-import type { Theme } from 'themes'
+import DarkModeContext from 'dark_mode_context'
 import darkModeStyle from 'dark_mode_style'
 
 import Background from './background'
@@ -13,30 +12,27 @@ import Page from './page'
 
 interface Props {
   children: React.ReactNode
-  theme: Theme
   darkMode: boolean | null
   toggleDarkMode: () => void
-  isPortfolioPage?: boolean
-  setIsPortfolioPage?: (updatePortfolioPage: boolean | ((isPortfolioPage: boolean) => boolean)) => void
 }
 
 const Layout = (
-  { children, theme, darkMode, toggleDarkMode, isPortfolioPage, setIsPortfolioPage }: Props
+  { children, darkMode, toggleDarkMode }: Props
 ): JSX.Element | null => {
   useAnimateOnScroll()
 
   if (darkMode === null) return null
-  const { text: color } = darkModeStyle(darkMode, theme)
+  const { text: color } = darkModeStyle(darkMode)
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode, ...theme }}>
+    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
       <Background />
       <div style={{ color, transition: 'all 0.5s ease-in-out' }} data-nosnippet>
-        <Header isPortfolioPage={isPortfolioPage} setIsPortfolioPage={setIsPortfolioPage} />
+        <Header />
         <Page>{children}</Page>
         <div style={{ minHeight: '5em' }} />
         <Footer />
       </div>
-    </ThemeContext.Provider>
+    </DarkModeContext.Provider>
   )
 }
 

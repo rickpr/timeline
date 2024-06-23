@@ -2,11 +2,10 @@ import React, { useContext } from 'react'
 import SplineComponent from '@splinetool/react-spline'
 
 import FileQuery from 'queries/file'
-import { ThemeContext } from 'theme_context'
+import DarkModeContext from 'dark_mode_context'
 
 const Spline = (): JSX.Element => {
-  const context = useContext(ThemeContext)
-  const { darkMode } = context
+  const { darkMode } = useContext(DarkModeContext)
   const filename = `${darkMode ? 'dark' : 'light'}_mode.splinecode`
   const backgroundAnimation = FileQuery(filename)
 

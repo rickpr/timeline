@@ -1,25 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-interface Props {
-  isPortfolioPage?: boolean
-  setIsPortfolioPage?: (updatePortfolioPage: boolean | ((isPortfolioPage: boolean) => boolean)) => void
-}
+import { HomePageContext } from '../home_page_context'
 
-const togglePortfolioPage = (
-  setIsPortfolioPage?: (updatePortfolioPage: (isPortfolioPage: boolean) => boolean) => void
-): void => {
-  if (setIsPortfolioPage === undefined) return
-
-  setIsPortfolioPage((isPortfolioPage: boolean) => {
-    history.pushState({}, '', isPortfolioPage ? '/about' : '/portfolio')
-    return !isPortfolioPage
-  })
-}
-
-const PortfolioPageSwitch = ({ isPortfolioPage, setIsPortfolioPage }: Props): JSX.Element => {
+const PortfolioPageSwitch = (): JSX.Element => {
+  const { isPortfolioPage, togglePortfolioPage } = useContext(HomePageContext)
   return (
     <div className='switch-container'>
-      <button className='switch-grid' onClick={() => { togglePortfolioPage(setIsPortfolioPage) }}>
+      <button className='switch-grid' onClick={() => { togglePortfolioPage?.() }}>
         <div
           className='switch-indicator'
           style={{ transform: isPortfolioPage === true ? undefined : 'translateX(100%)' }}

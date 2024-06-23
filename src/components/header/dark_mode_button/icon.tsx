@@ -37,7 +37,10 @@ const Icon = ({ darkMode }: { darkMode: boolean }): JSX.Element => {
 
   useEffect(() => { darkMode ? animateReverse() : animateForward() }, [darkMode])
   // This prevents the animation from running on page load
-  useEffect(() => { setTimeout(() => { setDur('250ms') }, 1000) }, [])
+  useEffect(() => {
+    const timeout = setTimeout(() => { setDur('250ms') }, 1000)
+    return () => { clearTimeout(timeout) }
+  }, [])
 
   return (
     <svg

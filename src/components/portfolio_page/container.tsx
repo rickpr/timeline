@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react'
 
-import ProjectThemes from 'project_themes'
+import Projects from 'projects'
 import { HomePageContext } from '../home_page_context'
 import { headerPixels } from '../header'
 import Card from './card'
@@ -21,8 +21,8 @@ const Container = (): JSX.Element => {
   }, [scrollToCaseStudies, setScrollToCaseStudies])
   return (
     <div className='portfolio-container' ref={containerRef}>
-      {Object.values(ProjectThemes).map((theme, index) =>
-        <Card key={theme.name} reverse={Boolean(index % 2)} theme={theme} />)
+      {Object.values(Projects).map((project, index) =>
+        <Card key={project.name} reverse={Boolean(index % 2)} project={project} />)
       }
     </div>
   )

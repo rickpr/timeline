@@ -1,9 +1,9 @@
 import React from 'react'
 
-import type { ProjectTheme } from 'project_themes'
+import type { Project } from 'projects'
 
-const Description = ({ theme }: { theme: ProjectTheme }): React.ReactElement => {
-  const { description, name, link, roles, logo } = theme
+const Description = ({ project }: { project: Project }): React.ReactElement => {
+  const { description, name, link, roles, logo } = project
   const external = link.url.includes(':')
   const arrow = <div className={`arrow ${external ? 'rotated' : ''}`} />
 

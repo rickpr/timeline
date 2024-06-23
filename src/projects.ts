@@ -1,5 +1,3 @@
-import type { Theme } from 'themes'
-
 import AirbrushImage from 'images/works/airbrush.webp'
 import AirbrushLogo from 'images/works/airbrush_logo.webp'
 import GainTainPhoto from 'images/gaintain/next_steps.webp'
@@ -18,7 +16,7 @@ import TLDRLogo from 'images/works/tldr_logo.png'
 import TLDRPhoto from 'images/tldr.webp'
 import ZaraImage from 'images/works/zara.webp'
 
-export interface ProjectTheme extends Theme {
+export interface Project {
   name: string
   description: string
   heroImage: string
@@ -33,7 +31,7 @@ export interface ProjectTheme extends Theme {
   }
 }
 
-export const ProjectThemes: Record<string, ProjectTheme> = {
+export const Projects: Record<string, Project> = {
   GainTain: {
     name: 'GainTain',
     description: 'Designed the user interface and interactions for GainTain, a mobile application focusing on tracking workouts and solving the challenge of logging weight lifting between sets. Currently developing this project with my partner to enhance the user experience in fitness tracking. This ongoing project aims to provide a seamless and efficient solution for fitness enthusiasts to monitor their progress.',
@@ -179,4 +177,4 @@ export const ProjectThemes: Record<string, ProjectTheme> = {
   }
 }
 
-export default ProjectThemes
+export default Projects

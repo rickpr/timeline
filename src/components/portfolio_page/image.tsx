@@ -1,9 +1,9 @@
 import React from 'react'
 
-import type { ProjectTheme } from 'project_themes'
+import type { Project } from 'projects'
 
-const Image = ({ theme }: { theme: ProjectTheme }): JSX.Element => {
-  const { name, heroImage } = theme
+const Image = ({ project }: { project: Project }): JSX.Element => {
+  const { name, heroImage } = project
   return (
     <div className='portfolio-image'>
       <img alt={`${name} cover`} src={heroImage} />

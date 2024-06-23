@@ -1,15 +1,15 @@
 import React from 'react'
 
-import type { ProjectTheme } from 'project_themes'
+import type { Project } from 'projects'
 
 import Description from './description'
 import Image from './image'
 
-const Card = ({ theme, reverse }: { theme: ProjectTheme, reverse: boolean }): JSX.Element => {
+const Card = ({ project, reverse }: { project: Project, reverse: boolean }): JSX.Element => {
   return (
     <div className={`portfolio-card ${reverse ? 'reverse' : ''}`} data-aos='fade-up'>
-      <Image theme={theme} />
-      <Description theme={theme} />
+      <Image project={project} />
+      <Description project={project} />
     </div>
   )
 }

@@ -2,7 +2,7 @@ import type { Icon as IconType, IconProps } from '@tabler/icons-react'
 import React, { useContext, type CSSProperties } from 'react'
 
 import darkModeStyle from 'dark_mode_style'
-import { ThemeContext } from 'theme_context'
+import DarkModeContext from 'dark_mode_context'
 
 // https://github.com/tabler/tabler-icons/issues/1035#issuecomment-1997198857
 type TablerIcon = React.ForwardRefExoticComponent<Omit<IconProps, 'ref'> & React.RefAttributes<IconType>>
@@ -22,8 +22,8 @@ interface Props {
 }
 
 const BrandIcon = ({ href, Icon, size = '40px' }: Props): React.ReactElement => {
-  const themeContext = useContext(ThemeContext)
-  const { text: color } = darkModeStyle(themeContext.darkMode, themeContext)
+  const { darkMode } = useContext(DarkModeContext)
+  const { text: color } = darkModeStyle(darkMode)
   return (
     <a
       href={href}
