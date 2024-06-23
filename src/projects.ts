@@ -120,7 +120,7 @@ export const Projects: Record<string, Project> = {
   AirbrushArtStudio: {
     name: 'Airbrush Art Studio',
     roles: ['Website Design', 'Responsive', 'Editor X'],
-    description: 'Utilized Wix to design the digital presence for Airbrush Art Studio, emphasizing effective Information Architecture. Delivered copywriting and SEO services to boost online visibility and client engagement. This budget-friendly project focused on showcasing the studio&apos;s portfolio without extensive branding.',
+    description: "Utilized Wix to design the digital presence for Airbrush Art Studio, emphasizing effective Information Architecture. Delivered copywriting and SEO services to boost online visibility and client engagement. This budget-friendly project focused on showcasing the studio's portfolio without extensive branding.",
     heroImage: AirbrushImage,
     link: {
       text: 'VISIT WEBSITE',
