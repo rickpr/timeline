@@ -6,7 +6,6 @@ import JessRuedaImage from 'images/works/jessrueda.webp'
 import JessRuedaLogo from 'images/works/jessrueda_logo.webp'
 import LoboGardensImage from 'images/works/lobogardens.webp'
 import LoboGardensLogo from 'images/works/lobogardens_logo.webp'
-import NCERWImage from 'images/works/ncerw.webp'
 import PhronesisPhoto from 'images/works/phronesis.webp'
 import PhronesisLogo from 'images/works/phronesis_logo.webp'
 import QuerqueImage from 'images/works/querque.webp'
@@ -139,16 +138,6 @@ export const Projects: Record<string, Project> = {
     link: {
       text: 'VISIT WEBSITE',
       url: 'https://www.zarascleaning.com/'
-    }
-  },
-  NCERW: {
-    name: 'NCERW',
-    roles: ['Website Design', 'Responsive', 'Google Sites'],
-    description: 'Represents a constellation of stakeholders locally and nationally centered around educational principles and cultural practices that promote the ecological relationships of language and literacy.',
-    heroImage: NCERWImage,
-    link: {
-      text: 'VISIT WEBSITE',
-      url: 'https://sites.google.com/site/ncenvirorhetoric/'
     }
   },
   SunbeltProperties: {
