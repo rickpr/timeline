@@ -46,7 +46,6 @@ const Phronesis = (): JSX.Element => {
         return (
           <div
             key={image}
-            style={{ padding: '20px' }}
             tabIndex={0}
             data-aos='fade-up'
             role='tab'
@@ -61,11 +60,11 @@ const Phronesis = (): JSX.Element => {
   )
 
   return (
-    <>
+    <div className='case-study-container'>
       <About />
       {images}
       {showCarousel && <CarouselOverlay dismiss={dismiss} media={carouselMedia} index={mediaIndex} />}
-    </>
+    </div>
   )
 }
 

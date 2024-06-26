@@ -23,41 +23,22 @@ interface Props {
   media: string
   text: React.ReactNode
   reversed?: boolean
-  style?: CSSProperties
 }
 
-const MediaWithText = ({ media, text, reversed = false, style = {} }: Props): JSX.Element => {
-  const maxHeight = '82vh'
-  const styles = { maxHeight, borderRadius: '10px', height: '100%', width: '100%', ...style }
+const style = { maxHeight: '82vh', borderRadius: '10px', height: '100%', width: '100%' }
 
-  const mediaTag = makeMediaTag({ media, style: styles })
-  const flex = '8 8 335px'
+const MediaWithText = ({ media, text, reversed = false }: Props): JSX.Element => {
+  const mediaTag = makeMediaTag({ media, style })
   const imageTag = (
-    <div
-      key='image'
-      style={{
-        display: 'flex',
-        flex,
-        placeContent: 'center',
-        placeItems: 'center',
-        width: '100%',
-        height: '100%'
-      }}
-    >
+    <div key='image' className='media-with-text-image'>
       {mediaTag}
     </div>
   )
-  const textTag = <div key='text' style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center' }}>{text}</div>
+  const textTag = <div key='text' className='media-with-text-text'>{text}</div>
 
   const flexWrap = reversed ? 'wrap' : 'wrap-reverse'
   return (
-    <div style={{
-      display: 'flex',
-      flexWrap,
-      placeContent: 'center',
-      margin: '0 auto',
-      gap: '20px'
-    }}>
+    <div className='media-with-text' style={{ flexWrap }}>
       {reversed ? [textTag, imageTag] : [imageTag, textTag]}
     </div>
   )

@@ -1,6 +1,13 @@
 @import './gaintain';
 @import './phronesis';
 
+.case-study-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4em;
+  gap: min(10dvw, 137px);
+}
+
 .about-case-study {
   display: flex;
   flex-direction: column;

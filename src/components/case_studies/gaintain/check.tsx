@@ -5,19 +5,16 @@ import CaptionedFigure from 'components/captioned_figure'
 import { makeMediaTag } from '../../media_with_text'
 
 const Check = (): JSX.Element => {
-  const flex = '8 8 335px'
   const text = (
-    <div style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center' }}>
-      <div className='gaintain-text'>
-        <h3>&#47;&#47; CHECK</h3>
-        <p>
-          The hi-fidelity design process allowed the GainTain app to be up
-          and running in just a few hours using the iOS component kit available
-          on Figma Community. Over the next two months, the team iteratively
-          improved the app, focusing on enhancing its functionality, usability,
-          and design, based on feedback from users like Tina.
-        </p>
-      </div>
+    <div className='gaintain-text'>
+      <h3>&#47;&#47; CHECK</h3>
+      <p>
+        The hi-fidelity design process allowed the GainTain app to be up
+        and running in just a few hours using the iOS component kit available
+        on Figma Community. Over the next two months, the team iteratively
+        improved the app, focusing on enhancing its functionality, usability,
+        and design, based on feedback from users like Tina.
+      </p>
     </div>
   )
 
@@ -34,19 +31,13 @@ const Check = (): JSX.Element => {
 
   return (
     <Card>
-      <div style={{
-        display: 'flex',
-        flexWrap: 'wrap-reverse',
-        placeContent: 'center',
-        placeItems: 'center',
-        margin: '0 auto',
-        maxWidth: 'max-content',
-        gap: '20px'
-      }}>
-        <div style={{ display: 'flex', flex, placeContent: 'center', placeItems: 'center' }}>
+      <div className='gaintain-check'>
+        <div className='caption'>
           <CaptionedFigure caption={figmaLink} figure={mediaTag} />
         </div>
-        {text}
+        <div className='caption'>
+          {text}
+        </div>
       </div>
     </Card>
   )

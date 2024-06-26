@@ -6,8 +6,6 @@ import DarkModeButton from './dark_mode_button'
 import HomeLink from './home_link'
 import BackButton from './back_button'
 
-export const headerPixels = 80
-
 const Header = (): JSX.Element => {
   const { togglePortfolioPage } = useContext(HomePageContext)
   const isHomePage = togglePortfolioPage !== undefined

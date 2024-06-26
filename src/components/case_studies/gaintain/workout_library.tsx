@@ -22,7 +22,7 @@ const WorkoutLibrary = (): JSX.Element => {
     <Card>
       <div className='video-card-content reverse'>
         {text}
-        <div style={{ maxWidth: '331px' }}>
+        <div className='video-card-video'>
           {makeMediaTag({ media: WorkoutLibraryVideo, style: { borderRadius: videoBorderRadius } })}
         </div>
       </div>

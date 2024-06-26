@@ -3,18 +3,12 @@ import React, { useEffect, useState } from 'react'
 interface HomePageContextType {
   isPortfolioPage?: boolean
   togglePortfolioPage?: () => void
-  scrollToCaseStudies: boolean
-  setScrollToCaseStudies: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const HomePageContext = React.createContext<HomePageContextType>({
-  scrollToCaseStudies: false,
-  setScrollToCaseStudies: (): void => { /* Do nothing */ }
-})
+const HomePageContext = React.createContext<HomePageContextType>({})
 
 const HomePageProvider = ({ portfolioPage, children }: { portfolioPage: boolean, children: JSX.Element }): JSX.Element => {
   const [isPortfolioPage, setIsPortfolioPage] = useState(portfolioPage)
-  const [scrollToCaseStudies, setScrollToCaseStudies] = useState(false)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -36,17 +30,11 @@ const HomePageProvider = ({ portfolioPage, children }: { portfolioPage: boolean,
       history.pushState({}, '', isPortfolioPage ? '/about' : '/portfolio')
       return !isPortfolioPage
     })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
-    <HomePageContext.Provider
-      value={{
-        isPortfolioPage,
-        togglePortfolioPage,
-        scrollToCaseStudies,
-        setScrollToCaseStudies
-      }}
-    >
+    <HomePageContext.Provider value={{ isPortfolioPage, togglePortfolioPage }}>
       {children}
     </HomePageContext.Provider>
   )

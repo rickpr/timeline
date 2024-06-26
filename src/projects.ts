@@ -1,7 +1,6 @@
 import AirbrushImage from 'images/works/airbrush.webp'
 import AirbrushLogo from 'images/works/airbrush_logo.webp'
 import GainTainPhoto from 'images/gaintain/next_steps.webp'
-import GainTainLogo from 'images/gaintain/logo.webp'
 import JessRuedaImage from 'images/works/jessrueda.webp'
 import JessRuedaLogo from 'images/works/jessrueda_logo.webp'
 import LoboGardensImage from 'images/works/lobogardens.webp'
@@ -11,7 +10,7 @@ import PhronesisLogo from 'images/works/phronesis_logo.webp'
 import QuerqueImage from 'images/works/querque.webp'
 import QuerqueLogo from 'images/works/querque_logo.webp'
 import SunbeltImage from 'images/works/sunbelt.webp'
-import TLDRLogo from 'images/works/tldr_logo.png'
+import TLDRLogo from 'images/works/tldr_logo.webp'
 import TLDRPhoto from 'images/tldr.webp'
 import ZaraImage from 'images/works/zara.webp'
 
@@ -44,10 +43,6 @@ export const Projects: Record<string, Project> = {
     link: {
       text: 'READ CASE STUDY',
       url: '/case_studies/gaintain'
-    },
-    logo: {
-      image: GainTainLogo,
-      color: '#D4F4FB'
     }
   },
   JessNRueda: {

@@ -1,8 +1,8 @@
 import React from 'react'
 
 const About = (): JSX.Element => {
-  const text = (
-    <div className='about-case-study'>
+  return (
+    <div data-aos='fade-up' className='about-case-study'>
       <div className='client-and-date'>
         <div><strong>Client</strong><span>Phronesis</span></div>
         <div><strong>Date</strong><span>2 weeks</span></div>
@@ -30,28 +30,6 @@ const About = (): JSX.Element => {
           <strong>VIEW FIGMA <span className='arrow' /></strong>
         </a>
       </p>
-    </div>
-  )
-
-  return (
-    <div
-      data-aos='fade-up'
-      style={{
-        minWidth: '95%',
-        margin: '4vh 2.5vw',
-        padding: '2em 7%',
-        borderRadius: '2vh'
-      }}
-    >
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr',
-          maxWidth: '100%',
-          maxHeight: '100%'
-        }}>
-        <div>{text}</div>
-      </div>
     </div>
   )
 }

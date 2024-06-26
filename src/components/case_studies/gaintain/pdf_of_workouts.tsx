@@ -22,7 +22,7 @@ const PdfOfWorkouts = (): JSX.Element => {
     <Card>
       <div className='video-card-content'>
         {text}
-        <div style={{ maxWidth: '331px' }}>
+        <div className='video-card-video'>
           {makeMediaTag({ media: PdfOfWorkoutsVideo, style: { borderRadius: videoBorderRadius } })}
         </div>
       </div>
