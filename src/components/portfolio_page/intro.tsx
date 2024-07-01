@@ -18,7 +18,7 @@ const Intro = (): JSX.Element | null => {
         </div>
         <div>
           <h1 style={{ marginTop: 0 }}>
-            Hi, I&apos;m Adalida - energetic, resourceful, and versatile.
+            Hi, I&apos;m Adalida
           </h1>
           <h2 className='text'>
             I design functional, human-centered products that solve user needs and drive business success by
