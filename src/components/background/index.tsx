@@ -1,16 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 
 import DarkModeContext from 'dark_mode_context'
-import darkModeStyle from 'dark_mode_style'
-
-import Spline from './spline'
+import DarkModeStyle from 'dark_mode_style'
+import Spheres from './spheres'
 
 const Background = (): JSX.Element => {
   const { darkMode } = useContext(DarkModeContext)
-  const { background } = darkModeStyle(darkMode)
+  const { background } = useMemo(() => DarkModeStyle(darkMode), [darkMode])
   return (
     <div className='fixed-background' style={{ background }}>
-      <Spline />
+      <Spheres />
+      <div className='background-glass' />
     </div>
   )
 }

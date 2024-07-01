@@ -29,12 +29,16 @@
   .image {
     @include glass;
     @include card;
+    overflow: hidden;
+    border-radius: 500px 500px 0 0;
+    img {
+      border-radius: 500px 500px 0 0;
+    }
   }
 
   .text {
-    > h2 {
-      margin-top: 0;
-    }
+    font-weight: 500;
+    margin-top: 0;
   }
 
   @media (min-width: $breakpoint) {

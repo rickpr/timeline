@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Degree from './degree'
+import About from './about'
 import Interests from './interests'
 import Services from './services'
 import ValueIBring from './value_i_bring'
@@ -8,7 +8,7 @@ import ValueIBring from './value_i_bring'
 const AboutPage = (): JSX.Element => {
   return (
     <div className='about-page'>
-      <Degree />
+      <About/>
       <Services />
       <ValueIBring />
       <Interests />

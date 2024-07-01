@@ -4,20 +4,18 @@ import React from 'react'
 import useIsMobile from 'hooks/use_is_mobile'
 import Logo from '../logo'
 
-const nameStyle = { fontSize: '15px' }
-
 const HomeLink = (): JSX.Element | null => {
   const isMobile = useIsMobile(768)
   if (isMobile === null) return null
 
   return (
-    <Link style={{ display: 'flex', alignItems: 'center', gap: '10px', lineHeight: 1 }} to='/'>
+    <Link className='home-link' to='/'>
       <Logo />
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'start', alignItems: 'flex-start', gap: '6px' }}>
+      <div className='header-title'>
         {!isMobile &&
          <>
-           <span style={{ ...nameStyle, fontWeight: 600 }}>Adalida Baca</span>
-           <span style={{ ...nameStyle, fontWeight: 300 }}>Product Designer</span>
+           <span className='semibold'>Adalida Baca</span>
+           <span className='thin-text'>Product Designer</span>
          </>
         }
       </div>
