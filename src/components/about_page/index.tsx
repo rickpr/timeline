@@ -1,14 +1,14 @@
 import React from 'react'
 
 import Background from './background'
-import ContactInformation from './contact_information'
 import Interests from './interests'
+import Intro from './intro'
 import Services from './services'
 
 const AboutPage = (): JSX.Element => {
   return (
     <div className='about-page'>
-      <ContactInformation />
+      <Intro />
       <Background />
       <Services />
       <Interests />

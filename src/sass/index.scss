@@ -12,6 +12,7 @@
 @import './footer';
 @import './header';
 @import './portfolio_page';
+@import './scroll_animated_text';
 
 .Typewriter {
   display: inline;
@@ -31,9 +32,10 @@
   flex-direction: column;
   width: $page-width;
   margin: auto;
+  padding-top: 2rem;
 }
 
-.lets-work-together {
+.lets-chat {
   display: flex;
   font-size: 0.75em;
   gap: 0.5rem;
@@ -43,7 +45,7 @@
   width: 15rem;
   font-weight: 700;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 5rem;
   .arrow {
     font-weight: 400;
     font-size: 1.25em;
@@ -72,7 +74,7 @@
 }
 
 .section-heading-container {
-  margin-top: 1em;
+  margin: 10dvw 0 1rem;
   font-weight: 700;
   display: flex;
   gap: 0.75em;
@@ -90,12 +92,6 @@
   border-radius: 5px;
   height: 0;
   @media (min-width: $breakpoint) { border-width: 2px; }
-}
-
-.pull-right {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
 }
 
 .no-margins {

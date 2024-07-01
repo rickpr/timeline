@@ -20,7 +20,7 @@ export interface Project {
   heroImage: string
   roles: string[]
   link: {
-    text: 'READ CASE STUDY' | 'VIEW PRESENTATION' | 'VISIT WEBSITE' | 'VIEW FIGMA' | 'VIEW DESIGNS'
+    text: 'Read Case Study' | 'View Presentation' | 'Visit Website' | 'View Figma'
     url: string
   }
   logo?: {
@@ -41,7 +41,7 @@ export const Projects: Record<string, Project> = {
       'B2C'
     ],
     link: {
-      text: 'READ CASE STUDY',
+      text: 'Read Case Study',
       url: '/case_studies/gaintain'
     }
   },
@@ -51,7 +51,7 @@ export const Projects: Record<string, Project> = {
     description: 'Jessica Rueda required a digital platform for her art. I developed a Shopify website with e-commerce functionality, secure payments, SEO optimization, and mobile responsiveness. This increased her online visibility and sales.',
     heroImage: JessRuedaImage,
     link: {
-      text: 'VISIT WEBSITE',
+      text: 'Visit Website',
       url: 'https://jessnrueda.com/'
     },
     logo: {
@@ -71,7 +71,7 @@ export const Projects: Record<string, Project> = {
       'Saas'
     ],
     link: {
-      text: 'READ CASE STUDY',
+      text: 'Read Case Study',
       url: '/case_studies/phronesis'
     },
     logo: {
@@ -85,7 +85,7 @@ export const Projects: Record<string, Project> = {
     description: 'Querque Candles needed an online presence. I chose Shopify, designed a brand identity, created a logo, and built a user-friendly website. Despite non-payment for the website, the branding successfully enhanced their market visibility.',
     heroImage: QuerqueImage,
     link: {
-      text: 'VIEW FIGMA',
+      text: 'View Figma',
       url: 'https://www.figma.com/file/3yeMcqsp6NQ5bf7EnJVrCH/QuerQue-Candles?type=design&node-id=0-1'
     },
     logo: {
@@ -103,7 +103,7 @@ export const Projects: Record<string, Project> = {
       'Prototyping'
     ],
     link: {
-      text: 'VIEW PRESENTATION',
+      text: 'View Presentation',
       url: 'https://docs.google.com/presentation/d/1qXeKJTsfPWMx_gYd4cbBtRxIbwm7jJqWRpy747TrlWM'
     },
     logo: {
@@ -117,7 +117,7 @@ export const Projects: Record<string, Project> = {
     description: "Utilized Wix to design the digital presence for Airbrush Art Studio, emphasizing effective Information Architecture. Delivered copywriting and SEO services to boost online visibility and client engagement. This budget-friendly project focused on showcasing the studio's portfolio without extensive branding.",
     heroImage: AirbrushImage,
     link: {
-      text: 'VISIT WEBSITE',
+      text: 'Visit Website',
       url: 'https://www.airbrushart.studio/'
     },
     logo: {
@@ -131,7 +131,7 @@ export const Projects: Record<string, Project> = {
     description: 'Developed a user-friendly website for Zaras Cleaning using Wix, concentrating on clear and efficient information architecture. Provided comprehensive copywriting and SEO services to enhance search engine performance and attract new clients. The project aimed to present essential information within a limited budget framework.',
     heroImage: ZaraImage,
     link: {
-      text: 'VISIT WEBSITE',
+      text: 'Visit Website',
       url: 'https://www.zarascleaning.com/'
     }
   },
@@ -141,7 +141,7 @@ export const Projects: Record<string, Project> = {
     description: 'Crafted the online presence for Sunbelt Properties with Wix, designing an intuitive Information Architecture for a seamless user experience. Offered targeted copywriting and SEO services to increase the visibility of property listings and drive user inquiries. This low-budget initiative prioritized functionality and accessibility over extensive branding.',
     heroImage: SunbeltImage,
     link: {
-      text: 'VISIT WEBSITE',
+      text: 'Visit Website',
       url: 'https://www.sunbeltpropertiesnm.com/'
     }
   },
@@ -151,7 +151,7 @@ export const Projects: Record<string, Project> = {
     description: 'As part of a community project, I contributed to the branding and promotional design for Lobo Gardens, an urban gardening initiative. This involved creating a logo, designing educational materials, and developing a website to increase community engagement and support for campus gardening activities.',
     heroImage: LoboGardensImage,
     link: {
-      text: 'VISIT WEBSITE',
+      text: 'Visit Website',
       url: 'https://dribbble.com/shots/16868644-Flyer-Designs-Business-Card-and-Brochure-Lobo-Gardens'
     },
     logo: {

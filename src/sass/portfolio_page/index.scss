@@ -1,4 +1,4 @@
-@import './intro';
+@import './contact_information';
 
 .portfolio-image {
   flex: 1;
@@ -61,8 +61,8 @@
   }
   .role {
     @include badge;
-    font-size: 12px;
-    padding: 0.25rem 0.5rem;
+    font-size: 10px;
+    padding: 0.2083rem 0.4167rem;
   }
   .description {
     font-size: 0.875rem;
@@ -72,7 +72,7 @@
   .link {
     @include badge;
     display: flex;
-    fontSize: 0.875rem;
+    font-size: 0.875rem;
     justify-content: center;
   }
   @media (min-width: $breakpoint) {

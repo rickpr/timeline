@@ -1,6 +1,5 @@
 import React from 'react'
 
-import LetsWorkTogether from 'components/lets_work_together'
 import SectionHeading from 'components/section_heading'
 
 interface Props {
@@ -13,7 +12,6 @@ const Services = ({ title, children }: Props): JSX.Element => {
     <div>
       <SectionHeading title={title} />
       {children}
-      <div className='pull-right'><LetsWorkTogether /></div>
     </div>
   )
 }

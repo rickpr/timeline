@@ -1,12 +1,13 @@
 @use 'sass:math';
-@import './contact_information';
+@import './background';
+@import './intro';
+
 
 .about-page {
   display: flex;
   flex-direction: column;
   gap: 8rem;
 }
-
 
 .about-card-content {
   padding: 20px;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconBrandLinkedin, IconMail } from '@tabler/icons-react'
+import { IconBrandLinkedin } from '@tabler/icons-react'
 import Typewriter from 'typewriter-effect'
 
 import useIsMobile from 'hooks/use_is_mobile'
@@ -17,20 +17,15 @@ const ContactInformation = (): React.ReactElement | null => {
 
   return (
     <div className='contact-information'>
-      <div className='intro'>
-        <div className='title'>Adalida Baca</div>
-        <div className='subtitle'>Rubber Duck cosplaying as a Product Designer</div>
-        <div className='tagline'>
-          <span>Let&apos;s Connect</span>
-          <BrandIcon href='mailto:hi@adalida.design' Icon={IconMail} size={iconSize} />
-        </div>
-      </div>
+      <div className='title'>👋 Hi, I&apos;m Adalida Baca</div>
       <div className='glass icon-container'>
-        <span style={{ marginLeft: '16px' }}>{typewriter}</span>
-        <div style={{ display: 'flex', gap: '10px', marginLeft: '10px' }}>
-          <BrandIcon href='https://linkedin.com/in/adalidabaca' Icon={IconBrandLinkedin} size={iconSize} />
-        </div>
+        <span style={{ marginLeft: '12px' }}>{typewriter}</span>
+        <BrandIcon href='https://linkedin.com/in/adalidabaca' Icon={IconBrandLinkedin} size={iconSize} />
       </div>
+      <h2 className='subtitle'>
+        I design functional, human-centered products that solve user needs and drive business success by leveraging
+        philosophical insights and technical communication expertise.
+      </h2>
     </div>
   )
 }

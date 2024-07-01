@@ -18,10 +18,10 @@ const styles = {
 interface Props {
   href: string
   Icon: TablerIcon
-  size?: CSSProperties['width']
+  size: CSSProperties['width']
 }
 
-const BrandIcon = ({ href, Icon, size = '40px' }: Props): React.ReactElement => {
+const BrandIcon = ({ href, Icon, size }: Props): React.ReactElement => {
   const { darkMode } = useContext(DarkModeContext)
   const { text: color } = darkModeStyle(darkMode)
   return (
