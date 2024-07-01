@@ -9,8 +9,8 @@ const AboutPage = (): JSX.Element => {
   return (
     <div className='about-page'>
       <Intro />
-      <Background />
       <Services />
+      <Background />
       <Interests />
     </div>
   )

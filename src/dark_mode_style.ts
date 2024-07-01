@@ -5,7 +5,7 @@ const darkTextColor = '#3E4242'
 const lightColor = '#F5F5F5'
 
 interface Colors {
-  background: CSSProperties['color']
+  background: CSSProperties['color'] & string
   text: CSSProperties['color']
 }
 

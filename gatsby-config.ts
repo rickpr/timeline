@@ -35,8 +35,8 @@ module.exports = {
         name: 'Adalida Page',
         short_name: 'timeline',
         start_url: '/',
-        background_color: '#F5F5F5',
-        theme_color: '#F5F5F5',
+        background_color: '#090B0B',
+        theme_color: '#090B0B',
         display: 'minimal-ui',
         icon: 'src/images/favicon.png' // This path is relative to the root of the site.
       }

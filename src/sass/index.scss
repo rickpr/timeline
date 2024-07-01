@@ -33,6 +33,9 @@
   width: $page-width;
   margin: auto;
   padding-top: 2rem;
+  @media (min-width: $breakpoint) {
+    padding-top: 4rem;
+  }
 }
 
 .lets-chat {
