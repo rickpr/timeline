@@ -1,16 +1,16 @@
 import React from 'react'
 
-import About from './about'
+import Background from './background'
+import ContactInformation from './contact_information'
 import Interests from './interests'
 import Services from './services'
-import ValueIBring from './value_i_bring'
 
 const AboutPage = (): JSX.Element => {
   return (
     <div className='about-page'>
-      <About/>
+      <ContactInformation />
+      <Background />
       <Services />
-      <ValueIBring />
       <Interests />
     </div>
   )

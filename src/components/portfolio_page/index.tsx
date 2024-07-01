@@ -1,13 +1,13 @@
 import React from 'react'
 
-import ContactInformation from './contact_information'
 import Container from './container'
+import Intro from './intro'
 import SectionHeading from '../section_heading'
 
 const PortfolioPage = (): JSX.Element => {
   return (
     <>
-      <ContactInformation />
+      <Intro />
       <SectionHeading title='Selected Work' />
       <Container />
     </>

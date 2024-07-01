@@ -1,0 +1,26 @@
+.stacking-pair {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+
+  .image {
+    @include glass;
+    @include card;
+    overflow: hidden;
+    border-radius: 500px 500px 0 0;
+    img {
+      border-radius: 500px 500px 0 0;
+    }
+  }
+
+  .text {
+    font-weight: 500;
+    margin-top: 0;
+  }
+
+  @media (min-width: $breakpoint) {
+    flex-direction: row;
+  }
+}
